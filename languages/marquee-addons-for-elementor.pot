@@ -1,0 +1,966 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2024-09-25 17:58+0600\n"
+"PO-Revision-Date: 2023-11-22 15:26+0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.3.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;esc_html__\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: assets\n"
+
+#: includes/widget.php:138
+#, php-format
+msgid "\"%1$s\" requires \"%2$s\" to be installed and activated."
+msgstr ""
+
+#: includes/widget.php:139 includes/widget.php:162 includes/widget.php:186
+msgid "MarqueeAddons - Smooth Infinite marquee carousel loop for elementor"
+msgstr ""
+
+#: includes/widget.php:140 includes/widget.php:163
+msgid "Elementor"
+msgstr ""
+
+#: includes/widget.php:161 includes/widget.php:185
+#, php-format
+msgid "\"%1$s\" requires \"%2$s\" version %3$s or greater."
+msgstr ""
+
+#: includes/widget.php:187
+msgid "PHP"
+msgstr ""
+
+#: includes/widget.php:277
+msgid "Marquee Addons"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-accordion.php:28
+msgid "Image Accordion"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-accordion.php:52
+#: includes/widgets/class-deensimc-image-accordion.php:83
+#: includes/widgets/class-deensimc-image-accordion.php:180
+#: includes/widgets/class-deensimc-testimonial-marquee.php:475
+msgid "Images"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-accordion.php:62
+#: includes/widgets/class-deensimc-testimonial-marquee.php:76
+#: includes/widgets/class-deensimc-video-marquee.php:466
+msgid "Choose Image"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-accordion.php:73
+#: includes/widgets/class-deensimc-image-marquee.php:152
+#: includes/widgets/class-deensimc-stacked-slider.php:101
+#: includes/widgets/class-deensimc-stacked-slider.php:328
+#: includes/widgets/class-deensimc-testimonial-marquee.php:97
+#: includes/widgets/class-deensimc-testimonial-marquee.php:615
+msgid "Title"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-accordion.php:75
+#: includes/widgets/class-deensimc-text-marquee.php:75
+msgid "Default title"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-accordion.php:76
+#: includes/widgets/class-deensimc-stacked-slider.php:104
+#: includes/widgets/class-deensimc-text-marquee.php:76
+msgid "Type your title here"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-accordion.php:88
+msgid "Set"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-accordion.php:91
+msgid "Your"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-accordion.php:94
+msgid "Journey"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-accordion.php:97
+msgid "To"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-accordion.php:100
+msgid "Success"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-accordion.php:110
+msgid "Active Behaviour"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-accordion.php:114
+msgid "Click"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-accordion.php:115
+#: includes/widgets/class-deensimc-image-accordion.php:272
+#: includes/widgets/class-deensimc-stacked-slider.php:468
+#: includes/widgets/class-deensimc-stacked-slider.php:595
+msgid "Hover"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-accordion.php:124
+msgid "Title Horizontal Alignment"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-accordion.php:128
+msgid "Start"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-accordion.php:132
+#: includes/widgets/class-deensimc-image-accordion.php:159
+#: includes/widgets/class-deensimc-image-marquee.php:284
+#: includes/widgets/class-deensimc-image-marquee.php:311
+#: includes/widgets/class-deensimc-stacked-slider.php:239
+#: includes/widgets/class-deensimc-stacked-slider.php:288
+#: includes/widgets/class-deensimc-stacked-slider.php:674
+#: includes/widgets/class-deensimc-stacked-slider.php:835
+msgid "Center"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-accordion.php:136
+#: includes/widgets/class-deensimc-image-accordion.php:163
+msgid "End"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-accordion.php:151
+msgid "Title Vertical Alignment"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-accordion.php:155
+#: includes/widgets/class-deensimc-image-marquee.php:307
+#: includes/widgets/class-deensimc-stacked-slider.php:69
+msgid "Top"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-accordion.php:188
+#: includes/widgets/class-deensimc-image-marquee.php:415
+msgid "Height"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-accordion.php:215
+#: includes/widgets/class-deensimc-video-marquee.php:652
+msgid "Gap"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-accordion.php:242
+#: includes/widgets/class-deensimc-image-accordion.php:280
+msgid "Overlay Color"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-accordion.php:252
+#: includes/widgets/class-deensimc-stacked-slider.php:437
+#: includes/widgets/class-deensimc-stacked-slider.php:535
+msgid "Normal"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-accordion.php:294
+msgid "Image Title"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-accordion.php:311
+msgid "Image Title Color"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-accordion.php:322
+msgid "Title Position"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-accordion.php:326
+msgid "Horizontal"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-accordion.php:327
+msgid "Vertical"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-accordion.php:335
+#: includes/widgets/class-deensimc-stacked-slider.php:308
+#: includes/widgets/class-deensimc-stacked-slider.php:519
+#: includes/widgets/class-deensimc-stacked-slider.php:748
+#: includes/widgets/class-deensimc-testimonial-marquee.php:352
+#: includes/widgets/class-deensimc-testimonial-marquee.php:727
+msgid "Padding"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-marquee.php:27
+msgid "Image Marquee"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-marquee.php:51
+msgid "Image Content"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-marquee.php:59
+msgid "Add Images"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-marquee.php:70
+#: includes/widgets/class-deensimc-text-marquee.php:101
+msgid "Show Horizontal"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-marquee.php:72
+#: includes/widgets/class-deensimc-image-marquee.php:84
+#: includes/widgets/class-deensimc-image-marquee.php:174
+#: includes/widgets/class-deensimc-image-marquee.php:186
+#: includes/widgets/class-deensimc-image-marquee.php:198
+#: includes/widgets/class-deensimc-stacked-slider.php:184
+#: includes/widgets/class-deensimc-stacked-slider.php:196
+#: includes/widgets/class-deensimc-testimonial-marquee.php:109
+#: includes/widgets/class-deensimc-testimonial-marquee.php:166
+#: includes/widgets/class-deensimc-testimonial-marquee.php:188
+#: includes/widgets/class-deensimc-testimonial-marquee.php:248
+#: includes/widgets/class-deensimc-testimonial-marquee.php:260
+#: includes/widgets/class-deensimc-testimonial-marquee.php:272
+#: includes/widgets/class-deensimc-text-marquee.php:103
+#: includes/widgets/class-deensimc-text-marquee.php:115
+#: includes/widgets/class-deensimc-text-marquee.php:137
+#: includes/widgets/class-deensimc-text-marquee.php:149
+#: includes/widgets/class-deensimc-video-marquee.php:241
+#: includes/widgets/class-deensimc-video-marquee.php:256
+#: includes/widgets/class-deensimc-video-marquee.php:283
+#: includes/widgets/class-deensimc-video-marquee.php:356
+#: includes/widgets/class-deensimc-video-marquee.php:370
+#: includes/widgets/class-deensimc-video-marquee.php:384
+#: includes/widgets/class-deensimc-video-marquee.php:398
+#: includes/widgets/class-deensimc-video-marquee.php:456
+#: includes/widgets/class-deensimc-video-marquee.php:482
+#: includes/widgets/class-deensimc-video-marquee.php:533
+#: includes/widgets/class-deensimc-video-marquee.php:564
+#: includes/widgets/class-deensimc-video-marquee.php:576
+#: includes/widgets/class-deensimc-video-marquee.php:588
+msgid "Show"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-marquee.php:73
+#: includes/widgets/class-deensimc-image-marquee.php:85
+#: includes/widgets/class-deensimc-image-marquee.php:175
+#: includes/widgets/class-deensimc-image-marquee.php:187
+#: includes/widgets/class-deensimc-image-marquee.php:199
+#: includes/widgets/class-deensimc-stacked-slider.php:185
+#: includes/widgets/class-deensimc-stacked-slider.php:197
+#: includes/widgets/class-deensimc-testimonial-marquee.php:110
+#: includes/widgets/class-deensimc-testimonial-marquee.php:167
+#: includes/widgets/class-deensimc-testimonial-marquee.php:189
+#: includes/widgets/class-deensimc-testimonial-marquee.php:249
+#: includes/widgets/class-deensimc-testimonial-marquee.php:261
+#: includes/widgets/class-deensimc-testimonial-marquee.php:273
+#: includes/widgets/class-deensimc-text-marquee.php:104
+#: includes/widgets/class-deensimc-text-marquee.php:116
+#: includes/widgets/class-deensimc-text-marquee.php:138
+#: includes/widgets/class-deensimc-text-marquee.php:150
+#: includes/widgets/class-deensimc-video-marquee.php:240
+#: includes/widgets/class-deensimc-video-marquee.php:255
+#: includes/widgets/class-deensimc-video-marquee.php:282
+#: includes/widgets/class-deensimc-video-marquee.php:355
+#: includes/widgets/class-deensimc-video-marquee.php:369
+#: includes/widgets/class-deensimc-video-marquee.php:383
+#: includes/widgets/class-deensimc-video-marquee.php:397
+#: includes/widgets/class-deensimc-video-marquee.php:457
+#: includes/widgets/class-deensimc-video-marquee.php:483
+#: includes/widgets/class-deensimc-video-marquee.php:534
+#: includes/widgets/class-deensimc-video-marquee.php:565
+#: includes/widgets/class-deensimc-video-marquee.php:577
+#: includes/widgets/class-deensimc-video-marquee.php:589
+msgid "Hide"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-marquee.php:82
+#: includes/widgets/class-deensimc-testimonial-marquee.php:164
+#: includes/widgets/class-deensimc-text-marquee.php:113
+#: includes/widgets/class-deensimc-video-marquee.php:531
+msgid "Show Reverse"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-marquee.php:94
+#: includes/widgets/class-deensimc-image-marquee.php:109
+#: includes/widgets/class-deensimc-video-marquee.php:80
+#: includes/widgets/class-deensimc-video-marquee.php:95
+#: includes/widgets/class-deensimc-video-marquee.php:109
+msgid "Link"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-marquee.php:98
+#: includes/widgets/class-deensimc-image-marquee.php:151
+#: includes/widgets/class-deensimc-video-marquee.php:413
+msgid "None"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-marquee.php:99
+msgid "Media File"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-marquee.php:100
+msgid "Custom URL"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-marquee.php:124
+msgid "Lightbox"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-marquee.php:128
+#, php-format
+msgid "Manage your site’s lightbox settings in the %1$sLightbox panel%2$s."
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-marquee.php:134
+msgid "Default"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-marquee.php:135
+msgid "Yes"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-marquee.php:136
+msgid "No"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-marquee.php:147
+#: includes/widgets/class-deensimc-image-marquee.php:153
+msgid "Caption"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-marquee.php:154
+#: includes/widgets/class-deensimc-stacked-slider.php:133
+msgid "Description"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-marquee.php:164
+#: includes/widgets/class-deensimc-testimonial-marquee.php:178
+#: includes/widgets/class-deensimc-text-marquee.php:127
+#: includes/widgets/class-deensimc-video-marquee.php:545
+msgid "Additional Options"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-marquee.php:172
+#: includes/widgets/class-deensimc-video-marquee.php:308
+msgid "Lazy Load"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-marquee.php:184
+#: includes/widgets/class-deensimc-testimonial-marquee.php:258
+#: includes/widgets/class-deensimc-text-marquee.php:135
+#: includes/widgets/class-deensimc-video-marquee.php:574
+msgid "Pause On Hover"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-marquee.php:196
+#: includes/widgets/class-deensimc-testimonial-marquee.php:270
+#: includes/widgets/class-deensimc-text-marquee.php:147
+#: includes/widgets/class-deensimc-video-marquee.php:586
+msgid "Show Shadow"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-marquee.php:208
+#: includes/widgets/class-deensimc-stacked-slider.php:206
+#: includes/widgets/class-deensimc-testimonial-marquee.php:282
+#: includes/widgets/class-deensimc-text-marquee.php:159
+#: includes/widgets/class-deensimc-video-marquee.php:598
+msgid "Animation Speed"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-marquee.php:220
+#: includes/widgets/class-deensimc-text-marquee.php:171
+msgid "Slider Height"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-marquee.php:254
+#: includes/widgets/class-deensimc-stacked-slider.php:658
+msgid "Image"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-marquee.php:276
+msgid "Horizontal Alignment"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-marquee.php:280
+#: includes/widgets/class-deensimc-stacked-slider.php:65
+#: includes/widgets/class-deensimc-stacked-slider.php:235
+#: includes/widgets/class-deensimc-stacked-slider.php:284
+#: includes/widgets/class-deensimc-stacked-slider.php:670
+#: includes/widgets/class-deensimc-stacked-slider.php:831
+msgid "Left"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-marquee.php:288
+#: includes/widgets/class-deensimc-stacked-slider.php:73
+#: includes/widgets/class-deensimc-stacked-slider.php:292
+#: includes/widgets/class-deensimc-stacked-slider.php:678
+#: includes/widgets/class-deensimc-stacked-slider.php:839
+msgid "Right"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-marquee.php:303
+msgid "Vertical Alignment"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-marquee.php:315
+#: includes/widgets/class-deensimc-stacked-slider.php:77
+#: includes/widgets/class-deensimc-stacked-slider.php:243
+msgid "Bottom"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-marquee.php:331
+#: includes/widgets/class-deensimc-testimonial-marquee.php:483
+msgid "Image Spacing"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-marquee.php:360
+msgid "Image Width"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-marquee.php:388
+msgid "Image Max Width"
+msgstr ""
+
+#: includes/widgets/class-deensimc-image-marquee.php:451
+#: includes/widgets/class-deensimc-stacked-slider.php:572
+#: includes/widgets/class-deensimc-stacked-slider.php:632
+#: includes/widgets/class-deensimc-testimonial-marquee.php:545
+msgid "Border Radius"
+msgstr ""
+
+#: includes/widgets/class-deensimc-stacked-slider.php:29
+msgid "Stacked Slider"
+msgstr ""
+
+#: includes/widgets/class-deensimc-stacked-slider.php:53
+#: includes/widgets/class-deensimc-testimonial-marquee.php:65
+#: includes/widgets/class-deensimc-testimonial-marquee.php:417
+msgid "Content"
+msgstr ""
+
+#: includes/widgets/class-deensimc-stacked-slider.php:61
+msgid "Position"
+msgstr ""
+
+#: includes/widgets/class-deensimc-stacked-slider.php:90
+msgid "Choose Images"
+msgstr ""
+
+#: includes/widgets/class-deensimc-stacked-slider.php:103
+msgid "Enter your title"
+msgstr ""
+
+#: includes/widgets/class-deensimc-stacked-slider.php:115
+msgid "Title HTML"
+msgstr ""
+
+#: includes/widgets/class-deensimc-stacked-slider.php:119
+msgid "H2"
+msgstr ""
+
+#: includes/widgets/class-deensimc-stacked-slider.php:120
+msgid "H3"
+msgstr ""
+
+#: includes/widgets/class-deensimc-stacked-slider.php:121
+msgid "H4"
+msgstr ""
+
+#: includes/widgets/class-deensimc-stacked-slider.php:122
+msgid "H5"
+msgstr ""
+
+#: includes/widgets/class-deensimc-stacked-slider.php:123
+msgid "H6"
+msgstr ""
+
+#: includes/widgets/class-deensimc-stacked-slider.php:124
+msgid "Span"
+msgstr ""
+
+#: includes/widgets/class-deensimc-stacked-slider.php:125
+msgid "P"
+msgstr ""
+
+#: includes/widgets/class-deensimc-stacked-slider.php:136
+msgid "Enter your description here"
+msgstr ""
+
+#: includes/widgets/class-deensimc-stacked-slider.php:137
+msgid "Type your description here"
+msgstr ""
+
+#: includes/widgets/class-deensimc-stacked-slider.php:147
+msgid "Button Text"
+msgstr ""
+
+#: includes/widgets/class-deensimc-stacked-slider.php:149
+msgid "Lets Go"
+msgstr ""
+
+#: includes/widgets/class-deensimc-stacked-slider.php:157
+msgid "Button Link"
+msgstr ""
+
+#: includes/widgets/class-deensimc-stacked-slider.php:174
+msgid "Advance"
+msgstr ""
+
+#: includes/widgets/class-deensimc-stacked-slider.php:182
+#: includes/widgets/class-deensimc-stacked-slider.php:770
+msgid "Dots"
+msgstr ""
+
+#: includes/widgets/class-deensimc-stacked-slider.php:194
+#: includes/widgets/class-deensimc-video-marquee.php:202
+msgid "Autoplay"
+msgstr ""
+
+#: includes/widgets/class-deensimc-stacked-slider.php:223
+#: includes/widgets/class-deensimc-testimonial-marquee.php:296
+msgid "Box"
+msgstr ""
+
+#: includes/widgets/class-deensimc-stacked-slider.php:231
+msgid "Vertical Position"
+msgstr ""
+
+#: includes/widgets/class-deensimc-stacked-slider.php:259
+#: includes/widgets/class-deensimc-stacked-slider.php:542
+#: includes/widgets/class-deensimc-stacked-slider.php:602
+msgid "Background Color"
+msgstr ""
+
+#: includes/widgets/class-deensimc-stacked-slider.php:272
+#: includes/widgets/class-deensimc-testimonial-marquee.php:55
+#: includes/widgets/class-deensimc-testimonial-marquee.php:366
+#: includes/widgets/class-deensimc-text-marquee.php:49
+#: includes/widgets/class-deensimc-text-marquee.php:205
+msgid "Contents"
+msgstr ""
+
+#: includes/widgets/class-deensimc-stacked-slider.php:280
+#: includes/widgets/class-deensimc-stacked-slider.php:666
+msgid "Alignment"
+msgstr ""
+
+#: includes/widgets/class-deensimc-stacked-slider.php:353
+#: includes/widgets/class-deensimc-stacked-slider.php:401
+#: includes/widgets/class-deensimc-stacked-slider.php:720
+#: includes/widgets/class-deensimc-testimonial-marquee.php:586
+#: includes/widgets/class-deensimc-testimonial-marquee.php:652
+msgid "Spacing"
+msgstr ""
+
+#: includes/widgets/class-deensimc-stacked-slider.php:376
+msgid "Descripton"
+msgstr ""
+
+#: includes/widgets/class-deensimc-stacked-slider.php:424
+msgid "Colors"
+msgstr ""
+
+#: includes/widgets/class-deensimc-stacked-slider.php:444
+#: includes/widgets/class-deensimc-stacked-slider.php:475
+msgid "Title Color"
+msgstr ""
+
+#: includes/widgets/class-deensimc-stacked-slider.php:455
+#: includes/widgets/class-deensimc-stacked-slider.php:486
+msgid "Description Color"
+msgstr ""
+
+#: includes/widgets/class-deensimc-stacked-slider.php:501
+msgid "Button"
+msgstr ""
+
+#: includes/widgets/class-deensimc-stacked-slider.php:553
+#: includes/widgets/class-deensimc-stacked-slider.php:613
+#: includes/widgets/class-deensimc-testimonial-marquee.php:716
+msgid "Text Color"
+msgstr ""
+
+#: includes/widgets/class-deensimc-stacked-slider.php:693
+msgid "Width"
+msgstr ""
+
+#: includes/widgets/class-deensimc-stacked-slider.php:778
+msgid "Dot Color"
+msgstr ""
+
+#: includes/widgets/class-deensimc-stacked-slider.php:789
+msgid "Dot Active Color"
+msgstr ""
+
+#: includes/widgets/class-deensimc-stacked-slider.php:800
+msgid "Dot Distance"
+msgstr ""
+
+#: includes/widgets/class-deensimc-stacked-slider.php:827
+msgid "Text Alignment"
+msgstr ""
+
+#: includes/widgets/class-deensimc-testimonial-marquee.php:31
+msgid "Testimonial Marquee"
+msgstr ""
+
+#: includes/widgets/class-deensimc-testimonial-marquee.php:68
+msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo."
+msgstr ""
+
+#: includes/widgets/class-deensimc-testimonial-marquee.php:69
+msgid "Type testimonial content"
+msgstr ""
+
+#: includes/widgets/class-deensimc-testimonial-marquee.php:87
+#: includes/widgets/class-deensimc-testimonial-marquee.php:559
+msgid "Name"
+msgstr ""
+
+#: includes/widgets/class-deensimc-testimonial-marquee.php:89
+msgid "John Snow"
+msgstr ""
+
+#: includes/widgets/class-deensimc-testimonial-marquee.php:90
+msgid "Enter name here"
+msgstr ""
+
+#: includes/widgets/class-deensimc-testimonial-marquee.php:99
+msgid "Engineer"
+msgstr ""
+
+#: includes/widgets/class-deensimc-testimonial-marquee.php:100
+msgid "Enter title here"
+msgstr ""
+
+#: includes/widgets/class-deensimc-testimonial-marquee.php:107
+msgid "Show Rating"
+msgstr ""
+
+#: includes/widgets/class-deensimc-testimonial-marquee.php:119
+msgid "Rating"
+msgstr ""
+
+#: includes/widgets/class-deensimc-testimonial-marquee.php:134
+msgid "Rating Counter"
+msgstr ""
+
+#: includes/widgets/class-deensimc-testimonial-marquee.php:136
+msgid "3k"
+msgstr ""
+
+#: includes/widgets/class-deensimc-testimonial-marquee.php:146
+msgid "Testimonial Items"
+msgstr ""
+
+#: includes/widgets/class-deensimc-testimonial-marquee.php:151
+msgid "Steve"
+msgstr ""
+
+#: includes/widgets/class-deensimc-testimonial-marquee.php:154
+msgid "John"
+msgstr ""
+
+#: includes/widgets/class-deensimc-testimonial-marquee.php:186
+msgid "Show Icons"
+msgstr ""
+
+#: includes/widgets/class-deensimc-testimonial-marquee.php:198
+#: includes/widgets/class-deensimc-testimonial-marquee.php:445
+msgid "Excerpt"
+msgstr ""
+
+#: includes/widgets/class-deensimc-testimonial-marquee.php:207
+msgid "Length"
+msgstr ""
+
+#: includes/widgets/class-deensimc-testimonial-marquee.php:219
+msgid "Show More"
+msgstr ""
+
+#: includes/widgets/class-deensimc-testimonial-marquee.php:221
+msgid "Show more..."
+msgstr ""
+
+#: includes/widgets/class-deensimc-testimonial-marquee.php:228
+msgid "Show Less"
+msgstr ""
+
+#: includes/widgets/class-deensimc-testimonial-marquee.php:230
+msgid "Show less"
+msgstr ""
+
+#: includes/widgets/class-deensimc-testimonial-marquee.php:237
+#: includes/widgets/class-deensimc-video-marquee.php:553
+msgid "Animation"
+msgstr ""
+
+#: includes/widgets/class-deensimc-testimonial-marquee.php:246
+#: includes/widgets/class-deensimc-video-marquee.php:562
+msgid "Show Animation"
+msgstr ""
+
+#: includes/widgets/class-deensimc-testimonial-marquee.php:325
+msgid "Box Gap"
+msgstr ""
+
+#: includes/widgets/class-deensimc-testimonial-marquee.php:374
+#: includes/widgets/class-deensimc-text-marquee.php:227
+#: includes/widgets/class-deensimc-video-marquee.php:496
+msgid "Icon"
+msgstr ""
+
+#: includes/widgets/class-deensimc-testimonial-marquee.php:383
+#: includes/widgets/class-deensimc-testimonial-marquee.php:434
+#: includes/widgets/class-deensimc-testimonial-marquee.php:462
+#: includes/widgets/class-deensimc-testimonial-marquee.php:575
+#: includes/widgets/class-deensimc-testimonial-marquee.php:631
+#: includes/widgets/class-deensimc-testimonial-marquee.php:675
+#: includes/widgets/class-deensimc-text-marquee.php:235
+#: includes/widgets/class-deensimc-text-marquee.php:344
+#: includes/widgets/class-deensimc-video-marquee.php:697
+msgid "Color"
+msgstr ""
+
+#: includes/widgets/class-deensimc-testimonial-marquee.php:394
+#: includes/widgets/class-deensimc-video-marquee.php:709
+msgid "Size"
+msgstr ""
+
+#: includes/widgets/class-deensimc-testimonial-marquee.php:510
+msgid "Image Resulation"
+msgstr ""
+
+#: includes/widgets/class-deensimc-testimonial-marquee.php:644
+msgid "Review"
+msgstr ""
+
+#: includes/widgets/class-deensimc-testimonial-marquee.php:687
+msgid "Unmark Color"
+msgstr ""
+
+#: includes/widgets/class-deensimc-testimonial-marquee.php:699
+#: includes/widgets/class-deensimc-text-marquee.php:73
+#: includes/widgets/class-deensimc-text-marquee.php:327
+msgid "Text"
+msgstr ""
+
+#: includes/widgets/class-deensimc-testimonial-marquee.php:829
+msgid "("
+msgstr ""
+
+#: includes/widgets/class-deensimc-testimonial-marquee.php:829
+msgid ")"
+msgstr ""
+
+#: includes/widgets/class-deensimc-text-marquee.php:29
+msgid "Text Marquee"
+msgstr ""
+
+#: includes/widgets/class-deensimc-text-marquee.php:59
+msgid "Text Icon"
+msgstr ""
+
+#: includes/widgets/class-deensimc-text-marquee.php:83
+msgid "Text List"
+msgstr ""
+
+#: includes/widgets/class-deensimc-text-marquee.php:88
+#: includes/widgets/class-deensimc-text-marquee.php:91
+msgid "Item content. Click the edit button to change this text."
+msgstr ""
+
+#: includes/widgets/class-deensimc-text-marquee.php:247
+msgid "Icon Size"
+msgstr ""
+
+#: includes/widgets/class-deensimc-text-marquee.php:271
+msgid "Icon Spacing"
+msgstr ""
+
+#: includes/widgets/class-deensimc-text-marquee.php:298
+msgid "Content Spacing"
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:30
+msgid "Video Marquee"
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:54
+#: includes/widgets/class-deensimc-video-marquee.php:612
+msgid "Videos"
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:64
+msgid "Source"
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:68
+msgid "YouTube"
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:69
+msgid "Vimeo"
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:70
+msgid "Dailymotion"
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:71
+msgid "Self Hosted"
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:82
+#: includes/widgets/class-deensimc-video-marquee.php:97
+#: includes/widgets/class-deensimc-video-marquee.php:111
+#: includes/widgets/class-deensimc-video-marquee.php:158
+msgid "Enter your URL"
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:126
+msgid "External URL"
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:137
+msgid "Choose Video File"
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:152
+msgid "URL"
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:169
+msgid "Start Time"
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:171
+msgid "Specify a start time (in seconds)"
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:180
+msgid "End Time"
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:182
+msgid "Specify an end time (in seconds)"
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:193
+msgid "Video Options"
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:205
+#, php-format
+msgid "Note: Autoplay is affected by %1$s Google’s Autoplay policy %2$s on Chrome browsers."
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:217
+msgid "Mute"
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:226
+msgid "Loop"
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:238
+msgid "Player Controls"
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:253
+msgid "Video Info"
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:267
+msgid "Modest Branding"
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:280
+msgid "Logo"
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:295
+msgid "Privacy Mode"
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:297
+msgid "When you turn on privacy mode, YouTube/Vimeo won't store information about visitors on your website unless they play the video."
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:337
+msgid "Suggested Videos"
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:340
+msgid "Current Video Channel"
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:341
+msgid "Any Video"
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:353
+msgid "Intro Title"
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:367
+msgid "Intro Portrait"
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:381
+msgid "Intro Byline"
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:395
+msgid "Download Button"
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:408
+msgid "Preload"
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:411
+msgid "Metadata"
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:412
+msgid "Auto"
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:417
+msgid "Preload attribute lets you specify how the video should be loaded when the page loads."
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:418
+msgid "Learn more"
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:431
+msgid "Poster"
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:445
+#: includes/widgets/class-deensimc-video-marquee.php:454
+msgid "Image Overlay"
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:480
+#: includes/widgets/class-deensimc-video-marquee.php:689
+msgid "Play Icon"
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:513
+msgid "Video List"
+msgstr ""
+
+#: includes/widgets/class-deensimc-video-marquee.php:632
+msgid "Aspect Ratio"
+msgstr ""

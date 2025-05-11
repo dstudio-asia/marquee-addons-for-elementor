@@ -1,0 +1,295 @@
+/* ==========================================================================
+   Table of Contents
+   ==========================================================================
+
+   1. Variables
+   2. General Image Slider Styles
+   3. Slider Content Styles
+   4. Media Styles
+   5. Swiper and Pagination Styles
+   6. Media Queries
+      - Laptop Devices
+      - Tablet Devices (Landscape)
+      - Extra Mobile Devices (Landscape)
+      - Mobile Devices
+      - Small Devices (Max Width: 600px)
+   ==========================================================================
+*/
+
+/* ==========================================================================
+   1. Variables
+   ========================================================================== */
+
+   :root {
+    --deensimc-color-white: #ffffff;
+    --deensimc-color-light-gray: #f7f7f7;
+    --deensimc-color-dark-grayish-blue: #54595f;
+    --deensimc-dark-dark-gray: #474F53;
+  }
+  
+  /* ==========================================================================
+     2. General Image Slider Styles
+     ========================================================================== */
+  
+  .deensimc-image-slider-main h2, 
+  .deensimc-image-slider-main h3, 
+  .deensimc-image-slider-main h4, 
+  .deensimc-image-slider-main h5, 
+  .deensimc-image-slider-main h6 , 
+  .deensimc-image-slider-main p, 
+  .deensimc-image-slider-main span {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  
+  .deensimc-image-slider-main {
+    display: grid;
+    grid-template-areas: "deensimc-slider-media-wrapper deensimc-slider-content";
+    background: var(--deensimc-color-light-gray);
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  /* Additional class for no contents */
+  .deensimc-image-slider-main.deensimc-no-contents {
+    grid-template-columns: 1fr;
+  }
+  
+  /* ==========================================================================
+     3. Slider Content Styles
+     ========================================================================== */
+  
+  .deensimc-image-slider-main.left {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'deensimc-ds-swiper deensimc-slider-content';
+  }
+  
+  .deensimc-image-slider-main.right {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'deensimc-slider-content deensimc-ds-swiper';
+  }
+  
+  .deensimc-image-slider-main.bottom {
+    grid-template-areas: "deensimc-slider-content" "deensimc-ds-swiper";
+    text-align: center;
+  }
+  
+  .deensimc-image-slider-main.top {
+    grid-template-areas: "deensimc-ds-swiper" "deensimc-slider-content";
+    text-align: center;
+  }
+  
+  .deensimc-image-slider-main .deensimc-slider-media-wrapper {
+    overflow: hidden;
+  }
+  
+  .deensimc-image-slider-main .deensimc-slider-content {
+    grid-area: deensimc-slider-content;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    color: var(--deensimc-color-dark-grayish-blue);
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .deensimc-slider-heading {
+    word-wrap: break-word;
+  }
+  
+  .deensimc-image-slider-main .deensimc-slider-content .deensimc-slider-heading h1 {
+    font-size: 2rem;
+  }
+  
+  .deensimc-image-slider-main .deensimc-slider-content .deensimc-slider-des p {
+    font-size: 1.2rem;
+  }
+  
+  .deensimc-image-slider-main .deensimc-slider-content .deensimc-content-btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--deensimc-dark-dark-gray);
+    color: var(--deensimc-color-white);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: fit-content;
+  }
+  
+  /* ==========================================================================
+     4. Media Styles
+     ========================================================================== */
+  
+  .deensimc-image-slider-main .deensimc-slider-media {
+    grid-area: deensimc-ds-swiper;
+  }
+  
+  .deensimc-image-slider-main .deensimc-slider-media .deensimc-slider-img {
+    height: 100%;
+  }
+  
+  .deensimc-image-slider-main .deensimc-slider-media .deensimc-slider-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* ==========================================================================
+     5. Swiper and Pagination Styles
+     ========================================================================== */
+  
+  .deensimc-image-slider-main .swiper {
+    width: 100%;
+    max-width: 400px;
+    padding: 70px;
+  }
+  
+  .deensimc-image-slider-main .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--deensimc-color-white);
+  }
+  
+  .deensimc-swiper-pagination.deensimc-swiper-pagination-clickable {
+    position: unset;
+  }
+  
+  /* ==========================================================================
+     6. Media Queries
+     ========================================================================== */
+
+
+     @media (max-width: 1200px) {
+      .deensimc-image-slider-main .deensimc-slider-media {
+        border: unset;
+      }
+      .deensimc-image-slider-main .swiper {
+        width: 100%;
+        max-width: 450px;
+        padding: 70px;
+      }
+    }
+
+    /* Laptop Devices */
+    @media (max-width: 1201px){
+    
+      .deensimc-image-slider-main.left-laptop {
+          grid-template-columns: 1fr 1fr;
+          grid-template-areas: 'deensimc-ds-swiper deensimc-slider-content';
+      }
+    
+      .deensimc-image-slider-main.right-laptop {
+          grid-template-columns: 1fr 1fr;
+          grid-template-areas: 'deensimc-slider-content deensimc-ds-swiper';
+      }
+    
+      .deensimc-image-slider-main.top-laptop {
+          grid-template-columns: 1fr;
+          grid-template-areas: "deensimc-ds-swiper" "deensimc-slider-content";
+          text-align: center;
+      }
+    
+      .deensimc-image-slider-main.bottom-laptop {
+          grid-template-columns: 1fr;
+          grid-template-areas: "deensimc-slider-content" "deensimc-ds-swiper";
+          text-align: center;
+      }
+    
+    }
+    
+    /* Tablet Devices (Landscape) */
+    @media (max-width: 1025px) and (orientation: landscape) {
+    
+      .deensimc-image-slider-main.left-tab {
+          grid-template-columns: 1fr 1fr;
+          grid-template-areas: 'deensimc-ds-swiper deensimc-slider-content';
+      }
+    
+      .deensimc-image-slider-main.right-tab {
+          grid-template-columns: 1fr 1fr;
+          grid-template-areas: 'deensimc-slider-content deensimc-ds-swiper';
+      }
+    
+      .deensimc-image-slider-main.top-tab {
+          grid-template-columns: 1fr;
+          grid-template-areas: "deensimc-ds-swiper" "deensimc-slider-content";
+          text-align: center;
+      }
+    
+      .deensimc-image-slider-main.bottom-tab {
+          grid-template-columns: 1fr;
+          grid-template-areas: "deensimc-slider-content" "deensimc-ds-swiper";
+          text-align: center;
+      }
+    
+    }
+
+    /* Extra Mobile Devices (Landscape) */
+    @media (max-width: 880px) and (orientation: landscape) {
+    
+      .deensimc-image-slider-main.left-mobile-extra {
+          grid-template-columns: 1fr 1fr;
+          grid-template-areas: 'deensimc-ds-swiper deensimc-slider-content';
+      }
+    
+      .deensimc-image-slider-main.right-mobile-extra {
+          grid-template-columns: 1fr 1fr;
+          grid-template-areas: 'deensimc-slider-content deensimc-ds-swiper';
+      }
+    
+      .deensimc-image-slider-main.top-mobile-extra {
+          grid-template-columns: 1fr;
+          grid-template-areas: "deensimc-ds-swiper" "deensimc-slider-content";
+          text-align: center;
+      }
+    
+      .deensimc-image-slider-main.bottom-mobile-extra {
+          grid-template-columns: 1fr;
+          grid-template-areas: "deensimc-slider-content" "deensimc-ds-swiper";
+          text-align: center;
+      }
+    
+    }
+    
+    /* Extra Mobile Devices (Landscape) */
+    @media (max-width: 768px) {
+    
+      .deensimc-image-slider-main.bottom-mobile {
+        grid-template-columns: 1fr;
+        grid-template-areas: "deensimc-slider-content" "deensimc-ds-swiper";
+      }
+    
+      .deensimc-image-slider-main.left-mobile {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 'deensimc-ds-swiper deensimc-slider-content';
+      }
+    
+      .deensimc-image-slider-main.top-mobile {
+        grid-template-columns: 1fr;
+        grid-template-areas: "deensimc-ds-swiper" "deensimc-slider-content";
+        text-align: center;
+      }
+    
+      .deensimc-image-slider-main.right-mobile {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 'deensimc-slider-content deensimc-ds-swiper';
+        text-align: center;
+      }
+    
+    }
+  
+  /* Small Devices (Max Width: 600px) */
+  @media (max-width: 600px) {
+    .deensimc-image-slider-main .swiper {
+      width: 100%;
+      max-width: 250px;
+      padding-bottom: 60px;
+      padding: unset;
+    }
+  }  
