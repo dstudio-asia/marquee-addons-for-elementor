@@ -104,27 +104,31 @@
       e.preventDefault();
       let toggleElement = $(e.currentTarget);
       let blockquoteElement = toggleElement.closest('.deensimc-tes-text');
+      let widget = $('.deensimc-tes');
+
       let fullText = blockquoteElement.data('full-text');
       let truncatedText = blockquoteElement.data('truncated-text');
       let showMoreText = blockquoteElement.data('show-more');
       let showLessText = blockquoteElement.data('show-less');
-
+      let quoteLeft  = widget.data('quoteLeft');
+      let quoteRight = widget.data('quoteRight');
+      
       if (toggleElement.text() === showMoreText) {
         blockquoteElement.html(`
           <div class="contents-wrapper">
-            <span class="quote-left"><i class="fa fa-quote-left"></i></span>
+            <span class="quote-left"><i class="${quoteLeft}"></i></span>
             <span class="deensimc-contents">${fullText}</span>
             <span class="deensimc-toggle">${showLessText}</span>
-            <span class="quote-right"><i class="fa fa-quote-right bottom"></i></span>
+            <span class="quote-right"><i class="${quoteRight} bottom"></i></span>
           </div>
         `);
       } else {
         blockquoteElement.html(`
           <div class="contents-wrapper">
-            <span class="quote-left"><i class="fa fa-quote-left"></i></span>
+            <span class="quote-left"><i class="${quoteLeft}"></i></span>
             <span class="deensimc-contents">${truncatedText}</span>
             <span class="deensimc-toggle">${showMoreText}</span>
-            <span class="quote-right"><i class="fa fa-quote-right"></i></span>
+            <span class="quote-right"><i class="${quoteRight}"></i></span>
           </div>
         `);
       }
@@ -221,7 +225,9 @@
         let wordLimit = $(scope).find('.deensimc-tes').data('excerpt-length') || 50;
         let showMoreText = $(scope).find('.deensimc-tes').data('show-more') || 'Show more';
         let showLessText = $(scope).find('.deensimc-tes').data('show-less') || 'Show less';
-
+        let quoteLeft = $(scope).find('.deensimc-tes').data('quote-left') || 'fa fa-quote-left';
+        let quoteRight = $(scope).find('.deensimc-tes').data('quote-right') || 'fa fa-quote-right';
+        
         // Store truncated and full text in the element for reuse
         const truncateText = (text, limit) => {
           let wordArray = text.split(' ');
@@ -240,10 +246,10 @@
 
         blockquoteElement.html(`
           <div class="contents-wrapper">
-            <span class="quote-left"><i class="fa fa-quote-left"></i></span>
+            <span class="quote-left"><i class="${quoteLeft}"></i></span>
             <span class="deensimc-contents">${isTextTruncated ? truncatedText : fullText}</span>
             <span class="deensimc-toggle">${isTextTruncated ? showMoreText : ''}</span>
-            <span class="quote-right"><i class="fa fa-quote-right"></i></span>
+            <span class="quote-right"><i class="${quoteRight}"></i></span>
           </div>
         `);
 

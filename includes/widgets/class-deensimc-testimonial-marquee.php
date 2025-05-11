@@ -101,6 +101,34 @@ class Deensimc_Testimonial_Marquee extends Widget_Base {
 			]
 		);
 
+		$this->add_control(
+			'deensimc_testimonial_quote_left_icon',
+			[
+				'label' => esc_html__( 'Quote Left', 'marquee-addons-for-elementor' ),
+				'type' =>  Controls_Manager::ICONS,
+				'default' => [
+					'value' => 'fas fa-quote-left',
+					'library' => 'fa-solid',
+				],
+				'skin' => 'inline',
+				'exclude_inline_options' => [ 'svg' ],
+			]
+		);
+
+		$this->add_control(
+			'deensimc_testimonial_quote_right_icon',
+			[
+				'label' => esc_html__( 'Quote Right', 'marquee-addons-for-elementor' ),
+				'type' =>  Controls_Manager::ICONS,
+				'default' => [
+					'value' => 'fas fa-quote-right',
+					'library' => 'fa-solid',
+				],
+				'skin' => 'inline',
+				'exclude_inline_options' => [ 'svg' ],
+			]
+		);
+
         $this->end_controls_section();
 
 		$this->content_additional_options();
@@ -225,7 +253,9 @@ class Deensimc_Testimonial_Marquee extends Widget_Base {
 		data-show-more="<?php echo esc_attr( $settings['deensimc_tesimonial_excerpt_title'] ); ?>" 
 		data-show-less="<?php echo esc_attr( $settings['deensimc_tesimonial_excerpt_title_less'] ); ?>" 
 		data-pause-on-hover="<?php echo esc_attr( $settings['deensimc_testimonial_pause_on_hover'] ); ?>" 
-		data-animation-speed="<?php echo esc_attr( $settings['deensimc_testimonial_animation_speed'] ); ?>">
+		data-animation-speed="<?php echo esc_attr( $settings['deensimc_testimonial_animation_speed'] ); ?>"
+		data-quote-left="<?php echo esc_html( $settings['deensimc_testimonial_quote_left_icon']['value'] ); ?>"
+		data-quote-right="<?php echo esc_html( $settings['deensimc_testimonial_quote_right_icon']['value'] ); ?>">
 			<div class="<?php echo esc_attr( $show_shadow ) ?> deensimc-tes-logo">
 				<ul class="deensimc-tes-content <?php echo 'yes' === esc_html( $settings['deensimc_testimonial_reverse_section'] ) ? 'deensimc-tes-content-reverse' : ''; ?>">
 					<?php 
@@ -276,7 +306,7 @@ class Deensimc_Testimonial_Marquee extends Widget_Base {
 		<#
 			let showShadow = settings.deensimc_show_shadow_switch === 'yes' ? 'deensimc-shadow' : 'deensimc-no-shadow';
 		#>
-		<div class="deensimc-tes {{ settings.deensimc_show_icons !== 'yes' ? 'deensimc-off-icons' : '' }}" data-animation-status="{{ settings.deensimc_show_animation }}" data-excerpt-length="{{ settings.deensimc_tesimonial_excerpt_length }}"  data-show-more="{{ settings.deensimc_tesimonial_excerpt_title }}"  data-show-less="{{ settings.deensimc_tesimonial_excerpt_title_less }}"  data-pause-on-hover="{{ settings.deensimc_testimonial_pause_on_hover }}" data-animation-speed="{{ settings.deensimc_testimonial_animation_speed }}">
+		<div class="deensimc-tes {{ settings.deensimc_show_icons !== 'yes' ? 'deensimc-off-icons' : '' }}" data-animation-status="{{ settings.deensimc_show_animation }}" data-excerpt-length="{{ settings.deensimc_tesimonial_excerpt_length }}"  data-show-more="{{ settings.deensimc_tesimonial_excerpt_title }}"  data-show-less="{{ settings.deensimc_tesimonial_excerpt_title_less }}"  data-pause-on-hover="{{ settings.deensimc_testimonial_pause_on_hover }}" data-animation-speed="{{ settings.deensimc_testimonial_animation_speed }}" data-quote-left="{{ settings.deensimc_testimonial_quote_left_icon.value }}" data-quote-right="{{ settings.deensimc_testimonial_quote_right_icon.value }}">
 			<div class="{{ showShadow }} deensimc-tes-logo">
 				<ul class="deensimc-tes-content {{ settings.deensimc_testimonial_reverse_section === 'yes' ? 'deensimc-tes-content-reverse' : '' }}">
 					<# 
