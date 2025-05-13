@@ -67,6 +67,25 @@ class Deensimc_Image_Marquee extends Widget_Base {
 		$this->style_border_options();
 		
 		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'section_custom_css',
+			[
+				'label' => __( 'Custom CSS', 'your-plugin-textdomain' ),
+				'tab'   =>  Controls_Manager::TAB_ADVANCED,
+			]
+		);
+			$this->add_control(
+				'custom_css',
+				[
+					'label' => __( 'Custom CSS', 'your-plugin-textdomain' ),
+					'type'  => Controls_Manager::CODE,
+					'rows'  => 20,
+					'default' => '',
+					'language' => 'css',
+				]
+			);
+		$this->end_controls_section();
 	}
 
 	/**

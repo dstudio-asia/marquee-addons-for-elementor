@@ -316,5 +316,26 @@
       });
     });
 
+    function checkVisibility() {
+      const viewportHeight = window.innerHeight;
+
+      $(".deensimc-wrapper").each(function () {
+        const rect = this.getBoundingClientRect();
+        const element = $(this).find(".deensimc-marquee-group");
+        const isVisible = rect.bottom > 0 && rect.top < viewportHeight;
+        if (!isVisible) {
+          element.css("animation-play-state", "paused");
+        } else {
+          element.css("animation-play-state", "running");
+        }
+      });
+    }
+
+    // Initial check
+    checkVisibility();
+
+    // Basic scroll/resize listeners (no throttle)
+    $(window).on("scroll resize", checkVisibility);
+
   });
 })(jQuery, window._);
