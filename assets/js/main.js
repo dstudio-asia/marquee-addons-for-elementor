@@ -316,26 +316,33 @@
       });
     });
 
-    function checkVisibility() {
-      const viewportHeight = window.innerHeight;
+    function checkVisibility(wrapper, element) {
 
-      $(".deensimc-wrapper").each(function () {
+      const viewportHeight = window.innerHeight;
+      
+      $(wrapper).each(function () {
+        
         const rect = this.getBoundingClientRect();
-        const element = $(this).find(".deensimc-marquee-group");
+        const elements = $(this).find(element);
         const isVisible = rect.bottom > 0 && rect.top < viewportHeight;
         if (!isVisible) {
-          element.css("animation-play-state", "paused");
+          elements.css("animation-play-state", "paused");
         } else {
-          element.css("animation-play-state", "running");
+          elements.css("animation-play-state", "running");
         }
       });
+
     }
 
-    // Initial check
-    checkVisibility();
+    function handleMulti() {
+      checkVisibility('.deensimc-wrapper', '.deensimc-marquee-group');
+      checkVisibility('.deensimc-tes', '.deensimc-tes-content');
+    }
 
-    // Basic scroll/resize listeners (no throttle)
-    $(window).on("scroll resize", checkVisibility);
+    handleMulti();
+
+    // Basic scroll/resize listeners
+    $(window).on("scroll resize", handleMulti);
 
   });
 })(jQuery, window._);
