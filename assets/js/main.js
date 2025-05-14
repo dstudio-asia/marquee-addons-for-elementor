@@ -316,12 +316,13 @@
       });
     });
 
+    // Load marquee when it comes into viewport 
     function checkVisibility(wrapper, element) {
 
       const viewportHeight = window.innerHeight;
       
       $(wrapper).each(function () {
-        
+
         const rect = this.getBoundingClientRect();
         const elements = $(this).find(element);
         const isVisible = rect.bottom > 0 && rect.top < viewportHeight;
@@ -334,15 +335,14 @@
 
     }
 
-    function handleMulti() {
+    function handleMultiple() {
       checkVisibility('.deensimc-wrapper', '.deensimc-marquee-group');
       checkVisibility('.deensimc-tes', '.deensimc-tes-content');
     }
 
-    handleMulti();
+    handleMultiple();
 
-    // Basic scroll/resize listeners
-    $(window).on("scroll resize", handleMulti);
+    $(window).on("scroll resize", handleMultiple);
 
   });
 })(jQuery, window._);
