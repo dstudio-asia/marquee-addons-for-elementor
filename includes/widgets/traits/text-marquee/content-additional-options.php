@@ -43,14 +43,14 @@ trait Textmarquee_Content_Additional_Options {
 		);
 
 		$this->add_control(
-			'deensimc_animation_speed_switch',
+			'deensimc_animation_speeds',
 			[
 				'label' => esc_html__( 'Animation Speed', 'marquee-addons-for-elementor' ),
 				'type' => Controls_Manager::NUMBER,
-				'min' => 500,
-				'max' => 10000,
+				'min' => 1,
+				'max' => 1000,
 				'step' => 1,
-				'default' => 3000,
+				'default' => 50,
 			]
 		);
 

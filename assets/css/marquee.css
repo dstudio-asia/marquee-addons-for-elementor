@@ -119,7 +119,7 @@
   }
   
   .deensimc-paused {
-    animation-play-state: paused !important;
+    animation-play-state: paused;
   }
   
   .deensimc-marquee-group:nth-child(2),

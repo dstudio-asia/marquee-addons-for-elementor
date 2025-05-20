@@ -67,25 +67,7 @@ class Deensimc_Image_Marquee extends Widget_Base {
 		$this->style_border_options();
 		
 		$this->end_controls_section();
-
-		$this->start_controls_section(
-			'section_custom_css',
-			[
-				'label' => __( 'Custom CSS', 'your-plugin-textdomain' ),
-				'tab'   =>  Controls_Manager::TAB_ADVANCED,
-			]
-		);
-			$this->add_control(
-				'custom_css',
-				[
-					'label' => __( 'Custom CSS', 'your-plugin-textdomain' ),
-					'type'  => Controls_Manager::CODE,
-					'rows'  => 20,
-					'default' => '',
-					'language' => 'css',
-				]
-			);
-		$this->end_controls_section();
+		
 	}
 
 	/**
@@ -156,7 +138,7 @@ class Deensimc_Image_Marquee extends Widget_Base {
 		$link_type = $settings['deensimc_link_to'];
 		$open_lightbox = $settings['deensimc_open_lightbox'];
 		$pause_on_hover = $settings['deensimc_pause_on_hover_switch'];
-		$animation_speed = $settings['deensimc_animation_speed_switch'];
+		$animation_speed = $settings['deensimc_animation_speeds'];
 		$marquee_classes = $marquee_orientation . " " . $slide_direction_class;
 		$show_shadow = $settings['deensimc_image_show_shadow_switch'] === 'yes' ? 'deensimc-shadow' : 'deensimc-no-shadow';
 	?>

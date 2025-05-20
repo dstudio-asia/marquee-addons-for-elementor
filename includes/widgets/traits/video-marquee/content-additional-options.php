@@ -64,14 +64,14 @@ trait Videomarquee_Content_Additional_Options {
 		);
 
 		$this->add_control(
-			'deensimc_video_animation_speed',
+			'deensimc_video_animation_speeds',
 			[
 				'label' => esc_html__( 'Animation Speed',  'marquee-addons-for-elementor' ),
 				'type' => Controls_Manager::NUMBER,
-				'min' => 50,
-				'max' => 10000,
+				'min' => 1,
+				'max' => 1000,
 				'step' => 1,
-				'default' => 2000,
+				'default' => 50,
 			]
 		);
 
