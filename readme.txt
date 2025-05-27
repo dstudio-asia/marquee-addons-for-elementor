@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: marquee, slider, image marquee, video marquee, text marquee
 Requires at least: 5.8
 Tested up to: 6.8
-Stable tag: 1.2.6
+Stable tag: 2.0.0
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -136,6 +136,15 @@ The developers release regular updates to improve features, fix bugs, and ensure
 First, ensure that you’ve activated the plugin correctly. If the issue persists, try clearing your browser cache or updating your Elementor plugin. If the problem continues, you can reach out to the support team for assistance.
 
 == Changelog ==
+
+= 2.0.0
+- Fix animation speed issue: Previously, the animation duration remained the same regardless of the number of items in the marquee. This caused the animation to appear too fast with many items and too slow with fewer. Now, the animation duration adjusts dynamically based on content length, ensuring a consistent and linear scrolling speed.
+
+= 1.2.8
+- Feat load marquee when it comes into viewport
+
+= 1.2.7
+- Feat choose preferred font awesome icons for the opening and closing quote marks in testimonial.
 
 = 1.2.6 
 - Fix edit issue image marquee in Safari

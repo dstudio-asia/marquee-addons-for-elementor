@@ -55,7 +55,7 @@ trait Imagemarquee_Content_Additional_Options {
 		);
 
 		$this->add_control(
-			'deensimc_animation_speeds',
+			'deensimc_image_animation_speed',
 			[
 				'label' => esc_html__( 'Animation Speed', 'marquee-addons-for-elementor' ),
 				'type' => Controls_Manager::NUMBER,

@@ -403,7 +403,7 @@ class Deensimc_Video_Marquee extends Widget_Base {
         if ( !empty( $settings['deensimc_video_list'] ) ) {
         ?>
 			<div class="deensimc-video-main deensimc-wrapper deensimc-wrapper-<?php echo esc_attr( $marquee_orientation ); ?>" >
-				<div class="deensimc-marquee <?php echo esc_attr( $show_shadow ) ?> deensimc-marquee-<?php echo esc_attr( $marquee_classes ); ?>" data-pause-on-hover="<?php echo esc_attr( $settings['deensimc_video_pause_on_hover'] ); ?>" data-animation-speed="<?php echo esc_attr( $settings['deensimc_video_animation_speeds'] ); ?>" data-animation-status="<?php echo esc_attr( $settings['deensimc_video_show_animation'] ); ?>">
+				<div class="deensimc-marquee <?php echo esc_attr( $show_shadow ) ?> deensimc-marquee-<?php echo esc_attr( $marquee_classes ); ?>" data-pause-on-hover="<?php echo esc_attr( $settings['deensimc_video_pause_on_hover'] ); ?>" data-animation-speed="<?php echo esc_attr( $settings['deensimc_video_marquee_animation_speed'] ); ?>" data-animation-status="<?php echo esc_attr( $settings['deensimc_video_show_animation'] ); ?>">
 					<div class="deensimc-marquee-group">
 						<?php foreach ( $settings['deensimc_video_list'] as $video_link ) : ?>
 							<?php  $this->render_video_item( $video_link ); ?>

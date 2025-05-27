@@ -98,11 +98,6 @@
 
       let originalChildElements = marqueeGroup.children().clone(true, true);
 
-//       if (originalChildElements.length === 0) {
-//         marqueeGroup.addClass(`${widgetPrefix}-paused`);
-//         return;
-//       }
-
       marqueeGroup.empty();
       originalChildElements.each(function () {
         marqueeGroup.append($(this));
@@ -110,8 +105,16 @@
       originalChildElements.each(function () {
         marqueeGroup.append($(this).clone(true, true));
       });
+		  console.log("originalChildElements", originalChildElements)
 
-      let originalContentSize = 0;
+     	let originalContentSize = 0;
+		const originalChildElementsArray = Array.from(originalChildElements);
+		originalContentSize = originalChildElementsArray.reduce((accumulator, currentElement) => {
+			let aspect = (currentElement.clientWidth + currentElement.clientHeight) ;
+			return accumulator + aspect;
+		}, 0);
+		
+	
       if (isVertical) {
         // For VERTICAL text marquee, ensure items can take their natural height based on their content and fixed width
 
@@ -154,7 +157,7 @@
       }
 
       let pixelsPerSecondSetting = marqueeContainer.data("animation-speed");
-      let pixelsPerSecond = 100;
+      let pixelsPerSecond = 50;
 
       if (typeof pixelsPerSecondSetting !== "undefined") {
         const parsedSpeed = parseFloat(pixelsPerSecondSetting);
@@ -172,8 +175,11 @@
         console.warn("Marquee speed is 0 or negative. Animation paused.");
         return;
       }
+		console.log("originalContentSize", originalContentSize)
+		console.log("pixelsPerSecond", pixelsPerSecond)
 
       let animationDuration = originalContentSize / pixelsPerSecond;
+		  
 
       if (isSafari && Math.abs(animationDuration - 3) < 0.01) {
         animationDuration += 0.01;
@@ -182,7 +188,6 @@
       marqueeGroup.css("animation-duration", animationDuration + "s");
 
       // Ensure correct animation name is applied based on orientation if not already handled by more specific CSS
-
       handlePauseOnHover(marqueeGroup, isPausedOnHover);
 
       if (isAnimationEnabled === "yes") {

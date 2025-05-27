@@ -138,7 +138,7 @@ class Deensimc_Image_Marquee extends Widget_Base {
 		$link_type = $settings['deensimc_link_to'];
 		$open_lightbox = $settings['deensimc_open_lightbox'];
 		$pause_on_hover = $settings['deensimc_pause_on_hover_switch'];
-		$animation_speed = $settings['deensimc_animation_speeds'];
+		$animation_speed = $settings['deensimc_image_animation_speed'];
 		$marquee_classes = $marquee_orientation . " " . $slide_direction_class;
 		$show_shadow = $settings['deensimc_image_show_shadow_switch'] === 'yes' ? 'deensimc-shadow' : 'deensimc-no-shadow';
 	?>

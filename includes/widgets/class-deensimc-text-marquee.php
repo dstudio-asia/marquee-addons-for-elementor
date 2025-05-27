@@ -80,7 +80,7 @@ class Deensimc_Text_Marquee extends Widget_Base {
 		$marquee_orientation = $settings['deensimc_slide_position'] === 'yes' ? 'vertical' : 'horizontal';
 		$slide_direction_class = $settings['deensimc_slide_direction'] === 'yes' ? ' deensimc-marquee-reverse' : '';
 		$pause_on_hover = $settings['deensimc_pause_on_hover_switch'];
-		$animation_speed = $settings['deensimc_animation_speeds'];
+		$animation_speed = $settings['deensimc_text_animation_speed'];
 		$marquee_classes = $marquee_orientation." ".$slide_direction_class;
 		$show_shadow = $settings['deensimc_show_shadow_switch'] === 'yes' ? 'deensimc-shadow' : 'deensimc-no-shadow';
     ?>
@@ -107,7 +107,7 @@ class Deensimc_Text_Marquee extends Widget_Base {
 		let marquee_orientation = settings.deensimc_slide_position === 'yes' ? 'vertical' : 'horizontal';
 		let slide_direction_class = settings.deensimc_slide_direction === 'yes' ? ' deensimc-marquee-reverse' : '';
 		let pause_on_hover = settings.deensimc_pause_on_hover_switch;
-		let animation_speed = settings.deensimc_animation_speed_switch;
+		let animation_speed = settings.deensimc_text_animation_speed;
 		let marquee_classes = marquee_orientation + " " + slide_direction_class;
 		let show_shadow = settings.deensimc_show_shadow_switch === 'yes' ? 'deensimc-shadow' : 'deensimc-no-shadow';
 		#>

@@ -22,7 +22,7 @@
    :root {
     --deensimc-text-dark-gray: #555353;
     --deensimc-gap: 0px; 
-    --deensimc-duration: 30s;
+    --deensimc-duration: 20s;
     --deensimc-scroll-distance: calc(100% + var(--deensimc-gap));
     --deensimc-color-white: #ffffff;
   }
@@ -116,10 +116,6 @@
   .deensimc-text-marquee .deensimc-marquee-group svg {
     height: 20px;
     width: 20px;
-  }
-  
-  .deensimc-paused {
-    animation-play-state: paused;
   }
   
   .deensimc-marquee-group:nth-child(2),
