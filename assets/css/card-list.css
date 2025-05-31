@@ -1,263 +1,313 @@
+:root {
+  --card-list-deensimc-gap: 0px;
+  --card-list-deensimc-duration: 20s;
+  --card-list-deensimc-scroll-distance: calc(
+    100% + var(--card-list-deensimc-gap)
+  );
+}
+
 /* Main Wrapper Styles */
 .deensimc-card-list-wrapper {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .deensimc-card-list-item {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-   
-    margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  margin-bottom: 20px;
 }
 
 .deensimc-card-list-item:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 /* Card Number Styles */
 .deensimc-card-number {
-    font-size: 24px;
-    font-weight: bold;
-    z-index: 1;
+  font-size: 24px;
+  font-weight: bold;
+  z-index: 1;
 }
 
 .deensimc-card-number.position-top {
-    position: absolute;
-    left: 15px;
-    top: 15px;
-    background: #fff;
-    padding: 5px 10px;
-    border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  background: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .deensimc-card-number.position-beside-heading {
-    display: inline-block;
-    margin-right: 15px;
-    vertical-align: middle;
+  display: inline-block;
+  margin-right: 15px;
+  vertical-align: middle;
 }
 
 .deensimc-heading-with-number {
-    align-items: center;
+  align-items: center;
 }
 
 /* Content Wrapper Base Styles */
 .deensimc-card-content-wrapper {
-    display: flex;
-    width: 100%;
-    align-items:stretch;
-    overflow: hidden;  
-    border: 1px solid #272727; 
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+  overflow: hidden;
+  border: 1px solid #272727;
 }
 
 /* Left/Right Image Positioning */
 .image-position-left .deensimc-card-content-wrapper {
-    flex-direction: row;
+  flex-direction: row;
 }
 
 .image-position-right .deensimc-card-content-wrapper {
-    flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
-.deensimc-card-left-section{
-    padding:20px;
+.deensimc-card-left-section {
+  padding: 20px;
 }
 
 .image-position-left .deensimc-card-left-section,
 .image-position-right .deensimc-card-left-section {
-    flex: 1;
-    max-width: 100%;
-    /* padding: 20px; */
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  flex: 1;
+  max-width: 100%;
+  /* padding: 20px; */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .image-position-left .deensimc-card-image,
 .image-position-right .deensimc-card-image {
-    /* flex: 0 0 50%; */
-    max-width: 50%;
+  /* flex: 0 0 50%; */
+  max-width: 50%;
 }
 
 /* Top Image Positioning */
 .image-position-top .deensimc-card-content-wrapper {
-    flex-direction: column;
+  flex-direction: column;
 }
 /* Bottom Image Positioning */
 .image-position-bottom .deensimc-card-content-wrapper {
-    flex-direction: column;
+  flex-direction: column;
 }
 .image-position-top .deensimc-card-image {
-    order: -1;
-   
-    max-width: 100%;
-    margin-bottom: 15px;
-  
+  order: -1;
+
+  max-width: 100%;
+  margin-bottom: 15px;
 }
 .image-position-bottom .deensimc-card-image {
-    order: 1;
-   
-    max-width: 100%;
-    margin-bottom: 15px;
-  
+  order: 1;
+
+  max-width: 100%;
+  margin-bottom: 15px;
 }
 
 .image-position-top .deensimc-card-left-section {
-    width: 100%;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 .image-position-bottom .deensimc-card-left-section {
-    width: 100%;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 /* icon style */
 .elementor-icon-wrapper i {
-   
-    color: #272727;
-    font-size: 300px;
-
+  color: #272727;
+  font-size: 300px;
 }
 .elementor-icon-wrapper svg {
-    width: 300px;
-   
+  width: 300px;
 }
 
 /* Image Styles */
 .deensimc-card-image img {
-    display: block;
-    width: 100%;
-    height: 100%!important;
-    object-fit: cover;
-    /* margin-left: auto; */
+  display: block;
+  width: 100%;
+  height: 100% !important;
+  object-fit: cover;
+  /* margin-left: auto; */
 }
 /* In your widget's CSS file */
 .image-position-left .deensimc-card-image img {
-    margin-right: auto;
+  margin-right: auto;
 }
 .image-position-right .deensimc-card-image img {
-    margin-left: auto;
+  margin-left: auto;
 }
 
 /* Button Styles */
 .deensimc-card-button-wrapper {
-    margin-top: 15px;
-    display: flex;
+  margin-top: 15px;
+  display: flex;
 }
 
 .elementor-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-    transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: all 0.3s ease;
 }
 
 .elementor-button .elementor-button-icon {
-    display: inline-flex;
-    align-items: center;
+  display: inline-flex;
+  align-items: center;
 }
 
 .elementor-button .elementor-button-icon i {
-    transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 /* Button Position Classes */
 .elementor-button-position-left .deensimc-card-button-wrapper {
-    justify-content: flex-start;
+  justify-content: flex-start;
 }
 
 .elementor-button-position-center .deensimc-card-button-wrapper {
-    justify-content: center;
+  justify-content: center;
 }
 
 .elementor-button-position-right .deensimc-card-button-wrapper {
-    justify-content: flex-end;
+  justify-content: flex-end;
 }
 
 .elementor-button-position-justify .deensimc-card-button-wrapper {
-    width: 100%;
+  width: 100%;
 }
 
-.elementor-button-position-justify .deensimc-card-button-wrapper a.elementor-button {
-    flex: 1;
-    text-align: center;
+.elementor-button-position-justify
+  .deensimc-card-button-wrapper
+  a.elementor-button {
+  flex: 1;
+  text-align: center;
 }
 /* Horizontal Alignment Classes */
-.ha-left .deensimc-card-left-section { text-align: left; }
-.ha-center .deensimc-card-left-section { text-align: center; }
-.ha-right .deensimc-card-left-section { text-align: right; }
+.ha-left .deensimc-card-left-section {
+  text-align: left;
+}
+.ha-center .deensimc-card-left-section {
+  text-align: center;
+}
+.ha-right .deensimc-card-left-section {
+  text-align: right;
+}
 
 /* Vertical Alignment Classes (only for left/right image layouts) */
 .image-position-left .deensimc-card-content-wrapper,
 .image-position-right .deensimc-card-content-wrapper {
-    display: flex;
+  display: flex;
 }
 
-.va-flex-start .deensimc-card-content-wrapper { align-items: flex-start; }
-.va-center .deensimc-card-content-wrapper { align-items: center; }
-.va-flex-end .deensimc-card-content-wrapper { align-items: flex-end; }
+.va-flex-start .deensimc-card-content-wrapper {
+  align-items: flex-start;
+}
+.va-center .deensimc-card-content-wrapper {
+  align-items: center;
+}
+.va-flex-end .deensimc-card-content-wrapper {
+  align-items: flex-end;
+}
 
 /* Reset vertical alignment for top/bottom layouts */
 .image-position-top .deensimc-card-content-wrapper,
 .image-position-bottom .deensimc-card-content-wrapper {
-    align-items: stretch !important; /* Override vertical alignment */
+  align-items: stretch !important; /* Override vertical alignment */
 }
 
 /* Responsive Styles */
 @media (max-width: 1024px) {
-    /* Tablet specific button positioning */
-    .elementor-tablet-button-position-left .deensimc-card-button-wrapper {
-        justify-content: flex-start !important;
-    }
-    .elementor-tablet-button-position-center .deensimc-card-button-wrapper {
-        justify-content: center !important;
-    }
-    .elementor-tablet-button-position-right .deensimc-card-button-wrapper {
-        justify-content: flex-end !important;
-    }
+  /* Tablet specific button positioning */
+  .elementor-tablet-button-position-left .deensimc-card-button-wrapper {
+    justify-content: flex-start !important;
+  }
+  .elementor-tablet-button-position-center .deensimc-card-button-wrapper {
+    justify-content: center !important;
+  }
+  .elementor-tablet-button-position-right .deensimc-card-button-wrapper {
+    justify-content: flex-end !important;
+  }
 }
 
 @media (max-width: 767px) {
-    /* Mobile layout adjustments */
-    .deensimc-card-content-wrapper,
-    .image-position-left .deensimc-card-content-wrapper,
-    .image-position-right .deensimc-card-content-wrapper {
-        flex-direction: column;
-    }
+  /* Mobile layout adjustments */
+  .deensimc-card-content-wrapper,
+  .image-position-left .deensimc-card-content-wrapper,
+  .image-position-right .deensimc-card-content-wrapper {
+    flex-direction: column;
+  }
 
-    .deensimc-card-left-section,
-    .deensimc-card-image {
-        flex: 0 0 100% !important;
-        max-width: 100% !important;
-    }
+  .deensimc-card-left-section,
+  .deensimc-card-image {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
 
-    .image-position-right .deensimc-card-image,
-    .image-position-top .deensimc-card-image {
-        order: -1;
-    }
+  .image-position-right .deensimc-card-image,
+  .image-position-top .deensimc-card-image {
+    order: -1;
+  }
 
-    .deensimc-card-number.position-beside-heading {
-        display: block;
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
+  .deensimc-card-number.position-beside-heading {
+    display: block;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
 
-    /* Mobile specific button positioning */
-    .elementor-mobile-button-position-left .deensimc-card-button-wrapper {
-        justify-content: flex-start !important;
-    }
-    .elementor-mobile-button-position-center .deensimc-card-button-wrapper {
-        justify-content: center !important;
-    }
-    .elementor-mobile-button-position-right .deensimc-card-button-wrapper {
-        justify-content: flex-end !important;
-    }
+  /* Mobile specific button positioning */
+  .elementor-mobile-button-position-left .deensimc-card-button-wrapper {
+    justify-content: flex-start !important;
+  }
+  .elementor-mobile-button-position-center .deensimc-card-button-wrapper {
+    justify-content: center !important;
+  }
+  .elementor-mobile-button-position-right .deensimc-card-button-wrapper {
+    justify-content: flex-end !important;
+  }
+}
+
+.card-list-deensimc-marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  max-height: 500px;
+}
+.card-list-deensimc-marquee .card-list-deensimc-marquee-content {
+  display: inline-block;
+  animation: marqueeX var(--card-list-deensimc-duration) linear infinite;
+}
+
+.card-list-deensimc-marquee .deensimc-card-list-item {
+  display: inline-block;
+  margin-right: 32px;
+}
+
+@keyframes marqueeX {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-1 * var(--card-list-deensimc-scroll-distance)));
+  }
+}
+@keyframes marqueeY {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(calc(-1 * var(--card-list-deensimc-scroll-distance)));
+  }
 }
