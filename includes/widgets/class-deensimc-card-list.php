@@ -57,6 +57,8 @@ class Deensimc_Card_List_Widget extends Widget_Base
 					'image' => esc_html__('Image', 'marquee-addons-for-elementor'),
 					'icon' => esc_html__('Icon', 'marquee-addons-for-elementor'),
 					'background_image' => esc_html__('Overlay Image', 'marquee-addons-for-elementor'),
+					'marquee' => esc_html__('Marquee', 'marquee-addons-for-elementor'),
+					'card_stacked' => esc_html__('Card Stacked', 'marquee-addons-for-elementor'),
 
 				],
 				'default' => 'image',
@@ -175,7 +177,7 @@ class Deensimc_Card_List_Widget extends Widget_Base
 				'type' => Controls_Manager::REPEATER,
 				'fields' => $repeater->get_controls(),
 				'condition' => [
-					'deensimc_card_style' => ['image', 'background_image'],
+					'deensimc_card_style' => ['image', 'background_image', 'marquee', 'card_stacked'],
 				],
 				'default' => [
 					[
@@ -410,7 +412,7 @@ class Deensimc_Card_List_Widget extends Widget_Base
 							<?php endif; ?>
 						</div>
 
-						<?php if ($settings['deensimc_card_style'] == 'image' && isset($item['image']) && !empty($item['image']['url'])) { ?>
+						<?php if (($settings['deensimc_card_style'] == 'image' || $settings['deensimc_card_style'] == 'marquee' || $settings['deensimc_card_style'] == 'card_stacked') && isset($item['image']) && !empty($item['image']['url'])) { ?>
 							<div class="deensimc-card-image">
 								<?php echo Group_Control_Image_Size::get_attachment_image_html($item, 'thumbnail', 'image'); ?>
 							</div>
@@ -518,7 +520,7 @@ class Deensimc_Card_List_Widget extends Widget_Base
 													<# } #>
 											</div>
 
-											<# if (settings.deensimc_card_style==='image' && item.image.url) { #>
+											<# if ((settings.deensimc_card_style==='image' || settings.deensimc_card_style==='marquee' ||settings.deensimc_card_style==='card_stacked') && item.image.url) { #>
 												<div class="deensimc-card-image">
 													<img src="{{ imageUrl }}" alt="">
 												</div>
