@@ -325,7 +325,15 @@ class Deensimc_Card_List_Widget extends Widget_Base
 			return;
 		}
 
+		if($settings['deensimc_card_style'] === 'marquee'){
+			include_once DEENSIMC__DIR__ . '/includes/widgets/render/card-marquee-render.php';
+		}else{
+
+		
+
 ?>
+
+		
 		<div class="deensimc-card-list-wrapper">
 
 			<?php foreach ($card_settings as $index => $item) :
@@ -436,6 +444,7 @@ class Deensimc_Card_List_Widget extends Widget_Base
 
 
 	<?php
+		}
 	}
 
 
