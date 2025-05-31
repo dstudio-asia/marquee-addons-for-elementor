@@ -222,6 +222,7 @@ final class Marquee {
 		wp_register_style( 'deensimc-marquee-style', DEENSIMC_ASSETS_URL . 'css/marquee.css', null, self::VERSION, false );
 		wp_register_style( 'deensimc-testimonial-style', DEENSIMC_ASSETS_URL . 'css/testimonial.css', null, self::VERSION, false );
 		wp_register_style( 'deensimc-video-style', DEENSIMC_ASSETS_URL . 'css/video.css', null, self::VERSION, false );
+		wp_register_style('deensimc-cardlist-style', DEENSIMC_ASSETS_URL . 'css/card-list.css', null, self::VERSION, false);
 		
 		wp_enqueue_style( 'deensimc-swiper-style' );
 		wp_enqueue_style( 'deensimc-accordion-style' );
@@ -229,6 +230,7 @@ final class Marquee {
 		wp_enqueue_style( 'deensimc-marquee-style' );
 		wp_enqueue_style( 'deensimc-testimonial-style' );
 		wp_enqueue_style( 'deensimc-video-style' );
+		wp_enqueue_style('deensimc-cardlist-style');
 
 	}
 
@@ -293,12 +295,23 @@ final class Marquee {
 		require_once(  __DIR__ . '/widgets/traits/text-marquee/content-additional-options.php' );
 		require_once(  __DIR__ . '/widgets/traits/text-marquee/style-text-contents.php' );
 
+		require_once __DIR__ . '/widgets/traits/cardlist/clw-content-tab-trait.php';
+		require_once __DIR__ . '/widgets/traits/cardlist/clw-button-tab-trait.php';
+		require_once __DIR__ . '/widgets/traits/cardlist/clw-card-control-style.php';
+		require_once __DIR__ . '/widgets/traits/cardlist/clw-content-control-style.php';
+		require_once __DIR__ . '/widgets/traits/cardlist/clw-button-control-style.php';
+		require_once __DIR__ . '/widgets/traits/cardlist/clw-image-control-style.php';
+		require_once __DIR__ . '/widgets/traits/cardlist/clw-icon-control-style.php';
+		require_once __DIR__ . '/widgets/traits/cardlist/clw-background-image-control-style.php';
+
 		require_once(  __DIR__ . '/widgets/class-deensimc-image-marquee.php' );
 		require_once(  __DIR__ . '/widgets/class-deensimc-stacked-slider.php' );
 		require_once(  __DIR__ . '/widgets/class-deensimc-image-accordion.php' );
 		require_once(  __DIR__ . '/widgets/class-deensimc-text-marquee.php' );
 		require_once(  __DIR__ . '/widgets/class-deensimc-testimonial-marquee.php' );
 		require_once(  __DIR__ . '/widgets/class-deensimc-video-marquee.php' );
+		require_once(  __DIR__ . '/widgets/class-deensimc-card-list.php');
+	
 		
 		$widgets_manager->register( new \Deensimc_Image_Marquee() );
 		$widgets_manager->register( new \Deensimc_Stacked_Slider() );
@@ -306,6 +319,7 @@ final class Marquee {
 		$widgets_manager->register( new \Deensimc_Text_Marquee() );
 		$widgets_manager->register( new \Deensimc_Testimonial_Marquee() );
 		$widgets_manager->register( new \Deensimc_Video_Marquee() );
+		$widgets_manager->register( new \Card_List_Widget());
 
 	}
 
