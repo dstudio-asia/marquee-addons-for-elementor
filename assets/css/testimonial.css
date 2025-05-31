@@ -82,17 +82,13 @@
     z-index: 1;
   }
   
-  .deensimc-tes .deensimc-tes-logo .deensimc-tes-content.deensimc-tes-content-reverse {
-    animation: deensimc-scrolling-reverse var(--deensimc-marquee-animation-duration) linear infinite;
-  }
-  
   .deensimc-tes .deensimc-tes-logo .deensimc-tes-content {
+    white-space: normal;
     list-style: none;
     height: 100%;
     display: flex;
     gap: 20px;
     align-items: start;
-    animation: deensimc-scrolling var(--deensimc-marquee-animation-duration) linear infinite;
   }
   
   .deensimc-tes .deensimc-tes-logo .deensimc-tes-content .deensimc-tes-item {

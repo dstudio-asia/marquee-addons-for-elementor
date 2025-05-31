@@ -6,7 +6,7 @@
 
   // Initialize Elementor frontend hooks on window load
   $(window).on("elementor/frontend/init", () => {
-    // Helper function for hover event handling
+      // Helper function for hover event handling
     const handlePauseOnHover = (element, isPausedOnHover) => {
       if (isPausedOnHover === "yes") {
         element.off("mouseenter mouseleave").hover(
@@ -22,61 +22,7 @@
       }
     };
 
-    // Ensures the marquee group has the target number of children.
-    const adjustChildElements = (marqueeGroup, targetCount) => {
-      let currentChildren = marqueeGroup.children();
-      let currentChildCount = currentChildren.length;
-
-      // Remove extra children if above target
-      if (currentChildCount > targetCount) {
-        currentChildren.slice(targetCount).remove();
-      }
-
-      // Clone children if below target
-      else if (currentChildCount < targetCount) {
-        let documentFragment = document.createDocumentFragment();
-        let clonesNeeded = targetCount - currentChildCount;
-
-        for (let i = 0; i < clonesNeeded; i++) {
-          let childToClone = currentChildren.eq(i % currentChildCount);
-          childToClone.clone().appendTo(documentFragment);
-        }
-
-        marqueeGroup.append(documentFragment);
-      }
-    };
-
-    const duplicateChildElements = (scope, widgetPrefix) => {
-      let marqueeGroups = $(scope).find(`.${widgetPrefix}-marquee-group`);
-      let targetChildCount = 10;
-
-      marqueeGroups.each(function () {
-        let childElements = $(this).children();
-        let childCount = childElements.length;
-
-        if (childCount === 0) return;
-
-        if (childCount < targetChildCount) {
-          let duplicatesNeeded = targetChildCount - childCount;
-          let cloneCount = Math.floor(duplicatesNeeded / childCount);
-
-          for (let i = 0; i < cloneCount; i++) {
-            childElements.clone().appendTo($(this));
-          }
-
-          let remainingDuplicates =
-            targetChildCount - $(this).children().length;
-          if (remainingDuplicates > 0) {
-            childElements
-              .slice(0, remainingDuplicates)
-              .clone()
-              .appendTo($(this));
-          }
-        }
-      });
-    };
-
-      const setupMarquee = (scope, widgetPrefix) => {
+    const setupMarquee = (scope, widgetPrefix) => {
       let marqueeContainer = $(scope).find(`.${widgetPrefix}-marquee`);
       let marqueeGroup = $(scope).find(`.${widgetPrefix}-marquee-group`);
 
@@ -105,19 +51,17 @@
       originalChildElements.each(function () {
         marqueeGroup.append($(this).clone(true, true));
       });
-		  console.log("originalChildElements", originalChildElements)
 
      	let originalContentSize = 0;
-		const originalChildElementsArray = Array.from(originalChildElements);
-		originalContentSize = originalChildElementsArray.reduce((accumulator, currentElement) => {
-			let aspect = (currentElement.clientWidth + currentElement.clientHeight) ;
-			return accumulator + aspect;
-		}, 0);
+		  const originalChildElementsArray = Array.from(originalChildElements);
+      originalContentSize = originalChildElementsArray.reduce((accumulator, currentElement) => {
+        let aspect = (currentElement.clientWidth + currentElement.clientHeight) ;
+        return accumulator + aspect;
+      }, 0);
 		
 	
       if (isVertical) {
-        // For VERTICAL text marquee, ensure items can take their natural height based on their content and fixed width
-
+        // Vertical
         originalChildElements.each(function () {
           // Temporarily ensure the item is block to measure height correctly if it was display:none
           let $item = $(this);
@@ -175,8 +119,6 @@
         console.warn("Marquee speed is 0 or negative. Animation paused.");
         return;
       }
-		console.log("originalContentSize", originalContentSize)
-		console.log("pixelsPerSecond", pixelsPerSecond)
 
       let animationDuration = originalContentSize / pixelsPerSecond;
 		  
@@ -210,7 +152,7 @@
       e.preventDefault();
       let toggleElement = $(e.currentTarget);
       let blockquoteElement = toggleElement.closest(".deensimc-tes-text");
-      let widget = $(".deensimc-tes");
+      let widget = $(".deensimc-tes .deensimc-marquee");
 
       let fullText = blockquoteElement.data("full-text");
       let truncatedText = blockquoteElement.data("truncated-text");
@@ -330,44 +272,16 @@
     elementorFrontend.hooks.addAction(
       "frontend/element_ready/deensimc-testimonial.default",
       (scope) => {
-        let rootElement = $(document.documentElement);
-        let displayedTestimonialCount = parseInt(
-          rootElement.css("--deensimc-marquee-elements-displayed"),
-          10
-        );
-        let testimonialWrapper = $(scope).find(".deensimc-tes-content");
-        let isPausedOnHover =
-          $(scope).find(".deensimc-tes").data("pause-on-hover") || "no";
+        let animationSpeed = $(scope)
+          .find(".deensimc-marquee")
+          .data("animation-speed");
         let isAnimationEnabled =
-          $(scope).find(".deensimc-tes").data("animation-status") || "no";
-        let animationSpeed =
-          ($(scope).find(".deensimc-tes").data("animation-speed") || 100) / 100;
-
-        rootElement.css(
-          "--deensimc-marquee-elements",
-          testimonialWrapper.children().length
-        );
-        rootElement.css(
-          "--deensimc-marquee-animation-duration",
-          `${animationSpeed}s`
-        );
-
-        // Duplicate testimonials if necessary
-        let fragment = document.createDocumentFragment();
-        for (let i = 0; i < displayedTestimonialCount; i++) {
-          testimonialWrapper.children().each(function () {
-            fragment.appendChild(this.cloneNode(true));
-          });
-        }
-        testimonialWrapper.append(fragment);
-
-        if (isAnimationEnabled !== "yes") {
-          testimonialWrapper.css("animation-play-state", "paused");
+          $(scope).find(".deensimc-marquee").data("animation-status") || "no";
+        if (animationSpeed && isAnimationEnabled === "yes") {
+          setupMarquee(scope, "deensimc");
         } else {
-          testimonialWrapper.css("animation-play-state", "running");
-          handlePauseOnHover(testimonialWrapper, isPausedOnHover);
+          $(scope).find(".deensimc-marquee-group").addClass("deensimc-paused");
         }
-
         // Show more/less text functionality
         $(scope)
           .find(".deensimc-tes-text")
@@ -378,17 +292,17 @@
               .replace("Show more", "")
               .trim();
             let wordLimit =
-              $(scope).find(".deensimc-tes").data("excerpt-length") || 50;
+              $(scope).find(".deensimc-tes .deensimc-marquee").data("excerpt-length") || 50;
             let showMoreText =
-              $(scope).find(".deensimc-tes").data("show-more") || "Show more";
+              $(scope).find(".deensimc-tes .deensimc-marquee").data("show-more") || "Show more";
             let showLessText =
-              $(scope).find(".deensimc-tes").data("show-less") || "Show less";
+              $(scope).find(".deensimc-tes .deensimc-marquee").data("show-less") || "Show less";
             let quoteLeft =
-              $(scope).find(".deensimc-tes").data("quote-left") ||
-              "fa fa-quote-left";
+              $(scope).find(".deensimc-tes .deensimc-marquee").data("quote-left") ||
+              "";
             let quoteRight =
-              $(scope).find(".deensimc-tes").data("quote-right") ||
-              "fa fa-quote-right";
+              $(scope).find(".deensimc-tes .deensimc-marquee").data("quote-right") ||
+              "";
 
             // Store truncated and full text in the element for reuse
             const truncateText = (text, limit) => {
@@ -421,10 +335,10 @@
           </div>
         `);
 
-            blockquoteElement
-              .off("click", ".deensimc-toggle")
-              .on("click", ".deensimc-toggle", toggleBlockquote);
-          });
+          blockquoteElement
+            .off("click", ".deensimc-toggle")
+            .on("click", ".deensimc-toggle", toggleBlockquote);
+        });
       }
     );
 
@@ -435,7 +349,7 @@
         let isAnimationEnabled =
           $(scope).find(".deensimc-marquee").data("animation-status") || "no";
         let animationSpeed =
-          $(scope).find(".deensimc-marquee").data("animation-speed") || 5000;
+          $(scope).find(".deensimc-marquee").data("animation-speed") || 50;
 
         if (animationSpeed && isAnimationEnabled === "yes") {
           setupMarquee(scope, "deensimc");

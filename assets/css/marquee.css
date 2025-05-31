@@ -22,7 +22,7 @@
    :root {
     --deensimc-text-dark-gray: #555353;
     --deensimc-gap: 0px; 
-    --deensimc-duration: 20s;
+    --deensimc-duration: auto;
     --deensimc-scroll-distance: calc(100% + var(--deensimc-gap));
     --deensimc-color-white: #ffffff;
   }
