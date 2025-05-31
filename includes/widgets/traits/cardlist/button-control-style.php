@@ -6,7 +6,7 @@ use \Elementor\Group_Control_Border;
 use \Elementor\Repeater;
 use \Elementor\Utils;
 
-trait CLWButtonControlStyleTrait
+trait ButtonControlStyleTrait
 {
 	function clw_button_control_style($control)
 	{

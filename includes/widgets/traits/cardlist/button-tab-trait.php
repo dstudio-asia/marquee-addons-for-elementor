@@ -5,7 +5,7 @@ use \Elementor\Controls_Manager;
 use \Elementor\Repeater;
 use \Elementor\Utils;
 
-trait CLWButtonTabTrait
+trait ButtonTabTrait
 {
 	protected function clw_button_control_tab($repeater, $tab_name, $prefix = '')
 	{

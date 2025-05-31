@@ -5,7 +5,7 @@ use \Elementor\Controls_Manager;
 use \Elementor\Repeater;
 use \Elementor\Utils;
 
-trait CLWContentTabTrait
+trait ContentTabTrait
 {
 	protected function clw_content_control_tab($repeater, $tab_name,$prefix = '')
 	{

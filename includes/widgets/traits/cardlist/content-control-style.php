@@ -5,7 +5,7 @@ use \Elementor\Repeater;
 use \Elementor\Utils;
 use \Elementor\Group_Control_Text_Stroke;
 
-trait CLWContentControlStyleTrait
+trait ContentControlStyleTrait
 {
 	function clw_content_control_style($control)
 	{
@@ -24,7 +24,7 @@ trait CLWContentControlStyleTrait
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', 'em', '%'],
 				'selectors' => [
-					'{{WRAPPER}} .clw-card-left-section' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .deensimc-card-left-section' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -45,7 +45,7 @@ trait CLWContentControlStyleTrait
 				'label' => esc_html__('Color', 'elementor-addon'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .clw-card-number' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .deensimc-card-number' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -54,7 +54,7 @@ trait CLWContentControlStyleTrait
 			\Elementor\Group_Control_Typography::get_type(),
 			[
 				'name' => 'number_typography',
-				'selector' => '{{WRAPPER}} .clw-card-number',
+				'selector' => '{{WRAPPER}} .deensimc-card-number',
 			]
 		);
 
@@ -138,7 +138,7 @@ trait CLWContentControlStyleTrait
 				'label' => esc_html__('Color', 'elementor-addon'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .clw-card-description' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .deensimc-card-description' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -147,7 +147,7 @@ trait CLWContentControlStyleTrait
 			\Elementor\Group_Control_Typography::get_type(),
 			[
 				'name' => 'description_typography',
-				'selector' => '{{WRAPPER}} .clw-card-description',
+				'selector' => '{{WRAPPER}} .deensimc-card-description',
 			]
 		);
 		$control->add_responsive_control(
@@ -166,7 +166,7 @@ trait CLWContentControlStyleTrait
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .clw-card-description' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .deensimc-card-description' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);

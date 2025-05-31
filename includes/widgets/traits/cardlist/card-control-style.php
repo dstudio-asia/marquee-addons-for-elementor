@@ -4,7 +4,7 @@ use \Elementor\Controls_Manager;
 use \Elementor\Repeater;
 use \Elementor\Utils;
 
-trait CLWCardControlStyleTrait{
+trait CardControlStyleTrait{
 	function clw_card_control_style($control) {
 		$control->start_controls_section(
 			'section_card_style',
@@ -27,7 +27,7 @@ trait CLWCardControlStyleTrait{
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .clw-card-list-item:not(:last-child)' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .deensimc-card-list-item:not(:last-child)' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -45,7 +45,7 @@ trait CLWCardControlStyleTrait{
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .clw-card-content-wrapper' => 'gap: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .deensimc-card-content-wrapper' => 'gap: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -75,16 +75,16 @@ trait CLWCardControlStyleTrait{
 
 
 				'selectors' => [
-					'{{WRAPPER}} .clw-card-left-section' => 'align-items: {{VALUE}};',
+					'{{WRAPPER}} .deensimc-card-left-section' => 'align-items: {{VALUE}};',
 					// Image Position: Top
-					'{{WRAPPER}}.align-start.image-position-top .clw-card-image' => 'margin-left: 0; margin-right: auto;',
-					'{{WRAPPER}}.align-center.image-position-top .clw-card-image' => 'margin-inline: auto;',
-					'{{WRAPPER}}.align-end.image-position-top .clw-card-image' => 'margin-left: auto; margin-right: 0;',
+					'{{WRAPPER}}.align-start.image-position-top .deensimc-card-image' => 'margin-left: 0; margin-right: auto;',
+					'{{WRAPPER}}.align-center.image-position-top .deensimc-card-image' => 'margin-inline: auto;',
+					'{{WRAPPER}}.align-end.image-position-top .deensimc-card-image' => 'margin-left: auto; margin-right: 0;',
 
 					// Image Position: Bottom
-					'{{WRAPPER}}.align-start.image-position-bottom .clw-card-image' => 'margin-left: 0; margin-right: auto;',
-					'{{WRAPPER}}.align-center.image-position-bottom .clw-card-image' => 'margin-inline: auto;',
-					'{{WRAPPER}}.align-end.image-position-bottom .clw-card-image' => 'margin-left: auto; margin-right: 0;',
+					'{{WRAPPER}}.align-start.image-position-bottom .deensimc-card-image' => 'margin-left: 0; margin-right: auto;',
+					'{{WRAPPER}}.align-center.image-position-bottom .deensimc-card-image' => 'margin-inline: auto;',
+					'{{WRAPPER}}.align-end.image-position-bottom .deensimc-card-image' => 'margin-left: auto; margin-right: 0;',
 				],
 				'condition' => [
 					'deensimc_card_style' => ['image', 'icon'],
@@ -116,7 +116,7 @@ trait CLWCardControlStyleTrait{
 				],
 				'default' => 'left',
 				'selectors' => [
-					'{{WRAPPER}} .clw-card-left-section' => 'align-items: {{VALUE}};flex: 1;max-width: 100%;display: flex;flex-direction: column;gap: 15px;',
+					'{{WRAPPER}} .deensimc-card-left-section' => 'align-items: {{VALUE}};flex: 1;max-width: 100%;display: flex;flex-direction: column;gap: 15px;',
 
 				],
 				'condition' => [
@@ -150,8 +150,8 @@ trait CLWCardControlStyleTrait{
 				'default' => 'center',
 				'selectors' => [
 					// Only for left/right image layouts (flex-direction: row)
-					'{{WRAPPER}}.image-position-left .clw-card-content-wrapper' => 'align-items: {{VALUE}};',
-					'{{WRAPPER}}.image-position-right .clw-card-content-wrapper' => 'align-items: {{VALUE}};',
+					'{{WRAPPER}}.image-position-left .deensimc-card-content-wrapper' => 'align-items: {{VALUE}};',
+					'{{WRAPPER}}.image-position-right .deensimc-card-content-wrapper' => 'align-items: {{VALUE}};',
 				],
 				'prefix_class' => 'va-', // va = vertical alignment
 				'condition' => [
@@ -171,7 +171,7 @@ trait CLWCardControlStyleTrait{
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', 'em', '%'],
 				'selectors' => [
-					'{{WRAPPER}} .clw-card-content-wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .deensimc-card-content-wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -183,7 +183,7 @@ trait CLWCardControlStyleTrait{
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', 'em', '%'],
 				'selectors' => [
-					'{{WRAPPER}} .clw-card-list-item' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .deensimc-card-list-item' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -196,7 +196,7 @@ trait CLWCardControlStyleTrait{
 				'label' => esc_html__('Background Color', 'elementor-addon'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .clw-card-content-wrapper' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .deensimc-card-content-wrapper' => 'background-color: {{VALUE}};',
 				],
 				'condition' => [
 					'deensimc_card_style' => ['image', 'icon'],
@@ -208,7 +208,7 @@ trait CLWCardControlStyleTrait{
 			\Elementor\Group_Control_Border::get_type(),
 			[
 				'name' => 'card_border',
-				'selector' => '{{WRAPPER}} .clw-card-content-wrapper',
+				'selector' => '{{WRAPPER}} .deensimc-card-content-wrapper',
 				'condition' => [
 					'deensimc_card_style' => ['image', 'icon'],
 				],
@@ -224,7 +224,7 @@ trait CLWCardControlStyleTrait{
 				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
 				'separator' => 'after',
 				'selectors' => [
-					'{{WRAPPER}} .clw-card-content-wrapper' => 'border-radius: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .deensimc-card-content-wrapper' => 'border-radius: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -235,7 +235,7 @@ trait CLWCardControlStyleTrait{
 			\Elementor\Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'card_box_shadow',
-				'selector' => '{{WRAPPER}} .clw-card-list-item',
+				'selector' => '{{WRAPPER}} .deensimc-card-list-item',
 			]
 		);
 

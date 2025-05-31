@@ -1,10 +1,10 @@
 /* Main Wrapper Styles */
-.clw-card-list-wrapper {
+.deensimc-card-list-wrapper {
     display: flex;
     flex-direction: column;
 }
 
-.clw-card-list-item {
+.deensimc-card-list-item {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -12,18 +12,18 @@
     margin-bottom: 20px;
 }
 
-.clw-card-list-item:last-child {
+.deensimc-card-list-item:last-child {
     margin-bottom: 0;
 }
 
 /* Card Number Styles */
-.clw-card-number {
+.deensimc-card-number {
     font-size: 24px;
     font-weight: bold;
     z-index: 1;
 }
 
-.clw-card-number.position-top {
+.deensimc-card-number.position-top {
     position: absolute;
     left: 15px;
     top: 15px;
@@ -33,18 +33,18 @@
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.clw-card-number.position-beside-heading {
+.deensimc-card-number.position-beside-heading {
     display: inline-block;
     margin-right: 15px;
     vertical-align: middle;
 }
 
-.clw-heading-with-number {
+.deensimc-heading-with-number {
     align-items: center;
 }
 
 /* Content Wrapper Base Styles */
-.clw-card-content-wrapper {
+.deensimc-card-content-wrapper {
     display: flex;
     width: 100%;
     align-items:stretch;
@@ -53,19 +53,19 @@
 }
 
 /* Left/Right Image Positioning */
-.image-position-left .clw-card-content-wrapper {
+.image-position-left .deensimc-card-content-wrapper {
     flex-direction: row;
 }
 
-.image-position-right .clw-card-content-wrapper {
+.image-position-right .deensimc-card-content-wrapper {
     flex-direction: row-reverse;
 }
-.clw-card-left-section{
+.deensimc-card-left-section{
     padding:20px;
 }
 
-.image-position-left .clw-card-left-section,
-.image-position-right .clw-card-left-section {
+.image-position-left .deensimc-card-left-section,
+.image-position-right .deensimc-card-left-section {
     flex: 1;
     max-width: 100%;
     /* padding: 20px; */
@@ -74,28 +74,28 @@
     gap: 15px;
 }
 
-.image-position-left .clw-card-image,
-.image-position-right .clw-card-image {
+.image-position-left .deensimc-card-image,
+.image-position-right .deensimc-card-image {
     /* flex: 0 0 50%; */
     max-width: 50%;
 }
 
 /* Top Image Positioning */
-.image-position-top .clw-card-content-wrapper {
+.image-position-top .deensimc-card-content-wrapper {
     flex-direction: column;
 }
 /* Bottom Image Positioning */
-.image-position-bottom .clw-card-content-wrapper {
+.image-position-bottom .deensimc-card-content-wrapper {
     flex-direction: column;
 }
-.image-position-top .clw-card-image {
+.image-position-top .deensimc-card-image {
     order: -1;
    
     max-width: 100%;
     margin-bottom: 15px;
   
 }
-.image-position-bottom .clw-card-image {
+.image-position-bottom .deensimc-card-image {
     order: 1;
    
     max-width: 100%;
@@ -103,14 +103,14 @@
   
 }
 
-.image-position-top .clw-card-left-section {
+.image-position-top .deensimc-card-left-section {
     width: 100%;
     padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
-.image-position-bottom .clw-card-left-section {
+.image-position-bottom .deensimc-card-left-section {
     width: 100%;
     padding: 20px;
     display: flex;
@@ -131,7 +131,7 @@
 }
 
 /* Image Styles */
-.clw-card-image img {
+.deensimc-card-image img {
     display: block;
     width: 100%;
     height: 100%!important;
@@ -139,15 +139,15 @@
     /* margin-left: auto; */
 }
 /* In your widget's CSS file */
-.image-position-left .clw-card-image img {
+.image-position-left .deensimc-card-image img {
     margin-right: auto;
 }
-.image-position-right .clw-card-image img {
+.image-position-right .deensimc-card-image img {
     margin-left: auto;
 }
 
 /* Button Styles */
-.clw-card-button-wrapper {
+.deensimc-card-button-wrapper {
     margin-top: 15px;
     display: flex;
 }
@@ -170,94 +170,94 @@
 }
 
 /* Button Position Classes */
-.elementor-button-position-left .clw-card-button-wrapper {
+.elementor-button-position-left .deensimc-card-button-wrapper {
     justify-content: flex-start;
 }
 
-.elementor-button-position-center .clw-card-button-wrapper {
+.elementor-button-position-center .deensimc-card-button-wrapper {
     justify-content: center;
 }
 
-.elementor-button-position-right .clw-card-button-wrapper {
+.elementor-button-position-right .deensimc-card-button-wrapper {
     justify-content: flex-end;
 }
 
-.elementor-button-position-justify .clw-card-button-wrapper {
+.elementor-button-position-justify .deensimc-card-button-wrapper {
     width: 100%;
 }
 
-.elementor-button-position-justify .clw-card-button-wrapper a.elementor-button {
+.elementor-button-position-justify .deensimc-card-button-wrapper a.elementor-button {
     flex: 1;
     text-align: center;
 }
 /* Horizontal Alignment Classes */
-.ha-left .clw-card-left-section { text-align: left; }
-.ha-center .clw-card-left-section { text-align: center; }
-.ha-right .clw-card-left-section { text-align: right; }
+.ha-left .deensimc-card-left-section { text-align: left; }
+.ha-center .deensimc-card-left-section { text-align: center; }
+.ha-right .deensimc-card-left-section { text-align: right; }
 
 /* Vertical Alignment Classes (only for left/right image layouts) */
-.image-position-left .clw-card-content-wrapper,
-.image-position-right .clw-card-content-wrapper {
+.image-position-left .deensimc-card-content-wrapper,
+.image-position-right .deensimc-card-content-wrapper {
     display: flex;
 }
 
-.va-flex-start .clw-card-content-wrapper { align-items: flex-start; }
-.va-center .clw-card-content-wrapper { align-items: center; }
-.va-flex-end .clw-card-content-wrapper { align-items: flex-end; }
+.va-flex-start .deensimc-card-content-wrapper { align-items: flex-start; }
+.va-center .deensimc-card-content-wrapper { align-items: center; }
+.va-flex-end .deensimc-card-content-wrapper { align-items: flex-end; }
 
 /* Reset vertical alignment for top/bottom layouts */
-.image-position-top .clw-card-content-wrapper,
-.image-position-bottom .clw-card-content-wrapper {
+.image-position-top .deensimc-card-content-wrapper,
+.image-position-bottom .deensimc-card-content-wrapper {
     align-items: stretch !important; /* Override vertical alignment */
 }
 
 /* Responsive Styles */
 @media (max-width: 1024px) {
     /* Tablet specific button positioning */
-    .elementor-tablet-button-position-left .clw-card-button-wrapper {
+    .elementor-tablet-button-position-left .deensimc-card-button-wrapper {
         justify-content: flex-start !important;
     }
-    .elementor-tablet-button-position-center .clw-card-button-wrapper {
+    .elementor-tablet-button-position-center .deensimc-card-button-wrapper {
         justify-content: center !important;
     }
-    .elementor-tablet-button-position-right .clw-card-button-wrapper {
+    .elementor-tablet-button-position-right .deensimc-card-button-wrapper {
         justify-content: flex-end !important;
     }
 }
 
 @media (max-width: 767px) {
     /* Mobile layout adjustments */
-    .clw-card-content-wrapper,
-    .image-position-left .clw-card-content-wrapper,
-    .image-position-right .clw-card-content-wrapper {
+    .deensimc-card-content-wrapper,
+    .image-position-left .deensimc-card-content-wrapper,
+    .image-position-right .deensimc-card-content-wrapper {
         flex-direction: column;
     }
 
-    .clw-card-left-section,
-    .clw-card-image {
+    .deensimc-card-left-section,
+    .deensimc-card-image {
         flex: 0 0 100% !important;
         max-width: 100% !important;
     }
 
-    .image-position-right .clw-card-image,
-    .image-position-top .clw-card-image {
+    .image-position-right .deensimc-card-image,
+    .image-position-top .deensimc-card-image {
         order: -1;
     }
 
-    .clw-card-number.position-beside-heading {
+    .deensimc-card-number.position-beside-heading {
         display: block;
         margin-right: 0;
         margin-bottom: 10px;
     }
 
     /* Mobile specific button positioning */
-    .elementor-mobile-button-position-left .clw-card-button-wrapper {
+    .elementor-mobile-button-position-left .deensimc-card-button-wrapper {
         justify-content: flex-start !important;
     }
-    .elementor-mobile-button-position-center .clw-card-button-wrapper {
+    .elementor-mobile-button-position-center .deensimc-card-button-wrapper {
         justify-content: center !important;
     }
-    .elementor-mobile-button-position-right .clw-card-button-wrapper {
+    .elementor-mobile-button-position-right .deensimc-card-button-wrapper {
         justify-content: flex-end !important;
     }
 }

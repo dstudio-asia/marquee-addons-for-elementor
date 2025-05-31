@@ -4,7 +4,7 @@
 use \Elementor\Controls_Manager;
 
 
-trait CLWBackgroundImageControlStyleTrait
+trait BackgroundImageControlStyleTrait
 {
 	function clw_background_image_control_style($control)
 	{
@@ -33,7 +33,7 @@ trait CLWBackgroundImageControlStyleTrait
 					'custom' => esc_html__('Custom', 'textdomain'),
 				],
 				'selectors' => [
-					'{{WRAPPER}} .clw-card-list-item[style*="background-image"]' => 'background-size: {{VALUE}};',
+					'{{WRAPPER}} .deensimc-card-list-item[style*="background-image"]' => 'background-size: {{VALUE}};',
 				],
 			]
 		);
@@ -59,7 +59,7 @@ trait CLWBackgroundImageControlStyleTrait
 					'unit' => '%',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .clw-card-list-item[style*="background-image"]' => 'background-size: {{SIZE}}{{UNIT}} auto;',
+					'{{WRAPPER}} .deensimc-card-list-item[style*="background-image"]' => 'background-size: {{SIZE}}{{UNIT}} auto;',
 				],
 				'condition' => [
 					'background_size' => 'custom',
@@ -86,7 +86,7 @@ trait CLWBackgroundImageControlStyleTrait
 					'bottom right' => esc_html__('Bottom Right', 'textdomain'),
 				],
 				'selectors' => [
-					'{{WRAPPER}} .clw-card-list-item' => 'background-position: {{VALUE}};',
+					'{{WRAPPER}} .deensimc-card-list-item' => 'background-position: {{VALUE}};',
 				],
 			]
 		);
@@ -105,7 +105,7 @@ trait CLWBackgroundImageControlStyleTrait
 					'repeat-y' => esc_html__('Repeat Y', 'textdomain'),
 				],
 				'selectors' => [
-					'{{WRAPPER}} .clw-card-list-item[style*="background-image"]' => 'background-repeat: {{VALUE}};',
+					'{{WRAPPER}} .deensimc-card-list-item[style*="background-image"]' => 'background-repeat: {{VALUE}};',
 				],
 			]
 		);
@@ -123,7 +123,7 @@ trait CLWBackgroundImageControlStyleTrait
 					'local' => esc_html__('Local', 'textdomain'),
 				],
 				'selectors' => [
-					'{{WRAPPER}} .clw-card-list-item[style*="background-image"]' => 'background-attachment: {{VALUE}};',
+					'{{WRAPPER}} .deensimc-card-list-item[style*="background-image"]' => 'background-attachment: {{VALUE}};',
 				],
 			]
 		);
@@ -147,7 +147,7 @@ trait CLWBackgroundImageControlStyleTrait
 					'difference' => esc_html__('Difference', 'textdomain'),
 				],
 				'selectors' => [
-					'{{WRAPPER}} .clw-card-list-item[style*="background-image"]' => 'background-blend-mode: {{VALUE}};',
+					'{{WRAPPER}} .deensimc-card-list-item[style*="background-image"]' => 'background-blend-mode: {{VALUE}};',
 				],
 			]
 		);
@@ -159,7 +159,7 @@ trait CLWBackgroundImageControlStyleTrait
 				'label' => esc_html__('Overlay Color', 'textdomain'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .clw-card-list-item[style*="background-image"]::after' => 'content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: {{VALUE}};',
+					'{{WRAPPER}} .deensimc-card-list-item[style*="background-image"]::after' => 'content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -182,7 +182,7 @@ trait CLWBackgroundImageControlStyleTrait
 					'size' => 30,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .clw-card-list-item[style*="background-image"]::after' => 'opacity: calc({{SIZE}} / 100);',
+					'{{WRAPPER}} .deensimc-card-list-item[style*="background-image"]::after' => 'opacity: calc({{SIZE}} / 100);',
 				],
 			]
 		);

@@ -9,9 +9,9 @@ use Elementor\Widget_Base;
 use Elementor\Group_Control_Image_Size;
 
 
-class Card_List_Widget extends Widget_Base
+class Deensimc_Card_List_Widget extends Widget_Base
 {
-	use CLWContentTabTrait, CLWButtonTabTrait, CLWCardControlStyleTrait, CLWContentControlStyleTrait, CLWButtonControlStyleTrait, CLWImageControlStyleTrait, CLWIconControlStyleTrait, CLWBackgroundImageControlStyleTrait;
+	use ContentTabTrait, ButtonTabTrait, CardControlStyleTrait, ContentControlStyleTrait, ButtonControlStyleTrait, ImageControlStyleTrait, IconControlStyleTrait, BackgroundImageControlStyleTrait;
 
 	public function get_name(): string
 	{
@@ -30,7 +30,7 @@ class Card_List_Widget extends Widget_Base
 
 	public function get_categories(): array
 	{
-		return ['deensimc_smooth_marquee'];
+		return ['smooth_marquee'];
 	}
 
 	public function get_keywords(): array
@@ -42,14 +42,14 @@ class Card_List_Widget extends Widget_Base
 	{
 		// Card List Section
 		$this->start_controls_section(
-			'deensimc_section_card_list',
+			'section_card_list',
 			[
 				'label' => esc_html__('Card List', 'marquee-addons-for-elementor'),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
 		$this->add_control(
-			'deensimc_card_style',
+			'card_style',
 			[
 				'label' => esc_html__('Card Style', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::SELECT,
@@ -67,7 +67,7 @@ class Card_List_Widget extends Widget_Base
 
 
 		$this->add_control(
-			'deensimc_card_number_style',
+			'card_number_style',
 			[
 				'label' => esc_html__('Card Number Format', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::SELECT,
@@ -85,7 +85,7 @@ class Card_List_Widget extends Widget_Base
 
 
 		$this->add_control(
-			'deensimc_image_position',
+			'image_position',
 			[
 				'label' => esc_html__('Image Position', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::CHOOSE,
@@ -111,7 +111,7 @@ class Card_List_Widget extends Widget_Base
 
 				],
 				'condition' => [
-					'deensimc_card_style' => ['image', 'icon'],
+					'card_style' => ['image', 'icon'],
 				],
 				'default' => 'left',
 				'toggle' => false,
@@ -129,7 +129,7 @@ class Card_List_Widget extends Widget_Base
 
 		//image control tab
 		$repeater->start_controls_tab(
-			'deensimc_image_tab',
+			'image_tab',
 			[
 				'label' => esc_html__('Image', 'marquee-addons-for-elementor'),
 
@@ -175,7 +175,7 @@ class Card_List_Widget extends Widget_Base
 				'type' => Controls_Manager::REPEATER,
 				'fields' => $repeater->get_controls(),
 				'condition' => [
-					'deensimc_card_style' => ['image', 'background_image'],
+					'card_style' => ['image', 'background_image'],
 				],
 				'default' => [
 					[
@@ -252,7 +252,7 @@ class Card_List_Widget extends Widget_Base
 					],
 				],
 				'condition' => [
-					'deensimc_card_style' => 'icon',
+					'card_style' => 'icon',
 				],
 				'title_field' => '{{{ heading }}}',
 			]
@@ -317,28 +317,28 @@ class Card_List_Widget extends Widget_Base
 	{
 		$settings = $this->get_settings_for_display();
 		$global_heading_tag = $settings['heading_tag'];
-		$card_settings = $settings['deensimc_card_style'] == 'icon' ? $settings['icon_cards'] : $settings['cards'];
+		$card_settings = $settings['card_style'] == 'icon' ? $settings['icon_cards'] : $settings['cards'];
 
 		if (empty($card_settings)) {
 			return;
 		}
 
 ?>
-		<div class="clw-card-list-wrapper">
+		<div class="deensimc-card-list-wrapper">
 
 			<?php foreach ($card_settings as $index => $item) :
 				$heading_tag =  $global_heading_tag;
 			?>
 
-				<div class="clw-card-list-item"
+				<div class="deensimc-card-list-item"
 
-					<?php if ($settings['deensimc_card_style'] == 'background_image' && !empty($item['image']['url'])) : ?>
+					<?php if ($settings['card_style'] == 'background_image' && !empty($item['image']['url'])) : ?>
 					style="background-image: url('<?php echo esc_url($item['image']['url']); ?>')"
 					<?php endif; ?>>
 
 
-					<?php if ($settings['deensimc_card_number_style'] === 'top') : ?>
-						<div class="clw-card-number position-top">
+					<?php if ($settings['card_number_style'] === 'top') : ?>
+						<div class="deensimc-card-number position-top">
 							<?php
 							$cardNumber = isset($item['card_number']) && trim($item['card_number']) !== ''
 								? esc_html($item['card_number']) . '.'
@@ -348,21 +348,21 @@ class Card_List_Widget extends Widget_Base
 						</div>
 					<?php endif; ?>
 
-					<div class="clw-card-content-wrapper">
+					<div class="deensimc-card-content-wrapper">
 
 
-						<div class="clw-card-left-section">
+						<div class="deensimc-card-left-section">
 
 							<!-- $heading_tag = !empty($item['heading_tag']) ? $item['heading_tag'] : 'h3'; -->
 
-							<div class="clw-heading-with-number">
+							<div class="deensimc-heading-with-number">
 								<<?php echo esc_attr($heading_tag); ?> class="card-heading">
 
-									<?php $number_style = $settings['deensimc_card_number_style'];
+									<?php $number_style = $settings['card_number_style'];
 
 									if ($number_style !== 'none') :
 									?>
-										<span class="clw-card-number">
+										<span class="deensimc-card-number">
 											<?php
 											if (!empty($item['card_number'])) {
 												$value = esc_html($item['card_number']);
@@ -396,10 +396,10 @@ class Card_List_Widget extends Widget_Base
 							</div>
 
 
-							<div class="clw-card-description"><?php echo wp_kses_post($item['description']); ?></div>
+							<div class="deensimc-card-description"><?php echo wp_kses_post($item['description']); ?></div>
 
 							<?php if (!empty($item['button_text'])) : ?>
-								<div class="clw-card-button-wrapper">
+								<div class="deensimc-card-button-wrapper">
 									<a href="<?php echo esc_url($item['button_link']['url']); ?>"
 										class="elementor-button elementor-size-<?php echo esc_attr($item['button_size']); ?>"
 										<?php echo ($this->get_render_attribute_string('button')); ?>>
@@ -410,12 +410,12 @@ class Card_List_Widget extends Widget_Base
 							<?php endif; ?>
 						</div>
 
-						<?php if ($settings['deensimc_card_style'] == 'image' && isset($item['image']) && !empty($item['image']['url'])) { ?>
-							<div class="clw-card-image">
+						<?php if ($settings['card_style'] == 'image' && isset($item['image']) && !empty($item['image']['url'])) { ?>
+							<div class="deensimc-card-image">
 								<?php echo Group_Control_Image_Size::get_attachment_image_html($item, 'thumbnail', 'image'); ?>
 							</div>
-						<?php } elseif ($settings['deensimc_card_style'] == 'icon') { ?>
-							<div class="clw-card-image">
+						<?php } elseif ($settings['card_style'] == 'icon') { ?>
+							<div class="deensimc-card-image">
 								<?php
 								if (!empty($item['icon'])) { ?>
 
@@ -441,9 +441,9 @@ class Card_List_Widget extends Widget_Base
 	protected function content_template()
 	{
 	?>
-		<div class="clw-card-list-wrapper">
+		<div class="deensimc-card-list-wrapper">
 			<#
-				var cardSettings=settings.deensimc_card_style==='icon' ? settings.icon_cards : settings.cards;
+				var cardSettings=settings.card_style==='icon' ? settings.icon_cards : settings.cards;
 
 				_.each(cardSettings, function(item, index) {
 				var image={
@@ -455,35 +455,35 @@ class Card_List_Widget extends Widget_Base
 				};
 				var imageUrl=image.url ? elementor.imagesManager.getImageUrl(image) : '' ;
 				var headingTag=settings.heading_tag || 'h3' ;
-				var hasBgImage=settings.deensimc_card_style==='background_image' && imageUrl;
+				var hasBgImage=settings.card_style==='background_image' && imageUrl;
 				#>
-				<div class="clw-card-list-item"
+				<div class="deensimc-card-list-item"
 					<# if (hasBgImage) { #>
 					style="background-image: url('{{{ imageUrl }}}')"
 					<# } #>>
 
-						<# if (settings.deensimc_card_number_style==='top' ) { #>
-							<div class="clw-card-number position-top">
+						<# if (settings.card_number_style==='top' ) { #>
+							<div class="deensimc-card-number position-top">
 								{{ item.card_number && item.card_number.trim() !== '' ? item.card_number + '.' : (index + 1) + '.' }}
 							</div>
 							<# } #>
 
-								<div class="clw-card-content-wrapper">
+								<div class="deensimc-card-content-wrapper">
 
-									<# if (settings.deensimc_card_style==='image' && settings.deensimc_image_position==='top' && item.image.url) { #>
-										<!-- <div class="clw-card-image">
+									<# if (settings.card_style==='image' && settings.image_position==='top' && item.image.url) { #>
+										<!-- <div class="deensimc-card-image">
 											<img src="{{ imageUrl }}" alt="">
 										</div> -->
 										<# } #>
 
-											<div class="clw-card-left-section">
-												<div class="clw-heading-with-number">
+											<div class="deensimc-card-left-section">
+												<div class="deensimc-heading-with-number">
 													<{{ headingTag }} class="card-heading">
-														<# if (settings.deensimc_card_number_style !=='none' ) { #>
-															<span class="clw-card-number">
+														<# if (settings.card_number_style !=='none' ) { #>
+															<span class="deensimc-card-number">
 																<#
 																	var value=item.card_number && item.card_number.trim() !=='' ? item.card_number : (index + 1);
-																	switch (settings.deensimc_card_number_style) {
+																	switch (settings.card_number_style) {
 																	case 'bullet' :
 																	print('•');
 																	break;
@@ -504,10 +504,10 @@ class Card_List_Widget extends Widget_Base
 													</{{ headingTag }}>
 												</div>
 
-												<div class="clw-card-description">{{{ item.description }}}</div>
+												<div class="deensimc-card-description">{{{ item.description }}}</div>
 
 												<# if (item.button_text) { #>
-													<div class="clw-card-button-wrapper">
+													<div class="deensimc-card-button-wrapper">
 														<a href="{{ item.button_link.url }}"
 															class="elementor-button elementor-size-{{ item.button_size }}"
 															<# if (item.button_link.is_external) { #> target="_blank" <# } #>
@@ -518,12 +518,12 @@ class Card_List_Widget extends Widget_Base
 													<# } #>
 											</div>
 
-											<# if (settings.deensimc_card_style==='image' && item.image.url) { #>
-												<div class="clw-card-image">
+											<# if (settings.card_style==='image' && item.image.url) { #>
+												<div class="deensimc-card-image">
 													<img src="{{ imageUrl }}" alt="">
 												</div>
-												<# } else if (settings.deensimc_card_style==='icon' && item.icon) { #>
-													<div class="clw-card-image">
+												<# } else if (settings.card_style==='icon' && item.icon) { #>
+													<div class="deensimc-card-image">
 														<# if (item.icon.value) { #>
 															<div class="elementor-icon-wrapper">
 																<#

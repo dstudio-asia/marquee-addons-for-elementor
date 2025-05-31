@@ -5,7 +5,7 @@ use \Elementor\Controls_Manager;
 use \Elementor\Repeater;
 use \Elementor\Utils;
 
-trait CLWIconControlStyleTrait
+trait IconControlStyleTrait
 {
 	function clw_icon_control_style($control)
 	{

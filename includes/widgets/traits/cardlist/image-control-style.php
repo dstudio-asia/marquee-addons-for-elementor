@@ -6,7 +6,7 @@ use \Elementor\Group_Control_Css_Filter;
 use \Elementor\Group_Control_Border;
 use \Elementor\Group_Control_Box_Shadow;
 
-trait CLWImageControlStyleTrait
+trait ImageControlStyleTrait
 {
 	function clw_image_control_style($control)
 	{
@@ -38,9 +38,9 @@ trait CLWImageControlStyleTrait
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .clw-card-image img' => 'width: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}}.image-position-left .clw-card-image img' => 'margin-right: auto;',
-					'{{WRAPPER}}.image-position-right .clw-card-image img' => 'margin-left: auto;',
+					'{{WRAPPER}} .deensimc-card-image img' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}}.image-position-left .deensimc-card-image img' => 'margin-right: auto;',
+					'{{WRAPPER}}.image-position-right .deensimc-card-image img' => 'margin-left: auto;',
 				],
 			]
 		);
@@ -74,7 +74,7 @@ trait CLWImageControlStyleTrait
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .clw-card-image img' => 'max-width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .deensimc-card-image img' => 'max-width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -96,7 +96,7 @@ trait CLWImageControlStyleTrait
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .clw-card-image img' => 'height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .deensimc-card-image img' => 'height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -140,7 +140,7 @@ trait CLWImageControlStyleTrait
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .clw-card-image:hover img' => 'opacity: {{SIZE}};',
+					'{{WRAPPER}} .deensimc-card-image:hover img' => 'opacity: {{SIZE}};',
 				],
 			]
 		);
@@ -149,7 +149,7 @@ trait CLWImageControlStyleTrait
 			Group_Control_Css_Filter::get_type(),
 			[
 				'name' => 'css_filters_hover',
-				'selector' => '{{WRAPPER}} .clw-card-image:hover img'
+				'selector' => '{{WRAPPER}} .deensimc-card-image:hover img'
 			]
 		);
 
@@ -166,7 +166,7 @@ trait CLWImageControlStyleTrait
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .clw-card-image img' => 'transition-duration: {{SIZE}}s',
+					'{{WRAPPER}} .deensimc-card-image img' => 'transition-duration: {{SIZE}}s',
 				],
 			]
 		);
@@ -180,7 +180,7 @@ trait CLWImageControlStyleTrait
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'image_border',
-				'selector' => '{{WRAPPER}} .clw-card-image img',
+				'selector' => '{{WRAPPER}} .deensimc-card-image img',
 				'separator' => 'before',
 			]
 		);
@@ -194,7 +194,7 @@ trait CLWImageControlStyleTrait
 				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
 				'separator' => 'after',
 				'selectors' => [
-					'{{WRAPPER}} .clw-card-image img' => 'border-radius: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .deensimc-card-image img' => 'border-radius: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -206,7 +206,7 @@ trait CLWImageControlStyleTrait
 				'exclude' => [
 					'box_shadow_position',
 				],
-				'selector' => '{{WRAPPER}} .clw-card-image img',
+				'selector' => '{{WRAPPER}} .deensimc-card-image img',
 			]
 		);
 

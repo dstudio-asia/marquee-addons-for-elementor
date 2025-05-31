@@ -295,14 +295,14 @@ final class Marquee {
 		require_once(  __DIR__ . '/widgets/traits/text-marquee/content-additional-options.php' );
 		require_once(  __DIR__ . '/widgets/traits/text-marquee/style-text-contents.php' );
 
-		require_once __DIR__ . '/widgets/traits/cardlist/clw-content-tab-trait.php';
-		require_once __DIR__ . '/widgets/traits/cardlist/clw-button-tab-trait.php';
-		require_once __DIR__ . '/widgets/traits/cardlist/clw-card-control-style.php';
-		require_once __DIR__ . '/widgets/traits/cardlist/clw-content-control-style.php';
-		require_once __DIR__ . '/widgets/traits/cardlist/clw-button-control-style.php';
-		require_once __DIR__ . '/widgets/traits/cardlist/clw-image-control-style.php';
-		require_once __DIR__ . '/widgets/traits/cardlist/clw-icon-control-style.php';
-		require_once __DIR__ . '/widgets/traits/cardlist/clw-background-image-control-style.php';
+		require_once __DIR__ . '/widgets/traits/cardlist/content-tab-trait.php';
+		require_once __DIR__ . '/widgets/traits/cardlist/button-tab-trait.php';
+		require_once __DIR__ . '/widgets/traits/cardlist/card-control-style.php';
+		require_once __DIR__ . '/widgets/traits/cardlist/content-control-style.php';
+		require_once __DIR__ . '/widgets/traits/cardlist/button-control-style.php';
+		require_once __DIR__ . '/widgets/traits/cardlist/image-control-style.php';
+		require_once __DIR__ . '/widgets/traits/cardlist/icon-control-style.php';
+		require_once __DIR__ . '/widgets/traits/cardlist/background-image-control-style.php';
 
 		require_once(  __DIR__ . '/widgets/class-deensimc-image-marquee.php' );
 		require_once(  __DIR__ . '/widgets/class-deensimc-stacked-slider.php' );
@@ -319,7 +319,7 @@ final class Marquee {
 		$widgets_manager->register( new \Deensimc_Text_Marquee() );
 		$widgets_manager->register( new \Deensimc_Testimonial_Marquee() );
 		$widgets_manager->register( new \Deensimc_Video_Marquee() );
-		$widgets_manager->register( new \Card_List_Widget());
+		$widgets_manager->register( new \Deensimc_Card_List_Widget());
 
 	}
 
