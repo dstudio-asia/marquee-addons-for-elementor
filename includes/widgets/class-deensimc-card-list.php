@@ -42,14 +42,14 @@ class Deensimc_Card_List_Widget extends Widget_Base
 	{
 		// Card List Section
 		$this->start_controls_section(
-			'section_card_list',
+			'deensimc_section_card_list',
 			[
 				'label' => esc_html__('Card List', 'marquee-addons-for-elementor'),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
 		$this->add_control(
-			'card_style',
+			'deensimc_card_style',
 			[
 				'label' => esc_html__('Card Style', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::SELECT,
@@ -67,7 +67,7 @@ class Deensimc_Card_List_Widget extends Widget_Base
 
 
 		$this->add_control(
-			'card_number_style',
+			'deensimc_card_number_style',
 			[
 				'label' => esc_html__('Card Number Format', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::SELECT,
@@ -85,7 +85,7 @@ class Deensimc_Card_List_Widget extends Widget_Base
 
 
 		$this->add_control(
-			'image_position',
+			'deensimc_image_position',
 			[
 				'label' => esc_html__('Image Position', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::CHOOSE,
@@ -111,7 +111,7 @@ class Deensimc_Card_List_Widget extends Widget_Base
 
 				],
 				'condition' => [
-					'card_style' => ['image', 'icon'],
+					'deensimc_card_style' => ['image', 'icon'],
 				],
 				'default' => 'left',
 				'toggle' => false,
@@ -175,7 +175,7 @@ class Deensimc_Card_List_Widget extends Widget_Base
 				'type' => Controls_Manager::REPEATER,
 				'fields' => $repeater->get_controls(),
 				'condition' => [
-					'card_style' => ['image', 'background_image'],
+					'deensimc_card_style' => ['image', 'background_image'],
 				],
 				'default' => [
 					[
@@ -252,14 +252,14 @@ class Deensimc_Card_List_Widget extends Widget_Base
 					],
 				],
 				'condition' => [
-					'card_style' => 'icon',
+					'deensimc_card_style' => 'icon',
 				],
 				'title_field' => '{{{ heading }}}',
 			]
 		);
 
 		$this->add_control(
-			'heading_tag',
+			'deensimc_heading_tag',
 			[
 				'label' => esc_html__('HTML Tag', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::SELECT,
@@ -316,8 +316,8 @@ class Deensimc_Card_List_Widget extends Widget_Base
 	protected function render()
 	{
 		$settings = $this->get_settings_for_display();
-		$global_heading_tag = $settings['heading_tag'];
-		$card_settings = $settings['card_style'] == 'icon' ? $settings['icon_cards'] : $settings['cards'];
+		$global_deensimc_heading_tag = $settings['deensimc_heading_tag'];
+		$card_settings = $settings['deensimc_card_style'] == 'icon' ? $settings['icon_cards'] : $settings['cards'];
 
 		if (empty($card_settings)) {
 			return;
@@ -327,17 +327,17 @@ class Deensimc_Card_List_Widget extends Widget_Base
 		<div class="deensimc-card-list-wrapper">
 
 			<?php foreach ($card_settings as $index => $item) :
-				$heading_tag =  $global_heading_tag;
+				$deensimc_heading_tag =  $global_deensimc_heading_tag;
 			?>
 
 				<div class="deensimc-card-list-item"
 
-					<?php if ($settings['card_style'] == 'background_image' && !empty($item['image']['url'])) : ?>
+					<?php if ($settings['deensimc_card_style'] == 'background_image' && !empty($item['image']['url'])) : ?>
 					style="background-image: url('<?php echo esc_url($item['image']['url']); ?>')"
 					<?php endif; ?>>
 
 
-					<?php if ($settings['card_number_style'] === 'top') : ?>
+					<?php if ($settings['deensimc_card_number_style'] === 'top') : ?>
 						<div class="deensimc-card-number position-top">
 							<?php
 							$cardNumber = isset($item['card_number']) && trim($item['card_number']) !== ''
@@ -353,12 +353,12 @@ class Deensimc_Card_List_Widget extends Widget_Base
 
 						<div class="deensimc-card-left-section">
 
-							<!-- $heading_tag = !empty($item['heading_tag']) ? $item['heading_tag'] : 'h3'; -->
+							<!-- $deensimc_heading_tag = !empty($item['deensimc_heading_tag']) ? $item['deensimc_heading_tag'] : 'h3'; -->
 
 							<div class="deensimc-heading-with-number">
-								<<?php echo esc_attr($heading_tag); ?> class="card-heading">
+								<<?php echo esc_attr($deensimc_heading_tag); ?> class="card-heading">
 
-									<?php $number_style = $settings['card_number_style'];
+									<?php $number_style = $settings['deensimc_card_number_style'];
 
 									if ($number_style !== 'none') :
 									?>
@@ -392,7 +392,7 @@ class Deensimc_Card_List_Widget extends Widget_Base
 
 
 									<?php echo esc_html($item['heading']); ?>
-								</<?php echo esc_attr($heading_tag); ?>>
+								</<?php echo esc_attr($deensimc_heading_tag); ?>>
 							</div>
 
 
@@ -410,11 +410,11 @@ class Deensimc_Card_List_Widget extends Widget_Base
 							<?php endif; ?>
 						</div>
 
-						<?php if ($settings['card_style'] == 'image' && isset($item['image']) && !empty($item['image']['url'])) { ?>
+						<?php if ($settings['deensimc_card_style'] == 'image' && isset($item['image']) && !empty($item['image']['url'])) { ?>
 							<div class="deensimc-card-image">
 								<?php echo Group_Control_Image_Size::get_attachment_image_html($item, 'thumbnail', 'image'); ?>
 							</div>
-						<?php } elseif ($settings['card_style'] == 'icon') { ?>
+						<?php } elseif ($settings['deensimc_card_style'] == 'icon') { ?>
 							<div class="deensimc-card-image">
 								<?php
 								if (!empty($item['icon'])) { ?>
@@ -443,7 +443,7 @@ class Deensimc_Card_List_Widget extends Widget_Base
 	?>
 		<div class="deensimc-card-list-wrapper">
 			<#
-				var cardSettings=settings.card_style==='icon' ? settings.icon_cards : settings.cards;
+				var cardSettings=settings.deensimc_card_style==='icon' ? settings.icon_cards : settings.cards;
 
 				_.each(cardSettings, function(item, index) {
 				var image={
@@ -454,15 +454,15 @@ class Deensimc_Card_List_Widget extends Widget_Base
 				model: view.getEditModel() ?? null
 				};
 				var imageUrl=image.url ? elementor.imagesManager.getImageUrl(image) : '' ;
-				var headingTag=settings.heading_tag || 'h3' ;
-				var hasBgImage=settings.card_style==='background_image' && imageUrl;
+				var headingTag=settings.deensimc_heading_tag || 'h3' ;
+				var hasBgImage=settings.deensimc_card_style==='background_image' && imageUrl;
 				#>
 				<div class="deensimc-card-list-item"
 					<# if (hasBgImage) { #>
 					style="background-image: url('{{{ imageUrl }}}')"
 					<# } #>>
 
-						<# if (settings.card_number_style==='top' ) { #>
+						<# if (settings.deensimc_card_number_style==='top' ) { #>
 							<div class="deensimc-card-number position-top">
 								{{ item.card_number && item.card_number.trim() !== '' ? item.card_number + '.' : (index + 1) + '.' }}
 							</div>
@@ -470,7 +470,7 @@ class Deensimc_Card_List_Widget extends Widget_Base
 
 								<div class="deensimc-card-content-wrapper">
 
-									<# if (settings.card_style==='image' && settings.image_position==='top' && item.image.url) { #>
+									<# if (settings.deensimc_card_style==='image' && settings.deensimc_image_position==='top' && item.image.url) { #>
 										<!-- <div class="deensimc-card-image">
 											<img src="{{ imageUrl }}" alt="">
 										</div> -->
@@ -479,11 +479,11 @@ class Deensimc_Card_List_Widget extends Widget_Base
 											<div class="deensimc-card-left-section">
 												<div class="deensimc-heading-with-number">
 													<{{ headingTag }} class="card-heading">
-														<# if (settings.card_number_style !=='none' ) { #>
+														<# if (settings.deensimc_card_number_style !=='none' ) { #>
 															<span class="deensimc-card-number">
 																<#
 																	var value=item.card_number && item.card_number.trim() !=='' ? item.card_number : (index + 1);
-																	switch (settings.card_number_style) {
+																	switch (settings.deensimc_card_number_style) {
 																	case 'bullet' :
 																	print('•');
 																	break;
@@ -518,11 +518,11 @@ class Deensimc_Card_List_Widget extends Widget_Base
 													<# } #>
 											</div>
 
-											<# if (settings.card_style==='image' && item.image.url) { #>
+											<# if (settings.deensimc_card_style==='image' && item.image.url) { #>
 												<div class="deensimc-card-image">
 													<img src="{{ imageUrl }}" alt="">
 												</div>
-												<# } else if (settings.card_style==='icon' && item.icon) { #>
+												<# } else if (settings.deensimc_card_style==='icon' && item.icon) { #>
 													<div class="deensimc-card-image">
 														<# if (item.icon.value) { #>
 															<div class="elementor-icon-wrapper">

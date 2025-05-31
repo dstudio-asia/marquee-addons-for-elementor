@@ -4,10 +4,12 @@ use \Elementor\Controls_Manager;
 use \Elementor\Repeater;
 use \Elementor\Utils;
 
-trait CardControlStyleTrait{
-	function clw_card_control_style($control) {
+trait CardControlStyleTrait
+{
+	function clw_card_control_style($control)
+	{
 		$control->start_controls_section(
-			'section_card_style',
+			'section_deensimc_card_style',
 			[
 				'label' => esc_html__('Card Style', 'elementor-addon'),
 				'tab' => Controls_Manager::TAB_STYLE,
@@ -87,7 +89,7 @@ trait CardControlStyleTrait{
 					'{{WRAPPER}}.align-end.image-position-bottom .deensimc-card-image' => 'margin-left: auto; margin-right: 0;',
 				],
 				'condition' => [
-					'deensimc_card_style' => ['image', 'icon'],
+					'deensimc_deensimc_card_style' => ['image', 'icon'],
 				],
 
 				'prefix_class' => 'align-', // 
@@ -120,7 +122,7 @@ trait CardControlStyleTrait{
 
 				],
 				'condition' => [
-					'deensimc_card_style' => ['background_image'],
+					'deensimc_deensimc_card_style' => ['background_image'],
 				],
 				'prefix_class' => 'align-', // 
 				'separator' => 'after',
@@ -155,7 +157,7 @@ trait CardControlStyleTrait{
 				],
 				'prefix_class' => 'va-', // va = vertical alignment
 				'condition' => [
-					'image_position' => ['left', 'right'],
+					'deensimc_image_position' => ['left', 'right'],
 
 
 
@@ -199,7 +201,7 @@ trait CardControlStyleTrait{
 					'{{WRAPPER}} .deensimc-card-content-wrapper' => 'background-color: {{VALUE}};',
 				],
 				'condition' => [
-					'deensimc_card_style' => ['image', 'icon'],
+					'deensimc_deensimc_card_style' => ['image', 'icon'],
 				],
 			]
 		);
@@ -210,7 +212,7 @@ trait CardControlStyleTrait{
 				'name' => 'card_border',
 				'selector' => '{{WRAPPER}} .deensimc-card-content-wrapper',
 				'condition' => [
-					'deensimc_card_style' => ['image', 'icon'],
+					'deensimc_deensimc_card_style' => ['image', 'icon'],
 				],
 			]
 		);

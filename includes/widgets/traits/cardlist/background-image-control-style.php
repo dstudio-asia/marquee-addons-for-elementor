@@ -14,7 +14,7 @@ trait BackgroundImageControlStyleTrait
 				'label' => esc_html__('Background Image Style', 'textdomain'),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
-					'card_style' => 'background_image',
+					'deensimc_card_style' => 'background_image',
 				],
 			]
 		);

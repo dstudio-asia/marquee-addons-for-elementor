@@ -15,7 +15,7 @@ trait IconControlStyleTrait
 				'label' => esc_html__('Icon Style', 'textdomain'),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
-					'card_style' => 'icon',
+					'deensimc_card_style' => 'icon',
 				],
 			]
 		);

@@ -16,7 +16,7 @@ trait ImageControlStyleTrait
 				'label' => esc_html__('Image Style', 'elementor-addon'),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
-					'card_style' => 'image',
+					'deensimc_card_style' => 'image',
 				],
 			]
 		);
