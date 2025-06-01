@@ -1,6 +1,6 @@
 :root {
   --card-list-deensimc-gap: 0px;
-  --card-list-deensimc-duration: 20s;
+  --card-list-deensimc-duration: 5s;
   --card-list-deensimc-scroll-distance: calc(
     100% + var(--card-list-deensimc-gap)
   );
@@ -279,22 +279,25 @@
   }
 }
 
-.card-list-deensimc-marquee {
+/* for marquee */
+
+.deensimc-card-list-marquee {
   overflow: hidden;
   white-space: nowrap;
   width: 100%;
   max-height: 500px;
 }
-.card-list-deensimc-marquee .card-list-deensimc-marquee-content {
+.deensimc-card-list-marquee .deensimc-card-list-marquee-content {
   display: inline-block;
   animation: marqueeX var(--card-list-deensimc-duration) linear infinite;
 }
 
-.card-list-deensimc-marquee .deensimc-card-list-item {
+.deensimc-card-list-marquee .deensimc-card-list-item {
   display: inline-block;
   margin-right: 32px;
 }
 
+/* Forward Horizontal Marquee */
 @keyframes marqueeX {
   0% {
     transform: translateX(0);
@@ -303,11 +306,33 @@
     transform: translateX(calc(-1 * var(--card-list-deensimc-scroll-distance)));
   }
 }
+
+/* Reverse Horizontal Marquee */
+@keyframes marqueeXReverse {
+  0% {
+    transform: translateX(calc(-1 * var(--card-list-deensimc-scroll-distance)));
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Forward Vertical Marquee */
 @keyframes marqueeY {
   0% {
     transform: translateY(0);
   }
   100% {
     transform: translateY(calc(-1 * var(--card-list-deensimc-scroll-distance)));
+  }
+}
+
+/* Reverse Vertical Marquee */
+@keyframes marqueeYReverse {
+  0% {
+    transform: translateY(calc(-1 * var(--card-list-deensimc-scroll-distance)));
+  }
+  100% {
+    transform: translateY(0);
   }
 }

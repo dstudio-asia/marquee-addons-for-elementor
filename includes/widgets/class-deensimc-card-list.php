@@ -65,6 +65,19 @@ class Deensimc_Card_List_Widget extends Widget_Base
 
 			]
 		);
+		$this->add_control(
+			'deensimc_card_behavior',
+			[
+				'label' => esc_html__('Card Behavior', 'marquee-addons-for-elementor'),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'normal' => esc_html__('Normal', 'marquee-addons-for-elementor'),
+					'marquee' => esc_html__('Marquee', 'marquee-addons-for-elementor'),
+				],
+				'default' => 'normal',
+
+			]
+		);
 
 
 
@@ -318,9 +331,11 @@ class Deensimc_Card_List_Widget extends Widget_Base
 	protected function render()
 	{
 		$settings = $this->get_settings_for_display();
+
 		$global_deensimc_heading_tag = $settings['deensimc_heading_tag'];
 		$card_settings = $settings['deensimc_card_style'] == 'icon' ? $settings['icon_cards'] : $settings['cards'];
-
+		$card_behavior = $settings['deensimc_card_behavior'];
+		
 		if (empty($card_settings)) {
 			return;
 		}
@@ -329,13 +344,13 @@ class Deensimc_Card_List_Widget extends Widget_Base
 			include_once DEENSIMC__DIR__ . '/includes/widgets/render/card-marquee-render.php';
 		}else{
 
-		
 
 ?>
 
 		
-		<div class="deensimc-card-list-wrapper">
+		<div class="deensimc-card-list-wrapper deensimc-card-list-<?php echo esc_attr($card_behavior); ?>">
 
+			<div class="deensimc-card-list-<?php echo esc_attr($card_behavior); ?>-content">
 			<?php foreach ($card_settings as $index => $item) :
 				$deensimc_heading_tag =  $global_deensimc_heading_tag;
 			?>
@@ -439,6 +454,7 @@ class Deensimc_Card_List_Widget extends Widget_Base
 					</div>
 				</div>
 			<?php endforeach; ?>
+			</div>
 		</div>
 
 
@@ -453,6 +469,7 @@ class Deensimc_Card_List_Widget extends Widget_Base
 	{
 	?>
 		<div class="deensimc-card-list-wrapper">
+			<div >
 			<#
 				var cardSettings=settings.deensimc_card_style==='icon' ? settings.icon_cards : settings.cards;
 
@@ -552,6 +569,7 @@ class Deensimc_Card_List_Widget extends Widget_Base
 								</div>
 				</div>
 				<# }); #>
+			</div>
 		</div>
 <?php
 	}
