@@ -2,9 +2,9 @@
 
 	use Elementor\Group_Control_Image_Size;
 ?>
-<div class="deensimc-card-list-wrapper deensimc-card-list-marquee">
+<div class="deensimc-card-list-wrapper deensimc-card-list-marquee-wrapper">
 
-	<div class="deensimc-card-list-marquee-content">
+	<div class="deensimc-card-list-marquee-track">
 		<?php foreach ($card_settings as $index => $item) :
 			$deensimc_heading_tag =  $global_deensimc_heading_tag;
 		?>

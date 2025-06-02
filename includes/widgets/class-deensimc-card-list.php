@@ -335,23 +335,25 @@ class Deensimc_Card_List_Widget extends Widget_Base
 		$global_deensimc_heading_tag = $settings['deensimc_heading_tag'];
 		$card_settings = $settings['deensimc_card_style'] == 'icon' ? $settings['icon_cards'] : $settings['cards'];
 		$card_behavior = $settings['deensimc_card_behavior'];
+		$cards = $settings['cards'];
 		
 		if (empty($card_settings)) {
 			return;
 		}
 
-		if($settings['deensimc_card_style'] === 'marquee'){
-			include_once DEENSIMC__DIR__ . '/includes/widgets/render/card-marquee-render.php';
-		}else{
+	
 
 
 ?>
 
 		
-		<div class="deensimc-card-list-wrapper deensimc-card-list-<?php echo esc_attr($card_behavior); ?>">
-
-			<div class="deensimc-card-list-<?php echo esc_attr($card_behavior); ?>-content">
-			<?php foreach ($card_settings as $index => $item) :
+		<div class="deensimc-card-list-wrapper deensimc-card-list-<?php echo esc_attr($card_behavior); ?>-wrapper" data-animation-speed="10" data-animation-name="marqueeX" >
+			<div class="deensimc-card-list-<?php echo esc_attr($card_behavior); ?>-track" style=" flex-direction: row;" >
+			<?php
+			
+			// echo "<pre>";print_r($cards );die;
+			
+			foreach ($cards as $index => $item) :
 				$deensimc_heading_tag =  $global_deensimc_heading_tag;
 			?>
 
@@ -456,15 +458,9 @@ class Deensimc_Card_List_Widget extends Widget_Base
 			<?php endforeach; ?>
 			</div>
 		</div>
-
-
-
 	<?php
-		}
+		
 	}
-
-
-
 	protected function content_template()
 	{
 	?>

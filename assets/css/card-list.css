@@ -54,7 +54,7 @@
 /* Content Wrapper Base Styles */
 .deensimc-card-content-wrapper {
   display: flex;
-  width: 100%;
+  /* width: 100%; */
   align-items: stretch;
   overflow: hidden;
   border: 1px solid #272727;
@@ -281,58 +281,47 @@
 
 /* for marquee */
 
-.deensimc-card-list-marquee {
+.deensimc-card-list-marquee-wrapper {
+  display: flex;
   overflow: hidden;
-  white-space: nowrap;
-  width: 100%;
-  max-height: 500px;
-}
-.deensimc-card-list-marquee .deensimc-card-list-marquee-content {
-  display: inline-block;
-  animation: marqueeX var(--card-list-deensimc-duration) linear infinite;
+  user-select: none;
+  position: relative;
+  flex-direction: row;
+  max-height: 700px;
 }
 
-.deensimc-card-list-marquee .deensimc-card-list-item {
-  display: inline-block;
-  margin-right: 32px;
+.deensimc-card-list-marquee-track {
+  display: flex;
+  flex-shrink: 0;
+  gap: 20px;
+  will-change: transform; /* Improves performance */
 }
 
 /* Forward Horizontal Marquee */
 @keyframes marqueeX {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-1 * var(--card-list-deensimc-scroll-distance)));
+  to {
+    /* transform: translateX(calc(-1 * var(--card-list-deensimc-scroll-distance))); */
+    transform: translateX(-50%);
   }
 }
 
 /* Reverse Horizontal Marquee */
 @keyframes marqueeXReverse {
-  0% {
-    transform: translateX(calc(-1 * var(--card-list-deensimc-scroll-distance)));
-  }
-  100% {
+  to {
     transform: translateX(0);
   }
 }
 
 /* Forward Vertical Marquee */
 @keyframes marqueeY {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(calc(-1 * var(--card-list-deensimc-scroll-distance)));
+  to {
+    transform: translateY(-50%);
   }
 }
 
 /* Reverse Vertical Marquee */
 @keyframes marqueeYReverse {
-  0% {
-    transform: translateY(calc(-1 * var(--card-list-deensimc-scroll-distance)));
-  }
-  100% {
+  to {
     transform: translateY(0);
   }
 }

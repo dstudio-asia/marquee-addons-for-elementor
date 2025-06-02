@@ -238,9 +238,11 @@ final class Marquee {
 
 		wp_register_script( 'deensimc-swiper-bundle', DEENSIMC_ASSETS_URL  . 'js/swiper-bundle.min.js' , [ 'jquery' ] , self::VERSION, false );
 		wp_register_script( 'deensimc-main', DEENSIMC_ASSETS_URL  . 'js/main.js' , [ 'jquery' ] , self::VERSION, false );
+		wp_register_script( 'cardlist-marquee', DEENSIMC_ASSETS_URL  . 'js/cardlist-marquee.js' , [ 'jquery' ] , self::VERSION, false );
 
 		wp_enqueue_script( 'deensimc-swiper-bundle' );
 		wp_enqueue_script( 'deensimc-main' );
+		wp_enqueue_script( 'cardlist-marquee' );
 
 	}
 
