@@ -1,6 +1,6 @@
 :root {
   --card-list-deensimc-gap: 0px;
-  --card-list-deensimc-duration: 5s;
+  --card-list-deensimc-duration: 75s;
   --card-list-deensimc-scroll-distance: calc(
     100% + var(--card-list-deensimc-gap)
   );
@@ -16,7 +16,6 @@
   display: flex;
   flex-direction: column;
   position: relative;
-
   margin-bottom: 20px;
 }
 
@@ -98,15 +97,19 @@
 }
 .image-position-top .deensimc-card-image {
   order: -1;
-
+  width: 50%;
   max-width: 100%;
   margin-bottom: 15px;
 }
 .image-position-bottom .deensimc-card-image {
   order: 1;
-
+  width: 50%;
   max-width: 100%;
   margin-bottom: 15px;
+}
+.image-position-top .deensimc-card-image:has(.elementor-icon-wrapper) ,
+.image-position-bottom .deensimc-card-image:has(.elementor-icon-wrapper) {
+  width: fit-content;
 }
 
 .image-position-top .deensimc-card-left-section {
@@ -125,6 +128,12 @@
 }
 
 /* icon style */
+.deensimc-card-image .elementor-icon-wrapper{
+  position: static;
+    width: fit-content;
+    margin-inline: auto;
+}
+
 .elementor-icon-wrapper i {
   color: #272727;
   font-size: 300px;
@@ -137,17 +146,17 @@
 .deensimc-card-image img {
   display: block;
   width: 100%;
-  height: 100% !important;
+  height: 100%;
   object-fit: cover;
   /* margin-left: auto; */
 }
 /* In your widget's CSS file */
-.image-position-left .deensimc-card-image img {
+/* .image-position-left .deensimc-card-image img {
   margin-right: auto;
 }
 .image-position-right .deensimc-card-image img {
   margin-left: auto;
-}
+} */
 
 /* Button Styles */
 .deensimc-card-button-wrapper {
@@ -244,6 +253,10 @@
 
 @media (max-width: 767px) {
   /* Mobile layout adjustments */
+  /* .deensimc-card-list-marquee-wrapper .deensimc-card-content-wrapper{
+    max-width: 95vw;
+  } */
+
   .deensimc-card-content-wrapper,
   .image-position-left .deensimc-card-content-wrapper,
   .image-position-right .deensimc-card-content-wrapper {
@@ -251,9 +264,12 @@
   }
 
   .deensimc-card-left-section,
-  .deensimc-card-image {
+.deensimc-card-image {
+      max-width: 100% !important;
+  }
+  .deensimc-card-list-normal-wrapper .deensimc-card-left-section,
+  .deensimc-card-list-normal-wrapper .deensimc-card-image {
     flex: 0 0 100% !important;
-    max-width: 100% !important;
   }
 
   .image-position-right .deensimc-card-image,
@@ -279,6 +295,13 @@
   }
 }
 
+@media (max-width: 880px) {
+  /* Mobile layout adjustments */
+  /* .deensimc-card-list-marquee-wrapper .deensimc-card-content-wrapper{
+    max-width: 95vw;
+  } */
+}
+
 /* for marquee */
 
 .deensimc-card-list-marquee-wrapper {
@@ -287,14 +310,21 @@
   user-select: none;
   position: relative;
   flex-direction: row;
-  max-height: 700px;
+  /* max-height: 700px; */
 }
 
 .deensimc-card-list-marquee-track {
   display: flex;
+  align-items: center;
   flex-shrink: 0;
   gap: 20px;
   will-change: transform; /* Improves performance */
+}
+.deensimc-card-list-normal-track {
+  display: flex;
+  align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 /* Forward Horizontal Marquee */

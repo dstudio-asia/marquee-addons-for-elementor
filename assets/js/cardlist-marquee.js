@@ -54,10 +54,14 @@
         track.appendChild(clone);
       });
 
-      // Apply the animation
-      track.style.animation = `${settings.animationName} ${
-        settings.duration * 4 || 10
-      }s linear infinite`;
+      const userSpeed = Number(settings.duration); // from 1 to 100
+
+      const duration = Math.max(100 - userSpeed, 1);
+      track.style.animation = `${settings.animationName} ${duration}s linear infinite`;
+
+      // const durationInSec = (settings.duration || 2000) / 1000;
+
+      // track.style.animation = `${settings.animationName} ${durationInSec}s linear infinite`;
 
       handlePauseOnHover($(track), settings.pauseOnHover || "yes");
     };
@@ -69,6 +73,8 @@
         const animationSpeed = $($scope)
           .find(".deensimc-card-list-marquee-wrapper")
           .data("animation-speed");
+
+        // const animationSpeed = parseInt($wrapper.data("animation-speed"), 10) || 2000;
         const animationName = $($scope)
           .find(".deensimc-card-list-marquee-wrapper")
           .data("animation-name");
@@ -76,8 +82,13 @@
         setupMarquee($scope, {
           wrapper: "deensimc-card-list-marquee-wrapper",
           track: "deensimc-card-list-marquee-track",
-          duration: Number(animationSpeed || 10),
-          pauseOnHover: "yes",
+          duration: animationSpeed || 10,
+          // duration: Number(animationSpeed || 10),
+          // pauseOnHover: "yes",
+          pauseOnHover:
+            $($scope)
+              .find(".deensimc-card-list-marquee-wrapper")
+              .data("pause-on-hover") || "no",
           animationName,
         });
       }
@@ -98,13 +109,22 @@
       });
     };
 
+    // function handleCardWidth() {
+    //   $(".deensimc-card-list-marquee-wrapper").each(function () {
+    //     const wrapperWidth = $(this).width();
+    //     console.log("Wrapper Width:", wrapperWidth);
+    //     const $track = $(this).find(".deensimc-card-content-wrapper");
+    //     $track.css("width", wrapperWidth + "px");
+    //   });
+    // }
+
     const handleMultiple = function () {
       checkVisibility(
         ".deensimc-card-list-marquee-wrapper",
         ".deensimc-card-list-marquee-track"
       );
+      // handleCardWidth();
     };
-
     // Initial check
     handleMultiple();
 

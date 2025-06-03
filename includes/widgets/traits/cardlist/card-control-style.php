@@ -89,7 +89,7 @@ trait CardControlStyleTrait
 					'{{WRAPPER}}.align-end.image-position-bottom .deensimc-card-image' => 'margin-left: auto; margin-right: 0;',
 				],
 				'condition' => [
-					'deensimc_deensimc_card_style' => ['image', 'icon'],
+					'deensimc_card_style' => ['image', 'icon'],
 				],
 
 				'prefix_class' => 'align-', // 
@@ -122,7 +122,7 @@ trait CardControlStyleTrait
 
 				],
 				'condition' => [
-					'deensimc_deensimc_card_style' => ['background_image'],
+					'deensimc_card_style' => ['background_image'],
 				],
 				'prefix_class' => 'align-', // 
 				'separator' => 'after',
@@ -201,7 +201,7 @@ trait CardControlStyleTrait
 					'{{WRAPPER}} .deensimc-card-content-wrapper' => 'background-color: {{VALUE}};',
 				],
 				'condition' => [
-					'deensimc_deensimc_card_style' => ['image', 'icon'],
+					'deensimc_card_style' => ['image', 'icon'],
 				],
 			]
 		);
@@ -212,7 +212,7 @@ trait CardControlStyleTrait
 				'name' => 'card_border',
 				'selector' => '{{WRAPPER}} .deensimc-card-content-wrapper',
 				'condition' => [
-					'deensimc_deensimc_card_style' => ['image', 'icon'],
+					'deensimc_card_style' => ['image', 'icon'],
 				],
 			]
 		);

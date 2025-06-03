@@ -24,7 +24,7 @@ trait ContentTabTrait
 			[
 				'label' => esc_html__('Text', 'elementor-addon'),
 				'type' => Controls_Manager::TEXT,
-				'default' => esc_html__('Card Heading', 'elementor-addon'),
+				'default' => esc_html__('This is the heading', 'elementor-addon'),
 				'label_block' => true,
 			]
 		);
@@ -36,7 +36,7 @@ trait ContentTabTrait
 			[
 				'label' => esc_html__('Description', 'elementor-addon'),
 				'type' => Controls_Manager::TEXTAREA,
-				'default' => esc_html__('Card description text goes here.', 'elementor-addon'),
+				'default' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae quam vitae odio pharetra finibus tincidunt eu purus. Cras convallis accumsan tortor. Nulla facilisi.', 'elementor-addon'),
 				'rows' => 5,
 			]
 		);

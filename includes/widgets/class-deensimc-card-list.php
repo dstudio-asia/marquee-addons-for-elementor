@@ -18,19 +18,20 @@ class Deensimc_Card_List_Widget extends Widget_Base
 		return 'deensimc-card-list';
 	}
 
-	public function get_title(): string
+	public function get_title()
 	{
 		return esc_html__('Card List', 'marquee-addons-for-elementor');
 	}
 
-	public function get_icon(): string
+	public function get_icon()
 	{
-		return 'eicon-bullet-list'; // Use the free bullet list icon from Elementor's icon set
+
+		return 'eicon-bullet-list';
 	}
 
-	public function get_categories(): array
+	public function get_categories()
 	{
-		return ['smooth_marquee'];
+		return ['deensimc_smooth_marquee'];
 	}
 
 	public function get_keywords(): array
@@ -57,27 +58,49 @@ class Deensimc_Card_List_Widget extends Widget_Base
 					'image' => esc_html__('Image', 'marquee-addons-for-elementor'),
 					'icon' => esc_html__('Icon', 'marquee-addons-for-elementor'),
 					'background_image' => esc_html__('Overlay Image', 'marquee-addons-for-elementor'),
-					'marquee' => esc_html__('Marquee', 'marquee-addons-for-elementor'),
-					'card_stacked' => esc_html__('Card Stacked', 'marquee-addons-for-elementor'),
+
 
 				],
 				'default' => 'image',
 
 			]
 		);
-		$this->add_control(
-			'deensimc_card_behavior',
-			[
-				'label' => esc_html__('Card Behavior', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::SELECT,
-				'options' => [
-					'normal' => esc_html__('Normal', 'marquee-addons-for-elementor'),
-					'marquee' => esc_html__('Marquee', 'marquee-addons-for-elementor'),
-				],
-				'default' => 'normal',
 
+		$this->add_control(
+			'card_width',
+			[
+				'label' => esc_html__('Width', 'elementor-addon'),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => ['px', '%'],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 1000,
+					],
+					'%' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .deensimc-card-list-item' => 'width: {{SIZE}}{{UNIT}};',
+				],
 			]
 		);
+
+		// $this->add_control(
+		// 	'deensimc_card_behavior',
+		// 	[
+		// 		'label' => esc_html__('Card Behavior', 'marquee-addons-for-elementor'),
+		// 		'type' => Controls_Manager::SELECT,
+		// 		'options' => [
+		// 			'normal' => esc_html__('Normal', 'marquee-addons-for-elementor'),
+		// 			'marquee' => esc_html__('Marquee', 'marquee-addons-for-elementor'),
+		// 		],
+		// 		'default' => 'normal',
+
+		// 	]
+		// );
 
 
 
@@ -190,14 +213,14 @@ class Deensimc_Card_List_Widget extends Widget_Base
 				'type' => Controls_Manager::REPEATER,
 				'fields' => $repeater->get_controls(),
 				'condition' => [
-					'deensimc_card_style' => ['image', 'background_image', 'marquee', 'card_stacked'],
+					'deensimc_card_style' => ['image', 'background_image'],
 				],
 				'default' => [
 					[
-						'description' => esc_html__('Card description text goes here', 'marquee-addons-for-elementor'),
+						'description' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae quam vitae odio pharetra finibus tincidunt eu purus. Cras convallis accumsan tortor.', 'marquee-addons-for-elementor'),
 					],
 					[
-						'description' => esc_html__('Card description text goes here', 'marquee-addons-for-elementor'),
+						'description' => esc_html__('Aliquam sagittis lectus sit amet arcu fringilla euismod. Phasellus egestas gravida nunc, eu iaculis massa tincidunt et. Nam maximus dui nulla, quis tempus turpis commodo eget.', 'marquee-addons-for-elementor'),
 					],
 				],
 				'title_field' => '{{{ heading }}}',
@@ -226,7 +249,7 @@ class Deensimc_Card_List_Widget extends Widget_Base
 				'label' => esc_html__('Icon', 'textdomain'),
 				'type' => \Elementor\Controls_Manager::ICONS,
 				'default' => [
-					'value' => 'fas fa-circle',
+					'value' => 'fas fa-star',
 					'library' => 'fa-solid',
 				],
 				'recommended' => [
@@ -260,10 +283,10 @@ class Deensimc_Card_List_Widget extends Widget_Base
 
 				'default' => [
 					[
-						'description' => esc_html__('Card description text goes here', 'marquee-addons-for-elementor'),
+						'description' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae quam vitae odio pharetra finibus tincidunt eu purus. Cras convallis accumsan tortor. Nulla facilisi.', 'marquee-addons-for-elementor'),
 					],
 					[
-						'description' => esc_html__('Card description text goes here', 'marquee-addons-for-elementor'),
+						'description' => esc_html__('Aliquam sagittis lectus sit amet arcu fringilla euismod. Phasellus egestas gravida nunc, eu iaculis massa tincidunt et. Nam maximus dui nulla, quis tempus turpis commodo eget.', 'marquee-addons-for-elementor'),
 					],
 				],
 				'condition' => [
@@ -324,6 +347,74 @@ class Deensimc_Card_List_Widget extends Widget_Base
 		$this->clw_background_image_control_style($this);
 		// Background Image Style
 
+		$this->start_controls_section(
+			'deensimc_pro_card_additional_option_section',
+			[
+				'label' => esc_html__('Additional Options', 'marquee-addons-for-elementor'),
+				'tab' => Controls_Manager::TAB_CONTENT,
+			]
+		);
+
+
+		$this->add_control(
+			'deensimc_pro_card_animation_heading',
+			[
+				'label' => esc_html__('Animation', 'marquee-addons-for-elementor'),
+				'type' =>  Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_control(
+			'deensimc_card_behavior',
+			[
+				'label' => esc_html__('Card Animation', 'marquee-addons-for-elementor'),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => esc_html__('Yes', 'marquee-addons-for-elementor'),
+				'label_off' => esc_html__('No', 'marquee-addons-for-elementor'),
+				'return_value' => 'yes', // Always returns 'yes' or '' (empty)
+				'default' => 'No', // Default is 'Normal'
+			]
+		);
+
+
+		$this->add_control(
+			'deensimc_pro_card_pause_on_hover',
+			[
+				'label' => esc_html__('Pause On Hover', 'marquee-addons-for-elementor'),
+				'type' =>  Controls_Manager::SWITCHER,
+				'label_on' => esc_html__('Yes', 'marquee-addons-for-elementor'),
+				'label_off' => esc_html__('No', 'marquee-addons-for-elementor'),
+				'return_value' => 'yes',
+				'default' => 'no',
+			]
+		);
+
+		// $this->add_control(
+		// 	'deensimc_show_shadow_switch',
+		// 	[
+		// 		'label' => esc_html__('Show Shadow', 'marquee-addons-for-elementor'),
+		// 		'type' =>  Controls_Manager::SWITCHER,
+		// 		'label_on' => esc_html__('Show', 'marquee-addons-for-elementor'),
+		// 		'label_off' => esc_html__('Hide', 'marquee-addons-for-elementor'),
+		// 		'return_value' => 'yes',
+		// 		'default' => 'no',
+		// 	]
+		// );
+
+		$this->add_control(
+			'deensimc_pro_card_animation_speed',
+			[
+				'label' => esc_html__('Animation Speed', 'marquee-addons-for-elementor'),
+				'type' => Controls_Manager::NUMBER,
+				'min' => 1,
+				'max' => 100,
+				'step' => 1,
+				'default' => 50,
+			]
+		);
+
+		$this->end_controls_section();
 	}
 
 
@@ -334,180 +425,186 @@ class Deensimc_Card_List_Widget extends Widget_Base
 
 		$global_deensimc_heading_tag = $settings['deensimc_heading_tag'];
 		$card_settings = $settings['deensimc_card_style'] == 'icon' ? $settings['icon_cards'] : $settings['cards'];
-		$card_behavior = $settings['deensimc_card_behavior'];
-		$cards = $settings['cards'];
-		
+		//$card_behavior = $settings['deensimc_card_behavior'];
+		$card_behavior = $settings['deensimc_card_behavior'] === 'yes' ? 'marquee' : 'normal';
+		//$cards = $settings['cards'];
+
 		if (empty($card_settings)) {
 			return;
 		}
 
-	
+
 
 
 ?>
 
-		
-		<div class="deensimc-card-list-wrapper deensimc-card-list-<?php echo esc_attr($card_behavior); ?>-wrapper" data-animation-speed="10" data-animation-name="marqueeX" >
-			<div class="deensimc-card-list-<?php echo esc_attr($card_behavior); ?>-track" style=" flex-direction: row;" >
-			<?php
-			
-			// echo "<pre>";print_r($cards );die;
-			
-			foreach ($cards as $index => $item) :
-				$deensimc_heading_tag =  $global_deensimc_heading_tag;
-			?>
 
-				<div class="deensimc-card-list-item"
+		<div class="deensimc-card-list-wrapper deensimc-card-list-<?php echo esc_attr($card_behavior); ?>-wrapper" data-animation-speed="<?php echo esc_attr($settings['deensimc_pro_card_animation_speed']); ?>" data-animation-name="marqueeX"
+			data-pause-on-hover="<?php echo esc_attr($settings['deensimc_pro_card_pause_on_hover']); ?>">
+			<div class="deensimc-card-list-<?php echo esc_attr($card_behavior); ?>-track" style=" flex-direction: row;">
+				<?php
 
-					<?php if ($settings['deensimc_card_style'] == 'background_image' && !empty($item['image']['url'])) : ?>
-					style="background-image: url('<?php echo esc_url($item['image']['url']); ?>')"
-					<?php endif; ?>>
+				// echo "<pre>";print_r($cards );die;
 
+				foreach ($card_settings as $index => $item) :
+					$deensimc_heading_tag =  $global_deensimc_heading_tag;
+				?>
 
-					<?php if ($settings['deensimc_card_number_style'] === 'top') : ?>
-						<div class="deensimc-card-number position-top">
-							<?php
-							$cardNumber = isset($item['card_number']) && trim($item['card_number']) !== ''
-								? esc_html($item['card_number']) . '.'
-								: ($index + 1) . '.';
-							echo $cardNumber;
-							?>
-						</div>
-					<?php endif; ?>
+					<div class="deensimc-card-list-item"
 
-					<div class="deensimc-card-content-wrapper">
+						<?php if ($settings['deensimc_card_style'] == 'background_image' && !empty($item['image']['url'])) : ?>
+						style="background-image: url('<?php echo esc_url($item['image']['url']); ?>')"
+						<?php endif; ?>>
 
 
-						<div class="deensimc-card-left-section">
-
-							<!-- $deensimc_heading_tag = !empty($item['deensimc_heading_tag']) ? $item['deensimc_heading_tag'] : 'h3'; -->
-
-							<div class="deensimc-heading-with-number">
-								<<?php echo esc_attr($deensimc_heading_tag); ?> class="card-heading">
-
-									<?php $number_style = $settings['deensimc_card_number_style'];
-
-									if ($number_style !== 'none') :
-									?>
-										<span class="deensimc-card-number">
-											<?php
-											if (!empty($item['card_number'])) {
-												$value = esc_html($item['card_number']);
-											} else {
-												$value = $index + 1;
-											}
-
-											switch ($number_style) {
-												case 'bullet':
-													echo '•';
-													break;
-												case 'arrow':
-													echo '→';
-													break;
-												case 'check':
-													echo '✓';
-													break;
-												case 'number':
-												default:
-													echo $value . '.';
-													break;
-											}
-											?>
-										</span>
-									<?php endif; ?>
-
-
-
-									<?php echo esc_html($item['heading']); ?>
-								</<?php echo esc_attr($deensimc_heading_tag); ?>>
-							</div>
-
-
-							<div class="deensimc-card-description"><?php echo wp_kses_post($item['description']); ?></div>
-
-							<?php if (!empty($item['button_text'])) : ?>
-								<div class="deensimc-card-button-wrapper">
-									<a href="<?php echo esc_url($item['button_link']['url']); ?>"
-										class="elementor-button elementor-size-<?php echo esc_attr($item['button_size']); ?>"
-										<?php echo ($this->get_render_attribute_string('button')); ?>>
-
-										<span class="elementor-button-text"><?php echo esc_html($item['button_text']); ?></span>
-									</a>
-								</div>
-							<?php endif; ?>
-						</div>
-
-						<?php if (($settings['deensimc_card_style'] == 'image' || $settings['deensimc_card_style'] == 'marquee' || $settings['deensimc_card_style'] == 'card_stacked') && isset($item['image']) && !empty($item['image']['url'])) { ?>
-							<div class="deensimc-card-image">
-								<?php echo Group_Control_Image_Size::get_attachment_image_html($item, 'thumbnail', 'image'); ?>
-							</div>
-						<?php } elseif ($settings['deensimc_card_style'] == 'icon') { ?>
-							<div class="deensimc-card-image">
+						<?php if ($settings['deensimc_card_number_style'] === 'top') : ?>
+							<div class="deensimc-card-number position-top">
 								<?php
-								if (!empty($item['icon'])) { ?>
-
-									<div class="elementor-icon-wrapper">
-										<?php \Elementor\Icons_Manager::render_icon($item['icon'], ['aria-hidden' => 'true']); ?>
-									</div>
-								<?php }
+								$cardNumber = isset($item['card_number']) && trim($item['card_number']) !== ''
+									? esc_html($item['card_number']) . '.'
+									: ($index + 1) . '.';
+								echo $cardNumber;
 								?>
 							</div>
-						<?php }; ?>
+						<?php endif; ?>
+
+						<div class="deensimc-card-content-wrapper">
+
+
+							<div class="deensimc-card-left-section">
+
+								<!-- $deensimc_heading_tag = !empty($item['deensimc_heading_tag']) ? $item['deensimc_heading_tag'] : 'h3'; -->
+
+								<div class="deensimc-heading-with-number">
+									<<?php echo esc_attr($deensimc_heading_tag); ?> class="card-heading">
+
+										<?php $number_style = $settings['deensimc_card_number_style'];
+
+										if ($number_style !== 'none') :
+										?>
+											<span class="deensimc-card-number">
+												<?php
+												if (!empty($item['card_number'])) {
+													$value = esc_html($item['card_number']);
+												} else {
+													$value = $index + 1;
+												}
+
+												switch ($number_style) {
+													case 'bullet':
+														echo '•';
+														break;
+													case 'arrow':
+														echo '→';
+														break;
+													case 'check':
+														echo '✓';
+														break;
+													case 'number':
+													default:
+														echo $value . '.';
+														break;
+												}
+												?>
+											</span>
+										<?php endif; ?>
+
+
+
+										<?php echo esc_html($item['heading']); ?>
+									</<?php echo esc_attr($deensimc_heading_tag); ?>>
+								</div>
+
+
+								<div class="deensimc-card-description"><?php echo wp_kses_post($item['description']); ?></div>
+
+								<?php if (!empty($item['button_text'])) : ?>
+									<div class="deensimc-card-button-wrapper">
+										<a href="<?php echo esc_url($item['button_link']['url']); ?>"
+											class="elementor-button elementor-size-<?php echo esc_attr($item['button_size']); ?>"
+											<?php echo ($this->get_render_attribute_string('button')); ?>>
+
+											<span class="elementor-button-text"><?php echo esc_html($item['button_text']); ?></span>
+										</a>
+									</div>
+								<?php endif; ?>
+							</div>
+
+							<?php if (($settings['deensimc_card_style'] == 'image' || $settings['deensimc_card_style'] == 'marquee' || $settings['deensimc_card_style'] == 'card_stacked') && isset($item['image']) && !empty($item['image']['url'])) { ?>
+								<div class="deensimc-card-image">
+									<?php echo Group_Control_Image_Size::get_attachment_image_html($item, 'thumbnail', 'image'); ?>
+								</div>
+							<?php } elseif ($settings['deensimc_card_style'] == 'icon') { ?>
+								<div class="deensimc-card-image">
+									<?php
+									if (!empty($item['icon'])) { ?>
+
+										<div class="elementor-icon-wrapper">
+											<?php \Elementor\Icons_Manager::render_icon($item['icon'], ['aria-hidden' => 'true']); ?>
+										</div>
+									<?php }
+									?>
+								</div>
+							<?php }; ?>
+						</div>
 					</div>
-				</div>
-			<?php endforeach; ?>
+				<?php endforeach; ?>
 			</div>
 		</div>
 	<?php
-		
+
 	}
+
+
 	protected function content_template()
 	{
 	?>
-		<div class="deensimc-card-list-wrapper">
-			<div >
-			<#
-				var cardSettings=settings.deensimc_card_style==='icon' ? settings.icon_cards : settings.cards;
+		<#
+			var card_behavior=settings.deensimc_card_behavior==='yes' ? 'marquee' : 'normal' ;
+			var animation_speed=settings.deensimc_pro_card_animation_speed || 50;
+			var pause_on_hover=settings.deensimc_pro_card_pause_on_hover || 'no' ;
+			#>
+			<div class="deensimc-card-list-wrapper deensimc-card-list-{{ card_behavior }}-wrapper"
+				data-animation-speed="{{ animation_speed }}"
+				data-animation-name="marqueeX"
+				data-pause-on-hover="{{ pause_on_hover }}">
+				<div class="deensimc-card-list-{{ card_behavior }}-track" style="flex-direction: row;">
+					<#
+						var cardSettings=settings.deensimc_card_style==='icon' ? settings.icon_cards : settings.cards;
 
-				_.each(cardSettings, function(item, index) {
-				var image={
-				id: item.image?.id ?? '' ,
-				url: item.image?.url ?? '' ,
-				size: item.thumbnail_size ?? '' ,
-				dimension: item.thumbnail_custom_dimension ?? '' ,
-				model: view.getEditModel() ?? null
-				};
-				var imageUrl=image.url ? elementor.imagesManager.getImageUrl(image) : '' ;
-				var headingTag=settings.deensimc_heading_tag || 'h3' ;
-				var hasBgImage=settings.deensimc_card_style==='background_image' && imageUrl;
-				#>
-				<div class="deensimc-card-list-item"
-					<# if (hasBgImage) { #>
-					style="background-image: url('{{{ imageUrl }}}')"
-					<# } #>>
+						_.each(cardSettings, function(item, index) {
+						var image={
+						id: item.image?.id ?? '' ,
+						url: item.image?.url ?? '' ,
+						size: item.thumbnail_size ?? '' ,
+						dimension: item.thumbnail_custom_dimension ?? '' ,
+						model: view.getEditModel() ?? null
+						};
+						var imageUrl=image.url ? elementor.imagesManager.getImageUrl(image) : '' ;
+						var headingTag=settings.deensimc_heading_tag || 'h3' ;
+						var hasBgImage=settings.deensimc_card_style==='background_image' && imageUrl;
+						var number_style=settings.deensimc_card_number_style;
+						#>
+						<div class="deensimc-card-list-item"
+							<# if (hasBgImage) { #>
+							style="background-image: url('{{{ imageUrl }}}')"
+							<# } #>>
 
-						<# if (settings.deensimc_card_number_style==='top' ) { #>
-							<div class="deensimc-card-number position-top">
-								{{ item.card_number && item.card_number.trim() !== '' ? item.card_number + '.' : (index + 1) + '.' }}
-							</div>
-							<# } #>
+								<# if (number_style==='top' ) { #>
+									<div class="deensimc-card-number position-top">
+										{{ item.card_number && item.card_number.trim() !== '' ? item.card_number + '.' : (index + 1) + '.' }}
+									</div>
+									<# } #>
 
-								<div class="deensimc-card-content-wrapper">
-
-									<# if (settings.deensimc_card_style==='image' && settings.deensimc_image_position==='top' && item.image.url) { #>
-										<!-- <div class="deensimc-card-image">
-											<img src="{{ imageUrl }}" alt="">
-										</div> -->
-										<# } #>
-
+										<div class="deensimc-card-content-wrapper">
 											<div class="deensimc-card-left-section">
 												<div class="deensimc-heading-with-number">
 													<{{ headingTag }} class="card-heading">
-														<# if (settings.deensimc_card_number_style !=='none' ) { #>
+														<# if (number_style !=='none' ) { #>
 															<span class="deensimc-card-number">
 																<#
 																	var value=item.card_number && item.card_number.trim() !=='' ? item.card_number : (index + 1);
-																	switch (settings.deensimc_card_number_style) {
+																	switch (number_style) {
 																	case 'bullet' :
 																	print('•');
 																	break;
@@ -517,13 +614,14 @@ class Deensimc_Card_List_Widget extends Widget_Base
 																	case 'check' :
 																	print('✓');
 																	break;
+																	case 'number' :
 																	default:
 																	print(value + '.' );
+																	break;
 																	}
 																	#>
 															</span>
 															<# } #>
-
 																{{{ item.heading }}}
 													</{{ headingTag }}>
 												</div>
@@ -542,7 +640,7 @@ class Deensimc_Card_List_Widget extends Widget_Base
 													<# } #>
 											</div>
 
-											<# if ((settings.deensimc_card_style==='image' || settings.deensimc_card_style==='marquee' ||settings.deensimc_card_style==='card_stacked') && item.image.url) { #>
+											<# if ((settings.deensimc_card_style==='image' || settings.deensimc_card_style==='marquee' || settings.deensimc_card_style==='card_stacked' ) && item.image.url) { #>
 												<div class="deensimc-card-image">
 													<img src="{{ imageUrl }}" alt="">
 												</div>
@@ -551,22 +649,20 @@ class Deensimc_Card_List_Widget extends Widget_Base
 														<# if (item.icon.value) { #>
 															<div class="elementor-icon-wrapper">
 																<#
-																	var iconHTML=elementor.helpers.renderIcon(view, item.icon, { 'aria-hidden' : true, 'class' : 'elementor-icon'
-																	}, 'i' , 'object' );
-
+																	var iconHTML=elementor.helpers.renderIcon(view, item.icon, { 'aria-hidden' : true }, 'i' , 'object' );
 																	if (iconHTML.rendered) { #>
 																	{{{ iconHTML.value }}}
-																	<# }
-																		#>
+																	<# } #>
 															</div>
 															<# } #>
 													</div>
 													<# } #>
-								</div>
+										</div>
+						</div>
+						<# }); #>
 				</div>
-				<# }); #>
 			</div>
-		</div>
-<?php
+		<?php
 	}
+
 }

@@ -38,9 +38,7 @@ trait ImageControlStyleTrait
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .deensimc-card-image img' => 'width: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}}.image-position-left .deensimc-card-image img' => 'margin-right: auto;',
-					'{{WRAPPER}}.image-position-right .deensimc-card-image img' => 'margin-left: auto;',
+					'{{WRAPPER}} .deensimc-card-image' => 'width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -74,32 +72,11 @@ trait ImageControlStyleTrait
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .deensimc-card-image img' => 'max-width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .deensimc-card-image' => 'width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
 
-		$control->add_responsive_control(
-			'height',
-			[
-				'label' => esc_html__('Height', 'elementor'),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => ['px', '%', 'em', 'rem', 'vh', 'custom'],
-				'range' => [
-					'px' => [
-						'min' => 1,
-						'max' => 500,
-					],
-					'vh' => [
-						'min' => 1,
-						'max' => 100,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} .deensimc-card-image img' => 'height: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
 
 		$control->add_control(
 			'separator_panel_style',

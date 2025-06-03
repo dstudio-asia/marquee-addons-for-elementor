@@ -143,13 +143,33 @@ trait ContentControlStyleTrait
 			]
 		);
 
+		// $control->add_group_control(
+		// 	\Elementor\Group_Control_Typography::get_type(),
+		// 	[
+		// 		'name' => 'description_typography',
+		// 		'selector' => '{{WRAPPER}} .deensimc-card-description',
+		// 	]
+		// );
+
 		$control->add_group_control(
 			\Elementor\Group_Control_Typography::get_type(),
 			[
 				'name' => 'description_typography',
 				'selector' => '{{WRAPPER}} .deensimc-card-description',
+				'fields_options' => [
+					'typography' => [
+						'default' => 'custom',
+					],
+					'font_size' => [
+						'default' => [
+							'size' => 18,
+							'unit' => 'px',
+						],
+					],
+				],
 			]
 		);
+
 		$control->add_responsive_control(
 			'paragraph_spacing',
 			[
