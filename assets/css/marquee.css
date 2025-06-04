@@ -19,261 +19,239 @@
    1. Variables
    ========================================================================== */
 
-   :root {
-    --deensimc-text-dark-gray: #555353;
-    --deensimc-gap: 0px; 
-    --deensimc-duration: auto;
-    --deensimc-scroll-distance: calc(100% + var(--deensimc-gap));
-    --deensimc-color-white: #ffffff;
+:root {
+  --deensimc-text-dark-gray: #555353;
+  --deensimc-gap: 0px; 
+  --deensimc-color-white: #ffffff;
+}
+
+/* ==========================================================================
+   2. Marquee Styles
+   ========================================================================== */
+
+.deensimc-marquee {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: var(--deensimc-gap);
+  position: relative;
+  width: 100%;
+}
+
+/* ==========================================================================
+   3. Shadow Effects
+   ========================================================================== */
+
+.deensimc-marquee.deensimc-shadow.deensimc-marquee-horizontal::before,
+.deensimc-marquee.deensimc-shadow.deensimc-marquee-horizontal::after {
+  content: "";
+  height: 100%;
+  width: 40px;
+  box-shadow: 0px 0px 100px 10px var(--deensimc-text-dark-gray);
+  position: absolute;
+  z-index: 1;
+}
+
+.deensimc-marquee.deensimc-shadow.deensimc-marquee-horizontal::before {
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+}
+
+.deensimc-marquee.deensimc-shadow.deensimc-marquee-horizontal::after {
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+}
+
+.deensimc-marquee.deensimc-shadow.deensimc-marquee-vertical::before,
+.deensimc-marquee.deensimc-shadow.deensimc-marquee-vertical::after {
+  content: "";
+  height: 20px;
+  width: 100%;
+  box-shadow: 0px 0px 100px 10px var(--deensimc-text-dark-gray);
+  position: absolute;
+  z-index: 1;
+}
+
+.deensimc-marquee.deensimc-shadow.deensimc-marquee-vertical::before {
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+}
+
+.deensimc-marquee.deensimc-shadow.deensimc-marquee-vertical::after {
+  bottom: 0;
+  left: 0;
+  transform: translateY(100%);
+}
+
+/* ==========================================================================
+   4. Marquee Group and Image Styles
+   ========================================================================== */
+
+.deensimc-marquee-group {
+  white-space: nowrap;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  animation: deensimc-scroll-x linear infinite;
+  animation-duration: var(--deensimc-duration); /* Added to control speed */
+}
+
+.deensimc-text-marquee .deensimc-marquee-group {
+  white-space: normal;
+}
+
+.deensimc-text-marquee .deensimc-scroll-text {
+  margin: 0; /* Combined margin properties */
+}
+
+.deensimc-text-marquee .deensimc-marquee-group svg {
+  height: 20px;
+  width: 20px;
+}
+
+.deensimc-marquee-group:nth-child(2),
+.deensimc-marquee-group:nth-child(3),
+.deensimc-marquee-group:nth-child(4) {
+  margin-left: 20px;
+}
+
+.deensimc-wrapper-vertical .deensimc-marquee-vertical .deensimc-marquee-group:nth-child(2), 
+.deensimc-wrapper-vertical .deensimc-marquee-vertical .deensimc-marquee-group:nth-child(3), 
+.deensimc-wrapper-vertical .deensimc-marquee-vertical .deensimc-marquee-group:nth-child(4) {
+  margin-top: 20px;
+  margin-left: 0;
+}
+
+.deensimc-marquee .deensimc-img-wrapper {
+  display: grid;
+  place-items: center;
+}
+
+.deensimc-marquee .deensimc-text-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.deensimc-marquee img {
+  width: 250px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.deensimc-marquee-vertical img {
+  width: 250px;
+}
+
+/* ==========================================================================
+   7. Animations
+   ========================================================================== */
+
+@keyframes deensimc-scroll-x {
+  0% {
+    transform: translateX(0);
   }
-  
-  /* ==========================================================================
-     2. Marquee Styles
-     ========================================================================== */
-  
-  .deensimc-marquee {
-    display: flex;
-    overflow: hidden;
-    user-select: none;
-    gap: var(--deensimc-gap);
-    position: relative;
+  100% {
+    transform: translateX(calc(-1 * (100% + var(--deensimc-gap))));
   }
-  
-  /* ==========================================================================
-     3. Shadow Effects
-     ========================================================================== */
-  
-  .deensimc-marquee.deensimc-shadow.deensimc-marquee-horizontal::before {
-    content: "";
+}
+
+@keyframes deensimc-scroll-y {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(calc(-1 * (100% + var(--deensimc-gap))));
+  }
+}
+
+@keyframes fade {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* ==========================================================================
+   5. Wrapper Styles
+   ========================================================================== */
+
+.deensimc-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--deensimc-gap);
+  margin: auto;
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+.deensimc-wrapper-vertical {
+  flex-direction: row;
+  height: 100vh;
+  justify-content: center;
+}
+
+.deensimc-marquee-vertical,
+.deensimc-marquee-vertical .deensimc-marquee-group {
+  flex-direction: column;
+}
+
+.deensimc-marquee-vertical .deensimc-marquee-group {
+  animation-name: deensimc-scroll-y;
+}
+
+.deensimc-marquee-reverse .deensimc-marquee-group {
+  animation-direction: reverse;
+}
+
+/* ==========================================================================
+   8. Media Queries
+   ========================================================================== */
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .deensimc-marquee-group {
+    animation-play-state: paused !important;
+  }
+}
+
+/* Mobile Styles (Max Width: 881px) */
+@media (max-width: 881px) {
+  .deensimc-marquee.deensimc-shadow.deensimc-marquee-vertical::before,
+  .deensimc-marquee.deensimc-shadow.deensimc-marquee-vertical::after {
     height: 100%;
     width: 40px;
-    box-shadow: 0px 0px 100px 10px var(--deensimc-text-dark-gray);
-    position: absolute;
-    top: 0;
-    left: 0;
     transform: translateX(-100%);
-    z-index: 1;
-  }
-  
-  .deensimc-marquee.deensimc-shadow.deensimc-marquee-horizontal::after {
-    content: "";
-    height: 100%;
-    width: 40px;
-    box-shadow: 0px 0px 100px 10px var(--deensimc-text-dark-gray);
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translateX(100%);
-    z-index: 1;
-  }
-  
-  .deensimc-marquee.deensimc-shadow.deensimc-marquee-vertical::before {
-    content: "";
-    height: 20px;
-    width: 100%;
-    box-shadow: 0px 0px 100px 10px var(--deensimc-text-dark-gray);
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translateY(-100%);
-    z-index: 1;
   }
   
   .deensimc-marquee.deensimc-shadow.deensimc-marquee-vertical::after {
-    content: "";
-    height: 20px;
-    width: 100%;
-    box-shadow: 0px 0px 100px 10px var(--deensimc-text-dark-gray);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    transform: translateY(100%);
-    z-index: 1;
+    right: 0;
+    left: unset;
+    transform: translateX(100%);
   }
-  
-  /* ==========================================================================
-     4. Marquee Group and Image Styles
-     ========================================================================== */
-  
-  .deensimc-marquee-group {
-    white-space: nowrap;
-    flex-shrink: 0;
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-    animation: deensimc-scroll-x var(--deensimc-duration) linear infinite;
+
+  .deensimc-wrapper-vertical {
+    flex-direction: column;
+    height: auto;
   }
-  
-  .deensimc-text-marquee .deensimc-marquee-group {
-    white-space: normal;
-  }
-  
-  .deensimc-text-marquee .deensimc-scroll-text {
-    margin-bottom: 0px;
-    margin-top: 0px;
-  }
-  
-  .deensimc-text-marquee .deensimc-marquee-group svg {
-    height: 20px;
-    width: 20px;
-  }
-  
-  .deensimc-marquee-group:nth-child(2),
-  .deensimc-marquee-group:nth-child(3),
-  .deensimc-marquee-group:nth-child(4) {
-    margin-left: 20px;
-  }
-  
+
   .deensimc-wrapper-vertical .deensimc-marquee-vertical .deensimc-marquee-group:nth-child(2), 
   .deensimc-wrapper-vertical .deensimc-marquee-vertical .deensimc-marquee-group:nth-child(3), 
   .deensimc-wrapper-vertical .deensimc-marquee-vertical .deensimc-marquee-group:nth-child(4) {
-    margin-top: 20px;
-    margin-left: 0px;
-  }
-  
-  .deensimc-marquee .deensimc-img-wrapper {
-    display: grid;
-    place-items: center;
-  }
-  
-  .deensimc-marquee .deensimc-text-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  
-  .deensimc-marquee img {
-    width: 250px;
-    height: 100%;
-  }
-  
-  .deensimc-marquee-vertical img {
-    width: 250px;
-  }
-
-  /* ==========================================================================
-     7. Animations
-     ========================================================================== */
-  
-     @keyframes deensimc-scroll-x {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(calc(-1 * var(--deensimc-scroll-distance)));
-      }
-    }
-    
-    @keyframes deensimc-scroll-y {
-      0% {
-        transform: translateY(0);
-      }
-      100% {
-        transform: translateY(calc(-1 * var(--deensimc-scroll-distance)));
-      }
-    }
-    
-    @keyframes fade {
-      to {
-        opacity: 0;
-        visibility: hidden;
-      }
-    }
-
-  
-  /* ==========================================================================
-     5. Wrapper Styles
-     ========================================================================== */
-  
-  .deensimc-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: var(--deensimc-gap);
-    margin: auto;
-    max-width: 100vw;
-  }
-  
-  .deensimc-wrapper-vertical {
-    flex-direction: row;
-    height: 100vh;
-    justify-content: center;
+    margin-top: 0 !important;
+    margin-left: 20px !important;
   }
 
   .deensimc-marquee-vertical,
   .deensimc-marquee-vertical .deensimc-marquee-group {
-  flex-direction: column;
+    flex-direction: row !important;
   }
 
   .deensimc-marquee-vertical .deensimc-marquee-group {
-    animation-name: deensimc-scroll-y;
+    animation-name: deensimc-scroll-x !important;
   }
-
-  .deensimc-marquee-reverse .deensimc-marquee-group {
-    animation-direction: reverse;
-    animation-delay: -3s;
-  }
-  
-  /* ==========================================================================
-     8. Media Queries
-     ========================================================================== */
-  
-  /* Reduced Motion */
-  @media (prefers-reduced-motion: reduce) {
-    .deensimc-marquee-group {
-      animation-play-state: paused;
-    }
-  }
-  
-  /* Mobile Styles (Max Width: 881px) */
-  @media (max-width: 881px) {
-  
-    .deensimc-marquee.deensimc-shadow.deensimc-marquee-vertical::before {
-      content: "";
-      height: 100%;
-      width: 40px;
-      box-shadow: 0px 0px 100px 10px var(--deensimc-text-dark-gray);
-      position: absolute;
-      top: 0;
-      left: 0;
-      transform: translateX(-100%);
-      z-index: 1;
-    }
-    
-    .deensimc-marquee.deensimc-shadow.deensimc-marquee-vertical::after {
-      content: "";
-      height: 100%;
-      width: 40px;
-      box-shadow: 0px 0px 100px 10px var(--deensimc-text-dark-gray);
-      position: absolute;
-      top: 0;
-      right: 0;
-      left: unset;
-      transform: translateX(100%);
-      z-index: 1;
-    }
-  
-    .deensimc-wrapper-vertical {
-      display: flex;
-      flex-direction: column;
-      gap: var(--deensimc-gap);
-      margin: auto;
-      max-width: 100vw;
-    }
-  
-    .deensimc-wrapper-vertical .deensimc-marquee-vertical .deensimc-marquee-group:nth-child(2), 
-    .deensimc-wrapper-vertical .deensimc-marquee-vertical .deensimc-marquee-group:nth-child(3), 
-    .deensimc-wrapper-vertical .deensimc-marquee-vertical .deensimc-marquee-group:nth-child(4) {
-      margin-top: 0px !important;
-      margin-left: 20px !important;
-    }
-  
-    .deensimc-marquee-vertical,
-    .deensimc-marquee-vertical .deensimc-marquee-group {
-      flex-direction: row !important;
-    }
-  
-    .deensimc-marquee-vertical .deensimc-marquee-group {
-      animation-name: deensimc-scroll-x !important;
-    }
-   
-  }
+}
