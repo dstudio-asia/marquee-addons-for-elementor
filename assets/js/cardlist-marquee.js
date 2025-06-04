@@ -91,44 +91,47 @@
               .data("pause-on-hover") || "no",
           animationName,
         });
+
+        
+        // Load marquee when it comes into viewport
+        const checkVisibility = function (wrapperSelector, elementSelector) {
+          const viewportHeight = window.innerHeight;
+          const $wrappers = $(wrapperSelector);
+    
+          $wrappers.each(function () {
+            const $wrapper = $(this);
+            const rect = this.getBoundingClientRect();
+            const $elements = $wrapper.find(elementSelector);
+            const isVisible = rect.bottom > 0 && rect.top < viewportHeight;
+    
+            $elements.css("animation-play-state", isVisible ? "running" : "paused");
+          });
+        };
+    
+        function handleCardWidth() {
+          $(".deensimc-card-list-marquee-wrapper").each(function () {
+            const wrapperWidth = $(this).width();
+            console.log("Wrapper Width:", wrapperWidth);
+            const $track = $(this).find(".deensimc-card-content-wrapper");
+            $track.css("width", wrapperWidth + "px");
+          });
+        }
+    
+        const handleMultiple = function () {
+          checkVisibility(
+            ".deensimc-card-list-marquee-wrapper",
+            ".deensimc-card-list-marquee-track"
+          );
+          handleCardWidth();
+        };
+        // Initial check
+        handleMultiple();
+    
+        // Set up event listeners
+        $(window).on("scroll", handleMultiple).on("resize", handleMultiple);
       }
+
     );
 
-    // Load marquee when it comes into viewport
-    const checkVisibility = function (wrapperSelector, elementSelector) {
-      const viewportHeight = window.innerHeight;
-      const $wrappers = $(wrapperSelector);
-
-      $wrappers.each(function () {
-        const $wrapper = $(this);
-        const rect = this.getBoundingClientRect();
-        const $elements = $wrapper.find(elementSelector);
-        const isVisible = rect.bottom > 0 && rect.top < viewportHeight;
-
-        $elements.css("animation-play-state", isVisible ? "running" : "paused");
-      });
-    };
-
-    // function handleCardWidth() {
-    //   $(".deensimc-card-list-marquee-wrapper").each(function () {
-    //     const wrapperWidth = $(this).width();
-    //     console.log("Wrapper Width:", wrapperWidth);
-    //     const $track = $(this).find(".deensimc-card-content-wrapper");
-    //     $track.css("width", wrapperWidth + "px");
-    //   });
-    // }
-
-    const handleMultiple = function () {
-      checkVisibility(
-        ".deensimc-card-list-marquee-wrapper",
-        ".deensimc-card-list-marquee-track"
-      );
-      // handleCardWidth();
-    };
-    // Initial check
-    handleMultiple();
-
-    // Set up event listeners
-    $(window).on("scroll", handleMultiple).on("resize", handleMultiple);
   });
 })(jQuery, window._);

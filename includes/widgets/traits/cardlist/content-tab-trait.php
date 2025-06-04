@@ -31,13 +31,23 @@ trait ContentTabTrait
 
 
 
+		// $repeater->add_control(
+		// 	'description',
+		// 	[
+		// 		'label' => esc_html__('Description', 'elementor-addon'),
+		// 		'type' => Controls_Manager::TEXTAREA,
+		// 		'default' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae quam vitae odio pharetra finibus tincidunt eu purus. Cras convallis accumsan tortor. Nulla facilisi.', 'elementor-addon'),
+		// 		'rows' => 5,
+		// 	]
+		// );
+
 		$repeater->add_control(
 			'description',
 			[
-				'label' => esc_html__('Description', 'elementor-addon'),
-				'type' => Controls_Manager::TEXTAREA,
+				'label' => esc_html__('Description', 'textdomain'),
+				'type' => \Elementor\Controls_Manager::WYSIWYG,
 				'default' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae quam vitae odio pharetra finibus tincidunt eu purus. Cras convallis accumsan tortor. Nulla facilisi.', 'elementor-addon'),
-				'rows' => 5,
+				
 			]
 		);
 		$repeater->end_controls_tab();

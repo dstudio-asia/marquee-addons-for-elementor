@@ -305,6 +305,7 @@ final class Marquee {
 		require_once __DIR__ . '/widgets/traits/cardlist/image-control-style.php';
 		require_once __DIR__ . '/widgets/traits/cardlist/icon-control-style.php';
 		require_once __DIR__ . '/widgets/traits/cardlist/background-image-control-style.php';
+		require_once __DIR__ . '/widgets/traits/cardlist/style-tab-trait.php';
 
 		require_once(  __DIR__ . '/widgets/class-deensimc-image-marquee.php' );
 		require_once(  __DIR__ . '/widgets/class-deensimc-stacked-slider.php' );

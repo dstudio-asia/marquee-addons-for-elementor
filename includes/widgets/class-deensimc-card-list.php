@@ -11,7 +11,7 @@ use Elementor\Group_Control_Image_Size;
 
 class Deensimc_Card_List_Widget extends Widget_Base
 {
-	use ContentTabTrait, ButtonTabTrait, CardControlStyleTrait, ContentControlStyleTrait, ButtonControlStyleTrait, ImageControlStyleTrait, IconControlStyleTrait, BackgroundImageControlStyleTrait;
+	use ContentTabTrait, ButtonTabTrait, CardControlStyleTrait, ContentControlStyleTrait, ButtonControlStyleTrait, ImageControlStyleTrait, IconControlStyleTrait, BackgroundImageControlStyleTrait, StyleTabTrait;
 
 	public function get_name(): string
 	{
@@ -205,6 +205,10 @@ class Deensimc_Card_List_Widget extends Widget_Base
 		$this->clw_button_control_tab($repeater, 'button_tab');
 		// Button Controls in Repeater End
 
+		// style in Repeater Start
+		$this->clw_style_tab($repeater, 'style_tab');
+		// style in Repeater End
+
 
 		$this->add_control(
 			'cards',
@@ -272,6 +276,10 @@ class Deensimc_Card_List_Widget extends Widget_Base
 		// Button Tab Control Trait start
 		$this->clw_button_control_tab($icon_repeater, 'button_tab');
 		// Button Tab Control Trait end
+
+		// style in Repeater Start
+		$this->clw_style_tab($icon_repeater, 'style_tab');
+		// style in Repeater End
 
 
 		$this->add_control(
@@ -450,7 +458,7 @@ class Deensimc_Card_List_Widget extends Widget_Base
 					$deensimc_heading_tag =  $global_deensimc_heading_tag;
 				?>
 
-					<div class="deensimc-card-list-item"
+					<div class="deensimc-card-list-item elementor-repeater-item-<?php echo esc_attr($item['_id']); ?>"
 
 						<?php if ($settings['deensimc_card_style'] == 'background_image' && !empty($item['image']['url'])) : ?>
 						style="background-image: url('<?php echo esc_url($item['image']['url']); ?>')"
@@ -585,7 +593,7 @@ class Deensimc_Card_List_Widget extends Widget_Base
 						var hasBgImage=settings.deensimc_card_style==='background_image' && imageUrl;
 						var number_style=settings.deensimc_card_number_style;
 						#>
-						<div class="deensimc-card-list-item"
+						<div class="deensimc-card-list-item elementor-repeater-item-{{ item._id }}"
 							<# if (hasBgImage) { #>
 							style="background-image: url('{{{ imageUrl }}}')"
 							<# } #>>
@@ -662,7 +670,6 @@ class Deensimc_Card_List_Widget extends Widget_Base
 						<# }); #>
 				</div>
 			</div>
-		<?php
+	<?php
 	}
-
 }

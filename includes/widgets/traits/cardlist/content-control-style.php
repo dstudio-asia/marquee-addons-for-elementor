@@ -39,6 +39,77 @@ trait ContentControlStyleTrait
 			]
 		);
 
+		$this->add_responsive_control(
+			'heading_number_margin_right',
+			[
+				'label' => esc_html__('Number Gap', 'elementor-addon'),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => ['px', 'em', '%'],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'default' => [
+					'size' => 0,
+					'unit' => 'px',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .deensimc-card-number' => 'margin-right: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'heading_number_margin_right',
+			[
+				'label' => esc_html__('Number Margin Right', 'elementor-addon'),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => ['px', 'em', '%'],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'default' => [
+					'size' => 10,
+					'unit' => 'px',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .deensimc-card-number' => 'margin-right: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
+		// $this->add_responsive_control(
+		// 	'heading_number_vertical_align',
+		// 	[
+		// 		'label' => esc_html__('Number Vertical Align', 'elementor-addon'),
+		// 		'type' => \Elementor\Controls_Manager::CHOOSE,
+		// 		'options' => [
+		// 			'flex-start' => [
+		// 				'title' => esc_html__('Top', 'elementor-addon'),
+		// 				'icon' => 'eicon-v-align-top',
+		// 			],
+		// 			'center' => [
+		// 				'title' => esc_html__('Middle', 'elementor-addon'),
+		// 				'icon' => 'eicon-v-align-middle',
+		// 			],
+		// 			'flex-end' => [
+		// 				'title' => esc_html__('Bottom', 'elementor-addon'),
+		// 				'icon' => 'eicon-v-align-bottom',
+		// 			],
+		// 		],
+		// 		'default' => 'center',
+		// 		'selectors' => [
+		// 			'{{WRAPPER}} .deensimc-heading-with-number' => 'align-items: {{VALUE}};',
+		// 		],
+		// 	]
+		// );
+
+
 		$control->add_control(
 			'number_color',
 			[
@@ -113,7 +184,8 @@ trait ContentControlStyleTrait
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .card-heading' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					// '{{WRAPPER}} .card-heading' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .deensimc-heading-with-number' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);

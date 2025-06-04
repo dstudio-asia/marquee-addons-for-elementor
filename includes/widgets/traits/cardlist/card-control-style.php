@@ -21,15 +21,20 @@ trait CardControlStyleTrait
 			[
 				'label' => esc_html__('Space Between Cards', 'elementor-addon'),
 				'type' => Controls_Manager::SLIDER,
-				'size_units' => ['px', '%', 'em'],
+				'size_units' => ['px', 'em'],
 				'range' => [
 					'px' => [
 						'min' => 0,
-						'max' => 100,
+						'max' => 1000,
 					],
 				],
+				'default' => [
+					'size' => 30,
+					'unit' => 'px',
+				],
 				'selectors' => [
-					'{{WRAPPER}} .deensimc-card-list-item:not(:last-child)' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+					// '{{WRAPPER}} .deensimc-card-list-item:not(:last-child)' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .deensimc-card-list-normal-track' => 'gap: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -45,6 +50,10 @@ trait CardControlStyleTrait
 						'min' => 0,
 						'max' => 100,
 					],
+				],
+				'default' => [
+					'size' => 0,
+					'unit' => 'px',
 				],
 				'selectors' => [
 					'{{WRAPPER}} .deensimc-card-content-wrapper' => 'gap: {{SIZE}}{{UNIT}};',
@@ -75,9 +84,14 @@ trait CardControlStyleTrait
 				],
 				'default' => 'left',
 
-
+				'selectors_dictionary' => [
+					'start' => 'left',
+					'center' => 'center',
+					'end' => 'right',
+				],
 				'selectors' => [
-					'{{WRAPPER}} .deensimc-card-left-section' => 'align-items: {{VALUE}};',
+					// '{{WRAPPER}} .deensimc-card-left-section' => 'align-items: {{VALUE}};',
+					// '{{WRAPPER}} .deensimc-card-left-section *' => 'text-align: {{VALUE}};',
 					// Image Position: Top
 					'{{WRAPPER}}.align-start.image-position-top .deensimc-card-image' => 'margin-left: 0; margin-right: auto;',
 					'{{WRAPPER}}.align-center.image-position-top .deensimc-card-image' => 'margin-inline: auto;',
@@ -192,19 +206,19 @@ trait CardControlStyleTrait
 
 
 
-		$control->add_control(
-			'card_bg_color',
-			[
-				'label' => esc_html__('Background Color', 'elementor-addon'),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .deensimc-card-content-wrapper' => 'background-color: {{VALUE}};',
-				],
-				'condition' => [
-					'deensimc_card_style' => ['image', 'icon'],
-				],
-			]
-		);
+			// $control->add_control(
+			// 	'card_bg_color',
+			// 	[
+			// 		'label' => esc_html__('Background Color', 'elementor-addon'),
+			// 		'type' => Controls_Manager::COLOR,
+			// 		'selectors' => [
+			// 			'{{WRAPPER}} .deensimc-card-content-wrapper' => 'background-color: {{VALUE}};',
+			// 		],
+			// 		'condition' => [
+			// 			'deensimc_card_style' => ['image', 'icon'],
+			// 		],
+			// 	]
+			// );
 
 		$control->add_group_control(
 			\Elementor\Group_Control_Border::get_type(),
