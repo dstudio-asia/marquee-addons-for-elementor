@@ -26,17 +26,21 @@ trait ImageControlStyleTrait
 			[
 				'label' => esc_html__('Width', 'elementor-addon'),
 				'type' => Controls_Manager::SLIDER,
-				'size_units' => ['px', '%'],
+				'size_units' => ['%', 'px'],
 				'range' => [
-					'px' => [
-						'min' => 0,
-						'max' => 1000,
-					],
 					'%' => [
 						'min' => 0,
 						'max' => 100,
 					],
+					'px' => [
+						'min' => 0,
+						'max' => 1000,
+					],
 				],
+				// 'default'    => [
+				// 	'size' => 50,
+				// 	'unit' => '%',
+				// ],
 				'selectors' => [
 					'{{WRAPPER}} .deensimc-card-image' => 'width: {{SIZE}}{{UNIT}};',
 				],
@@ -54,6 +58,7 @@ trait ImageControlStyleTrait
 					'unit' => '%',
 				],
 				'mobile_default' => [
+					'size' => 100,
 					'unit' => '%',
 				],
 				'size_units' => ['px', '%', 'em', 'rem', 'vw', 'custom'],
@@ -64,7 +69,7 @@ trait ImageControlStyleTrait
 					],
 					'px' => [
 						'min' => 1,
-						'max' => 1000,
+						'max' => 1300,
 					],
 					'vw' => [
 						'min' => 1,

@@ -241,6 +241,7 @@ trait CardControlStyleTrait
 				'separator' => 'after',
 				'selectors' => [
 					'{{WRAPPER}} .deensimc-card-content-wrapper' => 'border-radius: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .deensimc-card-list-item[style*="background-image"]' => 'border-radius: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);

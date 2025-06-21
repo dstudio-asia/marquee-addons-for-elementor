@@ -71,13 +71,13 @@ class Deensimc_Card_List_Widget extends Widget_Base
 			[
 				'label' => esc_html__('Width', 'elementor-addon'),
 				'type' => Controls_Manager::SLIDER,
-				'size_units' => ['px', '%'],
+				'size_units' => ['px', 'rem'],
 				'range' => [
 					'px' => [
 						'min' => 0,
-						'max' => 1000,
+						'max' => 1300,
 					],
-					'%' => [
+					'rem' => [
 						'min' => 0,
 						'max' => 100,
 					],
@@ -87,6 +87,40 @@ class Deensimc_Card_List_Widget extends Widget_Base
 				],
 			]
 		);
+
+		$this->add_control(
+			'card_vertical_alignment',
+			[
+				'label'     => esc_html__('Vertical Alignment', 'elementor-addon'),
+				'type'      => \Elementor\Controls_Manager::CHOOSE,
+				'options'   => [
+					'flex-start' => [
+						'title' => esc_html__('Top', 'elementor-addon'),
+						'icon'  => 'eicon-v-align-top',
+					],
+					'center'     => [
+						'title' => esc_html__('Center', 'elementor-addon'),
+						'icon'  => 'eicon-v-align-middle',
+					],
+					'flex-end'   => [
+						'title' => esc_html__('Bottom', 'elementor-addon'),
+						'icon'  => 'eicon-v-align-bottom',
+					],
+					'stretch'    => [
+						'title' => esc_html__('Stretch', 'elementor-addon'),
+						'icon'  => 'eicon-v-align-space-between',
+					],
+				],
+				'default'   => 'stretch',
+				'toggle'    => false,
+				'selectors' => [
+					// apply to both normal and marquee layouts
+					'{{WRAPPER}} .deensimc-card-list-normal-track, {{WRAPPER}} .deensimc-card-list-marquee-track'
+					=> 'align-items: {{VALUE}};',
+				],
+			]
+		);
+
 
 		// $this->add_control(
 		// 	'deensimc_card_behavior',

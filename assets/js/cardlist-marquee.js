@@ -108,21 +108,21 @@
           });
         };
     
-        function handleCardWidth() {
-          $(".deensimc-card-list-marquee-wrapper").each(function () {
-            const wrapperWidth = $(this).width();
-            console.log("Wrapper Width:", wrapperWidth);
-            const $track = $(this).find(".deensimc-card-content-wrapper");
-            $track.css("width", wrapperWidth + "px");
-          });
-        }
+        // function handleCardWidth() {
+        //   $(".deensimc-card-list-marquee-wrapper").each(function () {
+        //     const wrapperWidth = $(this).width();
+        //     console.log("Wrapper Width:", wrapperWidth);
+        //     const $track = $(this).find(".deensimc-card-content-wrapper");
+        //     $track.css("width", wrapperWidth + "px");
+        //   });
+        // }
     
         const handleMultiple = function () {
           checkVisibility(
             ".deensimc-card-list-marquee-wrapper",
             ".deensimc-card-list-marquee-track"
           );
-          handleCardWidth();
+          // handleCardWidth();
         };
         // Initial check
         handleMultiple();

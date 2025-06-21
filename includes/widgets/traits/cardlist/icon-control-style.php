@@ -32,6 +32,10 @@ trait IconControlStyleTrait
 						'max' => 600,
 					],
 				],
+				'default'    => [
+					'size' => 200,
+					'unit' => 'px',
+				],
 				'selectors' => [
 					'{{WRAPPER}} .elementor-icon-wrapper i' => 'font-size: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .elementor-icon-wrapper svg' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',

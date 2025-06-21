@@ -14,7 +14,7 @@
 
 .deensimc-card-list-item {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   position: relative;
   /* margin-bottom: 20px; */
 }
@@ -116,7 +116,7 @@
   order: -1;
   width: 50%;
   max-width: 100%;
-  /* margin-bottom: 15px; */
+
 }
 .image-position-bottom .deensimc-card-image {
   order: 1;
@@ -274,11 +274,12 @@
     max-width: 95vw;
   } */
 
-  .deensimc-card-content-wrapper,
+  /* .deensimc-card-content-wrapper,
   .image-position-left .deensimc-card-content-wrapper
+  .image-position-right .deensimc-card-content-wrapper
   {
     flex-direction: column;
-  }
+  } */
 
   /* .deensimc-card-left-section,
 .deensimc-card-image {
@@ -293,21 +294,34 @@
     order: -1;
     width: 100%;
     max-width: 100%;
-    /* margin-bottom: 15px; */
+  
   }
 
-  .image-position-right .deensimc-card-image{
+  /* .image-position-right .deensimc-card-image{
     order: 1;
     width: 100%;
     max-width: 100%;
-    /* margin-bottom: 15px; */
-  }
+  
+  } */
   .image-position-bottom .deensimc-card-image {
     order: 1;
     width: 100%;
     max-width: 100%;
-    /* margin-bottom: 15px; */
+  
   }
+
+   /* Treat left/right exactly like “top” on phones */
+   .image-position-left .deensimc-card-content-wrapper,
+   .image-position-right .deensimc-card-content-wrapper {
+     flex-direction: column !important;
+   }
+   .image-position-left .deensimc-card-image,
+   .image-position-right .deensimc-card-image {
+     order: -1;   
+     width: 100%;
+     max-width: 100%;    /* same as your “.image-position-top” rule */
+     margin-bottom: 15px;
+   }
 
   /* .image-position-right .deensimc-card-image,
   .image-position-top .deensimc-card-image {
