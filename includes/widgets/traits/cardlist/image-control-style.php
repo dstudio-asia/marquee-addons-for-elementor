@@ -37,6 +37,10 @@ trait ImageControlStyleTrait
 						'max' => 1000,
 					],
 				],
+				'mobile_default' => [
+					'size' => 100,
+					'unit' => '%',
+				],
 				// 'default'    => [
 				// 	'size' => 50,
 				// 	'unit' => '%',
@@ -47,7 +51,7 @@ trait ImageControlStyleTrait
 			]
 		);
 		$control->add_responsive_control(
-			'space',
+			'image_max_width',
 			[
 				'label' => esc_html__('Max Width', 'elementor'),
 				'type' => Controls_Manager::SLIDER,
@@ -57,10 +61,7 @@ trait ImageControlStyleTrait
 				'tablet_default' => [
 					'unit' => '%',
 				],
-				'mobile_default' => [
-					'size' => 100,
-					'unit' => '%',
-				],
+				
 				'size_units' => ['px', '%', 'em', 'rem', 'vw', 'custom'],
 				'range' => [
 					'%' => [

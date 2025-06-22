@@ -264,5 +264,102 @@ trait ContentControlStyleTrait
 		);
 
 		$control->end_controls_section();
+
+		// Add this in your register_controls() method, preferably in the style section
+		$this->start_controls_section(
+			'read_more_style_section',
+			[
+				'label' => esc_html__('Read More/Less Style', 'marquee-addons-for-elementor'),
+				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'read_more_typography',
+				'label' => esc_html__('Typography', 'marquee-addons-for-elementor'),
+				'selector' => '{{WRAPPER}} .desc-toggle',
+			]
+		);
+
+		$this->add_control(
+			'read_more_color',
+			[
+				'label' => esc_html__('Color', 'marquee-addons-for-elementor'),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .desc-toggle' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'read_more_hover_color',
+			[
+				'label' => esc_html__('Hover Color', 'marquee-addons-for-elementor'),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .desc-toggle:hover' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'read_more_spacing',
+			[
+				'label' => esc_html__('Spacing', 'marquee-addons-for-elementor'),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => ['px', 'em'],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 50,
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .desc-toggle' => 'margin-left: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'read_more_custom_text',
+			[
+				'label' => esc_html__('Custom Text', 'marquee-addons-for-elementor'),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => esc_html__('Yes', 'marquee-addons-for-elementor'),
+				'label_off' => esc_html__('No', 'marquee-addons-for-elementor'),
+				'return_value' => 'yes',
+				'default' => 'no',
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_control(
+			'read_more_text',
+			[
+				'label' => esc_html__('"More" Text', 'marquee-addons-for-elementor'),
+				'type' => Controls_Manager::TEXT,
+				'default' => esc_html__('More', 'marquee-addons-for-elementor'),
+				'condition' => [
+					'read_more_custom_text' => 'yes',
+				],
+			]
+		);
+
+		$this->add_control(
+			'read_less_text',
+			[
+				'label' => esc_html__('"Less" Text', 'marquee-addons-for-elementor'),
+				'type' => Controls_Manager::TEXT,
+				'default' => esc_html__('Less', 'marquee-addons-for-elementor'),
+				'condition' => [
+					'read_more_custom_text' => 'yes',
+				],
+			]
+		);
+
+		$this->end_controls_section();
 	}
 }

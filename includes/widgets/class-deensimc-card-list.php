@@ -108,7 +108,8 @@ class Deensimc_Card_List_Widget extends Widget_Base
 					],
 					'stretch'    => [
 						'title' => esc_html__('Stretch', 'elementor-addon'),
-						'icon'  => 'eicon-v-align-space-between',
+						'icon'  => 'eicon-h-align-stretch',
+						
 					],
 				],
 				'default'   => 'stretch',
@@ -189,6 +190,34 @@ class Deensimc_Card_List_Widget extends Widget_Base
 				'toggle' => false,
 				'prefix_class' => 'image-position-',
 				'separator' => 'before',
+			]
+		);
+
+		// 1) Let the editor pick words vs. characters
+		$this->add_control(
+			'limit_type',
+			[
+				'label'   => esc_html__('Limit By', 'marquee-addons-for-elementor'),
+				'type'    => \Elementor\Controls_Manager::SELECT,
+				'options' => [
+					'words' => esc_html__('Words',    'marquee-addons-for-elementor'),
+					'chars' => esc_html__('Characters', 'marquee-addons-for-elementor'),
+				],
+				'default' => 'words',
+			]
+		);
+
+		// 2) Let them pick the actual number
+		$this->add_control(
+			'limit_value',
+			[
+				'label'     => esc_html__('Show Limit', 'marquee-addons-for-elementor'),
+				'type'      => \Elementor\Controls_Manager::NUMBER,
+				'min'       => 1,
+				'max'       => 500,
+				'step'      => 1,
+				'default'   => 20,
+				'description' => esc_html__('Number of words or characters to show before "More"', 'marquee-addons-for-elementor'),
 			]
 		);
 
@@ -474,10 +503,6 @@ class Deensimc_Card_List_Widget extends Widget_Base
 		if (empty($card_settings)) {
 			return;
 		}
-
-
-
-
 ?>
 
 
@@ -558,7 +583,43 @@ class Deensimc_Card_List_Widget extends Widget_Base
 								</div>
 
 
-								<div class="deensimc-card-description"><?php echo wp_kses_post($item['description']); ?></div>
+
+
+								<?php
+								// grab the raw text
+								$full_text = wp_strip_all_tags($item['description']);
+
+								// decide words vs chars
+								if ('chars' === $settings['limit_type']) {
+									$snippet = mb_substr($full_text, 0, intval($settings['limit_value']));
+								} else {
+									$snippet = wp_trim_words($full_text, intval($settings['limit_value']), '');
+								}
+
+								$is_truncated = ($snippet !== $full_text);
+								?>
+							
+								<div class="deensimc-card-description">
+									<?php if ($is_truncated) : ?>
+										<span class="desc-snippet"><?php echo esc_html($snippet); ?>…</span>
+										<span class="desc-full" style="display:none;"><?php echo esc_html($full_text); ?></span>
+										<a href="#"
+											class="desc-toggle"
+											data-more="<?php echo $settings['read_more_custom_text'] === 'yes' ?
+															esc_attr($settings['read_more_text']) :
+															esc_attr__('More', 'marquee-addons-for-elementor'); ?>"
+											data-less="<?php echo $settings['read_more_custom_text'] === 'yes' ?
+															esc_attr($settings['read_less_text']) :
+															esc_attr__('Less', 'marquee-addons-for-elementor'); ?>">
+											<?php echo $settings['read_more_custom_text'] === 'yes' ?
+												esc_html($settings['read_more_text']) :
+												esc_html__('More', 'marquee-addons-for-elementor'); ?>
+										</a>
+									<?php else: ?>
+										<span class="desc-full"><?php echo esc_html($full_text); ?></span>
+									<?php endif; ?>
+								</div>
+
 
 								<?php if (!empty($item['button_text'])) : ?>
 									<div class="deensimc-card-button-wrapper">
@@ -613,6 +674,8 @@ class Deensimc_Card_List_Widget extends Widget_Base
 				<div class="deensimc-card-list-{{ card_behavior }}-track" style="flex-direction: row;">
 					<#
 						var cardSettings=settings.deensimc_card_style==='icon' ? settings.icon_cards : settings.cards;
+						var limit_type=settings.limit_type || 'words' ;
+						var limit_value=settings.limit_value || 20;
 
 						_.each(cardSettings, function(item, index) {
 						var image={
@@ -626,83 +689,116 @@ class Deensimc_Card_List_Widget extends Widget_Base
 						var headingTag=settings.deensimc_heading_tag || 'h3' ;
 						var hasBgImage=settings.deensimc_card_style==='background_image' && imageUrl;
 						var number_style=settings.deensimc_card_number_style;
-						#>
-						<div class="deensimc-card-list-item elementor-repeater-item-{{ item._id }}"
-							<# if (hasBgImage) { #>
-							style="background-image: url('{{{ imageUrl }}}')"
+
+						// Prepare description text for truncation
+						var full_text=item.description.replace(/<[^>]*>/g, ''); // Strip HTML tags
+						var snippet = '';
+						var is_truncated = false;
+
+						if (limit_type === 'chars') {
+						snippet = full_text.substring(0, parseInt(limit_value));
+						is_truncated = snippet.length < full_text.length;
+							} else {
+							var words=full_text.split(/\s+/);
+							snippet=words.slice(0, parseInt(limit_value)).join(' ');
+						is_truncated = words.length > parseInt(limit_value);
+					}
+					#>
+					<div class="deensimc-card-list-item elementor-repeater-item-{{ item._id }}"
+						<# if (hasBgImage) { #>
+						style="background-image: url(' {{{ imageUrl }}}')"
 							<# } #>>
 
-								<# if (number_style==='top' ) { #>
-									<div class="deensimc-card-number position-top">
-										{{ item.card_number && item.card_number.trim() !== '' ? item.card_number + '.' : (index + 1) + '.' }}
-									</div>
-									<# } #>
+							<# if (number_style==='top' ) { #>
+								<div class="deensimc-card-number position-top">
+									{{ item.card_number && item.card_number.trim() !== '' ? item.card_number + '.' : (index + 1) + '.' }}
+								</div>
+								<# } #>
 
-										<div class="deensimc-card-content-wrapper">
-											<div class="deensimc-card-left-section">
-												<div class="deensimc-heading-with-number">
-													<{{ headingTag }} class="card-heading">
-														<# if (number_style !=='none' ) { #>
-															<span class="deensimc-card-number">
-																<#
-																	var value=item.card_number && item.card_number.trim() !=='' ? item.card_number : (index + 1);
-																	switch (number_style) {
-																	case 'bullet' :
-																	print('•');
-																	break;
-																	case 'arrow' :
-																	print('→');
-																	break;
-																	case 'check' :
-																	print('✓');
-																	break;
-																	case 'number' :
-																	default:
-																	print(value + '.' );
-																	break;
-																	}
-																	#>
-															</span>
-															<# } #>
-																{{{ item.heading }}}
-													</{{ headingTag }}>
-												</div>
-
-												<div class="deensimc-card-description">{{{ item.description }}}</div>
-
-												<# if (item.button_text) { #>
-													<div class="deensimc-card-button-wrapper">
-														<a href="{{ item.button_link.url }}"
-															class="elementor-button elementor-size-{{ item.button_size }}"
-															<# if (item.button_link.is_external) { #> target="_blank" <# } #>
-																<# if (item.button_link.nofollow) { #> rel="nofollow" <# } #>>
-																		<span class="elementor-button-text">{{{ item.button_text }}}</span>
-														</a>
-													</div>
-													<# } #>
+									<div class="deensimc-card-content-wrapper">
+										<div class="deensimc-card-left-section">
+											<div class="deensimc-heading-with-number">
+												<{{ headingTag }} class="card-heading">
+													<# if (number_style !=='none' ) { #>
+														<span class="deensimc-card-number">
+															<#
+																var value=item.card_number && item.card_number.trim() !=='' ? item.card_number : (index + 1);
+																switch (number_style) {
+																case 'bullet' :
+																print('•');
+																break;
+																case 'arrow' :
+																print('→');
+																break;
+																case 'check' :
+																print('✓');
+																break;
+																case 'number' :
+																default:
+																print(value + '.' );
+																break;
+																}
+																#>
+														</span>
+														<# } #>
+															{{{ item.heading }}}
+												</{{ headingTag }}>
 											</div>
 
-											<# if ((settings.deensimc_card_style==='image' || settings.deensimc_card_style==='marquee' || settings.deensimc_card_style==='card_stacked' ) && item.image.url) { #>
-												<div class="deensimc-card-image">
-													<img src="{{ imageUrl }}" alt="">
+											<div class="deensimc-card-description">
+												<# if (is_truncated) { #>
+													<span class="desc-snippet">{{{ snippet }}}…</span>
+													<span class="desc-full" style="display:none;">{{{ full_text }}}</span>
+													<a href="#"
+														class="desc-toggle"
+														data-more="{{ settings.read_more_custom_text === 'yes' ? 
+														settings.read_more_text : 
+														'<?php echo esc_attr__('More', 'marquee-addons-for-elementor'); ?>' }}"
+																									data-less="{{ settings.read_more_custom_text === 'yes' ? 
+														settings.read_less_text : 
+														'<?php echo esc_attr__('Less', 'marquee-addons-for-elementor'); ?>' }}">
+																									{{ settings.read_more_custom_text === 'yes' ? 
+															settings.read_more_text : 
+															'<?php echo esc_html__('More', 'marquee-addons-for-elementor'); ?>' }}
+													</a>
+													<# } else { #>
+														<span class="desc-full">{{{ full_text }}}</span>
+														<# } #>
+											</div>
+
+											<# if (item.button_text) { #>
+												<div class="deensimc-card-button-wrapper">
+													<a href="{{ item.button_link.url }}"
+														class="elementor-button elementor-size-{{ item.button_size }}"
+														<# if (item.button_link.is_external) { #> target="_blank" <# } #>
+															<# if (item.button_link.nofollow) { #> rel="nofollow" <# } #>>
+																	<span class="elementor-button-text">{{{ item.button_text }}}</span>
+													</a>
 												</div>
-												<# } else if (settings.deensimc_card_style==='icon' && item.icon) { #>
-													<div class="deensimc-card-image">
-														<# if (item.icon.value) { #>
-															<div class="elementor-icon-wrapper">
-																<#
-																	var iconHTML=elementor.helpers.renderIcon(view, item.icon, { 'aria-hidden' : true }, 'i' , 'object' );
-																	if (iconHTML.rendered) { #>
-																	{{{ iconHTML.value }}}
-																	<# } #>
-															</div>
-															<# } #>
-													</div>
-													<# } #>
+												<# } #>
 										</div>
-						</div>
-						<# }); #>
+
+										<# if ((settings.deensimc_card_style==='image' || settings.deensimc_card_style==='marquee' || settings.deensimc_card_style==='card_stacked' ) && item.image.url) { #>
+											<div class="deensimc-card-image">
+												<img src="{{ imageUrl }}" alt="">
+											</div>
+											<# } else if (settings.deensimc_card_style==='icon' && item.icon) { #>
+												<div class="deensimc-card-image">
+													<# if (item.icon.value) { #>
+														<div class="elementor-icon-wrapper">
+															<#
+																var iconHTML=elementor.helpers.renderIcon(view, item.icon, { 'aria-hidden' : true }, 'i' , 'object' );
+																if (iconHTML.rendered) { #>
+																{{{ iconHTML.value }}}
+																<# } #>
+														</div>
+														<# } #>
+												</div>
+												<# } #>
+									</div>
 				</div>
+				<# }); #>
+			</div>
 			</div>
 	<?php
 	}

@@ -36,6 +36,9 @@ trait CardControlStyleTrait
 					// '{{WRAPPER}} .deensimc-card-list-item:not(:last-child)' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .deensimc-card-list-normal-track' => 'gap: {{SIZE}}{{UNIT}};',
 				],
+				'condition' => [
+					'deensimc_card_behavior!' => 'yes', // Correct condition
+				],
 			]
 		);
 

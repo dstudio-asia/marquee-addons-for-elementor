@@ -2,8 +2,40 @@
  * MarqueeAddons Main JS
  */
 (function ($, _) {
-  "use strict";
+  ("use strict");
+  // Extend Window interface for TypeScript (if needed)
+  if (typeof window !== "undefined") {
+    window.ElementorCardList = {
+      initToggle: function () {
+        // Handle toggle functionality
+        $(document)
+          .off("click.cardListToggle")
+          .on("click.cardListToggle", ".desc-toggle", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
 
+            var $toggle = $(this),
+              $parent = $toggle.closest(".deensimc-card-description"),
+              $snippet = $parent.find(".desc-snippet"),
+              $full = $parent.find(".desc-full"),
+              moreTxt = $toggle.data("more"),
+              lessTxt = $toggle.data("less");
+
+            if ($full.is(":hidden")) {
+              $snippet.hide();
+              $full.show();
+              $toggle.text(lessTxt);
+            } else {
+              $full.hide();
+              $snippet.show();
+              $toggle.text(moreTxt);
+            }
+
+            return false;
+          });
+      },
+    };
+  }
   // Initialize Elementor frontend hooks on window load
   $(window).on("elementor/frontend/init", function () {
     // Helper function for hover event handling
@@ -92,22 +124,24 @@
           animationName,
         });
 
-        
         // Load marquee when it comes into viewport
         const checkVisibility = function (wrapperSelector, elementSelector) {
           const viewportHeight = window.innerHeight;
           const $wrappers = $(wrapperSelector);
-    
+
           $wrappers.each(function () {
             const $wrapper = $(this);
             const rect = this.getBoundingClientRect();
             const $elements = $wrapper.find(elementSelector);
             const isVisible = rect.bottom > 0 && rect.top < viewportHeight;
-    
-            $elements.css("animation-play-state", isVisible ? "running" : "paused");
+
+            $elements.css(
+              "animation-play-state",
+              isVisible ? "running" : "paused"
+            );
           });
         };
-    
+
         // function handleCardWidth() {
         //   $(".deensimc-card-list-marquee-wrapper").each(function () {
         //     const wrapperWidth = $(this).width();
@@ -116,7 +150,7 @@
         //     $track.css("width", wrapperWidth + "px");
         //   });
         // }
-    
+
         const handleMultiple = function () {
           checkVisibility(
             ".deensimc-card-list-marquee-wrapper",
@@ -126,12 +160,59 @@
         };
         // Initial check
         handleMultiple();
-    
+
         // Set up event listeners
         $(window).on("scroll", handleMultiple).on("resize", handleMultiple);
       }
-
     );
 
+    // $(".deensimc-card-list-wrapper").on("click", ".desc-toggle", function (e) {
+    //   e.preventDefault();
+
+    //   var $toggle = $(this),
+    //     $parent = $toggle.closest(".deensimc-card-description"),
+    //     $snippet = $parent.find(".desc-snippet"),
+    //     $full = $parent.find(".desc-full"),
+    //     moreTxt = $toggle.attr("data-more"),
+    //     lessTxt = $toggle.attr("data-less");
+
+    //   if (!$full.is(":visible")) {
+    //     // expand
+    //     $snippet.hide();
+    //     $full.show();
+    //     $toggle.text(lessTxt);
+    //   } else {
+    //     // collapse
+    //     $full.hide();
+    //     $snippet.show();
+    //     $toggle.text(moreTxt);
+    //   }
+    // });
+  });
+
+  // Initialize for editor
+  if (typeof elementor !== "undefined") {
+    // Wait for preview to be ready
+    elementor.on("preview:loaded", function () {
+      setTimeout(window.ElementorCardList.initToggle, 300);
+    });
+
+    // Rebind when widget settings change
+    elementor.hooks.addAction(
+      "panel/open_editor/widget/deensimc-card-list",
+      function () {
+        setTimeout(window.ElementorCardList.initToggle, 500);
+      }
+    );
+
+    // Handle dynamic content changes
+    elementor.channels.editor.on("change", function () {
+      setTimeout(window.ElementorCardList.initToggle, 700);
+    });
+  }
+
+  // Fallback initialization
+  $(function () {
+    setTimeout(window.ElementorCardList.initToggle, 1000);
   });
 })(jQuery, window._);
