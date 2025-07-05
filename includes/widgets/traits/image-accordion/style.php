@@ -106,7 +106,7 @@ trait ImageAccordion_Styles {
             Group_Control_Css_Filter::get_type(),
             [
                 'name' => 'deensimc_image_css_filter_normal',
-                'selector' => '{{WRAPPER}} .deensimc-image-panel .deensimc-panel',
+                'selector' => '{{WRAPPER}} .deensimc-panel .deensimc-acc-bg-img',
             ]
         );
     
@@ -133,7 +133,7 @@ trait ImageAccordion_Styles {
             Group_Control_Css_Filter::get_type(),
             [
                 'name' => 'deensimc_image_css_filter_hover',
-                'selector' => '{{WRAPPER}} .deensimc-image-panel .deensimc-panel:hover',
+                'selector' => '{{WRAPPER}} .deensimc-panel .deensimc-acc-bg-img',
             ]
         );
     
@@ -154,7 +154,7 @@ trait ImageAccordion_Styles {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'deensimc_image_title_typography',
-                'selector' => '{{WRAPPER}} .deensimc-image-panel .deensimc-panel p:nth-child(1)',
+                'selector' => '{{WRAPPER}} .deensimc-image-panel .deensimc-panel .deensimc-panel-default-title, {{WRAPPER}} .deensimc-panel-content h2',
             ]
         );
     
@@ -164,7 +164,8 @@ trait ImageAccordion_Styles {
                 'label' => esc_html__( 'Image Title Color', 'marquee-addons-for-elementor' ),
                 'type' =>  Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .deensimc-image-panel .deensimc-panel p:nth-child(1)' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .deensimc-image-panel .deensimc-panel .deensimc-panel-default-title' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .deensimc-panel-content h2' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -189,7 +190,48 @@ trait ImageAccordion_Styles {
                 'type' =>  Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
                 'selectors' => [
-                    '{{WRAPPER}} .deensimc-image-panel .deensimc-panel p' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .deensimc-panel-default-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .deensimc-panel-content h2' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'deensimc_images_description_heading',
+            [
+                'label' => esc_html__( 'Image Description', 'marquee-addons-for-elementor' ),
+                'type' =>  Controls_Manager::HEADING,
+                'separator' => 'after',
+            ]
+        );
+    
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name' => 'deensimc_image_description_typography',
+                'selector' => '{{WRAPPER}} .deensimc-acc-description',
+            ]
+        );
+    
+        $this->add_control(
+            'deensimc_image_description_color',
+            [
+                'label' => esc_html__( 'Image Title Color', 'marquee-addons-for-elementor' ),
+                'type' =>  Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .deensimc-acc-description' => 'color: {{VALUE}}',
+                ],
+            ]
+        );
+    
+        $this->add_responsive_control(
+            'deensimc_image_description_padding',
+            [
+                'label' => esc_html__( 'Padding', 'marquee-addons-for-elementor' ),
+                'type' =>  Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+                'selectors' => [
+                    '{{WRAPPER}} .deensimc-acc-description' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
