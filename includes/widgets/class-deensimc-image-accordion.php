@@ -76,14 +76,27 @@ class Deensimc_Image_Accordion extends Widget_Base {
 		<div class="deensimc-image-panel">
 			<div class="deensimc-panels">
 				<?php
-				$deen_accordion_behaviour = $settings['deensimc_bg_image_active_behaviour'] === 'click' ? 'deensimc-click' : 'deensimc-hover';
+				$deen_accordion_behaviour = $settings['deensimc_bg_image_active_behaviour'] === 'click' ? 'click' : 'hover';
 				if ( $settings['deensimc_bg_image_repeater'] ) {
 					foreach( $settings['deensimc_bg_image_repeater'] as $images ) {
 				?>
-					<div class="<?php echo esc_attr( $deen_accordion_behaviour ); ?> deensimc-panel deensimc-panel-main" style="background-image: url( <?php echo esc_url( $images['deensimc_bg_image']['url'] ) ?> )">
-						<p class="<?php echo esc_attr( $devices_class ); ?>">
+					<div
+                        data-behaviour="<?php echo esc_attr( $deen_accordion_behaviour ); ?>"
+                        class="deensimc-panel deensimc-panel-main ">
+						<p class="<?php echo esc_attr( $devices_class ); ?> deensimc-panel-default-title">
 							<?php echo esc_html( $images['deensimc_bg_image_title'] ) ?>
 						</p>
+						<div class="deensimc-panel-content">
+							<div>
+								<h2> <?php echo esc_html( $images['deensimc_bg_image_title'] ) ?> </h2>
+								<div class="deensimc-acc-description">
+									<?php
+										echo $images['deensimc_bg_image_description'] ?? '' ;
+									?>
+								</div>
+							</div>
+						</div>
+						<img src="<?php echo esc_url( $images['deensimc_bg_image']['url'] ) ?>" alt="background image" class="deensimc-acc-bg-img">
 					</div>
 				<?php
 					}
@@ -112,11 +125,18 @@ class Deensimc_Image_Accordion extends Widget_Base {
 		#>
 		<div class="deensimc-image-panel">
 			<div class="deensimc-panels">
-				<# var deen_accordion_behaviour = settings.deensimc_bg_image_active_behaviour === 'click' ? 'deensimc-click' : 'deensimc-hover'; #>
+				<# var deen_accordion_behaviour = settings.deensimc_bg_image_active_behaviour === 'click' ? 'click' : 'hover'; #>
 				<# if ( settings.deensimc_bg_image_repeater ) { #>
 					<# _.each( settings.deensimc_bg_image_repeater, function( images ) { #>
-						<div class="{{ deen_accordion_behaviour }} deensimc-panel deensimc-panel-main" style="background-image: url( {{{ images.deensimc_bg_image.url }}} )">
-							<p class="{{{ devices }}}">{{ images.deensimc_bg_image_title }}</p>
+						<div data-behaviour="{{ deen_accordion_behaviour }}" class="deensimc-panel deensimc-panel-main " style="background-image: url( {{ images.deensimc_bg_image.url }} )">
+							<p class="{{{ devices }}} deensimc-panel-default-title"> {{ images.deensimc_bg_image_title }} </p>
+							<div class="deensimc-panel-content">
+								<div>
+									<h2> {{ images.deensimc_bg_image_title }} </h2>
+									<div class="deensimc-acc-description"> {{{ images.deensimc_bg_image_description }}} </div>
+								</div>
+                      		</div>
+							<img src="{{ images.deensimc_bg_image.url }}" alt="background image" class="deensimc-acc-bg-img">
 						</div>
 					<# }); #>
 				<# } #>

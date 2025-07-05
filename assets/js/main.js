@@ -193,7 +193,9 @@
         let animationSpeed = $(scope)
           .find(".deensimc-marquee")
           .data("animation-speed");
-        if (animationSpeed) {
+        const marquees = $(scope).find(".deensimc-marquee");
+        let scrollSpeed = marquees.data("scroll-speed") || 'none';
+        if ( animationSpeed && scrollSpeed == 'none') {
           setupMarquee(scope, "deensimc");
         } else {
           $(scope).find(".deensimc-marquee-group").addClass("deensimc-paused");
@@ -203,15 +205,29 @@
 
     // Initialize text marquee
     elementorFrontend.hooks.addAction(
-      "frontend/element_ready/deensimc-smooth-text.default",
+      "frontend/element_ready/deensimc-image-accordion.default",
       (scope) => {
-        let animationSpeed = $(scope)
-          .find(".deensimc-marquee")
-          .data("animation-speed");
-        if (animationSpeed) {
-          setupMarquee(scope, "deensimc");
+        let accordionPanels = $(scope).find(
+          ".deensimc-image-panel .deensimc-panel"
+        );
+        const behaviour = accordionPanels.data("behaviour");
+        let initialOpenPanelIndex = 0;
+
+        // Toggle accordion state
+        accordionPanels.eq(initialOpenPanelIndex).addClass("open");
+
+        accordionPanels.off("click mouseenter");
+
+        if (behaviour === "click") {
+          accordionPanels.on("click", function () {
+            accordionPanels.not(this).removeClass("open");
+            $(this).addClass("open");
+          });
         } else {
-          $(scope).find(".deensimc-marquee-group").addClass("deensimc-paused");
+          accordionPanels.on("mouseenter", function () {
+            accordionPanels.not(this).removeClass("open");
+            $(this).addClass("open"); // use addClass for consistent UX
+          });
         }
       }
     );
@@ -257,7 +273,7 @@
         let accordionPanels = $(scope).find(
           ".deensimc-image-panel .deensimc-click.deensimc-panel"
         );
-        let initialOpenPanelIndex = Math.floor(accordionPanels.length / 2);
+        let initialOpenPanelIndex = 0;
 
         // Toggle accordion state
         accordionPanels.eq(initialOpenPanelIndex).addClass("open");
@@ -272,16 +288,7 @@
     elementorFrontend.hooks.addAction(
       "frontend/element_ready/deensimc-testimonial.default",
       (scope) => {
-        let animationSpeed = $(scope)
-          .find(".deensimc-marquee")
-          .data("animation-speed");
-        let isAnimationEnabled =
-          $(scope).find(".deensimc-marquee").data("animation-status") || "no";
-        if (animationSpeed && isAnimationEnabled === "yes") {
-          setupMarquee(scope, "deensimc");
-        } else {
-          $(scope).find(".deensimc-marquee-group").addClass("deensimc-paused");
-        }
+        
         // Show more/less text functionality
         $(scope)
           .find(".deensimc-tes-text")
@@ -303,7 +310,6 @@
             let quoteRight =
               $(scope).find(".deensimc-tes .deensimc-marquee").data("quote-right") ||
               "";
-
             // Store truncated and full text in the element for reuse
             const truncateText = (text, limit) => {
               let wordArray = text.split(" ");
@@ -328,7 +334,7 @@
             <span class="deensimc-contents">${
               isTextTruncated ? truncatedText : fullText
             }</span>
-            <span class="deensimc-toggle">${
+            <span tab-index="-1" class="deensimc-toggle">${
               isTextTruncated ? showMoreText : ""
             }</span>
             <span class="quote-right"><i class="${quoteRight}"></i></span>
@@ -338,7 +344,21 @@
           blockquoteElement
             .off("click", ".deensimc-toggle")
             .on("click", ".deensimc-toggle", toggleBlockquote);
+
         });
+
+        let animationSpeed = $(scope)
+          .find(".deensimc-marquee")
+          .data("animation-speed");
+        let isAnimationEnabled =
+          $(scope).find(".deensimc-marquee").data("animation-status") || "no";
+          const marquees = $(scope).find(".scroll-marquee-wrapper");
+          let scrollSpeed = marquees.data("scroll-speed") || 'none';
+        if (animationSpeed && isAnimationEnabled === "yes" && scrollSpeed == 'none') {
+          setupMarquee(scope, "deensimc");
+        } else {
+          $(scope).find(".deensimc-marquee-group").addClass("deensimc-paused");
+        }
       }
     );
 
@@ -346,12 +366,13 @@
     elementorFrontend.hooks.addAction(
       "frontend/element_ready/deensimc-video-marquee.default",
       (scope) => {
+        const marquees = $(scope).find(".deensimc-marquee");
         let isAnimationEnabled =
           $(scope).find(".deensimc-marquee").data("animation-status") || "no";
         let animationSpeed =
           $(scope).find(".deensimc-marquee").data("animation-speed") || 50;
-
-        if (animationSpeed && isAnimationEnabled === "yes") {
+        let scrollSpeed = marquees.data("scroll-speed") || 'none';
+        if (animationSpeed && isAnimationEnabled === "yes" && scrollSpeed == 'none') {
           setupMarquee(scope, "deensimc");
         } else {
           $(scope).find(".deensimc-marquee-group").addClass("deensimc-paused");
