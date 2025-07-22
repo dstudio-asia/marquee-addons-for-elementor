@@ -229,10 +229,15 @@ class Deensimc_Testimonial_Marquee extends Widget_Base {
 				for ( $j = 0; $j < 5 - ceil( $testimonial['deensimc_testimonial_rating_num'] ); $j++ ) { ?>
 					<span class="deensimc-tes-icons-none"><i class="fa fa-star"></i></span>
 				<?php } ?>
-				
-				<small class="deensimc-tes-review-text">
-					<?php echo esc_html__( '(', 'marquee-addons-for-elementor' ) . esc_html( $testimonial['deensimc_testimonial_rating_counter'] ) . esc_html__(')', 'marquee-addons-for-elementor' ); ?>
-				</small>
+				<?php
+				if( '' !== $testimonial['deensimc_testimonial_rating_counter'] ) {
+				?>
+					<small class="deensimc-tes-review-text">
+						<?php echo esc_html__( '(', 'marquee-addons-for-elementor' ) . esc_html( $testimonial['deensimc_testimonial_rating_counter'] ) . esc_html__(')', 'marquee-addons-for-elementor' ); ?>
+					</small>
+				<?php 
+				}
+				?>
 			</div>
 		</div>
 	<?php
@@ -398,10 +403,11 @@ class Deensimc_Testimonial_Marquee extends Widget_Base {
 												<# for ( let j = 0; j < emptyStars; j++ ) { #>
 													<span class="deensimc-tes-icons-none"><i class="fa fa-star"></i></span>
 												<# } #>
-
+												<# if('' !== testimonial.deensimc_testimonial_rating_counter ){ #>
 												<small class="deensimc-tes-review-text">(
 													{{{ testimonial.deensimc_testimonial_rating_counter }}}
 												)</small>
+												<# } #>
 											</div>
 										</div>
 									<# } #>
@@ -463,10 +469,11 @@ class Deensimc_Testimonial_Marquee extends Widget_Base {
 												<# for ( let j = 0; j < emptyStars; j++ ) { #>
 													<span class="deensimc-tes-icons-none"><i class="fa fa-star"></i></span>
 												<# } #>
-
+												<# if( '' !== testimonial.deensimc_testimonial_rating_counter ){ #>
 												<small class="deensimc-tes-review-text">(
 													{{{ testimonial.deensimc_testimonial_rating_counter }}}
 												)</small>
+												<# } #>
 											</div>
 										</div>
 									<# } #>

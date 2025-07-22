@@ -9,7 +9,7 @@ final class Marquee {
 	 * @var string The addon version.
 	 */
 
-	const VERSION = '2.1.1';
+	const VERSION = '2.1.5';
 
 	/**
 	 * Minimum Elementor Version
@@ -211,6 +211,7 @@ final class Marquee {
 		add_action( 'elementor/widgets/register', [ $this, 'deensimc_register_widgets' ] );
 		add_action( 'elementor/elements/categories_registered', [ $this, 'deensimc_add_categories' ] );
 		add_action( 'elementor/editor/before_enqueue_styles', [ $this, 'deensimc_editor_styles' ] );
+		add_action( 'elementor/frontend/after_enqueue_scripts', [ $this, 'deensimc_elementor_library' ] );
 
 	}
 
@@ -232,22 +233,19 @@ final class Marquee {
 
 	}
 
-	public function deensimc_frontend_scripts() {
-
-		wp_register_script( 'deensimc-swiper-bundle', DEENSIMC_ASSETS_URL  . 'js/swiper-bundle.min.js' , [ 'jquery' ] , self::VERSION, false );
-		wp_register_script( 'deensimc-main', DEENSIMC_ASSETS_URL  . 'js/main.js' , [ 'jquery' ] , self::VERSION, false );
-
-		wp_enqueue_script( 'deensimc-swiper-bundle' );
-		wp_enqueue_script( 'deensimc-main' );
-
+	public function deensimc_elementor_library() {
+		wp_enqueue_script( 'swiper' );
 	}
 
+	public function deensimc_frontend_scripts() {
+		wp_register_script( 'deensimc-main', DEENSIMC_ASSETS_URL  . 'js/main.js' , [ 'jquery' ] , self::VERSION, false );
+		wp_enqueue_script( 'deensimc-main' );
+	}
 	public function deensimc_editor_styles() {
-
 		wp_register_style( 'deensimc-editor-css', DEENSIMC_ASSETS_URL . 'css/editor.css', null, self::VERSION, false );
 		wp_enqueue_style( 'deensimc-editor-css' );
-
 	}
+
 
 	
 	function deensimc_register_widgets( $widgets_manager ) {

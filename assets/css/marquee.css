@@ -21,7 +21,7 @@
 
 :root {
   --deensimc-text-dark-gray: #555353;
-  --deensimc-gap: 0px; 
+  --deensimc-gap: 0px;
   --deensimc-color-white: #ffffff;
 }
 
@@ -119,9 +119,15 @@
   margin-left: 20px;
 }
 
-.deensimc-wrapper-vertical .deensimc-marquee-vertical .deensimc-marquee-group:nth-child(2), 
-.deensimc-wrapper-vertical .deensimc-marquee-vertical .deensimc-marquee-group:nth-child(3), 
-.deensimc-wrapper-vertical .deensimc-marquee-vertical .deensimc-marquee-group:nth-child(4) {
+.deensimc-wrapper-vertical
+  .deensimc-marquee-vertical
+  .deensimc-marquee-group:nth-child(2),
+.deensimc-wrapper-vertical
+  .deensimc-marquee-vertical
+  .deensimc-marquee-group:nth-child(3),
+.deensimc-wrapper-vertical
+  .deensimc-marquee-vertical
+  .deensimc-marquee-group:nth-child(4) {
   margin-top: 20px;
   margin-left: 0;
 }
@@ -227,7 +233,7 @@
     width: 40px;
     transform: translateX(-100%);
   }
-  
+
   .deensimc-marquee.deensimc-shadow.deensimc-marquee-vertical::after {
     right: 0;
     left: unset;
@@ -239,9 +245,15 @@
     height: auto;
   }
 
-  .deensimc-wrapper-vertical .deensimc-marquee-vertical .deensimc-marquee-group:nth-child(2), 
-  .deensimc-wrapper-vertical .deensimc-marquee-vertical .deensimc-marquee-group:nth-child(3), 
-  .deensimc-wrapper-vertical .deensimc-marquee-vertical .deensimc-marquee-group:nth-child(4) {
+  .deensimc-wrapper-vertical
+    .deensimc-marquee-vertical
+    .deensimc-marquee-group:nth-child(2),
+  .deensimc-wrapper-vertical
+    .deensimc-marquee-vertical
+    .deensimc-marquee-group:nth-child(3),
+  .deensimc-wrapper-vertical
+    .deensimc-marquee-vertical
+    .deensimc-marquee-group:nth-child(4) {
     margin-top: 0 !important;
     margin-left: 20px !important;
   }
@@ -254,4 +266,28 @@
   .deensimc-marquee-vertical .deensimc-marquee-group {
     animation-name: deensimc-scroll-x !important;
   }
+
+  [dir="rtl"] .deensimc-marquee,
+  [dir="rtl"] .deensimc-marquee-group {
+    flex-direction: row-reverse !important;
+  }
+}
+
+[dir="rtl"] .deensimc-marquee,
+[dir="rtl"] .deensimc-marquee-group {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .deensimc-marquee-vertical,
+[dir="rtl"] .deensimc-marquee-vertical .deensimc-marquee-group {
+  flex-direction: column;
+}
+
+[dir="rtl"] .deensimc-tes .quote-left {
+  left: 12%;
+  bottom: 24px;
+}
+[dir="rtl"] .deensimc-tes .quote-right {
+  right: 3%;
+  top: 1px;
 }

@@ -183,7 +183,7 @@
   }
   
   .deensimc-tes .deensimc-tes-main .deensimc-tes-author .deensimc-tes-heading {
-    opacity: 0.8;
+    opacity: 1;
     margin: 0;
     font-weight: 800;
     color: var(--deensimc-marquee-text-black);

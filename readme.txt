@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: marquee, slider, image marquee, video marquee, text marquee
 Requires at least: 5.8
 Tested up to: 6.8
-Stable tag: 2.1.1
+Stable tag: 2.1.5
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -137,35 +137,48 @@ First, ensure that you’ve activated the plugin correctly. If the issue persist
 
 == Changelog ==
 
+= 2.1.5
+- Fix an empty review counter was displayed even when no reviews were available on Testimonial Addon.
+
+= 2.1.4
+- Added RTL (Right-to-Left) language support for the Image, Text, and Video Marquee Addons.
+
+= 2.1.3
+- Fix elementor lightbox issue.
+- Replaced custom swiper.js implementation with elementor's native swiper.js for enhanced compatibility and performance.
+
+= 2.1.2
+- Removed opacity from heading.
+
 = 2.1.1
-- Fix browser compatible issue on Firefox 
+- Fix browser compatible issue on Firefox.
 
 = 2.1.0
-- Fix animation speed issue on testimonial widget
+- Fix animation speed issue on Testimonial Addon.
 
 = 2.0.0
 - Fix animation speed issue: Previously, the animation duration remained the same regardless of the number of items in the marquee. This caused the animation to appear too fast with many items and too slow with fewer. Now, the animation duration adjusts dynamically based on content length, ensuring a consistent and linear scrolling speed.
 
 = 1.2.8
-- Feat load marquee when it comes into viewport
+- Feat load marquee when it comes into viewport.
 
 = 1.2.7
 - Feat choose preferred font awesome icons for the opening and closing quote marks in testimonial.
 
 = 1.2.6 
-- Fix edit issue image marquee in Safari
+- Fix edit issue image marquee in Safari.
 
 = 1.2.5
 - Fix the problem where only 8 images are showing and make sure more images can be displayed after that.
 
 = 1.2.2
-- Fix disappearing text and images in Safari on iPhone
+- Fix disappearing text and images in Safari on iPhone.
 
 = 1.2.0
-- Template library added
+- Template library added.
 
 = 1.1.1
-- Removed fontawesome library
+- Removed fontawesome library.
 
 = 1.0.0
-- Initial release
+- Initial release.
