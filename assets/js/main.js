@@ -156,8 +156,7 @@
       if (toggleElement.text() === showMoreText) {
         blockquoteElement.html(`
           <div class="contents-wrapper">
-            <span class="quote-left"><i class="${quoteLeft}"></i></span>
-            <span class="deensimc-contents">${fullText}</span>
+            <span class="deensimc-contents"><i class="${quoteLeft}"></i>${fullText}</span>
             <span class="deensimc-toggle">${showLessText}</span>
             <span class="quote-right"><i class="${quoteRight} bottom"></i></span>
           </div>
@@ -165,8 +164,7 @@
       } else {
         blockquoteElement.html(`
           <div class="contents-wrapper">
-            <span class="quote-left"><i class="${quoteLeft}"></i></span>
-            <span class="deensimc-contents">${truncatedText}</span>
+            <span class="deensimc-contents"><i class="${quoteLeft}"></i>${truncatedText}</span>
             <span class="deensimc-toggle">${showMoreText}</span>
             <span class="quote-right"><i class="${quoteRight}"></i></span>
           </div>
@@ -232,10 +230,8 @@
 
           blockquoteElement.html(`
             <div class="contents-wrapper">
-              <span class="quote-left"><i class="${quoteLeft}"></i></span>
-              <span class="deensimc-contents">${
-                isTextTruncated ? truncatedText : fullText
-              }</span>
+              <span class="deensimc-contents"><i class="${quoteLeft}"></i>
+              ${isTextTruncated ? truncatedText : fullText}</span>
               <span class="deensimc-toggle">${
                 isTextTruncated ? showMoreText : ""
               }</span>
