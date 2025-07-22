@@ -343,8 +343,7 @@
   cursor: pointer;
 }
 
-.deensimc-tes.deensimc-off-icons .quote-left i,
-.deensimc-tes.deensimc-off-icons .quote-right i {
+.deensimc-tes.deensimc-off-icons .deensimc-tes-text i {
   display: none;
 }
 

@@ -205,6 +205,9 @@
             .text()
             .replace("Show more", "")
             .trim();
+
+          const isExcerptActive =
+            marqueeData.data("is-excerpt-active") === "yes";
           const wordLimit = marqueeData.data("excerpt-length") || 50;
           const showMoreText = marqueeData.data("show-more") || "Show more";
           const showLessText = marqueeData.data("show-less") || "Show less";
@@ -218,30 +221,41 @@
               : text;
           };
 
-          const truncatedText = truncateText(fullText, wordLimit);
-          const isTextTruncated = fullText.split(" ").length > wordLimit;
+          if (isExcerptActive) {
+            const truncatedText = truncateText(fullText, wordLimit);
+            const isTextTruncated = fullText.split(" ").length > wordLimit;
 
-          blockquoteElement.data({
-            "full-text": fullText,
-            "truncated-text": truncatedText,
-            "show-more": showMoreText,
-            "show-less": showLessText,
-          });
+            blockquoteElement.data({
+              "full-text": fullText,
+              "truncated-text": truncatedText,
+              "show-more": showMoreText,
+              "show-less": showLessText,
+            });
 
-          blockquoteElement.html(`
-            <div class="contents-wrapper">
-              <span class="deensimc-contents"><i class="${quoteLeft}"></i>
-              ${isTextTruncated ? truncatedText : fullText}</span>
-              <span class="deensimc-toggle">${
-                isTextTruncated ? showMoreText : ""
-              }</span>
-              <span class="quote-right"><i class="${quoteRight}"></i></span>
-            </div>
-          `);
+            blockquoteElement.html(`
+              <div class="contents-wrapper">
+                <span class="deensimc-contents"><i class="${quoteLeft}"></i>
+                ${isTextTruncated ? truncatedText : fullText}</span>
+                <span class="deensimc-toggle">${
+                  isTextTruncated ? showMoreText : ""
+                }</span>
+                <span class="quote-right"><i class="${quoteRight}"></i></span>
+              </div>
+            `);
 
-          blockquoteElement
-            .off("click", ".deensimc-toggle")
-            .on("click", ".deensimc-toggle", toggleBlockquote);
+            blockquoteElement
+              .off("click", ".deensimc-toggle")
+              .on("click", ".deensimc-toggle", toggleBlockquote);
+          } else {
+            // Render full content without excerpt toggle
+            blockquoteElement.html(`
+              <div class="contents-wrapper">
+                <span class="deensimc-contents"><i class="${quoteLeft}"></i>
+                ${fullText}</span>
+                <span class="quote-right"><i class="${quoteRight}"></i></span>
+              </div>
+            `);
+          }
         });
     };
 
