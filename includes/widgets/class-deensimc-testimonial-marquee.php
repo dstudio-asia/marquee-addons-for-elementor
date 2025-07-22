@@ -256,9 +256,10 @@ class Deensimc_Testimonial_Marquee extends Widget_Base {
 		<div class="deensimc-tes <?php echo 'yes' !== esc_attr( $settings['deensimc_show_icons'] ) ? 'deensimc-off-icons' : ''; ?>">
 			<div class="deensimc-marquee  <?php echo esc_attr( $show_shadow ." ". $show_reverse ) ?> deensimc-tes-logo" <?php echo 'yes' !== esc_attr( $settings['deensimc_show_icons'] ) ? 'deensimc-off-icons' : ''; ?>" 
 				data-animation-status="<?php echo esc_attr( $settings['deensimc_show_animation'] ); ?>" 
-				data-excerpt-length="<?php echo esc_attr( $settings['deensimc_tesimonial_excerpt_length'] ); ?>" 
-				data-show-more="<?php echo esc_attr( $settings['deensimc_tesimonial_excerpt_title'] ); ?>" 
-				data-show-less="<?php echo esc_attr( $settings['deensimc_tesimonial_excerpt_title_less'] ); ?>" 
+				data-is-excerpt-active="<?php echo esc_attr( $settings['deensimc_testimonial_excerpt_activation'] ); ?>" 
+				data-excerpt-length="<?php echo esc_attr( $settings['deensimc_testimonial_excerpt_length'] ); ?>" 
+				data-show-more="<?php echo esc_attr( $settings['deensimc_testimonial_excerpt_title'] ); ?>" 
+				data-show-less="<?php echo esc_attr( $settings['deensimc_testimonial_excerpt_title_less'] ); ?>" 
 				data-pause-on-hover="<?php echo esc_attr( $settings['deensimc_testimonial_pause_on_hover'] ); ?>" 
 				data-animation-speed="<?php echo esc_attr( $settings['deensimc_testimonial_marquee_animation_speed'] ); ?>"
 				data-quote-left="<?php echo esc_html( $settings['deensimc_testimonial_quote_left_icon']['value'] ); ?>"
@@ -349,7 +350,8 @@ class Deensimc_Testimonial_Marquee extends Widget_Base {
 			let showReverse = settings.deensimc_testimonial_reverse_section === 'yes' ? 'deensimc-marquee-reverse' : '';
 		#>
 		<div class="deensimc-tes {{ settings.deensimc_show_icons !== 'yes' ? 'deensimc-off-icons' : '' }}">
-			<div class="deensimc-marquee {{ showShadow }} {{ showReverse }} deensimc-tes-logo"  data-animation-status="{{ settings.deensimc_show_animation }}" data-excerpt-length="{{ settings.deensimc_tesimonial_excerpt_length }}"  data-show-more="{{ settings.deensimc_tesimonial_excerpt_title }}"  data-show-less="{{ settings.deensimc_tesimonial_excerpt_title_less }}"  data-pause-on-hover="{{ settings.deensimc_testimonial_pause_on_hover }}" data-animation-speed="{{ settings.deensimc_testimonial_marquee_animation_speed }}" data-quote-left="{{ settings.deensimc_testimonial_quote_left_icon.value }}" data-quote-right="{{ settings.deensimc_testimonial_quote_right_icon.value }}">
+			<div class="deensimc-marquee {{ showShadow }} {{ showReverse }} deensimc-tes-logo"  data-animation-status="{{ settings.deensimc_show_animation }}" 				data-is-excerpt-active="{{ settings.deensimc_testimonial_excerpt_activation }}" 
+			data-excerpt-length="{{ settings.deensimc_testimonial_excerpt_length }}"  data-show-more="{{ settings.deensimc_testimonial_excerpt_title }}"  data-show-less="{{ settings.deensimc_testimonial_excerpt_title_less }}"  data-pause-on-hover="{{ settings.deensimc_testimonial_pause_on_hover }}" data-animation-speed="{{ settings.deensimc_testimonial_marquee_animation_speed }}" data-quote-left="{{ settings.deensimc_testimonial_quote_left_icon.value }}" data-quote-right="{{ settings.deensimc_testimonial_quote_right_icon.value }}">
 				<ul class="deensimc-marquee-group deensimc-tes-content">
 					<# 
 					// Iterate through testimonials
@@ -362,7 +364,7 @@ class Deensimc_Testimonial_Marquee extends Widget_Base {
 									<blockquote class="deensimc-tes-text">
 										<span>{{{ testimonial.deensimc_testimonial_content }}}</span>
 									</blockquote>
-									<span class="deensimc-show-more">{{{ settings.deensimc_tesimonial_excerpt_title }}}</span>
+									<span class="deensimc-show-more">{{{ settings.deensimc_testimonial_excerpt_title }}}</span>
 								<# } #>
 								
 								<div class="deensimc-tes-author {{ has_author_image_url }}">
@@ -428,7 +430,7 @@ class Deensimc_Testimonial_Marquee extends Widget_Base {
 									<blockquote class="deensimc-tes-text">
 										<span>{{{ testimonial.deensimc_testimonial_content }}}</span>
 									</blockquote>
-									<span class="deensimc-show-more">{{{ settings.deensimc_tesimonial_excerpt_title }}}</span>
+									<span class="deensimc-show-more">{{{ settings.deensimc_testimonial_excerpt_title }}}</span>
 								<# } #>
 								
 								<div class="deensimc-tes-author {{ has_author_image_url }}">
