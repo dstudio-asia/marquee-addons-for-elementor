@@ -96,6 +96,7 @@
         return;
       }
 
+		
       let pixelsPerSecondSetting = marqueeContainer.data("animation-speed");
       let pixelsPerSecond = 50;
 
@@ -116,7 +117,7 @@
         return;
       }
 
-      let animationDuration = originalContentSize / pixelsPerSecond;
+      let animationDuration = (originalContentSize * 3)/ pixelsPerSecond;
 
       if (isSafari && Math.abs(animationDuration - 3) < 0.01) {
         animationDuration += 0.01;
