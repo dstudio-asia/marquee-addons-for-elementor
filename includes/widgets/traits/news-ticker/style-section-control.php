@@ -98,7 +98,7 @@ trait NewsTickerStyleControl
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'name' => 'label_typography',
+				'name' => 'deensimc_label_typography',
 				'global' => [
 					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
 				],

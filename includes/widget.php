@@ -223,7 +223,7 @@ final class Marquee {
 		wp_register_style( 'deensimc-marquee-style', DEENSIMC_ASSETS_URL . 'css/marquee.css', null, self::VERSION, false );
 		wp_register_style( 'deensimc-testimonial-style', DEENSIMC_ASSETS_URL . 'css/testimonial.css', null, self::VERSION, false );
 		wp_register_style( 'deensimc-video-style', DEENSIMC_ASSETS_URL . 'css/video.css', null, self::VERSION, false );
-		wp_register_style( 'news-ticker-style', DEENSIMC_ASSETS_URL . 'css/news-ticker.css', null, self::VERSION, false );
+		wp_register_style('deensimc-news-ticker-style', DEENSIMC_ASSETS_URL . 'css/news-ticker.css', null, self::VERSION, false );
 		
 		wp_enqueue_style( 'deensimc-swiper-style' );
 		wp_enqueue_style( 'deensimc-accordion-style' );
@@ -231,7 +231,7 @@ final class Marquee {
 		wp_enqueue_style( 'deensimc-marquee-style' );
 		wp_enqueue_style( 'deensimc-testimonial-style' );
 		wp_enqueue_style( 'deensimc-video-style' );
-		wp_enqueue_style( 'news-ticker-style' );
+		wp_enqueue_style( 'deensimc-news-ticker-style' );
 
 	}
 
