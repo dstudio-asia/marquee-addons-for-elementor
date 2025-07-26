@@ -116,9 +116,17 @@ class Deensimc_News_Ticker extends Widget_Base
 	protected function render_news_ticker_texts($settings, $posts = [])
 	{
 		if (empty($posts)) {
-			echo '<p class="deensimc-scroll-text">No posts found.</p>';
-			return;
+			$posts = [];
+
+			for ($i = 0; $i < 10; $i++) {
+				$posts[] = (object)[
+					'post_title' => 'No posts found',
+					'custom_url' => '',
+					'is_custom'  => true,
+				];
+			}
 		}
+
 
 		echo '<div class="deensimc-news-wrapper">';
 		$posts_count = count($posts);
