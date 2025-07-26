@@ -201,6 +201,21 @@
       }
     );
 
+    // Initialize image marquee
+    elementorFrontend.hooks.addAction(
+      "frontend/element_ready/deensimc-news-ticker.default",
+      (scope) => {
+        let animationSpeed = $(scope)
+          .find(".deensimc-marquee")
+          .data("animation-speed");
+        if (animationSpeed) {
+          setupMarquee(scope, "deensimc");
+        } else {
+          $(scope).find(".deensimc-marquee-group").addClass("deensimc-paused");
+        }
+      }
+    );
+
     // Initialize text marquee
     elementorFrontend.hooks.addAction(
       "frontend/element_ready/deensimc-smooth-text.default",
@@ -258,8 +273,6 @@
           ".deensimc-image-panel .deensimc-click.deensimc-panel"
         );
         let initialOpenPanelIndex = Math.floor(accordionPanels.length / 2);
-
-        // Toggle accordion state
         accordionPanels.eq(initialOpenPanelIndex).addClass("open");
         accordionPanels.off("click").on("click", function () {
           accordionPanels.not(this).removeClass("open");
