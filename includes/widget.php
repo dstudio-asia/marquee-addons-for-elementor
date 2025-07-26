@@ -223,6 +223,7 @@ final class Marquee {
 		wp_register_style( 'deensimc-marquee-style', DEENSIMC_ASSETS_URL . 'css/marquee.css', null, self::VERSION, false );
 		wp_register_style( 'deensimc-testimonial-style', DEENSIMC_ASSETS_URL . 'css/testimonial.css', null, self::VERSION, false );
 		wp_register_style( 'deensimc-video-style', DEENSIMC_ASSETS_URL . 'css/video.css', null, self::VERSION, false );
+		wp_register_style('deensimc-news-ticker-style', DEENSIMC_ASSETS_URL . 'css/news-ticker.css', null, self::VERSION, false );
 		
 		wp_enqueue_style( 'deensimc-swiper-style' );
 		wp_enqueue_style( 'deensimc-accordion-style' );
@@ -230,6 +231,7 @@ final class Marquee {
 		wp_enqueue_style( 'deensimc-marquee-style' );
 		wp_enqueue_style( 'deensimc-testimonial-style' );
 		wp_enqueue_style( 'deensimc-video-style' );
+		wp_enqueue_style( 'deensimc-news-ticker-style' );
 
 	}
 
@@ -291,19 +293,26 @@ final class Marquee {
 		require_once(  __DIR__ . '/widgets/traits/text-marquee/content-additional-options.php' );
 		require_once(  __DIR__ . '/widgets/traits/text-marquee/style-text-contents.php' );
 
+		require_once(  __DIR__ . '/widgets/traits/news-ticker/additional-options-control.php' );
+		require_once(  __DIR__ . '/widgets/traits/news-ticker/general-settings-control.php' );
+		require_once(  __DIR__ . '/widgets/traits/news-ticker/separator-control.php' );
+		require_once(  __DIR__ . '/widgets/traits/news-ticker/style-section-control.php' );
+
 		require_once(  __DIR__ . '/widgets/class-deensimc-image-marquee.php' );
 		require_once(  __DIR__ . '/widgets/class-deensimc-stacked-slider.php' );
 		require_once(  __DIR__ . '/widgets/class-deensimc-image-accordion.php' );
 		require_once(  __DIR__ . '/widgets/class-deensimc-text-marquee.php' );
 		require_once(  __DIR__ . '/widgets/class-deensimc-testimonial-marquee.php' );
 		require_once(  __DIR__ . '/widgets/class-deensimc-video-marquee.php' );
-		
+		require_once(  __DIR__ . '/widgets/class-deensimc-news-ticker.php' );
+
 		$widgets_manager->register( new \Deensimc_Image_Marquee() );
 		$widgets_manager->register( new \Deensimc_Stacked_Slider() );
 		$widgets_manager->register( new \Deensimc_Image_Accordion() );
 		$widgets_manager->register( new \Deensimc_Text_Marquee() );
 		$widgets_manager->register( new \Deensimc_Testimonial_Marquee() );
 		$widgets_manager->register( new \Deensimc_Video_Marquee() );
+		$widgets_manager->register( new \Deensimc_News_Ticker() );
 
 	}
 

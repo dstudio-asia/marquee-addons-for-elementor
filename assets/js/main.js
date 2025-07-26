@@ -366,6 +366,7 @@
       "deensimc-video-marquee-pro.default": initVideoMarquee,
       "deensimc-stacked-slider.default": initStackedSlider,
       "deensimc-image-accordion.default": initImageAccordion,
+      "deensimc-news-ticker.default": initSimpleMarquee,
     };
 
     for (const widget in widgetHandlers) {
