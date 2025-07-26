@@ -64,45 +64,53 @@ class Deensimc_News_Ticker extends Widget_Base
 
 	public function newticker_get_query_args($settings = [])
 	{
+		// Set default values if any key is missing in $settings
 		$settings = wp_parse_args($settings, [
-			'deensimc_post_type' => 'post',
-			'orderby' => 'date',
-			'order' => 'desc',
-			'posts_per_page' => 6,
-
+			'deensimc_post_type'    => 'post',
+			'orderby'               => 'date',
+			'order'                 => 'desc',
+			'posts_per_page'        => 6,
+			'deensimc_no_of_post'   => 6,
 		]);
 
+		// Base query arguments for WP_Query / get_posts
 		$args = [
+			'post_type'           => $settings['deensimc_post_type'], 
+			'post_status'         => 'publish',
+			'orderby'             => $settings['orderby'],
+			'order'               => $settings['order'],
 			'ignore_sticky_posts' => 1,
-			'post_status' => 'publish',
-			'posts_per_page' => $settings['deensimc_no_of_post'],
-
+			'posts_per_page'      => $settings['deensimc_no_of_post'],
 		];
 
-		$args['deensimc_post_type'] = $settings['deensimc_post_type'];
-
-		if ($args['deensimc_post_type'] !== 'page') {
+		// Only add tax_query if post type is not 'page'
+		if ($settings['deensimc_post_type'] !== 'page') {
 			$args['tax_query'] = [];
-			$deensimc_taxonomies = get_object_taxonomies($settings['deensimc_post_type'], 'objects');
 
-			foreach ($deensimc_taxonomies as $object) {
-				$setting_key = $object->name . '_ids';
+			// Get all registered taxonomies for the selected post type
+			$taxonomies = get_object_taxonomies($settings['deensimc_post_type'], 'objects');
+
+			foreach ($taxonomies as $taxonomy) {
+				$setting_key = $taxonomy->name . '_ids';
 
 				if (!empty($settings[$setting_key])) {
 					$args['tax_query'][] = [
-						'taxonomy' => $object->name,
-						'field' => 'term_id',
-						'terms' => $settings[$setting_key],
+						'taxonomy' => $taxonomy->name,
+						'field'    => 'term_id',
+						'terms'    => $settings[$setting_key],
 					];
 				}
 			}
 
+			// If multiple taxonomy filters are added, relate them using AND
 			if (!empty($args['tax_query'])) {
 				$args['tax_query']['relation'] = 'AND';
 			}
 		}
+
 		return $args;
 	}
+
 
 
 	protected function render_news_ticker_texts($settings, $posts = [])
