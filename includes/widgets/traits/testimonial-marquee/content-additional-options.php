@@ -40,19 +40,7 @@ trait Testimonialmarquee_Content_Additional_Options {
 		);
 
 		$this->add_control(
-			'deensimc_testimonial_excerpt_activation',
-			[
-				'label' => esc_html__( 'Activate Excerpt', 'marquee-addons-for-elementor' ),
-				'type' =>  Controls_Manager::SWITCHER,
-				'label_on' => esc_html__( 'Yes', 'marquee-addons-for-elementor' ),
-				'label_off' => esc_html__( 'No', 'marquee-addons-for-elementor' ),
-				'return_value' => 'yes',
-				'default' => 'yes',
-			]
-		);
-
-		$this->add_control(
-			'deensimc_testimonial_excerpt_length',
+			'deensimc_tesimonial_excerpt_length',
 			[
 				'label' => esc_html__( 'Length', 'marquee-addons-for-elementor' ),
 				'type' =>  Controls_Manager::NUMBER,
@@ -60,33 +48,24 @@ trait Testimonialmarquee_Content_Additional_Options {
 				'max' => 100,
 				'step' => 1,
 				'default' => 10,
-				'condition' => [
-					'deensimc_testimonial_excerpt_activation' => 'yes'
-				]
 			]
 		);
 
 		$this->add_control(
-			'deensimc_testimonial_excerpt_title',
+			'deensimc_tesimonial_excerpt_title',
 			[
-				'label' => esc_html__( 'Show More', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__( 'Expand Text', 'marquee-addons-for-elementor' ),
 				'type' =>  Controls_Manager::TEXT,
 				'default' => esc_html__( 'Show more...', 'marquee-addons-for-elementor' ),
-				'condition' => [
-					'deensimc_testimonial_excerpt_activation' => 'yes'
-				]
 			]
 		);
 
 		$this->add_control(
-			'deensimc_testimonial_excerpt_title_less',
+			'deensimc_tesimonial_excerpt_title_less',
 			[
-				'label' => esc_html__( 'Show Less', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__( 'Collapse Text', 'marquee-addons-for-elementor' ),
 				'type' =>  Controls_Manager::TEXT,
 				'default' => esc_html__( 'Show less', 'marquee-addons-for-elementor' ),
-				'condition' => [
-					'deensimc_testimonial_excerpt_activation' => 'yes'
-				]
 			]
 		);
 
