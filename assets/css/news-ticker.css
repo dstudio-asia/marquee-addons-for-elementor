@@ -1,9 +1,5 @@
-.deensimc-news-ticker-wrapper {
-background-color: rgb(197, 116, 10);
-}
 
 .deensimc-news-ticker-label{
-  /* background: greenyellow; */
     position: absolute;
     left: 0;
     right: auto;
@@ -12,10 +8,7 @@ background-color: rgb(197, 116, 10);
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-   
     width: fit-content; 
- 
     z-index: 100;
 }
 
@@ -27,6 +20,12 @@ background-color: rgb(197, 116, 10);
 {
     left: auto;
     right: 0;
+}
+
+.deensimc-news-wrapper {
+  display: flex;
+  align-items: center;
+    
 }
 
 .deensimc-news-ticker-icon {
@@ -49,13 +48,26 @@ background-color: rgb(197, 116, 10);
 }
 
 /* Make sure the icon and text align properly */
-.deensimc-news-ticker-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px; /* Space between icon and text */
+
+
+
+.deensimc-seperator-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.deensimc-seperator-icon svg {
+  /* width: 1em;
+  height: 1em; */
+  fill: currentColor;
 }
 
-.separator-news-item-icon{
-  width: 1em;
-  height: 1em;
+.deensimc-seperator-text {
+  padding: 2px 6px;
+  background-color: #595959;
+  color: #fff;
+  border-radius: 3px;
+  font-size: 14px;
 }
+
+
