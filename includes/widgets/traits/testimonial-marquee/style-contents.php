@@ -93,9 +93,9 @@ trait Testimonialmarquee_Style_Contents {
 		);
 
 		$this->add_control(
-			'deensimc_testimonial_excerpt_heading',
+			'deensimc_tesimonial_excerpt_heading',
 			[
-				'label' => esc_html__( 'Excerpt', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__( 'Expand Text', 'marquee-addons-for-elementor' ),
 				'type' =>  Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -104,13 +104,13 @@ trait Testimonialmarquee_Style_Contents {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'name' => 'deensimc_testimonial_excerpt_typography',
+				'name' => 'deensimc_tesimonial_excerpt_typography',
 				'selector' => '{{WRAPPER}} .deensimc-toggle',
 			]
 		);
 
 		$this->add_control(
-			'deensimc_testimonial_excerpt_color',
+			'deensimc_tesimonial_excerpt_color',
 			[
 				'label' => esc_html__( 'Color', 'marquee-addons-for-elementor' ),
 				'type' => Controls_Manager::COLOR,
