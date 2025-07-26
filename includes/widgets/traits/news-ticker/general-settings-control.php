@@ -62,6 +62,82 @@ trait NewsTickerGeneralSettingsControl
 				'default' => __('5', 'marquee-addons-for-elementor')
 			]
 		);
+
+		$this->add_control(
+			'deensimc_enable_custom_text',
+			[
+				'label' => esc_html__('Enable Custom Text', 'marquee-addons-pro-for-elementor'),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => __('Yes', 'marquee-addons-pro-for-elementor'),
+				'label_off' => __('No', 'marquee-addons-pro-for-elementor'),
+				'return_value' => 'yes',
+				'default' => '',
+			]
+		);
+
+		$repeater = new \Elementor\Repeater();
+
+		$repeater->add_control(
+			'deensimc_custom_text',
+			[
+				'label' => esc_html__('Custom Text', 'marquee-addons-pro-for-elementor'),
+				'type' => \Elementor\Controls_Manager::TEXTAREA,
+				'placeholder' => __('Custom Text', 'marquee-addons-pro-for-elementor'),
+				'label_block' => true,
+			]
+		);
+
+		$repeater->add_control(
+			'deensimc_custom_text_url',
+			[
+				'label' => esc_html__('Custom Text Link', 'marquee-addons-pro-for-elementor'),
+				'type' => \Elementor\Controls_Manager::URL,
+				'placeholder' => __('https://your-link.com', 'marquee-addons-pro-for-elementor'),
+				'label_block' => true,
+				'show_external' => false,
+				'show_nofollow' => false,
+				'default' => [
+					'url' => '',
+					'is_external' => true,
+					'nofollow' => true,
+				],
+			]
+		);
+
+		$this->add_control(
+			'deensimc_custom_text_list',
+			[
+				'label' => esc_html__('Custom Text Items', 'marquee-addons-pro-for-elementor'),
+				'type' => \Elementor\Controls_Manager::REPEATER,
+				'fields' => $repeater->get_controls(),
+				'title_field' => '{{ deensimc_custom_text }}',
+				'condition' => [
+					'deensimc_enable_custom_text' => 'yes',
+				],
+			]
+		);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		$this->add_control(
 			'deensimc_label',
 			[
@@ -84,32 +160,32 @@ trait NewsTickerGeneralSettingsControl
 			]
 		);
 
-		$this->add_control(
-			'deensimcpro_custom_text',
-			[
-				'label' => esc_html__('Custom Text', 'marquee-addons-pro-for-elementor'),
-				'type' => Controls_Manager::TEXT,
-				'placeholder' => __('Custom Text', 'marquee-addons-for-elementor'),
-				'label_block' => true,
-			]
-		);
+		// $this->add_control(
+		// 	'deensimcpro_custom_text',
+		// 	[
+		// 		'label' => esc_html__('Custom Text', 'marquee-addons-pro-for-elementor'),
+		// 		'type' => Controls_Manager::TEXT,
+		// 		'placeholder' => __('Custom Text', 'marquee-addons-for-elementor'),
+		// 		'label_block' => true,
+		// 	]
+		// );
 
-		$this->add_control(
-			'deensimcpro_custom_text_url',
-			[
-				'label' => esc_html__('Custom Text Link', 'marquee-addons-pro-for-elementor'),
-				'type' => Controls_Manager::URL,
-				'placeholder' => __('https://your-link.com', 'marquee-addons-pro-for-elementor'),
-				'label_block' => true,
-				'show_external' => false, 
-				'show_nofollow' => false,
-				'default' => [
-					'url' => '',
-					'is_external' => true,
-					'nofollow' => true,
-				],
-			]
-		);
+		// $this->add_control(
+		// 	'deensimcpro_custom_text_url',
+		// 	[
+		// 		'label' => esc_html__('Custom Text Link', 'marquee-addons-pro-for-elementor'),
+		// 		'type' => Controls_Manager::URL,
+		// 		'placeholder' => __('https://your-link.com', 'marquee-addons-pro-for-elementor'),
+		// 		'label_block' => true,
+		// 		'show_external' => false, 
+		// 		'show_nofollow' => false,
+		// 		'default' => [
+		// 			'url' => '',
+		// 			'is_external' => true,
+		// 			'nofollow' => true,
+		// 		],
+		// 	]
+		// );
 
 
 		$this->add_control(

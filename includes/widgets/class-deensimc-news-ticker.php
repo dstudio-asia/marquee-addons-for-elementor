@@ -179,30 +179,44 @@ class Deensimc_News_Ticker extends Widget_Base
 		$pause_on_hover = $settings['deensimc_news_ticker_pause_on_hover_switch'];
 		$animation_speed = $settings['deensimc_news_ticker_text_animation_speed'];
 
-		$marquee_classes =  'horizontal';
+		$marquee_orientation =  'horizontal';
+		$slide_direction_class = $settings['deensimc_news_ticker_slide_direction'] === 'yes' ? ' deensimc-marquee-reverse' : '';
+		
+		$marquee_classes = $marquee_orientation . " " . $slide_direction_class;
+
+
+
+
+		
 		$is_reverse = $settings['deensimc_news_ticker_slide_direction'] === 'yes' ? 'deensimc-reverse-enabled' : '';
 
 		$args = $this->newticker_get_query_args($settings);
-		$custom_text = $settings['deensimcpro_custom_text'] ? $settings['deensimcpro_custom_text'] : '';
-		$custom_url  = $settings['deensimcpro_custom_text_url']['url'] ?? '';
-		$myposts = get_posts($args);
-		if (!empty($custom_text)) {
-			$custom_post = (object)[
-				'ID' => 'custom_' . uniqid(), // Safe fake ID
-				'post_title' => $custom_text,
-				'post_content' => '',
-				'post_excerpt' => '',
-				'post_type' => 'custom_text',
-				'post_status' => 'custom',
-				'custom_url' => esc_url($custom_url),
-				'is_custom' => true
-			];
 
-			// Add to the beginning
-			array_unshift($myposts, $custom_post);
+
+
+		$myposts = get_posts($args);
+
+		if (!empty($settings['deensimc_custom_text_list']) && is_array($settings['deensimc_custom_text_list'])) {
+			foreach ($settings['deensimc_custom_text_list'] as $item) {
+				if (empty($item['deensimc_custom_text'])) {
+					continue;
+				}
+
+				$custom_post = (object)[
+					'ID'          => 'custom_' . uniqid(),
+					'post_title'  => $item['deensimc_custom_text'],
+					'post_type'   => 'custom_text',
+					'post_status' => 'custom',
+					'custom_url'  => esc_url($item['deensimc_custom_text_url']['url'] ?? ''),
+					'is_custom'   => true,
+				];
+
+				array_unshift($myposts, $custom_post); // prepend to the beginning
+			}
 		}
 
-		?>
+
+?>
 		<div class="deensimc-wrapper deensimc-news-ticker-wrapper">
 			<div class="deensimc-marquee deensimc-marquee-<?php echo esc_attr($marquee_classes); ?> deensimc-news-ticker-marquee" data-pause-on-hover="<?php echo esc_attr($pause_on_hover) ?>" data-animation-speed="<?php echo esc_attr($animation_speed) ?>">
 				<?php if ($settings['deensimc_label'] === 'yes') : ?>
