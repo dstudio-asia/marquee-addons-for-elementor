@@ -32,7 +32,7 @@ trait NewsTickerSeparatorControl
 				'default' => 'seperator_icon',
 			]
 		);
-		$this->add_control( //Add control to select an icon for button1.
+		$this->add_control( 
 			'deensimc_seperator_icon',
 			[
 				'label' => __('Icon', 'marquee-addons-for-elementor'),

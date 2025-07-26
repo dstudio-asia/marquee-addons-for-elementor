@@ -47,8 +47,6 @@
     fill: currentColor;
 }
 
-/* Make sure the icon and text align properly */
-
 
 
 .deensimc-seperator-icon {
@@ -57,8 +55,6 @@
   justify-content: center;
 }
 .deensimc-seperator-icon svg {
-  /* width: 1em;
-  height: 1em; */
   fill: currentColor;
 }
 

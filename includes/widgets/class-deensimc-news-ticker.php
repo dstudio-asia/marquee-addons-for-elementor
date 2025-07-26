@@ -154,7 +154,7 @@ class Deensimc_News_Ticker extends Widget_Base
 
 
 	/**
-	 * Renders text marquee widget.
+	 * Renders news ticker widget.
 	 * @return void
 	 */
 	protected function render()
