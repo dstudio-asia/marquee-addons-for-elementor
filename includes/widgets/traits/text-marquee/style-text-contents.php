@@ -123,7 +123,7 @@ trait Textmarquee_Style_Text_Contents {
 			'deensimc_icon_adjust_vertical_position',
 			[
 				'label' => esc_html__( 'Adjust Vertical Position', 'textdomain' ),
-				'type' => \Elementor\Controls_Manager::SLIDER,
+				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', 'rem' ],
 				'range' => [
 					'px' => [
