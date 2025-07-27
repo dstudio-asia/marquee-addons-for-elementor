@@ -226,10 +226,10 @@ class Deensimc_News_Ticker extends Widget_Base
 						<?php echo esc_html($settings['deensimc_label_heading']); ?>
 					</div>
 				<?php endif; ?>
-				<div class="deensimc-marquee-group news-ticker-group">
+				<div class="deensimc-marquee-group deensimc-news-ticker-group">
 					<?php $this->render_news_ticker_texts($settings, $myposts); ?>
 				</div>
-				<div aria-hidden="true" class="deensimc-marquee-group news-ticker-group">
+				<div aria-hidden="true" class="deensimc-marquee-group deensimc-news-ticker-group">
 					<?php $this->render_news_ticker_texts($settings, $myposts); ?>
 				</div>
 			</div>
