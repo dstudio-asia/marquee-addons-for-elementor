@@ -328,6 +328,21 @@
       }
     );
 
+    // Initialize text marquee pro
+    elementorFrontend.hooks.addAction(
+      "frontend/element_ready/deensimcpro-product-category-marquee.default",
+      (scope) => {
+        let animationSpeed = $(scope)
+          .find(".deensimc-marquee")
+          .data("animation-speed");
+        if (animationSpeed) {
+          setupMarquee(scope, "deensimc");
+        } else {
+          $(scope).find(".deensimc-marquee-group").addClass("deensimc-paused");
+        }
+      }
+    );
+
     // Initialize stacked slider
     elementorFrontend.hooks.addAction(
       "frontend/element_ready/deensimc-stacked-slider.default",
