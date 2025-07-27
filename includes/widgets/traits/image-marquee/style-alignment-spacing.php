@@ -13,10 +13,10 @@ trait Imagemarquee_Style_Alignment_Spacing {
 		$this->add_responsive_control(
 			'deensimc_horizontal_align',
 			[
-				'label' => esc_html__( 'Horizontal Alignment', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__( 'Alignment', 'marquee-addons-for-elementor' ),
 				'type' =>  Controls_Manager::CHOOSE,
 				'options' => [
-					'left' => [
+					'start' => [
 						'title' => esc_html__( 'Left', 'marquee-addons-for-elementor' ),
 						'icon' => 'eicon-h-align-left',
 					],
@@ -24,7 +24,7 @@ trait Imagemarquee_Style_Alignment_Spacing {
 						'title' => esc_html__( 'Center', 'marquee-addons-for-elementor' ),
 						'icon' => 'eicon-h-align-center',
 					],
-					'right' => [
+					'end' => [
 						'title' => esc_html__( 'Right', 'marquee-addons-for-elementor' ),
 						'icon' => 'eicon-h-align-right',
 					],
@@ -32,7 +32,11 @@ trait Imagemarquee_Style_Alignment_Spacing {
 				'default' => 'center',
 				'toggle' => true,
 				'selectors' => [
-					'{{WRAPPER}} .deensimc-wrapper.deensimc-wrapper-vertical' => 'justify-content: {{VALUE}};',
+					'{{WRAPPER}} .deensimc-marquee-vertical .deensimc-marquee-group' => 'align-items: {{VALUE}};',
+					'{{WRAPPER}} .deensimc-marquee-group a' => 'align-items: {{VALUE}};',
+				],
+				'condition' => [
+					'deensimc_slide_position' => 'yes',
 				],
 			]
 		);
@@ -40,7 +44,7 @@ trait Imagemarquee_Style_Alignment_Spacing {
 		$this->add_responsive_control(
 			'deensimc_vertical_align',
 			[
-				'label' => esc_html__( 'Vertical Alignment', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__( 'Alignment', 'marquee-addons-for-elementor' ),
 				'type' =>  Controls_Manager::CHOOSE,
 				'options' => [
 					'start' => [
@@ -61,6 +65,9 @@ trait Imagemarquee_Style_Alignment_Spacing {
 				'selectors' => [
 					'{{WRAPPER}} .deensimc-marquee-group .deensimc-img-wrapper' => 'align-self: {{VALUE}};',
 					'{{WRAPPER}} .deensimc-marquee-group a' => 'align-self: {{VALUE}};',
+				],
+				'condition' => [
+					'deensimc_slide_position!' => 'yes',
 				],
 			]
 		);

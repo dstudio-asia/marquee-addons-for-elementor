@@ -19,18 +19,6 @@ trait Testimonialmarquee_Content_Additional_Options {
 		);
 
 		$this->add_control(
-			'deensimc_show_icons',
-			[
-				'label' => esc_html__( 'Show Icons', 'marquee-addons-for-elementor' ),
-				'type' =>  Controls_Manager::SWITCHER,
-				'label_on' => esc_html__( 'Show', 'marquee-addons-for-elementor' ),
-				'label_off' => esc_html__( 'Hide', 'marquee-addons-for-elementor' ),
-				'return_value' => 'yes',
-				'default' => 'yes',
-			]
-		);
-
-		$this->add_control(
 			'deensimc_excerpt_heading',
 			[
 				'label' => esc_html__( 'Excerpt', 'marquee-addons-for-elementor' ),

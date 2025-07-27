@@ -57,7 +57,17 @@ class Deensimc_Text_Marquee extends Widget_Base {
  	*/
 	protected function render_marquee_texts( $settings )
 	{
-		foreach ( $settings['deensimc_repeater_text_main'] as $text ) {
+		$is_vertical = 'yes' === $settings['deensimc_slide_position'];
+		$texts = $settings['deensimc_repeater_text_main'];
+		$texts_count = count($texts);
+		$min_item = 10;
+		if ($is_vertical && $texts_count < $min_item) {
+			$needed = $min_item - $texts_count;
+			for ($i = 0; $i < $needed; $i++) {
+				$texts[] = $texts[$i % $texts_count];
+			}
+		}
+		foreach ( $texts as $text ) {
 		?>
 			<div class="deensimc-text-wrapper">
 				<?php Icons_Manager::render_icon( $text['deensimc_repeater_text_icon'], [ 'aria-hidden' => 'true' ] ); ?>
@@ -110,11 +120,23 @@ class Deensimc_Text_Marquee extends Widget_Base {
 		let animation_speed = settings.deensimc_text_animation_speed;
 		let marquee_classes = marquee_orientation + " " + slide_direction_class;
 		let show_shadow = settings.deensimc_show_shadow_switch === 'yes' ? 'deensimc-shadow' : 'deensimc-no-shadow';
+
+		let texts=[...settings.deensimc_repeater_text_main];
+			let isVerticalSlide=settings.deensimc_slide_position==='yes' ;
+			let texts_count=texts.length;
+			let min_item=10;
+
+			if (isVerticalSlide && texts_count> 0 && texts_count < min_item) {
+				let needed=min_item - texts_count;
+				for (let i=0; i < needed; i++) {
+				texts.push(texts[i % texts_count]);
+				}
+				}
 		#>
 		<div class="deensimc-wrapper deensimc-wrapper-{{{ marquee_orientation }}} deensimc-text-marquee">
 			<div class="deensimc-marquee {{{ show_shadow }}} deensimc-marquee-{{{ marquee_classes }}}" data-pause-on-hover="{{{ pause_on_hover }}}" data-animation-speed="{{{ animation_speed }}}">
 				<div class="deensimc-marquee-group">
-					<# _.each(settings.deensimc_repeater_text_main, function(text) { #>
+					<# _.each(texts, function(text) { #>
 						<div class="deensimc-text-wrapper">
 							<# if ( text.deensimc_repeater_text_icon ) { #>
 									{{{ elementor.helpers.renderIcon( view, text.deensimc_repeater_text_icon, { 'aria-hidden': true }, 'i' , 'object' ).value }}}
@@ -127,7 +149,7 @@ class Deensimc_Text_Marquee extends Widget_Base {
 				</div>
 	
 				<div aria-hidden="true" class="deensimc-marquee-group">
-					<# _.each(settings.deensimc_repeater_text_main, function(text) { #>
+					<# _.each(texts, function(text) { #>
 						<div class="deensimc-text-wrapper">
 							<# if ( text.deensimc_repeater_text_icon ) { #>
 								{{{ elementor.helpers.renderIcon( view, text.deensimc_repeater_text_icon, { 'aria-hidden': true }, 'i' , 'object' ).value }}}

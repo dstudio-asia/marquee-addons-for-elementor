@@ -92,6 +92,78 @@ trait Textmarquee_Style_Text_Contents {
 		);
 
 		$this->add_responsive_control(
+			'deensimc_icon_vertical_alignment',
+			[
+				'label' => esc_html__( 'Vertical Alignment', 'marquee-addons-for-elementor' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'start' => [
+						'title' => esc_html__( 'Top', 'marquee-addons-for-elementor' ),
+						'icon' => 'eicon-v-align-top',
+					],
+					'center' => [
+						'title' => esc_html__( 'Center', 'marquee-addons-for-elementor' ),
+						'icon' => 'eicon-v-align-middle',
+					],
+					'end' => [
+						'title' => esc_html__( 'Bottom', 'marquee-addons-for-elementor' ),
+						'icon' => 'eicon-v-align-bottom',
+					],
+				],
+				'default' => 'center',
+				'toggle' => true,
+				'selectors' => [
+					'{{WRAPPER}} .deensimc-marquee .deensimc-text-wrapper svg' => 'align-self: {{VALUE}}; flex-shrink: 0;',
+					'{{WRAPPER}} .deensimc-marquee .deensimc-text-wrapper i' => 'align-self: {{VALUE}}; flex-shrink: 0;',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'deensimc_icon_adjust_vertical_position',
+			[
+				'label' => esc_html__( 'Adjust Vertical Position', 'textdomain' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em', 'rem' ],
+				'range' => [
+					'px' => [
+						'min' => -16,
+						'max' => 16,
+						'step' => 1,
+					],
+					'em' => [
+						'min' => -1,
+						'max' => 1,
+						'step' => 0.1,
+					],
+					'rem' => [
+						'min' => -1,
+						'max' => 1,
+						'step' => 0.1,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 0,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .deensimc-marquee .deensimc-text-wrapper svg' => 'margin-block: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .deensimc-marquee .deensimc-text-wrapper i' => 'margin-block: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
+
+		$this->add_control(
+			'deensimc_text_heading',
+			[
+				'label' => esc_html__( 'Text', 'marquee-addons-for-elementor' ),
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_responsive_control(
 			'deensimc_content_spacing',
 			[
 				'label' => esc_html__( 'Content Spacing', 'marquee-addons-for-elementor' ),
@@ -117,15 +189,6 @@ trait Textmarquee_Style_Text_Contents {
 					'{{WRAPPER}} .deensimc-marquee-group:nth-child(2)' => 'margin-left: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .deensimc-wrapper-vertical .deensimc-marquee-vertical .deensimc-marquee-group:nth-child(2)' => 'margin-top: {{SIZE}}{{UNIT}}; margin-left:0px;',
 				],
-			]
-		);
-
-		$this->add_control(
-			'deensimc_text_heading',
-			[
-				'label' => esc_html__( 'Text', 'marquee-addons-for-elementor' ),
-				'type' => Controls_Manager::HEADING,
-				'separator' => 'before',
 			]
 		);
 
