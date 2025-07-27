@@ -6,7 +6,7 @@
 
   // Initialize Elementor frontend hooks on window load
   $(window).on("elementor/frontend/init", () => {
-      // Helper function for hover event handling
+    // Helper function for hover event handling
     const handlePauseOnHover = (element, isPausedOnHover) => {
       if (isPausedOnHover === "yes") {
         element.off("mouseenter mouseleave").hover(
@@ -52,14 +52,16 @@
         marqueeGroup.append($(this).clone(true, true));
       });
 
-     	let originalContentSize = 0;
-		  const originalChildElementsArray = Array.from(originalChildElements);
-      originalContentSize = originalChildElementsArray.reduce((accumulator, currentElement) => {
-        let aspect = (currentElement.clientWidth + currentElement.clientHeight) ;
-        return accumulator + aspect;
-      }, 0);
-		
-	
+      let originalContentSize = 0;
+      const originalChildElementsArray = Array.from(originalChildElements);
+      originalContentSize = originalChildElementsArray.reduce(
+        (accumulator, currentElement) => {
+          let aspect = currentElement.clientWidth + currentElement.clientHeight;
+          return accumulator + aspect;
+        },
+        0
+      );
+
       if (isVertical) {
         // Vertical
         originalChildElements.each(function () {
@@ -121,7 +123,6 @@
       }
 
       let animationDuration = originalContentSize / pixelsPerSecond;
-		  
 
       if (isSafari && Math.abs(animationDuration - 3) < 0.01) {
         animationDuration += 0.01;
@@ -186,6 +187,74 @@
         .on("click", ".deensimc-toggle", toggleBlockquote);
     };
 
+    // Show more/less text functionality
+    function initShowMoreOrLess(scope) {
+      $(scope)
+        .find(".deensimc-tes-text")
+        .each(function () {
+          let blockquoteElement = $(this);
+          let fullText = blockquoteElement
+            .text()
+            .replace("Show more", "")
+            .trim();
+          let wordLimit =
+            $(scope)
+              .find(".deensimc-tes .deensimc-marquee")
+              .data("excerpt-length") || 50;
+          let showMoreText =
+            $(scope)
+              .find(".deensimc-tes .deensimc-marquee")
+              .data("show-more") || "Show more";
+          let showLessText =
+            $(scope)
+              .find(".deensimc-tes .deensimc-marquee")
+              .data("show-less") || "Show less";
+          let quoteLeft =
+            $(scope)
+              .find(".deensimc-tes .deensimc-marquee")
+              .data("quote-left") || "";
+          let quoteRight =
+            $(scope)
+              .find(".deensimc-tes .deensimc-marquee")
+              .data("quote-right") || "";
+
+          // Store truncated and full text in the element for reuse
+          const truncateText = (text, limit) => {
+            let wordArray = text.split(" ");
+            return wordArray.length > limit
+              ? wordArray.slice(0, limit).join(" ")
+              : text;
+          };
+
+          let truncatedText = truncateText(fullText, wordLimit);
+          let isTextTruncated = fullText.split(" ").length > wordLimit;
+
+          blockquoteElement.data({
+            "full-text": fullText,
+            "truncated-text": truncatedText,
+            "show-more": showMoreText,
+            "show-less": showLessText,
+          });
+
+          blockquoteElement.html(`
+          <div class="contents-wrapper">
+            <span class="quote-left"><i class="${quoteLeft}"></i></span>
+            <span class="deensimc-contents">${
+              isTextTruncated ? truncatedText : fullText
+            }</span>
+            <span class="deensimc-toggle">${
+              isTextTruncated ? showMoreText : ""
+            }</span>
+            <span class="quote-right"><i class="${quoteRight}"></i></span>
+          </div>
+        `);
+
+          blockquoteElement
+            .off("click", ".deensimc-toggle")
+            .on("click", ".deensimc-toggle", toggleBlockquote);
+        });
+    }
+
     // Initialize image marquee
     elementorFrontend.hooks.addAction(
       "frontend/element_ready/deensimc-smooth-marquee.default",
@@ -200,8 +269,22 @@
         }
       }
     );
+    // Initialize image marquee pro
+    elementorFrontend.hooks.addAction(
+      "frontend/element_ready/deensimc-smooth-marquee-pro.default",
+      (scope) => {
+        let animationSpeed = $(scope)
+          .find(".deensimc-marquee")
+          .data("animation-speed");
+        if (animationSpeed) {
+          setupMarquee(scope, "deensimc");
+        } else {
+          $(scope).find(".deensimc-marquee-group").addClass("deensimc-paused");
+        }
+      }
+    );
 
-    // Initialize image marquee
+    // Initialize news ticker marquee
     elementorFrontend.hooks.addAction(
       "frontend/element_ready/deensimc-news-ticker.default",
       (scope) => {
@@ -219,6 +302,20 @@
     // Initialize text marquee
     elementorFrontend.hooks.addAction(
       "frontend/element_ready/deensimc-smooth-text.default",
+      (scope) => {
+        let animationSpeed = $(scope)
+          .find(".deensimc-marquee")
+          .data("animation-speed");
+        if (animationSpeed) {
+          setupMarquee(scope, "deensimc");
+        } else {
+          $(scope).find(".deensimc-marquee-group").addClass("deensimc-paused");
+        }
+      }
+    );
+    // Initialize text marquee pro
+    elementorFrontend.hooks.addAction(
+      "frontend/element_ready/deensimc-smooth-text-pro.default",
       (scope) => {
         let animationSpeed = $(scope)
           .find(".deensimc-marquee")
@@ -295,63 +392,25 @@
         } else {
           $(scope).find(".deensimc-marquee-group").addClass("deensimc-paused");
         }
-        // Show more/less text functionality
-        $(scope)
-          .find(".deensimc-tes-text")
-          .each(function () {
-            let blockquoteElement = $(this);
-            let fullText = blockquoteElement
-              .text()
-              .replace("Show more", "")
-              .trim();
-            let wordLimit =
-              $(scope).find(".deensimc-tes .deensimc-marquee").data("excerpt-length") || 50;
-            let showMoreText =
-              $(scope).find(".deensimc-tes .deensimc-marquee").data("show-more") || "Show more";
-            let showLessText =
-              $(scope).find(".deensimc-tes .deensimc-marquee").data("show-less") || "Show less";
-            let quoteLeft =
-              $(scope).find(".deensimc-tes .deensimc-marquee").data("quote-left") ||
-              "";
-            let quoteRight =
-              $(scope).find(".deensimc-tes .deensimc-marquee").data("quote-right") ||
-              "";
+        initShowMoreOrLess(scope);
+      }
+    );
 
-            // Store truncated and full text in the element for reuse
-            const truncateText = (text, limit) => {
-              let wordArray = text.split(" ");
-              return wordArray.length > limit
-                ? wordArray.slice(0, limit).join(" ")
-                : text;
-            };
-
-            let truncatedText = truncateText(fullText, wordLimit);
-            let isTextTruncated = fullText.split(" ").length > wordLimit;
-
-            blockquoteElement.data({
-              "full-text": fullText,
-              "truncated-text": truncatedText,
-              "show-more": showMoreText,
-              "show-less": showLessText,
-            });
-
-            blockquoteElement.html(`
-          <div class="contents-wrapper">
-            <span class="quote-left"><i class="${quoteLeft}"></i></span>
-            <span class="deensimc-contents">${
-              isTextTruncated ? truncatedText : fullText
-            }</span>
-            <span class="deensimc-toggle">${
-              isTextTruncated ? showMoreText : ""
-            }</span>
-            <span class="quote-right"><i class="${quoteRight}"></i></span>
-          </div>
-        `);
-
-          blockquoteElement
-            .off("click", ".deensimc-toggle")
-            .on("click", ".deensimc-toggle", toggleBlockquote);
-        });
+    // Initialize testimonial marquee pro
+    elementorFrontend.hooks.addAction(
+      "frontend/element_ready/deensimc-testimonial-pro.default",
+      (scope) => {
+        let animationSpeed = $(scope)
+          .find(".deensimc-marquee")
+          .data("animation-speed");
+        let isAnimationEnabled =
+          $(scope).find(".deensimc-marquee").data("animation-status") || "no";
+        if (animationSpeed && isAnimationEnabled === "yes") {
+          setupMarquee(scope, "deensimc");
+        } else {
+          $(scope).find(".deensimc-marquee-group").addClass("deensimc-paused");
+        }
+        initShowMoreOrLess(scope);
       }
     );
 
@@ -423,13 +482,11 @@
       }
     );
 
-    // Load marquee when it comes into viewport 
+    // Load marquee when it comes into viewport
     function checkVisibility(wrapper, element) {
-
       const viewportHeight = window.innerHeight;
-      
-      $(wrapper).each(function () {
 
+      $(wrapper).each(function () {
         const rect = this.getBoundingClientRect();
         const elements = $(this).find(element);
         const isVisible = rect.bottom > 0 && rect.top < viewportHeight;
@@ -439,17 +496,15 @@
           elements.css("animation-play-state", "running");
         }
       });
-
     }
 
     function handleMultiple() {
-      checkVisibility('.deensimc-wrapper', '.deensimc-marquee-group');
-      checkVisibility('.deensimc-tes', '.deensimc-tes-content');
+      checkVisibility(".deensimc-wrapper", ".deensimc-marquee-group");
+      checkVisibility(".deensimc-tes", ".deensimc-tes-content");
     }
 
     handleMultiple();
 
     $(window).on("scroll resize", handleMultiple);
-    
   });
 })(jQuery, window._);
