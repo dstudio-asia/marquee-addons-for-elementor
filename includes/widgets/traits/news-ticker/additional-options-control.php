@@ -65,7 +65,7 @@ trait NewsTickerAdditionalOptionsControl {
 				'size_units' => ['px'],
 				'range' => [
 					'px' => [
-						'min' => 20,
+						'min' => 10,
 						'max' => 1000,
 						'step' => 1,
 					],
@@ -81,6 +81,47 @@ trait NewsTickerAdditionalOptionsControl {
 			]
 		);
 
+		
+		$this->add_control(
+			'deensimc_seperator_type',
+			[
+				'label' => __('Separator Type', 'marquee-addons-for-elementor'),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'seperator_icon' => __('Icon', 'marquee-addons-for-elementor'),
+					'seperator_text' => __('Text', 'marquee-addons-for-elementor'),
+				],
+				'default' => 'seperator_icon',
+				'separator' => 'before',
+			]
+		);
+		$this->add_control(
+			'deensimc_seperator_icon',
+			[
+				'label' => __('Icon', 'marquee-addons-for-elementor'),
+				'type' => Controls_Manager::ICONS,
+				'fa4compatibility' => 'icon',
+				'default' => [
+					'value' => 'fas fa-circle',
+					'library' => 'fa-solid',
+				],
+				'condition' => [
+					'deensimc_seperator_type' => 'seperator_icon',
+				],
+			]
+		);
+		$this->add_control(
+			'deensimc_seperator_text',
+			[
+				'label' => __('Text', 'marquee-addons-for-elementor'),
+				'type' => Controls_Manager::TEXT,
+				'default' => __('|', 'marquee-addons-for-elementor'),
+				'placeholder' => __('Text', 'marquee-addons-for-elementor'),
+				'condition' => [
+					'deensimc_seperator_type' => 'seperator_text',
+				],
+			]
+		);
 		$this->end_controls_section();
 	}
 		

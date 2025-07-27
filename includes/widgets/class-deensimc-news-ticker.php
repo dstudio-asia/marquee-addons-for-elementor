@@ -14,7 +14,6 @@ class Deensimc_News_Ticker extends Widget_Base
 
 	use NewsTickerAdditionalOptionsControl;
 	use NewsTickerGeneralSettingsControl;
-	use NewsTickerSeparatorControl;
 	use NewsTickerStyleControl;
 
 	public function get_name()
@@ -55,9 +54,7 @@ class Deensimc_News_Ticker extends Widget_Base
 
 		$this->general_settings_control();
 		$this->additional_options_control();
-		$this->separator_control();
 		$this->style_section_control();
-
 	}
 
 
@@ -75,7 +72,7 @@ class Deensimc_News_Ticker extends Widget_Base
 
 		// Base query arguments for WP_Query / get_posts
 		$args = [
-			'post_type'           => $settings['deensimc_post_type'], 
+			'post_type'           => $settings['deensimc_post_type'],
 			'post_status'         => 'publish',
 			'orderby'             => $settings['orderby'],
 			'order'               => $settings['order'],
@@ -120,7 +117,7 @@ class Deensimc_News_Ticker extends Widget_Base
 
 			for ($i = 0; $i < 10; $i++) {
 				$posts[] = (object)[
-					'post_title' => 'No posts found',
+					'post_title' => 'No Latest News',
 					'custom_url' => '',
 					'is_custom'  => true,
 				];
@@ -138,10 +135,10 @@ class Deensimc_News_Ticker extends Widget_Base
 			}
 		}
 		foreach ($posts as $index => $post) {
-				$title = isset($post->post_title) ? $post->post_title : '';
-				$url = isset($post->is_custom) && $post->is_custom && !empty($post->custom_url)
-					? $post->custom_url
-					: get_permalink($post);
+			$title = isset($post->post_title) ? $post->post_title : '';
+			$url = isset($post->is_custom) && $post->is_custom && !empty($post->custom_url)
+				? $post->custom_url
+				: get_permalink($post);
 ?>
 			<span class="deensimc-scroll-text">
 				<a href="<?php echo esc_url($url); ?>" class="deensimc-title-link" target="_blank" rel="noopener noreferrer">
@@ -181,13 +178,13 @@ class Deensimc_News_Ticker extends Widget_Base
 
 		$marquee_orientation =  'horizontal';
 		$slide_direction_class = $settings['deensimc_news_ticker_slide_direction'] === 'yes' ? ' deensimc-marquee-reverse' : '';
-		
+
 		$marquee_classes = $marquee_orientation . " " . $slide_direction_class;
 
 
 
 
-		
+
 		$is_reverse = $settings['deensimc_news_ticker_slide_direction'] === 'yes' ? 'deensimc-reverse-enabled' : '';
 
 		$args = $this->newticker_get_query_args($settings);
@@ -216,7 +213,7 @@ class Deensimc_News_Ticker extends Widget_Base
 		}
 
 
-?>
+		?>
 		<div class="deensimc-wrapper deensimc-news-ticker-wrapper">
 			<div class="deensimc-marquee deensimc-marquee-<?php echo esc_attr($marquee_classes); ?> deensimc-news-ticker-marquee" data-pause-on-hover="<?php echo esc_attr($pause_on_hover) ?>" data-animation-speed="<?php echo esc_attr($animation_speed) ?>">
 				<?php if ($settings['deensimc_label'] === 'yes') : ?>
@@ -229,10 +226,10 @@ class Deensimc_News_Ticker extends Widget_Base
 						<?php echo esc_html($settings['deensimc_label_heading']); ?>
 					</div>
 				<?php endif; ?>
-				<div class="deensimc-marquee-group">
+				<div class="deensimc-marquee-group news-ticker-group">
 					<?php $this->render_news_ticker_texts($settings, $myposts); ?>
 				</div>
-				<div aria-hidden="true" class="deensimc-marquee-group">
+				<div aria-hidden="true" class="deensimc-marquee-group news-ticker-group">
 					<?php $this->render_news_ticker_texts($settings, $myposts); ?>
 				</div>
 			</div>

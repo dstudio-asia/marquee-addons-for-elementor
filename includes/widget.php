@@ -295,7 +295,6 @@ final class Marquee {
 
 		require_once(  __DIR__ . '/widgets/traits/news-ticker/additional-options-control.php' );
 		require_once(  __DIR__ . '/widgets/traits/news-ticker/general-settings-control.php' );
-		require_once(  __DIR__ . '/widgets/traits/news-ticker/separator-control.php' );
 		require_once(  __DIR__ . '/widgets/traits/news-ticker/style-section-control.php' );
 
 		require_once(  __DIR__ . '/widgets/class-deensimc-image-marquee.php' );

@@ -117,23 +117,27 @@ trait NewsTickerStyleControl
 		);
 
 		$this->add_responsive_control(
-			'deensimc_title_padding',
+			'deensimc_title_gap',
 			[
-				'label'         => esc_html__('Padding', 'marquee-addons-for-elementor'),
-				'type'          => Controls_Manager::DIMENSIONS,
-				'size_units'    => ['px', 'em', '%'],
-				'default'       => [
-					'unit'  => 'px',
-					'top'   => 0,
-					'right' => 20,
-					'bottom' => 0,
-					'left'  => 20,
+				'label' => esc_html__('Gap Between Items', 'marquee-addons-for-elementor'),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => ['px', 'em'],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 100,
+					],
 				],
-				'selectors'     => [
-					'{{WRAPPER}} .deensimc-title-link' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}',
+				'default' => [
+					'unit' => 'px',
+					'size' => 20,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .deensimc-news-wrapper' => 'gap: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
+
 
 		$this->add_control(
 			'deensimc_title_color',
@@ -189,12 +193,17 @@ trait NewsTickerStyleControl
 			[
 				'label' => __('Icon Size', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::SLIDER,
+				'size_units' => ['px', 'em'],
 				'range' => [
 					'px' => [
-						'max' => 50,
+						'max' => 100,
 					],
+					'em' => [
+						'max' => 10,
+					]
 				],
 				'default' => [
+					'unit' => 'px',
 					'size' => 20,
 				],
 				'selectors' => [
@@ -235,7 +244,7 @@ trait NewsTickerStyleControl
 				'global' => [
 					'default' => Global_Colors::COLOR_ACCENT,
 				],
-				'default' => '#595959',
+				'default' => '#F1F1F1',
 				'selectors' => [
 
 					'{{WRAPPER}} .deensimc-seperator-text' => 'background-color: {{VALUE}};',
@@ -254,54 +263,6 @@ trait NewsTickerStyleControl
 		);
 		$this->end_controls_section();
 
-		$this->start_controls_section(
-			'deensimc_separator_date_style',
-			[
-				'label' => __('Date Separator', 'marquee-addons-for-elementor'),
-				'tab' => Controls_Manager::TAB_STYLE,
-				'condition' => [
-					'deensimc_seperator_type' => 'seperator_date',
-				],
-			]
-		);
-		$this->add_control(
-			'deensimc_separator_date_color',
-			[
-				'label' => __('Color', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::COLOR,
-				'global' => [
-					'default' => Global_Colors::COLOR_PRIMARY,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .deensimc-seperator-date' => 'color: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_control(
-			'deensimc_separator_date_bg_color',
-			[
-				'label' => __('Background Color', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::COLOR,
-				'global' => [
-					'default' => Global_Colors::COLOR_ACCENT,
-				],
-				'default' => '#595959',
-				'selectors' => [
-					'{{WRAPPER}} .deensimc-seperator-date' => 'background-color: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name' => 'deensimc_separator_date_typography',
-				'global' => [
-					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
-				],
-				'selector' => '{{WRAPPER}} .deensimc-seperator-date',
-			]
-		);
-		$this->end_controls_section();
 	}
 }
 
