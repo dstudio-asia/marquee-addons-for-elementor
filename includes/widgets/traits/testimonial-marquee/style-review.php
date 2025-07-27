@@ -19,6 +19,14 @@ trait Testimonialmarquee_Style_Review {
 		);
 
 		$this->add_control(
+			'deensimc_tesimonial_review_icon_heading',
+			[
+				'label' => esc_html__( 'Icon', 'marquee-addons-for-elementor' ), 
+				'type' =>  Controls_Manager::HEADING,
+			]
+		);
+
+		$this->add_control(
 			'deensimc_tesimonial_star_spacing',
 			[
 				'label' => esc_html__( 'Spacing', 'marquee-addons-for-elementor' ),
