@@ -317,11 +317,6 @@
     cursor: pointer;
   }
   
-  .deensimc-tes.deensimc-off-icons .quote-left i,  
-  .deensimc-tes.deensimc-off-icons .quote-right i {
-    display: none;
-  }
-  
   /* ==========================================================================
      8. Media Queries
      ========================================================================== */
