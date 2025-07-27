@@ -14,7 +14,6 @@ class Deensimc_News_Ticker extends Widget_Base
 
 	use NewsTickerAdditionalOptionsControl;
 	use NewsTickerGeneralSettingsControl;
-	use NewsTickerSeparatorControl;
 	use NewsTickerStyleControl;
 
 	public function get_name()
@@ -55,9 +54,7 @@ class Deensimc_News_Ticker extends Widget_Base
 
 		$this->general_settings_control();
 		$this->additional_options_control();
-		$this->separator_control();
 		$this->style_section_control();
-
 	}
 
 
@@ -75,7 +72,7 @@ class Deensimc_News_Ticker extends Widget_Base
 
 		// Base query arguments for WP_Query / get_posts
 		$args = [
-			'post_type'           => $settings['deensimc_post_type'], 
+			'post_type'           => $settings['deensimc_post_type'],
 			'post_status'         => 'publish',
 			'orderby'             => $settings['orderby'],
 			'order'               => $settings['order'],
@@ -120,7 +117,7 @@ class Deensimc_News_Ticker extends Widget_Base
 
 			for ($i = 0; $i < 10; $i++) {
 				$posts[] = (object)[
-					'post_title' => 'No posts found',
+					'post_title' => 'No Latest News',
 					'custom_url' => '',
 					'is_custom'  => true,
 				];
@@ -138,10 +135,10 @@ class Deensimc_News_Ticker extends Widget_Base
 			}
 		}
 		foreach ($posts as $index => $post) {
-				$title = isset($post->post_title) ? $post->post_title : '';
-				$url = isset($post->is_custom) && $post->is_custom && !empty($post->custom_url)
-					? $post->custom_url
-					: get_permalink($post);
+			$title = isset($post->post_title) ? $post->post_title : '';
+			$url = isset($post->is_custom) && $post->is_custom && !empty($post->custom_url)
+				? $post->custom_url
+				: get_permalink($post);
 ?>
 			<span class="deensimc-scroll-text">
 				<a href="<?php echo esc_url($url); ?>" class="deensimc-title-link" target="_blank" rel="noopener noreferrer">
@@ -179,28 +176,42 @@ class Deensimc_News_Ticker extends Widget_Base
 		$pause_on_hover = $settings['deensimc_news_ticker_pause_on_hover_switch'];
 		$animation_speed = $settings['deensimc_news_ticker_text_animation_speed'];
 
-		$marquee_classes =  'horizontal';
+		$marquee_orientation =  'horizontal';
+		$slide_direction_class = $settings['deensimc_news_ticker_slide_direction'] === 'yes' ? ' deensimc-marquee-reverse' : '';
+
+		$marquee_classes = $marquee_orientation . " " . $slide_direction_class;
+
+
+
+
+
 		$is_reverse = $settings['deensimc_news_ticker_slide_direction'] === 'yes' ? 'deensimc-reverse-enabled' : '';
 
 		$args = $this->newticker_get_query_args($settings);
-		$custom_text = $settings['deensimcpro_custom_text'] ? $settings['deensimcpro_custom_text'] : '';
-		$custom_url  = $settings['deensimcpro_custom_text_url']['url'] ?? '';
-		$myposts = get_posts($args);
-		if (!empty($custom_text)) {
-			$custom_post = (object)[
-				'ID' => 'custom_' . uniqid(), // Safe fake ID
-				'post_title' => $custom_text,
-				'post_content' => '',
-				'post_excerpt' => '',
-				'post_type' => 'custom_text',
-				'post_status' => 'custom',
-				'custom_url' => esc_url($custom_url),
-				'is_custom' => true
-			];
 
-			// Add to the beginning
-			array_unshift($myposts, $custom_post);
+
+
+		$myposts = get_posts($args);
+
+		if (!empty($settings['deensimc_custom_text_list']) && is_array($settings['deensimc_custom_text_list'])) {
+			foreach ($settings['deensimc_custom_text_list'] as $item) {
+				if (empty($item['deensimc_custom_text'])) {
+					continue;
+				}
+
+				$custom_post = (object)[
+					'ID'          => 'custom_' . uniqid(),
+					'post_title'  => $item['deensimc_custom_text'],
+					'post_type'   => 'custom_text',
+					'post_status' => 'custom',
+					'custom_url'  => esc_url($item['deensimc_custom_text_url']['url'] ?? ''),
+					'is_custom'   => true,
+				];
+
+				array_unshift($myposts, $custom_post); // prepend to the beginning
+			}
 		}
+
 
 		?>
 		<div class="deensimc-wrapper deensimc-news-ticker-wrapper">
@@ -215,10 +226,10 @@ class Deensimc_News_Ticker extends Widget_Base
 						<?php echo esc_html($settings['deensimc_label_heading']); ?>
 					</div>
 				<?php endif; ?>
-				<div class="deensimc-marquee-group">
+				<div class="deensimc-marquee-group deensimc-news-ticker-group">
 					<?php $this->render_news_ticker_texts($settings, $myposts); ?>
 				</div>
-				<div aria-hidden="true" class="deensimc-marquee-group">
+				<div aria-hidden="true" class="deensimc-marquee-group deensimc-news-ticker-group">
 					<?php $this->render_news_ticker_texts($settings, $myposts); ?>
 				</div>
 			</div>

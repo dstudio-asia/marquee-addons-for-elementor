@@ -16,6 +16,9 @@
   height: 50px;
   position: relative;
 }
+.deensimc-news-ticker-group{
+  gap: 0px;
+}
 .deensimc-news-ticker-label.deensimc-reverse-enabled
 {
     left: auto;
@@ -59,7 +62,6 @@
 }
 
 .deensimc-seperator-text {
-  padding: 2px 6px;
   background-color: #595959;
   color: #fff;
   border-radius: 3px;
