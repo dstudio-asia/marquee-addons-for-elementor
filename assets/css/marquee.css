@@ -87,6 +87,7 @@
   position: absolute;
   left: 0;
   z-index: 1;
+  pointer-events: none;
 }
 
 .deensimc-marquee.deensimc-shadow.deensimc-marquee-vertical::before {
