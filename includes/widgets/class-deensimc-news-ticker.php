@@ -49,10 +49,207 @@ class Deensimc_News_Ticker extends Widget_Base
 		return array_diff_key($post_types, ['elementor_library', 'attachment']);
 	}
 
+	protected function get_all_posts_for_select()
+	{
+		$options = [];
+		$posts = get_posts([
+			'post_type'      => 'post',
+			'posts_per_page' => 100,
+		]);
+
+		foreach ($posts as $post) {
+			$options[$post->ID] = $post->post_title;
+		}
+
+		return $options;
+	}
+
 	protected function register_controls(): void
 	{
 
 		$this->general_settings_control();
+
+
+    $this->start_controls_section(
+        'section_query',
+        [
+            'label' => esc_html__('Query', 'marquee-addons-for-elementor'),
+            'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+        ]
+    );
+
+		// Default: Post
+		$this->add_control(
+			'deensimc_post_type',
+			[
+				'label'   => __('Source', 'marquee-addons-for-elementor'),
+				'type'    => \Elementor\Controls_Manager::SELECT,
+				'default' => 'post',
+				'options' => get_post_types(['public' => true, '_builtin' => true], 'names'),
+			]
+		);
+
+		// Include/Exclude Toggle
+		$this->add_control(
+			'deensimc_include_exclude',
+			[
+				'label'   => __('Include / Exclude', 'marquee-addons-for-elementor'),
+				'type'    => \Elementor\Controls_Manager::CHOOSE,
+				'toggle'  => false,
+				'options' => [
+					'include' => [
+						'title' => __('Include', 'marquee-addons-for-elementor'),
+					],
+					'exclude' => [
+						'title' => __('Exclude', 'marquee-addons-for-elementor'),
+					],
+				],
+				'default' => 'exclude',
+			]
+		);
+
+		// Filter By
+		$this->add_control(
+			'deensimc_filter_by',
+			[
+				'label'       => __('Filter By', 'marquee-addons-for-elementor'),
+				'type'        => \Elementor\Controls_Manager::SELECT2,
+				'multiple'    => true,
+				'label_block' => true,
+				'default'     => ['current_post'],
+				'options'     => [
+					'current_post'  => __('Current Post', 'marquee-addons-for-elementor'),
+					'manual_ids'    => __('Manual Selection', 'marquee-addons-for-elementor'),
+					'term'          => __('Term', 'marquee-addons-for-elementor'),
+					'author'        => __('Author', 'marquee-addons-for-elementor'),
+				],
+			]
+		);
+
+		// Manual Post Selector
+		$this->add_control(
+			'deensimc_selected_posts',
+			[
+				'label'       => __('Search & Select', 'marquee-addons-for-elementor'),
+				'type'        => \Elementor\Controls_Manager::SELECT2,
+				'label_block' => true,
+				'multiple'    => true,
+				'options'     => $this->get_all_posts_for_select(), // Helper function
+				'condition'   => [
+					'deensimc_filter_by' => 'manual_ids',
+				],
+			]
+		);
+
+		// Term Filter
+		$this->add_control(
+			'deensimc_term_ids',
+			[
+				'label'       => __('Term', 'marquee-addons-for-elementor'),
+				'type'        => \Elementor\Controls_Manager::TEXT,
+				'description' => __('Comma-separated term IDs', 'marquee-addons-for-elementor'),
+				'condition'   => [
+					'deensimc_filter_by' => 'term',
+				],
+			]
+		);
+
+		// Author
+		$this->add_control(
+			'deensimc_author_ids',
+			[
+				'label'       => __('Author', 'marquee-addons-for-elementor'),
+				'type'        => \Elementor\Controls_Manager::TEXT,
+				'description' => __('Comma-separated author IDs', 'marquee-addons-for-elementor'),
+				'condition'   => [
+					'deensimc_filter_by' => 'author',
+				],
+			]
+		);
+
+		// Avoid Duplicates
+		$this->add_control(
+			'deensimc_avoid_duplicates',
+			[
+				'label'        => __('Avoid Duplicates', 'marquee-addons-for-elementor'),
+				'type'         => \Elementor\Controls_Manager::SWITCHER,
+				'description'  => __('Set to Yes to avoid duplicate posts from showing up.', 'marquee-addons-for-elementor'),
+				'return_value' => 'yes',
+				'default'      => '',
+			]
+		);
+
+		// Offset
+		$this->add_control(
+			'deensimc_offset',
+			[
+				'label'       => __('Offset', 'marquee-addons-for-elementor'),
+				'type'        => \Elementor\Controls_Manager::NUMBER,
+				'default'     => 0,
+				'description' => __('Skip over this many posts.', 'marquee-addons-for-elementor'),
+			]
+		);
+
+		// Order By
+		$this->add_control(
+			'deensimc_order_by',
+			[
+				'label'   => __('Order By', 'marquee-addons-for-elementor'),
+				'type'    => \Elementor\Controls_Manager::SELECT,
+				'default' => 'date',
+				'options' => [
+					'date'       => __('Date', 'marquee-addons-for-elementor'),
+					'title'      => __('Title', 'marquee-addons-for-elementor'),
+					'rand'       => __('Random', 'marquee-addons-for-elementor'),
+					'comment_count' => __('Comment Count', 'marquee-addons-for-elementor'),
+				],
+			]
+		);
+
+		// Order
+		$this->add_control(
+			'deensimc_order',
+			[
+				'label'   => __('Order', 'marquee-addons-for-elementor'),
+				'type'    => \Elementor\Controls_Manager::SELECT,
+				'default' => 'DESC',
+				'options' => [
+					'ASC'  => __('ASC', 'marquee-addons-for-elementor'),
+					'DESC' => __('DESC', 'marquee-addons-for-elementor'),
+				],
+			]
+		);
+
+    $this->add_control(
+        'deensimc_title_trim_enable',
+        [
+            'label' => __('Limit Title Length?', 'marquee-addons-for-elementor'),
+            'type' => \Elementor\Controls_Manager::SWITCHER,
+            'label_on' => __('Yes', 'marquee-addons-for-elementor'),
+            'label_off' => __('No', 'marquee-addons-for-elementor'),
+            'return_value' => 'yes',
+            'default' => '',
+        ]
+    );
+
+    $this->add_control(
+        'deensimc_title_trim_length',
+        [
+            'label' => __('Max Title Length', 'marquee-addons-for-elementor'),
+            'type' => \Elementor\Controls_Manager::NUMBER,
+            'min' => 5,
+            'max' => 100,
+            'step' => 1,
+            'default' => 50,
+            'condition' => [
+                'deensimc_title_trim_enable' => 'yes',
+            ],
+        ]
+    );
+
+    $this->end_controls_section();
+
+
 		$this->additional_options_control();
 		$this->style_section_control();
 	}
@@ -109,6 +306,34 @@ class Deensimc_News_Ticker extends Widget_Base
 	}
 
 
+	protected function get_query_args($settings)
+	{
+		$args = [
+			'post_type'      => $settings['deensimc_post_type'] ?? 'post',
+			'post_status'    => 'publish',
+			'posts_per_page' => intval($settings['deensimc_posts_per_page'] ?? 6),
+		];
+
+		$taxonomies = get_object_taxonomies($args['post_type'], 'names');
+		foreach ($taxonomies as $tax) {
+			$key = $tax . '_ids';
+			if (!empty($settings[$key]) && is_array($settings[$key])) {
+				$args['tax_query'][] = [
+					'taxonomy' => $tax,
+					'field'    => 'term_id',
+					'terms'    => $settings[$key],
+				];
+			}
+		}
+
+		if (!empty($args['tax_query'])) {
+			$args['tax_query']['relation'] = 'AND';
+		}
+
+		return $args;
+	}
+
+
 
 	protected function render_news_ticker_texts($settings, $posts = [])
 	{
@@ -135,7 +360,14 @@ class Deensimc_News_Ticker extends Widget_Base
 			}
 		}
 		foreach ($posts as $index => $post) {
-			$title = isset($post->post_title) ? $post->post_title : '';
+				$title = isset($post->post_title) ? $post->post_title : '';
+
+				if (!empty($settings['deensimc_title_trim_enable']) && $settings['deensimc_title_trim_enable'] === 'yes') {
+					$max_len = !empty($settings['deensimc_title_trim_length']) ? intval($settings['deensimc_title_trim_length']) : 50;
+					if (strlen($title) > $max_len) {
+						$title = mb_substr($title, 0, $max_len) . '...';
+					}
+				}
 			$url = isset($post->is_custom) && $post->is_custom && !empty($post->custom_url)
 				? $post->custom_url
 				: get_permalink($post);
@@ -193,24 +425,24 @@ class Deensimc_News_Ticker extends Widget_Base
 
 		$myposts = get_posts($args);
 
-		if (!empty($settings['deensimc_custom_text_list']) && is_array($settings['deensimc_custom_text_list'])) {
-			foreach ($settings['deensimc_custom_text_list'] as $item) {
-				if (empty($item['deensimc_custom_text'])) {
-					continue;
-				}
+		// if (!empty($settings['deensimc_custom_text_list']) && is_array($settings['deensimc_custom_text_list'])) {
+		// 	foreach ($settings['deensimc_custom_text_list'] as $item) {
+		// 		if (empty($item['deensimc_custom_text'])) {
+		// 			continue;
+		// 		}
 
-				$custom_post = (object)[
-					'ID'          => 'custom_' . uniqid(),
-					'post_title'  => $item['deensimc_custom_text'],
-					'post_type'   => 'custom_text',
-					'post_status' => 'custom',
-					'custom_url'  => esc_url($item['deensimc_custom_text_url']['url'] ?? ''),
-					'is_custom'   => true,
-				];
+		// 		$custom_post = (object)[
+		// 			'ID'          => 'custom_' . uniqid(),
+		// 			'post_title'  => $item['deensimc_custom_text'],
+		// 			'post_type'   => 'custom_text',
+		// 			'post_status' => 'custom',
+		// 			'custom_url'  => esc_url($item['deensimc_custom_text_url']['url'] ?? ''),
+		// 			'is_custom'   => true,
+		// 		];
 
-				array_unshift($myposts, $custom_post); // prepend to the beginning
-			}
-		}
+		// 		array_unshift($myposts, $custom_post); // prepend to the beginning
+		// 	}
+		// }
 
 
 		?>
@@ -223,7 +455,16 @@ class Deensimc_News_Ticker extends Widget_Base
 								<?php Icons_Manager::render_icon($settings['deensimc_label_icon'], ['aria-hidden' => 'true']); ?>
 							<?php endif; ?>
 						</span>
-						<?php echo esc_html($settings['deensimc_label_heading']); ?>
+
+						<div class="deensimc-label-heading">
+							<?php
+							$label_tag = isset($settings['deensimc_label_heading_tag']) ? esc_attr($settings['deensimc_label_heading_tag']) : 'h4';
+							?>
+							<<?php echo $label_tag; ?>>
+								<?php echo esc_html($settings['deensimc_label_heading']); ?>
+							</<?php echo $label_tag; ?>>
+						</div>
+
 					</div>
 				<?php endif; ?>
 				<div class="deensimc-marquee-group deensimc-news-ticker-group">

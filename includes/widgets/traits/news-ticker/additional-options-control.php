@@ -106,7 +106,7 @@ trait NewsTickerAdditionalOptionsControl {
 					'library' => 'fa-solid',
 				],
 				'condition' => [
-					'deensimc_seperator_type' => 'seperator_icon',
+					'deensimc_seperator_type' => 'seperator_text',
 				],
 			]
 		);

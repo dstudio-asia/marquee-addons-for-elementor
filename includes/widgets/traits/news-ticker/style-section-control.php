@@ -32,7 +32,7 @@ trait NewsTickerStyleControl
 				'global' => [
 					'default' => Global_Colors::COLOR_ACCENT,
 				],
-				'default' => '#F1F1F1',
+				'default' => '#F0F5FA',
 				'selectors' => [
 					'{{WRAPPER}} .deensimc-news-ticker-wrapper' => 'background-color: {{VALUE}};',
 				],
@@ -71,13 +71,15 @@ trait NewsTickerStyleControl
 			[
 				'label' => __('Label Color', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::COLOR,
-				'global' => [
-					'default' => Global_Colors::COLOR_PRIMARY,
-				],
+				// 'global' => [
+				// 	'default' => Global_Colors::COLOR_PRIMARY,
+				// ],
 				'default' => '#fff',
 				'selectors' => [
-					'{{WRAPPER}} .deensimc-news-ticker-label' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .deensimc-news-ticker-label .news-ticker-icon' => 'fill: {{VALUE}};',
+					// '{{WRAPPER}} .deensimc-news-ticker-label' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .deensimc-label-heading' => 'color: {{VALUE}};',
+					// '{{WRAPPER}} .deensimc-news-ticker-label .news-ticker-icon' => 'fill: {{VALUE}};',
+					'{{WRAPPER}} .deensimc-news-ticker-icon' => 'color: {{VALUE}};'
 				],
 			]
 		);
@@ -86,10 +88,10 @@ trait NewsTickerStyleControl
 			[
 				'label' => __('Background Color', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::COLOR,
-				'global' => [
-					'default' => Global_Colors::COLOR_ACCENT,
-				],
-				'default' => '#666666',
+				// 'global' => [
+				// 	'default' => Global_Colors::COLOR_ACCENT,
+				// ],
+				'default' => '#1E293B',
 				'selectors' => [
 					'{{WRAPPER}} .deensimc-news-ticker-label' => 'background-color: {{VALUE}};',
 				],
@@ -147,6 +149,7 @@ trait NewsTickerStyleControl
 				'global' => [
 					'default' => Global_Colors::COLOR_PRIMARY,
 				],
+				'default' => '#1E293B',
 				'selectors' => [
 					'{{WRAPPER}} .deensimc-title-link' => 'color: {{VALUE}};',
 				],

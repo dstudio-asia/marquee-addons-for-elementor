@@ -25,6 +25,40 @@
     right: 0;
 }
 
+.deensimc-label-heading {
+    color: #fff;
+    
+    padding: 5px 10px;
+ 
+    margin: 0;
+    height: 100%;
+  
+    width: fit-content; 
+     display: flex;
+    align-items: center;
+    justify-content: center;
+   
+    z-index: 100;
+    font-weight: 600;
+}
+
+.deensimc-label-heading h1,
+.deensimc-label-heading h2,
+.deensimc-label-heading h3,
+.deensimc-label-heading h4,
+.deensimc-label-heading h5,
+.deensimc-label-heading h6,
+.deensimc-label-heading div,
+.deensimc-label-heading span,
+.deensimc-label-heading p {
+    color: inherit;
+    background: inherit;
+   
+    margin: 0;
+    line-height: 1.2;
+}
+
+
 .deensimc-news-wrapper {
   display: flex;
   align-items: center;
