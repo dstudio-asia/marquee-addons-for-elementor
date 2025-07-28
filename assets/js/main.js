@@ -50,22 +50,8 @@
         }
       }
     );
-    // Initialize text marquee pro
-    elementorFrontend.hooks.addAction(
-      "frontend/element_ready/deensimc-smooth-text-pro.default",
-      (scope) => {
-        let animationSpeed = $(scope)
-          .find(".deensimc-marquee")
-          .data("animation-speed");
-        if (animationSpeed) {
-          setupMarquee(scope, "deensimc");
-        } else {
-          $(scope).find(".deensimc-marquee-group").addClass("deensimc-paused");
-        }
-      }
-    );
 
-    // Initialize text marquee pro
+    // Initialize product category marquee pro
     elementorFrontend.hooks.addAction(
       "frontend/element_ready/deensimcpro-product-category-marquee.default",
       (scope) => {
@@ -133,24 +119,6 @@
     // Initialize testimonial marquee
     elementorFrontend.hooks.addAction(
       "frontend/element_ready/deensimc-testimonial.default",
-      (scope) => {
-        let animationSpeed = $(scope)
-          .find(".deensimc-marquee")
-          .data("animation-speed");
-        let isAnimationEnabled =
-          $(scope).find(".deensimc-marquee").data("animation-status") || "no";
-        if (animationSpeed && isAnimationEnabled === "yes") {
-          setupMarquee(scope, "deensimc");
-        } else {
-          $(scope).find(".deensimc-marquee-group").addClass("deensimc-paused");
-        }
-        initShowMoreOrLess(scope);
-      }
-    );
-
-    // Initialize testimonial marquee pro
-    elementorFrontend.hooks.addAction(
-      "frontend/element_ready/deensimc-testimonial-pro.default",
       (scope) => {
         let animationSpeed = $(scope)
           .find(".deensimc-marquee")
