@@ -140,7 +140,7 @@ class Deensimc_Image_Marquee extends Widget_Base {
 		$pause_on_hover = $settings['deensimc_pause_on_hover_switch'];
 		$animation_speed = $settings['deensimc_image_animation_speed'];
 		$marquee_classes = $marquee_orientation . " " . $slide_direction_class;
-		$show_shadow = $settings['deensimc_image_show_edge_shadow_switch'] === 'yes' ? 'deensimc-shadow' : 'deensimc-no-shadow';
+		$show_shadow = $settings['deensimc_image_show_edge_shadow_switch'] === 'yes' ? 'deensimc-shadow' : '';
 	?>
 		<div class="deensimc-wrapper deensimc-wrapper-<?php echo esc_attr( $marquee_orientation ); ?>">
 			<div class="deensimc-marquee <?php echo esc_attr( $show_shadow ) ?> deensimc-marquee-<?php echo esc_attr( $marquee_classes ); ?>" data-pause-on-hover="<?php echo esc_attr( $pause_on_hover ) ?>" data-animation-speed="<?php echo esc_attr( $animation_speed ) ?>" >

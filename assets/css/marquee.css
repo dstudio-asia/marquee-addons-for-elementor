@@ -47,8 +47,8 @@
   --edge-shadow-spread: 50px;
 }
 
-.deensimc-marquee.deensimc-shadow.deensimc-marquee-horizontal::before,
-.deensimc-marquee.deensimc-shadow.deensimc-marquee-horizontal::after {
+.deensimc-marquee.deensimc-shadow::before,
+.deensimc-marquee.deensimc-shadow::after {
   content: "";
   width: var(--edge-shadow-spread);
   max-width: 20%;
@@ -59,7 +59,7 @@
   pointer-events: none;
 }
 
-.deensimc-marquee.deensimc-shadow.deensimc-marquee-horizontal::before {
+.deensimc-marquee.deensimc-shadow::before {
   left: 0;
   background: linear-gradient(
     to right,
@@ -68,7 +68,7 @@
   );
 }
 
-.deensimc-marquee.deensimc-shadow.deensimc-marquee-horizontal::after {
+.deensimc-marquee.deensimc-shadow::after {
   right: 0;
   background: linear-gradient(
     to left,
