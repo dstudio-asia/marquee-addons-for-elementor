@@ -7,6 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Elementor Classes
 use \Elementor\Controls_Manager;
 use \Elementor\Group_Control_Background;
+use Elementor\Group_Control_Border;
 use \Elementor\Group_Control_Box_Shadow;
 
 trait Testimonialmarquee_Style_Contents_Box {
@@ -80,6 +81,28 @@ trait Testimonialmarquee_Style_Contents_Box {
 				],
 			]
 		);
+
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			[
+				'name' => 'deensimc_testimonial_box_border',
+				'selector' => '{{WRAPPER}} .deensimc-tes .deensimc-tes-main blockquote',
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_control(
+			'deensimc_testimonial_box_border_radius',
+			[
+				'label' => esc_html__( 'Border Radius', 'marquee-addons-for-elementor' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', 'rem' ], 
+				'selectors' => [
+					'{{WRAPPER}} .deensimc-tes .deensimc-tes-main blockquote' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
 
 		$this->end_controls_section();
 	}
