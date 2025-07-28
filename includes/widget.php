@@ -240,7 +240,17 @@ final class Marquee {
 	}
 
 	public function deensimc_frontend_scripts() {
+		wp_register_script( 'deensimc_handle_pause_on_hover', DEENSIMC_ASSETS_URL  . 'js/handlePauseOnHover.js' , [ 'jquery' ] , self::VERSION, false );
+		wp_register_script( 'deensimc_setup_marquee', DEENSIMC_ASSETS_URL  . 'js/setupMarquee.js' , [ 'jquery' ] , self::VERSION, false );
+		wp_register_script( 'deensimc_toggle_blockquote', DEENSIMC_ASSETS_URL  . 'js/toggleBlockquote.js' , [ 'jquery' ] , self::VERSION, false );
+		wp_register_script( 'deensimc_init_show_more_or_less', DEENSIMC_ASSETS_URL  . 'js/initShowMoreOrLess.js' , [ 'jquery' ] , self::VERSION, false );
 		wp_register_script( 'deensimc-main', DEENSIMC_ASSETS_URL  . 'js/main.js' , [ 'jquery' ] , self::VERSION, false );
+
+		
+		wp_enqueue_script( 'deensimc_handle_pause_on_hover' );
+		wp_enqueue_script( 'deensimc_setup_marquee' );
+		wp_enqueue_script( 'deensimc_toggle_blockquote' );
+		wp_enqueue_script( 'deensimc_init_show_more_or_less' );
 		wp_enqueue_script( 'deensimc-main' );
 	}
 	public function deensimc_editor_styles() {
