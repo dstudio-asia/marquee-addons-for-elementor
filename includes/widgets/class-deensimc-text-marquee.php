@@ -92,7 +92,7 @@ class Deensimc_Text_Marquee extends Widget_Base {
 		$pause_on_hover = $settings['deensimc_pause_on_hover_switch'];
 		$animation_speed = $settings['deensimc_text_animation_speed'];
 		$marquee_classes = $marquee_orientation." ".$slide_direction_class;
-		$show_shadow = $settings['deensimc_show_shadow_switch'] === 'yes' ? 'deensimc-shadow' : 'deensimc-no-shadow';
+		$show_shadow = $settings['deensimc_text_marquee_show_edge_shadow_switch'] === 'yes' ? 'deensimc-shadow' : '';
     ?>
 		<div class="deensimc-wrapper deensimc-wrapper-<?php echo esc_attr( $marquee_orientation ); ?> deensimc-text-marquee">
 			<div class="deensimc-marquee <?php echo esc_attr( $show_shadow ); ?> deensimc-marquee-<?php echo esc_attr( $marquee_classes ); ?>" data-pause-on-hover="<?php echo esc_attr( $pause_on_hover ) ?>" data-animation-speed="<?php echo esc_attr( $animation_speed ) ?>" >
@@ -119,7 +119,7 @@ class Deensimc_Text_Marquee extends Widget_Base {
 		let pause_on_hover = settings.deensimc_pause_on_hover_switch;
 		let animation_speed = settings.deensimc_text_animation_speed;
 		let marquee_classes = marquee_orientation + " " + slide_direction_class;
-		let show_shadow = settings.deensimc_show_shadow_switch === 'yes' ? 'deensimc-shadow' : 'deensimc-no-shadow';
+		let show_shadow = settings.deensimc_text_marquee_show_edge_shadow_switch === 'yes' ? 'deensimc-shadow' : '';
 
 		let texts=[...settings.deensimc_repeater_text_main];
 			let isVerticalSlide=settings.deensimc_slide_position==='yes' ;

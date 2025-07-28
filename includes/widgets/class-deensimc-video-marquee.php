@@ -399,7 +399,7 @@ class Deensimc_Video_Marquee extends Widget_Base {
 		$marquee_orientation = $settings['deensimc_slide_position'] === 'yes' ? 'vertical' : 'horizontal';
 		$slide_direction_class = $settings['deensimc_slide_direction'] === 'yes' ? 'deensimc-marquee-reverse' : 'deensimc-marquee-no-reverse';
 		$marquee_classes = $marquee_orientation . " " . $slide_direction_class;
-		$show_shadow = $settings['deensimc_show_shadow_switch'] === 'yes' ? 'deensimc-shadow' : 'deensimc-no-shadow';
+		$show_shadow = $settings['deensimc_video_marquee_show_edge_shadow_switch'] === 'yes' ? 'deensimc-shadow' : '';
         if ( !empty( $settings['deensimc_video_list'] ) ) {
         ?>
 			<div class="deensimc-video-main deensimc-wrapper deensimc-wrapper-<?php echo esc_attr( $marquee_orientation ); ?>" >

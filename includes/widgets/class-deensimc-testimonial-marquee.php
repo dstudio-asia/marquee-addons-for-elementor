@@ -250,7 +250,7 @@ class Deensimc_Testimonial_Marquee extends Widget_Base {
     protected function render() 
 	{
         $settings = $this->get_settings_for_display();
-		$show_shadow = $settings['deensimc_show_shadow_switch'] === 'yes' ? 'deensimc-shadow' : 'deensimc-no-shadow';
+		$show_shadow = $settings['deensimc_testimonial_show_edge_shadow_switch'] === 'yes' ? 'deensimc-shadow' : '';
 		$show_reverse = $settings['deensimc_testimonial_reverse_section'] === 'yes' ? 'deensimc-marquee-reverse' : '';
     ?>
 		<div class="deensimc-tes">
@@ -345,7 +345,7 @@ class Deensimc_Testimonial_Marquee extends Widget_Base {
 	protected function content_template() {
 	?>
 		<#
-			let showShadow = settings.deensimc_show_shadow_switch === 'yes' ? 'deensimc-shadow' : 'deensimc-no-shadow';
+			let showShadow = settings.deensimc_testimonial_show_edge_shadow_switch === 'yes' ? 'deensimc-shadow' : '';
 			let showReverse = settings.deensimc_testimonial_reverse_section === 'yes' ? 'deensimc-marquee-reverse' : '';
 		#>
 		<div class="deensimc-tes">

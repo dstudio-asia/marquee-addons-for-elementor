@@ -21,337 +21,343 @@
    1. Variables
    ========================================================================== */
 
-   :root {
-    --deensimc-marquee-width: 100vw;
-    --deensimc-marquee-elements-displayed: 4;
-    --deensimc-marquee-element-width: calc(var(--deensimc-marquee-width) / var(--deensimc-marquee-elements-displayed));
-    --deensimc-marquee-animation-duration: calc(var(--deensimc-marquee-elements) * 3s);
-    --deensimc-marquee-tes-white: #ffffff;
-    --deensimc-marquee-tes-boulder: #4E4E4E;
-    --deensimc-marquee-tes-yellow: #f4b400;
-    --deensimc-marquee-tes-bg: #e7e7e7;
-    --deensimc-marquee-box-shadow: #555353;
-    --deensimc-marquee-text-black: #000000;
-    --deensimc-marquee-text-gray: gray;
-    --deensimc-marquee-text-skyblue: #1e6fda;
-    --deensimc-marquee-box-shadow-color: rgba(0, 0, 0, 0.15);
-  }
-  
-  /* ==========================================================================
+:root {
+  --deensimc-marquee-width: 100vw;
+  --deensimc-marquee-elements-displayed: 4;
+  --deensimc-marquee-element-width: calc(
+    var(--deensimc-marquee-width) / var(--deensimc-marquee-elements-displayed)
+  );
+  --deensimc-marquee-animation-duration: calc(
+    var(--deensimc-marquee-elements) * 3s
+  );
+  --deensimc-marquee-tes-white: #ffffff;
+  --deensimc-marquee-tes-boulder: #4e4e4e;
+  --deensimc-marquee-tes-yellow: #f4b400;
+  --deensimc-marquee-tes-bg: #e7e7e7;
+  --deensimc-marquee-box-shadow: #555353;
+  --deensimc-marquee-text-black: #000000;
+  --deensimc-marquee-text-gray: gray;
+  --deensimc-marquee-text-skyblue: #1e6fda;
+  --deensimc-marquee-box-shadow-color: rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================================================
      2. General Styles for Testimonial
      ========================================================================== */
-  
-  .deensimc-tes-text p {
-    margin-bottom: 0;
-  }
-  
-  .deensimc-tes-main blockquote {
-    border: unset;
-  }
-  
-  .deensimc-tes .deensimc-tes-logo {
-    overflow: hidden;
-    position: relative;
-  }
-  
-  /* ==========================================================================
+
+.deensimc-tes-text p {
+  margin-bottom: 0;
+}
+
+.deensimc-tes-main blockquote {
+  border: unset;
+}
+
+.deensimc-tes .deensimc-tes-logo {
+  overflow: hidden;
+  position: relative;
+}
+
+/* ==========================================================================
      3. Marquee Styles
      ========================================================================== */
-  
-  .deensimc-tes .deensimc-shadow.deensimc-tes-logo::before {
-    content: "";
-    height: 100%;
-    width: 40px;
-    box-shadow: 0px 0px 100px 10px var(--deensimc-marquee-box-shadow);
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translateX(100%);
-    z-index: 1;
-  }
-  
-  .deensimc-tes .deensimc-shadow.deensimc-tes-logo::after {
-    content: "";
-    height: 100%;
-    width: 40px;
-    box-shadow: 0px 0px 100px 10px var(--deensimc-marquee-box-shadow);
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translateX(-100%);
-    z-index: 1;
-  }
-  
-  .deensimc-tes .deensimc-tes-logo .deensimc-tes-content {
-    white-space: normal;
-    list-style: none;
-    height: 100%;
-    display: flex;
-    gap: 20px;
-    align-items: start;
-  }
-  
-  .deensimc-tes .deensimc-tes-logo .deensimc-tes-content .deensimc-tes-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    max-height: 100%;
-  }
-  
-  .deensimc-tes .deensimc-tes-logo .deensimc-tes-content .deensimc-tes-item i {
-    font-style: normal;
-  }
-  
-  /* ==========================================================================
+
+.deensimc-tes .deensimc-tes-logo .deensimc-tes-content {
+  white-space: normal;
+  list-style: none;
+  height: 100%;
+  display: flex;
+  gap: 20px;
+  align-items: start;
+}
+
+.deensimc-tes .deensimc-tes-logo .deensimc-tes-content .deensimc-tes-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  max-height: 100%;
+}
+
+.deensimc-tes .deensimc-tes-logo .deensimc-tes-content .deensimc-tes-item i {
+  font-style: normal;
+}
+
+/* ==========================================================================
      4. Animation Keyframes
      ========================================================================== */
-  
-  @keyframes deensimc-scrolling {
-    100% {
-      transform: translateX(0);
-    }
-    0% {
-      transform: translateX(calc(-1 * var(--deensimc-marquee-element-width) * var(--deensimc-marquee-elements)));
-    }
+
+@keyframes deensimc-scrolling {
+  100% {
+    transform: translateX(0);
   }
-  
-  @keyframes deensimc-scrolling-reverse {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(calc(-1 * var(--deensimc-marquee-element-width) * var(--deensimc-marquee-elements)));
-    }
+  0% {
+    transform: translateX(
+      calc(
+        -1 * var(--deensimc-marquee-element-width) * var(--deensimc-marquee-elements)
+      )
+    );
   }
-  
-  /* ==========================================================================
+}
+
+@keyframes deensimc-scrolling-reverse {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(
+      calc(
+        -1 * var(--deensimc-marquee-element-width) * var(--deensimc-marquee-elements)
+      )
+    );
+  }
+}
+
+/* ==========================================================================
      5. Blockquote and Author Styles
      ========================================================================== */
-  
-  .deensimc-tes .deensimc-tes-main {
-    position: relative;
-    overflow: hidden;
-    margin: 10px;
-    min-width: 220px;
-    max-width: 370px;
-    width: 100%;
-    text-align: left;
-    box-shadow: none !important;
-  }
-  
-  .deensimc-tes .deensimc-tes-main img {
-    max-width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    width: 70px;
-    border-radius: 50%;
-    margin-bottom: 15px;
-    margin-top: 10px;
-    display: inline-block;
-    z-index: 1;
-    position: relative;
-  }
-  
-  .deensimc-tes .deensimc-tes-main .deensimc-tes-author.no-image {
-    margin-top: 50px;
-  }
-  
-  .deensimc-tes .deensimc-tes-main .deensimc-tes-author {
-    padding: 0 15px;
-  }
-  
-  .deensimc-tes .deensimc-tes-main blockquote {
-    margin: 0;
-    display: block;
-    border-radius: 8px;
-    position: relative;
-    background-color: var(--deensimc-marquee-tes-bg);
-    padding: 30px 50px 65px 50px;
-    font-size: 0.8em;
-    font-weight: 500;
-    margin: 0 0 -50px;
-    line-height: 1.6em;
-    box-shadow: 0 0 5px var(--deensimc-marquee-box-shadow-color);
-  }
-  
-  .deensimc-tes .deensimc-tes-main .deensimc-tes-author {
-    margin-top: -20px;
-    text-transform: uppercase;
-    text-align: center;
-    color: var(--deensimc-marquee-tes-white);
-  }
-  
-  .deensimc-tes .deensimc-tes-main .deensimc-tes-author .deensimc-tes-heading {
-    opacity: 1;
-    margin: 0;
-    font-weight: 800;
-    color: var(--deensimc-marquee-text-black);
-  }
-  
-  .deensimc-tes .deensimc-tes-main .deensimc-tes-author .deensimc-tes-heading span {
-    font-weight: 400;
-    text-transform: none;
-    display: block;
-    color: var(--deensimc-marquee-text-black);
-  }
-  
-  /* ==========================================================================
+
+.deensimc-tes .deensimc-tes-main {
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  min-width: 220px;
+  max-width: 370px;
+  width: 100%;
+  text-align: left;
+  box-shadow: none !important;
+}
+
+.deensimc-tes .deensimc-tes-main img {
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  width: 70px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  display: inline-block;
+  z-index: 1;
+  position: relative;
+}
+
+.deensimc-tes .deensimc-tes-main .deensimc-tes-author.no-image {
+  margin-top: 50px;
+}
+
+.deensimc-tes .deensimc-tes-main .deensimc-tes-author {
+  padding: 0 15px;
+}
+
+.deensimc-tes .deensimc-tes-main blockquote {
+  margin: 0;
+  display: block;
+  border-radius: 8px;
+  position: relative;
+  background-color: var(--deensimc-marquee-tes-bg);
+  padding: 30px 50px 65px 50px;
+  font-size: 0.8em;
+  font-weight: 500;
+  margin: 0 0 -50px;
+  line-height: 1.6em;
+  box-shadow: 0 0 5px var(--deensimc-marquee-box-shadow-color);
+}
+
+.deensimc-tes .deensimc-tes-main .deensimc-tes-author {
+  margin-top: -20px;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--deensimc-marquee-tes-white);
+}
+
+.deensimc-tes .deensimc-tes-main .deensimc-tes-author .deensimc-tes-heading {
+  opacity: 1;
+  margin: 0;
+  font-weight: 800;
+  color: var(--deensimc-marquee-text-black);
+}
+
+.deensimc-tes
+  .deensimc-tes-main
+  .deensimc-tes-author
+  .deensimc-tes-heading
+  span {
+  font-weight: 400;
+  text-transform: none;
+  display: block;
+  color: var(--deensimc-marquee-text-black);
+}
+
+/* ==========================================================================
      6. Icon and Star Rating Styles
      ========================================================================== */
-  
-  .deensimc-contents, .deensimc-show-more, 
-  .deensimc-toggle, .deensimc-tes-review-text {
-    font-weight: normal;
-  }
-  
-  .deensimc-tes-name {
-    font-size: 18px;
-  }
-  
-  .deensimc-tes-title {
-    font-size: 16px;
-  }
-  
-  .deensimc-tes-star-icon {
-    padding: 10px 0 10px 0;
-  }
-  
-  .deensimc-testimonial .deensimc-tes-star-icon {
-    padding: 30px 0 0 0;
-  }
-  
-  .deensimc-tes-cards-all .deensimc-tes-star-icon {
-    padding: 20px 40px 0 40px;
-  }
-  
-  .deensimc-tes-cards-all .deensimc-tes-star-icon.no-gap {
-    padding: 10px 40px 10px 40px;
-  }
-  
-  .deensimc-tes-icons-none i {
-    color: var(--deensimc-marquee-tes-boulder);
-  }
-  
-  .deensimc-tes-icons i {
-    color: var(--deensimc-marquee-tes-yellow);
-  }
-  
-  .deensimc-tes-star-icon small {
-    color: var(--deensimc-marquee-tes-boulder);
-    font-weight: 600;
-    font-size: 16px;
-  }
-  
-  .deensimc-tes .deensimc-tes-logo .deensimc-tes-content .deensimc-tes-item .deensimc-tes-star-icon i {
-    font-size: 16px;
-  }
-  
-  .deensimc-testimonial .deensimc-tes-star-icon small {
-    color: var(--deensimc-marquee-tes-white);
-    font-weight: 600;
-    font-size: 16px;
-  }
-  
-  .deensimc-tes-icons i, .deensimc-tes-icons-half i, .deensimc-tes-icons-none i {
-    display: inline-block;
-    position: relative;
-    font-style: normal;
-    cursor: default;
-  }
-  
-  .deensimc-tes-icons i::after, .deensimc-tes-icons-half i::after, .deensimc-tes-icons-none i::after {
-    content: "\f005";
-    display: block;
-    font-size: inherit;
-    position: absolute;
-    overflow: hidden;
-    color: var(--deensimc-marquee-tes-yellow);
-    top: 0;
-    left: 0;
-    width: 100%;
-  }
-  
-  .deensimc-tes-icons i, .deensimc-tes-icons-half i, .deensimc-tes-icons-none i {
-    color: var(--deensimc-marquee-tes-boulder);
-  }
-  
-  .deensimc-tes-icons i::after {
-    width: 100%;
-  }
-  
-  .deensimc-tes-icons-half i::after {
-    width: 50%;
-  }
-  
-  .deensimc-tes-icons-none i::after {
-    width: 0;
-  }
-  
-  /* ==========================================================================
+
+.deensimc-contents,
+.deensimc-show-more,
+.deensimc-toggle,
+.deensimc-tes-review-text {
+  font-weight: normal;
+}
+
+.deensimc-tes-name {
+  font-size: 18px;
+}
+
+.deensimc-tes-title {
+  font-size: 16px;
+}
+
+.deensimc-tes-star-icon {
+  padding: 10px 0 10px 0;
+}
+
+.deensimc-testimonial .deensimc-tes-star-icon {
+  padding: 30px 0 0 0;
+}
+
+.deensimc-tes-cards-all .deensimc-tes-star-icon {
+  padding: 20px 40px 0 40px;
+}
+
+.deensimc-tes-cards-all .deensimc-tes-star-icon.no-gap {
+  padding: 10px 40px 10px 40px;
+}
+
+.deensimc-tes-icons-none i {
+  color: var(--deensimc-marquee-tes-boulder);
+}
+
+.deensimc-tes-icons i {
+  color: var(--deensimc-marquee-tes-yellow);
+}
+
+.deensimc-tes-star-icon small {
+  color: var(--deensimc-marquee-tes-boulder);
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.deensimc-tes
+  .deensimc-tes-logo
+  .deensimc-tes-content
+  .deensimc-tes-item
+  .deensimc-tes-star-icon
+  i {
+  font-size: 16px;
+}
+
+.deensimc-testimonial .deensimc-tes-star-icon small {
+  color: var(--deensimc-marquee-tes-white);
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.deensimc-tes-icons i,
+.deensimc-tes-icons-half i,
+.deensimc-tes-icons-none i {
+  display: inline-block;
+  position: relative;
+  font-style: normal;
+  cursor: default;
+}
+
+.deensimc-tes-icons i::after,
+.deensimc-tes-icons-half i::after,
+.deensimc-tes-icons-none i::after {
+  content: "\f005";
+  display: block;
+  font-size: inherit;
+  position: absolute;
+  overflow: hidden;
+  color: var(--deensimc-marquee-tes-yellow);
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.deensimc-tes-icons i,
+.deensimc-tes-icons-half i,
+.deensimc-tes-icons-none i {
+  color: var(--deensimc-marquee-tes-boulder);
+}
+
+.deensimc-tes-icons i::after {
+  width: 100%;
+}
+
+.deensimc-tes-icons-half i::after {
+  width: 50%;
+}
+
+.deensimc-tes-icons-none i::after {
+  width: 0;
+}
+
+/* ==========================================================================
      7. Quote and Toggle Styles
      ========================================================================== */
-  
-  .deensimc-tes .quote-left {
-    position: absolute;
-    transform: translate(-110%, -50%);
-    z-index: 1;
-    font-size: 40px;
-    color: var(--deensimc-marquee-text-gray);
-    opacity: unset;
-  }
-  
-  .deensimc-tes .quote-right {
-    display: inline-block;
-    margin-left: 5px;
-    margin-top: 5px;
-    position: absolute;
-    z-index: 1;
-    font-size: 40px;
-    color: var(--deensimc-marquee-text-gray);
-    opacity: unset;
-  }
-  
-  .deensimc-show-more, .deensimc-toggle {
-    color: var(--deensimc-marquee-text-skyblue);
-    cursor: pointer;
-  }
-  
-  /* ==========================================================================
+
+.deensimc-tes .quote-left {
+  position: absolute;
+  transform: translate(-110%, -50%);
+  z-index: 1;
+  font-size: 40px;
+  color: var(--deensimc-marquee-text-gray);
+  opacity: unset;
+}
+
+.deensimc-tes .quote-right {
+  display: inline-block;
+  margin-left: 5px;
+  margin-top: 5px;
+  position: absolute;
+  z-index: 1;
+  font-size: 40px;
+  color: var(--deensimc-marquee-text-gray);
+  opacity: unset;
+}
+
+.deensimc-show-more,
+.deensimc-toggle {
+  color: var(--deensimc-marquee-text-skyblue);
+  cursor: pointer;
+}
+
+/* ==========================================================================
      8. Media Queries
      ========================================================================== */
-  
-  /* Large Devices */
-  @media (max-width: 1400px) {
-    :root {
-      --deensimc-marquee-elements-displayed: 4;
-    }
+
+/* Large Devices */
+@media (max-width: 1400px) {
+  :root {
+    --deensimc-marquee-elements-displayed: 4;
   }
-  
-  /* Medium Devices */
-  @media (max-width: 1200px) {
-    :root {
-      --deensimc-marquee-elements-displayed: 3;
-    }
+}
+
+/* Medium Devices */
+@media (max-width: 1200px) {
+  :root {
+    --deensimc-marquee-elements-displayed: 3;
   }
-  
-  /* Small Devices */
-  @media (max-width: 900px) {
-    :root {
-      --deensimc-marquee-elements-displayed: 2;
-    }
+}
+
+/* Small Devices */
+@media (max-width: 900px) {
+  :root {
+    --deensimc-marquee-elements-displayed: 2;
   }
-  
-  /* Mobile Devices */
-  @media (max-width: 600px) {
-    :root {
-      --deensimc-marquee-width: 100vw;
-      --deensimc-marquee-height: 16vh;
-      --deensimc-marquee-elements-displayed: 1;
-    }
-  
-    .deensimc-tes .deensimc-tes-logo .marquee:before,
-    .deensimc-tes .deensimc-tes-logo .marquee:after {
-      width: 5rem;
-    }
-  }  
+}
+
+/* Mobile Devices */
+@media (max-width: 600px) {
+  :root {
+    --deensimc-marquee-width: 100vw;
+    --deensimc-marquee-height: 16vh;
+    --deensimc-marquee-elements-displayed: 1;
+  }
+
+  .deensimc-tes .deensimc-tes-logo .marquee:before,
+  .deensimc-tes .deensimc-tes-logo .marquee:after {
+    width: 5rem;
+  }
+}

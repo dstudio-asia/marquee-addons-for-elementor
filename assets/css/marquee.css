@@ -21,7 +21,7 @@
 
 :root {
   --deensimc-text-dark-gray: #555353;
-  --deensimc-gap: 0px; 
+  --deensimc-gap: 0px;
   --deensimc-color-white: #ffffff;
 }
 
@@ -42,48 +42,71 @@
    3. Shadow Effects
    ========================================================================== */
 
-.deensimc-marquee.deensimc-shadow.deensimc-marquee-horizontal::before,
-.deensimc-marquee.deensimc-shadow.deensimc-marquee-horizontal::after {
+.deensimc-marquee.deensimc-shadow {
+  --edge-shadow-color: #ccc;
+  --edge-shadow-spread: 50px;
+}
+
+.deensimc-marquee.deensimc-shadow::before,
+.deensimc-marquee.deensimc-shadow::after {
   content: "";
+  width: var(--edge-shadow-spread);
+  max-width: 20%;
   height: 100%;
-  width: 40px;
-  box-shadow: 0px 0px 100px 10px var(--deensimc-text-dark-gray);
   position: absolute;
+  top: 0;
   z-index: 1;
+  pointer-events: none;
 }
 
-.deensimc-marquee.deensimc-shadow.deensimc-marquee-horizontal::before {
-  top: 0;
+.deensimc-marquee.deensimc-shadow::before {
   left: 0;
-  transform: translateX(-100%);
+  background: linear-gradient(
+    to right,
+    var(--edge-shadow-color) 10%,
+    transparent
+  );
 }
 
-.deensimc-marquee.deensimc-shadow.deensimc-marquee-horizontal::after {
-  top: 0;
+.deensimc-marquee.deensimc-shadow::after {
   right: 0;
-  transform: translateX(100%);
+  background: linear-gradient(
+    to left,
+    var(--edge-shadow-color) 10%,
+    transparent
+  );
 }
 
 .deensimc-marquee.deensimc-shadow.deensimc-marquee-vertical::before,
 .deensimc-marquee.deensimc-shadow.deensimc-marquee-vertical::after {
   content: "";
-  height: 20px;
+  max-width: 100%;
   width: 100%;
-  box-shadow: 0px 0px 100px 10px var(--deensimc-text-dark-gray);
+  height: var(--edge-shadow-spread);
+  max-height: 20%;
   position: absolute;
+  left: 0;
   z-index: 1;
+  pointer-events: none;
 }
 
 .deensimc-marquee.deensimc-shadow.deensimc-marquee-vertical::before {
   top: 0;
-  left: 0;
-  transform: translateY(-100%);
+  background: linear-gradient(
+    to bottom,
+    var(--edge-shadow-color) 10%,
+    transparent
+  );
 }
 
 .deensimc-marquee.deensimc-shadow.deensimc-marquee-vertical::after {
+  top: auto;
   bottom: 0;
-  left: 0;
-  transform: translateY(100%);
+  background: linear-gradient(
+    to top,
+    var(--edge-shadow-color) 10%,
+    transparent
+  );
 }
 
 /* ==========================================================================
@@ -119,9 +142,15 @@
   margin-left: 20px;
 }
 
-.deensimc-wrapper-vertical .deensimc-marquee-vertical .deensimc-marquee-group:nth-child(2), 
-.deensimc-wrapper-vertical .deensimc-marquee-vertical .deensimc-marquee-group:nth-child(3), 
-.deensimc-wrapper-vertical .deensimc-marquee-vertical .deensimc-marquee-group:nth-child(4) {
+.deensimc-wrapper-vertical
+  .deensimc-marquee-vertical
+  .deensimc-marquee-group:nth-child(2),
+.deensimc-wrapper-vertical
+  .deensimc-marquee-vertical
+  .deensimc-marquee-group:nth-child(3),
+.deensimc-wrapper-vertical
+  .deensimc-marquee-vertical
+  .deensimc-marquee-group:nth-child(4) {
   margin-top: 20px;
   margin-left: 0;
 }
@@ -227,7 +256,7 @@
     width: 40px;
     transform: translateX(-100%);
   }
-  
+
   .deensimc-marquee.deensimc-shadow.deensimc-marquee-vertical::after {
     right: 0;
     left: unset;
@@ -239,9 +268,15 @@
     height: auto;
   }
 
-  .deensimc-wrapper-vertical .deensimc-marquee-vertical .deensimc-marquee-group:nth-child(2), 
-  .deensimc-wrapper-vertical .deensimc-marquee-vertical .deensimc-marquee-group:nth-child(3), 
-  .deensimc-wrapper-vertical .deensimc-marquee-vertical .deensimc-marquee-group:nth-child(4) {
+  .deensimc-wrapper-vertical
+    .deensimc-marquee-vertical
+    .deensimc-marquee-group:nth-child(2),
+  .deensimc-wrapper-vertical
+    .deensimc-marquee-vertical
+    .deensimc-marquee-group:nth-child(3),
+  .deensimc-wrapper-vertical
+    .deensimc-marquee-vertical
+    .deensimc-marquee-group:nth-child(4) {
     margin-top: 0 !important;
     margin-left: 20px !important;
   }
@@ -254,26 +289,29 @@
   .deensimc-marquee-vertical .deensimc-marquee-group {
     animation-name: deensimc-scroll-x !important;
   }
-  
-	[dir=rtl] .deensimc-marquee, [dir=rtl] .deensimc-marquee-group {
-		flex-direction: row-reverse !important;
-	}
+
+  [dir="rtl"] .deensimc-marquee,
+  [dir="rtl"] .deensimc-marquee-group {
+    flex-direction: row-reverse !important;
+  }
 }
 
-[dir=rtl] .deensimc-marquee, [dir=rtl] .deensimc-marquee-group {
-	flex-direction: row-reverse;
+[dir="rtl"] .deensimc-marquee,
+[dir="rtl"] .deensimc-marquee-group {
+  flex-direction: row-reverse;
 }
 
-[dir=rtl] .deensimc-marquee-vertical, [dir=rtl] .deensimc-marquee-vertical .deensimc-marquee-group {
-	flex-direction: column;
+[dir="rtl"] .deensimc-marquee-vertical,
+[dir="rtl"] .deensimc-marquee-vertical .deensimc-marquee-group {
+  flex-direction: column;
 }
 
-[dir=rtl] .deensimc-tes .quote-left {
+[dir="rtl"] .deensimc-tes .quote-left {
   left: 12%;
   bottom: 24px;
 }
 
-[dir=rtl] .deensimc-tes .quote-right {
+[dir="rtl"] .deensimc-tes .quote-right {
   right: 3%;
   top: 1px;
 }
