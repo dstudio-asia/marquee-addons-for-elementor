@@ -43,7 +43,7 @@
    ========================================================================== */
 
 .deensimc-marquee.deensimc-shadow {
-  --edge-shadow-color: #ffffff;
+  --edge-shadow-color: #ccc;
   --edge-shadow-spread: 50px;
 }
 
