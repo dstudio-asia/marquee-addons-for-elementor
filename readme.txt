@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: marquee, slider, image marquee, video marquee, text marquee
 Requires at least: 5.8
 Tested up to: 6.8
-Stable tag: 2.1.7
+Stable tag: 2.1.8
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -14,7 +14,7 @@ MarqueeAddons is a smooth video, text, image, and testimonial marquee carousel l
 
 MarqueeAddons makes it easy to add smooth marquee effects for images, testimonials, videos, text, and icons to websites built with Elementor. It helps you create a continuous smooth scrolling loop for your content. You can customize the direction to scroll left, right, top, or bottom, either horizontally or vertically. With flexible options, it provides a smooth and user-friendly experience for your visitors while keeping your site looking modern and functional.
 
-[Plugin Demo](https://wp.dstudio.asia/marquee-addons/) | [Documentation](https://documentation.dstudio.asia/marquee-addons/)
+[Plugin Demo](https://marqueeaddons.com/) | [Documentation](https://documentation.dstudio.asia/marquee-addons/)
  
 Different Marquee Addons:
  
@@ -74,7 +74,7 @@ Create an engaging accordion-style effect with images, Where each image expands 
  
 * Boostuser engagement by creating eye-catching marquees with dynamic content.
  
-* Savetime with ready-made marquee layouts that are easy to set up and fully customizable for your website’s needs
+* Savetime with ready-made marquee layouts that are easy to set up and fully customizable for your websiteâ€™s needs
 
 == Installation ==
 
@@ -105,7 +105,7 @@ No, Marquee Addons works with the free version of Elementor. However, you may re
 
 = 3. How do I install Marquee Addons for Elementor? =
 
-You can install Marquee Addons by searching for the plugin in the WordPress dashboard under “Plugins > Add New”. Once found, click “Install” and then activate it. After activation, the widgets will appear in your Elementor editor.
+You can install Marquee Addons by searching for the plugin in the WordPress dashboard under â€œPlugins > Add Newâ€. Once found, click â€œInstallâ€ and then activate it. After activation, the widgets will appear in your Elementor editor.
 
 = 4. What can I use Marquee Addons for? =
 
@@ -117,7 +117,7 @@ Yes, Marquee Addons offers full control over the speed, direction (left, right, 
 
 = 6. Will using Marquee Addons slow down my website? =
 
-The plugin is optimized for performance, but as with any animation-heavy feature, it’s important to monitor your website’s speed, especially when adding multiple dynamic elements. Always test your site’s performance after making changes.
+The plugin is optimized for performance, but as with any animation-heavy feature, itâ€™s important to monitor your websiteâ€™s speed, especially when adding multiple dynamic elements. Always test your siteâ€™s performance after making changes.
 
 = 7. Are Marquee Addons responsive for mobile devices? =
 
@@ -133,9 +133,12 @@ The developers release regular updates to improve features, fix bugs, and ensure
 
 = 10. What should I do if my marquee effect is not working? =
 
-First, ensure that you’ve activated the plugin correctly. If the issue persists, try clearing your browser cache or updating your Elementor plugin. If the problem continues, you can reach out to the support team for assistance.
+First, ensure that youâ€™ve activated the plugin correctly. If the issue persists, try clearing your browser cache or updating your Elementor plugin. If the problem continues, you can reach out to the support team for assistance.
 
 == Changelog ==
+
+= 2.1.8
+- Fix the shadow issue in each marquee.
 
 = 2.1.7
 - Refactor the control names in the testimonial widget.
