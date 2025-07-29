@@ -11,7 +11,7 @@ trait NewsTickerQueryControl
 	protected function news_ticker_query_control()
 	{
 		$this->start_controls_section(
-			'section_query',
+			'deensimc_section_query',
 			[
 				'label' => esc_html__('Query', 'marquee-addons-for-elementor'),
 				'tab' => Controls_Manager::TAB_CONTENT,
@@ -20,7 +20,7 @@ trait NewsTickerQueryControl
 
 		// 2) Category select2
 		$this->add_control(
-			'categories_ids',
+			'deensimc_categories_ids',
 			[
 				'label'       => __('Categories', 'marquee-addons-for-elementor'),
 				'type'        => Controls_Manager::SELECT2,
@@ -33,7 +33,7 @@ trait NewsTickerQueryControl
 
 		// 3) Tag select2
 		$this->add_control(
-			'tags_ids',
+			'deensimc_tags_ids',
 			[
 				'label'       => __('Tags', 'marquee-addons-for-elementor'),
 				'type'        => Controls_Manager::SELECT2,
@@ -53,7 +53,7 @@ trait NewsTickerQueryControl
 		}
 
 		$this->add_control(
-			'author_ids',
+			'deensimc_author_ids',
 			[
 				'label'       => __('Authors', 'marquee-addons-for-elementor'),
 				'type'        => Controls_Manager::SELECT2,
@@ -141,10 +141,8 @@ trait NewsTickerQueryControl
 			]
 		);
 
-	
+
 
 		$this->end_controls_section();
-
 	}
-
 }

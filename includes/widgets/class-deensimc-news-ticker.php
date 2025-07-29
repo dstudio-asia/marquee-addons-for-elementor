@@ -69,9 +69,9 @@ class Deensimc_News_Ticker extends Widget_Base
 		$settings = wp_parse_args($settings, [
 			'deensimc_post_type'  => 'post',
 			'deensimc_no_of_post' => 6,
-			'categories_ids'      => [],
-			'tags_ids'            => [],
-			'author_ids'          => [],
+			'deensimc_categories_ids'      => [],
+			'deensimc_tags_ids'            => [],
+			'deensimc_author_ids'          => [],
 			'deensimc_orderby'    => 'date',
 			'deensimc_order'      => 'desc',
 		]);
@@ -94,18 +94,18 @@ class Deensimc_News_Ticker extends Widget_Base
 		}
 
 		// Category filter
-		if (! empty($settings['categories_ids'])) {
-			$args['category__in'] = array_map('intval', $settings['categories_ids']);
+		if (! empty($settings['deensimc_categories_ids'])) {
+			$args['category__in'] = array_map('intval', $settings['deensimc_categories_ids']);
 		}
 
 		// Tag filter
-		if (! empty($settings['tags_ids'])) {
-			$args['tag__in'] = array_map('intval', $settings['tags_ids']);
+		if (! empty($settings['deensimc_tags_ids'])) {
+			$args['tag__in'] = array_map('intval', $settings['deensimc_tags_ids']);
 		}
 
 		// Author filter
-		if (! empty($settings['author_ids'])) {
-			$args['author__in'] = array_map('intval', $settings['author_ids']);
+		if (! empty($settings['deensimc_author_ids'])) {
+			$args['author__in'] = array_map('intval', $settings['deensimc_author_ids']);
 		}
 
 		return $args;
@@ -161,25 +161,25 @@ class Deensimc_News_Ticker extends Widget_Base
 			</span>
 			<?php
 
-			if ( 'seperator_feature_image' === $settings['deensimc_seperator_type'] ) {
-				$post_id = is_object( $post ) ? intval( $post->ID ) : 0;
-				?>
-				<span class="deensimc-news-item-<?php echo esc_attr( $this->get_id() ); ?> deensimc-seperator-feature-image">
+			if ('seperator_feature_image' === $settings['deensimc_seperator_type']) {
+				$post_id = is_object($post) ? intval($post->ID) : 0;
+			?>
+				<span class="deensimc-news-item-<?php echo esc_attr($this->get_id()); ?> deensimc-seperator-feature-image">
 					<?php
-					if ( $post_id && has_post_thumbnail( $post_id ) ) {
+					if ($post_id && has_post_thumbnail($post_id)) {
 						echo get_the_post_thumbnail(
 							$post_id,
-							[ 50, 50 ],
+							[50, 50],
 							[
 								'class' => 'deensimc-feature-image',
-								'alt'   => esc_attr( get_the_title( $post_id ) ),
+								'alt'   => esc_attr(get_the_title($post_id)),
 							]
 						);
 					}
 					?>
 				</span>
-				<?php
-			}?>
+			<?php
+			} ?>
 
 
 			<?php if (!empty($settings['deensimc_seperator_icon']) && $settings['deensimc_seperator_type'] == 'seperator_icon') {  ?>

@@ -69,7 +69,7 @@ trait NewsTickerStyleControl
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
 			[
-				'name'     => 'container_border',
+				'name'     => 'deensimc_container_border',
 				'label'    => __('Container Border', 'marquee-addons-for-elementor'),
 				'selector' => '{{WRAPPER}} .deensimc-wrapper',
 			]
@@ -77,7 +77,7 @@ trait NewsTickerStyleControl
 
 		// (Optional) border radius
 		$this->add_control(
-			'container_border_radius',
+			'deensimc_container_border_radius',
 			[
 				'label'      => __('Border Radius', 'marquee-addons-for-elementor'),
 				'type'       => Controls_Manager::DIMENSIONS,
@@ -410,7 +410,6 @@ trait NewsTickerStyleControl
 					'size' => 50,
 				],
 				'selectors' => [
-					// Stronger selector to avoid section style from overwriting
 					'{{WRAPPER}} .deensimc-seperator-feature-image img' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
 				],
 			]
