@@ -18,18 +18,6 @@ trait NewsTickerQueryControl
 			]
 		);
 
-		// $this->add_control(
-		// 	'deensimc_post_type',
-		// 	[
-		// 		'label'   => __('Source', 'marquee-addons-for-elementor'),
-		// 		'type'    => \Elementor\Controls_Manager::SELECT,
-		// 		'options' => [
-		// 			'post' => __('Posts', 'marquee-addons-for-elementor'),
-		// 		],
-		// 		'default' => 'post',
-		// 	]
-		// );
-
 		// 2) Category select2
 		$this->add_control(
 			'categories_ids',
