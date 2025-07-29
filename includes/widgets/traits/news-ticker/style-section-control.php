@@ -6,6 +6,7 @@ if (! defined('ABSPATH')) {
 
 use \Elementor\Group_Control_Typography;
 use \Elementor\Controls_Manager;
+use \Elementor\Group_Control_Border;
 use \Elementor\Core\Kits\Documents\Tabs\Global_Colors;
 use \Elementor\Core\Kits\Documents\Tabs\Global_Typography;
 
@@ -20,10 +21,34 @@ trait NewsTickerStyleControl
 		$this->start_controls_section(
 			'deensimc_container_style',
 			[
-				'label' => __('Container', 'marquee-addons-for-elementor'),
+				'label' => __('Layout', 'marquee-addons-for-elementor'),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
+
+		$this->add_responsive_control(
+			'deensimc_news_ticker_widget_height',
+			[
+				'label' => esc_html__('News Ticker Height', 'marquee-addons-for-elementor'),
+				'type' =>  Controls_Manager::SLIDER,
+				'size_units' => ['px', 'em'],
+				'range' => [
+					'px' => [
+						'min' => 10,
+						'max' => 1000,
+					],
+					'em' => [
+						'min' => 1,
+						'max' => 100,
+					]
+				],
+				
+				'selectors' => [
+					'{{WRAPPER}} .deensimc-news-ticker-wrapper' => 'height: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
 		$this->add_control(
 			'deensimc_container_background_color',
 			[
@@ -38,48 +63,44 @@ trait NewsTickerStyleControl
 				],
 			]
 		);
-		$this->end_controls_section();
 
-		$this->start_controls_section(
-			'deensimc_style_section',
+	
+
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
 			[
-				'label' => esc_html__('Label', 'marquee-addons-for-elementor'),
-				'tab' => Controls_Manager::TAB_STYLE,
+				'name'     => 'container_border',
+				'label'    => __('Container Border', 'marquee-addons-for-elementor'),
+				'selector' => '{{WRAPPER}} .deensimc-wrapper',
 			]
 		);
 
+		// (Optional) border radius
 		$this->add_control(
-			'deensimc_label_icon_indent',
+			'container_border_radius',
 			[
-				'label' => __('Icon Spacing', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::SLIDER,
-				'range' => [
-					'px' => [
-						'max' => 50,
-					],
-				],
-				'default' => [
-					'size' => 10,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .deensimc-news-ticker-label .deensimc-news-ticker-icon' => 'margin-right: {{SIZE}}{{UNIT}};',
+				'label'      => __('Border Radius', 'marquee-addons-for-elementor'),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', '%'],
+				'selectors'  => [
+					'{{WRAPPER}} .deensimc-news-ticker-wrapper' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
+
+
+
 		$this->add_control(
 			'deensimc_label_color',
 			[
-				'label' => __('Label Color', 'marquee-addons-for-elementor'),
+				'label' => __('Title Color', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::COLOR,
-				// 'global' => [
-				// 	'default' => Global_Colors::COLOR_PRIMARY,
-				// ],
+			
 				'default' => '#fff',
+				'separator' => 'before',
 				'selectors' => [
-					// '{{WRAPPER}} .deensimc-news-ticker-label' => 'color: {{VALUE}};',
 					'{{WRAPPER}} .deensimc-label-heading' => 'color: {{VALUE}};',
-					// '{{WRAPPER}} .deensimc-news-ticker-label .news-ticker-icon' => 'fill: {{VALUE}};',
-					'{{WRAPPER}} .deensimc-news-ticker-icon' => 'color: {{VALUE}};'
+					
 				],
 			]
 		);
@@ -88,9 +109,6 @@ trait NewsTickerStyleControl
 			[
 				'label' => __('Background Color', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::COLOR,
-				// 'global' => [
-				// 	'default' => Global_Colors::COLOR_ACCENT,
-				// ],
 				'default' => '#1E293B',
 				'selectors' => [
 					'{{WRAPPER}} .deensimc-news-ticker-label' => 'background-color: {{VALUE}};',
@@ -104,7 +122,72 @@ trait NewsTickerStyleControl
 				'global' => [
 					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
 				],
-				'selector' => '{{WRAPPER}} .deensimc-news-ticker-label',
+
+				'selector' => '{{WRAPPER}} .deensimc-label-heading > *'
+			]
+		);
+
+
+		$this->add_control(
+			'deensimc_title_icon_color',
+			[
+				'label' => __('Icon Color', 'marquee-addons-for-elementor'),
+				'type' => Controls_Manager::COLOR,
+				
+				'default' => '#fff',
+				'selectors' => [
+					'{{WRAPPER}} .deensimc-news-ticker-icon' => 'color: {{VALUE}};'
+				],
+				'separator' => 'before',
+			]
+		);
+		$this->add_control(
+			'deensimc_title_icon_size',
+			[
+				'label' => __('Icon Size', 'marquee-addons-for-elementor'),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => ['px', 'em'],
+				'range' => [
+					'px' => [
+						'max' => 100,
+					],
+					'em' => [
+						'max' => 10,
+					]
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 20,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .deensimc-news-ticker-icon svg' => 'width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
+		
+		$this->add_control(
+			'deensimc_label_icon_indent',
+			[
+				'label' => __('Icon Spacing', 'marquee-addons-for-elementor'),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => ['px', 'em'],
+				'range' => [
+					'px' => [
+						'max' => 100,
+					],
+					'em' => [
+						'max' => 10,
+					]
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 20,
+				],
+				
+				'selectors' => [
+					'{{WRAPPER}} .deensimc-news-ticker-label .deensimc-news-ticker-icon' => 'margin-inline-end: {{SIZE}}{{UNIT}};',
+				],
 			]
 		);
 
@@ -113,7 +196,7 @@ trait NewsTickerStyleControl
 		$this->start_controls_section(
 			'deensimc_title_style',
 			[
-				'label' => __('Title', 'marquee-addons-for-elementor'),
+				'label' => __('Content', 'marquee-addons-for-elementor'),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -144,7 +227,7 @@ trait NewsTickerStyleControl
 		$this->add_control(
 			'deensimc_title_color',
 			[
-				'label' => __('Title Color', 'marquee-addons-for-elementor'),
+				'label' => __('Item Color', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::COLOR,
 				'global' => [
 					'default' => Global_Colors::COLOR_PRIMARY,
@@ -165,6 +248,8 @@ trait NewsTickerStyleControl
 				'selector' => '{{WRAPPER}} .deensimc-title-link',
 			]
 		);
+
+
 		$this->end_controls_section();
 
 		$this->start_controls_section(
@@ -185,6 +270,7 @@ trait NewsTickerStyleControl
 				'global' => [
 					'default' => Global_Colors::COLOR_PRIMARY,
 				],
+				'default' => '#010813ff',
 				'selectors' => [
 					'{{WRAPPER}} .deensimc-seperator-icon svg' => 'fill: {{VALUE}};',
 
@@ -214,7 +300,12 @@ trait NewsTickerStyleControl
 				],
 			]
 		);
+
 		$this->end_controls_section();
+
+		
+
+		
 
 		$this->start_controls_section(
 			'deensimc_separator_text_style',
@@ -231,29 +322,13 @@ trait NewsTickerStyleControl
 			[
 				'label' => __('Text Color', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::COLOR,
-				'global' => [
-					'default' => Global_Colors::COLOR_PRIMARY,
-				],
+				'default' => '#010813ff',
 				'selectors' => [
 					'{{WRAPPER}} .deensimc-seperator-text' => 'color: {{VALUE}};',
 				],
 			]
 		);
-		$this->add_control(
-			'deensimc_separator_text_bg_color',
-			[
-				'label' => __('Background Color', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::COLOR,
-				'global' => [
-					'default' => Global_Colors::COLOR_ACCENT,
-				],
-				'default' => '#F1F1F1',
-				'selectors' => [
-
-					'{{WRAPPER}} .deensimc-seperator-text' => 'background-color: {{VALUE}};',
-				],
-			]
-		);
+		
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
@@ -266,6 +341,81 @@ trait NewsTickerStyleControl
 		);
 		$this->end_controls_section();
 
+		$this->start_controls_section(
+			'deensimc_seperator_date',
+			[
+				'label' => __('Date Separator', 'elementor-news-ticker'),
+				'tab' => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'deensimc_seperator_type' => 'seperator_date',
+				],
+			]
+		);
+		$this->add_control(
+			'deensimc_separator_date_color',
+			[
+				'label' => __('Color', 'elementor-news-ticker'),
+				'type' => Controls_Manager::COLOR,
+				'global' => [
+					'default' => Global_Colors::COLOR_PRIMARY,
+				],
+				'default' => '#010813ff',
+				'selectors' => [
+					// Stronger selector to avoid section style from overwriting
+					'{{WRAPPER}} .deensimc-seperator-date' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'deensimc_separator_date_typography',
+				'global' => [
+					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
+				],
+				'selector' => '{{WRAPPER}} .deensimc-seperator-date',
+			]
+		);
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'deensimc_seperator_image',
+			[
+				'label' => __('Feature Image Separator', 'elementor-news-ticker'),
+				'tab' => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'deensimc_seperator_type' => 'seperator_feature_image',
+				],
+			]
+		);
+			
+
+		$this->add_control(
+			'deensimc_separator_image_size',
+			[
+				'label' => __('Image Size', 'marquee-addons-for-elementor'),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => ['px', 'em'],
+				'range' => [
+					'px' => [
+						'max' => 100,
+					],
+					'em' => [
+						'max' => 10,
+					]
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 50,
+				],
+				'selectors' => [
+					// Stronger selector to avoid section style from overwriting
+					'{{WRAPPER}} .deensimc-seperator-feature-image img' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->end_controls_section();
 	}
 }
 

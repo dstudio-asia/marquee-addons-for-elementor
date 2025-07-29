@@ -304,8 +304,9 @@ final class Marquee {
 		require_once(  __DIR__ . '/widgets/traits/text-marquee/style-text-contents.php' );
 
 		require_once(  __DIR__ . '/widgets/traits/news-ticker/additional-options-control.php' );
-		require_once(  __DIR__ . '/widgets/traits/news-ticker/general-settings-control.php' );
+		require_once(  __DIR__ . '/widgets/traits/news-ticker/news-ticker-layout-control.php' );
 		require_once(  __DIR__ . '/widgets/traits/news-ticker/style-section-control.php' );
+		require_once(  __DIR__ . '/widgets/traits/news-ticker/news-ticker-query-control.php' );
 
 		require_once(  __DIR__ . '/widgets/class-deensimc-image-marquee.php' );
 		require_once(  __DIR__ . '/widgets/class-deensimc-stacked-slider.php' );
