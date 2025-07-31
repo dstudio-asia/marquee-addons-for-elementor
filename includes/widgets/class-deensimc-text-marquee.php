@@ -30,7 +30,7 @@ class Deensimc_Text_Marquee extends Widget_Base {
     }
 
     public function get_icon() {
-        return 'eicon-slider-push eicon-deensimc';
+        return 'eicon-deensimc deensimc-text-marquee-icon';
     }
 
     public function get_categories() {
