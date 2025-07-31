@@ -211,6 +211,7 @@ final class Marquee {
 		add_action( 'elementor/widgets/register', [ $this, 'deensimc_register_widgets' ] );
 		add_action( 'elementor/elements/categories_registered', [ $this, 'deensimc_add_categories' ] );
 		add_action( 'elementor/editor/before_enqueue_styles', [ $this, 'deensimc_editor_styles' ] );
+		add_action( 'elementor/editor/before_enqueue_scripts', [ $this, 'deensimc_editor_scripts' ] );
 		add_action( 'elementor/frontend/after_enqueue_scripts', [ $this, 'deensimc_elementor_library' ] );
 
 	}
@@ -256,6 +257,17 @@ final class Marquee {
 	public function deensimc_editor_styles() {
 		wp_register_style( 'deensimc-editor-css', DEENSIMC_ASSETS_URL . 'css/editor.css', null, self::VERSION, false );
 		wp_enqueue_style( 'deensimc-editor-css' );
+	}
+
+	public function deensimc_editor_scripts() {
+		 wp_register_script( 
+            'deensimc_pro_js', 
+            DEENSIMC_ASSETS_URL . 'js/pro-teaser.js', 
+            ['jquery', 'elementor-editor'], 
+            self::VERSION, 
+            true 
+        );
+		wp_enqueue_script( 'deensimc_pro_js' );
 	}
 
 
@@ -315,6 +327,14 @@ final class Marquee {
 		require_once(  __DIR__ . '/widgets/class-deensimc-testimonial-marquee.php' );
 		require_once(  __DIR__ . '/widgets/class-deensimc-video-marquee.php' );
 		require_once(  __DIR__ . '/widgets/class-deensimc-news-ticker.php' );
+		require_once(  __DIR__ . '/widget-base.php' );
+		// require_once(  __DIR__ . '/widgets/class-deesimc-pro-widget.php' );
+
+		$pro_widgets_config = require_once __DIR__ . '/widgets-config.php';
+
+        foreach ($pro_widgets_config as $widget_config) {
+        	$widgets_manager->register( new \Dynamic_Pro_Widget($widget_config ) );
+    	}
 
 		$widgets_manager->register( new \Deensimc_Image_Marquee() );
 		$widgets_manager->register( new \Deensimc_Stacked_Slider() );
