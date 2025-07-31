@@ -35,7 +35,7 @@ class Deensimc_Testimonial_Marquee extends Widget_Base {
 
     public function get_icon() 
 	{
-        return 'eicon-testimonial eicon-deensimc';
+        return 'eicon-deensimc deensimc-testimonial-marquee-icon';
     }
 
     public function get_categories() 
