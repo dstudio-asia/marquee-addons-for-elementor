@@ -1,0 +1,57 @@
+name: 🚀 Deploy Marquee Addons Pro Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Ensures all files are checked out
+
+      - name: 🔍 Verify readme.txt exists
+        id: check_readme
+        run: |
+          if [ ! -f "readme.txt" ]; then
+            echo "::error::readme.txt not found in root directory"
+            ls -la  # List files for debugging
+            exit 1
+          fi
+
+      - name: 🔍 Extract version from readme.txt
+        id: version
+        run: |
+          VERSION=$(grep -i "Stable tag:" readme.txt | cut -d ':' -f2 | xargs)
+          if [ -z "$VERSION" ]; then
+            echo "::error::Could not extract version from readme.txt"
+            echo "File content:"
+            cat readme.txt  # Show file content for debugging
+            exit 1
+          fi
+          echo "Extracted version: $VERSION"
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: 📦 Create ZIP of Plugin
+        run: |
+          mkdir -p release
+          zip -r "release/marquee-addons-${{ env.VERSION }}.zip" . \
+            -x ".git/*" ".github/*" "*.md" ".gitignore" "node_modules/*" "release/*"
+
+      - name: 🚀 Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: "v${{ env.VERSION }}"
+          name: "Release v${{ env.VERSION }}"
+          body: |
+            Marquee Addons plugin release v${{ env.VERSION }}
+            Auto-generated from main branch
+          files: "release/marquee-addons-${{ env.VERSION }}.zip"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
