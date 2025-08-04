@@ -229,10 +229,15 @@ class Deensimc_Testimonial_Marquee extends Widget_Base {
 				for ( $j = 0; $j < 5 - ceil( $testimonial['deensimc_testimonial_rating_num'] ); $j++ ) { ?>
 					<span class="deensimc-tes-icons-none"><i class="fa fa-star"></i></span>
 				<?php } ?>
-				
-				<small class="deensimc-tes-review-text">
-					<?php echo esc_html__( '(', 'marquee-addons-for-elementor' ) . esc_html( $testimonial['deensimc_testimonial_rating_counter'] ) . esc_html__(')', 'marquee-addons-for-elementor' ); ?>
-				</small>
+				<?php
+				if( '' !== $testimonial['deensimc_testimonial_rating_counter'] ) {
+				?>
+					<small class="deensimc-tes-review-text">
+						<?php echo esc_html__( '(', 'marquee-addons-for-elementor' ) . esc_html( $testimonial['deensimc_testimonial_rating_counter'] ) . esc_html__(')', 'marquee-addons-for-elementor' ); ?>
+					</small>
+				<?php 
+				}
+				?>
 			</div>
 		</div>
 	<?php
@@ -245,11 +250,11 @@ class Deensimc_Testimonial_Marquee extends Widget_Base {
     protected function render() 
 	{
         $settings = $this->get_settings_for_display();
-		$show_shadow = $settings['deensimc_show_shadow_switch'] === 'yes' ? 'deensimc-shadow' : 'deensimc-no-shadow';
+		$show_shadow = $settings['deensimc_testimonial_show_edge_shadow_switch'] === 'yes' ? 'deensimc-shadow' : '';
 		$show_reverse = $settings['deensimc_testimonial_reverse_section'] === 'yes' ? 'deensimc-marquee-reverse' : '';
     ?>
-		<div class="deensimc-tes <?php echo 'yes' !== esc_attr( $settings['deensimc_show_icons'] ) ? 'deensimc-off-icons' : ''; ?>">
-			<div class="deensimc-marquee  <?php echo esc_attr( $show_shadow ." ". $show_reverse ) ?> deensimc-tes-logo" <?php echo 'yes' !== esc_attr( $settings['deensimc_show_icons'] ) ? 'deensimc-off-icons' : ''; ?>" 
+		<div class="deensimc-tes">
+			<div class="deensimc-marquee  <?php echo esc_attr( $show_shadow ." ". $show_reverse ) ?> deensimc-tes-logo"  
 				data-animation-status="<?php echo esc_attr( $settings['deensimc_show_animation'] ); ?>" 
 				data-excerpt-length="<?php echo esc_attr( $settings['deensimc_tesimonial_excerpt_length'] ); ?>" 
 				data-show-more="<?php echo esc_attr( $settings['deensimc_tesimonial_excerpt_title'] ); ?>" 
@@ -340,10 +345,10 @@ class Deensimc_Testimonial_Marquee extends Widget_Base {
 	protected function content_template() {
 	?>
 		<#
-			let showShadow = settings.deensimc_show_shadow_switch === 'yes' ? 'deensimc-shadow' : 'deensimc-no-shadow';
+			let showShadow = settings.deensimc_testimonial_show_edge_shadow_switch === 'yes' ? 'deensimc-shadow' : '';
 			let showReverse = settings.deensimc_testimonial_reverse_section === 'yes' ? 'deensimc-marquee-reverse' : '';
 		#>
-		<div class="deensimc-tes {{ settings.deensimc_show_icons !== 'yes' ? 'deensimc-off-icons' : '' }}">
+		<div class="deensimc-tes">
 			<div class="deensimc-marquee {{ showShadow }} {{ showReverse }} deensimc-tes-logo"  data-animation-status="{{ settings.deensimc_show_animation }}" data-excerpt-length="{{ settings.deensimc_tesimonial_excerpt_length }}"  data-show-more="{{ settings.deensimc_tesimonial_excerpt_title }}"  data-show-less="{{ settings.deensimc_tesimonial_excerpt_title_less }}"  data-pause-on-hover="{{ settings.deensimc_testimonial_pause_on_hover }}" data-animation-speed="{{ settings.deensimc_testimonial_marquee_animation_speed }}" data-quote-left="{{ settings.deensimc_testimonial_quote_left_icon.value }}" data-quote-right="{{ settings.deensimc_testimonial_quote_right_icon.value }}">
 				<ul class="deensimc-marquee-group deensimc-tes-content">
 					<# 
@@ -398,10 +403,11 @@ class Deensimc_Testimonial_Marquee extends Widget_Base {
 												<# for ( let j = 0; j < emptyStars; j++ ) { #>
 													<span class="deensimc-tes-icons-none"><i class="fa fa-star"></i></span>
 												<# } #>
-
+												<# if('' !== testimonial.deensimc_testimonial_rating_counter ){ #>
 												<small class="deensimc-tes-review-text">(
 													{{{ testimonial.deensimc_testimonial_rating_counter }}}
 												)</small>
+												<# } #>
 											</div>
 										</div>
 									<# } #>
@@ -463,10 +469,11 @@ class Deensimc_Testimonial_Marquee extends Widget_Base {
 												<# for ( let j = 0; j < emptyStars; j++ ) { #>
 													<span class="deensimc-tes-icons-none"><i class="fa fa-star"></i></span>
 												<# } #>
-
+												<# if( '' !== testimonial.deensimc_testimonial_rating_counter ){ #>
 												<small class="deensimc-tes-review-text">(
 													{{{ testimonial.deensimc_testimonial_rating_counter }}}
 												)</small>
+												<# } #>
 											</div>
 										</div>
 									<# } #>

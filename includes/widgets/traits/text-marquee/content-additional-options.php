@@ -31,9 +31,9 @@ trait Textmarquee_Content_Additional_Options {
 		);
 
 		$this->add_control(
-			'deensimc_show_shadow_switch',
+			'deensimc_text_marquee_show_edge_shadow_switch',
 			[
-				'label' => esc_html__( 'Show Shadow', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__( 'Show Edge Shadow', 'marquee-addons-for-elementor' ),
 				'type' =>  Controls_Manager::SWITCHER,
 				'label_on' => esc_html__( 'Show', 'marquee-addons-for-elementor' ),
 				'label_off' => esc_html__( 'Hide', 'marquee-addons-for-elementor' ),

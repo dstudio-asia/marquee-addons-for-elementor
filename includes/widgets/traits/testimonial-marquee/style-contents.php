@@ -95,7 +95,7 @@ trait Testimonialmarquee_Style_Contents {
 		$this->add_control(
 			'deensimc_tesimonial_excerpt_heading',
 			[
-				'label' => esc_html__( 'Excerpt', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__( 'Expand Text', 'marquee-addons-for-elementor' ),
 				'type' =>  Controls_Manager::HEADING,
 				'separator' => 'before',
 			]

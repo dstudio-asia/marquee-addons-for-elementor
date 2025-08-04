@@ -19,18 +19,6 @@ trait Testimonialmarquee_Content_Additional_Options {
 		);
 
 		$this->add_control(
-			'deensimc_show_icons',
-			[
-				'label' => esc_html__( 'Show Icons', 'marquee-addons-for-elementor' ),
-				'type' =>  Controls_Manager::SWITCHER,
-				'label_on' => esc_html__( 'Show', 'marquee-addons-for-elementor' ),
-				'label_off' => esc_html__( 'Hide', 'marquee-addons-for-elementor' ),
-				'return_value' => 'yes',
-				'default' => 'yes',
-			]
-		);
-
-		$this->add_control(
 			'deensimc_excerpt_heading',
 			[
 				'label' => esc_html__( 'Excerpt', 'marquee-addons-for-elementor' ),
@@ -54,7 +42,7 @@ trait Testimonialmarquee_Content_Additional_Options {
 		$this->add_control(
 			'deensimc_tesimonial_excerpt_title',
 			[
-				'label' => esc_html__( 'Show More', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__( 'Expand Text', 'marquee-addons-for-elementor' ),
 				'type' =>  Controls_Manager::TEXT,
 				'default' => esc_html__( 'Show more...', 'marquee-addons-for-elementor' ),
 			]
@@ -63,7 +51,7 @@ trait Testimonialmarquee_Content_Additional_Options {
 		$this->add_control(
 			'deensimc_tesimonial_excerpt_title_less',
 			[
-				'label' => esc_html__( 'Show Less', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__( 'Collapse Text', 'marquee-addons-for-elementor' ),
 				'type' =>  Controls_Manager::TEXT,
 				'default' => esc_html__( 'Show less', 'marquee-addons-for-elementor' ),
 			]
@@ -103,14 +91,14 @@ trait Testimonialmarquee_Content_Additional_Options {
 		);
 
 		$this->add_control(
-			'deensimc_show_shadow_switch',
+			'deensimc_testimonial_show_edge_shadow_switch',
 			[
-				'label' => esc_html__( 'Show Shadow', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__( 'Show Edge Shadow', 'marquee-addons-for-elementor' ),
 				'type' =>  Controls_Manager::SWITCHER,
 				'label_on' => esc_html__( 'Show', 'marquee-addons-for-elementor' ),
 				'label_off' => esc_html__( 'Hide', 'marquee-addons-for-elementor' ),
 				'return_value' => 'yes',
-				'default' => 'no',
+				'default' => '',
 			]
 		);
 
