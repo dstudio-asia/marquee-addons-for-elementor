@@ -206,6 +206,9 @@ final class Marquee {
 	
 	public function init() {
 
+		add_action( 'admin_enqueue_scripts', [ $this, 'deensimc_notice_enqueue_scripts' ] );
+		add_action( 'admin_notices', [ $this, 'deensimc_rate_us' ] );
+		add_action( 'wp_ajax_deensimc_notice_dismiss', [ $this, 'deensimc_notice_dismiss' ] );
 		add_action( 'elementor/frontend/after_enqueue_styles', [ $this, 'deensimc_frontend_styles' ] );
 		add_action( 'elementor/frontend/after_register_scripts', [ $this, 'deensimc_frontend_scripts' ] );
 		add_action( 'elementor/widgets/register', [ $this, 'deensimc_register_widgets' ] );
@@ -213,8 +216,81 @@ final class Marquee {
 		add_action( 'elementor/editor/before_enqueue_styles', [ $this, 'deensimc_editor_styles' ] );
 		add_action( 'elementor/editor/before_enqueue_scripts', [ $this, 'deensimc_editor_scripts' ] );
 		add_action( 'elementor/frontend/after_enqueue_scripts', [ $this, 'deensimc_elementor_library' ] );
+		add_filter( 'plugin_action_links_marquee-addons-for-elementor/marquee-addons-for-elementor.php', [ $this, 'deensimc_upgrade_link' ] );
 
 	}
+
+	public function deensimc_notice_enqueue_scripts( $hook ) {
+        if ( $hook !== 'plugins.php' ) {
+            return;
+        }
+
+        wp_enqueue_style(
+            'deensimc-feedback-style',
+            DEENSIMC_ASSETS_URL . 'css/admin/notice.css'
+        );
+
+        wp_enqueue_script(
+            'deensimc-feedback-script',
+           	DEENSIMC_ASSETS_URL . 'js/admin/dismiss.js',
+            [ 'jquery' ],
+            self::VERSION,
+            true
+        );
+
+        wp_localize_script(
+            'deensimc-feedback-script',
+            'DeensimcFB',
+            [
+                'ajax_url' => admin_url( 'admin-ajax.php' ),
+                'nonce'    => wp_create_nonce( 'deensimc_dismiss_nonce' ),
+                'days'     => 30,
+            ]
+        );
+    }
+
+
+	public function deensimc_rate_us() {
+
+        global $pagenow;
+
+        if ( $pagenow !== 'plugins.php' ) {
+            return;
+        }
+
+        if ( ! current_user_can( 'manage_options' ) ) {
+            return;
+        }
+
+        if ( get_transient('deensimc_rate_us') ) {
+            return;
+        }
+
+		echo '<div id="deensimc-feedback-notice" class="deensimc-notice-wrap notice">';
+		echo '  <div class="deensimc-notice-icon">';
+		echo '    <img src="' . DEENSIMC_ASSETS_URL . 'images/library-icon.png" alt="Notice Icon" />';
+		echo '  </div>';
+		echo '  <div class="deensimc-notice-content">';
+		echo '    <h3>Enjoying our plugin MarqueeAddons?</h3>';
+		echo '    <p>Help us improve it by sharing your feedback. It only takes a moment, and it really helps us build a better experience for you.</p>';
+		echo '    <a href="https://wordpress.org/support/plugin/marquee-addons-for-elementor/reviews/#new-post" target="_blank" class="button button-primary">Rate Us</a>';
+		echo '    <button class="button deensimc-dismiss-btn">No thanks</button>';
+		echo '  </div>';
+		echo '</div>';
+
+    }
+
+	 public function deensimc_notice_dismiss() {
+        check_ajax_referer( 'deensimc_dismiss_nonce', 'nonce' );
+        set_transient(
+            'deensimc_rate_us',
+            true,
+            30 * 86400 // 30 days in seconds
+        );
+        wp_send_json_success();
+    }
+
+
 
 	public function deensimc_frontend_styles() {
 
@@ -263,14 +339,31 @@ final class Marquee {
 		 wp_register_script( 
             'deensimc_pro_js', 
             DEENSIMC_ASSETS_URL . 'js/pro-teaser.js', 
-            ['jquery', 'elementor-editor'], 
+            ['elementor-editor'], 
             self::VERSION, 
             true 
         );
 		wp_enqueue_script( 'deensimc_pro_js' );
 	}
 
+	public function deensimc_upgrade_link( $actions ) {
 
+		// If Pro is already active, do nothing.
+		if ( class_exists( '\Deensimcpro_Marquee\Marqueepro' ) ) {
+			return $actions;
+		}
+
+		$pro_url = 'https://marqueeaddons.com/';
+
+		$actions['upgrade_to_pro'] = sprintf(
+			'<a href="%1$s" target="_blank" style="color:#e2498a; font-weight: bold;">%2$s</a>',
+			esc_url( $pro_url ),
+			__( 'Get Pro', 'marquee-addons-for-elementor' )
+		);
+
+    	return $actions;
+
+	}
 	
 	function deensimc_register_widgets( $widgets_manager ) {
 
@@ -328,13 +421,12 @@ final class Marquee {
 		require_once(  __DIR__ . '/widgets/class-deensimc-video-marquee.php' );
 		require_once(  __DIR__ . '/widgets/class-deensimc-news-ticker.php' );
 		require_once(  __DIR__ . '/widget-base.php' );
-		// require_once(  __DIR__ . '/widgets/class-deesimc-pro-widget.php' );
+		
+		// $pro_widgets_config = require_once __DIR__ . '/widgets-config.php';
 
-		$pro_widgets_config = require_once __DIR__ . '/widgets-config.php';
-
-        foreach ($pro_widgets_config as $widget_config) {
-        	$widgets_manager->register( new \Dynamic_Pro_Widget($widget_config ) );
-    	}
+        // foreach ($pro_widgets_config as $widget_args) {
+    	// 	$widgets_manager->register( new \Dynamic_Pro_Widget([], $widget_args) );
+		// }
 
 		$widgets_manager->register( new \Deensimc_Image_Marquee() );
 		$widgets_manager->register( new \Deensimc_Stacked_Slider() );
