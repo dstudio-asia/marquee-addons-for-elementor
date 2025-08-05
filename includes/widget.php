@@ -268,7 +268,7 @@ final class Marquee {
 
 		echo '<div id="deensimc-feedback-notice" class="deensimc-notice-wrap notice">';
 		echo '  <div class="deensimc-notice-icon">';
-		echo '    <img src="' . DEENSIMC_ASSETS_URL . 'images/library-icon.png" alt="Notice Icon" />';
+		echo '    <img src="' . esc_url( DEENSIMC_ASSETS_URL ) . 'images/library-icon.png" alt="Notice Icon" />';
 		echo '  </div>';
 		echo '  <div class="deensimc-notice-content">';
 		echo '    <h3>Enjoying our plugin MarqueeAddons?</h3>';
@@ -334,18 +334,7 @@ final class Marquee {
 		wp_register_style( 'deensimc-editor-css', DEENSIMC_ASSETS_URL . 'css/editor.css', null, self::VERSION, false );
 		wp_enqueue_style( 'deensimc-editor-css' );
 	}
-
-	public function deensimc_editor_scripts() {
-		 wp_register_script( 
-            'deensimc_pro_js', 
-            DEENSIMC_ASSETS_URL . 'js/pro-teaser.js', 
-            ['elementor-editor'], 
-            self::VERSION, 
-            true 
-        );
-		wp_enqueue_script( 'deensimc_pro_js' );
-	}
-
+	
 	public function deensimc_upgrade_link( $actions ) {
 
 		// If Pro is already active, do nothing.

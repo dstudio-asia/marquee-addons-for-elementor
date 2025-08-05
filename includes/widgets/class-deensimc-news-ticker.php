@@ -244,9 +244,9 @@ class Deensimc_News_Ticker extends Widget_Base
 						<?php
 						$label_tag = isset($settings['deensimc_label_heading_tag']) ? esc_attr($settings['deensimc_label_heading_tag']) : 'h4';
 						?>
-						<<?php echo $label_tag; ?>>
+						<<?php echo esc_html( $label_tag ); ?>>
 							<?php echo esc_html($settings['deensimc_label_heading']); ?>
-						</<?php echo $label_tag; ?>>
+						</<?php echo esc_html( $label_tag ); ?>>
 					</div>
 
 				</div>
@@ -273,9 +273,9 @@ class Deensimc_News_Ticker extends Widget_Base
 						<?php
 						$label_tag = isset($settings['deensimc_label_heading_tag']) ? esc_attr($settings['deensimc_label_heading_tag']) : 'h4';
 						?>
-						<<?php echo $label_tag; ?>>
+						<<?php echo esc_html( $label_tag ); ?>>
 							<?php echo esc_html($settings['deensimc_label_heading']); ?>
-						</<?php echo $label_tag; ?>>
+						</<?php echo esc_html( $label_tag ); ?>>
 					</div>
 
 				</div>
