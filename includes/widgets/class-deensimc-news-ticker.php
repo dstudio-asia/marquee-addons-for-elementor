@@ -13,8 +13,9 @@ class Deensimc_News_Ticker extends Widget_Base
 {
 
 	use NewsTickerAdditionalOptionsControl;
-	use NewsTickerGeneralSettingsControl;
+	use NewsTickerLayoutControl;
 	use NewsTickerStyleControl;
+	use NewsTickerQueryControl;
 
 	public function get_name()
 	{
@@ -49,10 +50,25 @@ class Deensimc_News_Ticker extends Widget_Base
 		return array_diff_key($post_types, ['elementor_library', 'attachment']);
 	}
 
+	protected function get_upsale_data(): array {
+		return [
+			'condition' => !class_exists( '\Deensimcpro_Marquee\Marqueepro' ),
+			'image' => esc_url( ELEMENTOR_ASSETS_URL . 'images/go-pro.svg' ),
+			'image_alt' => esc_attr__( 'Upgrade', 'marquee-addons-for-elementor' ),
+			'title' => esc_html__( 'Get MarqueeAddons Pro', 'marquee-addons-for-elementor' ),
+			'description' => esc_html__( 'Get the premium version of the MarqueeAddons and grow your website capabilities.', 'marquee-addons-for-elementor' ),
+			'upgrade_url' => esc_url( 'https://marqueeaddons.com' ),
+			'upgrade_text' => esc_html__( 'Upgrade Now', 'marquee-addons-for-elementor' ),
+		];
+	}
+
+
 	protected function register_controls(): void
 	{
 
-		$this->general_settings_control();
+		$this->layout_control();
+		$this->news_ticker_query_control();
+
 		$this->additional_options_control();
 		$this->style_section_control();
 	}
@@ -61,52 +77,52 @@ class Deensimc_News_Ticker extends Widget_Base
 
 	public function newticker_get_query_args($settings = [])
 	{
-		// Set default values if any key is missing in $settings
+		// Merge with defaults
 		$settings = wp_parse_args($settings, [
-			'deensimc_post_type'    => 'post',
-			'orderby'               => 'date',
-			'order'                 => 'desc',
-			'posts_per_page'        => 6,
-			'deensimc_no_of_post'   => 6,
+			'deensimc_post_type'  => 'post',
+			'deensimc_no_of_post' => 6,
+			'deensimc_categories_ids'      => [],
+			'deensimc_tags_ids'            => [],
+			'deensimc_author_ids'          => [],
+			'deensimc_orderby'    => 'date',
+			'deensimc_order'      => 'desc',
 		]);
 
-		// Base query arguments for WP_Query / get_posts
+		// Base args
 		$args = [
-			'post_type'           => $settings['deensimc_post_type'],
+			'post_type'           => 'post',
 			'post_status'         => 'publish',
-			'orderby'             => $settings['orderby'],
-			'order'               => $settings['order'],
-			'ignore_sticky_posts' => 1,
-			'posts_per_page'      => $settings['deensimc_no_of_post'],
+			'ignore_sticky_posts' => true,
+			'posts_per_page'      => intval($settings['deensimc_no_of_post']),
 		];
 
-		// Only add tax_query if post type is not 'page'
-		if ($settings['deensimc_post_type'] !== 'page') {
-			$args['tax_query'] = [];
+		// Order by & order
+		if ('rand' === $settings['deensimc_orderby']) {
+			$args['orderby'] = 'rand';
+		} else {
+			// date or any other future extensions
+			$args['orderby'] = $settings['deensimc_orderby'];
+			$args['order']   = strtoupper($settings['deensimc_order']) === 'ASC' ? 'ASC' : 'DESC';
+		}
 
-			// Get all registered taxonomies for the selected post type
-			$taxonomies = get_object_taxonomies($settings['deensimc_post_type'], 'objects');
+		// Category filter
+		if (! empty($settings['deensimc_categories_ids'])) {
+			$args['category__in'] = array_map('intval', $settings['deensimc_categories_ids']);
+		}
 
-			foreach ($taxonomies as $taxonomy) {
-				$setting_key = $taxonomy->name . '_ids';
+		// Tag filter
+		if (! empty($settings['deensimc_tags_ids'])) {
+			$args['tag__in'] = array_map('intval', $settings['deensimc_tags_ids']);
+		}
 
-				if (!empty($settings[$setting_key])) {
-					$args['tax_query'][] = [
-						'taxonomy' => $taxonomy->name,
-						'field'    => 'term_id',
-						'terms'    => $settings[$setting_key],
-					];
-				}
-			}
-
-			// If multiple taxonomy filters are added, relate them using AND
-			if (!empty($args['tax_query'])) {
-				$args['tax_query']['relation'] = 'AND';
-			}
+		// Author filter
+		if (! empty($settings['deensimc_author_ids'])) {
+			$args['author__in'] = array_map('intval', $settings['deensimc_author_ids']);
 		}
 
 		return $args;
 	}
+
 
 
 
@@ -134,20 +150,51 @@ class Deensimc_News_Ticker extends Widget_Base
 				$posts[] = $posts[$i % $posts_count];
 			}
 		}
+		// Determine link target/rel based on control
+		$open_in_new_tab = (! empty($settings['deensimc_open_in_new_tab']) && 'yes' === $settings['deensimc_open_in_new_tab']);
+		$link_target     = $open_in_new_tab ? '_blank' : '_self';
 		foreach ($posts as $index => $post) {
 			$title = isset($post->post_title) ? $post->post_title : '';
+
+			if (!empty($settings['deensimc_title_trim_enable']) && $settings['deensimc_title_trim_enable'] === 'yes') {
+				$max_len = !empty($settings['deensimc_title_trim_length']) ? intval($settings['deensimc_title_trim_length']) : 50;
+				if (strlen($title) > $max_len) {
+					$title = mb_substr($title, 0, $max_len) . '...';
+				}
+			}
 			$url = isset($post->is_custom) && $post->is_custom && !empty($post->custom_url)
 				? $post->custom_url
 				: get_permalink($post);
 ?>
 			<span class="deensimc-scroll-text">
-				<a href="<?php echo esc_url($url); ?>" class="deensimc-title-link" target="_blank" rel="noopener noreferrer">
+				<a href="<?php echo esc_url($url); ?>" class="deensimc-title-link" target="<?php echo esc_attr($link_target); ?>" rel="noopener noreferrer">
 					<?php echo esc_html($title); ?>
 				</a>
 			</span>
 			<?php
 
-			if (!empty($settings['deensimc_seperator_icon']) && $settings['deensimc_seperator_type'] == 'seperator_icon') {  ?>
+			if ('seperator_feature_image' === $settings['deensimc_seperator_type']) {
+				$post_id = is_object($post) ? intval($post->ID) : 0;
+			?>
+				<span class="deensimc-news-item-<?php echo esc_attr($this->get_id()); ?> deensimc-seperator-feature-image">
+					<?php
+					if ($post_id && has_post_thumbnail($post_id)) {
+						echo get_the_post_thumbnail(
+							$post_id,
+							[50, 50],
+							[
+								'class' => 'deensimc-feature-image',
+								'alt'   => esc_attr(get_the_title($post_id)),
+							]
+						);
+					}
+					?>
+				</span>
+			<?php
+			} ?>
+
+
+			<?php if (!empty($settings['deensimc_seperator_icon']) && $settings['deensimc_seperator_type'] == 'seperator_icon') {  ?>
 				<span class="deensimc-news-item-<?php echo esc_attr($this->get_id()); ?> deensimc-seperator-icon">
 					<?php Icons_Manager::render_icon($settings['deensimc_seperator_icon'], ['aria-hidden' => 'true']);   ?>
 				</span>
@@ -175,64 +222,64 @@ class Deensimc_News_Ticker extends Widget_Base
 		$settings = $this->get_settings_for_display();
 		$pause_on_hover = $settings['deensimc_news_ticker_pause_on_hover_switch'];
 		$animation_speed = $settings['deensimc_news_ticker_text_animation_speed'];
-
 		$marquee_orientation =  'horizontal';
 		$slide_direction_class = $settings['deensimc_news_ticker_slide_direction'] === 'yes' ? ' deensimc-marquee-reverse' : '';
-
 		$marquee_classes = $marquee_orientation . " " . $slide_direction_class;
 
-
-
-
-
 		$is_reverse = $settings['deensimc_news_ticker_slide_direction'] === 'yes' ? 'deensimc-reverse-enabled' : '';
-
 		$args = $this->newticker_get_query_args($settings);
-
-
-
 		$myposts = get_posts($args);
-
-		if (!empty($settings['deensimc_custom_text_list']) && is_array($settings['deensimc_custom_text_list'])) {
-			foreach ($settings['deensimc_custom_text_list'] as $item) {
-				if (empty($item['deensimc_custom_text'])) {
-					continue;
-				}
-
-				$custom_post = (object)[
-					'ID'          => 'custom_' . uniqid(),
-					'post_title'  => $item['deensimc_custom_text'],
-					'post_type'   => 'custom_text',
-					'post_status' => 'custom',
-					'custom_url'  => esc_url($item['deensimc_custom_text_url']['url'] ?? ''),
-					'is_custom'   => true,
-				];
-
-				array_unshift($myposts, $custom_post); // prepend to the beginning
-			}
-		}
-
 
 		?>
 		<div class="deensimc-wrapper deensimc-news-ticker-wrapper">
-			<div class="deensimc-marquee deensimc-marquee-<?php echo esc_attr($marquee_classes); ?> deensimc-news-ticker-marquee" data-pause-on-hover="<?php echo esc_attr($pause_on_hover) ?>" data-animation-speed="<?php echo esc_attr($animation_speed) ?>">
-				<?php if ($settings['deensimc_label'] === 'yes') : ?>
-					<div class="deensimc-news-ticker-label <?php echo esc_attr($is_reverse); ?>">
-						<span class="deensimc-news-ticker-icon">
-							<?php if (!empty($settings['deensimc_label_icon'])) : ?>
-								<?php Icons_Manager::render_icon($settings['deensimc_label_icon'], ['aria-hidden' => 'true']); ?>
-							<?php endif; ?>
-						</span>
-						<?php echo esc_html($settings['deensimc_label_heading']); ?>
+			<?php if ($settings['deensimc_label'] === 'yes') : ?>
+				<div class="deensimc-news-ticker-label deensimc-news-ticker-label-left <?php echo esc_attr($is_reverse); ?>">
+					<span class="deensimc-news-ticker-icon">
+						<?php if (!empty($settings['deensimc_label_icon'])) : ?>
+							<?php Icons_Manager::render_icon($settings['deensimc_label_icon'], ['aria-hidden' => 'true']); ?>
+						<?php endif; ?>
+					</span>
+
+					<div class="deensimc-label-heading">
+						<?php
+						$label_tag = isset($settings['deensimc_label_heading_tag']) ? esc_attr($settings['deensimc_label_heading_tag']) : 'h4';
+						?>
+						<<?php echo esc_html( $label_tag ); ?>>
+							<?php echo esc_html($settings['deensimc_label_heading']); ?>
+						</<?php echo esc_html( $label_tag ); ?>>
 					</div>
-				<?php endif; ?>
+
+				</div>
+			<?php endif; ?>
+			<div class="deensimc-marquee deensimc-marquee-<?php echo esc_attr($marquee_classes); ?> deensimc-news-ticker-marquee" data-pause-on-hover="<?php echo esc_attr($pause_on_hover) ?>" data-animation-speed="<?php echo esc_attr($animation_speed) ?>">
+
 				<div class="deensimc-marquee-group deensimc-news-ticker-group">
 					<?php $this->render_news_ticker_texts($settings, $myposts); ?>
 				</div>
 				<div aria-hidden="true" class="deensimc-marquee-group deensimc-news-ticker-group">
 					<?php $this->render_news_ticker_texts($settings, $myposts); ?>
 				</div>
+
 			</div>
+			<?php if ($settings['deensimc_label'] === 'yes') : ?>
+				<div class="deensimc-news-ticker-label deensimc-news-ticker-label-right <?php echo esc_attr($is_reverse); ?>">
+					<span class="deensimc-news-ticker-icon">
+						<?php if (!empty($settings['deensimc_label_icon'])) : ?>
+							<?php Icons_Manager::render_icon($settings['deensimc_label_icon'], ['aria-hidden' => 'true']); ?>
+						<?php endif; ?>
+					</span>
+
+					<div class="deensimc-label-heading">
+						<?php
+						$label_tag = isset($settings['deensimc_label_heading_tag']) ? esc_attr($settings['deensimc_label_heading_tag']) : 'h4';
+						?>
+						<<?php echo esc_html( $label_tag ); ?>>
+							<?php echo esc_html($settings['deensimc_label_heading']); ?>
+						</<?php echo esc_html( $label_tag ); ?>>
+					</div>
+
+				</div>
+			<?php endif; ?>
 		</div>
 <?php
 	}
