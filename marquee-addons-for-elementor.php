@@ -2,7 +2,7 @@
 /**
  * Plugin Name: MarqueeAddons - Smooth marquee carousel loop for elementor
  * Description: MarqueeAddons an Elementor addon to create smooth, endless marquee carousels, showcases images, logos, or content with dynamic movement to engage visitors. It also allows you to create image accordions, stacked sliders, and text marquees.
- * Version: 2.1.7
+ * Version: 2.1.8
  * Requires at least: 5.8
  * Requires PHP: 7.4
  * Elementor tested up to: 3.8.0
@@ -24,7 +24,7 @@
 	define( 'DEENSIMC_URL' , plugins_url( '/' , DEENSIMC__FILE__ ) );
 	define( 'DEENSIMC_PATH', plugin_dir_path(__FILE__));
 	define( 'DEENSIMC_ASSETS_URL' , DEENSIMC_URL . 'assets/' ); 
-	define( 'DEENSIMC_VERSION' , '2.1.7' ); 
+	define( 'DEENSIMC_VERSION' , '2.1.8' ); 
 
 	function deensimc_load_plugin_data() {
 		require_once( DEENSIMC__DIR__ . '/includes/widget.php' );

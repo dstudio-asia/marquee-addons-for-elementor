@@ -15,3 +15,33 @@
   background-color: #2c2762;
   border-radius: 3px;
 }
+
+.deensimc-text-marquee-icon:before {
+    content: '';
+    background-image: url('../icons/text-marquee.svg');
+    background-size: cover;
+    background-position: center;
+    width: 40px;
+    height: 20px;
+    display: block;
+}
+
+.deensimc-text-marquee-icon:before {
+    content: '';
+    background-image: url('../icons/text-marquee.svg');
+    background-size: cover;
+    background-position: center;
+    width: 40px;
+    height: 20px;
+    display: block;
+}
+
+.deensimc-testimonial-marquee-icon:before {
+    content: '';
+    background-image: url('../icons/testimonial-marquee.svg');
+    background-size: cover;
+    background-position: center;
+    width: 40px;
+    height: 20px;
+    display: block;
+}
