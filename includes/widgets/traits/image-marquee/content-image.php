@@ -13,7 +13,7 @@ trait Imagemarquee_Content_Image {
 		$this->start_controls_section(
 			'deensimc_content_section',
 			[
-				'label' => esc_html__( 'Image Content', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__( 'Images', 'marquee-addons-for-elementor' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -29,28 +29,14 @@ trait Imagemarquee_Content_Image {
 		);
 
 		$this->add_control(
-			'deensimc_slide_position',
+			'deensimc_upload_gallery_notice',
 			[
-				'label' => esc_html__( 'Show Vertical', 'marquee-addons-for-elementor' ),
-				'type' =>  Controls_Manager::SWITCHER,
-				'label_on' => esc_html__( 'Show', 'marquee-addons-for-elementor' ),
-				'label_off' => esc_html__( 'Hide', 'marquee-addons-for-elementor' ),
-				'return_value' => 'yes',
-				'default' => 'no',
+				'type' => Controls_Manager::RAW_HTML,
+				'raw' => '<strong>💡 Tip:</strong> For best performance, use a maximum of <strong>20 images</strong>.',
+				'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
 			]
 		);
-
-		$this->add_control(
-			'deensimc_slide_direction',
-			[
-				'label' => esc_html__( 'Show Reverse', 'marquee-addons-for-elementor' ),
-				'type' =>  Controls_Manager::SWITCHER,
-				'label_on' => esc_html__( 'Show', 'marquee-addons-for-elementor' ),
-				'label_off' => esc_html__( 'Hide', 'marquee-addons-for-elementor' ),
-				'return_value' => 'yes',
-				'default' => 'no',
-			]
-		);
+		
 
 		$this->add_control(
 			'deensimc_link_to',
@@ -117,6 +103,18 @@ trait Imagemarquee_Content_Image {
 					'caption' => esc_html__( 'Caption', 'marquee-addons-for-elementor' ),
 					'description' => esc_html__( 'Description', 'marquee-addons-for-elementor' ),
 				],
+			]
+		);
+
+		$this->add_control(
+			'deensimc_lazy_load_switch',
+			[
+				'label' => esc_html__( 'Lazy Load', 'marquee-addons-for-elementor' ),
+				'type' =>  Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Show', 'marquee-addons-for-elementor' ),
+				'label_off' => esc_html__( 'Hide', 'marquee-addons-for-elementor' ),
+				'return_value' => 'yes',
+				'default' => 'yes',
 			]
 		);
 

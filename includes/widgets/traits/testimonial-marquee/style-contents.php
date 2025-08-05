@@ -92,12 +92,15 @@ trait Testimonialmarquee_Style_Contents {
 			]
 		);
 
-		$this->add_control(
-			'deensimc_tesimonial_excerpt_heading',
+
+		
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'deensimc_tesimonial_unfold_section',
 			[
-				'label' => esc_html__( 'Expand Text', 'marquee-addons-for-elementor' ),
-				'type' =>  Controls_Manager::HEADING,
-				'separator' => 'before',
+				'label' => esc_html__( 'Text Unfold', 'marquee-addons-for-elementor' ),
+				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
 
@@ -119,7 +122,20 @@ trait Testimonialmarquee_Style_Contents {
 				],
 			]
 		);
+
 		
+		$this->add_control(
+			'deensimc_tesimonial_excerpt_color_hover',
+			[
+				'label' => esc_html__( 'Hover Color', 'marquee-addons-for-elementor' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .deensimc-toggle:hover' => 'color: {{VALUE}}',
+				],
+			]
+		);
+		
+
 		$this->end_controls_section();
 	}
 }

@@ -51,6 +51,18 @@ class Deensimc_Video_Marquee extends Widget_Base {
         return [ 'video', 'slide', 'deen', 'slider' ];
     }
 
+	protected function get_upsale_data(): array {
+		return [
+			'condition' => !class_exists( '\Deensimcpro_Marquee\Marqueepro' ),
+			'image' => esc_url( ELEMENTOR_ASSETS_URL . 'images/go-pro.svg' ),
+			'image_alt' => esc_attr__( 'Upgrade', 'marquee-addons-for-elementor' ),
+			'title' => esc_html__( 'Get MarqueeAddons Pro', 'marquee-addons-for-elementor' ),
+			'description' => esc_html__( 'Get the premium version of the MarqueeAddons and grow your website capabilities.', 'marquee-addons-for-elementor' ),
+			'upgrade_url' => esc_url( 'https://marqueeaddons.com' ),
+			'upgrade_text' => esc_html__( 'Upgrade Now', 'marquee-addons-for-elementor' ),
+		];
+	}
+
     protected function register_controls() 
 	{
 
@@ -89,28 +101,14 @@ class Deensimc_Video_Marquee extends Widget_Base {
 		);
 
 		$this->add_control(
-			'deensimc_slide_position',
+			'deensimc_video_list_notice',
 			[
-				'label' => esc_html__( 'Show Vertical',  'marquee-addons-for-elementor' ),
-				'type' =>  Controls_Manager::SWITCHER,
-				'label_on' => esc_html__( 'Show',  'marquee-addons-for-elementor' ),
-				'label_off' => esc_html__( 'Hide',  'marquee-addons-for-elementor' ),
-				'return_value' => 'yes',
-				'default' => 'no',
+				'type' => Controls_Manager::RAW_HTML,
+				'raw' => '<strong>⚠️ Note:</strong> For best performance, keep the video list under <strong>5 items</strong>.',
+				'content_classes' => 'elementor-panel-alert elementor-panel-alert-warning',
 			]
 		);
-
-		$this->add_control(
-			'deensimc_slide_direction',
-			[
-				'label' => esc_html__( 'Show Reverse',  'marquee-addons-for-elementor' ),
-				'type' =>  Controls_Manager::SWITCHER,
-				'label_on' => esc_html__( 'Show',  'marquee-addons-for-elementor' ),
-				'label_off' => esc_html__( 'Hide',  'marquee-addons-for-elementor' ),
-				'return_value' => 'yes',
-				'default' => 'no',
-			]
-		);
+		
 
         $this->end_controls_section();
 		

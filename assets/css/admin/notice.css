@@ -1,0 +1,47 @@
+/* Container */
+#deensimc-feedback-notice.deensimc-notice-wrap {
+  display: flex;
+  align-items: flex-start;
+  border-left: 4px solid #4F46E5;
+  background: #fff;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+/* Left Icon */
+.deensimc-notice-icon {
+  width: 48px;
+  margin-right: 20px;
+}
+.deensimc-notice-icon img {
+  width: 100%;
+  height: auto;
+}
+
+/* Content */
+.deensimc-notice-content h3 {
+  margin: 0 0 8px;
+  font-size: 1.25em;
+}
+.deensimc-notice-content p {
+  margin: 0 0 16px;
+  color: #555d66;
+}
+
+/* Buttons */
+.deensimc-notice-content .button-primary {
+  background-color: #4F46E5;
+  border-color: #4F46E5;
+  color: #fff;
+  margin-right: 8px;
+}
+.deensimc-dismiss-btn {
+  background: transparent;
+  border: 1px solid #ccd0d4;
+  color: #666;
+}
+.deensimc-dismiss-btn:hover {
+  background-color: #f0f0f0;
+  color: #111;
+}

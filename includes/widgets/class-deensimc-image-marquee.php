@@ -19,6 +19,8 @@ class Deensimc_Image_Marquee extends Widget_Base {
 	use Imagemarquee_Style_Alignment_Spacing;
 	use Imagemarquee_Style_Height_Width;
 	use Imagemarquee_Style_Border_Options;
+	use Imagemarquee_Style_Caption;
+	use Imagemarquee_Style_Edge_Shadow;
 
 	public function get_name() 
 	{
@@ -45,6 +47,18 @@ class Deensimc_Image_Marquee extends Widget_Base {
 		return [ 'slider', 'marquee', 'slide', 'deen', 'smooth', 'vertical', 'horizontal', 'scroll' ];
 	}
 
+	protected function get_upsale_data(): array {
+		return [
+			'condition' => !class_exists( '\Deensimcpro_Marquee\Marqueepro' ),
+			'image' => esc_url( ELEMENTOR_ASSETS_URL . 'images/go-pro.svg' ),
+			'image_alt' => esc_attr__( 'Upgrade', 'marquee-addons-for-elementor' ),
+			'title' => esc_html__( 'Get MarqueeAddons Pro', 'marquee-addons-for-elementor' ),
+			'description' => esc_html__( 'Get the premium version of the MarqueeAddons and grow your website capabilities.', 'marquee-addons-for-elementor' ),
+			'upgrade_url' => esc_url( 'https://marqueeaddons.com' ),
+			'upgrade_text' => esc_html__( 'Upgrade Now', 'marquee-addons-for-elementor' ),
+		];
+	}
+
 	protected function register_controls() 
 	{
 		
@@ -67,6 +81,9 @@ class Deensimc_Image_Marquee extends Widget_Base {
 		$this->style_border_options();
 		
 		$this->end_controls_section();
+
+		$this->style_caption();
+		$this->style_edge_shadow();
 		
 	}
 
