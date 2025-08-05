@@ -214,7 +214,6 @@ final class Marquee {
 		add_action( 'elementor/widgets/register', [ $this, 'deensimc_register_widgets' ] );
 		add_action( 'elementor/elements/categories_registered', [ $this, 'deensimc_add_categories' ] );
 		add_action( 'elementor/editor/before_enqueue_styles', [ $this, 'deensimc_editor_styles' ] );
-		add_action( 'elementor/editor/before_enqueue_scripts', [ $this, 'deensimc_editor_scripts' ] );
 		add_action( 'elementor/frontend/after_enqueue_scripts', [ $this, 'deensimc_elementor_library' ] );
 		add_filter( 'plugin_action_links_marquee-addons-for-elementor/marquee-addons-for-elementor.php', [ $this, 'deensimc_upgrade_link' ] );
 
@@ -414,7 +413,6 @@ final class Marquee {
 		require_once(  __DIR__ . '/widgets/class-deensimc-testimonial-marquee.php' );
 		require_once(  __DIR__ . '/widgets/class-deensimc-video-marquee.php' );
 		require_once(  __DIR__ . '/widgets/class-deensimc-news-ticker.php' );
-		require_once(  __DIR__ . '/widget-base.php' );
 
 		$widgets_manager->register( new \Deensimc_Image_Marquee() );
 		$widgets_manager->register( new \Deensimc_Stacked_Slider() );
