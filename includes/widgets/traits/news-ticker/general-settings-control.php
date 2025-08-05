@@ -13,7 +13,7 @@ trait NewsTickerGeneralSettingsControl
 		$this->start_controls_section(
 			'deensimc_news_ticker_general_option_section',
 			[
-				'label' => esc_html__('General Settings', 'marquee-addons-for-elementor'),
+				'label' => esc_html__('General Settings', 'marquee-addons-pro-for-elementor'),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -23,7 +23,7 @@ trait NewsTickerGeneralSettingsControl
 		$this->add_control(
 			'deensimc_post_type',
 			[
-				'label'   => __('Source', 'marquee-addons-for-elementor'),
+				'label'   => __('Source', 'marquee-addons-pro-for-elementor'),
 				'type'    =>    Controls_Manager::SELECT,
 				'options' => $deensimc_post_types,
 				'default' => key($deensimc_post_types),
@@ -57,19 +57,19 @@ trait NewsTickerGeneralSettingsControl
 		$this->add_control(
 			'deensimc_no_of_post',
 			[
-				'label' => __('Post Number', 'marquee-addons-for-elementor'),
+				'label' => __('Post Number', 'marquee-addons-pro-for-elementor'),
 				'type' => Controls_Manager::NUMBER,
-				'default' => __('5', 'marquee-addons-for-elementor')
+				'default' => __('5', 'marquee-addons-pro-for-elementor')
 			]
 		);
 
 		$this->add_control(
 			'deensimc_enable_custom_text',
 			[
-				'label' => esc_html__('Enable Custom Text', 'marquee-addons-for-elementor'),
+				'label' => esc_html__('Enable Custom Text', 'marquee-addons-pro-for-elementor'),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __('Yes', 'marquee-addons-for-elementor'),
-				'label_off' => __('No', 'marquee-addons-for-elementor'),
+				'label_on' => __('Yes', 'marquee-addons-pro-for-elementor'),
+				'label_off' => __('No', 'marquee-addons-pro-for-elementor'),
 				'return_value' => 'yes',
 				'default' => '',
 			]
@@ -80,9 +80,9 @@ trait NewsTickerGeneralSettingsControl
 		$repeater->add_control(
 			'deensimc_custom_text',
 			[
-				'label' => esc_html__('Custom Text', 'marquee-addons-for-elementor'),
+				'label' => esc_html__('Custom Text', 'marquee-addons-pro-for-elementor'),
 				'type' => Controls_Manager::TEXTAREA,
-				'placeholder' => __('Custom Text', 'marquee-addons-for-elementor'),
+				'placeholder' => __('Custom Text', 'marquee-addons-pro-for-elementor'),
 				'label_block' => true,
 			]
 		);
@@ -90,9 +90,9 @@ trait NewsTickerGeneralSettingsControl
 		$repeater->add_control(
 			'deensimc_custom_text_url',
 			[
-				'label' => esc_html__('Custom Text Link', 'marquee-addons-for-elementor'),
+				'label' => esc_html__('Custom Text Link', 'marquee-addons-pro-for-elementor'),
 				'type' => Controls_Manager::URL,
-				'placeholder' => __('https://your-link.com', 'marquee-addons-for-elementor'),
+				'placeholder' => __('https://your-link.com', 'marquee-addons-pro-for-elementor'),
 				'label_block' => true,
 				'show_external' => false,
 				'show_nofollow' => false,
@@ -107,7 +107,7 @@ trait NewsTickerGeneralSettingsControl
 		$this->add_control(
 			'deensimc_custom_text_list',
 			[
-				'label' => esc_html__('Custom Text Items', 'marquee-addons-for-elementor'),
+				'label' => esc_html__('Custom Text Items', 'marquee-addons-pro-for-elementor'),
 				'type' => Controls_Manager::REPEATER,
 				'fields' => $repeater->get_controls(),
 				'title_field' => '{{ deensimc_custom_text }}',
@@ -130,10 +130,10 @@ trait NewsTickerGeneralSettingsControl
 		$this->add_control(
 			'deensimc_label',
 			[
-				'label' => __('Show label', 'marquee-addons-for-elementor'),
+				'label' => __('Show label', 'marquee-addons-pro-for-elementor'),
 				'type' => Controls_Manager::SWITCHER,
-				'label_off' => __('Off', 'marquee-addons-for-elementor'),
-				'label_on' => __('On', 'marquee-addons-for-elementor'),
+				'label_off' => __('Off', 'marquee-addons-pro-for-elementor'),
+				'label_on' => __('On', 'marquee-addons-pro-for-elementor'),
 				'default' => 'yes',
 			]
 		);
@@ -141,10 +141,10 @@ trait NewsTickerGeneralSettingsControl
 		$this->add_control(
 			'deensimc_label_heading',
 			[
-				'label' => __('Label', 'marquee-addons-for-elementor'),
+				'label' => __('Label', 'marquee-addons-pro-for-elementor'),
 				'type' => Controls_Manager::TEXT,
-				'default' => __('Latest News', 'marquee-addons-for-elementor'),
-				'placeholder' => __('Latest News', 'marquee-addons-for-elementor'),
+				'default' => __('Latest News', 'marquee-addons-pro-for-elementor'),
+				'placeholder' => __('Latest News', 'marquee-addons-pro-for-elementor'),
 				'condition' => [
 					'deensimc_label' => 'yes',
 				],
@@ -156,7 +156,7 @@ trait NewsTickerGeneralSettingsControl
 		$this->add_control(
 			'deensimc_label_icon',
 			[
-				'label' => __('Icon', 'marquee-addons-for-elementor'),
+				'label' => __('Icon', 'marquee-addons-pro-for-elementor'),
 				'type' => Controls_Manager::ICONS,
 				'fa4compatibility' => 'icon',
 				'default' => [
