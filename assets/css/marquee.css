@@ -43,38 +43,30 @@
    ========================================================================== */
 
 .deensimc-marquee.deensimc-shadow {
-  --edge-shadow-color: #ccc;
+  --edge-shadow-color: #fff;
   --edge-shadow-spread: 50px;
+  --edge-shadow-blur: 50px;
 }
 
 .deensimc-marquee.deensimc-shadow::before,
 .deensimc-marquee.deensimc-shadow::after {
   content: "";
-  width: var(--edge-shadow-spread);
-  max-width: 20%;
+  width: 0;
   height: 100%;
   position: absolute;
   top: 0;
   z-index: 1;
   pointer-events: none;
+  box-shadow: 0 0 var(--edge-shadow-blur) var(--edge-shadow-spread)
+    var(--edge-shadow-color);
 }
 
 .deensimc-marquee.deensimc-shadow::before {
   left: 0;
-  background: linear-gradient(
-    to right,
-    var(--edge-shadow-color) 10%,
-    transparent
-  );
 }
 
 .deensimc-marquee.deensimc-shadow::after {
   right: 0;
-  background: linear-gradient(
-    to left,
-    var(--edge-shadow-color) 10%,
-    transparent
-  );
 }
 
 .deensimc-marquee.deensimc-shadow.deensimc-marquee-vertical::before,
@@ -82,31 +74,22 @@
   content: "";
   max-width: 100%;
   width: 100%;
-  height: var(--edge-shadow-spread);
-  max-height: 20%;
+  height: 0;
   position: absolute;
   left: 0;
   z-index: 1;
   pointer-events: none;
+  box-shadow: 0 0 var(--edge-shadow-blur) var(--edge-shadow-spread)
+    var(--edge-shadow-color);
 }
 
 .deensimc-marquee.deensimc-shadow.deensimc-marquee-vertical::before {
   top: 0;
-  background: linear-gradient(
-    to bottom,
-    var(--edge-shadow-color) 10%,
-    transparent
-  );
 }
 
 .deensimc-marquee.deensimc-shadow.deensimc-marquee-vertical::after {
   top: auto;
   bottom: 0;
-  background: linear-gradient(
-    to top,
-    var(--edge-shadow-color) 10%,
-    transparent
-  );
 }
 
 /* ==========================================================================
@@ -235,6 +218,13 @@
 
 .deensimc-marquee-reverse .deensimc-marquee-group {
   animation-direction: reverse;
+}
+
+.deensimc-text-marquee-stop .deensimc-marquee,
+.deensimc-text-marquee-stop .deensimc-marquee .deensimc-marquee-group {
+  max-width: 100%;
+  flex-wrap: wrap;
+  justify-content: start;
 }
 
 /* ==========================================================================

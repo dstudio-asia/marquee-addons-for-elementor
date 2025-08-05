@@ -16,12 +16,14 @@ use \Elementor\Widget_Base;
 class Deensimc_Testimonial_Marquee extends Widget_Base {
 
 	use Testimonialmarquee_Contents;
+	use Testimonialmarquee_Content_Text_Unfold;
 	use Testimonialmarquee_Content_Additional_Options;
 	use Testimonialmarquee_Style_Contents_Box;
 	use Testimonialmarquee_Style_Contents;
 	use Testimonialmarquee_Style_Image;
 	use Testimonialmarquee_Style_Name_Title;
 	use Testimonialmarquee_Style_Review;
+	use Testimonial_marquee_Style_Edge_Shadow;
 
     public function get_name() 
 	{
@@ -66,24 +68,12 @@ class Deensimc_Testimonial_Marquee extends Widget_Base {
         $this->start_controls_section(
 			'deensimc_content_section',
 			[
-				'label' => esc_html__( 'Contents', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__( 'Testimonial Texts', 'marquee-addons-for-elementor' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
 
 		$this->content_controls();
-
-		$this->add_control(
-			'deensimc_testimonial_reverse_section',
-			[
-				'label' => esc_html__( 'Show Reverse', 'marquee-addons-for-elementor' ),
-				'type' =>  Controls_Manager::SWITCHER,
-				'label_on' => esc_html__( 'Show', 'marquee-addons-for-elementor' ),
-				'label_off' => esc_html__( 'Hide', 'marquee-addons-for-elementor' ),
-				'return_value' => 'yes',
-				'default' => 'no',
-			]
-		);
 
 		$this->add_responsive_control(
 			'deensimc_testimonial_alignment',
@@ -118,10 +108,7 @@ class Deensimc_Testimonial_Marquee extends Widget_Base {
 			[
 				'label' => esc_html__( 'Quote Left', 'marquee-addons-for-elementor' ),
 				'type' =>  Controls_Manager::ICONS,
-				'default' => [
-					'value' => 'fas fa-quote-left',
-					'library' => 'fa-solid',
-				],
+				'default' => [],
 				'skin' => 'inline',
 				'exclude_inline_options' => [ 'svg' ],
 			]
@@ -132,10 +119,7 @@ class Deensimc_Testimonial_Marquee extends Widget_Base {
 			[
 				'label' => esc_html__( 'Quote Right', 'marquee-addons-for-elementor' ),
 				'type' =>  Controls_Manager::ICONS,
-				'default' => [
-					'value' => 'fas fa-quote-right',
-					'library' => 'fa-solid',
-				],
+				'default' => [],
 				'skin' => 'inline',
 				'exclude_inline_options' => [ 'svg' ],
 			]
@@ -143,6 +127,7 @@ class Deensimc_Testimonial_Marquee extends Widget_Base {
 
         $this->end_controls_section();
 
+		$this->content_text_unfold();
 		$this->content_additional_options();
 
 		$this->style_contents_box();
@@ -154,6 +139,7 @@ class Deensimc_Testimonial_Marquee extends Widget_Base {
 		$this->style_name_title();
 
 		$this->style_review();
+		$this->style_edge_shadow();
     }
 
 	/**

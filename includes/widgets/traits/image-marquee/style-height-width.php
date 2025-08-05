@@ -13,7 +13,7 @@ trait Imagemarquee_Style_Height_Width {
 		$this->add_responsive_control(
 			'deensimc_image_width',
 			[
-				'label' => esc_html__( 'Image Width', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__( 'Width', 'marquee-addons-for-elementor' ),
 				'type' =>  Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'range' => [
@@ -41,7 +41,7 @@ trait Imagemarquee_Style_Height_Width {
 		$this->add_responsive_control(
 			'deensimc_image_max_width',
 			[
-				'label' => esc_html__( 'Image Max Width', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__( 'Max Width', 'marquee-addons-for-elementor' ),
 				'type' =>  Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'range' => [
@@ -89,7 +89,38 @@ trait Imagemarquee_Style_Height_Width {
 				'selectors' => [
 					'{{WRAPPER}} .deensimc-marquee-group img' => 'height: {{SIZE}}{{UNIT}};',
 				],
-				'separator' => 'after'
+			]
+		);
+
+		$this->add_responsive_control(
+			'deensimc_widget_height',
+			[
+				'label' => esc_html__( 'Section Height', 'marquee-addons-for-elementor' ),
+				'type' =>  Controls_Manager::SLIDER,
+				'size_units' => ['vh'],
+				'range' => [
+					'vh' => [
+						'min' => 1,
+						'max' => 100,
+						'step' => 1,
+					],
+				],
+				'default' => [
+					'unit' => 'vh',
+					'size' => 60,
+				],
+				'conditions' => [
+					'terms' => [
+						[
+							'name' => 'deensimc_slide_position',
+							'operator' => '==',
+							'value' => 'yes',
+						],
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .deensimc-wrapper-vertical' => 'height: {{SIZE}}vh;',
+				],
 			]
 		);
 	}

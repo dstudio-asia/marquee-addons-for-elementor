@@ -19,6 +19,8 @@ class Deensimc_Image_Marquee extends Widget_Base {
 	use Imagemarquee_Style_Alignment_Spacing;
 	use Imagemarquee_Style_Height_Width;
 	use Imagemarquee_Style_Border_Options;
+	use Imagemarquee_Style_Caption;
+	use Imagemarquee_Style_Edge_Shadow;
 
 	public function get_name() 
 	{
@@ -79,6 +81,9 @@ class Deensimc_Image_Marquee extends Widget_Base {
 		$this->style_border_options();
 		
 		$this->end_controls_section();
+
+		$this->style_caption();
+		$this->style_edge_shadow();
 		
 	}
 

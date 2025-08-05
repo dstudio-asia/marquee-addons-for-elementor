@@ -381,21 +381,26 @@ final class Marquee {
 
 		require_once(  __DIR__ . '/widgets/traits/testimonial-marquee/content-repeater.php' );
 		require_once(  __DIR__ . '/widgets/traits/testimonial-marquee/content-additional-options.php' );
+		require_once(  __DIR__ . '/widgets/traits/testimonial-marquee/content-text-unfold.php' );
 		require_once(  __DIR__ . '/widgets/traits/testimonial-marquee/style-contents-box.php' );
 		require_once(  __DIR__ . '/widgets/traits/testimonial-marquee/style-contents.php' );
 		require_once(  __DIR__ . '/widgets/traits/testimonial-marquee/style-image.php' );
 		require_once(  __DIR__ . '/widgets/traits/testimonial-marquee/style-name-title.php' );
 		require_once(  __DIR__ . '/widgets/traits/testimonial-marquee/style-review.php' );
+		require_once(  __DIR__ . '/widgets/traits/testimonial-marquee/style-edge-shadow.php' );
 
 		require_once(  __DIR__ . '/widgets/traits/image-marquee/content-image.php' );
 		require_once(  __DIR__ . '/widgets/traits/image-marquee/content-additional-options.php' );
 		require_once(  __DIR__ . '/widgets/traits/image-marquee/style-alignment-spacing.php' );
 		require_once(  __DIR__ . '/widgets/traits/image-marquee/style-height-width.php' );
 		require_once(  __DIR__ . '/widgets/traits/image-marquee/style-border-options.php' );
+		require_once(  __DIR__ . '/widgets/traits/image-marquee/style-caption.php' );
+		require_once(  __DIR__ . '/widgets/traits/image-marquee/style-edge-shadow.php' );
 
 		require_once(  __DIR__ . '/widgets/traits/text-marquee/content-text-repeater.php' );
 		require_once(  __DIR__ . '/widgets/traits/text-marquee/content-additional-options.php' );
 		require_once(  __DIR__ . '/widgets/traits/text-marquee/style-text-contents.php' );
+		require_once(  __DIR__ . '/widgets/traits/text-marquee/style-edge-shadow.php' );
 
 		require_once(  __DIR__ . '/widgets/traits/news-ticker/additional-options-control.php' );
 		require_once(  __DIR__ . '/widgets/traits/news-ticker/news-ticker-layout-control.php' );
