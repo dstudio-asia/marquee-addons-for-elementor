@@ -6,7 +6,8 @@
     e.preventDefault();
     let toggleElement = $(e.currentTarget);
     let blockquoteElement = toggleElement.closest(".deensimc-tes-text");
-    let widget = $(".deensimc-tes .deensimc-marquee");
+    let wrapper = toggleElement.closest(".deensimc-tes");
+    let widget = wrapper.find(".deensimc-marquee");
 
     let fullText = blockquoteElement.data("full-text");
     let truncatedText = blockquoteElement.data("truncated-text");
