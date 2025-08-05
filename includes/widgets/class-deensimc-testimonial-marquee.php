@@ -35,7 +35,7 @@ class Deensimc_Testimonial_Marquee extends Widget_Base {
 
     public function get_icon() 
 	{
-        return 'eicon-testimonial eicon-deensimc';
+        return 'eicon-deensimc deensimc-testimonial-marquee-icon';
     }
 
     public function get_categories() 
@@ -47,6 +47,18 @@ class Deensimc_Testimonial_Marquee extends Widget_Base {
 	{
         return [ 'testimonail', 'slide', 'deen', 'slider' ];
     }
+
+	protected function get_upsale_data(): array {
+		return [
+			'condition' => !class_exists( '\Deensimcpro_Marquee\Marqueepro' ),
+			'image' => esc_url( ELEMENTOR_ASSETS_URL . 'images/go-pro.svg' ),
+			'image_alt' => esc_attr__( 'Upgrade', 'marquee-addons-for-elementor' ),
+			'title' => esc_html__( 'Get MarqueeAddons Pro', 'marquee-addons-for-elementor' ),
+			'description' => esc_html__( 'Get the premium version of the MarqueeAddons and grow your website capabilities.', 'marquee-addons-for-elementor' ),
+			'upgrade_url' => esc_url( 'https://marqueeaddons.com' ),
+			'upgrade_text' => esc_html__( 'Upgrade Now', 'marquee-addons-for-elementor' ),
+		];
+	}
 
     protected function register_controls() 
 	{

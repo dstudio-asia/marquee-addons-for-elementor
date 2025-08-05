@@ -28,7 +28,6 @@
 
 	function deensimc_load_plugin_data() {
 		require_once( DEENSIMC__DIR__ . '/includes/widget.php' );
-		require_once( DEENSIMC__DIR__ . '/includes/marquee-addons-library.php' );
 		\Deensimc_Marquee\Marquee::instance(); 
 	}
 
