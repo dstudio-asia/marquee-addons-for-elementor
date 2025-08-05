@@ -87,11 +87,11 @@ class Deensimc_Video_Marquee extends Widget_Base {
 				'title_field' => '{{{ deensimc_video_type }}}',
 			]
 		);
-		
+
 		$this->add_control(
 			'deensimc_video_list_notice',
 			[
-				'type' => \Elementor\Controls_Manager::RAW_HTML,
+				'type' => Controls_Manager::RAW_HTML,
 				'raw' => '<strong>⚠️ Note:</strong> For best performance, keep the video list under <strong>5 items</strong>.',
 				'content_classes' => 'elementor-panel-alert elementor-panel-alert-warning',
 			]
