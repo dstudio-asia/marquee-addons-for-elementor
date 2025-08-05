@@ -220,6 +220,13 @@
   animation-direction: reverse;
 }
 
+.deensimc-text-marquee-stop .deensimc-marquee,
+.deensimc-text-marquee-stop .deensimc-marquee .deensimc-marquee-group {
+  max-width: 100%;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+
 /* ==========================================================================
    8. Media Queries
    ========================================================================== */
