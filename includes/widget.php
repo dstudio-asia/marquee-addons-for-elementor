@@ -306,6 +306,7 @@ final class Marquee {
 		require_once(  __DIR__ . '/widgets/traits/text-marquee/content-text-repeater.php' );
 		require_once(  __DIR__ . '/widgets/traits/text-marquee/content-additional-options.php' );
 		require_once(  __DIR__ . '/widgets/traits/text-marquee/style-text-contents.php' );
+		require_once(  __DIR__ . '/widgets/traits/text-marquee/style-edge-shadow.php' );
 
 		require_once(  __DIR__ . '/widgets/traits/news-ticker/additional-options-control.php' );
 		require_once(  __DIR__ . '/widgets/traits/news-ticker/general-settings-control.php' );

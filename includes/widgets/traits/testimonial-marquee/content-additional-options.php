@@ -24,8 +24,8 @@ trait Testimonialmarquee_Content_Additional_Options {
 			[
 				'label' => esc_html__( 'Animation', 'marquee-addons-for-elementor' ),
 				'type' =>  Controls_Manager::SWITCHER,
-				'label_on' => esc_html__( 'Show', 'marquee-addons-for-elementor' ),
-				'label_off' => esc_html__( 'Hide', 'marquee-addons-for-elementor' ),
+				'label_on' => esc_html__( 'Yes', 'marquee-addons-for-elementor' ),
+				'label_off' => esc_html__( 'No', 'marquee-addons-for-elementor' ),
 				'return_value' => 'yes',
 				'default' => 'yes',
 			]
@@ -36,8 +36,8 @@ trait Testimonialmarquee_Content_Additional_Options {
 			[
 				'label' => esc_html__( 'Reverse', 'marquee-addons-for-elementor' ),
 				'type' =>  Controls_Manager::SWITCHER,
-				'label_on' => esc_html__( 'Show', 'marquee-addons-for-elementor' ),
-				'label_off' => esc_html__( 'Hide', 'marquee-addons-for-elementor' ),
+				'label_on' => esc_html__( 'Yes', 'marquee-addons-for-elementor' ),
+				'label_off' => esc_html__( 'No', 'marquee-addons-for-elementor' ),
 				'return_value' => 'yes',
 				'default' => 'no',
 			]
@@ -48,8 +48,8 @@ trait Testimonialmarquee_Content_Additional_Options {
 			[
 				'label' => esc_html__( 'Pause On Hover', 'marquee-addons-for-elementor' ),
 				'type' =>  Controls_Manager::SWITCHER,
-				'label_on' => esc_html__( 'Show', 'marquee-addons-for-elementor' ),
-				'label_off' => esc_html__( 'Hide', 'marquee-addons-for-elementor' ),
+				'label_on' => esc_html__( 'Yes', 'marquee-addons-for-elementor' ),
+				'label_off' => esc_html__( 'No', 'marquee-addons-for-elementor' ),
 				'return_value' => 'yes',
 				'default' => 'yes',
 			]

@@ -18,6 +18,7 @@ class Deensimc_Text_Marquee extends Widget_Base {
 	use Textmarquee_Content_Text_Repeater;
 	use Textmarquee_Content_Additional_Options;
 	use Textmarquee_Style_Text_Contents;
+	use Textmarquee_Style_Edge_shadow;
 
     public function get_name() 
 	{
@@ -48,6 +49,7 @@ class Deensimc_Text_Marquee extends Widget_Base {
 		$this->content_additional_options();
 
 		$this->style_text_contents();
+		$this->style_edge_shadow();
     }
 
 	/**
