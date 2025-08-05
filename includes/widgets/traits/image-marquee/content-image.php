@@ -29,6 +29,16 @@ trait Imagemarquee_Content_Image {
 		);
 
 		$this->add_control(
+			'deensimc_upload_gallery_notice',
+			[
+				'type' => Controls_Manager::RAW_HTML,
+				'raw' => '<strong>💡 Tip:</strong> For best performance, use a maximum of <strong>20 images</strong>.',
+				'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
+			]
+		);
+		
+
+		$this->add_control(
 			'deensimc_link_to',
 			[
 				'label' => esc_html__( 'Link', 'marquee-addons-for-elementor' ),
