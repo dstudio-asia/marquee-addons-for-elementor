@@ -410,12 +410,6 @@ final class Marquee {
 		require_once(  __DIR__ . '/widgets/class-deensimc-video-marquee.php' );
 		require_once(  __DIR__ . '/widgets/class-deensimc-news-ticker.php' );
 		require_once(  __DIR__ . '/widget-base.php' );
-		
-		// $pro_widgets_config = require_once __DIR__ . '/widgets-config.php';
-
-        // foreach ($pro_widgets_config as $widget_args) {
-    	// 	$widgets_manager->register( new \Dynamic_Pro_Widget([], $widget_args) );
-		// }
 
 		$widgets_manager->register( new \Deensimc_Image_Marquee() );
 		$widgets_manager->register( new \Deensimc_Stacked_Slider() );
