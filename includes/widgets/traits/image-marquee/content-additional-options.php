@@ -13,20 +13,33 @@ trait Imagemarquee_Content_Additional_Options {
 		$this->start_controls_section(
 			'deensimc_additional_option_section',
 			[
-				'label' => esc_html__( 'Additional Options', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__( 'Marquee Options', 'marquee-addons-for-elementor' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
 
+		
 		$this->add_control(
-			'deensimc_lazy_load_switch',
+			'deensimc_slide_position',
 			[
-				'label' => esc_html__( 'Lazy Load', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__( 'Show Vertical', 'marquee-addons-for-elementor' ),
 				'type' =>  Controls_Manager::SWITCHER,
 				'label_on' => esc_html__( 'Show', 'marquee-addons-for-elementor' ),
 				'label_off' => esc_html__( 'Hide', 'marquee-addons-for-elementor' ),
 				'return_value' => 'yes',
-				'default' => 'yes',
+				'default' => 'no',
+			]
+		);
+
+		$this->add_control(
+			'deensimc_slide_direction',
+			[
+				'label' => esc_html__( 'Reverse', 'marquee-addons-for-elementor' ),
+				'type' =>  Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Show', 'marquee-addons-for-elementor' ),
+				'label_off' => esc_html__( 'Hide', 'marquee-addons-for-elementor' ),
+				'return_value' => 'yes',
+				'default' => 'no',
 			]
 		);
 
@@ -43,21 +56,9 @@ trait Imagemarquee_Content_Additional_Options {
 		);
 
 		$this->add_control(
-			'deensimc_image_show_edge_shadow_switch',
-			[
-				'label' => esc_html__( 'Show Edge Shadow', 'marquee-addons-for-elementor' ),
-				'type' =>  Controls_Manager::SWITCHER,
-				'label_on' => esc_html__( 'Show', 'marquee-addons-for-elementor' ),
-				'label_off' => esc_html__( 'Hide', 'marquee-addons-for-elementor' ),
-				'return_value' => 'yes',
-				'default' => '',
-			]
-		);
-
-		$this->add_control(
 			'deensimc_image_animation_speed',
 			[
-				'label' => esc_html__( 'Animation Speed', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__( 'Speed', 'marquee-addons-for-elementor' ),
 				'type' => Controls_Manager::NUMBER,
 				'min' => 1,
 				'max' => 1000,
@@ -66,35 +67,16 @@ trait Imagemarquee_Content_Additional_Options {
 			]
 		);
 
-		$this->add_responsive_control(
-			'deensimc_widget_height',
+		
+		$this->add_control(
+			'deensimc_image_show_edge_shadow_switch',
 			[
-				'label' => esc_html__( 'Slider Height', 'marquee-addons-for-elementor' ),
-				'type' =>  Controls_Manager::SLIDER,
-				'size_units' => ['vh'],
-				'range' => [
-					'vh' => [
-						'min' => 1,
-						'max' => 100,
-						'step' => 1,
-					],
-				],
-				'default' => [
-					'unit' => 'vh',
-					'size' => 60,
-				],
-				'conditions' => [
-					'terms' => [
-						[
-							'name' => 'deensimc_slide_position',
-							'operator' => '==',
-							'value' => 'yes',
-						],
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} .deensimc-wrapper-vertical' => 'height: {{SIZE}}vh;',
-				],
+				'label' => esc_html__( 'Show Edge Shadow', 'marquee-addons-for-elementor' ),
+				'type' =>  Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Show', 'marquee-addons-for-elementor' ),
+				'label_off' => esc_html__( 'Hide', 'marquee-addons-for-elementor' ),
+				'return_value' => 'yes',
+				'default' => '',
 			]
 		);
 

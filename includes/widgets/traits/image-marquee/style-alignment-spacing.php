@@ -75,7 +75,7 @@ trait Imagemarquee_Style_Alignment_Spacing {
 		$this->add_responsive_control(
 			'deensimc_image_spacing',
 			[
-				'label' => esc_html__( 'Image Spacing', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__( 'Spacing', 'marquee-addons-for-elementor' ),
 				'type' =>  Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'range' => [

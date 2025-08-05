@@ -298,6 +298,8 @@ final class Marquee {
 		require_once(  __DIR__ . '/widgets/traits/image-marquee/style-alignment-spacing.php' );
 		require_once(  __DIR__ . '/widgets/traits/image-marquee/style-height-width.php' );
 		require_once(  __DIR__ . '/widgets/traits/image-marquee/style-border-options.php' );
+		require_once(  __DIR__ . '/widgets/traits/image-marquee/style-caption.php' );
+		require_once(  __DIR__ . '/widgets/traits/image-marquee/style-edge-shadow.php' );
 
 		require_once(  __DIR__ . '/widgets/traits/text-marquee/content-text-repeater.php' );
 		require_once(  __DIR__ . '/widgets/traits/text-marquee/content-additional-options.php' );
