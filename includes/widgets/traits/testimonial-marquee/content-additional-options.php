@@ -13,68 +13,33 @@ trait Testimonialmarquee_Content_Additional_Options {
 		$this->start_controls_section(
 			'deensimc_additional_option_section',
 			[
-				'label' => esc_html__( 'Additional Options', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__( 'Marquee Options', 'marquee-addons-for-elementor' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
 
-		$this->add_control(
-			'deensimc_excerpt_heading',
-			[
-				'label' => esc_html__( 'Excerpt', 'marquee-addons-for-elementor' ),
-				'type' =>  Controls_Manager::HEADING,
-				'separator' => 'before',
-			]
-		);
-
-		$this->add_control(
-			'deensimc_tesimonial_excerpt_length',
-			[
-				'label' => esc_html__( 'Length', 'marquee-addons-for-elementor' ),
-				'type' =>  Controls_Manager::NUMBER,
-				'min' => 5,
-				'max' => 100,
-				'step' => 1,
-				'default' => 10,
-			]
-		);
-
-		$this->add_control(
-			'deensimc_tesimonial_excerpt_title',
-			[
-				'label' => esc_html__( 'Expand Text', 'marquee-addons-for-elementor' ),
-				'type' =>  Controls_Manager::TEXT,
-				'default' => esc_html__( 'Show more...', 'marquee-addons-for-elementor' ),
-			]
-		);
-
-		$this->add_control(
-			'deensimc_tesimonial_excerpt_title_less',
-			[
-				'label' => esc_html__( 'Collapse Text', 'marquee-addons-for-elementor' ),
-				'type' =>  Controls_Manager::TEXT,
-				'default' => esc_html__( 'Show less', 'marquee-addons-for-elementor' ),
-			]
-		);
-
-		$this->add_control(
-			'deensimc_animation_heading',
-			[
-				'label' => esc_html__( 'Animation', 'marquee-addons-for-elementor' ),
-				'type' =>  Controls_Manager::HEADING,
-				'separator' => 'before',
-			]
-		);
 
 		$this->add_control(
 			'deensimc_show_animation',
 			[
-				'label' => esc_html__( 'Show Animation', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__( 'Animation', 'marquee-addons-for-elementor' ),
 				'type' =>  Controls_Manager::SWITCHER,
 				'label_on' => esc_html__( 'Show', 'marquee-addons-for-elementor' ),
 				'label_off' => esc_html__( 'Hide', 'marquee-addons-for-elementor' ),
 				'return_value' => 'yes',
 				'default' => 'yes',
+			]
+		);
+
+		$this->add_control(
+			'deensimc_testimonial_reverse_section',
+			[
+				'label' => esc_html__( 'Reverse', 'marquee-addons-for-elementor' ),
+				'type' =>  Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Show', 'marquee-addons-for-elementor' ),
+				'label_off' => esc_html__( 'Hide', 'marquee-addons-for-elementor' ),
+				'return_value' => 'yes',
+				'default' => 'no',
 			]
 		);
 
@@ -91,6 +56,18 @@ trait Testimonialmarquee_Content_Additional_Options {
 		);
 
 		$this->add_control(
+			'deensimc_testimonial_marquee_animation_speed',
+			[
+				'label' => esc_html__( 'Speed', 'marquee-addons-for-elementor' ),
+				'type' => Controls_Manager::NUMBER,
+				'min' => 1,
+				'max' => 1000,
+				'step' => 1,
+				'default' => 50,
+			]
+		);
+
+		$this->add_control(
 			'deensimc_testimonial_show_edge_shadow_switch',
 			[
 				'label' => esc_html__( 'Show Edge Shadow', 'marquee-addons-for-elementor' ),
@@ -99,18 +76,6 @@ trait Testimonialmarquee_Content_Additional_Options {
 				'label_off' => esc_html__( 'Hide', 'marquee-addons-for-elementor' ),
 				'return_value' => 'yes',
 				'default' => '',
-			]
-		);
-
-		$this->add_control(
-			'deensimc_testimonial_marquee_animation_speed',
-			[
-				'label' => esc_html__( 'Animation Speed', 'marquee-addons-for-elementor' ),
-				'type' => Controls_Manager::NUMBER,
-				'min' => 1,
-				'max' => 1000,
-				'step' => 1,
-				'default' => 50,
 			]
 		);
 

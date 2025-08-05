@@ -16,7 +16,7 @@ trait Imagemarquee_Style_Caption {
 		$this->start_controls_section(
 			'deensimc_image_marquee_caption_style_section',
 			[
-				'label' => esc_html__( 'Caption',  'marquee-addons-pro-for-elementor' ),
+				'label' => esc_html__( 'Caption',  'marquee-addons-for-elementor' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' =>[
 					'deensimc_caption_type!' => ''
@@ -27,19 +27,19 @@ trait Imagemarquee_Style_Caption {
 		$this->add_responsive_control(
 			'deensimc_image_marquee_caption_alignment',
 			[
-				'label' => esc_html__( 'Alignment', 'marquee-addons-pro-for-elementor' ),
+				'label' => esc_html__( 'Alignment', 'marquee-addons-for-elementor' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'start' => [
-						'title' => esc_html__( 'Left', 'marquee-addons-pro-for-elementor' ),
+						'title' => esc_html__( 'Left', 'marquee-addons-for-elementor' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'marquee-addons-pro-for-elementor' ),
+						'title' => esc_html__( 'Center', 'marquee-addons-for-elementor' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'end' => [
-						'title' => esc_html__( 'Right', 'marquee-addons-pro-for-elementor' ),
+						'title' => esc_html__( 'Right', 'marquee-addons-for-elementor' ),
 						'icon' => 'eicon-text-align-right',
 					],
 				],
@@ -54,7 +54,7 @@ trait Imagemarquee_Style_Caption {
 		$this->add_control(
 			'deensimc_image_marquee_caption_color',
 			[
-				'label' => esc_html__( 'Text Color', 'marquee-addons-pro-for-elementor' ),
+				'label' => esc_html__( 'Text Color', 'marquee-addons-for-elementor' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .deensimc-img-wrapper .elementor-image-marquee-caption' => 'color: {{VALUE}}',
@@ -65,7 +65,7 @@ trait Imagemarquee_Style_Caption {
 		$this->add_control(
 			'deensimc_image_marquee_caption_background_color',
 			[
-				'label' => esc_html__( 'Background Color', 'marquee-addons-pro-for-elementor' ),
+				'label' => esc_html__( 'Background Color', 'marquee-addons-for-elementor' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .deensimc-img-wrapper .elementor-image-marquee-caption' => 'background-color: {{VALUE}};     width: 100%;',
@@ -92,7 +92,7 @@ trait Imagemarquee_Style_Caption {
 		$this->add_responsive_control(
 			'deensimc_image_marquee_caption_spacing',
 			[
-				'label' => esc_html__( 'Space', 'marquee-addons-pro-for-elementor' ),
+				'label' => esc_html__( 'Space', 'marquee-addons-for-elementor' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', 'rem',  ],
 				'range' => [

@@ -66,10 +66,10 @@ trait NewsTickerGeneralSettingsControl
 		$this->add_control(
 			'deensimc_enable_custom_text',
 			[
-				'label' => esc_html__('Enable Custom Text', 'marquee-addons-pro-for-elementor'),
+				'label' => esc_html__('Enable Custom Text', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __('Yes', 'marquee-addons-pro-for-elementor'),
-				'label_off' => __('No', 'marquee-addons-pro-for-elementor'),
+				'label_on' => __('Yes', 'marquee-addons-for-elementor'),
+				'label_off' => __('No', 'marquee-addons-for-elementor'),
 				'return_value' => 'yes',
 				'default' => '',
 			]
@@ -80,9 +80,9 @@ trait NewsTickerGeneralSettingsControl
 		$repeater->add_control(
 			'deensimc_custom_text',
 			[
-				'label' => esc_html__('Custom Text', 'marquee-addons-pro-for-elementor'),
+				'label' => esc_html__('Custom Text', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::TEXTAREA,
-				'placeholder' => __('Custom Text', 'marquee-addons-pro-for-elementor'),
+				'placeholder' => __('Custom Text', 'marquee-addons-for-elementor'),
 				'label_block' => true,
 			]
 		);
@@ -90,9 +90,9 @@ trait NewsTickerGeneralSettingsControl
 		$repeater->add_control(
 			'deensimc_custom_text_url',
 			[
-				'label' => esc_html__('Custom Text Link', 'marquee-addons-pro-for-elementor'),
+				'label' => esc_html__('Custom Text Link', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::URL,
-				'placeholder' => __('https://your-link.com', 'marquee-addons-pro-for-elementor'),
+				'placeholder' => __('https://your-link.com', 'marquee-addons-for-elementor'),
 				'label_block' => true,
 				'show_external' => false,
 				'show_nofollow' => false,
@@ -107,7 +107,7 @@ trait NewsTickerGeneralSettingsControl
 		$this->add_control(
 			'deensimc_custom_text_list',
 			[
-				'label' => esc_html__('Custom Text Items', 'marquee-addons-pro-for-elementor'),
+				'label' => esc_html__('Custom Text Items', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::REPEATER,
 				'fields' => $repeater->get_controls(),
 				'title_field' => '{{ deensimc_custom_text }}',
