@@ -100,7 +100,7 @@ trait NewsTickerLayoutControl
 		$this->add_control(
 			'deensimc_title_trim_enable',
 			[
-				'label' => __('Apply To Custom Post Title Length', 'marquee-addons-for-elementor'),
+				'label' => __('Apply To Custom News Title Length', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::SWITCHER,
 				'label_on' => __('Yes', 'marquee-addons-for-elementor'),
 				'label_off' => __('No', 'marquee-addons-for-elementor'),
@@ -114,7 +114,7 @@ trait NewsTickerLayoutControl
 		$this->add_control(
 			'deensimc_title_trim_length',
 			[
-				'label' => __('Post Title Length', 'marquee-addons-for-elementor'),
+				'label' => __('Title Length', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::NUMBER,
 				'min' => 2,
 				'max' => 100,
@@ -123,6 +123,7 @@ trait NewsTickerLayoutControl
 				'condition' => [
 					'deensimc_title_trim_enable' => 'yes',
 				],
+				'description' => __('Enter the Number of letters to show.', 'marquee-addons-for-elementor'),
 			]
 		);
 
