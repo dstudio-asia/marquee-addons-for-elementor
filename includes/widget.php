@@ -9,7 +9,7 @@ final class Marquee {
 	 * @var string The addon version.
 	 */
 
-	const VERSION = '2.1.8';
+	const VERSION = '2.2.0';
 
 	/**
 	 * Minimum Elementor Version
@@ -261,14 +261,14 @@ final class Marquee {
             return;
         }
 
-        if ( get_transient('deensimc_rate_us') ) {
+        if ( get_transient( 'deensimc_rate_us_'.self::VERSION ) ) {
             return;
         }
 
-		echo '<div id="deensimc-feedback-notice" class="deensimc-notice-wrap notice">';
+		echo '<div id="deensimc-feedback-notice" class="deensimc-notice-wrap notice is-dismissible deensimc-dismiss-btn">'; 
 		echo '  <div class="deensimc-notice-icon">';
 		echo '    <img src="' . esc_url( DEENSIMC_ASSETS_URL ) . 'images/library-icon.png" alt="Notice Icon" />';
-		echo '  </div>';
+		echo '  </div>'; 
 		echo '  <div class="deensimc-notice-content">';
 		echo '    <h3>Enjoying our plugin MarqueeAddons?</h3>';
 		echo '    <p>Help us improve it by sharing your feedback. It only takes a moment, and it really helps us build a better experience for you.</p>';
@@ -277,14 +277,15 @@ final class Marquee {
 		echo '  </div>';
 		echo '</div>';
 
+
     }
 
 	 public function deensimc_notice_dismiss() {
         check_ajax_referer( 'deensimc_dismiss_nonce', 'nonce' );
         set_transient(
-            'deensimc_rate_us',
+            'deensimc_rate_us_'.self::VERSION,
             true,
-            30 * 86400 // 30 days in seconds
+            30 * 86400
         );
         wp_send_json_success();
     }
@@ -336,21 +337,21 @@ final class Marquee {
 	
 	public function deensimc_upgrade_link( $actions ) {
 
-		// If Pro is already active, do nothing.
-		if ( class_exists( '\Deensimcpro_Marquee\Marqueepro' ) ) {
-			return $actions;
-		}
-
-		$pro_url = 'https://marqueeaddons.com/';
-
-		$actions['upgrade_to_pro'] = sprintf(
-			'<a href="%1$s" target="_blank" style="color:#e2498a; font-weight: bold;">%2$s</a>',
-			esc_url( $pro_url ),
-			__( 'Get Pro', 'marquee-addons-for-elementor' )
+		$actions['rate_us'] = sprintf(
+			'<a href="https://wordpress.org/support/plugin/marquee-addons-for-elementor/reviews/#new-post" target="_blank">%1$s</a>',
+			__( 'Rate Us', 'marquee-addons-for-elementor' )
 		);
 
-    	return $actions;
+		if ( !class_exists( '\Deensimcpro_Marquee\Marqueepro' ) ) {
+			$pro_url = 'https://marqueeaddons.com/';
+			$actions['upgrade_to_pro'] = sprintf(
+				'<a href="%1$s" target="_blank" style="color:#e2498a; font-weight: bold;">%2$s</a>',
+				esc_url( $pro_url ),
+				__( 'Get MarqueeAddons Pro', 'marquee-addons-for-elementor' )
+			);
+		}
 
+    	return $actions;
 	}
 	
 	function deensimc_register_widgets( $widgets_manager ) {
