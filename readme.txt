@@ -36,7 +36,7 @@ Lets you add repeated video items, supporting platforms like YouTube, Vimeo, Dai
 
 ### News Ticker:
 
-With the News Ticker widget for Elementor, users can easily display the latest posts, updates, or announcements in a scrolling ticker format. Customize the appearance, speed, and content to suit your website’s style. Perfect for showcasing real-time news, blog posts, or important alerts on any page. [Demo](https://marqueeaddons.com/news-ticker/)
+With the News Ticker widget users can easily display the highlighted news, updates, or announcements in a smooth scrolling loop format. Customize the appearance, speed, and content to suit your website’s style. Perfect for showcasing real-time news, blog posts, discounts offers or important alerts on any page. [Demo](https://marqueeaddons.com/news-ticker/)
 
 ### Stacked Slider:
  
@@ -147,7 +147,7 @@ First, ensure that youâ€™ve activated the plugin correctly. If the issue pe
 - Refactor naming and control grouping for image, text, testimonial and video marquee
 - Refactor edge shadow controls and behavior
 - Refactor widget icons
-- Added promotional banner
+- Feat promotional banner, rate us, get pro link
 
 = 2.1.9
 - Removed demo import functionality
