@@ -34,6 +34,10 @@ Lets you smoothly scroll through client feedback, names, and ratings. It's a sim
  
 Lets you add repeated video items, supporting platforms like YouTube, Vimeo, Dailymotion, and self-hosted videos. You can also customize video settings, offering a smooth scrolling experience for video content on your site. [Demo](https://wp.dstudio.asia/marquee-addons/video-marquee/)
 
+### News Ticker:
+
+With the News Ticker widget for Elementor, users can easily display the latest posts, updates, or announcements in a scrolling ticker format. Customize the appearance, speed, and content to suit your website’s style. Perfect for showcasing real-time news, blog posts, or important alerts on any page. [Demo](https://marqueeaddons.com/news-ticker/)
+
 ### Stacked Slider:
  
 Show several images in a stacked slider format, where users can shuffle through different layers of visuals. This is great for displaying product collections, and portfolios, in a neat and interactive manner. [Demo](https://wp.dstudio.asia/marquee-addons/stacked-slider/)
@@ -92,6 +96,7 @@ Create an engaging accordion-style effect with images, Where each image expands 
 4. Video Marquee
 5. Stacked Slider
 6. Image Accordion
+7. News Ticker
 
 == Frequently Asked Questions ==
 
@@ -136,6 +141,16 @@ The developers release regular updates to improve features, fix bugs, and ensure
 First, ensure that youâ€™ve activated the plugin correctly. If the issue persists, try clearing your browser cache or updating your Elementor plugin. If the problem continues, you can reach out to the support team for assistance.
 
 == Changelog ==
+
+= 2.2.0
+- Feat News Ticker Widget
+- Refactor naming and control grouping for image, text, testimonial and video marquee
+- Refactor edge shadow controls and behavior
+- Refactor widget icons
+- Added promotional banner
+
+= 2.1.9
+- Removed demo import functionality
 
 = 2.1.8
 - Fix the shadow issue in each marquee.

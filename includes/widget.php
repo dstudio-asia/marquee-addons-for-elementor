@@ -337,21 +337,21 @@ final class Marquee {
 	
 	public function deensimc_upgrade_link( $actions ) {
 
-		// If Pro is already active, do nothing.
-		if ( class_exists( '\Deensimcpro_Marquee\Marqueepro' ) ) {
-			return $actions;
-		}
-
-		$pro_url = 'https://marqueeaddons.com/';
-
-		$actions['upgrade_to_pro'] = sprintf(
-			'<a href="%1$s" target="_blank" style="color:#e2498a; font-weight: bold;">%2$s</a>',
-			esc_url( $pro_url ),
-			__( 'Get MarqueeAddons Pro', 'marquee-addons-for-elementor' )
+		$actions['rate_us'] = sprintf(
+			'<a href="https://wordpress.org/support/plugin/marquee-addons-for-elementor/reviews/#new-post" target="_blank">%1$s</a>',
+			__( 'Rate Us', 'marquee-addons-for-elementor' )
 		);
 
-    	return $actions;
+		if ( !class_exists( '\Deensimcpro_Marquee\Marqueepro' ) ) {
+			$pro_url = 'https://marqueeaddons.com/';
+			$actions['upgrade_to_pro'] = sprintf(
+				'<a href="%1$s" target="_blank" style="color:#e2498a; font-weight: bold;">%2$s</a>',
+				esc_url( $pro_url ),
+				__( 'Get MarqueeAddons Pro', 'marquee-addons-for-elementor' )
+			);
+		}
 
+    	return $actions;
 	}
 	
 	function deensimc_register_widgets( $widgets_manager ) {
