@@ -24,11 +24,10 @@
 	define( 'DEENSIMC_URL' , plugins_url( '/' , DEENSIMC__FILE__ ) );
 	define( 'DEENSIMC_PATH', plugin_dir_path(__FILE__));
 	define( 'DEENSIMC_ASSETS_URL' , DEENSIMC_URL . 'assets/' ); 
-	define( 'DEENSIMC_VERSION' , '2.1.8' ); 
+	define( 'DEENSIMC_VERSION' , '2.2.0' ); 
 
 	function deensimc_load_plugin_data() {
 		require_once( DEENSIMC__DIR__ . '/includes/widget.php' );
-		// require_once( DEENSIMC__DIR__ . '/includes/marquee-addons-library.php' );
 		\Deensimc_Marquee\Marquee::instance(); 
 	}
 
