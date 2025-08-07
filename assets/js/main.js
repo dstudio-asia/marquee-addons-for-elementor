@@ -36,7 +36,7 @@
       }
     );
 
-    // Initialize text marquee
+    // Initialize news ticker
     elementorFrontend.hooks.addAction(
       "frontend/element_ready/deensimc-news-ticker.default",
       (scope) => {
