@@ -34,7 +34,7 @@ class Deensimc_Image_Marquee extends Widget_Base {
 
 	public function get_icon() 
 	{
-		return 'eicon-slider-push eicon-deensimc';
+		return 'deensimc-image-marquee-icon eicon-deensimc';
 	}
 
 	public function get_categories() 
