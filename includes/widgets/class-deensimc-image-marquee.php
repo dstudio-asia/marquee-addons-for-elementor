@@ -59,6 +59,10 @@ class Deensimc_Image_Marquee extends Widget_Base {
 		];
 	}
 
+	public function get_custom_help_url(): string {
+		return 'https://marqueeaddons.com/how-to-use-the-image-marquee-widget-in-elementor/';
+	}
+
 	protected function register_controls() 
 	{
 		
