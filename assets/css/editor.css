@@ -16,32 +16,32 @@
   border-radius: 3px;
 }
 
-.deensimc-text-marquee-icon:before {
-    content: '';
-    background-image: url('../icons/text-marquee.svg');
-    background-size: cover;
-    background-position: center;
-    width: 40px;
-    height: 20px;
-    display: block;
+.elementor-element .deensimc-text-marquee-icon:before,
+.elementor-element .deensimc-image-marquee-icon:before,
+.elementor-element .deensimc-video-marquee-icon:before,
+.elementor-element .deensimc-news-ticker-icon:before,
+.elementor-element .deensimc-testimonial-marquee-icon:before {
+  content: "";
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left center;
+  width: 36px;
+  height: 24px;
+  display: block;
+  animation: deensimcproMarqueeIconScroll 3s infinite alternate ease-in-out;
 }
-
-.deensimc-text-marquee-icon:before {
-    content: '';
-    background-image: url('../icons/text-marquee.svg');
-    background-size: cover;
-    background-position: center;
-    width: 40px;
-    height: 20px;
-    display: block;
+.elementor-element .deensimc-text-marquee-icon:before {
+  background-image: url("../icons/text.svg");
 }
-
-.deensimc-testimonial-marquee-icon:before {
-    content: '';
-    background-image: url('../icons/testimonial-marquee.svg');
-    background-size: cover;
-    background-position: center;
-    width: 40px;
-    height: 20px;
-    display: block;
+.elementor-element .deensimc-testimonial-marquee-icon:before {
+  background-image: url("../icons/testimonial.svg");
+}
+.elementor-element .deensimc-image-marquee-icon:before {
+  background-image: url("../icons/image.svg");
+}
+.elementor-element .deensimc-video-marquee-icon:before {
+  background-image: url("../icons/video.svg");
+}
+.elementor-element .deensimc-news-ticker-icon:before {
+  background-image: url("../icons/news.svg");
 }

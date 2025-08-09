@@ -34,7 +34,7 @@ class Deensimc_Image_Marquee extends Widget_Base {
 
 	public function get_icon() 
 	{
-		return 'eicon-slider-push eicon-deensimc';
+		return 'deensimc-image-marquee-icon eicon-deensimc';
 	}
 
 	public function get_categories() 
@@ -57,6 +57,10 @@ class Deensimc_Image_Marquee extends Widget_Base {
 			'upgrade_url' => esc_url( 'https://marqueeaddons.com' ),
 			'upgrade_text' => esc_html__( 'Upgrade Now', 'marquee-addons-for-elementor' ),
 		];
+	}
+
+	public function get_custom_help_url(): string {
+		return 'https://marqueeaddons.com/how-to-use-the-image-marquee-widget-in-elementor/';
 	}
 
 	protected function register_controls() 
