@@ -38,7 +38,7 @@ class Deensimc_Video_Marquee extends Widget_Base {
 
     public function get_icon() 
 	{
-        return 'eicon-video-playlist eicon-deensimc';
+        return 'deensimc-video-marquee-icon eicon-deensimc';
     }
 
     public function get_categories() 

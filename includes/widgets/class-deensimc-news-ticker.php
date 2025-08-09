@@ -29,7 +29,7 @@ class Deensimc_News_Ticker extends Widget_Base
 
 	public function get_icon()
 	{
-		return 'eicon-form-vertical eicon-deensimc';
+		return 'deensimc-news-ticker-icon eicon-deensimc';
 	}
 
 	public function get_categories()
