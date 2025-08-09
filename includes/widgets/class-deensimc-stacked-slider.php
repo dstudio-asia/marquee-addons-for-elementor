@@ -57,6 +57,10 @@ class Deensimc_Stacked_Slider extends Widget_Base {
 			'upgrade_text' => esc_html__( 'Upgrade Now', 'marquee-addons-for-elementor' ),
 		];
 	}
+	
+	public function get_custom_help_url(): string {
+		return 'https://marqueeaddons.com/how-to-use-the-stacked-slider-widget-in-elementor/';
+	}
 
     protected function register_controls() 
 	{

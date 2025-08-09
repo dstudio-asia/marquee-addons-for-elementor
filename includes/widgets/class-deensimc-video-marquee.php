@@ -63,6 +63,10 @@ class Deensimc_Video_Marquee extends Widget_Base {
 		];
 	}
 
+	public function get_custom_help_url(): string {
+		return 'https://marqueeaddons.com/how-to-use-the-video-marquee-widget-in-elementor/';
+	}
+
     protected function register_controls() 
 	{
 

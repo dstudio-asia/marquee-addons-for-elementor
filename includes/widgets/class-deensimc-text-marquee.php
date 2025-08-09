@@ -54,7 +54,11 @@ class Deensimc_Text_Marquee extends Widget_Base {
 		];
 	}
 
-    protected function register_controls(): void {
+    public function get_custom_help_url(): string {
+		return 'https://marqueeaddons.com/how-to-use-the-advanced-text-marquee-widget-in-elementor/';
+	}
+
+	protected function register_controls(): void {
 
         $this->content_text_repeater();
 
