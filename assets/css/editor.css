@@ -28,7 +28,7 @@
   width: 36px;
   height: 24px;
   display: block;
-  animation: deensimcproMarqueeIconScroll 3s infinite alternate ease-in-out;
+  animation: deensimcMarqueeIconScroll 3s infinite alternate ease-in-out;
 }
 .elementor-element .deensimc-text-marquee-icon:before {
   background-image: url("../icons/text.svg");
@@ -37,11 +37,16 @@
   background-image: url("../icons/testimonial.svg");
 }
 .elementor-element .deensimc-image-marquee-icon:before {
-  background-image: url("../icons/image.svg");
+  background-image: url("../icons/image-icon.svg");
 }
 .elementor-element .deensimc-video-marquee-icon:before {
-  background-image: url("../icons/video.svg");
+  background-image: url("../icons/video-icon.svg");
 }
 .elementor-element .deensimc-news-ticker-icon:before {
   background-image: url("../icons/news.svg");
+}
+@keyframes deensimcMarqueeIconScroll {
+  to {
+    background-position: right center;
+  }
 }
