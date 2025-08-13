@@ -45,6 +45,18 @@
      2. General Styles for Testimonial
      ========================================================================== */
 
+.deensimc-tes-text {
+  position: relative;
+  isolation: isolate;
+}
+
+.deensimc-tes-bg-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
 .deensimc-tes-text p {
   margin-bottom: 0;
 }
@@ -153,6 +165,7 @@
   margin: 0;
   display: block;
   border-radius: 8px;
+  overflow: hidden;
   position: relative;
   background-color: var(--deensimc-marquee-tes-bg);
   padding: 30px 50px 65px 50px;

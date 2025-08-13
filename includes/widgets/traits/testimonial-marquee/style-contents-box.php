@@ -8,7 +8,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 use \Elementor\Controls_Manager;
 use \Elementor\Group_Control_Background;
 use Elementor\Group_Control_Border;
-use \Elementor\Group_Control_Box_Shadow;
 
 trait Testimonialmarquee_Style_Contents_Box {
 	protected function style_contents_box() 
@@ -27,6 +26,17 @@ trait Testimonialmarquee_Style_Contents_Box {
 				'name' => 'deensimc_tesimonial_contents_background',
 				'types' => [ 'classic', 'gradient', 'video' ],
 				'selector' => '{{WRAPPER}} .deensimc-tes-text',
+			]
+		);
+
+		$this->add_control(
+			'deensimc_tesimonial_contents_background_overlay',
+			[
+				'label' => esc_html__( 'Overlay Color', 'marquee-addons-for-elementor' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .deensimc-tes-bg-overlay' => 'background-color: {{VALUE}}',
+				],
 			]
 		);
 
