@@ -144,6 +144,7 @@ First, ensure that youâ€™ve activated the plugin correctly. If the issue pe
 
 = 2.2.2
 - Fix: headers already sent warning
+- Feat: add animated widget icon
 
 = 2.2.1
 - New: “Need Help” link for each widget
