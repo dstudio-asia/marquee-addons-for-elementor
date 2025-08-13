@@ -55,6 +55,7 @@
               }</span>
               <span class="quote-right"><i class="${quoteRight}"></i></span>
             </div>
+            <div class="deensimc-tes-bg-overlay"></div>
           `);
 
         blockquoteElement
