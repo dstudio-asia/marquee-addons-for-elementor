@@ -20,6 +20,33 @@ trait Testimonialmarquee_Style_Contents {
 		);
 
 		$this->add_control(
+			'deensimc_tesimonial_content_heading',
+			[
+				'label' => esc_html__( 'Content', 'marquee-addons-for-elementor' ),
+				'type' =>  Controls_Manager::HEADING,
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'deensimc_tesimonial_content_typography',
+				'selector' => '{{WRAPPER}} .deensimc-tes-text .deensimc-contents',
+			]
+		);
+
+		$this->add_control(
+			'deensimc_tesimonial_content_color',
+			[
+				'label' => esc_html__( 'Color', 'marquee-addons-for-elementor' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .deensimc-tes-text .deensimc-contents' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
 			'deensimc_tesimonial_icon_heading',
 			[
 				'label' => esc_html__( 'Icon', 'marquee-addons-for-elementor' ),
@@ -63,36 +90,6 @@ trait Testimonialmarquee_Style_Contents {
 				],
 			]
 		);
-
-		$this->add_control(
-			'deensimc_tesimonial_content_heading',
-			[
-				'label' => esc_html__( 'Content', 'marquee-addons-for-elementor' ),
-				'type' =>  Controls_Manager::HEADING,
-				'separator' => 'before',
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name' => 'deensimc_tesimonial_content_typography',
-				'selector' => '{{WRAPPER}} .deensimc-tes-text .deensimc-contents',
-			]
-		);
-
-		$this->add_control(
-			'deensimc_tesimonial_content_color',
-			[
-				'label' => esc_html__( 'Color', 'marquee-addons-for-elementor' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .deensimc-tes-text .deensimc-contents' => 'color: {{VALUE}}',
-				],
-			]
-		);
-
-
 		
 		$this->end_controls_section();
 
