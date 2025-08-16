@@ -24,6 +24,7 @@
             <span class="deensimc-toggle">${showLessText}</span>
             <span class="quote-right"><i class="${quoteRight} bottom"></i></span>
           </div>
+          <div class="deensimc-tes-bg-overlay"></div>
         `);
     } else {
       blockquoteElement.html(`
@@ -33,6 +34,7 @@
             <span class="deensimc-toggle">${showMoreText}</span>
             <span class="quote-right"><i class="${quoteRight}"></i></span>
           </div>
+          <div class="deensimc-tes-bg-overlay"></div>
         `);
     }
 
