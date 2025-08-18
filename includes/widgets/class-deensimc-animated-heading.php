@@ -50,12 +50,12 @@ class Animated_Heading_Widget extends Widget_Base
 
   public function get_categories()
   {
-    return ['general'];
+    return ['deensimc_smooth_marquee'];
   }
 
   public function get_keywords()
   {
-    return ['animation', 'animated', 'heading', 'head', 'header'];
+    return ['animation', 'animated', 'heading', 'head', 'header', 'marquee'];
   }
 
   protected function register_controls()

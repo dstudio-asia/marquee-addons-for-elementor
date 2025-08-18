@@ -172,14 +172,14 @@
   }
 }
 
-.deensimc-animated-heading-masked-text *,
-.deensimc-animated-heading-gradient-text * {
+.masked-text *,
+.gradient-text * {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.deensimc-animated-heading-pause-on-hover:hover * {
+.pause-on-hover:hover * {
   animation-play-state: paused;
 }
 
