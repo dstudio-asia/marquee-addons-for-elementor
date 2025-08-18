@@ -38,7 +38,6 @@
   --deensimc-marquee-text-black: #000000;
   --deensimc-marquee-text-gray: gray;
   --deensimc-marquee-text-skyblue: #1e6fda;
-  --deensimc-marquee-box-shadow-color: rgba(0, 0, 0, 0.15);
 }
 
 /* ==========================================================================
@@ -79,7 +78,7 @@
   list-style: none;
   height: 100%;
   display: flex;
-  gap: 20px;
+  gap: var(--deensimc-gap);
   align-items: start;
 }
 
@@ -173,7 +172,6 @@
   font-weight: 500;
   margin: 0 0 -50px;
   line-height: 1.6em;
-  box-shadow: 0 0 5px var(--deensimc-marquee-box-shadow-color);
 }
 
 .deensimc-tes .deensimc-tes-main .deensimc-tes-author {

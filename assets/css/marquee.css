@@ -30,12 +30,17 @@
    ========================================================================== */
 
 .deensimc-marquee {
+  gap: var(--deensimc-gap);
   display: flex;
   overflow: hidden;
   user-select: none;
-  gap: var(--deensimc-gap);
   position: relative;
   width: 100%;
+  padding-block: var(--container-padding);
+}
+.deensimc-marquee ol,
+.deensimc-marquee ul {
+  margin: 0;
 }
 
 /* ==========================================================================
