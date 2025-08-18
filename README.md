@@ -21,11 +21,13 @@ Create ultra-modern, animated WordPress sites with **Marquee Addons**, a powerfu
 
 ## 🧩 Widgets (Free)
 
-- **Text Marquee** – loop any text with icons or dividers  
-- **Image / Logo Marquee** – continuous brand/logo or gallery rows  
-- **Icon Marquee** – animated icon rows  
-- **Video Marquee** – silent looping hero strips  
-- **Testimonial Marquee** – reviews in a continuous strip with ratings  
+- Text Marquee — [Demo](https://marqueeaddons.com/text-marquee/) • [Docs](https://marqueeaddons.com/how-to-use-the-advanced-text-marquee-widget-in-elementor/)
+- Image Marquee — [Demo](https://marqueeaddons.com/image-marquee/) • [Docs](https://marqueeaddons.com/how-to-use-the-image-marquee-widget-in-elementor/)
+- Video Marquee — [Demo](https://marqueeaddons.com/video-marquee/) • [Docs](https://marqueeaddons.com/how-to-use-the-video-marquee-widget-in-elementor/)
+- Testimonial Marquee — [Demo](https://marqueeaddons.com/testimonial-marquee/) • [Docs](https://marqueeaddons.com/how-to-use-the-advanced-testimonial-marquee-widget-in-elementor/)
+- News Ticker — [Demo](https://marqueeaddons.com/news-ticker/) • [Docs](https://marqueeaddons.com/how-to-use-the-news-ticker-widget-in-elementor/)
+- Image Accordion — [Demo](https://marqueeaddons.com/image-accordion/) • [Docs](https://marqueeaddons.com/how-to-use-the-image-accordion-widget-in-elementor/)
+- Stacked Slider — [Demo](https://marqueeaddons.com/stacked-slider/) • [Docs](https://marqueeaddons.com/how-to-use-the-stacked-slider-widget-in-elementor/) 
   *(Controls include direction, speed, spacing, duplicates/loop density, pause on hover, and responsive visibility.)*
 
 ## 🚀 Pro Widgets (Overview)
