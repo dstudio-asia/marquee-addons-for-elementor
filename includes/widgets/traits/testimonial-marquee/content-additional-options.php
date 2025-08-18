@@ -34,10 +34,10 @@ trait Testimonialmarquee_Content_Additional_Options {
 		$this->add_control(
 			'deensimc_testimonial_vertical_section',
 			[
-				'label'        => esc_html__( 'Show Vertical', 'marquee-addons-pro-for-elementor' ),
+				'label'        => esc_html__( 'Show Vertical', 'marquee-addons-for-elementor' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => esc_html__( 'Yes', 'marquee-addons-pro-for-elementor' ),
-				'label_off'    => esc_html__( 'no', 'marquee-addons-pro-for-elementor' ),
+				'label_on'     => esc_html__( 'Yes', 'marquee-addons-for-elementor' ),
+				'label_off'    => esc_html__( 'no', 'marquee-addons-for-elementor' ),
 				'return_value' => 'yes',
 				'default'      => 'no',
 				'condition' => [

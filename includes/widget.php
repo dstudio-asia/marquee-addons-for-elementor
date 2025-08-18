@@ -301,6 +301,7 @@ final class Marquee {
 		wp_register_style( 'deensimc-testimonial-style', DEENSIMC_ASSETS_URL . 'css/testimonial.css', null, self::VERSION, false );
 		wp_register_style( 'deensimc-video-style', DEENSIMC_ASSETS_URL . 'css/video.css', null, self::VERSION, false );
 		wp_register_style('deensimc-news-ticker-style', DEENSIMC_ASSETS_URL . 'css/news-ticker.css', null, self::VERSION, false );
+		wp_register_style('deensimc-animated-word-roller-style', DEENSIMC_ASSETS_URL . 'css/animated-word-roller.css', null, self::VERSION, false );
 		
 		wp_enqueue_style( 'deensimc-swiper-style' );
 		wp_enqueue_style( 'deensimc-accordion-style' );
@@ -309,6 +310,7 @@ final class Marquee {
 		wp_enqueue_style( 'deensimc-testimonial-style' );
 		wp_enqueue_style( 'deensimc-video-style' );
 		wp_enqueue_style( 'deensimc-news-ticker-style' );
+		wp_enqueue_style( 'deensimc-animated-word-roller-style' );
 
 	}
 
@@ -321,6 +323,7 @@ final class Marquee {
 		wp_register_script( 'deensimc_setup_marquee', DEENSIMC_ASSETS_URL  . 'js/setupMarquee.js' , [ 'jquery' ] , self::VERSION, false );
 		wp_register_script( 'deensimc_toggle_blockquote', DEENSIMC_ASSETS_URL  . 'js/toggleBlockquote.js' , [ 'jquery' ] , self::VERSION, false );
 		wp_register_script( 'deensimc_init_show_more_or_less', DEENSIMC_ASSETS_URL  . 'js/initShowMoreOrLess.js' , [ 'jquery' ] , self::VERSION, false );
+		wp_register_script( 'deensimc-animated-word-roller', DEENSIMC_ASSETS_URL  . 'js/animated-word-roller.js' , [ 'jquery' ] , self::VERSION, false );
 		wp_register_script( 'deensimc-main', DEENSIMC_ASSETS_URL  . 'js/main.js' , [ 'jquery' ] , self::VERSION, false );
 
 		
@@ -328,6 +331,7 @@ final class Marquee {
 		wp_enqueue_script( 'deensimc_setup_marquee' );
 		wp_enqueue_script( 'deensimc_toggle_blockquote' );
 		wp_enqueue_script( 'deensimc_init_show_more_or_less' );
+		wp_enqueue_script( 'deensimc-animated-word-roller' );
 		wp_enqueue_script( 'deensimc-main' );
 	}
 	public function deensimc_editor_styles() {
@@ -407,6 +411,10 @@ final class Marquee {
 		require_once(  __DIR__ . '/widgets/traits/news-ticker/style-section-control.php' );
 		require_once(  __DIR__ . '/widgets/traits/news-ticker/news-ticker-query-control.php' );
 
+		require_once(  __DIR__ . '/widgets/traits/animated-word-roller/content-additional-options.php' );
+		require_once(  __DIR__ . '/widgets/traits/animated-word-roller/content-text-repeater.php' );
+		require_once(  __DIR__ . '/widgets/traits/animated-word-roller/style-contents.php' );
+
 		require_once(  __DIR__ . '/widgets/class-deensimc-image-marquee.php' );
 		require_once(  __DIR__ . '/widgets/class-deensimc-stacked-slider.php' );
 		require_once(  __DIR__ . '/widgets/class-deensimc-image-accordion.php' );
@@ -414,6 +422,7 @@ final class Marquee {
 		require_once(  __DIR__ . '/widgets/class-deensimc-testimonial-marquee.php' );
 		require_once(  __DIR__ . '/widgets/class-deensimc-video-marquee.php' );
 		require_once(  __DIR__ . '/widgets/class-deensimc-news-ticker.php' );
+		require_once(  __DIR__ . '/widgets/class-deensimc-animated-word-roller.php' );
 
 		$widgets_manager->register( new \Deensimc_Image_Marquee() );
 		$widgets_manager->register( new \Deensimc_Stacked_Slider() );
@@ -422,6 +431,7 @@ final class Marquee {
 		$widgets_manager->register( new \Deensimc_Testimonial_Marquee() );
 		$widgets_manager->register( new \Deensimc_Video_Marquee() );
 		$widgets_manager->register( new \Deensimc_News_Ticker() );
+		$widgets_manager->register( new \Deensimc_Animated_Word_Roller() );
 
 	}
 
