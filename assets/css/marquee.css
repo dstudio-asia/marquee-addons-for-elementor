@@ -260,7 +260,7 @@
 
   .deensimc-wrapper-vertical {
     flex-direction: column;
-    height: auto;
+    height: auto !important;
   }
 
   .deensimc-wrapper-vertical
