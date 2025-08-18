@@ -1,5 +1,3 @@
-name: Release-Please
-
 on:
   push:
     branches:
@@ -7,70 +5,28 @@ on:
 
 permissions:
   contents: write
-  pull-requests: write # Required for Release Please to create PRs if needed.
+  pull-requests: write
+
+name: Release-Please
 
 jobs:
   release-please:
     runs-on: ubuntu-latest
     steps:
-      - name: ⬇️ Checkout repository
-        # This step is essential to access your repository's files.
+      - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: 🔍 Verify readme.txt exists
-        id: verify_readme
-        # This step checks if readme.txt is present. If not, the workflow will fail.
+        
+      - name: Extract version from readme.txt
+        id: extract-version
         run: |
-          if [ ! -f "readme.txt" ]; then
-            echo "::error::readme.txt not found in the repository root. Please ensure it exists."
-            exit 1
-          fi
-          echo "readme.txt found."
-
-      - name: 🚀 Run Release Please Action
-        id: release
-        # This action determines the next version, creates a release pull request,
-        # or publishes a new release based on your conventional commits and Git history.
-        # It also updates the version in readme.txt if a new release is made.
-        uses: google-github-actions/release-please-action@v3
+          VERSION=$(grep -oP 'Stable tag:\s*\K[0-9.]+' readme.txt)
+          echo "Extracted version: $VERSION"
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          
+      - uses: google-github-actions/release-please-action@v3
         with:
           release-type: simple
+          package-name: marquee-addon
           version-file: readme.txt
-          version-regex: "Stable tag: (\\d+\\.\\d+\\.\\d+)"
-          # Updated package-name to 'marquee-addons' as requested.
-          package-name: marquee-addons
-          extra-files: readme.txt # Ensures the updated readme.txt is part of the release commit.
-
-      - name: 📦 Create Release Zip Asset
-        # This step runs ONLY IF a new release was created by Release Please.
-        # It creates a zip file of your project, named according to the new release version.
-        if: ${{ steps.release.outputs.release_created }}
-        run: |
-          NEW_VERSION=${{ steps.release.outputs.tag_name }}
-          # Remove the 'v' prefix if it exists from the tag name (e.g., v3.7.2 -> 3.7.2)
-          CLEAN_VERSION=${NEW_VERSION#v}
-          # Changed the zip file name prefix to 'marquee-addons'
-          ZIP_FILE_NAME="marquee-addons-$CLEAN_VERSION.zip"
-          echo "Creating zip file: $ZIP_FILE_NAME"
-
-          # Create the zip file excluding .git directory and other unnecessary files
-          # Adjust 'zip -r' command arguments based on your project structure and what you need in the release zip.
-          # For example, if your project content is in a 'src' directory, you might do:
-          # zip -r $ZIP_FILE_NAME src/ -x "*.git*" "**/node_modules/*"
-          zip -r "$ZIP_FILE_NAME" . -x "*.git*" "**/node_modules/*" "**.DS_Store" "**/.github/*"
-
-          echo "::set-output name=zip_file_name::$ZIP_FILE_NAME"
-          echo "::set-output name=zip_file_path::$ZIP_FILE_NAME" # Full path for upload
-
-      - name: ⬆️ Upload Release Asset
-        # This step runs ONLY IF a new release was created and the zip file was created.
-        # It uploads the custom zip file to the newly created GitHub Release.
-        if: ${{ steps.release.outputs.release_created }}
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Automatically provided by GitHub Actions
-        with:
-          upload_url: ${{ steps.release.outputs.upload_url }} # URL provided by Release Please for asset upload
-          asset_path: ${{ steps.create-release-zip.outputs.zip_file_path }} # Path to your created zip file
-          asset_name: ${{ steps.create-release-zip.outputs.zip_file_name }} # Name for the asset on GitHub
-          asset_content_type: application/zip # Standard MIME type for zip files
+          version-file-pattern: 'Stable tag:\s*([0-9.]+)'
+          version: ${{ steps.extract-version.outputs.version }}
