@@ -320,7 +320,7 @@ trait NewsTickerStyleControl
 		$this->add_control(
 			'deensimc_separator_text_color',
 			[
-				'label' => __('Text Color', 'marquee-addons-for-elementor'),
+				'label' => __('Color', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#010813ff',
 				'selectors' => [
