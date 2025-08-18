@@ -84,11 +84,14 @@ trait Testimonialmarquee_Contents {
         );
         
         $deensimc_testimonial_repeater->add_control(
-            'deensimc_testimonial_rating_counter',
+            'deensimc_testimonial_rating_in_text',
             [
-                'label' => esc_html__( 'Rating Counter', 'marquee-addons-for-elementor' ),
-                'type' =>  Controls_Manager::TEXT,
-                'default' => esc_html__( '3k', 'marquee-addons-for-elementor' ),
+                'label' => esc_html__( 'Rating In Text', 'marquee-addons-for-elementor' ),
+				'type' =>  Controls_Manager::SWITCHER,
+                'label_on' => esc_html__( 'Show', 'marquee-addons-for-elementor' ),
+                'label_off' => esc_html__( 'Hide', 'marquee-addons-for-elementor' ),
+                'return_value' => 'yes',
+                'default' => 'no',
                 'condition' => [
                     'deensimc_testimonial_show_rating' => 'yes',
                 ],
