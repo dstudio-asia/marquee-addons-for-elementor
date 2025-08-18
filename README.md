@@ -1,6 +1,6 @@
 # Marquee Addons for Elementor
 
-Create ultra-modern, animated WordPress sites with **Marquee Addons**, a powerful Elementor toolkit featuring smooth, configurable marquee (looping scroll) widgets for text, images, icons, videos, logos—and more. Built for performance, accessibility, and a clean Elementor editing experience. :contentReference[oaicite:0]{index=0}
+Create ultra-modern, animated WordPress sites with **Marquee Addons**, a powerful Elementor toolkit featuring smooth, configurable marquee (looping scroll) widgets for text, images, icons, videos, logos—and more. Built for performance, accessibility, and a clean Elementor editing experience.
 
 [Website](https://marqueeaddons.com) • [WordPress.org Listing](https://en-gb.wordpress.org/plugins/marquee-addons-for-elementor/) • [Releases](https://github.com/dstudio-asia/marquee-addons-for-elementor/releases)
 
@@ -10,12 +10,12 @@ Create ultra-modern, animated WordPress sites with **Marquee Addons**, a powerfu
 
 - Adds **smooth, continuous marquee/loop effects** in both **horizontal** and **vertical** directions.
 - Works with **text, images, videos, icons, and testimonials**.
-- Tweak **direction**, **speed**, **gap**, **pause-on-hover**, and more—directly in Elementor controls. :contentReference[oaicite:1]{index=1}
+- Tweak **direction**, **speed**, **gap**, **pause-on-hover**, and more—directly in Elementor controls.
 
 **Pro highlights** (separate add-on):
 - Advanced widgets for **Posts**, **Products**, and **Product Categories**.
 - **Advanced Testimonials**, **Word Roller**, **Card/Media marquee**, **Marquee Templates**, **Scroll Trigger**, **RTL & Multilingual**, **Custom CSS**, **Lazy Load**, and **Lightbox/Linking** controls.  
-  *(Pro features summarized from product materials and support threads.)* :contentReference[oaicite:2]{index=2}
+  *(Pro features summarized from product materials and support threads.)*
 
 ---
 
@@ -26,7 +26,7 @@ Create ultra-modern, animated WordPress sites with **Marquee Addons**, a powerfu
 - **Icon Marquee** – animated icon rows  
 - **Video Marquee** – silent looping hero strips  
 - **Testimonial Marquee** – reviews in a continuous strip with ratings  
-  *(Controls include direction, speed, spacing, duplicates/loop density, pause on hover, and responsive visibility.)* :contentReference[oaicite:3]{index=3}
+  *(Controls include direction, speed, spacing, duplicates/loop density, pause on hover, and responsive visibility.)*
 
 ## 🚀 Pro Widgets (Overview)
 
@@ -38,7 +38,7 @@ Create ultra-modern, animated WordPress sites with **Marquee Addons**, a powerfu
 - **Templates Library** with one-click import
 - **Scroll Trigger** (animate only when in view)
 - **RTL & Multilingual**, **Custom CSS**, **Lazy Load**, **Lightbox & Linking**  
-  *(See website for full matrix.)* :contentReference[oaicite:4]{index=4}
+  *(See website for full matrix.)*
 
 ---
 
@@ -55,7 +55,7 @@ Create ultra-modern, animated WordPress sites with **Marquee Addons**, a powerfu
 
 ### From WordPress dashboard
 1. **Plugins → Add New → Upload Plugin**  
-2. Upload the ZIP from the **Releases** page and **Activate**. :contentReference[oaicite:5]{index=5}
+2. Upload the ZIP from the **Releases** page and **Activate**.
 3. Open **Elementor**, search for “**Marquee**” widgets, and drop them onto your page.
 
 ### From source (developers)
