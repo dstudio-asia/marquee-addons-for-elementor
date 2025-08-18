@@ -218,22 +218,6 @@
   font-size: 16px;
 }
 
-.deensimc-tes-star-icon {
-  padding: 10px 0 10px 0;
-}
-
-.deensimc-testimonial .deensimc-tes-star-icon {
-  padding: 30px 0 0 0;
-}
-
-.deensimc-tes-cards-all .deensimc-tes-star-icon {
-  padding: 20px 40px 0 40px;
-}
-
-.deensimc-tes-cards-all .deensimc-tes-star-icon.no-gap {
-  padding: 10px 40px 10px 40px;
-}
-
 .deensimc-tes-icons-none i {
   color: var(--deensimc-marquee-tes-boulder);
 }
