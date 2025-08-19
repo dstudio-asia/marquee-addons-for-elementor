@@ -45,8 +45,63 @@
 .elementor-element .deensimc-news-ticker-icon:before {
   background-image: url("../icons/news.svg");
 }
+
+.elementor-element .deensimc-word-roller-icon:before {
+  content: "";
+  background-image: url("../icons/word-roller-5.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  width: 24px;
+  height: 24px;
+  display: block;
+  animation: deensimcMarqueeIconScrollVertical 6s infinite alternate ease-in-out;
+}
+
 @keyframes deensimcMarqueeIconScroll {
   to {
     background-position: right center;
+  }
+}
+
+@keyframes deensimcMarqueeIconScrollVertical {
+  /* Start at top */
+  0% {
+    background-position: center top;
+  }
+  12% {
+    background-position: center top;
+  } /* pause 1 */
+
+  /* move a bit down */
+  22% {
+    background-position: center 25%;
+  }
+  34% {
+    background-position: center 25%;
+  } /* pause 2 */
+
+  /* move further down */
+  44% {
+    background-position: center 50%;
+  }
+  56% {
+    background-position: center 50%;
+  } /* pause 3 */
+
+  /* near bottom */
+  66% {
+    background-position: center 75%;
+  }
+  78% {
+    background-position: center 75%;
+  } /* pause 4 */
+
+  /* end fully at bottom */
+  88% {
+    background-position: center 100%;
+  }
+  100% {
+    background-position: center 100%;
   }
 }

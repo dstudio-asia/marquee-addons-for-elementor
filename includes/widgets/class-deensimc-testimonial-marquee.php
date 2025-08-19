@@ -107,6 +107,38 @@ class Deensimc_Testimonial_Marquee extends Widget_Base {
 			]
 		);
 
+		$this->add_responsive_control(
+			'deensimc_vertical_testimonial_align',
+			[
+				'label' => esc_html__('Vertical Alignment', 'marquee-addons-for-elementor'),
+				'type' =>  Controls_Manager::CHOOSE,
+				'options' => [
+					'start' => [
+						'title' => esc_html__('Left', 'marquee-addons-for-elementor'),
+						'icon' => 'eicon-h-align-left',
+					],
+					'center' => [
+						'title' => esc_html__('Center', 'marquee-addons-for-elementor'),
+						'icon' => 'eicon-h-align-center',
+					],
+					'end' => [
+						'title' => esc_html__('Right', 'marquee-addons-for-elementor'),
+						'icon' => 'eicon-h-align-right',
+					],
+				],
+				'default' => 'center',
+				'toggle' => true,
+				'separator' => 'after',
+				'selectors' => [
+					'{{WRAPPER}} .deensimc-tes .deensimc-marquee-vertical' => 'align-items: {{value}};',
+				],
+				'condition' => [
+					'deensimc_testimonial_vertical_section' => 'yes',
+					'deensimc_show_animation' => 'yes'
+				],
+			]
+		);
+
 		$this->add_control(
 			'deensimc_testimonial_quote_left_icon',
 			[
@@ -232,10 +264,10 @@ class Deensimc_Testimonial_Marquee extends Widget_Base {
 					<span class="deensimc-tes-icons-none"><i class="fa fa-star"></i></span>
 				<?php } ?>
 				<?php
-				if( '' !== $testimonial['deensimc_testimonial_rating_counter'] ) {
+				if( 'yes' === $testimonial['deensimc_testimonial_rating_in_text'] ) {
 				?>
 					<small class="deensimc-tes-review-text">
-						<?php echo esc_html__( '(', 'marquee-addons-for-elementor' ) . esc_html( $testimonial['deensimc_testimonial_rating_counter'] ) . esc_html__(')', 'marquee-addons-for-elementor' ); ?>
+						<?php echo esc_html__( '(', 'marquee-addons-for-elementor' ) . esc_html( $deensimc_rating) . esc_html__(')', 'marquee-addons-for-elementor' ); ?>
 					</small>
 				<?php 
 				}
@@ -254,15 +286,18 @@ class Deensimc_Testimonial_Marquee extends Widget_Base {
         $settings = $this->get_settings_for_display();
 		$show_shadow = $settings['deensimc_testimonial_show_edge_shadow_switch'] === 'yes' ? 'deensimc-shadow' : '';
 		$show_reverse = $settings['deensimc_testimonial_reverse_section'] === 'yes' ? 'deensimc-marquee-reverse' : '';
+		$marquee_orientation = 'yes' === $settings['deensimc_testimonial_vertical_section'] ? 'vertical' : 'horizontal';
+
     ?>
-		<div class="deensimc-tes">
-			<div class="deensimc-marquee  <?php echo esc_attr( $show_shadow ." ". $show_reverse ) ?> deensimc-tes-logo"  
+		<div class="deensimc-tes <?= esc_attr($marquee_orientation)?>">
+			<div class="deensimc-marquee <?= esc_attr('deensimc-marquee-' . $marquee_orientation)?>  <?php echo esc_attr( $show_shadow ." ". $show_reverse ) ?> deensimc-tes-logo"  
 				data-animation-status="<?php echo esc_attr( $settings['deensimc_show_animation'] ); ?>" 
 				data-excerpt-length="<?php echo esc_attr( $settings['deensimc_tesimonial_excerpt_length'] ); ?>" 
 				data-show-more="<?php echo esc_attr( $settings['deensimc_tesimonial_excerpt_title'] ); ?>" 
 				data-show-less="<?php echo esc_attr( $settings['deensimc_tesimonial_excerpt_title_less'] ); ?>" 
 				data-pause-on-hover="<?php echo esc_attr( $settings['deensimc_testimonial_pause_on_hover'] ); ?>" 
 				data-animation-speed="<?php echo esc_attr( $settings['deensimc_testimonial_marquee_animation_speed'] ); ?>"
+				data-orientation="<?php echo esc_attr($marquee_orientation); ?>"
 				data-quote-left="<?php echo esc_html( $settings['deensimc_testimonial_quote_left_icon']['value'] ); ?>"
 				data-quote-right="<?php echo esc_html( $settings['deensimc_testimonial_quote_right_icon']['value'] ); ?>">
 				<ul class="deensimc-marquee-group deensimc-tes-content">
@@ -344,149 +379,90 @@ class Deensimc_Testimonial_Marquee extends Widget_Base {
 	 * Renders dynamic testimonial marquee contents in Elementor.
 	 * @return void
  	*/
-	protected function content_template() {
-	?>
+	 protected function content_template() {
+		?>
 		<#
-			let showShadow = settings.deensimc_testimonial_show_edge_shadow_switch === 'yes' ? 'deensimc-shadow' : '';
-			let showReverse = settings.deensimc_testimonial_reverse_section === 'yes' ? 'deensimc-marquee-reverse' : '';
+			const showShadow = settings.deensimc_testimonial_show_edge_shadow_switch === 'yes' ? 'deensimc-shadow' : '';
+			const showReverse = settings.deensimc_testimonial_reverse_section === 'yes' ? 'deensimc-marquee-reverse' : '';
+			const marqueeOrientation = settings.deensimc_testimonial_vertical_section === 'yes' ? 'vertical' : 'horizontal';
+			const marqueeClass = 'deensimc-marquee-' + marqueeOrientation;
+			
+			function renderTestimonial(testimonial) {
+				const hasAuthorImage = testimonial.deensimc_testimonial_image.url ? '' : 'no-image';
+				const altText = testimonial.deensimc_testimonial_name ? testimonial.deensimc_testimonial_name : 'Author image';
 		#>
-		<div class="deensimc-tes">
-			<div class="deensimc-marquee {{ showShadow }} {{ showReverse }} deensimc-tes-logo"  data-animation-status="{{ settings.deensimc_show_animation }}" data-excerpt-length="{{ settings.deensimc_tesimonial_excerpt_length }}"  data-show-more="{{ settings.deensimc_tesimonial_excerpt_title }}"  data-show-less="{{ settings.deensimc_tesimonial_excerpt_title_less }}"  data-pause-on-hover="{{ settings.deensimc_testimonial_pause_on_hover }}" data-animation-speed="{{ settings.deensimc_testimonial_marquee_animation_speed }}" data-quote-left="{{ settings.deensimc_testimonial_quote_left_icon.value }}" data-quote-right="{{ settings.deensimc_testimonial_quote_right_icon.value }}">
-				<ul class="deensimc-marquee-group deensimc-tes-content">
-					<# 
-					// Iterate through testimonials
-					_.each( settings.deensimc_repeater_testimonial_main, function( testimonial ) {
-						let has_author_image_url = testimonial.deensimc_testimonial_image.url ? '' : 'no-image';
-					#>
-						<li class="deensimc-tes-item deensimc-tes-wrapper">
-							<figure class="deensimc-tes-main">
-								<# if ( testimonial.deensimc_testimonial_content ) { #>
-									<blockquote class="deensimc-tes-text">
-										<span>{{{ testimonial.deensimc_testimonial_content }}}</span>
-									</blockquote>
-									<span class="deensimc-show-more">{{{ settings.deensimc_tesimonial_excerpt_title }}}</span>
-								<# } #>
-								
-								<div class="deensimc-tes-author {{ has_author_image_url }}">
-									<# // Render author image if exists #>
-									<# if ( testimonial.deensimc_testimonial_image.url ) { #>
-										<img src="{{ testimonial.deensimc_testimonial_image.url }}" alt="author image" />
-									<# } #>
-
-									<# // Render author name and title if they exist #>
-									<# if ( testimonial.deensimc_testimonial_name || testimonial.deensimc_testimonial_title ) { #>
-										<h5 class="deensimc-tes-heading">
-											<span class="deensimc-tes-name">{{{ testimonial.deensimc_testimonial_name }}}</span>
-											<span class="deensimc-tes-title">{{{ testimonial.deensimc_testimonial_title }}}</span>
-										</h5>
-									<# } #>
-
-									<# // Render ratings if enabled #>
-									<# if ( testimonial.deensimc_testimonial_show_rating === 'yes' && testimonial.deensimc_testimonial_rating_num ) { #>
-										<div class="deensimc-tes-ratings deensimc-testimonial-ratings">
-											<div class="deensimc-tes-star-icon fs-6">
-												<# 
-												let fullStars = Math.floor( testimonial.deensimc_testimonial_rating_num );
-												let halfStar = testimonial.deensimc_testimonial_rating_num - fullStars;
-												let emptyStars = 5 - Math.ceil( testimonial.deensimc_testimonial_rating_num );
-												#>
-
-												<# // Render full stars #>
-												<# for ( let k = 0; k < fullStars; k++ ) { #>
-													<span class="deensimc-tes-icons"><i class="fa fa-star"></i></span>
-												<# } #>
-
-												<# // Render half star #>
-												<# if ( halfStar >= 0.5 ) { #>
-													<span class="deensimc-tes-icons-half"><i class="fa fa-star"></i></span>
-												<# } #>
-
-												<# // Render empty stars #>
-												<# for ( let j = 0; j < emptyStars; j++ ) { #>
-													<span class="deensimc-tes-icons-none"><i class="fa fa-star"></i></span>
-												<# } #>
-												<# if('' !== testimonial.deensimc_testimonial_rating_counter ){ #>
-												<small class="deensimc-tes-review-text">(
-													{{{ testimonial.deensimc_testimonial_rating_counter }}}
-												)</small>
-												<# } #>
-											</div>
-										</div>
-									<# } #>
+				<li class="deensimc-tes-item deensimc-tes-wrapper">
+					<figure class="deensimc-tes-main">
+						<# if ( testimonial.deensimc_testimonial_content ) { #>
+							<blockquote class="deensimc-tes-text">
+								<span>{{{ testimonial.deensimc_testimonial_content }}}</span>
+							</blockquote>
+							<span class="deensimc-show-more">{{{ settings.deensimc_tesimonial_excerpt_title }}}</span>
+						<# } #>
+						
+						<div class="deensimc-tes-author {{ hasAuthorImage }}">
+							<# if ( testimonial.deensimc_testimonial_image.url ) { #>
+								<img src="{{ testimonial.deensimc_testimonial_image.url }}" alt="{{ altText }}" />
+							<# } #>
+	
+							<# if ( testimonial.deensimc_testimonial_name || testimonial.deensimc_testimonial_title ) { #>
+								<h5 class="deensimc-tes-heading">
+									<span class="deensimc-tes-name">{{{ testimonial.deensimc_testimonial_name }}}</span>
+									<span class="deensimc-tes-title">{{{ testimonial.deensimc_testimonial_title }}}</span>
+								</h5>
+							<# } #>
+	
+							<# if ( testimonial.deensimc_testimonial_show_rating === 'yes' && testimonial.deensimc_testimonial_rating_num ) { 
+								const fullStars = Math.floor( testimonial.deensimc_testimonial_rating_num );
+								const halfStar = testimonial.deensimc_testimonial_rating_num - fullStars >= 0.5;
+								const emptyStars = 5 - Math.ceil( testimonial.deensimc_testimonial_rating_num );
+							#>
+								<div class="deensimc-tes-ratings deensimc-testimonial-ratings">
+									<div class="deensimc-tes-star-icon fs-6">
+										<# for ( let k = 0; k < fullStars; k++ ) { #>
+											<span class="deensimc-tes-icons"><i class="fa fa-star"></i></span>
+										<# } #>
+	
+										<# if ( halfStar ) { #>
+											<span class="deensimc-tes-icons-half"><i class="fa fa-star"></i></span>
+										<# } #>
+	
+										<# for ( let j = 0; j < emptyStars; j++ ) { #>
+											<span class="deensimc-tes-icons-none"><i class="fa fa-star"></i></span>
+										<# } #>
+										
+										<# if ( testimonial.deensimc_testimonial_rating_in_text === 'yes' ) { #>
+											<small class="deensimc-tes-review-text">({{{ fullStars }}})</small>
+										<# } #>
+									</div>
 								</div>
-							</figure>
-						</li>
-					<# }); #>
+							<# } #>
+						</div>
+					</figure>
+				</li>
+		<# } #>
+	
+		<div class="deensimc-tes {{ marqueeOrientation }}">
+			<div class="deensimc-marquee {{ marqueeClass }} {{ showShadow }} {{ showReverse }} deensimc-tes-logo" 
+				data-animation-status="{{ settings.deensimc_show_animation }}" 
+				data-excerpt-length="{{ settings.deensimc_tesimonial_excerpt_length }}"  
+				data-show-more="{{ settings.deensimc_tesimonial_excerpt_title }}"  
+				data-show-less="{{ settings.deensimc_tesimonial_excerpt_title_less }}"  
+				data-pause-on-hover="{{ settings.deensimc_testimonial_pause_on_hover }}" 
+				data-animation-speed="{{ settings.deensimc_testimonial_marquee_animation_speed }}" 
+				data-orientation="{{ marqueeOrientation }}"
+				data-quote-left="{{ settings.deensimc_testimonial_quote_left_icon.value }}" 
+				data-quote-right="{{ settings.deensimc_testimonial_quote_right_icon.value }}">
+				
+				<ul class="deensimc-marquee-group deensimc-tes-content">
+					<# _.each( settings.deensimc_repeater_testimonial_main, renderTestimonial ); #>
 				</ul>
 				<ul aria-hidden="true" class="deensimc-marquee-group deensimc-tes-content">
-					<# 
-					// Iterate through testimonials
-					_.each( settings.deensimc_repeater_testimonial_main, function( testimonial ) {
-						let has_author_image_url = testimonial.deensimc_testimonial_image.url ? '' : 'no-image';
-					#>
-						<li class="deensimc-tes-item deensimc-tes-wrapper">
-							<figure class="deensimc-tes-main">
-								<# if ( testimonial.deensimc_testimonial_content ) { #>
-									<blockquote class="deensimc-tes-text">
-										<span>{{{ testimonial.deensimc_testimonial_content }}}</span>
-									</blockquote>
-									<span class="deensimc-show-more">{{{ settings.deensimc_tesimonial_excerpt_title }}}</span>
-								<# } #>
-								
-								<div class="deensimc-tes-author {{ has_author_image_url }}">
-									<# // Render author image if exists #>
-									<# if ( testimonial.deensimc_testimonial_image.url ) { #>
-										<img src="{{ testimonial.deensimc_testimonial_image.url }}" alt="author image" />
-									<# } #>
-
-									<# // Render author name and title if they exist #>
-									<# if ( testimonial.deensimc_testimonial_name || testimonial.deensimc_testimonial_title ) { #>
-										<h5 class="deensimc-tes-heading">
-											<span class="deensimc-tes-name">{{{ testimonial.deensimc_testimonial_name }}}</span>
-											<span class="deensimc-tes-title">{{{ testimonial.deensimc_testimonial_title }}}</span>
-										</h5>
-									<# } #>
-
-									<# // Render ratings if enabled #>
-									<# if ( testimonial.deensimc_testimonial_show_rating === 'yes' && testimonial.deensimc_testimonial_rating_num ) { #>
-										<div class="deensimc-tes-ratings deensimc-testimonial-ratings">
-											<div class="deensimc-tes-star-icon fs-6">
-												<# 
-												let fullStars = Math.floor( testimonial.deensimc_testimonial_rating_num );
-												let halfStar = testimonial.deensimc_testimonial_rating_num - fullStars;
-												let emptyStars = 5 - Math.ceil( testimonial.deensimc_testimonial_rating_num );
-												#>
-
-												<# // Render full stars #>
-												<# for ( let k = 0; k < fullStars; k++ ) { #>
-													<span class="deensimc-tes-icons"><i class="fa fa-star"></i></span>
-												<# } #>
-
-												<# // Render half star #>
-												<# if ( halfStar >= 0.5 ) { #>
-													<span class="deensimc-tes-icons-half"><i class="fa fa-star"></i></span>
-												<# } #>
-
-												<# // Render empty stars #>
-												<# for ( let j = 0; j < emptyStars; j++ ) { #>
-													<span class="deensimc-tes-icons-none"><i class="fa fa-star"></i></span>
-												<# } #>
-												<# if( '' !== testimonial.deensimc_testimonial_rating_counter ){ #>
-												<small class="deensimc-tes-review-text">(
-													{{{ testimonial.deensimc_testimonial_rating_counter }}}
-												)</small>
-												<# } #>
-											</div>
-										</div>
-									<# } #>
-								</div>
-							</figure>
-						</li>
-					<# }); #>
+					<# _.each( settings.deensimc_repeater_testimonial_main, renderTestimonial ); #>
 				</ul>
 			</div>
 		</div>
-	<?php
+		<?php
 	}
 }
 ?>
