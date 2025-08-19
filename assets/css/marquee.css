@@ -21,7 +21,6 @@
 
 :root {
   --deensimc-text-dark-gray: #555353;
-  --deensimc-gap: 0px;
   --deensimc-color-white: #ffffff;
 }
 
@@ -30,6 +29,8 @@
    ========================================================================== */
 
 .deensimc-marquee {
+  --deensimc-gap: 2rem;
+  --container-padding: 1rem;
   gap: var(--deensimc-gap);
   display: flex;
   overflow: hidden;
