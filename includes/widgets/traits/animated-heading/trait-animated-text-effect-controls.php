@@ -7,7 +7,7 @@ trait Animated_Text_Effect_Controls {
 
   private function register_animated_text_effect_section_controls() {
     $this->start_controls_section(
-      'animated_text_effect_section',
+      'deensimc_animated_text_effect_section',
       [
         'label' => __('Animated Text Effect', 'marquee-addons-for-elementor'),
         'tab' => Controls_Manager::TAB_STYLE,
@@ -16,7 +16,7 @@ trait Animated_Text_Effect_Controls {
 
     // Select control: effect type
     $this->add_control(
-      'animated_text_effect_type',
+      'deensimc_animated_text_effect_type',
       [
         'label' => __('Effect Type', 'marquee-addons-for-elementor'),
         'type' => Controls_Manager::SELECT,
@@ -37,7 +37,7 @@ trait Animated_Text_Effect_Controls {
         'label' => __('Text Color', 'marquee-addons-for-elementor'),
         'type' => Controls_Manager::COLOR,
         'condition' => [
-          'animated_text_effect_type' => 'fill',
+          'deensimc_animated_text_effect_type' => 'fill',
         ],
         'selectors' => [
           '{{WRAPPER}} .deensimc-heading .deensimc-texts-wrapper span' => 'color: {{VALUE}};',
@@ -52,7 +52,7 @@ trait Animated_Text_Effect_Controls {
         'label' => __('Outline Color', 'marquee-addons-for-elementor'),
         'type' => Controls_Manager::COLOR,
         'condition' => [
-          'animated_text_effect_type' => 'outline',
+          'deensimc_animated_text_effect_type' => 'outline',
         ],
         'selectors' => [
           '{{WRAPPER}} .deensimc-heading .deensimc-texts-wrapper span' => '-webkit-text-stroke-color: {{VALUE}};',
@@ -77,7 +77,7 @@ trait Animated_Text_Effect_Controls {
           ],
         ],
         'condition' => [
-          'animated_text_effect_type' => 'outline',
+          'deensimc_animated_text_effect_type' => 'outline',
         ],
         'selectors' => [
           '{{WRAPPER}} .deensimc-heading .deensimc-texts-wrapper span' => '-webkit-text-stroke-width: {{SIZE}}{{UNIT}}; color: transparent;',
@@ -94,7 +94,7 @@ trait Animated_Text_Effect_Controls {
         'label' => __('Gradient Text', 'marquee-addons-for-elementor'),
         'types' => ['gradient'],
         'condition' => [
-          'animated_text_effect_type' => 'deensimc-gradient-text',
+          'deensimc_animated_text_effect_type' => 'deensimc-gradient-text',
         ],
         'selector' => '{{WRAPPER}} .deensimc-heading .deensimc-texts-wrapper span', 
       ]
@@ -110,7 +110,7 @@ trait Animated_Text_Effect_Controls {
           'url' => \Elementor\Utils::get_placeholder_image_src(),
         ],
         'condition' => [
-          'animated_text_effect_type' => 'deensimc-masked-text',
+          'deensimc_animated_text_effect_type' => 'deensimc-masked-text',
         ],
         'selectors' => [
           '{{WRAPPER}} .deensimc-heading .deensimc-texts-wrapper span' => 'background-image: url({{URL}});',
@@ -131,7 +131,7 @@ trait Animated_Text_Effect_Controls {
           'contain' => __('Contain', 'marquee-addons-for-elementor'),
         ],
         'condition' => [
-          'animated_text_effect_type' => 'deensimc-masked-text',
+          'deensimc_animated_text_effect_type' => 'deensimc-masked-text',
         ],
         'selectors' => [
           '{{WRAPPER}} .deensimc-heading .deensimc-texts-wrapper span' => 'background-size: {{VALUE}};',
@@ -157,7 +157,7 @@ trait Animated_Text_Effect_Controls {
           'right bottom' => __('Bottom Right', 'marquee-addons-for-elementor'),
         ],
         'condition' => [
-          'animated_text_effect_type' => 'deensimc-masked-text',
+          'deensimc_animated_text_effect_type' => 'deensimc-masked-text',
         ],
         'selectors' => [
           '{{WRAPPER}} .deensimc-heading .deensimc-texts-wrapper span' => 'background-position: {{VALUE}};',

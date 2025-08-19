@@ -77,7 +77,7 @@ class Animated_Heading_Widget extends Widget_Base
     $isAnimationOn = esc_attr($settings['is_animation_on']);
     $animationSpeed = esc_attr($settings['animation_speed']);
     $isPauseOnHover = esc_attr($settings['animation_pause_on_hover']);
-    $textEffectType = esc_attr($settings['animated_text_effect_type']);
+    $textEffectType = esc_attr($settings['deensimc_animated_text_effect_type']);
     $pauseBetweenWords = esc_attr($settings['pause_between_words']);
     $pauseAfterTyped = esc_attr($settings['pause_after_typed']);
     $delayPerWord = esc_attr($settings['delay_per_word']);
@@ -167,7 +167,7 @@ class Animated_Heading_Widget extends Widget_Base
 
                   <# if (settings.animated_texts && settings.animated_texts.length) { #>
                     <span
-                      class="deensimc-texts-wrapper {{ settings.animated_text_effect_type }}"
+                      class="deensimc-texts-wrapper {{ settings.deensimc_animated_text_effect_type }}"
                       data-animation="{{ settings.animation_type }}"
                       data-is-animation-on="{{ settings.is_animation_on }}"
                       data-animation-speed="{{ settings.animation_speed }}"
