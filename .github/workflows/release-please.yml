@@ -1,30 +1,42 @@
+name: Release-Please
+
 on:
   push:
     branches:
-      - main
+      - main   # <- change to 'dev' if you release from dev
 
 permissions:
   contents: write
   pull-requests: write
   issues: write
 
-name: Release-Please
 jobs:
   release-please:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - uses: google-github-actions/release-please-action@v3
+      # Read version from readme.txt (Stable tag: x.y.z)
+      - name: Read version from readme.txt
+        id: readme_version
+        run: |
+          VERSION=$(grep -oP '^Stable tag:\s*\K[0-9]+(\.[0-9]+)*' readme.txt)
+          if [ -z "$VERSION" ]; then
+            echo "❌ Stable tag not found in readme.txt"; exit 1
+          fi
+          echo "Found version: $VERSION"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      # Run Release Please WITHOUT touching any files
+      - name: Release Please (no file changes)
+        uses: google-github-actions/release-please-action@v3
         with:
           release-type: simple
           package-name: marquee-addon
-          default-branch: main   
+          default-branch: main               # <- change to 'dev' if needed
           include-v-in-tag: false
-          # Update readme.txt's "Stable tag: x.y.z"
-          extra-files: |
-            [
-              {"type":"generic","path":"readme.txt","regex":"^Stable tag:\\s*(?<version>\\d+\\.\\d+\\.\\d+)$"}
-            ]
+          release-as: ${{ steps.readme_version.outputs.version }}
+          # NOTE: do NOT set 'version-file' or 'extra-files'
+          # This ensures nothing in the repo gets edited.
 
