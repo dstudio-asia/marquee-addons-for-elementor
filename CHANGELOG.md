@@ -1,6 +1,7 @@
 # Changelog
 
-## [2.2.4](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v2.2.3...v2.2.4) (2025-08-19)
+
+## [2.2.4](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v2.2.3...2.2.4) (2025-08-19)
 
 
 ### Features
