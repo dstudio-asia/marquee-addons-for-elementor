@@ -20,7 +20,7 @@ trait Text_Styles_Controls {
     );
 
     // Font color for before/after text
-    if (in_array($section_id, ['before_text_style', 'after_text_style'])) {
+    if (in_array($section_id, ['deensimc_before_text_style', 'deensimc_after_text_style'])) {
       $this->add_control(
         "{$section_id}_color",
         [
@@ -47,7 +47,7 @@ trait Text_Styles_Controls {
     );
 
     // Text Stroke (popover for before/after text)
-    if (in_array($section_id, ['before_text_style', 'after_text_style'])) {
+    if (in_array($section_id, ['deensimc_before_text_style', 'deensimc_after_text_style'])) {
       $this->add_group_control(
         Group_Control_Text_Stroke::get_type(),
         [
@@ -75,24 +75,24 @@ trait Text_Styles_Controls {
 
   private function register_text_styles_section_controls() {
     $this->add_text_style_controls(
-      'before_text_style',
+      'deensimc_before_text_style',
       'Before Text',
       '.deensimc-heading .deensimc-before-text',
-      'before_text'
+      'deensimc_before_text'
     );
 
     $this->add_text_style_controls(
       'animated_text_style',
       'Animated Text',
       '.deensimc-heading .deensimc-texts-wrapper span',
-      'animated_texts'
+      'deensimc_animated_texts'
     );
 
     $this->add_text_style_controls(
-      'after_text_style',
+      'deensimc_after_text_style',
       'After Text',
       '.deensimc-heading .deensimc-after-text',
-      'after_text'
+      'deensimc_after_text'
     );
   }
 }

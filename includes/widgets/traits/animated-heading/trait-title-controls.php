@@ -6,14 +6,14 @@ use Elementor\Repeater;
 trait Title_Controls {
   private function register_title_section_controls() {
     $this->start_controls_section(
-      'title_section',
+      'deensimc_title_section',
       [
         'label' => __('Title', 'marquee-addons-for-elementor'),
         'tab' => Controls_Manager::TAB_CONTENT,
       ]
     );
 
-    $this->add_control('before_text', [
+    $this->add_control('deensimc_before_text', [
       'label' => __('Before Text', 'marquee-addons-for-elementor'),
       'type' => Controls_Manager::TEXT,
       'label_block' => true,
@@ -21,31 +21,31 @@ trait Title_Controls {
     ]);
 
     $repeater = new Repeater();
-    $repeater->add_control('animated_text', [
+    $repeater->add_control('deensimc_animated_text', [
       'label' => __('Text', 'marquee-addons-for-elementor'),
       'type' => Controls_Manager::TEXT,
       'default' => __('Animated Text', 'marquee-addons-for-elementor'),
       'label_block' => true,
     ]);
 
-    $this->add_control('animated_texts', [
+    $this->add_control('deensimc_animated_texts', [
       'label' => __('Animated Texts', 'marquee-addons-for-elementor'),
       'type' => Controls_Manager::REPEATER,
       'fields' => $repeater->get_controls(),
       'default' => [
-        ['animated_text' => 'Animated Text'],
+        ['deensimc_animated_text' => 'Animated Text'],
       ],
-      'title_field' => '{{{ animated_text }}}',
+      'title_field' => '{{{ deensimc_animated_text }}}',
     ]);
 
-    $this->add_control('after_text', [
+    $this->add_control('deensimc_after_text', [
       'label' => __('After Text', 'marquee-addons-for-elementor'),
       'type' => Controls_Manager::TEXT,
       'label_block' => true,
       'default' => __('After text', 'marquee-addons-for-elementor'),
     ]);
 
-    $this->add_responsive_control('text_alignment', [
+    $this->add_responsive_control('deensimc_text_alignment', [
       'label' => __('Alignment', 'marquee-addons-for-elementor'),
       'type' => Controls_Manager::CHOOSE,
       'options' => [
@@ -72,7 +72,7 @@ trait Title_Controls {
       ],
     ]);
 
-    $this->add_control('heading_tag', [
+    $this->add_control('deensimc_heading_tag', [
       'label' => __('HTML Tag', 'marquee-addons-for-elementor'),
       'type' => Controls_Manager::SELECT,
       'default' => 'h2',

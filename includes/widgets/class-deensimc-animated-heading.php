@@ -69,10 +69,10 @@ class Animated_Heading_Widget extends Widget_Base
   protected function render()
   {
     $settings = $this->get_settings_for_display();
-    $tag = $settings['heading_tag'] ?? 'h2';
-    $before = esc_html($settings['before_text']);
-    $after = esc_html($settings['after_text']);
-    $texts = $settings['animated_texts'];
+    $tag = $settings['deensimc_heading_tag'] ?? 'h2';
+    $before = esc_html($settings['deensimc_before_text']);
+    $after = esc_html($settings['deensimc_after_text']);
+    $texts = $settings['deensimc_animated_texts'];
     $animation = esc_attr($settings['deensimc_animation_type']);
     $isAnimationOn = esc_attr($settings['deensimc_is_animation_on']);
     $animationSpeed = esc_attr($settings['deensimc_animation_speed']);
@@ -123,7 +123,7 @@ class Animated_Heading_Widget extends Widget_Base
               data-delay-before-erase="<?php echo $delayBeforeErase; ?>"
               <?php endif; ?>>
               <?php foreach ($texts as $item): ?>
-                <span class="deensimc-animated-text"><?php echo esc_html($item['animated_text']); ?></span>
+                <span class="deensimc-animated-text"><?php echo esc_html($item['deensimc_animated_text']); ?></span>
               <?php endforeach; ?>
 
               <?php if ($animation === 'line' && $isAnimationOn === "yes"): ?>
@@ -156,7 +156,7 @@ class Animated_Heading_Widget extends Widget_Base
     <div class="deensimc-animated-heading 
   <# if (settings.deensimc_is_animation_on === 'yes') { #>deensimc-animation-on<# } else { #>deensimc-animation-off<# } #>">
 
-      <{{{ settings.heading_tag || 'h2' }}} class="deensimc-heading {{ settings.deensimc_animation_type }} {{ settings.deensimc_animation_type === 'line' ? settings.deensimc_line_type : '' }}">
+      <{{{ settings.deensimc_heading_tag || 'h2' }}} class="deensimc-heading {{ settings.deensimc_animation_type }} {{ settings.deensimc_animation_type === 'line' ? settings.deensimc_line_type : '' }}">
         <# if (settings.before_text) { #>
           <span class="deensimc-before-text">{{{ settings.before_text }}}</span>
           <# } #>
@@ -218,8 +218,7 @@ class Animated_Heading_Widget extends Widget_Base
                 <# if (settings.after_text) { #>
                   <span class="deensimc-after-text">{{{ settings.after_text }}}</span>
                   <# } #>
-
-      </{{{ settings.heading_tag || 'h2' }}}>
+      </{{{ settings.deensimc_heading_tag || 'h2' }}}>
     </div>
 <?php
   }
