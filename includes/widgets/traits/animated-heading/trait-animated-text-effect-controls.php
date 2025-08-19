@@ -32,7 +32,7 @@ trait Animated_Text_Effect_Controls {
 
     // Fill: Text Color
     $this->add_control(
-      'animated_text_fill_color',
+      'deensimc_animated_text_fill_color',
       [
         'label' => __('Text Color', 'marquee-addons-for-elementor'),
         'type' => Controls_Manager::COLOR,
@@ -47,7 +47,7 @@ trait Animated_Text_Effect_Controls {
 
     // Outline: Stroke color and width
     $this->add_control(
-      'animated_text_outline_color',
+      'deensimc_animated_text_outline_color',
       [
         'label' => __('Outline Color', 'marquee-addons-for-elementor'),
         'type' => Controls_Manager::COLOR,
@@ -61,7 +61,7 @@ trait Animated_Text_Effect_Controls {
     );
 
     $this->add_control(
-      'animated_text_outline_width',
+      'deensimc_animated_text_outline_width',
       [
         'label' => __('Outline Width (px)', 'marquee-addons-for-elementor'),
         'type' => Controls_Manager::SLIDER,
@@ -90,7 +90,7 @@ trait Animated_Text_Effect_Controls {
     $this->add_group_control(
       Group_Control_Background::get_type(),
       [
-        'name' => 'animated_text_gradient',
+        'name' => 'deensimc_animated_text_gradient',
         'label' => __('Gradient Text', 'marquee-addons-for-elementor'),
         'types' => ['gradient'],
         'condition' => [
@@ -102,7 +102,7 @@ trait Animated_Text_Effect_Controls {
 
     // Image masking effect
     $this->add_control(
-      'animated_text_image_mask',
+      'deensimc_animated_text_image_mask',
       [
         'label' => __('Mask Image', 'marquee-addons-for-elementor'),
         'type' => Controls_Manager::MEDIA,
@@ -120,7 +120,7 @@ trait Animated_Text_Effect_Controls {
     
 
     $this->add_control(
-      'animated_text_image_mask_size',
+      'deensimc_animated_text_image_mask_size',
       [
         'label' => __('Mask Size', 'marquee-addons-for-elementor'),
         'type' => Controls_Manager::SELECT,
@@ -140,7 +140,7 @@ trait Animated_Text_Effect_Controls {
     );
 
     $this->add_control(
-      'animated_text_image_mask_position',
+      'deensimc_animated_text_image_mask_position',
       [
         'label' => __('Mask Position', 'marquee-addons-for-elementor'),
         'type' => Controls_Manager::SELECT,
@@ -165,7 +165,7 @@ trait Animated_Text_Effect_Controls {
       ]
     );
     
-    $this->add_control('cursor_color', [
+    $this->add_control('deensimc_cursor_color', [
       'label' => __('Cursor Color', 'marquee-addons-for-elementor'),
       'type' => Controls_Manager::COLOR,
       'condition' => [
@@ -178,7 +178,7 @@ trait Animated_Text_Effect_Controls {
       ],
     ]); 
 
-    $this->add_control('cursor_width', [
+    $this->add_control('deensimc_cursor_width', [
       'label' => __('Cursor Width', 'marquee-addons-for-elementor'),
       'type' => Controls_Manager::SLIDER,
       'condition' => [
@@ -202,7 +202,7 @@ trait Animated_Text_Effect_Controls {
       ],
     ]);
 
-    $this->add_control('line_color', [
+    $this->add_control('deensimc_line_color', [
       'label' => __('Line Color', 'marquee-addons-for-elementor'),
       'type' => Controls_Manager::COLOR,
       'condition' => [
@@ -215,7 +215,7 @@ trait Animated_Text_Effect_Controls {
       ],
     ]); 
 
-    $this->add_control('Line_width', [
+    $this->add_control('seensimc_line_width', [
       'label' => __('Line Width', 'marquee-addons-for-elementor'),
       'type' => Controls_Manager::SLIDER,
       'condition' => [
