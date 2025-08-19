@@ -169,8 +169,8 @@ trait Animated_Text_Effect_Controls {
       'label' => __('Cursor Color', 'marquee-addons-for-elementor'),
       'type' => Controls_Manager::COLOR,
       'condition' => [
-        'is_animation_on' => 'yes',
-        'animation_type' => 'typing',
+        'deensimc_is_animation_on' => 'yes',
+        'deensimc_animation_type' => 'typing',
       ],
       'default' => '#000000', 
       'selectors' => [
@@ -182,8 +182,8 @@ trait Animated_Text_Effect_Controls {
       'label' => __('Cursor Width', 'marquee-addons-for-elementor'),
       'type' => Controls_Manager::SLIDER,
       'condition' => [
-        'is_animation_on' => 'yes',
-        'animation_type' => 'typing',
+        'deensimc_is_animation_on' => 'yes',
+        'deensimc_animation_type' => 'typing',
       ],
       'size_units' => ['px'],
       'range' => [
@@ -206,8 +206,8 @@ trait Animated_Text_Effect_Controls {
       'label' => __('Line Color', 'marquee-addons-for-elementor'),
       'type' => Controls_Manager::COLOR,
       'condition' => [
-        'is_animation_on' => 'yes',
-        'animation_type' => 'line',
+        'deensimc_is_animation_on' => 'yes',
+        'deensimc_animation_type' => 'line',
       ],
       'default' => '#000000', 
       'selectors' => [
@@ -219,8 +219,8 @@ trait Animated_Text_Effect_Controls {
       'label' => __('Line Width', 'marquee-addons-for-elementor'),
       'type' => Controls_Manager::SLIDER,
       'condition' => [
-        'is_animation_on' => 'yes',
-        'animation_type' => 'line',
+        'deensimc_is_animation_on' => 'yes',
+        'deensimc_animation_type' => 'line',
       ],
       'range' => [
         'px' => [ 

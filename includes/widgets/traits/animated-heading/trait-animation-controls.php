@@ -5,14 +5,14 @@ use Elementor\Controls_Manager;
 trait Animation_Controls {
   private function register_animation_section_controls() {
     $this->start_controls_section(
-      'animation_section',
+      'deensimc_animation_section',
       [
         'label' => __('Animation Effect', 'marquee-addons-for-elementor'),
         'tab' => Controls_Manager::TAB_CONTENT,
       ]
     );
 
-    $this->add_control('is_animation_on', [
+    $this->add_control('deensimc_is_animation_on', [
       'label' => __('Animation', 'marquee-addons-for-elementor'),
       'type' => Controls_Manager::SWITCHER,
       'label_on' => __('On', 'marquee-addons-for-elementor'),
@@ -21,10 +21,10 @@ trait Animation_Controls {
       'default' => 'yes',
     ]);
 
-    $this->add_control('animation_type', [
+    $this->add_control('deensimc_animation_type', [
       'label' => __('Type', 'marquee-addons-for-elementor'),
       'type' => Controls_Manager::SELECT,
-      'condition' => ['is_animation_on' => 'yes'],
+      'condition' => ['deensimc_is_animation_on' => 'yes'],
       'default' => 'slide',
       'options' => [
         'slide' => __('Slide', 'marquee-addons-for-elementor'),
@@ -44,7 +44,7 @@ trait Animation_Controls {
     $this->add_control('animation_speed', [
       'label' => __('Speed', 'marquee-addons-for-elementor'),
       'type' => Controls_Manager::NUMBER,
-      'condition' => ['is_animation_on' => 'yes'],
+      'condition' => ['deensimc_is_animation_on' => 'yes'],
       'min' => 1,
       'max' => 1000,
       'step' => 1,
@@ -55,8 +55,8 @@ trait Animation_Controls {
       'label' => __('Pause Between Words (sec)', 'marquee-addons-for-elementor'),
       'type' => Controls_Manager::NUMBER,
       'condition' => [
-        'is_animation_on' => 'yes', 
-        'animation_type' => 'construct'
+        'deensimc_is_animation_on' => 'yes', 
+        'deensimc_animation_type' => 'construct'
       ],
       'min' => 0.1,
       'max' => 100,
@@ -68,8 +68,8 @@ trait Animation_Controls {
       'label' => __('Pause After Typed (sec)', 'marquee-addons-for-elementor'),
       'type' => Controls_Manager::NUMBER,
       'condition' => [
-        'is_animation_on' => 'yes', 
-        'animation_type' => 'typing'
+        'deensimc_is_animation_on' => 'yes', 
+        'deensimc_animation_type' => 'typing'
       ],
       'min' => 0.1,
       'max' => 100,
@@ -81,8 +81,8 @@ trait Animation_Controls {
       'label' => __('Delay Per Word (sec)', 'marquee-addons-for-elementor'),
       'type' => Controls_Manager::NUMBER,
       'condition' => [
-        'is_animation_on' => 'yes', 
-        'animation_type' => ['slide', 'slide-horizontal']
+        'deensimc_is_animation_on' => 'yes', 
+        'deensimc_animation_type' => ['slide', 'slide-horizontal']
       ],
       'min' => 0.1,
       'max' => 100,
@@ -94,8 +94,8 @@ trait Animation_Controls {
       'label' => __('Slide Direction', 'marquee-addons-for-elementor'),
       'type' => Controls_Manager::SELECT,
       'condition' => [
-        'is_animation_on' => 'yes',
-        'animation_type' => 'slide',
+        'deensimc_is_animation_on' => 'yes',
+        'deensimc_animation_type' => 'slide',
       ],
       'default' => '1',
       'options' => [
@@ -108,8 +108,8 @@ trait Animation_Controls {
       'label' => __('Slide Direction', 'marquee-addons-for-elementor'),
       'type' => Controls_Manager::SELECT,
       'condition' => [
-        'is_animation_on' => 'yes',
-        'animation_type' => 'slide-horizontal',
+        'deensimc_is_animation_on' => 'yes',
+        'deensimc_animation_type' => 'slide-horizontal',
       ],
       'default' => '1',
       'options' => [
@@ -122,8 +122,8 @@ trait Animation_Controls {
       'label' => __('Line Type', 'marquee-addons-for-elementor'),
       'type' => Controls_Manager::SELECT,
       'condition' => [
-        'is_animation_on' => 'yes',
-        'animation_type' => 'line'
+        'deensimc_is_animation_on' => 'yes',
+        'deensimc_animation_type' => 'line'
       ],
       'default' => 'singleUnderline',
       'options' => [
@@ -140,8 +140,8 @@ trait Animation_Controls {
       'label' => __('Delay Before Erase (sec)', 'marquee-addons-for-elementor'),
       'type' => Controls_Manager::NUMBER,
       'condition' => [
-        'is_animation_on' => 'yes', 
-        'animation_type' => 'line'
+        'deensimc_is_animation_on' => 'yes', 
+        'deensimc_animation_type' => 'line'
       ],
       'min' => 0.1,
       'max' => 100,
@@ -153,8 +153,8 @@ trait Animation_Controls {
       'label' => __('Pause on Hover', 'marquee-addons-for-elementor'),
       'type' => Controls_Manager::SWITCHER,
       'condition' => [
-        'is_animation_on' => 'yes',
-        'animation_type!' => 'line'
+        'deensimc_is_animation_on' => 'yes',
+        'deensimc_animation_type!' => 'line'
       ],
       'label_on' => __('On', 'marquee-addons-for-elementor'),
       'label_off' => __('Off', 'marquee-addons-for-elementor'),

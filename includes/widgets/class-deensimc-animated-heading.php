@@ -73,8 +73,8 @@ class Animated_Heading_Widget extends Widget_Base
     $before = esc_html($settings['before_text']);
     $after = esc_html($settings['after_text']);
     $texts = $settings['animated_texts'];
-    $animation = esc_attr($settings['animation_type']);
-    $isAnimationOn = esc_attr($settings['is_animation_on']);
+    $animation = esc_attr($settings['deensimc_animation_type']);
+    $isAnimationOn = esc_attr($settings['deensimc_is_animation_on']);
     $animationSpeed = esc_attr($settings['animation_speed']);
     $isPauseOnHover = esc_attr($settings['animation_pause_on_hover']);
     $textEffectType = esc_attr($settings['deensimc_animated_text_effect_type']);
@@ -154,43 +154,43 @@ class Animated_Heading_Widget extends Widget_Base
   {
   ?>
     <div class="deensimc-animated-heading 
-  <# if (settings.is_animation_on === 'yes') { #>deensimc-animation-on<# } else { #>deensimc-animation-off<# } #>">
+  <# if (settings.deensimc_is_animation_on === 'yes') { #>deensimc-animation-on<# } else { #>deensimc-animation-off<# } #>">
 
-      <{{{ settings.heading_tag || 'h2' }}} class="deensimc-heading {{ settings.animation_type }} {{ settings.animation_type === 'line' ? settings.line_type : '' }}">
+      <{{{ settings.heading_tag || 'h2' }}} class="deensimc-heading {{ settings.deensimc_animation_type }} {{ settings.deensimc_animation_type === 'line' ? settings.line_type : '' }}">
         <# if (settings.before_text) { #>
           <span class="deensimc-before-text">{{{ settings.before_text }}}</span>
           <# } #>
 
-            <# if (['slide', 'slide-horizontal' , 'rotation-3d' ].includes(settings.animation_type) && settings.is_animation_on==='yes' ) { #>
+            <# if (['slide', 'slide-horizontal' , 'rotation-3d' ].includes(settings.deensimc_animation_type) && settings.deensimc_is_animation_on==='yes' ) { #>
               <div class="deensimc-animated-text-container">
                 <# } #>
 
                   <# if (settings.animated_texts && settings.animated_texts.length) { #>
                     <span
                       class="deensimc-texts-wrapper {{ settings.deensimc_animated_text_effect_type }}"
-                      data-animation="{{ settings.animation_type }}"
-                      data-is-animation-on="{{ settings.is_animation_on }}"
+                      data-animation="{{ settings.deensimc_animation_type }}"
+                      data-is-animation-on="{{ settings.deensimc_is_animation_on }}"
                       data-animation-speed="{{ settings.animation_speed }}"
                       data-is-pause-on-hover="{{ settings.animation_pause_on_hover }}"
 
-                      <# if (settings.animation_type==='construct' ) { #>
+                      <# if (settings.deensimc_animation_type==='construct' ) { #>
                       data-pause-between-words="{{ settings.pause_between_words }}"
                       <# } #>
 
-                        <# if (settings.animation_type==='typing' ) { #>
+                        <# if (settings.deensimc_animation_type==='typing' ) { #>
                           data-pause-after-typed="{{ settings.pause_after_typed }}"
                           <# } #>
 
-                            <# if (['slide', 'slide-horizontal' ].includes(settings.animation_type)) { #>
+                            <# if (['slide', 'slide-horizontal' ].includes(settings.deensimc_animation_type)) { #>
                               data-delay-per-word="{{ settings.delay_per_word }}"
-                              <# if (settings.animation_type==='slide' ) { #>
+                              <# if (settings.deensimc_animation_type==='slide' ) { #>
                                 data-slide-direction="{{ settings.slide_vertical_direction }}"
-                                <# } else if (settings.animation_type==='slide-horizontal' ) { #>
+                                <# } else if (settings.deensimc_animation_type==='slide-horizontal' ) { #>
                                   data-slide-direction="{{ settings.slide_horizontal_direction }}"
                                   <# } #>
                                     <# } #>
 
-                                      <# if (settings.animation_type==='line' ) { #>
+                                      <# if (settings.deensimc_animation_type==='line' ) { #>
                                         data-line-type="{{ settings.line_type }}"
                                         data-delay-before-erase="{{ settings.delay_before_erase }}"
                                         <# } #>
@@ -199,7 +199,7 @@ class Animated_Heading_Widget extends Widget_Base
                                             <span class="deensimc-animated-text">{{{ item.animated_text }}}</span>
                                             <# }); #>
 
-                                              <# if (settings.animation_type==='line' && settings.is_animation_on==='yes' ) { #>
+                                              <# if (settings.deensimc_animation_type==='line' && settings.deensimc_is_animation_on==='yes' ) { #>
                                                 <svg
                                                   height="100%"
                                                   width="100%"
@@ -211,7 +211,7 @@ class Animated_Heading_Widget extends Widget_Base
                     </span>
                     <# } #>
 
-                      <# if (['slide', 'slide-horizontal' , 'rotation-3d' ].includes(settings.animation_type) && settings.is_animation_on==='yes' ) { #>
+                      <# if (['slide', 'slide-horizontal' , 'rotation-3d' ].includes(settings.deensimc_animation_type) && settings.deensimc_is_animation_on==='yes' ) { #>
               </div>
               <# } #>
 
