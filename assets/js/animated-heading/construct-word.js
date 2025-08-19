@@ -30,7 +30,7 @@
 
       $targetContainer.empty();
       if (isPauseOnHover === "yes") {
-        $targetContainer.addClass("deensimc-animated-heading-pause-on-hover");
+        $targetContainer.addClass("deensimc-pause-on-hover");
       }
 
       [...word].forEach((char, i) => {

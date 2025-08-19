@@ -24,8 +24,8 @@ trait Animated_Text_Effect_Controls {
         'options' => [
           'fill' => __('Fill', 'marquee-addons-for-elementor'),
           'outline' => __('Outline', 'marquee-addons-for-elementor'),
-          'gradient-text' => __('Gradient', 'marquee-addons-for-elementor'),
-          'masked-text' => __('Image Masking', 'marquee-addons-for-elementor'),
+          'deensimc-gradient-text' => __('Gradient', 'marquee-addons-for-elementor'),
+          'deensimc-masked-text' => __('Image Masking', 'marquee-addons-for-elementor'),
         ],
       ]
     );
@@ -94,7 +94,7 @@ trait Animated_Text_Effect_Controls {
         'label' => __('Gradient Text', 'marquee-addons-for-elementor'),
         'types' => ['gradient'],
         'condition' => [
-          'animated_text_effect_type' => 'gradient-text',
+          'animated_text_effect_type' => 'deensimc-gradient-text',
         ],
         'selector' => '{{WRAPPER}} .deensimc-heading .deensimc-texts-wrapper span', 
       ]
@@ -110,7 +110,7 @@ trait Animated_Text_Effect_Controls {
           'url' => \Elementor\Utils::get_placeholder_image_src(),
         ],
         'condition' => [
-          'animated_text_effect_type' => 'masked-text',
+          'animated_text_effect_type' => 'deensimc-masked-text',
         ],
         'selectors' => [
           '{{WRAPPER}} .deensimc-heading .deensimc-texts-wrapper span' => 'background-image: url({{URL}});',
@@ -131,7 +131,7 @@ trait Animated_Text_Effect_Controls {
           'contain' => __('Contain', 'marquee-addons-for-elementor'),
         ],
         'condition' => [
-          'animated_text_effect_type' => 'masked-text',
+          'animated_text_effect_type' => 'deensimc-masked-text',
         ],
         'selectors' => [
           '{{WRAPPER}} .deensimc-heading .deensimc-texts-wrapper span' => 'background-size: {{VALUE}};',
@@ -157,7 +157,7 @@ trait Animated_Text_Effect_Controls {
           'right bottom' => __('Bottom Right', 'marquee-addons-for-elementor'),
         ],
         'condition' => [
-          'animated_text_effect_type' => 'masked-text',
+          'animated_text_effect_type' => 'deensimc-masked-text',
         ],
         'selectors' => [
           '{{WRAPPER}} .deensimc-heading .deensimc-texts-wrapper span' => 'background-position: {{VALUE}};',

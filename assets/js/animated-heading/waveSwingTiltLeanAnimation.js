@@ -42,7 +42,7 @@
     words.forEach((word, wordIndex) => {
       const wordWrapper = $("<span></span>").css("white-space", "nowrap");
       if (isPauseOnHover === "yes") {
-        wordWrapper.addClass("deensimc-animated-heading-pause-on-hover");
+        wordWrapper.addClass("deensimc-pause-on-hover");
       }
       [...word].forEach((char, charIndex) => {
         const span = $("<span></span>").text(char === " " ? "\u00A0" : char);

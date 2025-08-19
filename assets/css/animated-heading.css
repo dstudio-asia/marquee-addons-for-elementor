@@ -172,15 +172,15 @@
   }
 }
 
-.masked-text *,
-.gradient-text * {
+.deensimc-masked-text *,
+.deensimc-gradient-text * {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.pause-on-hover:hover * {
-  animation-play-state: paused;
+.deensimc-pause-on-hover:hover * {
+  animation-play-state: paused !important;
 }
 
 @keyframes deensimcWave {
