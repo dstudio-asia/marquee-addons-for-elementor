@@ -75,19 +75,19 @@ class Animated_Heading_Widget extends Widget_Base
     $texts = $settings['animated_texts'];
     $animation = esc_attr($settings['deensimc_animation_type']);
     $isAnimationOn = esc_attr($settings['deensimc_is_animation_on']);
-    $animationSpeed = esc_attr($settings['animation_speed']);
-    $isPauseOnHover = esc_attr($settings['animation_pause_on_hover']);
+    $animationSpeed = esc_attr($settings['deensimc_animation_speed']);
+    $isPauseOnHover = esc_attr($settings['deensimc_animation_pause_on_hover']);
     $textEffectType = esc_attr($settings['deensimc_animated_text_effect_type']);
-    $pauseBetweenWords = esc_attr($settings['pause_between_words']);
-    $pauseAfterTyped = esc_attr($settings['pause_after_typed']);
-    $delayPerWord = esc_attr($settings['delay_per_word']);
-    $lineType = esc_attr($settings['line_type']);
-    $delayBeforeErase = esc_attr($settings['delay_before_erase']);
+    $pauseBetweenWords = esc_attr($settings['deensimc_pause_between_words']);
+    $pauseAfterTyped = esc_attr($settings['deensimc_pause_after_typed']);
+    $delayPerWord = esc_attr($settings['deensimc_delay_per_word']);
+    $lineType = esc_attr($settings['deensimc_line_type']);
+    $delayBeforeErase = esc_attr($settings['deensimc_delay_before_erase']);
     $slideDirection = '';
     if ($animation === 'slide') {
-      $slideDirection = esc_attr($settings['slide_vertical_direction']);
+      $slideDirection = esc_attr($settings['deensimc_slide_vertical_direction']);
     } elseif ($animation === 'slide-horizontal') {
-      $slideDirection = esc_attr($settings['slide_horizontal_direction']);
+      $slideDirection = esc_attr($settings['deensimc_slide_horizontal_direction']);
     }
 ?>
     <div class="deensimc-animated-heading <?php echo $isAnimationOn === 'yes' ? 'deensimc-animation-on' : 'deensimc-animation-off'; ?>">
@@ -156,7 +156,7 @@ class Animated_Heading_Widget extends Widget_Base
     <div class="deensimc-animated-heading 
   <# if (settings.deensimc_is_animation_on === 'yes') { #>deensimc-animation-on<# } else { #>deensimc-animation-off<# } #>">
 
-      <{{{ settings.heading_tag || 'h2' }}} class="deensimc-heading {{ settings.deensimc_animation_type }} {{ settings.deensimc_animation_type === 'line' ? settings.line_type : '' }}">
+      <{{{ settings.heading_tag || 'h2' }}} class="deensimc-heading {{ settings.deensimc_animation_type }} {{ settings.deensimc_animation_type === 'line' ? settings.deensimc_line_type : '' }}">
         <# if (settings.before_text) { #>
           <span class="deensimc-before-text">{{{ settings.before_text }}}</span>
           <# } #>
@@ -170,29 +170,29 @@ class Animated_Heading_Widget extends Widget_Base
                       class="deensimc-texts-wrapper {{ settings.deensimc_animated_text_effect_type }}"
                       data-animation="{{ settings.deensimc_animation_type }}"
                       data-is-animation-on="{{ settings.deensimc_is_animation_on }}"
-                      data-animation-speed="{{ settings.animation_speed }}"
-                      data-is-pause-on-hover="{{ settings.animation_pause_on_hover }}"
+                      data-animation-speed="{{ settings.deensimc_animation_speed }}"
+                      data-is-pause-on-hover="{{ settings.deensimc_animation_pause_on_hover }}"
 
                       <# if (settings.deensimc_animation_type==='construct' ) { #>
-                      data-pause-between-words="{{ settings.pause_between_words }}"
+                      data-pause-between-words="{{ settings.deensimc_pause_between_words }}"
                       <# } #>
 
                         <# if (settings.deensimc_animation_type==='typing' ) { #>
-                          data-pause-after-typed="{{ settings.pause_after_typed }}"
+                          data-pause-after-typed="{{ settings.deensimc_pause_after_typed }}"
                           <# } #>
 
                             <# if (['slide', 'slide-horizontal' ].includes(settings.deensimc_animation_type)) { #>
-                              data-delay-per-word="{{ settings.delay_per_word }}"
+                              data-delay-per-word="{{ settings.deensimc_delay_per_word }}"
                               <# if (settings.deensimc_animation_type==='slide' ) { #>
-                                data-slide-direction="{{ settings.slide_vertical_direction }}"
+                                data-slide-direction="{{ settings.deensimc_slide_vertical_direction }}"
                                 <# } else if (settings.deensimc_animation_type==='slide-horizontal' ) { #>
-                                  data-slide-direction="{{ settings.slide_horizontal_direction }}"
+                                  data-slide-direction="{{ settings.deensimc_slide_horizontal_direction }}"
                                   <# } #>
                                     <# } #>
 
                                       <# if (settings.deensimc_animation_type==='line' ) { #>
-                                        data-line-type="{{ settings.line_type }}"
-                                        data-delay-before-erase="{{ settings.delay_before_erase }}"
+                                        data-line-type="{{ settings.deensimc_line_type }}"
+                                        data-delay-before-erase="{{ settings.deensimc_delay_before_erase }}"
                                         <# } #>
                                           >
                                           <# _.each(settings.animated_texts, function(item) { #>

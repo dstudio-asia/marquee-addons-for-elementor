@@ -41,7 +41,7 @@ trait Animation_Controls {
       ],
     ]);
 
-    $this->add_control('animation_speed', [
+    $this->add_control('deensimc_animation_speed', [
       'label' => __('Speed', 'marquee-addons-for-elementor'),
       'type' => Controls_Manager::NUMBER,
       'condition' => ['deensimc_is_animation_on' => 'yes'],
@@ -51,7 +51,7 @@ trait Animation_Controls {
       'default' => 10,
     ]);
 
-    $this->add_control('pause_between_words', [
+    $this->add_control('deensimc_pause_between_words', [
       'label' => __('Pause Between Words (sec)', 'marquee-addons-for-elementor'),
       'type' => Controls_Manager::NUMBER,
       'condition' => [
@@ -64,7 +64,7 @@ trait Animation_Controls {
       'default' => 1,
     ]);
 
-    $this->add_control('pause_after_typed', [
+    $this->add_control('deensimc_pause_after_typed', [
       'label' => __('Pause After Typed (sec)', 'marquee-addons-for-elementor'),
       'type' => Controls_Manager::NUMBER,
       'condition' => [
@@ -77,7 +77,7 @@ trait Animation_Controls {
       'default' => 1,
     ]);
 
-    $this->add_control('delay_per_word', [
+    $this->add_control('deensimc_delay_per_word', [
       'label' => __('Delay Per Word (sec)', 'marquee-addons-for-elementor'),
       'type' => Controls_Manager::NUMBER,
       'condition' => [
@@ -90,7 +90,7 @@ trait Animation_Controls {
       'default' => 1.5,
     ]);
 
-    $this->add_control('slide_vertical_direction', [
+    $this->add_control('deensimc_slide_vertical_direction', [
       'label' => __('Slide Direction', 'marquee-addons-for-elementor'),
       'type' => Controls_Manager::SELECT,
       'condition' => [
@@ -104,7 +104,7 @@ trait Animation_Controls {
       ],
     ]);
     
-    $this->add_control('slide_horizontal_direction', [
+    $this->add_control('deensimc_slide_horizontal_direction', [
       'label' => __('Slide Direction', 'marquee-addons-for-elementor'),
       'type' => Controls_Manager::SELECT,
       'condition' => [
@@ -118,7 +118,7 @@ trait Animation_Controls {
       ],
     ]);
 
-    $this->add_control('line_type', [
+    $this->add_control('deensimc_line_type', [
       'label' => __('Line Type', 'marquee-addons-for-elementor'),
       'type' => Controls_Manager::SELECT,
       'condition' => [
@@ -136,7 +136,7 @@ trait Animation_Controls {
       ],
     ]);
 
-    $this->add_control('delay_before_erase', [
+    $this->add_control('deensimc_delay_before_erase', [
       'label' => __('Delay Before Erase (sec)', 'marquee-addons-for-elementor'),
       'type' => Controls_Manager::NUMBER,
       'condition' => [
@@ -149,7 +149,7 @@ trait Animation_Controls {
       'default' => 1,
     ]);
 
-    $this->add_control('animation_pause_on_hover', [
+    $this->add_control('deensimc_animation_pause_on_hover', [
       'label' => __('Pause on Hover', 'marquee-addons-for-elementor'),
       'type' => Controls_Manager::SWITCHER,
       'condition' => [
