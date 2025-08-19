@@ -21,7 +21,6 @@
 
 :root {
   --deensimc-text-dark-gray: #555353;
-  --deensimc-gap: 0px;
   --deensimc-color-white: #ffffff;
 }
 
@@ -30,12 +29,19 @@
    ========================================================================== */
 
 .deensimc-marquee {
+  --deensimc-gap: 2rem;
+  --container-padding: 1rem;
+  gap: var(--deensimc-gap);
   display: flex;
   overflow: hidden;
   user-select: none;
-  gap: var(--deensimc-gap);
   position: relative;
   width: 100%;
+  padding-block: var(--container-padding);
+}
+.deensimc-marquee ol,
+.deensimc-marquee ul {
+  margin: 0;
 }
 
 /* ==========================================================================
@@ -239,7 +245,7 @@
 }
 
 /* Mobile Styles (Max Width: 881px) */
-@media (max-width: 881px) {
+@media (max-width: 880px) {
   .deensimc-marquee.deensimc-shadow.deensimc-marquee-vertical::before,
   .deensimc-marquee.deensimc-shadow.deensimc-marquee-vertical::after {
     height: 100%;
@@ -255,7 +261,7 @@
 
   .deensimc-wrapper-vertical {
     flex-direction: column;
-    height: auto;
+    height: auto !important;
   }
 
   .deensimc-wrapper-vertical
@@ -274,6 +280,10 @@
   .deensimc-marquee-vertical,
   .deensimc-marquee-vertical .deensimc-marquee-group {
     flex-direction: row !important;
+  }
+
+  .deensimc-tes.vertical {
+    height: auto !important;
   }
 
   .deensimc-marquee-vertical .deensimc-marquee-group {

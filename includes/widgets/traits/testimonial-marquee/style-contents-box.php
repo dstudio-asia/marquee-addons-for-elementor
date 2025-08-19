@@ -67,6 +67,40 @@ trait Testimonialmarquee_Style_Contents_Box {
 			]
 		);
 
+		$this->add_responsive_control(
+			'deensimc_testimonial_widget_height',
+			[
+				'label' => esc_html__( 'Section Height', 'marquee-addons-for-elementor' ),
+				'type' =>  Controls_Manager::SLIDER,
+				'size_units' => ['vh'],
+				'range' => [
+					'vh' => [
+						'min' => 1,
+						'max' => 100,
+						'step' => 1,
+					],
+				],
+				'default' => [
+					'unit' => 'vh',
+					'size' => 60,
+				],
+				'conditions' => [
+					'terms' => [
+						[
+							'name' => 'deensimc_testimonial_vertical_section',
+							'operator' => '==',
+							'value' => 'yes',
+						],
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .deensimc-tes.vertical' => 'height: {{SIZE}}vh; overflow: hidden;',
+					'{{WRAPPER}} .deensimc-tes.vertical ul' => 'margin: 0; padding: 0; box-sizing: border-box;',
+					'{{WRAPPER}} .deensimc-tes.vertical ol' => 'margin: 0; padding: 0; box-sizing: border-box;',
+				],
+			]
+		);
+
 		$this->add_control(
 			'deensimc_tesimonial_contents_padding',
 			[

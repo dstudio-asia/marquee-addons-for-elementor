@@ -12,7 +12,7 @@ trait Imagemarquee_Style_Edge_Shadow {
     {
 
 		$this->start_controls_section(
-			'deensimcpro_testimonial_marquee_edge_shadow',
+			'deensimc_testimonial_marquee_edge_shadow',
 			[
 				'label' => esc_html__( 'Edge Shadow',  'marquee-addons-for-elementor' ),
 				'tab' => Controls_Manager::TAB_STYLE,
@@ -23,7 +23,7 @@ trait Imagemarquee_Style_Edge_Shadow {
 		);
 
 		$this->add_control(
-			'deensimcpro_testimonial_marquee_edge_shadow_color',
+			'deensimc_testimonial_marquee_edge_shadow_color',
 			[
 				'label' => esc_html__( 'Color',  'marquee-addons-for-elementor' ),
 				'type' => Controls_Manager::COLOR,
