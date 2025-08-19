@@ -7,7 +7,7 @@ permissions:
   contents: write
   pull-requests: write
   issues: write
-  
+
 name: Release-Please
 jobs:
   release-please:
@@ -15,18 +15,16 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        
-      - name: Extract version from readme.txt
-        id: extract-version
-        run: |
-          VERSION=$(grep -oP 'Stable tag:\s*\K[0-9.]+' readme.txt)
-          echo "Extracted version: $VERSION"
-          echo "version=$VERSION" >> $GITHUB_OUTPUT
-          
+
       - uses: google-github-actions/release-please-action@v3
         with:
           release-type: simple
           package-name: marquee-addon
-          version-file: readme.txt
-          version-file-pattern: 'Stable tag:\s*([0-9.]+)'
-          version: ${{ steps.extract-version.outputs.version }}
+          default-branch: main   
+          include-v-in-tag: false
+          # Update readme.txt's "Stable tag: x.y.z"
+          extra-files: |
+            [
+              {"type":"generic","path":"readme.txt","regex":"^Stable tag:\\s*(?<version>\\d+\\.\\d+\\.\\d+)$"}
+            ]
+
