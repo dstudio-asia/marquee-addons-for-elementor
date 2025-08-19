@@ -154,18 +154,25 @@ class Animated_Heading_Widget extends Widget_Base
   {
   ?>
     <div class="deensimc-animated-heading 
-  <# if (settings.deensimc_is_animation_on === 'yes') { #>deensimc-animation-on<# } else { #>deensimc-animation-off<# } #>">
+      <# if (settings.deensimc_is_animation_on === 'yes') { #>
+        deensimc-animation-on
+      <# } else { #>
+        deensimc-animation-off
+      <# } #>">
 
-      <{{{ settings.deensimc_heading_tag || 'h2' }}} class="deensimc-heading {{ settings.deensimc_animation_type }} {{ settings.deensimc_animation_type === 'line' ? settings.deensimc_line_type : '' }}">
-        <# if (settings.before_text) { #>
-          <span class="deensimc-before-text">{{{ settings.before_text }}}</span>
+      <{{{ settings.deensimc_heading_tag || 'h2' }}}
+        class="deensimc-heading {{ settings.deensimc_animation_type }} {{ settings.deensimc_animation_type === 'line' ? settings.deensimc_line_type : '' }}">
+
+        <# if (settings.deensimc_before_text) { #>
+          <span class="deensimc-before-text">{{{ settings.deensimc_before_text }}}</span>
           <# } #>
 
-            <# if (['slide', 'slide-horizontal' , 'rotation-3d' ].includes(settings.deensimc_animation_type) && settings.deensimc_is_animation_on==='yes' ) { #>
+            <# if (['slide', 'slide-horizontal' , 'rotation-3d' ].includes(settings.deensimc_animation_type)
+              && settings.deensimc_is_animation_on==='yes' ) { #>
               <div class="deensimc-animated-text-container">
                 <# } #>
 
-                  <# if (settings.animated_texts && settings.animated_texts.length) { #>
+                  <# if (settings.deensimc_animated_texts && settings.deensimc_animated_texts.length) { #>
                     <span
                       class="deensimc-texts-wrapper {{ settings.deensimc_animated_text_effect_type }}"
                       data-animation="{{ settings.deensimc_animation_type }}"
@@ -195,8 +202,8 @@ class Animated_Heading_Widget extends Widget_Base
                                         data-delay-before-erase="{{ settings.deensimc_delay_before_erase }}"
                                         <# } #>
                                           >
-                                          <# _.each(settings.animated_texts, function(item) { #>
-                                            <span class="deensimc-animated-text">{{{ item.animated_text }}}</span>
+                                          <# _.each(settings.deensimc_animated_texts, function(item) { #>
+                                            <span class="deensimc-animated-text">{{{ item.deensimc_animated_text }}}</span>
                                             <# }); #>
 
                                               <# if (settings.deensimc_animation_type==='line' && settings.deensimc_is_animation_on==='yes' ) { #>
@@ -211,13 +218,15 @@ class Animated_Heading_Widget extends Widget_Base
                     </span>
                     <# } #>
 
-                      <# if (['slide', 'slide-horizontal' , 'rotation-3d' ].includes(settings.deensimc_animation_type) && settings.deensimc_is_animation_on==='yes' ) { #>
+                      <# if (['slide', 'slide-horizontal' , 'rotation-3d' ].includes(settings.deensimc_animation_type)
+                        && settings.deensimc_is_animation_on==='yes' ) { #>
               </div>
               <# } #>
 
-                <# if (settings.after_text) { #>
-                  <span class="deensimc-after-text">{{{ settings.after_text }}}</span>
+                <# if (settings.deensimc_after_text) { #>
+                  <span class="deensimc-after-text">{{{ settings.deensimc_after_text }}}</span>
                   <# } #>
+
       </{{{ settings.deensimc_heading_tag || 'h2' }}}>
     </div>
 <?php
