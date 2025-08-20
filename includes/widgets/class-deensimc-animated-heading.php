@@ -70,32 +70,31 @@ class Animated_Heading_Widget extends Widget_Base
   {
     $settings = $this->get_settings_for_display();
     $tag = $settings['deensimc_heading_tag'] ?? 'h2';
-    $before = esc_html($settings['deensimc_before_text']);
-    $after = esc_html($settings['deensimc_after_text']);
-    $texts = $settings['deensimc_animated_texts'];
-    $animation = esc_attr($settings['deensimc_animation_type']);
-    $isAnimationOn = esc_attr($settings['deensimc_is_animation_on']);
-    $animationSpeed = esc_attr($settings['deensimc_animation_speed']);
-    $isPauseOnHover = esc_attr($settings['deensimc_animation_pause_on_hover']);
-    $textEffectType = esc_attr($settings['deensimc_animated_text_effect_type']);
-    $pauseBetweenWords = esc_attr($settings['deensimc_pause_between_words']);
-    $pauseAfterTyped = esc_attr($settings['deensimc_pause_after_typed']);
-    $delayPerWord = esc_attr($settings['deensimc_delay_per_word']);
-    $lineType = esc_attr($settings['deensimc_line_type']);
-    $delayBeforeErase = esc_attr($settings['deensimc_delay_before_erase']);
+    $before = $settings['deensimc_before_text'] ?? '';
+    $after = $settings['deensimc_after_text'] ?? '';
+    $texts = $settings['deensimc_animated_texts'] ?? [];
+    $animation = $settings['deensimc_animation_type'] ?? '';
+    $isAnimationOn = $settings['deensimc_is_animation_on'] ?? '';
+    $animationSpeed = $settings['deensimc_animation_speed'] ?? '';
+    $isPauseOnHover = $settings['deensimc_animation_pause_on_hover'] ?? '';
+    $textEffectType = $settings['deensimc_animated_text_effect_type'] ?? '';
+    $pauseBetweenWords = $settings['deensimc_pause_between_words'] ?? '';
+    $pauseAfterTyped = $settings['deensimc_pause_after_typed'] ?? '';
+    $delayPerWord = $settings['deensimc_delay_per_word'] ?? '';
+    $lineType = $settings['deensimc_line_type'] ?? '';
+    $delayBeforeErase = $settings['deensimc_delay_before_erase'] ?? '';
+
     $slideDirection = '';
     if ($animation === 'slide') {
-      $slideDirection = esc_attr($settings['deensimc_slide_vertical_direction']);
+      $slideDirection = $settings['deensimc_slide_vertical_direction'] ?? '';
     } elseif ($animation === 'slide-horizontal') {
-      $slideDirection = esc_attr($settings['deensimc_slide_horizontal_direction']);
+      $slideDirection = $settings['deensimc_slide_horizontal_direction'] ?? '';
     }
 ?>
     <div class="deensimc-animated-heading <?php echo $isAnimationOn === 'yes' ? 'deensimc-animation-on' : 'deensimc-animation-off'; ?>">
-      <<?php echo esc_attr($tag); ?> class="deensimc-heading <?php echo esc_attr($animation); ?> <?php if ($animation === 'line') {
-                                                                                          echo esc_attr($lineType);
-                                                                                        } ?>">
+      <<?php echo esc_html($tag); ?> class="deensimc-heading <?php echo esc_attr($animation); ?><?php echo ($animation === 'line') ? ' ' . esc_attr($lineType) : ''; ?>">
         <?php if ($before): ?>
-          <span class="deensimc-before-text"><?php echo esc_attr($before); ?></span>
+          <span class="deensimc-before-text"><?php echo esc_html($before); ?></span>
         <?php endif; ?>
 
         <?php if (in_array($animation, ['slide', 'slide-horizontal', 'rotation-3d']) && $isAnimationOn === 'yes'): ?>
@@ -123,7 +122,7 @@ class Animated_Heading_Widget extends Widget_Base
               data-delay-before-erase="<?php echo esc_attr($delayBeforeErase); ?>"
               <?php endif; ?>>
               <?php foreach ($texts as $item): ?>
-                <span class="deensimc-animated-text"><?php echo esc_html($item['deensimc_animated_text']); ?></span>
+                <span class="deensimc-animated-text"><?php echo esc_html($item['deensimc_animated_text'] ?? ''); ?></span>
               <?php endforeach; ?>
 
               <?php if ($animation === 'line' && $isAnimationOn === "yes"): ?>
@@ -141,9 +140,9 @@ class Animated_Heading_Widget extends Widget_Base
           </div>
         <?php endif; ?>
         <?php if ($after): ?>
-          <span class="deensimc-after-text"><?php echo esc_attr($after); ?></span>
+          <span class="deensimc-after-text"><?php echo esc_html($after); ?></span>
         <?php endif; ?>
-      </<?php echo esc_attr($tag); ?>>
+      </<?php echo esc_html($tag); ?>>
     </div>
   <?php
   }
