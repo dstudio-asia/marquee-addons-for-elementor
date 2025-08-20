@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: marquee, slider, image marquee, video marquee, text marquee
 Requires at least: 5.8
 Tested up to: 6.8
-Stable tag: 2.2.3
+Stable tag: 2.3.0
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -45,6 +45,14 @@ Show several images in a stacked slider format, where users can shuffle through 
 ### Image Accordion:
  
 Create an engaging accordion-style effect with images, Where each image expands as the user hovers over it. Ideal for displaying portfolios, product features or any content that requires a unique, interactive display. [Demo](https://wp.dstudio.asia/marquee-addons/image-accordion/)
+
+### Animated Headline:
+
+Create attention-grabbing headlines by combining static text with engaging animations like typing, flipping, or fade effects. Add custom text before or after the animated section to match your design needs and create an interactive, modern heading that stands out on any page.
+
+### Animated Word Roller:
+
+Combines a static heading with rotating words or phrases that roll through the same spot. Set the duration per word, looping behavior, and the number of visible words, and style the title and animated words separately.
  
 ### Key features:
  
@@ -110,7 +118,7 @@ No, Marquee Addons works with the free version of Elementor. However, you may re
 
 = 3. How do I install Marquee Addons for Elementor? =
 
-You can install Marquee Addons by searching for the plugin in the WordPress dashboard under â€œPlugins > Add Newâ€. Once found, click â€œInstallâ€ and then activate it. After activation, the widgets will appear in your Elementor editor.
+You can install Marquee Addons by searching for the plugin in the WordPress dashboard under Plugins > Add New. Once found, click Install and then activate it. After activation, the widgets will appear in your Elementor editor.
 
 = 4. What can I use Marquee Addons for? =
 
@@ -122,7 +130,7 @@ Yes, Marquee Addons offers full control over the speed, direction (left, right, 
 
 = 6. Will using Marquee Addons slow down my website? =
 
-The plugin is optimized for performance, but as with any animation-heavy feature, itâ€™s important to monitor your websiteâ€™s speed, especially when adding multiple dynamic elements. Always test your siteâ€™s performance after making changes.
+The plugin is optimized for performance, but as with any animation-heavy feature, items important to monitor your website speed, especially when adding multiple dynamic elements. Always test your site performance after making changes.
 
 = 7. Are Marquee Addons responsive for mobile devices? =
 
@@ -138,9 +146,19 @@ The developers release regular updates to improve features, fix bugs, and ensure
 
 = 10. What should I do if my marquee effect is not working? =
 
-First, ensure that youâ€™ve activated the plugin correctly. If the issue persists, try clearing your browser cache or updating your Elementor plugin. If the problem continues, you can reach out to the support team for assistance.
+First, ensure that you've activated the plugin correctly. If the issue persists, try clearing your browser cache or updating your Elementor plugin. If the problem continues, you can reach out to the support team for assistance.
 
 == Changelog ==
+
+= 2.3.0
+- New: Animated Heading widget
+- New: Animated Word Roller widget
+- New: Vertical orientation support for Testimonial Marquee
+- Fix: Gap issues in Testimonial Marquee
+- Fix: Rating display in Testimonial Marquee
+- Fix: Section height for vertical layout on small devices (Testimonial Marquee)
+- Fix: Shadow and gap control in Testimonial Marquee
+- Fix: Section height for vertical layout on small devices (Text Marquee)
 
 = 2.2.3
 - New: bg overlay color for testimonial
