@@ -1,6 +1,14 @@
 # Changelog
 
 
+## [2.3.0](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/2.2.4...2.3.0) (2025-08-20)
+
+
+### Bug Fixes
+
+* Fix esc ([5d91239](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/5d912390b61418172e0009924d19aeda25c3989d))
+* Fix security warning ([23efdfe](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/23efdfe8dd91fc8c3955d59be14056182cd88208))
+
 ## [2.2.4](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v2.2.3...2.2.4) (2025-08-19)
 
 
