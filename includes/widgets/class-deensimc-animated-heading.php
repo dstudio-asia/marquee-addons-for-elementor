@@ -91,11 +91,11 @@ class Animated_Heading_Widget extends Widget_Base
     }
 ?>
     <div class="deensimc-animated-heading <?php echo $isAnimationOn === 'yes' ? 'deensimc-animation-on' : 'deensimc-animation-off'; ?>">
-      <<?php echo esc_attr($tag); ?> class="deensimc-heading <?php echo $animation; ?> <?php if ($animation === 'line') {
-                                                                                          echo $lineType;
+      <<?php echo esc_attr($tag); ?> class="deensimc-heading <?php echo esc_attr($animation); ?> <?php if ($animation === 'line') {
+                                                                                          echo esc_attr($lineType);
                                                                                         } ?>">
         <?php if ($before): ?>
-          <span class="deensimc-before-text"><?php echo $before; ?></span>
+          <span class="deensimc-before-text"><?php echo esc_attr($before); ?></span>
         <?php endif; ?>
 
         <?php if (in_array($animation, ['slide', 'slide-horizontal', 'rotation-3d']) && $isAnimationOn === 'yes'): ?>
@@ -103,24 +103,24 @@ class Animated_Heading_Widget extends Widget_Base
           <?php endif; ?>
 
           <?php if (!empty($texts)): ?>
-            <span class="deensimc-texts-wrapper <?php echo $textEffectType; ?>"
-              data-animation="<?php echo $animation; ?>"
-              data-is-animation-on="<?php echo $isAnimationOn; ?>"
-              data-animation-speed="<?php echo $animationSpeed; ?>"
-              data-is-pause-on-hover="<?php echo $isPauseOnHover; ?>"
+            <span class="deensimc-texts-wrapper <?php echo esc_attr($textEffectType); ?>"
+              data-animation="<?php echo esc_attr($animation); ?>"
+              data-is-animation-on="<?php echo esc_attr($isAnimationOn); ?>"
+              data-animation-speed="<?php echo esc_attr($animationSpeed); ?>"
+              data-is-pause-on-hover="<?php echo esc_attr($isPauseOnHover); ?>"
               <?php if ($animation === 'construct'): ?>
-              data-pause-between-words="<?php echo $pauseBetweenWords; ?>"
+              data-pause-between-words="<?php echo esc_attr($pauseBetweenWords); ?>"
               <?php endif; ?>
               <?php if ($animation === 'typing'): ?>
-              data-pause-after-typed="<?php echo $pauseAfterTyped; ?>"
+              data-pause-after-typed="<?php echo esc_attr($pauseAfterTyped); ?>"
               <?php endif; ?>
               <?php if (in_array($animation, ['slide', 'slide-horizontal'])): ?>
-              data-delay-per-word="<?php echo $delayPerWord; ?>"
-              data-slide-direction="<?php echo $slideDirection; ?>"
+              data-delay-per-word="<?php echo esc_attr($delayPerWord); ?>"
+              data-slide-direction="<?php echo esc_attr($slideDirection); ?>"
               <?php endif; ?>
               <?php if ($animation === 'line'): ?>
-              data-line-type="<?php echo $lineType; ?>"
-              data-delay-before-erase="<?php echo $delayBeforeErase; ?>"
+              data-line-type="<?php echo esc_attr($lineType); ?>"
+              data-delay-before-erase="<?php echo esc_attr($delayBeforeErase); ?>"
               <?php endif; ?>>
               <?php foreach ($texts as $item): ?>
                 <span class="deensimc-animated-text"><?php echo esc_html($item['deensimc_animated_text']); ?></span>
@@ -137,13 +137,11 @@ class Animated_Heading_Widget extends Widget_Base
               <?php endif; ?>
             </span>
           <?php endif; ?>
-
           <?php if (in_array($animation, ['slide', 'slide-horizontal', 'rotation-3d']) && $isAnimationOn === 'yes'): ?>
           </div>
         <?php endif; ?>
-
         <?php if ($after): ?>
-          <span class="deensimc-after-text"><?php echo $after; ?></span>
+          <span class="deensimc-after-text"><?php echo esc_attr($after); ?></span>
         <?php endif; ?>
       </<?php echo esc_attr($tag); ?>>
     </div>
