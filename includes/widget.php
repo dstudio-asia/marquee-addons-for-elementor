@@ -449,6 +449,7 @@ final class Marquee
 		require_once(__DIR__ . '/widgets/traits/animated-heading/trait-title-controls.php');
 
 		require_once(__DIR__ . '/widgets/traits/button-marquee/trait-button-controls.php');
+		require_once(__DIR__ . '/widgets/traits/button-marquee/trait-button-style-controls.php');
 
 		require_once(__DIR__ . '/widgets/class-deensimc-image-marquee.php');
 		require_once(__DIR__ . '/widgets/class-deensimc-stacked-slider.php');
