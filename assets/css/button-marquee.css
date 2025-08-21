@@ -19,11 +19,14 @@
   text-transform: uppercase; /* dynamic */
   text-decoration: none; /* dynamic */
   color: white; /* dynamic */
-  font-size: 1.5rem; /* dynamic */
+  font-size: 1rem; /* dynamic */
 }
 .deensimc-button {
-  padding: 0.5rem 1rem; /* dynamic */
+  padding: 1rem 2rem; /* dynamic */
   z-index: 1;
+}
+.deensimc-button:hover {
+  color: white;
 }
 
 .deensimc-button-marquee-track-wrapper {

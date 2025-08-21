@@ -56,6 +56,21 @@ trait Button_Style_Controls
       ]
     );
 
+    $this->add_control('deensimc_button_text_gap', [
+      'label' => __('Gap', 'marquee-addons-for-elementor'),
+      'type' => Controls_Manager::SLIDER,
+      'condition' => [
+        'deensimc_button_marquee_state' => 'yes',
+      ],
+      'size_units' => ['px', 'em', 'rem'],
+      'range' => [
+        'px' => ['min' => 0, 'max' => 150],
+      ],
+      'selectors' => [
+        '{{WRAPPER}} .deensimc-button-marquee-track-wrapper' => '--button-text-gap: {{SIZE}}{{UNIT}};',
+      ],
+    ]);
+
     // Typography
     $this->add_group_control(
       Group_Control_Typography::get_type(),
@@ -203,6 +218,67 @@ trait Button_Style_Controls
       ]
     );
 
+    $this->add_control(
+      'deensimc_button_icon_style_section',
+      [
+        'label' => esc_html__('Icon', 'marquee-addons-for-elementor'),
+        'type' => Controls_Manager::HEADING,
+        'separator' => 'before',
+        'condition' => [
+          'deensimc_button_icon[value]!' => '',
+        ],
+      ]
+    );
+    // Icon Color
+    $this->add_control(
+      'deensimc_button_icon_color',
+      [
+        'label'     => esc_html__('Icon Color', 'marquee-addons-for-elementor'),
+        'type'      => Controls_Manager::COLOR,
+        'selectors' => [
+          '{{WRAPPER}} .deensimc-button svg'       => 'fill: {{VALUE}};',
+          '{{WRAPPER}} .deensimc-button i'         => 'color: {{VALUE}};',
+          '{{WRAPPER}} .deensimc-button-text svg'  => 'fill: {{VALUE}};',
+          '{{WRAPPER}} .deensimc-button-text i'    => 'color: {{VALUE}};',
+        ],
+        'condition' => [
+          'deensimc_button_icon[value]!' => '',
+        ],
+      ]
+    );
+
+    // Icon Size
+    $this->add_responsive_control(
+      'deensimc_button_icon_size',
+      [
+        'label' => esc_html__('Icon Size', 'marquee-addons-for-elementor'),
+        'type'  => Controls_Manager::SLIDER,
+        'size_units' => ['px', 'em', 'rem'],
+        'range' => [
+          'px' => [
+            'min' => 8,
+            'max' => 200,
+          ],
+          'em' => [
+            'min' => 0.5,
+            'max' => 10,
+          ],
+          'rem' => [
+            'min' => 0.5,
+            'max' => 10,
+          ],
+        ],
+        'selectors' => [
+          '{{WRAPPER}} .deensimc-button svg'       => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+          '{{WRAPPER}} .deensimc-button i'         => 'font-size: {{SIZE}}{{UNIT}};',
+          '{{WRAPPER}} .deensimc-button-text svg'  => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+          '{{WRAPPER}} .deensimc-button-text i'    => 'font-size: {{SIZE}}{{UNIT}};',
+        ],
+        'condition' => [
+          'deensimc_button_icon[value]!' => '',
+        ],
+      ]
+    );
     $this->end_controls_section();
   }
 }
