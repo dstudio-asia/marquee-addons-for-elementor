@@ -274,9 +274,9 @@ final class Marquee
 		echo '    <img src="' . esc_url(DEENSIMC_ASSETS_URL) . 'images/library-icon.png" alt="Notice Icon" />';
 		echo '  </div>';
 		echo '  <div class="deensimc-notice-content">';
-		echo '    <h3>Enjoying our plugin MarqueeAddons?</h3>';
-		echo '    <p>Help us improve it by sharing your feedback. It only takes a moment, and it really helps us build a better experience for you.</p>';
-		echo '    <a href="https://wordpress.org/support/plugin/marquee-addons-for-elementor/reviews/#new-post" target="_blank" class="button button-primary">Rate Us</a>';
+		echo '    <h3>Upgrade to Marquee Addons Pro</h3>';
+		echo '    <p>Unlock more advance widgets and make your Elementor website 10x better with Marquee Addons.</p>';
+		echo '    <a href="https://marqueeaddons.com/pricing/" target="_blank" class="button button-primary">Upgrade to Pro</a>';
 		echo '    <button class="button deensimc-dismiss-btn">No thanks</button>';
 		echo '  </div>';
 		echo '</div>';
