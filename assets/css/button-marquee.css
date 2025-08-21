@@ -12,7 +12,7 @@
 }
 .deensimc-button,
 .deensimc-button-text {
-  background-color: inherit;
+  background: inherit;
   display: flex;
   align-items: center;
   justify-content: center;
