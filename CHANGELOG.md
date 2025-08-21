@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [2.3.1](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/2.3.0...2.3.1) (2025-08-21)
+
+
+### Bug Fixes
+
+* Fix testimonial bg color, and gap issue ([2b0bbb3](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/2b0bbb343421bc1a2d1e6bd506cc3d613c3cc716))
+
 ## [2.3.0](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/2.2.4...2.3.0) (2025-08-20)
 
 
