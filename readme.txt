@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: marquee, product marquee, image marquee, video marquee, text marquee, card marquee
 Requires at least: 5.8
 Tested up to: 6.8
-Stable tag: 2.4.2
+Stable tag: 2.4.3
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -16,19 +16,19 @@ MarqueeAddons makes it easy to add smooth marquee effects for text, button, imag
 
 [Plugin Demo](https://marqueeaddons.com/) | [Documentation](https://marqueeaddons.com/docs/) | [Get Pro for Advanced Features](https://marqueeaddons.com/free-vs-pro/)
  
-### [Image Marquee](https://wp.dstudio.asia/marquee-addons/image-marquee/):
+### [Image Marquee](https://marqueeaddons.com/image-marquee/):
  
 Lets you add smooth scrolling marquee effects for images, featuring lightbox, image links, lazy loading, adjustable animation speed, and customizable scrolling direction. It provides an easy and effective way to showcase your images loop on your website.
 
-### [Text marquee](https://wp.dstudio.asia/marquee-addons/text-marquee/):
+### [Text marquee](https://marqueeaddons.com/text-marquee/):
 
 Allows you to display scrolling marquee texts with icons and repeat the content as needed. You can set the scrolling direction vertical or horizontally, giving you flexibility to match the layout and flow of your website’s design.
 
-### [Testimonial Marquee](https://wp.dstudio.asia/marquee-addons/testimonial-marquee/):
+### [Testimonial Marquee](https://marqueeaddons.com/testimonial-marquee/):
 
 Share client feedback, names, and ratings in a smooth, continuous scroll. A clean and effortless way to highlight customer reviews, build trust, and keep your site looking modern and professional.
  
-### [Video Marquee](https://wp.dstudio.asia/marquee-addons/video-marquee/):
+### [Video Marquee](https://marqueeaddons.com/video-marquee/):
  
 Create a continuous video reel that supports YouTube, Vimeo, Dailymotion, or self-hosted videos. Control autoplay, mute, and loop options for a smooth experience across devices.
 
@@ -36,11 +36,11 @@ Create a continuous video reel that supports YouTube, Vimeo, Dailymotion, or sel
 
 With the News Ticker widget users can easily display the highlighted news, updates, or announcements in an endless loop format. Customize the appearance, speed, and content to suit your website’s style. Perfect for showcasing real-time news, blog posts, discounts offers or important alerts on any page.
 
-### [Stacked Slider](https://wp.dstudio.asia/marquee-addons/stacked-slider/):
+### [Stacked Slider](https://marqueeaddons.com/stacked-slider/):
  
 Show several images in a stacked slider format, where users can shuffle through different layers of visuals. This is great for displaying product collections, and portfolios, in a neat and interactive manner.
 
-### [Image Accordion](https://wp.dstudio.asia/marquee-addons/image-accordion/):
+### [Image Accordion](https://marqueeaddons.com/image-accordion/):
  
 Create an engaging accordion-style effect with images, Where each image expands as the user hovers over it. Ideal for displaying portfolios, product features or any content that requires a unique, interactive display.
 
@@ -211,6 +211,9 @@ The developers release regular updates to improve features, fix bugs, and ensure
 First, ensure that you've activated the plugin correctly. If the issue persists, try clearing your browser cache or updating your Elementor plugin. If the problem continues, you can reach out to the support team for assistance.
 
 == Changelog ==
+
+= 2.4.3
+= Tweak: readme.txt content updated
 
 = 2.4.0
 = New: Button Marquee Widget
