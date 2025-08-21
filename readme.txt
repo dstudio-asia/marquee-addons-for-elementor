@@ -151,7 +151,7 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 == Changelog ==
 
 = 2.3.1
-- Tweak: 
+- Tweak: placeholder image for Image Marquee
 
 = 2.3.0
 - New: Animated Heading widget
