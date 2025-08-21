@@ -6,6 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // Elementor Classes
 use \Elementor\Controls_Manager;
+use \Elementor\Utils;
 
 trait Imagemarquee_Content_Image {
 	protected function content_image() 
@@ -24,7 +25,12 @@ trait Imagemarquee_Content_Image {
 				'label' => esc_html__( 'Add Images', 'marquee-addons-for-elementor' ),
 				'type' =>  Controls_Manager::GALLERY,
 				'show_label' => false,
-				'default' => [],
+				'default' => [
+					[
+						'id' => 'placeholder',
+						'url' => Utils::get_placeholder_image_src(),
+					],
+				],
 			]
 		);
 
