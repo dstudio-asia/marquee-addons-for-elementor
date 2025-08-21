@@ -20,6 +20,7 @@
   text-decoration: none; /* dynamic */
   color: white; /* dynamic */
   font-size: 1rem; /* dynamic */
+  font-weight: 500;
 }
 .deensimc-button {
   padding: 1rem 2rem; /* dynamic */
