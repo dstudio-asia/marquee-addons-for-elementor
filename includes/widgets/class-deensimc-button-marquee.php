@@ -11,15 +11,16 @@ class Deensimc_Button_marquee extends Widget_Base
 {
   use Button_Controls;
   use Button_Style_Controls;
+  use Button_Marquee_Controls;
 
   public function get_style_depends()
   {
-    return [];
+    return ['deensimc-button-marquee-style'];
   }
 
   public function get_script_depends()
   {
-    return [];
+    return ['deensimc-button-marquee-script'];
   }
 
   public function get_name()
@@ -50,6 +51,7 @@ class Deensimc_Button_marquee extends Widget_Base
   protected function register_controls()
   {
     $this->register_button_section_controls();
+    $this->register_button_marquee_section_controls();
     $this->register_button_style_section_controls();
   }
 
@@ -73,30 +75,47 @@ class Deensimc_Button_marquee extends Widget_Base
       $icon_html = ob_get_clean();
     }
 
+    $is_marquee_on = $settings['deensimc_button_marquee_state'] === 'yes';
+    $is_reverse = $settings['deensimc_button_marquee_direction'] === 'yes';
+    $is_marquee_on_hover = $settings['deensimc_button_marquee_on_hover'] === 'yes';
+    $marquee_speed = $settings['deensimc_button_marquee_speed'];
+
+    $conditional_class = [];
+    if ($is_reverse) {
+      $conditional_class[] = 'deensimc-button-marquee-reverse';
+    }
+    if ($is_marquee_on_hover) {
+      $conditional_class[] = 'deensimc-button-marquee-on-hover';
+    } else {
+      $conditional_class[] = 'deensimc-button-marquee-init';
+    }
+
 ?>
-    <div class="deensimc-button-marquee-container deensimc-button-marquee-on-hover">
+    <div class="deensimc-button-marquee-container <?= esc_attr(implode(' ', $conditional_class)) ?>" data-is-marquee-on="<?= esc_attr($is_marquee_on) ?>" data-marquee-speed="<?= esc_attr($marquee_speed) ?>">
       <a href="<?php echo esc_url($link); ?>" class="deensimc-button" id="<?= esc_attr($button_id) ?>" target="<?= esc_attr($target) ?>" rel="<?= esc_attr($nofollow) ?>" <?= esc_attr($custom_attrs) ?>>
         <span class="deensimc-button-marquee-icon"><?php echo  $icon_html; ?></span>
         <span><?php echo esc_html($text); ?></span>
       </a>
-      <div class="deensimc-button-marquee-track-wrapper">
-        <div class="deensimc-button-marquee-track">
-          <?php for ($i = 0; $i < 8; $i++) : ?>
-            <span class="deensimc-button-text">
-              <span class="deensimc-button-marquee-icon"><?php echo  $icon_html; ?></span>
-              <span><?php echo esc_html($text); ?></span>
-            </span>
-          <?php endfor; ?>
+      <?php if ($is_marquee_on) { ?>
+        <div class="deensimc-button-marquee-track-wrapper">
+          <div class="deensimc-button-marquee-track">
+            <?php for ($i = 0; $i < 8; $i++) : ?>
+              <span class="deensimc-button-text">
+                <span class="deensimc-button-marquee-icon"><?php echo $icon_html; ?></span>
+                <span><?php echo esc_html($text); ?></span>
+              </span>
+            <?php endfor; ?>
+          </div>
+          <div class="deensimc-button-marquee-track" aria-hidden="true">
+            <?php for ($i = 0; $i < 8; $i++) : ?>
+              <span class="deensimc-button-text">
+                <span class="deensimc-button-marquee-icon"><?php echo $icon_html; ?></span>
+                <span><?php echo esc_html($text); ?></span>
+              </span>
+            <?php endfor; ?>
+          </div>
         </div>
-        <div class="deensimc-button-marquee-track" aria-hidden="true">
-          <?php for ($i = 0; $i < 8; $i++) : ?>
-            <span class="deensimc-button-text">
-              <span class="deensimc-button-marquee-icon"><?php echo  $icon_html; ?></span>
-              <span><?php echo esc_html($text); ?></span>
-            </span>
-          <?php endfor; ?>
-        </div>
-      </div>
+      <?php } ?>
     </div>
   <?php
   }
@@ -125,31 +144,50 @@ class Deensimc_Button_marquee extends Widget_Base
       }
 
       var attrs=target + nofollow + customAttr;
+
+      // Marquee settings
+      var is_marquee_on=settings.deensimc_button_marquee_state==='yes' ? 1 : 0 ;
+      var is_reverse=settings.deensimc_button_marquee_direction==='yes' ;
+      var is_marquee_on_hover=settings.deensimc_button_marquee_on_hover==='yes' ;
+      var marquee_speed=settings.deensimc_button_marquee_speed || '' ;
+
+      // Conditional classes
+      var conditional_class=[];
+      if (is_reverse) {
+      conditional_class.push('deensimc-button-marquee-reverse');
+      }
+      if (is_marquee_on_hover) {
+      conditional_class.push('deensimc-button-marquee-on-hover');
+      } else {
+      conditional_class.push('deensimc-button-marquee-init');
+      }
       #>
 
-      <div class="deensimc-button-marquee-container deensimc-button-marquee-on-hover">
+      <div class="deensimc-button-marquee-container {{ conditional_class.join(' ') }}" data-is-marquee-on="{{is_marquee_on}}" data-marquee-speed="{{ marquee_speed }}">
         <a href="{{ link }}" class="deensimc-button" id="{{ button_id }}" {{{ attrs }}}>
           <span class="deensimc-button-marquee-icon">{{{ iconHtml }}}</span>
           <span>{{ text }}</span>
         </a>
-        <div class="deensimc-button-marquee-track-wrapper">
-          <div class="deensimc-button-marquee-track">
-            <# for (var i=0; i < 8; i++) { #>
-              <span class="deensimc-button-text">
-                <span class="deensimc-button-marquee-icon">{{{ iconHtml }}}</span>
-                <span>{{ text }}</span>
-              </span>
-              <# } #>
+        <# if (is_marquee_on) { #>
+          <div class="deensimc-button-marquee-track-wrapper">
+            <div class="deensimc-button-marquee-track">
+              <# for (var i=0; i < 8; i++) { #>
+                <span class="deensimc-button-text">
+                  <span class="deensimc-button-marquee-icon">{{{ iconHtml }}}</span>
+                  <span>{{ text }}</span>
+                </span>
+                <# } #>
+            </div>
+            <div class="deensimc-button-marquee-track" aria-hidden="true">
+              <# for (var i=0; i < 8; i++) { #>
+                <span class="deensimc-button-text">
+                  <span class="deensimc-button-marquee-icon">{{{ iconHtml }}}</span>
+                  <span>{{ text }}</span>
+                </span>
+                <# } #>
+            </div>
           </div>
-          <div class="deensimc-button-marquee-track" aria-hidden="true">
-            <# for (var i=0; i < 8; i++) { #>
-              <span class="deensimc-button-text">
-                <span class="deensimc-button-marquee-icon">{{{ iconHtml }}}</span>
-                <span>{{ text }}</span>
-              </span>
-              <# } #>
-          </div>
-        </div>
+          <# } #>
       </div>
   <?php
   }
