@@ -1,0 +1,67 @@
+.deensimc-button-marquee-container {
+  position: relative;
+  overflow: hidden;
+  width: fit-content;
+  margin-inline: auto;
+  white-space: nowrap;
+  isolation: isolate;
+
+  background-color: blueviolet; /* dynamic */
+  border-radius: 0.5rem; /* dynamic */
+  box-shadow: 4px 4px 8px red; /* dynamic */
+  border: 2px solid green; /* dynamic */
+}
+.deensimc-button,
+.deensimc-button-text {
+  background-color: inherit;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase; /* dynamic */
+  text-decoration: none; /* dynamic */
+  color: white; /* dynamic */
+  font-size: 1.5rem; /* dynamic */
+}
+.deensimc-button {
+  padding: 0.5rem 1rem; /* dynamic */
+  z-index: 1;
+}
+
+.deensimc-button-marquee-track-wrapper {
+  --button-text-gap: 1rem; /* dynamic */
+  background-color: inherit;
+  display: flex;
+  align-items: center;
+  gap: var(--button-text-gap);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity 300ms ease;
+}
+
+.deensimc-button-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: var(--button-text-gap);
+  animation: deensimcButtonMarqueeAnimation 20s linear infinite;
+}
+
+.deensimc-button-marquee-on-hover .deensimc-button-marquee-track-wrapper {
+  opacity: 0;
+}
+.deensimc-button-marquee-on-hover:hover .deensimc-button-marquee-track-wrapper {
+  opacity: 1;
+}
+
+.deensimc-button-marquee-init:hover .deensimc-button-marquee-track-wrapper {
+  opacity: 0;
+}
+
+@keyframes deensimcButtonMarqueeAnimation {
+  100% {
+    transform: translateX(calc(-100% - var(--button-text-gap)));
+  }
+}
