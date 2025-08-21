@@ -7,12 +7,12 @@
   isolation: isolate;
   text-align: center;
   transition: all 200ms ease;
-  background-color: blueviolet; /* dynamic */
+  background: blueviolet; /* dynamic */
   border-radius: 0.25rem; /* dynamic */
 }
 .deensimc-button,
 .deensimc-button-text {
-  background-color: inherit;
+  background: inherit;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,7 +20,7 @@
   text-decoration: none; /* dynamic */
   color: white; /* dynamic */
   font-size: 1rem; /* dynamic */
-  font-weight: 500;
+  font-weight: 500; /* dynamic */
 }
 .deensimc-button {
   padding: 1rem 2rem; /* dynamic */
@@ -32,7 +32,7 @@
 
 .deensimc-button-marquee-track-wrapper {
   --button-text-gap: 1rem; /* dynamic */
-  background-color: inherit;
+  background: inherit;
   display: flex;
   align-items: center;
   gap: var(--button-text-gap);
