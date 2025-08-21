@@ -46,7 +46,11 @@
   display: flex;
   align-items: center;
   gap: var(--button-text-gap);
-  animation: deensimcButtonMarqueeAnimation 20s linear infinite;
+  animation: deensimcButtonMarqueeAnimation 45s linear infinite;
+}
+
+.deensimc-button-marquee-reverse .deensimc-button-marquee-track {
+  animation-direction: reverse;
 }
 
 .deensimc-button-marquee-on-hover .deensimc-button-marquee-track-wrapper {
