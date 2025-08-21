@@ -1,21 +1,21 @@
 .deensimc-button-marquee-container {
   position: relative;
-  overflow: hidden;
+  overflow: clip;
   width: fit-content;
   margin-inline: auto;
   white-space: nowrap;
   isolation: isolate;
-
+  text-align: center;
+  transition: all 200ms ease;
   background-color: blueviolet; /* dynamic */
-  border-radius: 0.5rem; /* dynamic */
-  box-shadow: 4px 4px 8px red; /* dynamic */
-  border: 2px solid green; /* dynamic */
+  border-radius: 0.25rem; /* dynamic */
 }
 .deensimc-button,
 .deensimc-button-text {
   background-color: inherit;
   display: flex;
   align-items: center;
+  justify-content: center;
   text-transform: uppercase; /* dynamic */
   text-decoration: none; /* dynamic */
   color: white; /* dynamic */
@@ -39,7 +39,7 @@
   display: flex;
   pointer-events: none;
   z-index: 2;
-  transition: opacity 300ms ease;
+  transition: opacity 200ms ease;
 }
 
 .deensimc-button-marquee-track {

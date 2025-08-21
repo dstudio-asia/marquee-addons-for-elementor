@@ -10,6 +10,7 @@ if (!defined('ABSPATH')) {
 class Deensimc_Button_marquee extends Widget_Base
 {
   use Button_Controls;
+  use Button_Style_Controls;
 
   public function get_style_depends()
   {
@@ -49,6 +50,7 @@ class Deensimc_Button_marquee extends Widget_Base
   protected function register_controls()
   {
     $this->register_button_section_controls();
+    $this->register_button_style_section_controls();
   }
 
   protected function render()
@@ -72,7 +74,7 @@ class Deensimc_Button_marquee extends Widget_Base
     }
 
 ?>
-    <div class="deensimc-button-marquee-container deensimc-button-marquee-init">
+    <div class="deensimc-button-marquee-container deensimc-button-marquee-on-hover">
       <a href="<?php echo esc_url($link); ?>" class="deensimc-button" id="<?= esc_attr($button_id) ?>" target="<?= esc_attr($target) ?>" rel="<?= esc_attr($nofollow) ?>" <?= esc_attr($custom_attrs) ?>>
         <span class="deensimc-button-marquee-icon"><?php echo  $icon_html; ?></span>
         <span><?php echo esc_html($text); ?></span>
@@ -105,8 +107,13 @@ class Deensimc_Button_marquee extends Widget_Base
   ?>
     <#
       var text=settings.deensimc_button_text || '<?php echo esc_js(__('Button Marquee', 'marquee-addons-for-elementor')); ?>' ;
-      var link=settings.deensimc_button_link && settings.deensimc_button_link.url ? settings.deensimc_button_link.url : '#' ;
-      var button_id=settings.deensimc_button_id;
+      var link_data=settings.deensimc_button_link || {};
+      var link=link_data.url ? link_data.url : '#' ;
+      var target=link_data.is_external ? ' target="_blank"' : '' ;
+      var nofollow=link_data.nofollow ? ' rel="nofollow"' : '' ;
+      var customAttr=link_data.custom_attributes ? ' ' + link_data.custom_attributes : '' ;
+
+      var button_id=settings.deensimc_button_id ? settings.deensimc_button_id.replace(/[^A-Za-z0-9_]/g, '' ) : '' ;
 
       // Icon handling
       var iconHtml='' ;
@@ -116,9 +123,12 @@ class Deensimc_Button_marquee extends Widget_Base
       iconHtml=iconElement.value;
       }
       }
+
+      var attrs=target + nofollow + customAttr;
       #>
-      <div class="deensimc-button-marquee-container deensimc-button-marquee-init">
-        <a href="{{ link }}" class="deensimc-button" id="{{ button_id }}">
+
+      <div class="deensimc-button-marquee-container deensimc-button-marquee-on-hover">
+        <a href="{{ link }}" class="deensimc-button" id="{{ button_id }}" {{{ attrs }}}>
           <span class="deensimc-button-marquee-icon">{{{ iconHtml }}}</span>
           <span>{{ text }}</span>
         </a>
