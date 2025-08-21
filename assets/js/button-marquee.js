@@ -19,7 +19,7 @@
           const pixelFactor = 10;
           const pps = animationSpeed * pixelFactor;
           const duration = (totalLength * 2) / pps;
-          console.log({ duration });
+
           tracks.each((i, el) => {
             $(el).css("animation-duration", `${duration}s`);
           });
