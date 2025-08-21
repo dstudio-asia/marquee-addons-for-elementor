@@ -6,7 +6,7 @@ if (!defined('ABSPATH')) {
   exit;
 }
 
-class Animated_Heading_Widget extends Widget_Base
+class Deensimc_Animated_Heading_Widget extends Widget_Base
 {
   use Title_Controls, Animation_Controls, Text_Styles_Controls, Animated_Text_Effect_Controls;
 
