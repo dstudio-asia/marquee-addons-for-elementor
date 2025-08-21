@@ -1,0 +1,10 @@
+.git
+.qodo
+.gitignore
+.distignore
+.github
+node_modules
+vendor
+.wordpress-org
+CHANGELOG.md
+README.md

@@ -3,9 +3,11 @@
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Background;
 
-trait Animated_Text_Effect_Controls {
+trait Animated_Text_Effect_Controls
+{
 
-  private function register_animated_text_effect_section_controls() {
+  private function register_animated_text_effect_section_controls()
+  {
     $this->start_controls_section(
       'deensimc_animated_text_effect_section',
       [
@@ -84,7 +86,7 @@ trait Animated_Text_Effect_Controls {
         ],
       ]
     );
-    
+
 
     // Gradient text effect
     $this->add_group_control(
@@ -96,7 +98,7 @@ trait Animated_Text_Effect_Controls {
         'condition' => [
           'deensimc_animated_text_effect_type' => 'deensimc-gradient-text',
         ],
-        'selector' => '{{WRAPPER}} .deensimc-heading .deensimc-texts-wrapper span', 
+        'selector' => '{{WRAPPER}} .deensimc-heading .deensimc-texts-wrapper span',
       ]
     );
 
@@ -117,7 +119,7 @@ trait Animated_Text_Effect_Controls {
         ],
       ]
     );
-    
+
 
     $this->add_control(
       'deensimc_animated_text_image_mask_size',
@@ -164,7 +166,7 @@ trait Animated_Text_Effect_Controls {
         ],
       ]
     );
-    
+
     $this->add_control('deensimc_cursor_color', [
       'label' => __('Cursor Color', 'marquee-addons-for-elementor'),
       'type' => Controls_Manager::COLOR,
@@ -172,11 +174,11 @@ trait Animated_Text_Effect_Controls {
         'deensimc_is_animation_on' => 'yes',
         'deensimc_animation_type' => 'typing',
       ],
-      'default' => '#000000', 
+      'default' => '#000000',
       'selectors' => [
         '{{WRAPPER}} .typing .deensimc-texts-wrapper' => 'border-color: {{VALUE}};',
       ],
-    ]); 
+    ]);
 
     $this->add_control('deensimc_cursor_width', [
       'label' => __('Cursor Width', 'marquee-addons-for-elementor'),
@@ -209,13 +211,13 @@ trait Animated_Text_Effect_Controls {
         'deensimc_is_animation_on' => 'yes',
         'deensimc_animation_type' => 'line',
       ],
-      'default' => '#000000', 
+      'default' => '#000000',
       'selectors' => [
         '{{WRAPPER}} .line .deensimc-animated-lines path' => 'stroke: {{VALUE}};',
       ],
-    ]); 
+    ]);
 
-    $this->add_control('seensimc_line_width', [
+    $this->add_control('deensimc_line_width', [
       'label' => __('Line Width', 'marquee-addons-for-elementor'),
       'type' => Controls_Manager::SLIDER,
       'condition' => [
@@ -223,7 +225,7 @@ trait Animated_Text_Effect_Controls {
         'deensimc_animation_type' => 'line',
       ],
       'range' => [
-        'px' => [ 
+        'px' => [
           'min' => 1,
           'max' => 100,
           'step' => 1,
@@ -236,7 +238,7 @@ trait Animated_Text_Effect_Controls {
         '{{WRAPPER}} .line .deensimc-animated-lines path' => 'stroke-width: {{SIZE}};',
       ],
     ]);
-    
+
 
     $this->end_controls_section();
   }
