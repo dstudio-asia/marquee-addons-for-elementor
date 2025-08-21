@@ -1,6 +1,22 @@
 # Changelog
 
 
+## [2.4.0](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/2.3.1...2.4.0) (2025-08-21)
+
+
+### Features
+
+* Add button marquee ([b4ffa0f](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/b4ffa0fc28199b8cb4d4d08936e928a50dd9317b))
+* Add button marquee styles control ([2f8241f](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/2f8241ff06018f16a1f78e029921c2a9c04c8b7a))
+* Add gap control ([37dfdf0](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/37dfdf0a64bcf7b17f73f91cddb4ae9179fe1e16))
+* Add marquee controls ([1e3b74e](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/1e3b74efdb622d200cbb973f5df92959ff244d67))
+
+
+### Bug Fixes
+
+* Fix button bg color ([4c72d92](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/4c72d92ab399b98f6b85a6b6adee3c49d34a224a))
+* Fix button bg color ([d67a2c0](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/d67a2c0fc9ca3ef21601631de7bd781f1f8d2f72))
+
 ## [2.3.1](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/2.3.0...2.3.1) (2025-08-21)
 
 
