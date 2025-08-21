@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: marquee, product marquee, image marquee, video marquee, text marquee, card marquee
 Requires at least: 5.8
 Tested up to: 6.8
-Stable tag: 2.4.0
+Stable tag: 2.4.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
