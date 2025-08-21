@@ -42,7 +42,7 @@ trait Videomarquee_Style_Contents {
 		);
 
 		$this->add_responsive_control(
-			'deensimc_videos_gap',
+			'deensimc_video_marquee_videos_gap',
 			[
 				'label' => esc_html__( 'Gap',  'marquee-addons-for-elementor' ),
 				'type' =>  Controls_Manager::SLIDER,
@@ -63,9 +63,7 @@ trait Videomarquee_Style_Contents {
 					'size' => 30,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .deensimc-marquee-group' => 'gap: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .deensimc-marquee-group:nth-child(2)' => 'margin-left: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .deensimc-wrapper-vertical .deensimc-marquee-vertical .deensimc-marquee-group:nth-child(2)' => 'margin-top: {{SIZE}}{{UNIT}}; margin-left:0px;',
+					'{{WRAPPER}} .deensimc-marquee' => '--deensimc-gap: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);

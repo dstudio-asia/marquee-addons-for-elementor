@@ -73,9 +73,9 @@ trait Imagemarquee_Style_Alignment_Spacing {
 		);
 
 		$this->add_responsive_control(
-			'deensimc_image_spacing',
+			'deensimc_image_marquee_spacing',
 			[
-				'label' => esc_html__( 'Spacing', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__( 'Gap', 'marquee-addons-for-elementor' ),
 				'type' =>  Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'range' => [
@@ -94,9 +94,7 @@ trait Imagemarquee_Style_Alignment_Spacing {
 					'size' => 20,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .deensimc-marquee-group' => 'gap: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .deensimc-marquee-group:nth-child(2)' => 'margin-left: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .deensimc-wrapper-vertical .deensimc-marquee-vertical .deensimc-marquee-group:nth-child(2)' => 'margin-top: {{SIZE}}{{UNIT}}; margin-left:0px;',
+					'{{WRAPPER}} .deensimc-marquee' => '--deensimc-gap: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);

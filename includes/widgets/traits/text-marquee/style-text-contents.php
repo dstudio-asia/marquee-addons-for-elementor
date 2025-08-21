@@ -30,7 +30,7 @@ trait Textmarquee_Style_Text_Contents {
 		);
 
 		$this->add_responsive_control(
-			'deensimc_content_spacing',
+			'deensimc_text_marquee_content_spacing',
 			[
 				'label' => esc_html__( 'Content Spacing', 'marquee-addons-for-elementor' ),
 				'type' =>  Controls_Manager::SLIDER,
@@ -51,9 +51,7 @@ trait Textmarquee_Style_Text_Contents {
 					'size' => 20,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .deensimc-marquee-group' => 'gap: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .deensimc-marquee-group:nth-child(2)' => 'margin-left: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .deensimc-wrapper-vertical .deensimc-marquee-vertical .deensimc-marquee-group:nth-child(2)' => 'margin-top: {{SIZE}}{{UNIT}}; margin-left:0px;',
+					'{{WRAPPER}} .deensimc-marquee' => '--deensimc-gap: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
