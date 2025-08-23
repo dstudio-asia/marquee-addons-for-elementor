@@ -8,6 +8,7 @@
   background: blueviolet; /* dynamic */
   border-radius: 0.25rem; /* dynamic */
   padding-block: 0;
+  cursor: pointer;
 }
 .deensimc-button,
 .deensimc-button-text {
