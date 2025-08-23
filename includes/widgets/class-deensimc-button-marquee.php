@@ -40,7 +40,7 @@ class Deensimc_Button_marquee extends Widget_Base
 
   public function get_categories()
   {
-    return ['deensimc_smooth_marquee'];
+    return ['deensimc_marquee_addons'];
   }
 
   public function get_keywords()

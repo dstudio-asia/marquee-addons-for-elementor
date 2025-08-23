@@ -38,7 +38,6 @@
   height: 60vh;
   padding-inline: var(--deensimc-container-padding);
   padding-block: 0;
-  width: fit-content;
 }
 
 .deensimc-marquee-vertical .deensimc-marquee-track-wrapper,
@@ -46,6 +45,8 @@
   flex-direction: column;
   align-items: center;
   width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .deensimc-marquee-vertical .deensimc-marquee-track {
@@ -60,31 +61,6 @@
 
 .deensimc-marquee-reverse .deensimc-marquee-track {
   animation-direction: reverse;
-}
-
-.deensimc-marquee-on-scroll .deensimc-marquee-track {
-  animation-name: unset !important;
-  animation-duration: unset !important;
-  animation-timing-function: unset !important;
-  animation-iteration-count: unset !important;
-  animation-play-state: unset !important;
-}
-
-.deensimc-marquee-on-scroll .deensimc-marquee-track-wrapper,
-.deensimc-marquee-on-scroll .deensimc-marquee-track {
-  justify-content: center;
-  transition: transform 0.1s linear;
-}
-
-.deensimc-marquee-stop .deensimc-marquee-track-wrapper,
-.deensimc-marquee-stop .deensimc-marquee-track {
-  max-width: 100%;
-  flex-wrap: wrap;
-  animation: unset;
-}
-
-.deensimc-marquee-on-scroll .deensimc-dragging {
-  transition: none;
 }
 
 .deensimc-marquee-edge-shadow {

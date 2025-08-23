@@ -300,6 +300,7 @@ final class Marquee
 		// refactored code start
 		wp_register_style('deensimc-marquee-common-styles', DEENSIMC_ASSETS_URL . 'css/common-styles.css', null, self::VERSION, false);
 		wp_register_style('deensimc-button-marquee-style', DEENSIMC_ASSETS_URL . 'css/button-marquee.css', null, self::VERSION, false);
+		wp_register_style('deensimc-image-marquee-style', DEENSIMC_ASSETS_URL . 'css/image-marquee.css', null, self::VERSION, false);
 
 
 		wp_enqueue_style('deensimc-marquee-common-styles');
@@ -336,6 +337,7 @@ final class Marquee
 		// refactored code start
 		wp_register_script('deensimc-handle-animation-duration', DEENSIMC_ASSETS_URL  . 'js/handle-animation-duration.js', ['jquery'], self::VERSION, false);
 		wp_register_script('deensimc-button-marquee-script', DEENSIMC_ASSETS_URL  . 'js/button-marquee.js', ['jquery'], self::VERSION, false);
+		wp_register_script('deensimc-image-marquee-script', DEENSIMC_ASSETS_URL  . 'js/image-marquee.js', ['jquery'], self::VERSION, false);
 
 
 		wp_enqueue_script('deensimc-handle-animation-duration');
@@ -401,6 +403,9 @@ final class Marquee
 	function deensimc_register_widgets($widgets_manager)
 	{
 
+		require_once(__DIR__ . '/widgets/traits/common-controls/marquee-controls.php');
+		require_once(__DIR__ . '/widgets/traits/common-controls/style-edge-shadow.php');
+
 		require_once(__DIR__ . '/widgets/traits/image-accordion/content.php');
 		require_once(__DIR__ . '/widgets/traits/image-accordion/style.php');
 
@@ -435,12 +440,8 @@ final class Marquee
 		require_once(__DIR__ . '/widgets/traits/testimonial-marquee/style-edge-shadow.php');
 
 		require_once(__DIR__ . '/widgets/traits/image-marquee/content-image.php');
-		require_once(__DIR__ . '/widgets/traits/image-marquee/content-additional-options.php');
-		require_once(__DIR__ . '/widgets/traits/image-marquee/style-alignment-spacing.php');
-		require_once(__DIR__ . '/widgets/traits/image-marquee/style-height-width.php');
-		require_once(__DIR__ . '/widgets/traits/image-marquee/style-border-options.php');
-		require_once(__DIR__ . '/widgets/traits/image-marquee/style-caption.php');
-		require_once(__DIR__ . '/widgets/traits/image-marquee/style-edge-shadow.php');
+		require_once(__DIR__ . '/widgets/traits/image-marquee/style-image-controls.php');
+		require_once(__DIR__ . '/widgets/traits/image-marquee/style-caption-controls.php');
 
 		require_once(__DIR__ . '/widgets/traits/text-marquee/content-text-repeater.php');
 		require_once(__DIR__ . '/widgets/traits/text-marquee/content-additional-options.php');
@@ -492,7 +493,7 @@ final class Marquee
 	{
 
 		$elements_manager->add_category(
-			'deensimc_smooth_marquee',
+			'deensimc_marquee_addons',
 			[
 				'title' => esc_html__('Marquee Addons', 'marquee-addons-for-elementor'),
 				'icon' => 'fa fa-plug',
