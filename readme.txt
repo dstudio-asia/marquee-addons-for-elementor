@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: marquee, product marquee, image marquee, video marquee, text marquee, card marquee
 Requires at least: 5.8
 Tested up to: 6.8
-Stable tag: 2.4.0
+Stable tag: 2.4.3
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -14,33 +14,33 @@ MarqueeAddons is a smooth video, text, image, and testimonial marquee carousel l
 
 MarqueeAddons makes it easy to add smooth marquee effects for text, button, images, testimonials, videos, and cards to websites built with Elementor. It helps you create a continuous smooth scrolling loop for your content. You can customize the direction to scroll left, right, top, or bottom, either horizontally or vertically. With flexible options, it provides a smooth and user-friendly experience for your visitors while keeping your site looking modern and functional.
 
-[Plugin Demo](https://marqueeaddons.com/) | [Documentation](https://marqueeaddons.com/docs/) | [Get Pro for Advanced Features] (https://marqueeaddons.com/free-vs-pro/)
+[Plugin Demo](https://marqueeaddons.com/) | [Documentation](https://marqueeaddons.com/docs/) | [Get Pro for Advanced Features](https://marqueeaddons.com/free-vs-pro/)
  
-### [Image Marquee] (https://wp.dstudio.asia/marquee-addons/image-marquee/):
+### [Image Marquee](https://marqueeaddons.com/image-marquee/):
  
 Lets you add smooth scrolling marquee effects for images, featuring lightbox, image links, lazy loading, adjustable animation speed, and customizable scrolling direction. It provides an easy and effective way to showcase your images loop on your website.
 
-### [Text marquee] (https://wp.dstudio.asia/marquee-addons/text-marquee/):
+### [Text marquee](https://marqueeaddons.com/text-marquee/):
 
 Allows you to display scrolling marquee texts with icons and repeat the content as needed. You can set the scrolling direction vertical or horizontally, giving you flexibility to match the layout and flow of your website’s design.
 
-### [Testimonial Marquee] (https://wp.dstudio.asia/marquee-addons/testimonial-marquee/):
+### [Testimonial Marquee](https://marqueeaddons.com/testimonial-marquee/):
 
 Share client feedback, names, and ratings in a smooth, continuous scroll. A clean and effortless way to highlight customer reviews, build trust, and keep your site looking modern and professional.
  
-### [Video Marquee] (https://wp.dstudio.asia/marquee-addons/video-marquee/):
+### [Video Marquee](https://marqueeaddons.com/video-marquee/):
  
 Create a continuous video reel that supports YouTube, Vimeo, Dailymotion, or self-hosted videos. Control autoplay, mute, and loop options for a smooth experience across devices.
 
-### [News Ticker] (https://marqueeaddons.com/news-ticker/):
+### [News Ticker](https://marqueeaddons.com/news-ticker/):
 
 With the News Ticker widget users can easily display the highlighted news, updates, or announcements in an endless loop format. Customize the appearance, speed, and content to suit your website’s style. Perfect for showcasing real-time news, blog posts, discounts offers or important alerts on any page.
 
-### [Stacked Slider] (https://wp.dstudio.asia/marquee-addons/stacked-slider/):
+### [Stacked Slider](https://marqueeaddons.com/stacked-slider/):
  
 Show several images in a stacked slider format, where users can shuffle through different layers of visuals. This is great for displaying product collections, and portfolios, in a neat and interactive manner.
 
-### [Image Accordion] (https://wp.dstudio.asia/marquee-addons/image-accordion/):
+### [Image Accordion](https://marqueeaddons.com/image-accordion/):
  
 Create an engaging accordion-style effect with images, Where each image expands as the user hovers over it. Ideal for displaying portfolios, product features or any content that requires a unique, interactive display.
 
@@ -61,39 +61,39 @@ An eye-catching marquee button featuring auto-scrolling animated text. On Button
 MarqueeAddons Pro brings smooth marquee effects and motion design widgets to Elementor. Create advanced scrolling text, Media, testimonials, videos, 3D effect, cards, posts, products, and more in endless loops. Whether you are a designer, an agency, or a store owner, MarqueeAddons Pro helps you Make your 
 Elementor Websites Look 10x Better | Modern | Creative | Beautiful | Awesome
 
-### [Card Marquee] (https://marqueeaddons.com/card-marquee/) (Pro):
+### [Card Marquee](https://marqueeaddons.com/card-marquee/) (Pro):
 
 This widget lets you create an engaging carousel of cards that move in a smooth, continuous loop. Each card can include an icon, image, background overlay, title, and call-to-action button, making it ideal for showcasing products, services, courses, or featured content. This is a universal card widget to design any type of card with CTA.
 
 You have full control over styling so every card can be customized to match your website’s design. Adjust layout, spacing, typography, colors, and button styles to create a look that feels natural for your brand. With options for direction, speed, and hover effects, the Card Marquee helps you build a dynamic section that guides visitors toward action while keeping the design consistent with your site.
 
-### [Media Marquee] (https://marqueeaddons.com/media-marquee/) (Pro):
+### [Media Marquee](https://marqueeaddons.com/media-marquee/) (Pro):
 
 This widget gives you a flexible way to showcase media in motion. You can build an infinite loop of images, each linkable, lightbox-ready, and customizable for uses like logos, book covers, or team photos. You can also create a video carousel with continuous playback and lightbox support, designed to run smoothly and efficiently.
 
 What makes it stand out is the ability to combine both images and videos in a single strip, so you are never limited to one format. Define aspect ratios, adjust spacing, add overlays, or include play icons for videos. You control the direction, speed, and hover behavior to create a reel that fits your site’s style. If you want an extra layer of interactivity, you can also enable a marquee scroll-trigger animation on this widget.
 
-### [Post Marquee] (https://marqueeaddons.com/post-marquee/) (Pro):
+### [Post Marquee](https://marqueeaddons.com/post-marquee/) (Pro):
 
 Display your posts in motion with a smooth, continuous carousel. Highlight featured images, titles, and call-to-action links, all styled to match your site. Works with blogs, news, products, or any custom post type, giving your content an engaging, always-visible presence.
 
-### [Products Marquee] (https://marqueeaddons.com/product-marquee/) (Pro): 
+### [Products Marquee](https://marqueeaddons.com/product-marquee/) (Pro): 
 
 Showcase your products in a smooth, infinite carousel that keeps them always in view. Each product can display its image, title, price, and add-to-cart button, styled to match your store’s design. Highlight featured, upsell, sale, or new items in an engaging way that draws attention without breaking the flow of your site.
 
-### [Product Category Marquee] (https://marqueeaddons.com/product-marquee/) (Pro): 
+### [Product Category Marquee](https://marqueeaddons.com/product-marquee/) (Pro): 
 
 Present your product categories in a smooth, continuous carousel. Each category can include an image, title, and link, styled to fit your store’s design. A great way to feature popular or seasonal categories and guide shoppers toward the right products.
 
-### [Advanced Testimonial Marquee] (https://marqueeaddons.com/testimonial-marquee/) (Pro)
+### [Advanced Testimonial Marquee](https://marqueeaddons.com/testimonial-marquee/) (Pro)
 
 Bring testimonials and reviews to life with a continuous marquee carousel in multiple layouts. Unlock advanced options like scroll-triggered motion, vertical style, highlighted reviews, and interactive hover effects to make feedback stand out.
 
-### [Advanced Text Marquee] (https://marqueeaddons.com/text-marquee/) (Pro)
+### [Advanced Text Marquee](https://marqueeaddons.com/text-marquee/) (Pro)
 
 Turn static testimonials into scrolling stories that stand out. The Advanced Testimonial Marquee lets you highlight reviews in multiple layouts, vertical, horizontal, or scroll-triggered motion. Add hover effects, spotlight featured reviews, and create a dynamic wall of trust that makes your brand more credible.
 
-### [Circular Text Rotation] (https://marqueeaddons.com/circular-text-rotation/) (Pro)
+### [Circular Text Rotation](https://marqueeaddons.com/circular-text-rotation/) (Pro)
 
 Add rotating circular text for badges, hero sections, and callouts. Adjust radius, direction, and speed, with options like pause on hover and rotate on scroll. Style it fully with typography and text-stroke controls. You can even turn it into an interactive call-to-action button, linking to any page or section you choose.
 
@@ -148,7 +148,7 @@ Start faster with one-click demo import and beautifully pre-built marquee templa
 
 Have questions or need help? Post on the plugin’s **Support Forum** on WordPress.org — we actively monitor and respond.
 
-For feature overviews, demo, and in‑depth [documentation] (https://marqueeaddons.com/docs/), check out our **website** at Marquee Addons.
+For feature overviews, demo, and in‑depth [documentation](https://marqueeaddons.com/docs/), check out our **website** at Marquee Addons.
 
 == Installation ==
 
@@ -211,6 +211,9 @@ The developers release regular updates to improve features, fix bugs, and ensure
 First, ensure that you've activated the plugin correctly. If the issue persists, try clearing your browser cache or updating your Elementor plugin. If the problem continues, you can reach out to the support team for assistance.
 
 == Changelog ==
+
+= 2.4.3
+= Tweak: readme.txt content updated
 
 = 2.4.0
 = New: Button Marquee Widget
