@@ -493,7 +493,7 @@ final class Marquee
 	{
 
 		$elements_manager->add_category(
-			'deensimc_marquee_addons',
+			'deensimc_smooth_marquee',
 			[
 				'title' => esc_html__('Marquee Addons', 'marquee-addons-for-elementor'),
 				'icon' => 'fa fa-plug',

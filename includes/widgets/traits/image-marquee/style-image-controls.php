@@ -80,7 +80,7 @@ trait Deensimc_Image_Marquee_Image_Style
 					'{{WRAPPER}} .deensimc-image-marquee .deensimc-marquee-track' => 'align-items: {{VALUE}};',
 				],
 				'condition' => [
-					'deensimc_marquee_orientation!' => 'yes',
+					'deensimc_marquee_vertical_orientation!' => 'yes',
 				],
 			]
 		);

@@ -34,7 +34,7 @@ class Deensimc_Image_Accordion extends Widget_Base
 
 	public function get_categories()
 	{
-		return ['deensimc_marquee_addons'];
+		return ['deensimc_smooth_marquee'];
 	}
 
 	public function get_keywords()

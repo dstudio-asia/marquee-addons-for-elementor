@@ -41,7 +41,7 @@ class Deensimc_Animated_Word_Roller extends Widget_Base
 
 	public function get_categories()
 	{
-		return ['deensimc_marquee_addons'];
+		return ['deensimc_smooth_marquee'];
 	}
 
 	public function get_keywords()

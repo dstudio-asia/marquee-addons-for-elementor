@@ -32,7 +32,7 @@ class Deensimc_Image_Marquee extends Widget_Base
 
 	public function get_name()
 	{
-		return 'deensimc-image-marquee';
+		return 'deensimc-smooth-marquee'; //Image Marquee
 	}
 
 	public function get_title()
@@ -47,7 +47,7 @@ class Deensimc_Image_Marquee extends Widget_Base
 
 	public function get_categories()
 	{
-		return ['deensimc_marquee_addons'];
+		return ['deensimc_smooth_marquee'];
 	}
 
 	public function get_keywords()
