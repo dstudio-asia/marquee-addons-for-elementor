@@ -1,0 +1,11 @@
+.deensimc-img-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  img {
+    max-width: none;
+  }
+  .deensimc-image-marquee-caption {
+    line-height: 1.2;
+  }
+}
