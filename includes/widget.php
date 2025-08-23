@@ -229,7 +229,10 @@ final class Marquee
 
 		wp_enqueue_style(
 			'deensimc-feedback-style',
-			DEENSIMC_ASSETS_URL . 'css/admin/notice.css'
+			DEENSIMC_ASSETS_URL . 'css/admin/notice.css',
+			null,
+			self::VERSION,
+			false
 		);
 
 		wp_enqueue_script(

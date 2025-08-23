@@ -11,7 +11,7 @@ trait Text_Styles_Controls {
     $this->start_controls_section(
       $section_id,
       [
-        'label' => __($label, 'marquee-addons-for-elementor'),
+        'label' => esc_html( $label , 'marquee-addons-for-elementor'),
         'tab' => Controls_Manager::TAB_STYLE,
         'condition' => [
           $text_field_name . '!' => '',

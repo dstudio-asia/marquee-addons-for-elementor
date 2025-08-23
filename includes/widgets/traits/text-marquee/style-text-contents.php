@@ -209,7 +209,7 @@ trait Textmarquee_Style_Text_Contents {
 		$this->add_responsive_control(
 			'deensimc_icon_adjust_vertical_position',
 			[
-				'label' => esc_html__( 'Adjust Vertical Position', 'textdomain' ),
+				'label' => esc_html__( 'Adjust Vertical Position', 'marquee-addons-for-elementor' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', 'rem' ],
 				'range' => [

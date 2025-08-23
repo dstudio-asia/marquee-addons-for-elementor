@@ -289,8 +289,8 @@ class Deensimc_Testimonial_Marquee extends Widget_Base {
 		$marquee_orientation = 'yes' === $settings['deensimc_testimonial_vertical_section'] ? 'vertical' : 'horizontal';
 
     ?>
-		<div class="deensimc-tes <?= esc_attr($marquee_orientation)?>">
-			<div class="deensimc-marquee <?= esc_attr('deensimc-marquee-' . $marquee_orientation)?>  <?php echo esc_attr( $show_shadow ." ". $show_reverse ) ?> deensimc-tes-logo"  
+		<div class="deensimc-tes <?php esc_attr($marquee_orientation)?>">
+			<div class="deensimc-marquee <?php esc_attr('deensimc-marquee-' . $marquee_orientation)?>  <?php echo esc_attr( $show_shadow ." ". $show_reverse ) ?> deensimc-tes-logo"  
 				data-animation-status="<?php echo esc_attr( $settings['deensimc_show_animation'] ); ?>" 
 				data-excerpt-length="<?php echo esc_attr( $settings['deensimc_tesimonial_excerpt_length'] ); ?>" 
 				data-show-more="<?php echo esc_attr( $settings['deensimc_tesimonial_excerpt_title'] ); ?>" 

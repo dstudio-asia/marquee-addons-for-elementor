@@ -7,16 +7,16 @@
       .find(".deensimc-tes-text")
       .each(function () {
         let blockquoteElement = $(this);
-        let fullText = blockquoteElement.text().replace("Show more", "").trim();
+        let fullText = blockquoteElement.text().replace("Show more", "").replace('<', "").replace('>', "").trim();
         let wordLimit =
           $(scope)
             .find(".deensimc-tes .deensimc-marquee")
             .data("excerpt-length") || 50;
         let showMoreText =
-          $(scope).find(".deensimc-tes .deensimc-marquee").data("show-more") ||
+          $(scope).find(".deensimc-tes .deensimc-marquee").data("show-more").replace('<', "").replace('>', "") ||
           "Show more";
         let showLessText =
-          $(scope).find(".deensimc-tes .deensimc-marquee").data("show-less") ||
+          $(scope).find(".deensimc-tes .deensimc-marquee").data("show-less").replace('<', "").replace('>', "") ||
           "Show less";
         let quoteLeft =
           $(scope).find(".deensimc-tes .deensimc-marquee").data("quote-left") ||
