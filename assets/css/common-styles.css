@@ -1,0 +1,187 @@
+.deensimc-marquee-main-container {
+  --deensimc-item-gap: 2rem;
+  --deensimc-container-padding: 1rem;
+  --edge-shadow-color: #ffffff;
+  --edge-shadow-spread: 50px;
+  --edge-shadow-blur: 30px;
+
+  position: relative;
+  overflow: clip;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  width: 100%;
+  padding-block: var(--deensimc-container-padding);
+}
+.deensimc-marquee-track-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--deensimc-item-gap);
+}
+.deensimc-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: var(--deensimc-item-gap);
+  will-change: transform;
+  -webkit-will-change: transform;
+  animation-name: deensimc_marquee_horizontal;
+  animation-duration: 0s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+
+/*************************
+     Conditional classes 
+ ************************/
+.deensimc-marquee-vertical.deensimc-marquee-main-container {
+  height: 60vh;
+  padding-inline: var(--deensimc-container-padding);
+  padding-block: 0;
+  width: fit-content;
+}
+
+.deensimc-marquee-vertical .deensimc-marquee-track-wrapper,
+.deensimc-marquee-vertical .deensimc-marquee-track {
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+}
+
+.deensimc-marquee-vertical .deensimc-marquee-track {
+  animation-name: deensimc_marquee_vertical;
+}
+
+.deensimc-marquee-pause-on-hover
+  .deensimc-marquee-track-wrapper:hover
+  .deensimc-marquee-track {
+  animation-play-state: paused;
+}
+
+.deensimc-marquee-reverse .deensimc-marquee-track {
+  animation-direction: reverse;
+}
+
+.deensimc-marquee-on-scroll .deensimc-marquee-track {
+  animation-name: unset !important;
+  animation-duration: unset !important;
+  animation-timing-function: unset !important;
+  animation-iteration-count: unset !important;
+  animation-play-state: unset !important;
+}
+
+.deensimc-marquee-on-scroll .deensimc-marquee-track-wrapper,
+.deensimc-marquee-on-scroll .deensimc-marquee-track {
+  justify-content: center;
+  transition: transform 0.1s linear;
+}
+
+.deensimc-marquee-stop .deensimc-marquee-track-wrapper,
+.deensimc-marquee-stop .deensimc-marquee-track {
+  max-width: 100%;
+  flex-wrap: wrap;
+  animation: unset;
+}
+
+.deensimc-marquee-on-scroll .deensimc-dragging {
+  transition: none;
+}
+
+.deensimc-marquee-edge-shadow {
+  position: relative;
+  &::after,
+  &::before {
+    content: "";
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    pointer-events: none;
+    box-shadow: 0 0 var(--edge-shadow-blur) var(--edge-shadow-spread)
+      var(--edge-shadow-color);
+  }
+
+  &::before {
+    left: 0;
+  }
+
+  &::after {
+    right: 0;
+  }
+}
+
+.deensimc-marquee-vertical.deensimc-marquee-edge-shadow {
+  &::after,
+  &::before {
+    content: "";
+    width: 100%;
+    height: 0;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    transition: width 300ms ease;
+    will-change: width;
+    box-shadow: 0 0 var(--edge-shadow-blur) var(--edge-shadow-spread)
+      var(--edge-shadow-color);
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    top: auto;
+    bottom: 0;
+  }
+}
+
+/* Force vertical layout on mobile */
+@media (max-width: 767px) {
+  .deensimc-marquee-vertical.deensimc-marquee-main-container {
+    height: auto !important;
+    padding-inline: 0;
+    padding-block: 1rem;
+    width: auto;
+  }
+
+  .deensimc-marquee-vertical .deensimc-marquee-track-wrapper,
+  .deensimc-marquee-vertical .deensimc-marquee-track {
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+  }
+
+  .deensimc-marquee-vertical .deensimc-marquee-track {
+    animation-name: deensimc_marquee_horizontal;
+  }
+
+  .deensimc-marquee-vertical.deensimc-marquee-edge-shadow {
+    &::after,
+    &::before {
+      width: 0;
+      height: 100%;
+    }
+
+    &::before {
+      left: 0;
+      right: auto;
+    }
+
+    &::after {
+      right: 0;
+      left: auto;
+    }
+  }
+}
+
+@keyframes deensimc_marquee_horizontal {
+  to {
+    transform: translateX(calc(-100% - var(--deensimc-item-gap)));
+  }
+}
+@keyframes deensimc_marquee_vertical {
+  to {
+    transform: translateY(calc(-100% - var(--deensimc-item-gap)));
+  }
+}

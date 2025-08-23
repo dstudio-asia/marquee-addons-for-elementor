@@ -1,6 +1,4 @@
-.deensimc-button-marquee-container {
-  position: relative;
-  overflow: clip;
+.deensimc-button-marquee {
   width: fit-content;
   margin-inline: auto;
   white-space: nowrap;
@@ -9,6 +7,7 @@
   transition: all 200ms ease;
   background: blueviolet; /* dynamic */
   border-radius: 0.25rem; /* dynamic */
+  padding-block: 0;
 }
 .deensimc-button,
 .deensimc-button-text {
@@ -21,55 +20,34 @@
   color: white; /* dynamic */
   font-size: 1rem; /* dynamic */
   font-weight: 500; /* dynamic */
+  line-height: 1.2; /* dynamic */
 }
 .deensimc-button {
   padding: 1rem 2rem; /* dynamic */
   z-index: 1;
 }
+
 .deensimc-button:hover {
   color: white;
 }
 
-.deensimc-button-marquee-track-wrapper {
-  --button-text-gap: 1rem; /* dynamic */
+.deensimc-button-marquee .deensimc-marquee-track-wrapper {
   background: inherit;
-  display: flex;
-  align-items: center;
-  gap: var(--button-text-gap);
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
-  display: flex;
-  pointer-events: none;
   z-index: 2;
   transition: opacity 200ms ease;
 }
 
-.deensimc-button-marquee-track {
-  display: flex;
-  align-items: center;
-  gap: var(--button-text-gap);
-  animation: deensimcButtonMarqueeAnimation 45s linear infinite;
-}
-
-.deensimc-button-marquee-reverse .deensimc-button-marquee-track {
-  animation-direction: reverse;
-}
-
-.deensimc-button-marquee-on-hover .deensimc-button-marquee-track-wrapper {
+.deensimc-button-marquee-on-hover .deensimc-marquee-track-wrapper {
   opacity: 0;
 }
-.deensimc-button-marquee-on-hover:hover .deensimc-button-marquee-track-wrapper {
+.deensimc-button-marquee-on-hover:hover .deensimc-marquee-track-wrapper {
   opacity: 1;
 }
 
-.deensimc-button-marquee-init:hover .deensimc-button-marquee-track-wrapper {
+.deensimc-button-marquee-init:hover .deensimc-marquee-track-wrapper {
   opacity: 0;
-}
-
-@keyframes deensimcButtonMarqueeAnimation {
-  100% {
-    transform: translateX(calc(-100% - var(--button-text-gap)));
-  }
 }
