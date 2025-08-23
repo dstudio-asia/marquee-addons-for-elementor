@@ -1,7 +1,7 @@
 <?php
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; 
+if (! defined('ABSPATH')) {
+	exit;
 }
 
 // Elementor Classes
@@ -9,16 +9,17 @@ use \Elementor\Controls_Manager;
 use Elementor\Group_Control_Text_Shadow;
 use Elementor\Group_Control_Typography;
 
-trait Imagemarquee_Style_Caption {
-    protected function style_caption()
-    {
+trait Deensimc_Image_Marquee_Caption_Style
+{
+	protected function register_style_caption()
+	{
 
 		$this->start_controls_section(
 			'deensimc_image_marquee_caption_style_section',
 			[
-				'label' => esc_html__( 'Caption',  'marquee-addons-for-elementor' ),
+				'label' => esc_html__('Caption',  'marquee-addons-for-elementor'),
 				'tab' => Controls_Manager::TAB_STYLE,
-				'condition' =>[
+				'condition' => [
 					'deensimc_caption_type!' => ''
 				]
 			]
@@ -27,26 +28,26 @@ trait Imagemarquee_Style_Caption {
 		$this->add_responsive_control(
 			'deensimc_image_marquee_caption_alignment',
 			[
-				'label' => esc_html__( 'Alignment', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__('Alignment', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'start' => [
-						'title' => esc_html__( 'Left', 'marquee-addons-for-elementor' ),
+						'title' => esc_html__('Left', 'marquee-addons-for-elementor'),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'marquee-addons-for-elementor' ),
+						'title' => esc_html__('Center', 'marquee-addons-for-elementor'),
 						'icon' => 'eicon-text-align-center',
 					],
 					'end' => [
-						'title' => esc_html__( 'Right', 'marquee-addons-for-elementor' ),
+						'title' => esc_html__('Right', 'marquee-addons-for-elementor'),
 						'icon' => 'eicon-text-align-right',
 					],
 				],
 				'default' => 'center',
 				'toggle' => true,
 				'selectors' => [
-					'{{WRAPPER}} .deensimc-img-wrapper .elementor-image-marquee-caption' => 'text-align: {{VALUE}};   justify-self: {{VALUE}}; white-space: normal;',
+					'{{WRAPPER}} .deensimc-img-wrapper .deensimc-image-marquee-caption' => 'text-align: {{VALUE}};   justify-self: {{VALUE}}; white-space: normal;',
 				],
 			]
 		);
@@ -54,10 +55,10 @@ trait Imagemarquee_Style_Caption {
 		$this->add_control(
 			'deensimc_image_marquee_caption_color',
 			[
-				'label' => esc_html__( 'Text Color', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__('Text Color', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .deensimc-img-wrapper .elementor-image-marquee-caption' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .deensimc-img-wrapper .deensimc-image-marquee-caption' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -65,10 +66,10 @@ trait Imagemarquee_Style_Caption {
 		$this->add_control(
 			'deensimc_image_marquee_caption_background_color',
 			[
-				'label' => esc_html__( 'Background Color', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__('Background Color', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .deensimc-img-wrapper .elementor-image-marquee-caption' => 'background-color: {{VALUE}};     width: 100%;',
+					'{{WRAPPER}} .deensimc-img-wrapper .deensimc-image-marquee-caption' => 'background-color: {{VALUE}};     width: 100%;',
 				],
 			]
 		);
@@ -77,7 +78,7 @@ trait Imagemarquee_Style_Caption {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'deensimc_image_marquee_caption_typography',
-				'selector' => '{{WRAPPER}} .deensimc-img-wrapper .elementor-image-marquee-caption',
+				'selector' => '{{WRAPPER}} .deensimc-img-wrapper .deensimc-image-marquee-caption',
 			]
 		);
 
@@ -85,16 +86,16 @@ trait Imagemarquee_Style_Caption {
 			Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => 'deensimc_image_marquee_caption_text_shadow',
-				'selector' => '{{WRAPPER}} .deensimc-img-wrapper .elementor-image-marquee-caption',
+				'selector' => '{{WRAPPER}} .deensimc-img-wrapper .deensimc-image-marquee-caption',
 			]
 		);
 
 		$this->add_responsive_control(
 			'deensimc_image_marquee_caption_spacing',
 			[
-				'label' => esc_html__( 'Space', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__('Space', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ 'px', 'em', 'rem',  ],
+				'size_units' => ['px', 'em', 'rem',],
 				'range' => [
 					'px' => [
 						'min' => 0,
@@ -111,18 +112,18 @@ trait Imagemarquee_Style_Caption {
 						'max' => 15,
 						'step' => 1,
 					],
-					
+
 				],
 				'default' => [
 					'unit' => 'px',
 					'size' => 0,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .deensimc-img-wrapper .elementor-image-marquee-caption' => 'margin-top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .deensimc-img-wrapper .deensimc-image-marquee-caption' => 'margin-top: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
 
 		$this->end_controls_section();
-    }
+	}
 }
