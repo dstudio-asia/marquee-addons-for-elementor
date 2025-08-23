@@ -1,6 +1,16 @@
 # Changelog
 
 
+## [2.4.3](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/2.4.3...2.4.3) (2025-08-23)
+
+
+### Bug Fixes
+
+* Fix hover cursor ([1ff1ea7](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/1ff1ea7c3b92a56ee6e1cda58b2bd8712096d5dc))
+* Fix link click issue ([e08f2e0](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/e08f2e0725e860b41d7efb63661a0c226d9dd52f))
+* Fix security issue in button marquee ([803978d](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/803978deab476a34cbf172389316fcafb9abcf7c))
+* Fix text align ([de4425d](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/de4425d4005f437aa82b10ea216211bfc94ac7a5))
+
 ## [2.4.3](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/2.4.0...2.4.3) (2025-08-23)
 
 
