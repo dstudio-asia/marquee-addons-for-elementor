@@ -90,26 +90,44 @@ class Deensimc_Button_marquee extends Widget_Base
       $conditional_class[] = 'deensimc-button-marquee-init';
     }
 
+    $allowed_icon_tags = [
+      'i' => [
+        'class' => [],
+        'aria-hidden' => [],
+      ],
+      'svg' => [
+        'class'   => [],
+        'width'   => [],
+        'height'  => [],
+        'viewbox' => [],
+        'fill'    => [],
+        'xmlns'   => [],
+      ],
+      'path' => [
+        'd'    => [],
+        'fill' => [],
+      ],
+    ];
 ?>
     <div class="deensimc-button-marquee-container <?= esc_attr(implode(' ', $conditional_class)) ?>" data-is-marquee-on="<?= esc_attr($is_marquee_on) ?>" data-marquee-speed="<?= esc_attr($marquee_speed) ?>">
       <a href="<?php echo esc_url($link); ?>" class="deensimc-button" id="<?= esc_attr($button_id) ?>" target="<?= esc_attr($target) ?>" rel="<?= esc_attr($nofollow) ?>" <?= esc_attr($custom_attrs) ?>>
-        <span class="deensimc-button-marquee-icon"><?php echo  $icon_html; ?></span>
+        <span class="deensimc-button-marquee-icon"><?= wp_kses($icon_html, $allowed_icon_tags) ?></span>
         <span><?php echo esc_html($text); ?></span>
       </a>
       <?php if ($is_marquee_on) { ?>
-        <div class="deensimc-button-marquee-track-wrapper">
+        <div class="deensimc-button-marquee-track-wrapper" aria-hidden="true">
           <div class="deensimc-button-marquee-track">
             <?php for ($i = 0; $i < 8; $i++) : ?>
               <span class="deensimc-button-text">
-                <span class="deensimc-button-marquee-icon"><?php echo $icon_html; ?></span>
+                <span class="deensimc-button-marquee-icon"><?= wp_kses($icon_html, $allowed_icon_tags) ?></span>
                 <span><?php echo esc_html($text); ?></span>
               </span>
             <?php endfor; ?>
           </div>
-          <div class="deensimc-button-marquee-track" aria-hidden="true">
+          <div class="deensimc-button-marquee-track">
             <?php for ($i = 0; $i < 8; $i++) : ?>
               <span class="deensimc-button-text">
-                <span class="deensimc-button-marquee-icon"><?php echo $icon_html; ?></span>
+                <span class="deensimc-button-marquee-icon"><?= wp_kses($icon_html, $allowed_icon_tags) ?></span>
                 <span><?php echo esc_html($text); ?></span>
               </span>
             <?php endfor; ?>
