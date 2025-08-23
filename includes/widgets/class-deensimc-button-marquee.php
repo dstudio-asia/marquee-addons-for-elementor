@@ -109,10 +109,10 @@ class Deensimc_Button_marquee extends Widget_Base
       ],
     ];
 ?>
-    <div class="deensimc-marquee-main-container deensimc-button-marquee <?php esc_attr(implode(' ', $conditional_class)) ?>" data-is-marquee-on="<?php esc_attr($is_marquee_on) ?>" data-marquee-speed="<?php esc_attr($marquee_speed) ?>">
-      <a href="<?php echo esc_url($link); ?>" class="deensimc-button" id="<?php esc_attr($button_id) ?>" target="<?php esc_attr($target) ?>" rel="<?php esc_attr($nofollow) ?>" <?php esc_attr($custom_attrs) ?>>
+    <div class="deensimc-marquee-main-container deensimc-button-marquee <?php echo esc_attr(implode(' ', $conditional_class)) ?>" data-is-marquee-on="<?php echo esc_attr($is_marquee_on) ?>" data-marquee-speed="<?php echo esc_attr($marquee_speed) ?>">
+      <a href="<?php echo esc_url($link); ?>" class="deensimc-button" id="<?php echo esc_attr($button_id) ?>" target="<?php echo esc_attr($target) ?>" rel="<?php echo esc_attr($nofollow) ?>" <?php echo esc_attr($custom_attrs) ?>>
         <?php if ($icon_html) { ?>
-          <span class="deensimc-button-marquee-icon"><?php wp_kses($icon_html, $allowed_icon_tags) ?></span>
+          <span class="deensimc-button-marquee-icon"><?php echo wp_kses($icon_html, $allowed_icon_tags) ?></span>
         <?php } ?>
         <span><?php echo esc_html($text); ?></span>
       </a>
@@ -122,7 +122,7 @@ class Deensimc_Button_marquee extends Widget_Base
             <?php for ($i = 0; $i < 8; $i++) : ?>
               <span class="deensimc-button-text">
                 <?php if ($icon_html) { ?>
-                  <span class="deensimc-button-marquee-icon"><?php wp_kses($icon_html, $allowed_icon_tags) ?></span>
+                  <span class="deensimc-button-marquee-icon"><?php echo wp_kses($icon_html, $allowed_icon_tags) ?></span>
                 <?php } ?>
                 <span><?php echo esc_html($text); ?></span>
               </span>
@@ -132,7 +132,7 @@ class Deensimc_Button_marquee extends Widget_Base
             <?php for ($i = 0; $i < 8; $i++) : ?>
               <span class="deensimc-button-text">
                 <?php if ($icon_html) { ?>
-                  <span class="deensimc-button-marquee-icon"><?php wp_kses($icon_html, $allowed_icon_tags) ?></span>
+                  <span class="deensimc-button-marquee-icon"><?php echo wp_kses($icon_html, $allowed_icon_tags) ?></span>
                 <?php } ?>
                 <span><?php echo esc_html($text); ?></span>
               </span>
@@ -149,7 +149,7 @@ class Deensimc_Button_marquee extends Widget_Base
   {
   ?>
     <#
-      var text=settings.deensimc_button_text || '<?php echo esc_js(__('Button Marquee', 'marquee-addons-for-elementor')); ?>' ;
+      var text=settings.deensimc_button_text || 'Button Marquee' ;
       var link_data=settings.deensimc_button_link || {};
       var link=link_data.url ? link_data.url : '#' ;
       var target=link_data.is_external ? ' target="_blank"' : '' ;
