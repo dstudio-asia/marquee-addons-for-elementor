@@ -50,19 +50,21 @@ class Deensimc_News_Ticker extends Widget_Base
 		return array_diff_key($post_types, ['elementor_library', 'attachment']);
 	}
 
-	protected function get_upsale_data(): array {
+	protected function get_upsale_data(): array
+	{
 		return [
-			'condition' => !class_exists( '\Deensimcpro_Marquee\Marqueepro' ),
-			'image' => esc_url( ELEMENTOR_ASSETS_URL . 'images/go-pro.svg' ),
-			'image_alt' => esc_attr__( 'Upgrade', 'marquee-addons-for-elementor' ),
-			'title' => esc_html__( 'Get MarqueeAddons Pro', 'marquee-addons-for-elementor' ),
-			'description' => esc_html__( 'Get the premium version of the MarqueeAddons and grow your website capabilities.', 'marquee-addons-for-elementor' ),
-			'upgrade_url' => esc_url( 'https://marqueeaddons.com' ),
-			'upgrade_text' => esc_html__( 'Upgrade Now', 'marquee-addons-for-elementor' ),
+			'condition' => !class_exists('\Deensimcpro_Marquee\Marqueepro'),
+			'image' => esc_url(ELEMENTOR_ASSETS_URL . 'images/go-pro.svg'),
+			'image_alt' => esc_attr__('Upgrade', 'marquee-addons-for-elementor'),
+			'title' => esc_html__('Get MarqueeAddons Pro', 'marquee-addons-for-elementor'),
+			'description' => esc_html__('Get the premium version of the MarqueeAddons and grow your website capabilities.', 'marquee-addons-for-elementor'),
+			'upgrade_url' => esc_url('https://marqueeaddons.com'),
+			'upgrade_text' => esc_html__('Upgrade Now', 'marquee-addons-for-elementor'),
 		];
 	}
 
-	public function get_custom_help_url(): string {
+	public function get_custom_help_url(): string
+	{
 		return 'https://marqueeaddons.com/how-to-use-the-news-ticker-widget-in-elementor/';
 	}
 
@@ -247,9 +249,9 @@ class Deensimc_News_Ticker extends Widget_Base
 						<?php
 						$label_tag = isset($settings['deensimc_label_heading_tag']) ? esc_attr($settings['deensimc_label_heading_tag']) : 'h4';
 						?>
-						<<?php echo esc_html( $label_tag ); ?>>
+						<<?php echo esc_html($label_tag); ?>>
 							<?php echo esc_html($settings['deensimc_label_heading']); ?>
-						</<?php echo esc_html( $label_tag ); ?>>
+						</<?php echo esc_html($label_tag); ?>>
 					</div>
 
 				</div>
@@ -276,9 +278,9 @@ class Deensimc_News_Ticker extends Widget_Base
 						<?php
 						$label_tag = isset($settings['deensimc_label_heading_tag']) ? esc_attr($settings['deensimc_label_heading_tag']) : 'h4';
 						?>
-						<<?php echo esc_html( $label_tag ); ?>>
+						<<?php echo esc_html($label_tag); ?>>
 							<?php echo esc_html($settings['deensimc_label_heading']); ?>
-						</<?php echo esc_html( $label_tag ); ?>>
+						</<?php echo esc_html($label_tag); ?>>
 					</div>
 
 				</div>

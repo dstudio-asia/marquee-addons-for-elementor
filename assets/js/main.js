@@ -6,21 +6,6 @@
 
   // Initialize Elementor frontend hooks on window load
   $(window).on("elementor/frontend/init", () => {
-    // Initialize image marquee
-    elementorFrontend.hooks.addAction(
-      "frontend/element_ready/deensimc-smooth-marquee.default",
-      (scope) => {
-        let animationSpeed = $(scope)
-          .find(".deensimc-marquee")
-          .data("animation-speed");
-        if (animationSpeed) {
-          setupMarquee(scope, "deensimc");
-        } else {
-          $(scope).find(".deensimc-marquee-group").addClass("deensimc-paused");
-        }
-      }
-    );
-
     // Initialize text marquee
     elementorFrontend.hooks.addAction(
       "frontend/element_ready/deensimc-smooth-text.default",
