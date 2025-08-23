@@ -51,7 +51,7 @@ trait Button_Style_Controls
           'full' => 'width: 100%;',
         ],
         'selectors' => [
-          '{{WRAPPER}} .deensimc-button-marquee-container' => '{{VALUE}};',
+          '{{WRAPPER}} .deensimc-button-marquee' => '{{VALUE}};',
         ],
       ]
     );
@@ -67,7 +67,7 @@ trait Button_Style_Controls
         'px' => ['min' => 0, 'max' => 150],
       ],
       'selectors' => [
-        '{{WRAPPER}} .deensimc-button-marquee-track-wrapper' => '--button-text-gap: {{SIZE}}{{UNIT}};',
+        '{{WRAPPER}} .deensimc-marquee-main-container' => '--deensimc-item-gap: {{SIZE}}{{UNIT}};',
       ],
     ]);
 
@@ -117,7 +117,7 @@ trait Button_Style_Controls
         'name'     => 'deensimc_button_background',
         'types'    => ['classic', 'gradient'],
         'exclude' => ['image'],
-        'selector' => '{{WRAPPER}} .deensimc-button-marquee-container',
+        'selector' => '{{WRAPPER}} .deensimc-button-marquee',
       ]
     );
 
@@ -125,7 +125,7 @@ trait Button_Style_Controls
       Group_Control_Box_Shadow::get_type(),
       [
         'name'     => 'deensimc_button_box_shadow',
-        'selector' => '{{WRAPPER}} .deensimc-button-marquee-container',
+        'selector' => '{{WRAPPER}} .deensimc-button-marquee',
       ]
     );
 
@@ -145,7 +145,7 @@ trait Button_Style_Controls
         'label'     => __('Text Color', 'marquee-addons-for-elementor'),
         'type'      => Controls_Manager::COLOR,
         'selectors' => [
-          '{{WRAPPER}} .deensimc-button-marquee-container:hover .deensimc-button, {{WRAPPER}} .deensimc-button-marquee-container:hover .deensimc-button-text' => 'color: {{VALUE}};',
+          '{{WRAPPER}} .deensimc-button-marquee:hover .deensimc-button, {{WRAPPER}} .deensimc-button-marquee:hover .deensimc-button-text' => 'color: {{VALUE}};',
         ],
       ]
     );
@@ -156,7 +156,7 @@ trait Button_Style_Controls
         'name'     => 'deensimc_button_background_hover',
         'types'    => ['classic', 'gradient'],
         'exclude' => ['image'],
-        'selector' => '{{WRAPPER}} .deensimc-button-marquee-container:hover',
+        'selector' => '{{WRAPPER}} .deensimc-button-marquee:hover',
       ]
     );
 
@@ -166,7 +166,7 @@ trait Button_Style_Controls
         'label'     => __('Border Color', 'marquee-addons-for-elementor'),
         'type'      => Controls_Manager::COLOR,
         'selectors' => [
-          '{{WRAPPER}} .deensimc-button-marquee-container:hover' => 'border-color: {{VALUE}};',
+          '{{WRAPPER}} .deensimc-button-marquee:hover' => 'border-color: {{VALUE}};',
         ],
       ]
     );
@@ -175,7 +175,7 @@ trait Button_Style_Controls
       Group_Control_Box_Shadow::get_type(),
       [
         'name'     => 'deensimc_button_box_shadow_hover',
-        'selector' => '{{WRAPPER}} .deensimc-button-marquee-container:hover',
+        'selector' => '{{WRAPPER}} .deensimc-button-marquee:hover',
       ]
     );
 
@@ -188,7 +188,7 @@ trait Button_Style_Controls
       [
         'name'     => 'deensimc_button_border',
         'separator' => 'before',
-        'selector' => '{{WRAPPER}} .deensimc-button-marquee-container',
+        'selector' => '{{WRAPPER}} .deensimc-button-marquee',
       ]
     );
 
@@ -197,9 +197,9 @@ trait Button_Style_Controls
       [
         'label'      => __('Border Radius', 'marquee-addons-for-elementor'),
         'type'       => Controls_Manager::DIMENSIONS,
-        'size_units' => ['px', '%', 'em'],
+        'size_units' => ['px', '%', 'em', 'rem'],
         'selectors'  => [
-          '{{WRAPPER}} .deensimc-button-marquee-container' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+          '{{WRAPPER}} .deensimc-button-marquee' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
         ],
       ]
     );
@@ -211,7 +211,7 @@ trait Button_Style_Controls
         'label'      => __('Padding', 'marquee-addons-for-elementor'),
         'type'       => Controls_Manager::DIMENSIONS,
         'separator' => 'before',
-        'size_units' => ['px', '%', 'em'],
+        'size_units' => ['px', 'em', 'rem'],
         'selectors'  => [
           '{{WRAPPER}} .deensimc-button' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
         ],
