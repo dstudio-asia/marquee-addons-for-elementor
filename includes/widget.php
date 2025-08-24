@@ -305,6 +305,7 @@ final class Marquee
 		wp_register_style('deensimc-button-marquee-style', DEENSIMC_ASSETS_URL . 'css/button-marquee.css', null, self::VERSION, false);
 		wp_register_style('deensimc-image-marquee-style', DEENSIMC_ASSETS_URL . 'css/image-marquee.css', null, self::VERSION, false);
 		wp_register_style('deensimc-news-ticker-style', DEENSIMC_ASSETS_URL . 'css/news-ticker.css', null, self::VERSION, false);
+		wp_register_style('deensimc-text-marquee-style', DEENSIMC_ASSETS_URL . 'css/text-marquee.css', null, self::VERSION, false);
 
 
 		wp_enqueue_style('deensimc-marquee-common-styles');
@@ -341,6 +342,7 @@ final class Marquee
 		wp_register_script('deensimc-button-marquee-script', DEENSIMC_ASSETS_URL  . 'js/button-marquee.js', ['jquery'], self::VERSION, false);
 		wp_register_script('deensimc-image-marquee-script', DEENSIMC_ASSETS_URL  . 'js/image-marquee.js', ['jquery'], self::VERSION, false);
 		wp_register_script('deensimc-news-ticker-marquee-script', DEENSIMC_ASSETS_URL  . 'js/news-ticker.js', ['jquery'], self::VERSION, false);
+		wp_register_script('deensimc-text-marquee-script', DEENSIMC_ASSETS_URL  . 'js/text-marquee.js', ['jquery'], self::VERSION, false);
 
 
 		wp_enqueue_script('deensimc-handle-animation-duration');
@@ -448,9 +450,7 @@ final class Marquee
 		require_once(__DIR__ . '/widgets/traits/image-marquee/style-caption-controls.php');
 
 		require_once(__DIR__ . '/widgets/traits/text-marquee/content-text-repeater.php');
-		require_once(__DIR__ . '/widgets/traits/text-marquee/content-additional-options.php');
 		require_once(__DIR__ . '/widgets/traits/text-marquee/style-text-contents.php');
-		require_once(__DIR__ . '/widgets/traits/text-marquee/style-edge-shadow.php');
 
 		require_once(__DIR__ . '/widgets/traits/news-ticker/news-ticker-layout-control.php');
 		require_once(__DIR__ . '/widgets/traits/news-ticker/style-section-control.php');

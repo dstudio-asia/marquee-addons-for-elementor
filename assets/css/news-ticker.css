@@ -59,7 +59,8 @@
   align-items: center;
   gap: var(--deensimc-item-gap);
 }
-.deensimc-scroll-text {
+
+.deensimc-news-ticker .deensimc-news-text {
   white-space: nowrap;
 }
 
