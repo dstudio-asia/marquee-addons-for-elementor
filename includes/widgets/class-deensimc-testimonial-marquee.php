@@ -290,16 +290,15 @@ class Deensimc_Testimonial_Marquee extends Widget_Base
 		$show_shadow = $settings['deensimc_testimonial_show_edge_shadow_switch'] === 'yes' ? 'deensimc-shadow' : '';
 		$show_reverse = $settings['deensimc_testimonial_reverse_section'] === 'yes' ? 'deensimc-marquee-reverse' : '';
 		$marquee_orientation = 'yes' === $settings['deensimc_testimonial_vertical_section'] ? 'vertical' : 'horizontal';
-
-	?>
-		<div class="deensimc-tes <?= esc_attr($marquee_orientation) ?>">
-			<div class="deensimc-marquee <?= esc_attr('deensimc-marquee-' . $marquee_orientation) ?>  <?php echo esc_attr($show_shadow . " " . $show_reverse) ?> deensimc-tes-logo"
-				data-animation-status="<?php echo esc_attr($settings['deensimc_show_animation']); ?>"
-				data-excerpt-length="<?php echo esc_attr($settings['deensimc_tesimonial_excerpt_length']); ?>"
-				data-show-more="<?php echo esc_attr($settings['deensimc_tesimonial_excerpt_title']); ?>"
-				data-show-less="<?php echo esc_attr($settings['deensimc_tesimonial_excerpt_title_less']); ?>"
-				data-pause-on-hover="<?php echo esc_attr($settings['deensimc_testimonial_pause_on_hover']); ?>"
-				data-animation-speed="<?php echo esc_attr($settings['deensimc_testimonial_marquee_animation_speed']); ?>"
+    ?>
+		<div class="deensimc-tes <?php esc_attr($marquee_orientation)?>">
+			<div class="deensimc-marquee <?php esc_attr('deensimc-marquee-' . $marquee_orientation)?>  <?php echo esc_attr( $show_shadow ." ". $show_reverse ) ?> deensimc-tes-logo"  
+				data-animation-status="<?php echo esc_attr( $settings['deensimc_show_animation'] ); ?>" 
+				data-excerpt-length="<?php echo esc_attr( $settings['deensimc_tesimonial_excerpt_length'] ); ?>" 
+				data-show-more="<?php echo esc_attr( $settings['deensimc_tesimonial_excerpt_title'] ); ?>" 
+				data-show-less="<?php echo esc_attr( $settings['deensimc_tesimonial_excerpt_title_less'] ); ?>" 
+				data-pause-on-hover="<?php echo esc_attr( $settings['deensimc_testimonial_pause_on_hover'] ); ?>" 
+				data-animation-speed="<?php echo esc_attr( $settings['deensimc_testimonial_marquee_animation_speed'] ); ?>"
 				data-orientation="<?php echo esc_attr($marquee_orientation); ?>"
 				data-quote-left="<?php echo esc_html($settings['deensimc_testimonial_quote_left_icon']['value']); ?>"
 				data-quote-right="<?php echo esc_html($settings['deensimc_testimonial_quote_right_icon']['value']); ?>">

@@ -344,7 +344,7 @@ trait NewsTickerStyleControl
 		$this->start_controls_section(
 			'deensimc_seperator_date',
 			[
-				'label' => __('Date Separator', 'elementor-news-ticker'),
+				'label' => __('Date Separator', 'marquee-addons-for-elementor'),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'deensimc_seperator_type' => 'seperator_date',
@@ -354,7 +354,7 @@ trait NewsTickerStyleControl
 		$this->add_control(
 			'deensimc_separator_date_color',
 			[
-				'label' => __('Color', 'elementor-news-ticker'),
+				'label' => __('Color', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::COLOR,
 				'global' => [
 					'default' => Global_Colors::COLOR_PRIMARY,
@@ -382,7 +382,7 @@ trait NewsTickerStyleControl
 		$this->start_controls_section(
 			'deensimc_seperator_image',
 			[
-				'label' => __('Feature Image Separator', 'elementor-news-ticker'),
+				'label' => __('Feature Image Separator', 'marquee-addons-for-elementor'),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'deensimc_seperator_type' => 'seperator_feature_image',
