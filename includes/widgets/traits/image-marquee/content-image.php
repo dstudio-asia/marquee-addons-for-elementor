@@ -10,6 +10,7 @@ use \Elementor\Utils;
 
 trait Deensimc_Image_Marquee_Content_Image
 {
+	use Deensimc_Marquee_Gap_Controls;
 	protected function content_image()
 	{
 		$this->start_controls_section(
@@ -125,26 +126,7 @@ trait Deensimc_Image_Marquee_Content_Image
 			]
 		);
 
-		$this->add_responsive_control(
-			'deensimc_image_marquee_gap',
-			[
-				'label' => esc_html__('Gaps', 'marquee-addons-pro-for-elementor'),
-				'type' => Controls_Manager::GAPS,
-				'size_units' => ['px', 'em', 'rem', 'vw', 'custom'],
-				'placeholder' => [
-					'row' => '20',
-					'column' => '20',
-				],
-				'selectors' => [
-					'{{WRAPPER}} .deensimc-marquee-main-container' => '--deensimc-container-padding: {{row}}{{UNIT}}; --deensimc-item-gap: {{column}}{{UNIT}};',
-				],
-				'validators' => [
-					'Number' => [
-						'min' => 0,
-					],
-				],
-			]
-		);
+		$this->register_gap_control();
 
 		$this->end_controls_section();
 	}

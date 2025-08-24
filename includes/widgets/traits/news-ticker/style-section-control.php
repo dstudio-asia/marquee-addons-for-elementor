@@ -201,28 +201,6 @@ trait NewsTickerStyleControl
 			]
 		);
 
-		$this->add_responsive_control(
-			'deensimc_title_gap',
-			[
-				'label' => esc_html__('Gap Between Items', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => ['px', 'em'],
-				'range' => [
-					'px' => [
-						'min' => 0,
-						'max' => 100,
-					],
-				],
-				'default' => [
-					'unit' => 'px',
-					'size' => 20,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .deensimc-news-wrapper' => 'gap: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-
 
 		$this->add_control(
 			'deensimc_title_color',
