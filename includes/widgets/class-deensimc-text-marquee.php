@@ -78,7 +78,7 @@ class Deensimc_Text_Marquee extends Widget_Base
 	{
 
 		$this->content_text_repeater();
-		$this->register_marquee_control('deensimc_text_marquee_options',);
+		$this->register_marquee_control('deensimc_text_marquee_options');
 
 		$this->style_text_contents();
 		$this->register_style_edge_shadow('deensimc_text_marquee_edge_shadow');
