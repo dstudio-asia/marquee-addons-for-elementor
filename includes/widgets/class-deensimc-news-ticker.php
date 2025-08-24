@@ -143,10 +143,10 @@ class Deensimc_News_Ticker extends Widget_Base
 	}
 
 
-	protected function render_label($settings, $is_reverse)
+	protected function render_label($settings)
 	{
 		if ($settings['deensimc_label'] === 'yes') : ?>
-			<div class="deensimc-news-ticker-label <?php echo $is_reverse ? 'deensimc-news-ticker-label-right' : 'deensimc-news-ticker-label-left' ?>">
+			<div class="deensimc-news-ticker-label">
 				<span class="deensimc-news-ticker-icon">
 					<?php if (!empty($settings['deensimc_label_icon'])) : ?>
 						<?php Icons_Manager::render_icon($settings['deensimc_label_icon'], ['aria-hidden' => 'true']); ?>
@@ -274,7 +274,7 @@ class Deensimc_News_Ticker extends Widget_Base
 
 		?>
 		<div class="deensimc-marquee-main-container deensimc-news-ticker <?php echo esc_attr(implode(' ', $conditional_class)) ?>" data-marquee-speed="<?php echo esc_attr($marquee_speed) ?>">
-			<?php if (!$is_reverse) $this->render_label($settings, $is_reverse) ?>
+			<?php if (!$is_reverse) $this->render_label($settings) ?>
 			<div class="deensimc-marquee-track-wrapper">
 				<div class="deensimc-marquee-track">
 					<?php $this->render_news_ticker_texts($settings, $myposts); ?>
@@ -283,7 +283,7 @@ class Deensimc_News_Ticker extends Widget_Base
 					<?php $this->render_news_ticker_texts($settings, $myposts); ?>
 				</div>
 			</div>
-			<?php if ($is_reverse) $this->render_label($settings, $is_reverse) ?>
+			<?php if ($is_reverse) $this->render_label($settings) ?>
 		</div>
 <?php
 	}
