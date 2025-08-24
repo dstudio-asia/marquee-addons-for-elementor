@@ -60,7 +60,7 @@
   gap: var(--deensimc-item-gap);
 }
 
-.deensimc-news-ticker .deensimc-scroll-text {
+.deensimc-news-ticker .deensimc-news-text {
   white-space: nowrap;
 }
 

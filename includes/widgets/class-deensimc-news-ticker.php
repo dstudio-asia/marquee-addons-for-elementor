@@ -206,7 +206,7 @@ class Deensimc_News_Ticker extends Widget_Base
 				? $post->custom_url
 				: get_permalink($post);
 		?>
-			<span class="deensimc-scroll-text">
+			<span class="deensimc-news-text">
 				<a href="<?php echo esc_url($url); ?>" class="deensimc-title-link" target="<?php echo esc_attr($link_target); ?>" rel="noopener noreferrer">
 					<?php echo esc_html($title); ?>
 				</a>
