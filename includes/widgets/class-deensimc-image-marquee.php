@@ -76,7 +76,7 @@ class Deensimc_Image_Marquee extends Widget_Base
 	protected function register_controls()
 	{
 		$this->content_image();
-		$this->register_marquee_control('deensimc_image_marquee_options',);
+		$this->register_marquee_control('deensimc_image_marquee_options');
 		$this->register_image_style_controls();
 		$this->register_style_caption();
 		$this->register_style_edge_shadow('deensimc_image_marquee_edge_shadow');

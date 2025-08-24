@@ -170,7 +170,7 @@ class Deensimc_Video_Marquee extends Widget_Base
 
 		$this->end_controls_section();
 
-		$this->register_marquee_control('deensimc_video_marquee_options',);
+		$this->register_marquee_control('deensimc_video_marquee_options');
 		$this->style_contents();
 		$this->style_play_icon();
 		$this->register_style_edge_shadow('deensimc_video_marquee_edge_shadow');
