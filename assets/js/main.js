@@ -21,21 +21,6 @@
       }
     );
 
-    // Initialize news ticker
-    elementorFrontend.hooks.addAction(
-      "frontend/element_ready/deensimc-news-ticker.default",
-      (scope) => {
-        let animationSpeed = $(scope)
-          .find(".deensimc-marquee")
-          .data("animation-speed");
-        if (animationSpeed) {
-          setupMarquee(scope, "deensimc");
-        } else {
-          $(scope).find(".deensimc-marquee-group").addClass("deensimc-paused");
-        }
-      }
-    );
-
     // Initialize stacked slider
     elementorFrontend.hooks.addAction(
       "frontend/element_ready/deensimc-stacked-slider.default",

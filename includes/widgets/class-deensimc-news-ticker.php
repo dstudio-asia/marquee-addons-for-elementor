@@ -12,10 +12,20 @@ use \Elementor\Icons_Manager;
 class Deensimc_News_Ticker extends Widget_Base
 {
 
-	use NewsTickerAdditionalOptionsControl;
+	use Deensimc_Marquee_Controls;
 	use NewsTickerLayoutControl;
 	use NewsTickerStyleControl;
 	use NewsTickerQueryControl;
+
+	public function get_style_depends()
+	{
+		return ['deensimc-news-ticker-style'];
+	}
+
+	public function get_script_depends()
+	{
+		return ['deensimc-news-ticker-marquee-script'];
+	}
 
 	public function get_name()
 	{
@@ -74,7 +84,11 @@ class Deensimc_News_Ticker extends Widget_Base
 		$this->layout_control();
 		$this->news_ticker_query_control();
 
-		$this->additional_options_control();
+		$this->register_marquee_control(
+			'deensimc_news_ticker_marquee_options',
+			['orientation', 'edge_shadow'] //Exclude controls
+		);
+
 		$this->style_section_control();
 	}
 
@@ -129,6 +143,27 @@ class Deensimc_News_Ticker extends Widget_Base
 	}
 
 
+	protected function render_label($settings)
+	{
+		if ($settings['deensimc_label'] === 'yes') : ?>
+			<div class="deensimc-news-ticker-label">
+				<span class="deensimc-news-ticker-icon">
+					<?php if (!empty($settings['deensimc_label_icon'])) : ?>
+						<?php Icons_Manager::render_icon($settings['deensimc_label_icon'], ['aria-hidden' => 'true']); ?>
+					<?php endif; ?>
+				</span>
+
+				<div class="deensimc-label-heading">
+					<?php
+					$label_tag = isset($settings['deensimc_label_heading_tag']) ? esc_attr($settings['deensimc_label_heading_tag']) : 'h4';
+					?>
+					<<?php echo esc_html($label_tag); ?>>
+						<?php echo esc_html($settings['deensimc_label_heading']); ?>
+					</<?php echo esc_html($label_tag); ?>>
+				</div>
+			</div>
+		<?php endif;
+	}
 
 
 	protected function render_news_ticker_texts($settings, $posts = [])
@@ -170,7 +205,7 @@ class Deensimc_News_Ticker extends Widget_Base
 			$url = isset($post->is_custom) && $post->is_custom && !empty($post->custom_url)
 				? $post->custom_url
 				: get_permalink($post);
-?>
+		?>
 			<span class="deensimc-scroll-text">
 				<a href="<?php echo esc_url($url); ?>" class="deensimc-title-link" target="<?php echo esc_attr($link_target); ?>" rel="noopener noreferrer">
 					<?php echo esc_html($title); ?>
@@ -197,8 +232,6 @@ class Deensimc_News_Ticker extends Widget_Base
 				</span>
 			<?php
 			} ?>
-
-
 			<?php if (!empty($settings['deensimc_seperator_icon']) && $settings['deensimc_seperator_type'] == 'seperator_icon') {  ?>
 				<span class="deensimc-news-item-<?php echo esc_attr($this->get_id()); ?> deensimc-seperator-icon">
 					<?php Icons_Manager::render_icon($settings['deensimc_seperator_icon'], ['aria-hidden' => 'true']);   ?>
@@ -209,11 +242,11 @@ class Deensimc_News_Ticker extends Widget_Base
 			<?php
 			}
 			if ($settings['deensimc_seperator_type'] == 'seperator_date') { ?>
-				<span class="deensimc-news-item-<?php echo esc_attr($this->get_id()); ?> deensimc-seperator-date"><?php echo esc_html(get_the_date()); ?></span>
+				<span class="deensimc-news-item-<?php echo esc_attr($this->get_id()); ?> deensimc-seperator-date"><?php echo esc_html(get_the_date()); ?>
+				</span>
 		<?php
 			}
 		}
-
 		echo '</div>';
 	}
 
@@ -225,66 +258,32 @@ class Deensimc_News_Ticker extends Widget_Base
 	protected function render()
 	{
 		$settings = $this->get_settings_for_display();
-		$pause_on_hover = $settings['deensimc_news_ticker_pause_on_hover_switch'];
-		$animation_speed = $settings['deensimc_news_ticker_text_animation_speed'];
-		$marquee_orientation =  'horizontal';
-		$slide_direction_class = $settings['deensimc_news_ticker_slide_direction'] === 'yes' ? ' deensimc-marquee-reverse' : '';
-		$marquee_classes = $marquee_orientation . " " . $slide_direction_class;
-
-		$is_reverse = $settings['deensimc_news_ticker_slide_direction'] === 'yes' ? 'deensimc-reverse-enabled' : '';
 		$args = $this->newticker_get_query_args($settings);
 		$myposts = get_posts($args);
+		$is_reverse = $settings['deensimc_marquee_reverse_direction'] === 'yes';
+		$is_pause_on_hover = $settings['deensimc_pause_on_hover'] === 'yes';
+		$marquee_speed = $settings['deensimc_marquee_speed'];
+
+		$conditional_class = [];
+		if ($is_reverse) {
+			$conditional_class[] = 'deensimc-marquee-reverse';
+		}
+		if ($is_pause_on_hover) {
+			$conditional_class[] = 'deensimc-marquee-pause-on-hover';
+		}
 
 		?>
-		<div class="deensimc-wrapper deensimc-news-ticker-wrapper">
-			<?php if ($settings['deensimc_label'] === 'yes') : ?>
-				<div class="deensimc-news-ticker-label deensimc-news-ticker-label-left <?php echo esc_attr($is_reverse); ?>">
-					<span class="deensimc-news-ticker-icon">
-						<?php if (!empty($settings['deensimc_label_icon'])) : ?>
-							<?php Icons_Manager::render_icon($settings['deensimc_label_icon'], ['aria-hidden' => 'true']); ?>
-						<?php endif; ?>
-					</span>
-
-					<div class="deensimc-label-heading">
-						<?php
-						$label_tag = isset($settings['deensimc_label_heading_tag']) ? esc_attr($settings['deensimc_label_heading_tag']) : 'h4';
-						?>
-						<<?php echo esc_html($label_tag); ?>>
-							<?php echo esc_html($settings['deensimc_label_heading']); ?>
-						</<?php echo esc_html($label_tag); ?>>
-					</div>
-
-				</div>
-			<?php endif; ?>
-			<div class="deensimc-marquee deensimc-marquee-<?php echo esc_attr($marquee_classes); ?> deensimc-news-ticker-marquee" data-pause-on-hover="<?php echo esc_attr($pause_on_hover) ?>" data-animation-speed="<?php echo esc_attr($animation_speed) ?>">
-
-				<div class="deensimc-marquee-group deensimc-news-ticker-group">
+		<div class="deensimc-marquee-main-container deensimc-news-ticker <?php echo esc_attr(implode(' ', $conditional_class)) ?>" data-marquee-speed="<?php echo esc_attr($marquee_speed) ?>">
+			<?php if (!$is_reverse) $this->render_label($settings) ?>
+			<div class="deensimc-marquee-track-wrapper">
+				<div class="deensimc-marquee-track">
 					<?php $this->render_news_ticker_texts($settings, $myposts); ?>
 				</div>
-				<div aria-hidden="true" class="deensimc-marquee-group deensimc-news-ticker-group">
+				<div aria-hidden="true" class="deensimc-marquee-track">
 					<?php $this->render_news_ticker_texts($settings, $myposts); ?>
 				</div>
-
 			</div>
-			<?php if ($settings['deensimc_label'] === 'yes') : ?>
-				<div class="deensimc-news-ticker-label deensimc-news-ticker-label-right <?php echo esc_attr($is_reverse); ?>">
-					<span class="deensimc-news-ticker-icon">
-						<?php if (!empty($settings['deensimc_label_icon'])) : ?>
-							<?php Icons_Manager::render_icon($settings['deensimc_label_icon'], ['aria-hidden' => 'true']); ?>
-						<?php endif; ?>
-					</span>
-
-					<div class="deensimc-label-heading">
-						<?php
-						$label_tag = isset($settings['deensimc_label_heading_tag']) ? esc_attr($settings['deensimc_label_heading_tag']) : 'h4';
-						?>
-						<<?php echo esc_html($label_tag); ?>>
-							<?php echo esc_html($settings['deensimc_label_heading']); ?>
-						</<?php echo esc_html($label_tag); ?>>
-					</div>
-
-				</div>
-			<?php endif; ?>
+			<?php if ($is_reverse) $this->render_label($settings) ?>
 		</div>
 <?php
 	}
