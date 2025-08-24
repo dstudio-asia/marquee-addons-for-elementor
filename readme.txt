@@ -213,10 +213,10 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 == Changelog ==
 
 = 2.4.3
-= Tweak: readme.txt content updated
+- Tweak: readme.txt content updated
 
 = 2.4.0
-= New: Button Marquee Widget
+- New: Button Marquee Widget
 
 = 2.3.1
 - Tweak: placeholder image for Image Marquee
