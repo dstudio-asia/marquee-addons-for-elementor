@@ -1,0 +1,22 @@
+.deensimc-text-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.deensimc-text-marquee .deensimc-scroll-text {
+  white-space: nowrap;
+  line-height: 1.2;
+  margin-bottom: 0;
+}
+
+.deensimc-marquee-vertical .deensimc-scroll-text {
+  white-space: normal;
+}
+
+/* Force vertical layout on mobile */
+@media (max-width: 767px) {
+  .deensimc-marquee-vertical .deensimc-scroll-text {
+    white-space: nowrap;
+  }
+}
