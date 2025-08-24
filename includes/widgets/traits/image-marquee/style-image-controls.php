@@ -90,16 +90,12 @@ trait Deensimc_Image_Marquee_Image_Style
 			[
 				'label' => esc_html__('Width', 'marquee-addons-for-elementor'),
 				'type' =>  Controls_Manager::SLIDER,
-				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
+				'size_units' => ['px', 'em', 'rem', 'custom'],
 				'range' => [
 					'px' => [
 						'min' => 0,
 						'max' => 1000,
 						'step' => 1,
-					],
-					'%' => [
-						'min' => 0,
-						'max' => 100,
 					],
 				],
 				'default' => [

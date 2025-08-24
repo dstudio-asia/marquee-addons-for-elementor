@@ -23,9 +23,23 @@ class Deensimc_Video_Marquee extends Widget_Base
 	use Videomarquee_Content_Youtube_Vimeo_Options;
 	use Videomarquee_Content_Hosted_Options;
 	use Videomarquee_Content_Image_Overlay;
-	use Videomarquee_Content_Additional_Options;
+	use Deensimc_Marquee_Controls;
+	use Deensimc_Marquee_Gap_Controls;
 	use Videomarquee_Style_Contents;
 	use Videomarquee_Style_Play_Icon;
+	use Deensimc_Style_Edge_Shadow;
+
+
+
+	public function get_style_depends()
+	{
+		return ['deensimc-video-marquee-style'];
+	}
+
+	public function get_script_depends()
+	{
+		return ['deensimc-video-marquee-script'];
+	}
 
 	public function get_name()
 	{
@@ -116,12 +130,50 @@ class Deensimc_Video_Marquee extends Widget_Base
 			]
 		);
 
+		$this->add_responsive_control(
+			'deensimc_video_marquee_horizontal_align',
+			[
+				'label' => esc_html__('Alignment', 'marquee-addons-for-elementor'),
+				'type' =>  Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => esc_html__('Left', 'marquee-addons-for-elementor'),
+						'icon' => 'eicon-h-align-left',
+					],
+					'center' => [
+						'title' => esc_html__('Center', 'marquee-addons-for-elementor'),
+						'icon' => 'eicon-h-align-center',
+					],
+					'right' => [
+						'title' => esc_html__('Right', 'marquee-addons-for-elementor'),
+						'icon' => 'eicon-h-align-right',
+					],
+				],
+				'default' => 'center',
+				'toggle' => true,
+				'selectors_dictionary' => [
+					'left' => 'margin-left: 0; margin-right: auto;',
+					'center' => 'margin-left: auto; margin-right: auto;',
+					'right' => 'margin-left: auto; margin-right: 0;',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .deensimc-video-marquee .deensimc-marquee-track-wrapper' => '{{VALUE}};',
+				],
+				'condition' => [
+					'deensimc_marquee_vertical_orientation' => 'yes',
+				],
+			]
+		);
+
+		$this->register_gap_control();
+
 
 		$this->end_controls_section();
 
-		$this->content_additional_options();
+		$this->register_marquee_control('deensimc_video_marquee_options',);
 		$this->style_contents();
 		$this->style_play_icon();
+		$this->register_style_edge_shadow('deensimc_video_marquee_edge_shadow');
 	}
 
 
@@ -397,30 +449,45 @@ class Deensimc_Video_Marquee extends Widget_Base
 	 *
 	 * @param array $video_link The array containing video details and settings.
 	 */
-	protected function render_video_item($video_link)
+	protected function render_video_item($video_list)
 	{
-		$video_type = $video_link['deensimc_video_type'];
-		$start_time = intval($video_link['deensimc_video_start'] ?? 0);
-		$end_time = intval($video_link['deensimc_video_end'] ?? 0);
-		$auto_play = $video_link['deensimc_video_autoplay'] === 'yes' ? 1 : 0;
-		$mute = $video_link['deensimc_video_mute'] === 'yes' ? 1 : 0;
-		$controls = $video_link['deensimc_video_controls'] === 'yes' ? 1 : 0;
-		$loop = $video_link['deensimc_video_loop'] === 'yes' ? 1 : 0;
-		$video_display = $video_link['deensimc_show_video_image_overlay'] === 'yes' ? 'deensimc-d-none' : '';
+		$count  = count($video_list);
 
-		switch ($video_type) {
-			case 'youtube':
-				$this->render_youtube_video($video_link,  $start_time, $end_time, $auto_play, $mute, $loop, $controls, $video_display);
-				break;
-			case 'vimeo':
-				$this->render_vimeo_video($video_link, $auto_play, $mute, $loop, $video_display, $start_time);
-				break;
-			case 'dailymotion':
-				$this->render_dailymotion_video($video_link, $start_time, $auto_play, $mute, $controls, $video_display);
-				break;
-			case 'hosted':
-				$this->render_hosted_video($video_link, $start_time, $end_time, $video_display);
-				break;
+		// If less than 8, duplicate until at least 8
+		if ($count > 0 && $count < 8) {
+			$i = 0;
+			while (count($video_list) < 8) {
+				$duplicate           = $video_list[$i % $count];
+				$duplicate['_is_dup'] = true; // Mark as duplicate
+				$video_list[]         = $duplicate;
+				$i++;
+			}
+		}
+
+		foreach ($video_list as $video_link) {
+			$video_type = $video_link['deensimc_video_type'];
+			$start_time = intval($video_link['deensimc_video_start'] ?? 0);
+			$end_time = intval($video_link['deensimc_video_end'] ?? 0);
+			$auto_play = $video_link['deensimc_video_autoplay'] === 'yes' ? 1 : 0;
+			$mute = $video_link['deensimc_video_mute'] === 'yes' ? 1 : 0;
+			$controls = $video_link['deensimc_video_controls'] === 'yes' ? 1 : 0;
+			$loop = $video_link['deensimc_video_loop'] === 'yes' ? 1 : 0;
+			$video_display = $video_link['deensimc_show_video_image_overlay'] === 'yes' ? 'deensimc-d-none' : '';
+
+			switch ($video_type) {
+				case 'youtube':
+					$this->render_youtube_video($video_link,  $start_time, $end_time, $auto_play, $mute, $loop, $controls, $video_display);
+					break;
+				case 'vimeo':
+					$this->render_vimeo_video($video_link, $auto_play, $mute, $loop, $video_display, $start_time);
+					break;
+				case 'dailymotion':
+					$this->render_dailymotion_video($video_link, $start_time, $auto_play, $mute, $controls, $video_display);
+					break;
+				case 'hosted':
+					$this->render_hosted_video($video_link, $start_time, $end_time, $video_display);
+					break;
+			}
 		}
 	}
 
@@ -431,24 +498,37 @@ class Deensimc_Video_Marquee extends Widget_Base
 	protected function render()
 	{
 		$settings = $this->get_settings_for_display();
-		$marquee_orientation = $settings['deensimc_slide_position'] === 'yes' ? 'vertical' : 'horizontal';
-		$slide_direction_class = $settings['deensimc_slide_direction'] === 'yes' ? 'deensimc-marquee-reverse' : 'deensimc-marquee-no-reverse';
-		$marquee_classes = $marquee_orientation . " " . $slide_direction_class;
-		$show_shadow = $settings['deensimc_video_marquee_show_edge_shadow_switch'] === 'yes' ? 'deensimc-shadow' : '';
-		if (!empty($settings['deensimc_video_list'])) {
-		?>
-			<div class="deensimc-video-main deensimc-wrapper deensimc-wrapper-<?php echo esc_attr($marquee_orientation); ?>">
-				<div class="deensimc-marquee <?php echo esc_attr($show_shadow) ?> deensimc-marquee-<?php echo esc_attr($marquee_classes); ?>" data-pause-on-hover="<?php echo esc_attr($settings['deensimc_video_pause_on_hover']); ?>" data-animation-speed="<?php echo esc_attr($settings['deensimc_video_marquee_animation_speed']); ?>" data-animation-status="<?php echo esc_attr($settings['deensimc_video_show_animation']); ?>">
-					<div class="deensimc-marquee-group">
-						<?php foreach ($settings['deensimc_video_list'] as $video_link) : ?>
-							<?php $this->render_video_item($video_link); ?>
-						<?php endforeach; ?>
-					</div>
+		$video_list = $settings['deensimc_video_list'];
 
-					<div aria-hidden="true" class="deensimc-marquee-group">
-						<?php foreach ($settings['deensimc_video_list'] as $video_link) : ?>
-							<?php $this->render_video_item($video_link); ?>
-						<?php endforeach; ?>
+		$is_vertical = $settings['deensimc_marquee_vertical_orientation'] === 'yes';
+		$is_reverse = $settings['deensimc_marquee_reverse_direction'] === 'yes';
+		$is_pause_on_hover = $settings['deensimc_pause_on_hover'] === 'yes';
+		$marquee_speed = $settings['deensimc_marquee_speed'];
+		$is_show_edge_shadow = $settings['deensimc_show_edge_shadow'] === 'yes';
+
+		$conditional_class = [];
+		if ($is_vertical) {
+			$conditional_class[] = 'deensimc-marquee-vertical';
+		}
+		if ($is_reverse) {
+			$conditional_class[] = 'deensimc-marquee-reverse';
+		}
+		if ($is_pause_on_hover) {
+			$conditional_class[] = 'deensimc-marquee-pause-on-hover';
+		}
+		if ($is_show_edge_shadow) {
+			$conditional_class[] = 'deensimc-marquee-edge-shadow';
+		}
+
+		if (!empty($video_list)) {
+		?>
+			<div class="deensimc-marquee-main-container deensimc-video-marquee <?php echo esc_attr(implode(' ', $conditional_class)) ?>" data-marquee-speed="<?php echo esc_attr($marquee_speed) ?>">
+				<div class="deensimc-marquee-track-wrapper">
+					<div class="deensimc-marquee-track">
+						<?php $this->render_video_item($video_list); ?>
+					</div>
+					<div aria-hidden="true" class="deensimc-marquee-track">
+						<?php $this->render_video_item($video_list); ?>
 					</div>
 				</div>
 			</div>
