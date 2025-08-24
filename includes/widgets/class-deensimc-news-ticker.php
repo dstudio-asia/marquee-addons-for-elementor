@@ -86,7 +86,7 @@ class Deensimc_News_Ticker extends Widget_Base
 
 		$this->register_marquee_control(
 			'deensimc_news_ticker_marquee_options',
-			['orientation', 'edge_shadow']
+			['orientation', 'edge_shadow'] //Exclude controls
 		);
 
 		$this->style_section_control();
