@@ -1,12 +1,6 @@
-.deensimc-video-marquee {
-  --deensimc-white: #ffffff;
-  --deensimc-black: #000000;
-  --deensimc-color-white: #fff;
-}
-
 .deensimc-video-marquee .deensimc-video-item {
   display: grid;
-  background: var(--deensimc-black);
+  background: #000;
   place-items: center;
   min-width: 100px;
   width: 300px;
@@ -45,7 +39,7 @@
   justify-content: center;
   display: flex;
   align-items: center;
-  color: var(--deensimc-color-white);
+  color: #fff;
 }
 
 /* ==========================================================================
@@ -69,8 +63,8 @@
 .deensimc-play-button i {
   width: 80px;
   height: 80px;
-  fill: var(--deensimc-white);
-  color: var(--deensimc-white);
+  fill: #fff;
+  color: #fff;
 }
 
 .deensimc-play-button i {
