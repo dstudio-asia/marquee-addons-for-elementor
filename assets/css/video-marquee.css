@@ -11,6 +11,8 @@
   min-width: 100px;
   width: 300px;
   aspect-ratio: 16/9;
+  position: relative;
+  overflow: hidden;
 }
 .deensimc-video-marquee .deensimc-video-wrapper,
 .deensimc-video-marquee .deensimc-hosted-video {
@@ -19,16 +21,14 @@
 }
 
 .deensimc-video-placeholder {
-  position: relative;
-  height: 175px;
+  position: absolute;
+  inset: 0;
   cursor: pointer;
 }
 
-.deensimc-video-placeholder img {
-  width: 100%;
-}
-
-.deensimc-placeholder-image {
+.deensimc-video-marquee
+  .deensimc-video-placeholder
+  .deensimc-placeholder-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
