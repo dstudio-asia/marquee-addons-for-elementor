@@ -40,7 +40,7 @@
             foldText.show();
             unfoldText.hide();
           } else {
-            $textElem.text(fullText);
+            $textElem.html(fullText);
             isExpanded = true;
             foldText.hide();
             unfoldText.show();
