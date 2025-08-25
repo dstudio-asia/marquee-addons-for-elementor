@@ -1,12 +1,4 @@
 .deensimc-testimonial-marquee {
-  --deensimc-marquee-width: 100vw;
-  --deensimc-marquee-elements-displayed: 4;
-  --deensimc-marquee-element-width: calc(
-    var(--deensimc-marquee-width) / var(--deensimc-marquee-elements-displayed)
-  );
-  --deensimc-marquee-animation-duration: calc(
-    var(--deensimc-marquee-elements) * 3s
-  );
   --deensimc-marquee-tes-white: #ffffff;
   --deensimc-marquee-tes-boulder: #4e4e4e;
   --deensimc-marquee-tes-yellow: #f4b400;
@@ -37,19 +29,16 @@
 }
 
 .deensimc-testimonial-marquee .deensimc-marquee-track-wrapper {
-  overflow: hidden;
-  position: relative;
+  align-items: start;
+}
+.deensimc-testimonial-marquee .deensimc-marquee-track {
+  min-width: fit-content;
+  align-items: start;
 }
 
 /* ==========================================================================
      3. Marquee Styles
      ========================================================================== */
-
-.deensimc-testimonial-marquee .deensimc-marquee-track {
-  white-space: normal;
-  height: 100%;
-  align-items: start;
-}
 
 .deensimc-testimonial-marquee
   .deensimc-marquee-track-wrapper
@@ -57,9 +46,8 @@
   .deensimc-tes-item {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   flex-shrink: 0;
-  max-height: 100%;
 }
 
 .deensimc-testimonial-marquee
@@ -278,43 +266,4 @@
 }
 .deensimc-toggle .unfold-text {
   display: none;
-}
-
-/* ==========================================================================
-     8. Media Queries
-     ========================================================================== */
-
-/* Large Devices */
-@media (max-width: 1400px) {
-  :root {
-    --deensimc-marquee-elements-displayed: 4;
-  }
-}
-
-/* Medium Devices */
-@media (max-width: 1200px) {
-  :root {
-    --deensimc-marquee-elements-displayed: 3;
-  }
-}
-
-/* Small Devices */
-@media (max-width: 900px) {
-  :root {
-    --deensimc-marquee-elements-displayed: 2;
-  }
-}
-
-/* Mobile Devices */
-@media (max-width: 600px) {
-  :root {
-    --deensimc-marquee-width: 100vw;
-    --deensimc-marquee-height: 16vh;
-    --deensimc-marquee-elements-displayed: 1;
-  }
-
-  .deensimc-testimonial-marquee .deensimc-marquee-track-wrapper .marquee:before,
-  .deensimc-testimonial-marquee .deensimc-marquee-track-wrapper .marquee:after {
-    width: 5rem;
-  }
 }

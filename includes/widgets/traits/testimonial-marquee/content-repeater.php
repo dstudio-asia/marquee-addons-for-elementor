@@ -11,6 +11,8 @@ use \Elementor\Utils;
 
 trait Testimonial_Marquee_Contents
 {
+	use Deensimc_Marquee_Gap_Controls;
+
 	protected function register_content_controls()
 	{
 		$this->start_controls_section(
@@ -206,6 +208,8 @@ trait Testimonial_Marquee_Contents
 				'exclude_inline_options' => ['svg'],
 			]
 		);
+
+		$this->register_gap_control();
 
 		$this->end_controls_section();
 	}

@@ -193,7 +193,7 @@ class Deensimc_Testimonial_Marquee extends Widget_Base
 			$is_dup           = !empty($testimonial['_is_dup']);
 			$word_count = str_word_count(wp_strip_all_tags($testimonial_text));
 		?>
-			<li class="deensimc-tes-item deensimc-tes-wrapper" aria-hidden="<?php echo esc_attr($is_dup ? ' true' : 'false') ?>">
+			<div class="deensimc-tes-item deensimc-tes-wrapper" aria-hidden="<?php echo esc_attr($is_dup ? ' true' : 'false') ?>">
 				<figure class="deensimc-tes-main">
 					<?php if (!empty($testimonial_text)) : ?>
 						<blockquote class="deensimc-tes-text">
@@ -251,7 +251,7 @@ class Deensimc_Testimonial_Marquee extends Widget_Base
 
 					</div>
 				</figure>
-			</li>
+			</div>
 		<?php
 		}
 	}
@@ -306,12 +306,12 @@ class Deensimc_Testimonial_Marquee extends Widget_Base
 		?>
 		<div class="deensimc-marquee-main-container deensimc-testimonial-marquee <?php echo esc_attr(implode(' ', $conditional_class)) ?>" data-marquee-speed="<?php echo esc_attr($marquee_speed) ?>">
 			<div class="deensimc-marquee-track-wrapper">
-				<ul class="deensimc-marquee-track">
+				<div class="deensimc-marquee-track">
 					<?php $this->render_testimonial($settings, $allowed_icon_tags) ?>
-				</ul>
-				<ul aria-hidden="true" class="deensimc-marquee-track">
+				</div>
+				<div aria-hidden="true" class="deensimc-marquee-track">
 					<?php $this->render_testimonial($settings, $allowed_icon_tags) ?>
-				</ul>
+				</div>
 			</div>
 		</div>
 <?php

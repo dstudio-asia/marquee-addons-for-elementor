@@ -56,24 +56,6 @@
       }
     );
 
-    // // Initialize testimonial marquee
-    // elementorFrontend.hooks.addAction(
-    //   "frontend/element_ready/deensimc-testimonial.default",
-    //   (scope) => {
-    //     let animationSpeed = $(scope)
-    //       .find(".deensimc-marquee")
-    //       .data("animation-speed");
-    //     let isAnimationEnabled =
-    //       $(scope).find(".deensimc-marquee").data("animation-status") || "no";
-    //     if (animationSpeed && isAnimationEnabled === "yes") {
-    //       setupMarquee(scope, "deensimc");
-    //     } else {
-    //       $(scope).find(".deensimc-marquee-group").addClass("deensimc-paused");
-    //     }
-    //     initShowMoreOrLess(scope);
-    //   }
-    // );
-
     // Load marquee when it comes into viewport
     function checkVisibility(wrapper, element) {
       const viewportHeight = window.innerHeight;
