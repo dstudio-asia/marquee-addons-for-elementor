@@ -109,7 +109,7 @@ class Deensimc_Image_Marquee extends Widget_Base
 				if ($link_type === 'file') {
 					echo '<a data-elementor-open-lightbox="' . esc_attr($open_lightbox) . '" href="' . esc_url($image['url']) . '"' . ($is_dup ? ' aria-hidden="true" tabindex="-1"' : '') . '>';
 				} elseif ($link_type === 'custom') { ?>
-					<a <?php $this->print_render_attribute_string('deensimc_link'); ?> <?= $is_dup ? 'aria-hidden="true" tabindex="-1"' : '' ?>>
+					<a <?php $this->print_render_attribute_string('deensimc_link'); ?> aria-hidden="<?php echo esc_attr($is_dup ? 'true' : 'false') ?>" tabindex="<?php echo esc_attr($is_dup ? '-1' : '') ?>">
 			<?php
 				}
 			}
