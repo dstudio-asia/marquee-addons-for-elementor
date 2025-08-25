@@ -1,4 +1,4 @@
-=== MarqueeAddons - Smooth marquee carousel loop for elementor ===
+=== Marquee Addons for Elementor – Advanced Elements & Modern Motion Widgets ===
 Contributors: debuggersstudio
 Tags: marquee, product marquee, image marquee, video marquee, text marquee, card marquee
 Requires at least: 5.8
