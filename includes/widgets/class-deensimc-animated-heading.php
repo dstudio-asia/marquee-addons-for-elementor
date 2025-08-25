@@ -13,8 +13,6 @@ class Deensimc_Animated_Heading_Widget extends Widget_Base
   public function get_style_depends()
   {
     return [
-      'deensimc-common-style',
-      'deensimc-animations-style',
       'deensimc-animated-heading-style'
     ];
   }
@@ -25,7 +23,7 @@ class Deensimc_Animated_Heading_Widget extends Widget_Base
       'deensimc-waveSwingTiltLeanAnimation',
       'deensimc-construct-word',
       'deensimc-typing-word',
-      'deensimc-twisting-word',
+      'deensimc-twisting-text',
       'deensimc-slide-word',
       'deensimc-lines-animation',
       'deensimc-rotation-3d',

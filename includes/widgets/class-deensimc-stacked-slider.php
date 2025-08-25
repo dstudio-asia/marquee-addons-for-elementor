@@ -22,6 +22,16 @@ class Deensimc_Stacked_Slider extends Widget_Base
 	use Stackedslider_Style_Image;
 	use Stackedslider_Style_Dots;
 
+	public function get_style_depends()
+	{
+		return ['deensimc-swiper-bundle-min-style', 'deensimc-swiper-style'];
+	}
+
+	public function get_script_depends()
+	{
+		return ['deensimc-stacked-slider-script'];
+	}
+
 	public function get_name()
 	{
 		return 'deensimc-stacked-slider';

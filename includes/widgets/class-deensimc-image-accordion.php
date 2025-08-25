@@ -17,6 +17,16 @@ class Deensimc_Image_Accordion extends Widget_Base
 	use ImageAccordion_Contents;
 	use ImageAccordion_Styles;
 
+	public function get_style_depends()
+	{
+		return ['deensimc-accordion-style'];
+	}
+
+	public function get_script_depends()
+	{
+		return ['deensimc-image-accordion-script'];
+	}
+
 	public function get_name()
 	{
 		return 'deensimc-image-accordion';
