@@ -1,6 +1,29 @@
 # Changelog
 
 
+## [3.0.0](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/2.4.3...3.0.0) (2025-08-25)
+
+
+### Bug Fixes
+
+* Clean up HTML tags in text and update localization for various controls ([e613ef8](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/e613ef80f888a0705960015fa8500e85c486341c))
+* Correctly echo variables in the marquee button rendering ([42f4cd3](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/42f4cd3413d8d9038a8056622794f05899792329))
+* Fix custom thimbnail issues ([2379cd8](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/2379cd81c8dae07b16255899e7396d53c3e81658))
+* Fix heading tag margin ([8e8635e](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/8e8635e4a78447fa253265c535f65abc95fbdcc8))
+* Fix hover cursor ([1ff1ea7](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/1ff1ea7c3b92a56ee6e1cda58b2bd8712096d5dc))
+* Fix html escape ([294dde4](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/294dde45d7b58b03e85f250fa6996c42814786c5))
+* Fix html escape ([6c4ba61](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/6c4ba61baa2c4279f942578519f047f7889b2bfc))
+* Fix image size issue ([587ef2c](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/587ef2cf2c315f5efade4c5d3ff257a7f3f7c806))
+* Fix link click issue ([e08f2e0](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/e08f2e0725e860b41d7efb63661a0c226d9dd52f))
+* Fix security issue ([746dea8](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/746dea8038da7e38b7c43a390db19f166fdae1a2))
+* Fix security issue ([b797138](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/b79713842e5298184761e96582f64a835455d39b))
+* Fix security issue in button marquee ([803978d](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/803978deab476a34cbf172389316fcafb9abcf7c))
+* Fix text align ([de4425d](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/de4425d4005f437aa82b10ea216211bfc94ac7a5))
+* Fix vertical orientation whitespace issue ([d5812ae](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/d5812ae81a977d30e83d9d445b3ff9b2ff2feca5))
+* testimonial visibility issue ([7b975ae](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/7b975aea5fbcd2378c6816909c362f88ff5174fb))
+* Update breaking change note in readme.txt to clarify marquee settings reset ([405fb28](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/405fb283337c87b1d004735ae4b37e7fdf60c9eb))
+* Update plugin name in header for clarity and consistency ([6ac9ee0](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/6ac9ee0b323ba7899f7e85833c237a059d00d7af))
+
 ## [2.4.3](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/2.4.0...2.4.3) (2025-08-23)
 
 
