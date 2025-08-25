@@ -42,33 +42,6 @@ trait Testimonial_Marquee_Style_Contents_Box
 		);
 
 		$this->add_responsive_control(
-			'deensimc_tesimonial_contents_gap',
-			[
-				'label' => esc_html__('Box Gap', 'marquee-addons-for-elementor'),
-				'type' =>  Controls_Manager::SLIDER,
-				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
-				'range' => [
-					'px' => [
-						'min' => 0,
-						'max' => 100,
-						'step' => 1,
-					],
-					'%' => [
-						'min' => 0,
-						'max' => 100,
-					],
-				],
-				'default' => [
-					'unit' => 'px',
-					'size' => 40,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .deensimc-tes .deensimc-tes-logo .deensimc-tes-content' => 'gap: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-
-		$this->add_responsive_control(
 			'deensimc_testimonial_widget_height',
 			[
 				'label' => esc_html__('Section Height', 'marquee-addons-for-elementor'),
@@ -109,7 +82,7 @@ trait Testimonial_Marquee_Style_Contents_Box
 				'type' =>  Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
 				'selectors' => [
-					'{{WRAPPER}} .deensimc-tes .deensimc-tes-main blockquote' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .deensimc-tes-main blockquote' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'separator' => 'after',
 			]
@@ -120,7 +93,7 @@ trait Testimonial_Marquee_Style_Contents_Box
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'deensimc_testimonial_box_border',
-				'selector' => '{{WRAPPER}} .deensimc-tes .deensimc-tes-main blockquote',
+				'selector' => '{{WRAPPER}} .deensimc-tes-main blockquote',
 				'separator' => 'before',
 			]
 		);
@@ -132,7 +105,7 @@ trait Testimonial_Marquee_Style_Contents_Box
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', 'em', 'rem'],
 				'selectors' => [
-					'{{WRAPPER}} .deensimc-tes .deensimc-tes-main blockquote' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .deensimc-tes-main blockquote' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);

@@ -149,8 +149,8 @@ trait Testimonial_Marquee_Contents
 				'default' => 'center',
 				'toggle' => true,
 				'selectors' => [
-					'{{WRAPPER}} .deensimc-tes .deensimc-tes-main blockquote' => 'text-align: {{VALUE}};',
-					'{{WRAPPER}} .deensimc-tes .deensimc-tes-main .deensimc-tes-author' => 'text-align: {{VALUE}};',
+					'{{WRAPPER}} .deensimc-tes-main blockquote' => 'text-align: {{VALUE}};',
+					'{{WRAPPER}} .deensimc-tes-main .deensimc-tes-author' => 'text-align: {{VALUE}};',
 				],
 			]
 		);
