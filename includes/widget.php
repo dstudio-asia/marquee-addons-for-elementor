@@ -208,18 +208,18 @@ final class Marquee
 
 	public function init()
 	{
-
-		add_action('admin_enqueue_scripts', [$this, 'deensimc_notice_enqueue_scripts']);
-		add_action('admin_notices', [$this, 'deensimc_rate_us']);
-		add_action('wp_ajax_deensimc_notice_dismiss', [$this, 'deensimc_notice_dismiss']);
-		add_action('elementor/frontend/after_enqueue_styles', [$this, 'deensimc_frontend_styles']);
-		add_action('elementor/frontend/after_register_scripts', [$this, 'deensimc_frontend_scripts']);
-		add_action('elementor/widgets/register', [$this, 'deensimc_register_widgets']);
-		add_action('elementor/elements/categories_registered', [$this, 'deensimc_add_categories']);
-		add_action('elementor/editor/before_enqueue_styles', [$this, 'deensimc_editor_styles']);
-		add_action('elementor/frontend/after_enqueue_scripts', [$this, 'deensimc_elementor_library']);
-		add_filter('plugin_action_links_marquee-addons-for-elementor/marquee-addons-for-elementor.php', [$this, 'deensimc_upgrade_link']);
+		add_action('admin_enqueue_scripts', [$this, 'deensimc_notice_enqueue_scripts'], 10);
+		add_action('admin_notices', [$this, 'deensimc_rate_us'], 10);
+		add_action('wp_ajax_deensimc_notice_dismiss', [$this, 'deensimc_notice_dismiss'], 10);
+		add_action('elementor/frontend/after_enqueue_styles', [$this, 'deensimc_frontend_styles'], 20); // runs later
+		add_action('elementor/frontend/after_register_scripts', [$this, 'deensimc_frontend_scripts'], 20); // runs later
+		add_action('elementor/widgets/register', [$this, 'deensimc_register_widgets'], 10);
+		add_action('elementor/elements/categories_registered', [$this, 'deensimc_add_categories'], 10);
+		add_action('elementor/editor/before_enqueue_styles', [$this, 'deensimc_editor_styles'], 10);
+		add_action('elementor/frontend/after_enqueue_scripts', [$this, 'deensimc_elementor_library'], 20);
+		add_filter('plugin_action_links_marquee-addons-for-elementor/marquee-addons-for-elementor.php', [$this, 'deensimc_upgrade_link'], 10);
 	}
+
 
 	public function deensimc_notice_enqueue_scripts($hook)
 	{
