@@ -47,10 +47,7 @@
 
 .deensimc-testimonial-marquee .deensimc-marquee-track {
   white-space: normal;
-  list-style: none;
   height: 100%;
-  display: flex;
-  gap: var(--deensimc-gap);
   align-items: start;
 }
 
@@ -71,36 +68,6 @@
   .deensimc-tes-item
   i {
   font-style: normal;
-}
-
-/* ==========================================================================
-     4. Animation Keyframes
-     ========================================================================== */
-
-@keyframes deensimc-scrolling {
-  100% {
-    transform: translateX(0);
-  }
-  0% {
-    transform: translateX(
-      calc(
-        -1 * var(--deensimc-marquee-element-width) * var(--deensimc-marquee-elements)
-      )
-    );
-  }
-}
-
-@keyframes deensimc-scrolling-reverse {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(
-      calc(
-        -1 * var(--deensimc-marquee-element-width) * var(--deensimc-marquee-elements)
-      )
-    );
-  }
 }
 
 /* ==========================================================================
@@ -293,10 +260,12 @@
   opacity: unset;
 }
 
-.deensimc-show-more,
 .deensimc-toggle {
   color: var(--deensimc-marquee-text-skyblue);
   cursor: pointer;
+}
+.deensimc-toggle .unfold-text {
+  display: none;
 }
 
 /* ==========================================================================

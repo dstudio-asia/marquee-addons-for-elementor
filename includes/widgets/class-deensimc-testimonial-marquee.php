@@ -6,6 +6,7 @@ if (! defined('ABSPATH')) {
 
 // Elementor Classes
 use \Elementor\Controls_Manager;
+use Elementor\Icons_Manager;
 use \Elementor\Widget_Base;
 
 /**
@@ -25,6 +26,16 @@ class Deensimc_Testimonial_Marquee extends Widget_Base
 	use Testimonial_Marquee_Style_Name_Title;
 	use Testimonial_Marquee_Style_Review;
 	use Deensimc_Style_Edge_Shadow;
+
+	public function get_style_depends()
+	{
+		return ['deensimc-testimonial-style'];
+	}
+
+	public function get_script_depends()
+	{
+		return ['deensimc-testimonial-marquee-script'];
+	}
 
 	public function get_name()
 	{
@@ -87,59 +98,6 @@ class Deensimc_Testimonial_Marquee extends Widget_Base
 		$this->register_style_edge_shadow('deensimc_testimonial_marquee_edge_shadow');
 	}
 
-	/**
-	 * Renders the testimonial content block.
-	 *
-	 * This function outputs the main content of the testimonial, including the text and "Show More" button if available.
-	 *
-	 * @param array $testimonial The testimonial data, including the content field.
-	 * @param array $settings The widget settings, including the "Show More" button text.
-	 */
-	protected function render_testimonial_contents($testimonial)
-	{
-?>
-		<blockquote class="deensimc-tes-text">
-			<span>
-				<?php echo esc_html($testimonial['deensimc_testimonial_content']); ?>
-			</span>
-		</blockquote>
-	<?php
-	}
-
-	/**
-	 * Renders the author information.
-	 *
-	 * This function displays the author's name and title within the testimonial.
-	 *
-	 * @param array $testimonial The testimonial data, including the author name and title fields.
-	 */
-	protected function render_author_info($testimonial)
-	{
-	?>
-		<h5 class="deensimc-tes-heading">
-			<span class="deensimc-tes-name">
-				<?php echo esc_html($testimonial['deensimc_testimonial_name']); ?>
-			</span>
-			<span class="deensimc-tes-title">
-				<?php echo esc_html($testimonial['deensimc_testimonial_title']); ?>
-			</span>
-		</h5>
-	<?php
-	}
-
-	/**
-	 * Renders the author profile image.
-	 *
-	 * This function outputs the author's profile image if provided.
-	 *
-	 * @param array $testimonial The testimonial data, including the profile image URL.
-	 */
-	protected function render_author_profile($testimonial)
-	{
-	?>
-		<img src="<?php echo esc_url($testimonial['deensimc_testimonial_image']['url']); ?>" alt="<?php esc_attr_e('Author image', 'marquee-addons-for-elementor'); ?>" />
-	<?php
-	}
 
 	/**
 	 * Renders the testimonial rating.
@@ -150,7 +108,7 @@ class Deensimc_Testimonial_Marquee extends Widget_Base
 	 */
 	protected function render_ratings($testimonial)
 	{
-	?>
+?>
 		<div class="deensimc-tes-ratings deensimc-testimonial-ratings">
 			<div class="deensimc-tes-star-icon fs-6">
 				<?php
@@ -186,41 +144,116 @@ class Deensimc_Testimonial_Marquee extends Widget_Base
 		<?php
 	}
 
-	protected function render_testimonial($testimonials)
+	protected function render_testimonial($settings, $allowed_icon_tags)
 	{
+		$testimonials = $settings['deensimc_repeater_testimonial_main'] ?? [];
+		$count        = count($testimonials);
+
+		// If less than 8, duplicate until at least 8
+		if ($count > 0 && $count < 8) {
+			$i = 0;
+			while (count($testimonials) < 8) {
+				$duplicate            = $testimonials[$i % $count];
+				$duplicate['_is_dup'] = true; // Mark as duplicate
+				$testimonials[]       = $duplicate;
+				$i++;
+			}
+		}
+
+		// Render left quote if available
+		$quote_left = '';
+		if (! empty($settings['deensimc_testimonial_quote_left_icon'])) {
+			ob_start();
+			Icons_Manager::render_icon(
+				$settings['deensimc_testimonial_quote_left_icon'],
+				['aria-hidden' => 'true']
+			);
+			$quote_left = ob_get_clean();
+		}
+
+		// Render right quote if available
+		$quote_right = '';
+		if (! empty($settings['deensimc_testimonial_quote_right_icon'])) {
+			ob_start();
+			Icons_Manager::render_icon(
+				$settings['deensimc_testimonial_quote_right_icon'],
+				['aria-hidden' => 'true']
+			);
+			$quote_right = ob_get_clean();
+		}
+
+
+		$visible_word_length = $settings['deensimc_tesimonial_excerpt_length'];
+		$fold_text = $settings['deensimc_tesimonial_excerpt_title'];
+		$unfold_text = $settings['deensimc_tesimonial_excerpt_title_less'];
 
 		foreach ($testimonials as $testimonial) {
-			$author_image_url = $testimonial['deensimc_testimonial_image']['url'] ? '' : 'no-image';
+			$testimonial_text = $testimonial['deensimc_testimonial_content'];
+			$author_image_url = empty($testimonial['deensimc_testimonial_image']['url']) ? 'no-image' : '';
+			$is_dup           = !empty($testimonial['_is_dup']);
+			$word_count = str_word_count(wp_strip_all_tags($testimonial_text));
 		?>
-			<li class="deensimc-tes-item deensimc-tes-wrapper">
+			<li class="deensimc-tes-item deensimc-tes-wrapper" aria-hidden="<?php echo esc_attr($is_dup ? ' true' : 'false') ?>">
 				<figure class="deensimc-tes-main">
-					<?php
-					// Render testimonial contents
-					if ('' !== $testimonial['deensimc_testimonial_content']) {
-						$this->render_testimonial_contents($testimonial);
-					}
-					?>
+					<?php if (!empty($testimonial_text)) : ?>
+						<blockquote class="deensimc-tes-text">
+							<div class="contents-wrapper" data-visible-word-length="<?php echo esc_attr($visible_word_length) ?>">
+								<?php if ($quote_left) : ?>
+									<span class="quote-left"><?php echo wp_kses($quote_left, $allowed_icon_tags); ?></span>
+								<?php endif; ?> <span class="deensimc-contents">
+									<?php echo esc_html($testimonial_text); ?>
+								</span>
+								<?php if ($word_count > $visible_word_length) : ?>
+									<a href="javascript:void(0)" class="deensimc-toggle">
+										<span class="fold-text"><?php echo esc_html($fold_text); ?></span>
+										<span class="unfold-text"><?php echo esc_html($unfold_text); ?></span>
+									</a>
+								<?php endif; ?>
+								<?php if ($quote_right) : ?>
+									<span class="quote-right"><?php echo wp_kses($quote_right, $allowed_icon_tags); ?></span>
+								<?php endif; ?>
+							</div>
+							<div class="deensimc-tes-bg-overlay"></div>
+						</blockquote>
+					<?php endif; ?>
+
 					<div class="deensimc-tes-author <?php echo esc_attr($author_image_url); ?>">
+						<?php if (!empty($testimonial['deensimc_testimonial_image']['url'])) : ?>
+							<img src="<?php echo esc_url($testimonial['deensimc_testimonial_image']['url']); ?>"
+								alt="<?php esc_attr_e('Author image', 'marquee-addons-for-elementor'); ?>" />
+						<?php endif; ?>
+
+						<?php if (!empty($testimonial['deensimc_testimonial_name']) || !empty($testimonial['deensimc_testimonial_title'])) : ?>
+							<h5 class="deensimc-tes-heading">
+								<?php if (!empty($testimonial['deensimc_testimonial_name'])) : ?>
+									<span class="deensimc-tes-name">
+										<?php echo esc_html($testimonial['deensimc_testimonial_name']); ?>
+									</span>
+								<?php endif; ?>
+
+								<?php if (!empty($testimonial['deensimc_testimonial_title'])) : ?>
+									<span class="deensimc-tes-title">
+										<?php echo esc_html($testimonial['deensimc_testimonial_title']); ?>
+									</span>
+								<?php endif; ?>
+							</h5>
+						<?php endif; ?>
+
 						<?php
-						// Render author image
-						$has_author_image = !empty($testimonial['deensimc_testimonial_image']['url']);
-						if ($has_author_image) {
-							$this->render_author_profile($testimonial);
-						}
-
-						// Render author info and ratings
-						if ('' !== $testimonial['deensimc_testimonial_name'] || '' !== $testimonial['deensimc_testimonial_title']) {
-							$this->render_author_info($testimonial);
-
-							if ('yes' === $testimonial['deensimc_testimonial_show_rating'] && '' !== $testimonial['deensimc_testimonial_rating_num']) {
-								$this->render_ratings($testimonial);
-							}
+						if (
+							isset($testimonial['deensimc_testimonial_show_rating']) &&
+							$testimonial['deensimc_testimonial_show_rating'] === 'yes' &&
+							!empty($testimonial['deensimc_testimonial_rating_num'])
+						) {
+							$this->render_ratings($testimonial);
 						}
 						?>
+
 					</div>
 				</figure>
 			</li>
-		<?php }
+		<?php
+		}
 	}
 
 	/**
@@ -230,7 +263,25 @@ class Deensimc_Testimonial_Marquee extends Widget_Base
 	protected function render()
 	{
 		$settings = $this->get_settings_for_display();
-		$testimonials = $settings['deensimc_repeater_testimonial_main'];
+
+		$allowed_icon_tags = [
+			'i' => [
+				'class' => [],
+				'aria-hidden' => [],
+			],
+			'svg' => [
+				'class'   => [],
+				'width'   => [],
+				'height'  => [],
+				'viewbox' => [],
+				'fill'    => [],
+				'xmlns'   => [],
+			],
+			'path' => [
+				'd'    => [],
+				'fill' => [],
+			],
+		];
 
 		$is_vertical = $settings['deensimc_marquee_vertical_orientation'] === 'yes';
 		$is_reverse = $settings['deensimc_marquee_reverse_direction'] === 'yes';
@@ -256,10 +307,10 @@ class Deensimc_Testimonial_Marquee extends Widget_Base
 		<div class="deensimc-marquee-main-container deensimc-testimonial-marquee <?php echo esc_attr(implode(' ', $conditional_class)) ?>" data-marquee-speed="<?php echo esc_attr($marquee_speed) ?>">
 			<div class="deensimc-marquee-track-wrapper">
 				<ul class="deensimc-marquee-track">
-					<?php $this->render_testimonial($testimonials) ?>
+					<?php $this->render_testimonial($settings, $allowed_icon_tags) ?>
 				</ul>
 				<ul aria-hidden="true" class="deensimc-marquee-track">
-					<?php $this->render_testimonial($testimonials) ?>
+					<?php $this->render_testimonial($settings, $allowed_icon_tags) ?>
 				</ul>
 			</div>
 		</div>

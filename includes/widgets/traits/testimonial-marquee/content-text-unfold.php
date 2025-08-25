@@ -22,12 +22,13 @@ trait Testimonial_Marquee_Content_Text_Unfold
 		$this->add_control(
 			'deensimc_tesimonial_excerpt_length',
 			[
-				'label' => esc_html__('Length', 'marquee-addons-for-elementor'),
+				'label' => esc_html__('Length (word)', 'marquee-addons-for-elementor'),
 				'type' =>  Controls_Manager::NUMBER,
 				'min' => 5,
 				'max' => 100,
 				'step' => 1,
 				'default' => 10,
+				'description' => esc_html__('If the excerpt length is greater than the total words of the original text, this setting will not have any effect.', 'marquee-addons-for-elementor'),
 			]
 		);
 
@@ -36,7 +37,7 @@ trait Testimonial_Marquee_Content_Text_Unfold
 			[
 				'label' => esc_html__('Fold Text', 'marquee-addons-for-elementor'),
 				'type' =>  Controls_Manager::TEXT,
-				'default' => esc_html__('... Show more', 'marquee-addons-for-elementor'),
+				'default' => esc_html__('Show more', 'marquee-addons-for-elementor'),
 			]
 		);
 

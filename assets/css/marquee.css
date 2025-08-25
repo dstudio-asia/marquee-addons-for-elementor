@@ -291,13 +291,3 @@
 [dir="rtl"] .deensimc-marquee-vertical .deensimc-marquee-group {
   flex-direction: column;
 }
-
-[dir="rtl"] .deensimc-tes .quote-left {
-  left: 12%;
-  bottom: 24px;
-}
-
-[dir="rtl"] .deensimc-tes .quote-right {
-  right: 3%;
-  top: 1px;
-}
