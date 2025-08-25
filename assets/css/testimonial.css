@@ -147,6 +147,10 @@
   color: var(--deensimc-marquee-text-black);
 }
 
+.deensimc-testimonial-marquee .contents-wrapper {
+  position: relative;
+}
+
 /* ==========================================================================
      6. Icon and Star Rating Styles
      ========================================================================== */
@@ -249,6 +253,11 @@
   opacity: unset;
 }
 
+[dir="rtl"] .deensimc-testimonial-marquee .quote-left {
+  transform: scaleX(-1) translateY(-50%);
+  right: 0;
+}
+
 .deensimc-testimonial-marquee .quote-right {
   display: inline-block;
   margin-left: 5px;
@@ -258,6 +267,9 @@
   font-size: 40px;
   color: var(--deensimc-marquee-text-gray);
   opacity: unset;
+}
+[dir="rtl"] .deensimc-testimonial-marquee .quote-right {
+  transform: scaleX(-1);
 }
 
 .deensimc-toggle {

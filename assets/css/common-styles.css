@@ -120,6 +120,17 @@
   }
 }
 
+[dir="rtl"] .deensimc-marquee-main-container,
+[dir="rtl"] .deensimc-marquee-track-wrapper,
+[dir="rtl"] .deensimc-marquee-track {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .deensimc-marquee-vertical .deensimc-marquee-track-wrapper,
+[dir="rtl"] .deensimc-marquee-vertical .deensimc-marquee-track {
+  flex-direction: column;
+}
+
 /* Force vertical layout on mobile */
 @media (max-width: 767px) {
   .deensimc-marquee-vertical.deensimc-marquee-main-container {
@@ -134,6 +145,11 @@
     flex-direction: row;
     align-items: center;
     width: auto;
+  }
+
+  [dir="rtl"] .deensimc-marquee-vertical .deensimc-marquee-track-wrapper,
+  [dir="rtl"] .deensimc-marquee-vertical .deensimc-marquee-track {
+    flex-direction: row-reverse;
   }
 
   .deensimc-marquee-vertical .deensimc-marquee-track {
