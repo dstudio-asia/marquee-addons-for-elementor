@@ -84,7 +84,7 @@ trait Testimonial_Marquee_Helper_Methods
         }
         ob_start();
         Icons_Manager::render_icon($icon, ['aria-hidden' => 'true']);
-        return wp_kses(ob_get_clean(), $this->get_allowed_icon_tags());
+        return ob_get_clean();
     }
 
     /**
@@ -107,7 +107,7 @@ trait Testimonial_Marquee_Helper_Methods
                         <div class="contents-wrapper" data-visible-word-length="<?php echo esc_attr($visible_word_length) ?>">
 
                             <?php if ($quote_left) : ?>
-                                <span class="quote-left"><?php echo $quote_left; ?></span>
+                                <span class="quote-left"><?php echo wp_kses($quote_left, $this->get_allowed_icon_tags()); ?></span>
                             <?php endif; ?>
 
                             <span class="deensimc-contents">
@@ -122,7 +122,7 @@ trait Testimonial_Marquee_Helper_Methods
                             <?php endif; ?>
 
                             <?php if ($quote_right) : ?>
-                                <span class="quote-right"><?php echo $quote_right; ?></span>
+                                <span class="quote-right"><?php echo wp_kses($quote_right, $this->get_allowed_icon_tags()); ?></span>
                             <?php endif; ?>
 
                         </div>
