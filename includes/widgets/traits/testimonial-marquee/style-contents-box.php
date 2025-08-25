@@ -1,7 +1,7 @@
 <?php
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; 
+if (! defined('ABSPATH')) {
+	exit;
 }
 
 // Elementor Classes
@@ -9,13 +9,14 @@ use \Elementor\Controls_Manager;
 use \Elementor\Group_Control_Background;
 use Elementor\Group_Control_Border;
 
-trait Testimonialmarquee_Style_Contents_Box {
-	protected function style_contents_box() 
+trait Testimonial_Marquee_Style_Contents_Box
+{
+	protected function style_contents_box()
 	{
 		$this->start_controls_section(
 			'deensimc_tesimonial_box_section',
 			[
-				'label' => esc_html__( 'Box', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__('Box', 'marquee-addons-for-elementor'),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -24,7 +25,7 @@ trait Testimonialmarquee_Style_Contents_Box {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'deensimc_tesimonial_contents_background',
-				'types' => [ 'classic', 'gradient', 'video' ],
+				'types' => ['classic', 'gradient', 'video'],
 				'selector' => '{{WRAPPER}} .deensimc-tes-text',
 			]
 		);
@@ -32,7 +33,7 @@ trait Testimonialmarquee_Style_Contents_Box {
 		$this->add_control(
 			'deensimc_tesimonial_contents_background_overlay',
 			[
-				'label' => esc_html__( 'Overlay Color', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__('Overlay Color', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .deensimc-tes-bg-overlay' => 'background-color: {{VALUE}}',
@@ -43,9 +44,9 @@ trait Testimonialmarquee_Style_Contents_Box {
 		$this->add_responsive_control(
 			'deensimc_tesimonial_contents_gap',
 			[
-				'label' => esc_html__( 'Box Gap', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__('Box Gap', 'marquee-addons-for-elementor'),
 				'type' =>  Controls_Manager::SLIDER,
-				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
 				'range' => [
 					'px' => [
 						'min' => 0,
@@ -70,7 +71,7 @@ trait Testimonialmarquee_Style_Contents_Box {
 		$this->add_responsive_control(
 			'deensimc_testimonial_widget_height',
 			[
-				'label' => esc_html__( 'Section Height', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__('Section Height', 'marquee-addons-for-elementor'),
 				'type' =>  Controls_Manager::SLIDER,
 				'size_units' => ['vh'],
 				'range' => [
@@ -87,7 +88,7 @@ trait Testimonialmarquee_Style_Contents_Box {
 				'conditions' => [
 					'terms' => [
 						[
-							'name' => 'deensimc_testimonial_vertical_section',
+							'name' => 'deensimc_marquee_vertical_orientation',
 							'operator' => '==',
 							'value' => 'yes',
 						],
@@ -104,9 +105,9 @@ trait Testimonialmarquee_Style_Contents_Box {
 		$this->add_control(
 			'deensimc_tesimonial_contents_padding',
 			[
-				'label' => esc_html__( 'Padding', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__('Padding', 'marquee-addons-for-elementor'),
 				'type' =>  Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
 				'selectors' => [
 					'{{WRAPPER}} .deensimc-tes .deensimc-tes-main blockquote' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
@@ -127,9 +128,9 @@ trait Testimonialmarquee_Style_Contents_Box {
 		$this->add_control(
 			'deensimc_testimonial_box_border_radius',
 			[
-				'label' => esc_html__( 'Border Radius', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__('Border Radius', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', 'rem' ], 
+				'size_units' => ['px', 'em', 'rem'],
 				'selectors' => [
 					'{{WRAPPER}} .deensimc-tes .deensimc-tes-main blockquote' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],

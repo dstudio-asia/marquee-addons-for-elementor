@@ -13,6 +13,14 @@
   width: 100%;
   padding-block: var(--deensimc-container-padding);
 }
+
+.deensimc-marquee-main-container ul,
+.deensimc-marquee-main-container ol {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
 .deensimc-marquee-track-wrapper {
   display: flex;
   align-items: center;

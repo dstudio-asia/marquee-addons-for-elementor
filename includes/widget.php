@@ -435,14 +435,12 @@ final class Marquee
 		require_once(__DIR__ . '/widgets/traits/video-marquee/style-play-icon.php');
 
 		require_once(__DIR__ . '/widgets/traits/testimonial-marquee/content-repeater.php');
-		require_once(__DIR__ . '/widgets/traits/testimonial-marquee/content-additional-options.php');
 		require_once(__DIR__ . '/widgets/traits/testimonial-marquee/content-text-unfold.php');
 		require_once(__DIR__ . '/widgets/traits/testimonial-marquee/style-contents-box.php');
 		require_once(__DIR__ . '/widgets/traits/testimonial-marquee/style-contents.php');
 		require_once(__DIR__ . '/widgets/traits/testimonial-marquee/style-image.php');
 		require_once(__DIR__ . '/widgets/traits/testimonial-marquee/style-name-title.php');
 		require_once(__DIR__ . '/widgets/traits/testimonial-marquee/style-review.php');
-		require_once(__DIR__ . '/widgets/traits/testimonial-marquee/style-edge-shadow.php');
 
 		require_once(__DIR__ . '/widgets/traits/image-marquee/content-image.php');
 		require_once(__DIR__ . '/widgets/traits/image-marquee/style-image-controls.php');

@@ -1,27 +1,4 @@
-/* ==========================================================================
-   Table of Contents
-   ==========================================================================
-
-   1. Variables
-   2. General Styles for Testimonial
-   3. Marquee Styles
-   4. Animation Keyframes
-   5. Blockquote and Author Styles
-   6. Icon and Star Rating Styles
-   7. Quote and Toggle Styles
-   8. Media Queries
-      - Large Devices (Max Width: 1400px)
-      - Medium Devices (Max Width: 1200px)
-      - Small Devices (Max Width: 900px)
-      - Mobile Devices (Max Width: 600px)
-   ==========================================================================
-*/
-
-/* ==========================================================================
-   1. Variables
-   ========================================================================== */
-
-:root {
+.deensimc-testimonial-marquee {
   --deensimc-marquee-width: 100vw;
   --deensimc-marquee-elements-displayed: 4;
   --deensimc-marquee-element-width: calc(
@@ -39,10 +16,6 @@
   --deensimc-marquee-text-gray: gray;
   --deensimc-marquee-text-skyblue: #1e6fda;
 }
-
-/* ==========================================================================
-     2. General Styles for Testimonial
-     ========================================================================== */
 
 .deensimc-tes-text {
   position: relative;
@@ -63,7 +36,7 @@
   border: unset;
 }
 
-.deensimc-tes .deensimc-tes-logo {
+.deensimc-testimonial-marquee .deensimc-marquee-track-wrapper {
   overflow: hidden;
   position: relative;
 }
@@ -72,7 +45,7 @@
      3. Marquee Styles
      ========================================================================== */
 
-.deensimc-tes .deensimc-tes-logo .deensimc-tes-content {
+.deensimc-testimonial-marquee .deensimc-marquee-track {
   white-space: normal;
   list-style: none;
   height: 100%;
@@ -81,7 +54,10 @@
   align-items: start;
 }
 
-.deensimc-tes .deensimc-tes-logo .deensimc-tes-content .deensimc-tes-item {
+.deensimc-testimonial-marquee
+  .deensimc-marquee-track-wrapper
+  .deensimc-marquee-track
+  .deensimc-tes-item {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -89,7 +65,11 @@
   max-height: 100%;
 }
 
-.deensimc-tes .deensimc-tes-logo .deensimc-tes-content .deensimc-tes-item i {
+.deensimc-testimonial-marquee
+  .deensimc-marquee-track-wrapper
+  .deensimc-marquee-track
+  .deensimc-tes-item
+  i {
   font-style: normal;
 }
 
@@ -127,7 +107,7 @@
      5. Blockquote and Author Styles
      ========================================================================== */
 
-.deensimc-tes .deensimc-tes-main {
+.deensimc-testimonial-marquee .deensimc-tes-main {
   position: relative;
   overflow: hidden;
   margin: 10px;
@@ -138,7 +118,7 @@
   box-shadow: none !important;
 }
 
-.deensimc-tes .deensimc-tes-main img {
+.deensimc-testimonial-marquee .deensimc-tes-main img {
   max-width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
@@ -151,15 +131,15 @@
   position: relative;
 }
 
-.deensimc-tes .deensimc-tes-main .deensimc-tes-author.no-image {
+.deensimc-testimonial-marquee .deensimc-tes-main .deensimc-tes-author.no-image {
   margin-top: 66px;
 }
 
-.deensimc-tes .deensimc-tes-main .deensimc-tes-author {
+.deensimc-testimonial-marquee .deensimc-tes-main .deensimc-tes-author {
   padding: 0 15px;
 }
 
-.deensimc-tes .deensimc-tes-main blockquote {
+.deensimc-testimonial-marquee .deensimc-tes-main blockquote {
   margin: 0;
   display: block;
   border-radius: 8px;
@@ -172,21 +152,24 @@
   line-height: 1.6em;
 }
 
-.deensimc-tes .deensimc-tes-main .deensimc-tes-author {
+.deensimc-testimonial-marquee .deensimc-tes-main .deensimc-tes-author {
   margin-top: -20px;
   text-transform: uppercase;
   text-align: center;
   color: var(--deensimc-marquee-tes-white);
 }
 
-.deensimc-tes .deensimc-tes-main .deensimc-tes-author .deensimc-tes-heading {
+.deensimc-testimonial-marquee
+  .deensimc-tes-main
+  .deensimc-tes-author
+  .deensimc-tes-heading {
   opacity: 1;
   margin: 0;
   font-weight: 800;
   color: var(--deensimc-marquee-text-black);
 }
 
-.deensimc-tes
+.deensimc-testimonial-marquee
   .deensimc-tes-main
   .deensimc-tes-author
   .deensimc-tes-heading
@@ -231,8 +214,8 @@
 }
 
 .deensimc-tes
-  .deensimc-tes-logo
-  .deensimc-tes-content
+  .deensimc-marquee-track-wrapper
+  .deensimc-marquee-track
   .deensimc-tes-item
   .deensimc-tes-star-icon
   i {
@@ -290,7 +273,7 @@
      7. Quote and Toggle Styles
      ========================================================================== */
 
-.deensimc-tes .quote-left {
+.deensimc-testimonial-marquee .quote-left {
   position: absolute;
   transform: translate(-110%, -50%);
   z-index: 1;
@@ -299,7 +282,7 @@
   opacity: unset;
 }
 
-.deensimc-tes .quote-right {
+.deensimc-testimonial-marquee .quote-right {
   display: inline-block;
   margin-left: 5px;
   margin-top: 5px;
@@ -349,8 +332,8 @@
     --deensimc-marquee-elements-displayed: 1;
   }
 
-  .deensimc-tes .deensimc-tes-logo .marquee:before,
-  .deensimc-tes .deensimc-tes-logo .marquee:after {
+  .deensimc-testimonial-marquee .deensimc-marquee-track-wrapper .marquee:before,
+  .deensimc-testimonial-marquee .deensimc-marquee-track-wrapper .marquee:after {
     width: 5rem;
   }
 }
