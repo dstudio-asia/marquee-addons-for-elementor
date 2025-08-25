@@ -1,9 +1,9 @@
-=== MarqueeAddons - Smooth marquee carousel loop for elementor ===
+=== Marquee Addons for Elementor – Advanced Elements & Modern Motion Widgets ===
 Contributors: debuggersstudio
 Tags: marquee, product marquee, image marquee, video marquee, text marquee, card marquee
 Requires at least: 5.8
 Tested up to: 6.8
-Stable tag: 2.4.3
+Stable tag: 3.0.0
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -212,11 +212,18 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 
 == Changelog ==
 
+= 3.0.0
+- New: Fully refactored plugin codebase for improved performance and maintainability
+- New: Improved file structure and coding standards
+- Tweak: Enhanced RTL support, vertical/horizontal orientation, and show more/less functionality
+- Tweak: Improved HTML escaping and security handling
+- Breaking Change: Marquee settings (orientation, direction, speed and shadow ) can be reset. Please review your integrations after upgrading.
+
 = 2.4.3
-= Tweak: readme.txt content updated
+- Tweak: readme.txt content updated
 
 = 2.4.0
-= New: Button Marquee Widget
+- New: Button Marquee Widget
 
 = 2.3.1
 - Tweak: placeholder image for Image Marquee

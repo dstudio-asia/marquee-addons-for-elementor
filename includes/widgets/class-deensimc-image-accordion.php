@@ -13,9 +13,20 @@ use \Elementor\Widget_Base;
  */
 class Deensimc_Image_Accordion extends Widget_Base
 {
+	use Deensimc_Promotional_Banner;
 
 	use ImageAccordion_Contents;
 	use ImageAccordion_Styles;
+
+	public function get_style_depends()
+	{
+		return ['deensimc-accordion-style'];
+	}
+
+	public function get_script_depends()
+	{
+		return ['deensimc-image-accordion-script'];
+	}
 
 	public function get_name()
 	{
@@ -40,24 +51,6 @@ class Deensimc_Image_Accordion extends Widget_Base
 	public function get_keywords()
 	{
 		return ['image', 'image-accordion', 'accordion', 'marquee'];
-	}
-
-	protected function get_upsale_data(): array
-	{
-		return [
-			'condition' => !class_exists('\Deensimcpro_Marquee\Marqueepro'),
-			'image' => esc_url(ELEMENTOR_ASSETS_URL . 'images/go-pro.svg'),
-			'image_alt' => esc_attr__('Upgrade', 'marquee-addons-for-elementor'),
-			'title' => esc_html__('Get MarqueeAddons Pro', 'marquee-addons-for-elementor'),
-			'description' => esc_html__('Get the premium version of the MarqueeAddons and grow your website capabilities.', 'marquee-addons-for-elementor'),
-			'upgrade_url' => esc_url('https://marqueeaddons.com'),
-			'upgrade_text' => esc_html__('Upgrade Now', 'marquee-addons-for-elementor'),
-		];
-	}
-
-	public function get_custom_help_url(): string
-	{
-		return 'https://marqueeaddons.com/how-to-use-the-image-accordion-widget-in-elementor/';
 	}
 
 	protected function register_controls()

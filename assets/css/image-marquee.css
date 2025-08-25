@@ -9,3 +9,7 @@
     line-height: 1.2;
   }
 }
+
+.deensimc-img-wrapper img {
+  width: 250px;
+}

@@ -19,10 +19,25 @@ use \Elementor\Group_Control_Typography;
 
 class Deensimc_Animated_Word_Roller extends Widget_Base
 {
+	use Deensimc_Promotional_Banner;
 
 	use Animated_Word_Roller_Content_Additional_Options;
 	use Animated_Word_Roller_Content_Text_Repeater;
 	use Animated_Word_Roller_Style_Text_Contents;
+
+	public function get_style_depends()
+	{
+		return [
+			'deensimc-animated-word-roller-style'
+		];
+	}
+
+	public function get_script_depends()
+	{
+		return [
+			'deensimc-animated-word-roller'
+		];
+	}
 
 	public function get_name()
 	{
