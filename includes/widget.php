@@ -384,6 +384,7 @@ final class Marquee
 	{
 
 		require_once(__DIR__ . '/widgets/traits/common-controls/promotional-banner.php');
+		require_once(__DIR__ . '/widgets/traits/common-controls/allowed-tags.php');
 		require_once(__DIR__ . '/widgets/traits/common-controls/gap-control.php');
 		require_once(__DIR__ . '/widgets/traits/common-controls/marquee-controls.php');
 		require_once(__DIR__ . '/widgets/traits/common-controls/style-edge-shadow.php');
@@ -402,6 +403,7 @@ final class Marquee
 		require_once(__DIR__ . '/widgets/traits/stacked-slider/style-image.php');
 		require_once(__DIR__ . '/widgets/traits/stacked-slider/style-dots.php');
 
+		require_once(__DIR__ . '/widgets/traits/video-marquee/helper-methods.php');
 		require_once(__DIR__ . '/widgets/traits/video-marquee/content-url-fields.php');
 		require_once(__DIR__ . '/widgets/traits/video-marquee/content-video-options.php');
 		require_once(__DIR__ . '/widgets/traits/video-marquee/content-youtube-vimeo.php');
@@ -410,6 +412,7 @@ final class Marquee
 		require_once(__DIR__ . '/widgets/traits/video-marquee/style-contents.php');
 		require_once(__DIR__ . '/widgets/traits/video-marquee/style-play-icon.php');
 
+		require_once(__DIR__ . '/widgets/traits/testimonial-marquee/helper-methods.php');
 		require_once(__DIR__ . '/widgets/traits/testimonial-marquee/content-repeater.php');
 		require_once(__DIR__ . '/widgets/traits/testimonial-marquee/content-text-unfold.php');
 		require_once(__DIR__ . '/widgets/traits/testimonial-marquee/style-contents-box.php');
