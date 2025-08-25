@@ -4,13 +4,10 @@
 
   img {
     max-width: none;
+    width: 250px;
+    object-fit: cover;
   }
   .deensimc-image-marquee-caption {
     line-height: 1.2;
   }
-}
-
-.deensimc-img-wrapper img {
-  width: 250px;
-  object-fit: cover;
 }
