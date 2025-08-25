@@ -7,7 +7,7 @@ use \Elementor\Controls_Manager;
 
 trait NewsTickerLayoutControl
 {
-
+	use Deensimc_Marquee_Gap_Controls;
 	protected function layout_control()
 	{
 		$this->start_controls_section(
@@ -31,7 +31,7 @@ trait NewsTickerLayoutControl
 			]
 		);
 
-		
+
 		$this->add_control(
 			'deensimc_label',
 			[
@@ -78,7 +78,7 @@ trait NewsTickerLayoutControl
 				],
 			]
 		);
-		
+
 
 		$this->add_control(
 			'deensimc_label_icon',
@@ -139,8 +139,8 @@ trait NewsTickerLayoutControl
 			]
 		);
 
+		$this->register_gap_control();
 
 		$this->end_controls_section();
 	}
-
 }

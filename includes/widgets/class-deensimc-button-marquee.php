@@ -9,6 +9,8 @@ if (!defined('ABSPATH')) {
 
 class Deensimc_Button_marquee extends Widget_Base
 {
+  use Deensimc_Promotional_Banner;
+  use Deensimc_Allowed_Tags;
   use Button_Controls;
   use Button_Style_Controls;
   use Button_Marquee_Controls;
@@ -90,29 +92,11 @@ class Deensimc_Button_marquee extends Widget_Base
       $conditional_class[] = 'deensimc-button-marquee-init';
     }
 
-    $allowed_icon_tags = [
-      'i' => [
-        'class' => [],
-        'aria-hidden' => [],
-      ],
-      'svg' => [
-        'class'   => [],
-        'width'   => [],
-        'height'  => [],
-        'viewbox' => [],
-        'fill'    => [],
-        'xmlns'   => [],
-      ],
-      'path' => [
-        'd'    => [],
-        'fill' => [],
-      ],
-    ];
 ?>
-    <div class="deensimc-marquee-main-container deensimc-button-marquee <?= esc_attr(implode(' ', $conditional_class)) ?>" data-is-marquee-on="<?= esc_attr($is_marquee_on) ?>" data-marquee-speed="<?= esc_attr($marquee_speed) ?>">
-      <a href="<?php echo esc_url($link); ?>" class="deensimc-button" id="<?= esc_attr($button_id) ?>" target="<?= esc_attr($target) ?>" rel="<?= esc_attr($nofollow) ?>" <?= esc_attr($custom_attrs) ?>>
+    <div class="deensimc-marquee-main-container deensimc-button-marquee <?php echo esc_attr(implode(' ', $conditional_class)) ?>" data-is-marquee-on="<?php echo esc_attr($is_marquee_on) ?>" data-marquee-speed="<?php echo esc_attr($marquee_speed) ?>">
+      <a href="<?php echo esc_url($link); ?>" class="deensimc-button" id="<?php echo esc_attr($button_id) ?>" target="<?php echo esc_attr($target) ?>" rel="<?php echo esc_attr($nofollow) ?>" <?php echo esc_attr($custom_attrs) ?>>
         <?php if ($icon_html) { ?>
-          <span class="deensimc-button-marquee-icon"><?= wp_kses($icon_html, $allowed_icon_tags) ?></span>
+          <span class="deensimc-button-marquee-icon"><?php echo wp_kses($icon_html, $this->get_allowed_icon_tags()) ?></span>
         <?php } ?>
         <span><?php echo esc_html($text); ?></span>
       </a>
@@ -122,7 +106,7 @@ class Deensimc_Button_marquee extends Widget_Base
             <?php for ($i = 0; $i < 8; $i++) : ?>
               <span class="deensimc-button-text">
                 <?php if ($icon_html) { ?>
-                  <span class="deensimc-button-marquee-icon"><?= wp_kses($icon_html, $allowed_icon_tags) ?></span>
+                  <span class="deensimc-button-marquee-icon"><?php echo wp_kses($icon_html, $this->get_allowed_icon_tags()) ?></span>
                 <?php } ?>
                 <span><?php echo esc_html($text); ?></span>
               </span>
@@ -132,7 +116,7 @@ class Deensimc_Button_marquee extends Widget_Base
             <?php for ($i = 0; $i < 8; $i++) : ?>
               <span class="deensimc-button-text">
                 <?php if ($icon_html) { ?>
-                  <span class="deensimc-button-marquee-icon"><?= wp_kses($icon_html, $allowed_icon_tags) ?></span>
+                  <span class="deensimc-button-marquee-icon"><?php echo wp_kses($icon_html, $this->get_allowed_icon_tags()) ?></span>
                 <?php } ?>
                 <span><?php echo esc_html($text); ?></span>
               </span>
@@ -149,7 +133,7 @@ class Deensimc_Button_marquee extends Widget_Base
   {
   ?>
     <#
-      var text=settings.deensimc_button_text || '<?php echo esc_js(__('Button Marquee', 'marquee-addons-for-elementor')); ?>' ;
+      var text=settings.deensimc_button_text || 'Button Marquee' ;
       var link_data=settings.deensimc_button_link || {};
       var link=link_data.url ? link_data.url : '#' ;
       var target=link_data.is_external ? ' target="_blank"' : '' ;

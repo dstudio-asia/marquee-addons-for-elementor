@@ -8,13 +8,16 @@ if (!defined('ABSPATH')) {
 
 class Deensimc_Animated_Heading_Widget extends Widget_Base
 {
-  use Title_Controls, Animation_Controls, Text_Styles_Controls, Animated_Text_Effect_Controls;
+  use Deensimc_Promotional_Banner;
+
+  use Title_Controls;
+  use Animation_Controls;
+  use Text_Styles_Controls;
+  use Animated_Text_Effect_Controls;
 
   public function get_style_depends()
   {
     return [
-      'deensimc-common-style',
-      'deensimc-animations-style',
       'deensimc-animated-heading-style'
     ];
   }
@@ -25,7 +28,7 @@ class Deensimc_Animated_Heading_Widget extends Widget_Base
       'deensimc-waveSwingTiltLeanAnimation',
       'deensimc-construct-word',
       'deensimc-typing-word',
-      'deensimc-twisting-word',
+      'deensimc-twisting-text',
       'deensimc-slide-word',
       'deensimc-lines-animation',
       'deensimc-rotation-3d',

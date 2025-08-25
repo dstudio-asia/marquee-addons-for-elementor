@@ -1,8 +1,9 @@
-.deensimc-infinite-rotation-container {
+.infinite-rotation-main-wrapper .deensimc-infinite-rotation-container {
   display: flex;
   align-items: center;
   gap: 0.5ch;
   flex-wrap: wrap;
+  margin: 0;
 }
 
 .deensimc-text-rotator-container {
