@@ -99,7 +99,8 @@ trait Testimonial_Marquee_Helper_Methods
 
     ?>
         <li class="deensimc-tes-item deensimc-tes-wrapper"
-            aria-hidden="<?php echo esc_attr($is_dup ? 'true' : 'false') ?>">
+            aria-hidden="<?php echo esc_attr($is_dup ? 'true' : 'false') ?>"
+            tabindex="<?php echo esc_attr($is_dup ? '-1' : '') ?>">
             <figure class="deensimc-tes-main">
 
                 <?php if (!empty($testimonial_text)) : ?>
