@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.0.0](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.0.0...3.0.0) (2025-08-25)
+
+
+### Bug Fixes
+
+* Fix image size issue ([587ef2c](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/587ef2cf2c315f5efade4c5d3ff257a7f3f7c806))
+
 ## [3.0.0](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/2.4.3...3.0.0) (2025-08-25)
 
 
