@@ -27,7 +27,7 @@
         );
         const truncatedText =
           fullText.split(" ").slice(0, visibleWord).join(" ") + "...";
-        $textElem.text(truncatedText);
+        $textElem.html(truncatedText);
 
         // Toggle on click
         let isExpanded = false;
@@ -35,7 +35,7 @@
           const foldText = $(this).find(".fold-text");
           const unfoldText = $(this).find(".unfold-text");
           if (isExpanded) {
-            $textElem.text(truncatedText);
+            $textElem.html(truncatedText);
             isExpanded = false;
             foldText.show();
             unfoldText.hide();
