@@ -14,6 +14,7 @@ use \Elementor\Utils;
 
 class Deensimc_Stacked_Slider extends Widget_Base
 {
+	use Deensimc_Promotional_Banner;
 
 	use Stackedslider_Contents_Primary;
 	use Stackedslider_Contents_Advance;
@@ -55,24 +56,6 @@ class Deensimc_Stacked_Slider extends Widget_Base
 	public function get_keywords()
 	{
 		return ['slider', 'staked', 'slide', 'marquee'];
-	}
-
-	protected function get_upsale_data(): array
-	{
-		return [
-			'condition' => !class_exists('\Deensimcpro_Marquee\Marqueepro'),
-			'image' => esc_url(ELEMENTOR_ASSETS_URL . 'images/go-pro.svg'),
-			'image_alt' => esc_attr__('Upgrade', 'marquee-addons-for-elementor'),
-			'title' => esc_html__('Get MarqueeAddons Pro', 'marquee-addons-for-elementor'),
-			'description' => esc_html__('Get the premium version of the MarqueeAddons and grow your website capabilities.', 'marquee-addons-for-elementor'),
-			'upgrade_url' => esc_url('https://marqueeaddons.com'),
-			'upgrade_text' => esc_html__('Upgrade Now', 'marquee-addons-for-elementor'),
-		];
-	}
-
-	public function get_custom_help_url(): string
-	{
-		return 'https://marqueeaddons.com/how-to-use-the-stacked-slider-widget-in-elementor/';
 	}
 
 	protected function register_controls()

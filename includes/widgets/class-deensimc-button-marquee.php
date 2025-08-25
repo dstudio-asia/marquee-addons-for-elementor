@@ -9,6 +9,8 @@ if (!defined('ABSPATH')) {
 
 class Deensimc_Button_marquee extends Widget_Base
 {
+  use Deensimc_Promotional_Banner;
+
   use Button_Controls;
   use Button_Style_Controls;
   use Button_Marquee_Controls;

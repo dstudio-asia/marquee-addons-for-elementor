@@ -17,6 +17,7 @@ use \Elementor\Repeater;
 
 class Deensimc_Video_Marquee extends Widget_Base
 {
+	use Deensimc_Promotional_Banner;
 
 	use Videomarquee_Content_Url_Fields;
 	use Videomarquee_Content_Video_Options;
@@ -64,24 +65,6 @@ class Deensimc_Video_Marquee extends Widget_Base
 	public function get_keywords()
 	{
 		return ['video', 'slide', 'deen', 'slider'];
-	}
-
-	protected function get_upsale_data(): array
-	{
-		return [
-			'condition' => !class_exists('\Deensimcpro_Marquee\Marqueepro'),
-			'image' => esc_url(ELEMENTOR_ASSETS_URL . 'images/go-pro.svg'),
-			'image_alt' => esc_attr__('Upgrade', 'marquee-addons-for-elementor'),
-			'title' => esc_html__('Get MarqueeAddons Pro', 'marquee-addons-for-elementor'),
-			'description' => esc_html__('Get the premium version of the MarqueeAddons and grow your website capabilities.', 'marquee-addons-for-elementor'),
-			'upgrade_url' => esc_url('https://marqueeaddons.com'),
-			'upgrade_text' => esc_html__('Upgrade Now', 'marquee-addons-for-elementor'),
-		];
-	}
-
-	public function get_custom_help_url(): string
-	{
-		return 'https://marqueeaddons.com/how-to-use-the-video-marquee-widget-in-elementor/';
 	}
 
 	protected function register_controls()

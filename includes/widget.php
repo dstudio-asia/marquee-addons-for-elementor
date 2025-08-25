@@ -383,6 +383,7 @@ final class Marquee
 	function deensimc_register_widgets($widgets_manager)
 	{
 
+		require_once(__DIR__ . '/widgets/traits/common-controls/promotional-banner.php');
 		require_once(__DIR__ . '/widgets/traits/common-controls/gap-control.php');
 		require_once(__DIR__ . '/widgets/traits/common-controls/marquee-controls.php');
 		require_once(__DIR__ . '/widgets/traits/common-controls/style-edge-shadow.php');
