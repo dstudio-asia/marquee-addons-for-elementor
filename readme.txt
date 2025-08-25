@@ -217,7 +217,7 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 - New: Improved file structure and coding standards
 - Tweak: Enhanced RTL support, vertical/horizontal orientation, and show more/less functionality
 - Tweak: Improved HTML escaping and security handling
-- Breaking Change: Some functions have been renamed. Please review your integrations after upgrading.
+- Breaking Change: Marquee settings (orientation, direction, speed and shadow ) can be reset. Please review your integrations after upgrading.
 
 = 2.4.3
 - Tweak: readme.txt content updated
