@@ -1,9 +1,10 @@
-.deensimc-heading {
+.deensimc-animated-heading .deensimc-heading {
   display: flex;
   align-items: center;
   gap: 0 0.5ch;
   white-space: nowrap;
   flex-wrap: wrap;
+  margin: 0;
 }
 
 .deensimc-animation-off {
