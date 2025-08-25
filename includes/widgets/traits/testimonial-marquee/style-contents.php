@@ -62,8 +62,8 @@ trait Testimonial_Marquee_Style_Contents
 				'label' => esc_html__('Color', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .deensimc-tes .deensimc-tes-logo .deensimc-tes-content .deensimc-tes-item blockquote i' => 'color: {{VALUE}}',
-					'{{WRAPPER}} .deensimc-tes .deensimc-tes-logo .deensimc-tes-content .deensimc-tes-item blockquote svg path' => 'fill: {{VALUE}}',
+					'{{WRAPPER}} .deensimc-testimonial-marquee .deensimc-tes-item blockquote i' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .deensimc-testimonial-marquee .deensimc-tes-item blockquote svg path' => 'fill: {{VALUE}}',
 				],
 			]
 		);

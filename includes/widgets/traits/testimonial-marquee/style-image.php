@@ -42,7 +42,7 @@ trait Testimonial_Marquee_Style_Image
 					'size' => 15,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .deensimc-tes .deensimc-tes-main img' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .deensimc-tes-main img' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -69,7 +69,7 @@ trait Testimonial_Marquee_Style_Image
 					'size' => 70,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .deensimc-tes .deensimc-tes-main img' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .deensimc-tes-main img' => 'width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -78,7 +78,7 @@ trait Testimonial_Marquee_Style_Image
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'deensimc_tesimonial_image_border',
-				'selector' => '{{WRAPPER}} .deensimc-tes .deensimc-tes-main img',
+				'selector' => '{{WRAPPER}} .deensimc-tes-main img',
 			]
 		);
 
@@ -89,7 +89,7 @@ trait Testimonial_Marquee_Style_Image
 				'type' =>  Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
 				'selectors' => [
-					'{{WRAPPER}} .deensimc-tes .deensimc-tes-main img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .deensimc-tes-main img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
