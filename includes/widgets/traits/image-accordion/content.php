@@ -42,6 +42,16 @@ trait ImageAccordion_Contents {
                     'placeholder' => esc_html__( 'Type your title here', 'marquee-addons-for-elementor' ),
                 ]
             );
+
+            $image_repeater->add_control(
+                'deensimc_bg_image_description',
+                [
+                    'label' => esc_html__( 'Description', 'marquee-addons-for-elementor' ),
+                    'type' =>  Controls_Manager::WYSIWYG,
+                    'default' => esc_html__( 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'marquee-addons-for-elementor' ),
+                    'placeholder' => esc_html__( 'Type your description here', 'marquee-addons-for-elementor' ),
+                ]
+		    );
     
             $this->add_control(
                 'deensimc_bg_image_repeater',
@@ -51,19 +61,24 @@ trait ImageAccordion_Contents {
                     'fields' => $image_repeater->get_controls(),
                     'default' => [
                         [
-                            'deensimc_bg_image_title' => esc_html__( 'Set', 'marquee-addons-for-elementor' )
+                            'deensimc_bg_image_title' => esc_html__( 'Set', 'marquee-addons-for-elementor' ),
+                            'deensimc_bg_image_description' => esc_html__( 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'marquee-addons-for-elementor' ),
                         ],
                         [
                             'deensimc_bg_image_title' => esc_html__( 'Your', 'marquee-addons-for-elementor' ),
+                            'deensimc_bg_image_description' => esc_html__( 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'marquee-addons-for-elementor' ),
                         ],
                         [
                             'deensimc_bg_image_title' => esc_html__( 'Journey', 'marquee-addons-for-elementor' ),
+                            'deensimc_bg_image_description' => esc_html__( 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'marquee-addons-for-elementor' ),
                         ],
                         [
                             'deensimc_bg_image_title' => esc_html__( 'To', 'marquee-addons-for-elementor' ),
+                            'deensimc_bg_image_description' => esc_html__( 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'marquee-addons-for-elementor' ),
                         ],
                         [
                             'deensimc_bg_image_title' => esc_html__( 'Success', 'marquee-addons-for-elementor' ),
+                            'deensimc_bg_image_description' => esc_html__( 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'marquee-addons-for-elementor' ),
                         ],
                     ],
                     'title_field' => '{{{ deensimc_bg_image_title }}}',
@@ -134,6 +149,7 @@ trait ImageAccordion_Contents {
                     'toggle' => true,
                     'selectors' => [
                         '{{WRAPPER}} .deensimc-image-panel .deensimc-panel' => 'align-items: {{VALUE}};',
+                        '{{WRAPPER}} .deensimc-panel-content' => 'justify-content: {{VALUE}};',
                     ],
                 ]
             );
