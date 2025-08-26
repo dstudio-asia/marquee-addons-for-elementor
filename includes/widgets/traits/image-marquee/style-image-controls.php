@@ -93,7 +93,7 @@ trait Deensimc_Image_Marquee_Image_Style
 				'size_units' => ['px', 'em', 'rem', 'custom'],
 				'range' => [
 					'px' => [
-						'min' => 0,
+						'min' => 100,
 						'max' => 1000,
 						'step' => 1,
 					],
@@ -103,7 +103,7 @@ trait Deensimc_Image_Marquee_Image_Style
 					'size' => 250,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .deensimc-img-wrapper img' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .deensimc-img-wrapper .img' => 'width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -116,14 +116,14 @@ trait Deensimc_Image_Marquee_Image_Style
 				'size_units' => ['px', 'em', 'rem', 'custom'],
 				'range' => [
 					'px' => [
-						'min' => 0,
+						'min' => 67,
 						'max' => 1000,
 						'step' => 1,
 					],
 				],
 
 				'selectors' => [
-					'{{WRAPPER}} .deensimc-img-wrapper img' => 'height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .deensimc-img-wrapper .img' => 'height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
