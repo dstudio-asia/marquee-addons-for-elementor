@@ -21,12 +21,14 @@
         const $textElem = $textWrapper.find(".deensimc-contents");
 
         const fullText = escapeHtml($textElem.text().trim());
-        const visibleWord = parseInt(
-          $textWrapper.data("visible-word-length"),
-          10
-        );
+        const visibleLength = parseInt($textWrapper.data("visible-length"), 10);
+        const limitByChar = $textWrapper.data("limit-by") === "characters";
+
         const truncatedText =
-          fullText.split(" ").slice(0, visibleWord).join(" ") + "...";
+          fullText
+            .split(limitByChar ? "" : " ")
+            .slice(0, visibleLength)
+            .join(limitByChar ? "" : " ") + "...";
         $textElem.html(truncatedText);
 
         // Toggle on click
