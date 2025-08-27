@@ -256,6 +256,12 @@
   color: var(--deensimc-marquee-text-gray);
   opacity: unset;
 }
+
+.deensimc-testimonial-marquee .quote-left svg,
+.deensimc-testimonial-marquee .quote-right svg {
+  fill: var(--deensimc-marquee-text-gray);
+}
+
 [dir="rtl"] .deensimc-testimonial-marquee .quote-right {
   transform: scaleX(-1);
 }

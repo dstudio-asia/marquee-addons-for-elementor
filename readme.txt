@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: marquee, product marquee, image marquee, video marquee, text marquee, card marquee
 Requires at least: 5.8
 Tested up to: 6.8
-Stable tag: 3.0.1
+Stable tag: 3.0.2
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -212,8 +212,11 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 
 == Changelog ==
 
+= 3.0.2
+- Fix: Null fold/unfold text issue in Testimonial Marquee.
+
 = 3.0.1
-- Fix: image size issue in Image Marquee
+- Fix: Image size issue in Image Marquee
 
 = 3.0.0
 - New: Fully refactored plugin codebase for improved performance and maintainability

@@ -8,8 +8,6 @@ if (! defined('ABSPATH')) {
 
 trait Testimonial_Marquee_Helper_Methods
 {
-    use Deensimc_Allowed_Tags;
-
 
     /**
      * Ensure we always have at least 8 testimonials by duplicating.
@@ -75,22 +73,9 @@ trait Testimonial_Marquee_Helper_Methods
     }
 
     /**
-     * Render quote icons (left or right).
-     */
-    private function render_quote_icon($icon): string
-    {
-        if (empty($icon)) {
-            return '';
-        }
-        ob_start();
-        Icons_Manager::render_icon($icon, ['aria-hidden' => 'true']);
-        return ob_get_clean();
-    }
-
-    /**
      * Render a single testimonial item.
      */
-    private function render_single_testimonial($testimonial, $quote_left, $quote_right, $visible_word_length, $fold_text, $unfold_text)
+    private function render_single_testimonial($settings, $testimonial, $visible_word_length, $fold_text, $unfold_text)
     {
         $testimonial_text = $testimonial['deensimc_testimonial_content'];
         $author_image_url = empty($testimonial['deensimc_testimonial_image']['url']) ? 'no-image' : '';
@@ -107,23 +92,26 @@ trait Testimonial_Marquee_Helper_Methods
                     <blockquote class="deensimc-tes-text">
                         <div class="contents-wrapper" data-visible-length="<?php echo esc_attr($visible_word_length) ?>">
 
-                            <?php if ($quote_left) : ?>
-                                <span class="quote-left"><?php echo wp_kses($quote_left, $this->get_allowed_icon_tags()); ?></span>
+                            <?php if (! empty($settings['deensimc_testimonial_quote_left_icon']['value'])) : ?>
+                                <span class="quote-left"><?php Icons_Manager::render_icon($settings['deensimc_testimonial_quote_left_icon'], ['aria-hidden' => 'true']); ?></span>
                             <?php endif; ?>
 
                             <span class="deensimc-contents">
                                 <?php echo esc_html($testimonial_text); ?>
                             </span>
 
-                            <?php if ($word_count > $visible_word_length) : ?>
+                            <?php if ($visible_word_length && $word_count > $visible_word_length) : ?>
                                 <a href="javascript:void(0)" class="deensimc-toggle">
                                     <span class="fold-text"><?php echo esc_html($fold_text); ?></span>
                                     <span class="unfold-text"><?php echo esc_html($unfold_text); ?></span>
                                 </a>
                             <?php endif; ?>
 
-                            <?php if ($quote_right) : ?>
-                                <span class="quote-right"><?php echo wp_kses($quote_right, $this->get_allowed_icon_tags()); ?></span>
+                            <?php if (! empty($settings['deensimc_testimonial_quote_right_icon']['value'])) : ?>
+                                <span class="quote-right">
+                                    <?php Icons_Manager::render_icon($settings['deensimc_testimonial_quote_right_icon'], ['aria-hidden' => 'true']);
+                                    ?>
+                                </span>
                             <?php endif; ?>
 
                         </div>
@@ -180,18 +168,14 @@ trait Testimonial_Marquee_Helper_Methods
     protected function render_testimonial($settings,)
     {
         $testimonials = $this->prepare_testimonials($settings['deensimc_repeater_testimonial_main'] ?? []);
-        $quote_left   = $this->render_quote_icon($settings['deensimc_testimonial_quote_left_icon'] ?? '');
-        $quote_right  = $this->render_quote_icon($settings['deensimc_testimonial_quote_right_icon'] ?? '');
-
         $visible_word_length = $settings['deensimc_tesimonial_excerpt_length'];
         $fold_text           = $settings['deensimc_tesimonial_excerpt_title'];
         $unfold_text         = $settings['deensimc_tesimonial_excerpt_title_less'];
 
         foreach ($testimonials as $testimonial) {
             $this->render_single_testimonial(
+                $settings,
                 $testimonial,
-                $quote_left,
-                $quote_right,
                 $visible_word_length,
                 $fold_text,
                 $unfold_text
