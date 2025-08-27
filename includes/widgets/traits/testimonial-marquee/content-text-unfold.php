@@ -24,7 +24,7 @@ trait Testimonial_Marquee_Content_Text_Unfold
 			[
 				'label' => esc_html__('Length (word)', 'marquee-addons-for-elementor'),
 				'type' =>  Controls_Manager::NUMBER,
-				'min' => 5,
+				'min' => 1,
 				'max' => 100,
 				'step' => 1,
 				'default' => 10,

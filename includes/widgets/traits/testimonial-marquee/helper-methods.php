@@ -115,7 +115,7 @@ trait Testimonial_Marquee_Helper_Methods
                                 <?php echo esc_html($testimonial_text); ?>
                             </span>
 
-                            <?php if ($word_count > $visible_word_length) : ?>
+                            <?php if ($visible_word_length && $word_count > $visible_word_length) : ?>
                                 <a href="javascript:void(0)" class="deensimc-toggle">
                                     <span class="fold-text"><?php echo esc_html($fold_text); ?></span>
                                     <span class="unfold-text"><?php echo esc_html($unfold_text); ?></span>
