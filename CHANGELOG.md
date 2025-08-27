@@ -1,6 +1,17 @@
 # Changelog
 
 
+## [3.0.1](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.0.0...3.0.1) (2025-08-27)
+
+
+### Bug Fixes
+
+* Fix image size issue ([c58fd7d](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/c58fd7d96d4042af96a05743f6d065621b983d17))
+* Fix image size issue ([587ef2c](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/587ef2cf2c315f5efade4c5d3ff257a7f3f7c806))
+* Fix image widht issue ([f9ffd2a](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/f9ffd2a4019f45c9de9e97997cdc3b3537423a38))
+* Fix vertical alignment control ([56af30d](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/56af30d49de8d6dd0a8ef122e9fc92f70d192497))
+* Fix vertical height selector ([d6ef2bb](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/d6ef2bb735b67f61ab1acd60befdafdbd394aad5))
+
 ## [3.0.0](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.0.0...3.0.0) (2025-08-25)
 
 
