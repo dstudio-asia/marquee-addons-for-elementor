@@ -68,7 +68,7 @@ trait Testimonial_Marquee_Style_Contents_Box
 					],
 				],
 				'selectors' => [
-					'.deensimc-marquee-vertical.deensimc-marquee-main-container' => 'height: {{SIZE}}vh;',
+					'{{WRAPPER}} .deensimc-marquee-vertical.deensimc-marquee-main-container' => 'height: {{SIZE}}vh;',
 				],
 			]
 		);

@@ -105,7 +105,7 @@ trait Testimonial_Marquee_Helper_Methods
 
                 <?php if (!empty($testimonial_text)) : ?>
                     <blockquote class="deensimc-tes-text">
-                        <div class="contents-wrapper" data-visible-word-length="<?php echo esc_attr($visible_word_length) ?>">
+                        <div class="contents-wrapper" data-visible-length="<?php echo esc_attr($visible_word_length) ?>">
 
                             <?php if ($quote_left) : ?>
                                 <span class="quote-left"><?php echo wp_kses($quote_left, $this->get_allowed_icon_tags()); ?></span>
