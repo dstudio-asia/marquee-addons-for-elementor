@@ -161,7 +161,7 @@ trait Testimonial_Marquee_Contents
 				'label' => esc_html__('Vertical Alignment', 'marquee-addons-for-elementor'),
 				'type' =>  Controls_Manager::CHOOSE,
 				'options' => [
-					'start' => [
+					'left' => [
 						'title' => esc_html__('Left', 'marquee-addons-for-elementor'),
 						'icon' => 'eicon-h-align-left',
 					],
@@ -169,7 +169,7 @@ trait Testimonial_Marquee_Contents
 						'title' => esc_html__('Center', 'marquee-addons-for-elementor'),
 						'icon' => 'eicon-h-align-center',
 					],
-					'end' => [
+					'right' => [
 						'title' => esc_html__('Right', 'marquee-addons-for-elementor'),
 						'icon' => 'eicon-h-align-right',
 					],
@@ -177,12 +177,16 @@ trait Testimonial_Marquee_Contents
 				'default' => 'center',
 				'toggle' => true,
 				'separator' => 'after',
+				'selectors_dictionary' => [
+					'left' => 'margin-left: 0; margin-right: auto;',
+					'center' => 'margin-left: auto; margin-right: auto;',
+					'right' => 'margin-left: auto; margin-right: 0;',
+				],
 				'selectors' => [
-					'{{WRAPPER}} .deensimc-tes .deensimc-marquee-vertical' => 'align-items: {{value}};',
+					'{{WRAPPER}} .deensimc-testimonial-marquee .deensimc-marquee-track-wrapper' => '{{VALUE}};',
 				],
 				'condition' => [
 					'deensimc_marquee_vertical_orientation' => 'yes',
-					'deensimc_show_animation' => 'yes'
 				],
 			]
 		);
