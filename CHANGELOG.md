@@ -1,6 +1,18 @@
 # Changelog
 
 
+## [3.0.2](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.0.1...3.0.2) (2025-08-27)
+
+
+### Bug Fixes
+
+* Fix icon color ([4b1aca7](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/4b1aca78104a5e6b204e5e0d3ff64b71f19488b2))
+* Fix icon issue ([7923f0e](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/7923f0e952786a237cd03ae1cc62722dea3c0abb))
+* Fix icon issue ([a3e658a](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/a3e658a80f907ff468a80e428f5a64b03ca1426a))
+* Fix icon issue ([4652f36](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/4652f363dc30248b8122cc5eca0ff6a73a5a75a0))
+* Fix null velue of unfold text ([276e3e1](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/276e3e19bff7a4564d30cac347d25870b2386ff7))
+* Fix width for vertical marque being horizontal in mobile ([1e28fcc](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/1e28fcc248e9346f0726d2a659683a6b8da7cec2))
+
 ## [3.0.1](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.0.0...3.0.1) (2025-08-27)
 
 
