@@ -147,6 +147,7 @@
     flex-direction: row;
     align-items: center;
     width: auto;
+    max-width: none;
   }
 
   [dir="rtl"] .deensimc-marquee-vertical .deensimc-marquee-track-wrapper,
