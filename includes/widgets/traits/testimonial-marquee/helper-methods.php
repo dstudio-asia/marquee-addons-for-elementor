@@ -105,7 +105,7 @@ trait Testimonial_Marquee_Helper_Methods
                     <blockquote class="deensimc-tes-text">
                         <div class="contents-wrapper" data-visible-length="<?php echo esc_attr($visible_word_length) ?>">
 
-                            <?php if ($settings['deensimc_testimonial_quote_left_icon']) : ?>
+                            <?php if (! empty($settings['deensimc_testimonial_quote_left_icon']['value'])) : ?>
                                 <span class="quote-left"><?php Icons_Manager::render_icon($settings['deensimc_testimonial_quote_left_icon'], ['aria-hidden' => 'true']); ?></span>
                             <?php endif; ?>
 
@@ -120,7 +120,7 @@ trait Testimonial_Marquee_Helper_Methods
                                 </a>
                             <?php endif; ?>
 
-                            <?php if ($settings['deensimc_testimonial_quote_right_icon']) : ?>
+                            <?php if (! empty($settings['deensimc_testimonial_quote_right_icon']['value'])) : ?>
                                 <span class="quote-right">
                                     <?php Icons_Manager::render_icon($settings['deensimc_testimonial_quote_right_icon'], ['aria-hidden' => 'true']);
                                     ?>
