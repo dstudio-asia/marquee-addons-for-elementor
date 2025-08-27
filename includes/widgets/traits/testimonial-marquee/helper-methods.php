@@ -73,19 +73,6 @@ trait Testimonial_Marquee_Helper_Methods
     }
 
     /**
-     * Render quote icons (left or right).
-     */
-    private function render_quote_icon($icon): string
-    {
-        if (empty($icon)) {
-            return '';
-        }
-        ob_start();
-        Icons_Manager::render_icon($icon, ['aria-hidden' => 'true']);
-        return ob_get_clean();
-    }
-
-    /**
      * Render a single testimonial item.
      */
     private function render_single_testimonial($settings, $testimonial, $visible_word_length, $fold_text, $unfold_text)
