@@ -101,7 +101,7 @@ class Deensimc_Image_Accordion extends Widget_Base {
 								<h2> <?php echo esc_html( $images['deensimc_bg_image_title'] ) ?> </h2>
 								<div class="deensimc-acc-description">
 									<?php
-										echo $images['deensimc_bg_image_description'] ?? '' ;
+										echo esc_html( $images['deensimc_bg_image_description'] ) ?? '' ;
 									?>
 								</div>
 							</div>
