@@ -11,7 +11,7 @@ final class Marquee
 	 * @var string The addon version.
 	 */
 
-	const VERSION = '3.0.2';
+	const VERSION = '3.1.0';
 
 	/**
 	 * Minimum Elementor Version
@@ -209,10 +209,12 @@ final class Marquee
 	public function init()
 	{
 		add_action('admin_enqueue_scripts', [$this, 'deensimc_notice_enqueue_scripts'], 10);
-		add_action('admin_notices', [$this, 'deensimc_rate_us'], 10);
-		add_action('wp_ajax_deensimc_notice_dismiss', [$this, 'deensimc_notice_dismiss'], 10);
-		add_action('elementor/frontend/after_enqueue_styles', [$this, 'deensimc_frontend_styles'], 20); // runs later
-		add_action('elementor/frontend/after_register_scripts', [$this, 'deensimc_frontend_scripts'], 20); // runs later
+		if (!class_exists('\Deensimcpro_Marquee\Marqueepro')) {
+			add_action('admin_notices', [$this, 'deensimc_rate_us'], 10);
+			add_action('wp_ajax_deensimc_notice_dismiss', [$this, 'deensimc_notice_dismiss'], 10);
+		}
+		add_action('elementor/frontend/after_enqueue_styles', [$this, 'deensimc_frontend_styles'], 20); 
+		add_action('elementor/frontend/after_register_scripts', [$this, 'deensimc_frontend_scripts'], 20);
 		add_action('elementor/widgets/register', [$this, 'deensimc_register_widgets'], 10);
 		add_action('elementor/elements/categories_registered', [$this, 'deensimc_add_categories'], 10);
 		add_action('elementor/editor/before_enqueue_styles', [$this, 'deensimc_editor_styles'], 10);
