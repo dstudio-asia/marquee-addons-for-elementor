@@ -1,6 +1,14 @@
 # Changelog
 
 
+## [3.1.0](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.0.2...3.1.0) (2025-08-28)
+
+
+### Bug Fixes
+
+* Escape HTML in image accordion description for improved security ([be428fc](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/be428fc936358a48cef7d0e0305bb528100ced12))
+* Remove redundant 'card marquee' tag from readme.txt ([2da27b6](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/2da27b6b214ca42a9a390627443b7cb717368d6b))
+
 ## [3.0.2](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.0.1...3.0.2) (2025-08-27)
 
 
