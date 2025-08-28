@@ -1,6 +1,6 @@
 === Marquee Addons for Elementor – Advanced Elements & Modern Motion Widgets ===
 Contributors: debuggersstudio
-Tags: marquee, product marquee, image marquee, video marquee, text marquee, card marquee
+Tags: marquee, product marquee, image marquee, video marquee, text marquee
 Requires at least: 5.8
 Tested up to: 6.8
 Stable tag: 3.1.0
