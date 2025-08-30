@@ -75,11 +75,17 @@ trait Testimonial_Marquee_Helper_Methods
     /**
      * Render a single testimonial item.
      */
-    private function render_single_testimonial($settings, $testimonial, $visible_word_length, $fold_text, $unfold_text)
-    {
+    private function render_single_testimonial(
+        $settings,
+        $testimonial,
+        $visible_word_length,
+        $fold_text,
+        $unfold_text,
+        $is_cloned
+    ) {
         $testimonial_text = $testimonial['deensimc_testimonial_content'];
         $author_image_url = empty($testimonial['deensimc_testimonial_image']['url']) ? 'no-image' : '';
-        $is_dup           = !empty($testimonial['_is_dup']);
+        $is_dup           = $is_cloned || !empty($testimonial['_is_dup']);
         $word_count       = str_word_count(wp_strip_all_tags($testimonial_text));
 
     ?>
@@ -166,8 +172,10 @@ trait Testimonial_Marquee_Helper_Methods
     }
 
 
-    protected function render_testimonial($settings,)
-    {
+    protected function render_testimonial(
+        $settings,
+        $is_cloned
+    ) {
         $testimonials = $this->prepare_testimonials($settings['deensimc_repeater_testimonial_main'] ?? []);
         $visible_word_length = $settings['deensimc_tesimonial_excerpt_length'];
         $fold_text           = $settings['deensimc_tesimonial_excerpt_title'];
@@ -179,7 +187,8 @@ trait Testimonial_Marquee_Helper_Methods
                 $testimonial,
                 $visible_word_length,
                 $fold_text,
-                $unfold_text
+                $unfold_text,
+                $is_cloned
             );
         }
     }

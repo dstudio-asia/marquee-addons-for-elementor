@@ -108,10 +108,10 @@ class Deensimc_Testimonial_Marquee extends Widget_Base
 		<div class="deensimc-marquee-main-container deensimc-testimonial-marquee <?php echo esc_attr(implode(' ', $conditional_class)) ?>" data-marquee-speed="<?php echo esc_attr($marquee_speed) ?>">
 			<div class="deensimc-marquee-track-wrapper">
 				<ul class="deensimc-marquee-track">
-					<?php $this->render_testimonial($settings) ?>
+					<?php $this->render_testimonial($settings, false) ?>
 				</ul>
 				<ul aria-hidden="true" class="deensimc-marquee-track">
-					<?php $this->render_testimonial($settings) ?>
+					<?php $this->render_testimonial($settings, true) ?>
 				</ul>
 			</div>
 		</div>

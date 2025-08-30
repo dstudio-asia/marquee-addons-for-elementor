@@ -50,13 +50,13 @@ trait Testimonial_Marquee_Style_Image
 		$this->add_control(
 			'deensimc_tesimonial_image_resulation',
 			[
-				'label' => esc_html__('Image Resulation', 'marquee-addons-for-elementor'),
+				'label' => esc_html__('Image Size', 'marquee-addons-for-elementor'),
 				'type' =>  Controls_Manager::SLIDER,
 				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
 				'range' => [
 					'px' => [
 						'min' => 0,
-						'max' => 100,
+						'max' => 200,
 						'step' => 1,
 					],
 					'%' => [
@@ -69,7 +69,7 @@ trait Testimonial_Marquee_Style_Image
 					'size' => 70,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .deensimc-tes-main img' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .deensimc-testimonial-marquee' => '--avatar-width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
