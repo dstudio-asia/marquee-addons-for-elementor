@@ -100,10 +100,12 @@ trait Testimonial_Marquee_Helper_Methods
                             </span>
 
                             <?php if ($visible_word_length && $word_count > $visible_word_length) : ?>
-                                <a href="javascript:void(0)" class="deensimc-toggle" tabindex="<?php echo esc_attr($is_dup ? '-1' : '') ?>" rel="nofollow noopener noreferrer">
+                                <button type="button" class="deensimc-toggle" <?php if ($is_dup): ?>
+                                    tabindex="-1" aria-hidden="true"
+                                    <?php endif; ?>>
                                     <span class="fold-text"><?php echo esc_html($fold_text); ?></span>
                                     <span class="unfold-text"><?php echo esc_html($unfold_text); ?></span>
-                                </a>
+                                </button>
                             <?php endif; ?>
 
                             <?php if (! empty($settings['deensimc_testimonial_quote_right_icon']['value'])) : ?>
