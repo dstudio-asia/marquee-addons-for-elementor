@@ -47,7 +47,7 @@ trait Testimonial_Marquee_Style_Name_Title
 				'range' => [
 					'px' => [
 						'min' => 0,
-						'max' => 1000,
+						'max' => 100,
 						'step' => 1,
 					],
 					'%' => [

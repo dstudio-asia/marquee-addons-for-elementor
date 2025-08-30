@@ -75,17 +75,22 @@ trait Testimonial_Marquee_Helper_Methods
     /**
      * Render a single testimonial item.
      */
-    private function render_single_testimonial($settings, $testimonial, $visible_word_length, $fold_text, $unfold_text)
-    {
+    private function render_single_testimonial(
+        $settings,
+        $testimonial,
+        $visible_word_length,
+        $fold_text,
+        $unfold_text,
+        $is_cloned
+    ) {
         $testimonial_text = $testimonial['deensimc_testimonial_content'];
         $author_image_url = empty($testimonial['deensimc_testimonial_image']['url']) ? 'no-image' : '';
-        $is_dup           = !empty($testimonial['_is_dup']);
+        $is_dup           = $is_cloned || !empty($testimonial['_is_dup']);
         $word_count       = str_word_count(wp_strip_all_tags($testimonial_text));
 
     ?>
         <li class="deensimc-tes-item deensimc-tes-wrapper"
-            aria-hidden="<?php echo esc_attr($is_dup ? 'true' : 'false') ?>"
-            tabindex="<?php echo esc_attr($is_dup ? '-1' : '') ?>">
+            aria-hidden="<?php echo esc_attr($is_dup ? 'true' : 'false') ?>">
             <figure class="deensimc-tes-main">
 
                 <?php if (!empty($testimonial_text)) : ?>
@@ -101,10 +106,12 @@ trait Testimonial_Marquee_Helper_Methods
                             </span>
 
                             <?php if ($visible_word_length && $word_count > $visible_word_length) : ?>
-                                <a href="javascript:void(0)" class="deensimc-toggle">
+                                <button type="button" class="deensimc-toggle" <?php if ($is_dup): ?>
+                                    tabindex="-1" aria-hidden="true"
+                                    <?php endif; ?>>
                                     <span class="fold-text"><?php echo esc_html($fold_text); ?></span>
                                     <span class="unfold-text"><?php echo esc_html($unfold_text); ?></span>
-                                </a>
+                                </button>
                             <?php endif; ?>
 
                             <?php if (! empty($settings['deensimc_testimonial_quote_right_icon']['value'])) : ?>
@@ -165,8 +172,10 @@ trait Testimonial_Marquee_Helper_Methods
     }
 
 
-    protected function render_testimonial($settings,)
-    {
+    protected function render_testimonial(
+        $settings,
+        $is_cloned
+    ) {
         $testimonials = $this->prepare_testimonials($settings['deensimc_repeater_testimonial_main'] ?? []);
         $visible_word_length = $settings['deensimc_tesimonial_excerpt_length'];
         $fold_text           = $settings['deensimc_tesimonial_excerpt_title'];
@@ -178,7 +187,8 @@ trait Testimonial_Marquee_Helper_Methods
                 $testimonial,
                 $visible_word_length,
                 $fold_text,
-                $unfold_text
+                $unfold_text,
+                $is_cloned
             );
         }
     }
