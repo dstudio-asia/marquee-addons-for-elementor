@@ -84,8 +84,7 @@ trait Testimonial_Marquee_Helper_Methods
 
     ?>
         <li class="deensimc-tes-item deensimc-tes-wrapper"
-            aria-hidden="<?php echo esc_attr($is_dup ? 'true' : 'false') ?>"
-            tabindex="<?php echo esc_attr($is_dup ? '-1' : '') ?>">
+            aria-hidden="<?php echo esc_attr($is_dup ? 'true' : 'false') ?>">
             <figure class="deensimc-tes-main">
 
                 <?php if (!empty($testimonial_text)) : ?>
@@ -101,7 +100,7 @@ trait Testimonial_Marquee_Helper_Methods
                             </span>
 
                             <?php if ($visible_word_length && $word_count > $visible_word_length) : ?>
-                                <a href="javascript:void(0)" class="deensimc-toggle">
+                                <a href="javascript:void(0)" class="deensimc-toggle" tabindex="<?php echo esc_attr($is_dup ? '-1' : '') ?>" rel="nofollow noopener noreferrer">
                                     <span class="fold-text"><?php echo esc_html($fold_text); ?></span>
                                     <span class="unfold-text"><?php echo esc_html($unfold_text); ?></span>
                                 </a>
