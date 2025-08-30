@@ -7,6 +7,7 @@
   --deensimc-marquee-text-black: #000000;
   --deensimc-marquee-text-gray: gray;
   --deensimc-marquee-text-skyblue: #1e6fda;
+  --avatar-width: 70px;
 }
 
 .deensimc-tes-text {
@@ -77,10 +78,10 @@
   max-width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  width: 70px;
+
+  width: var(--avatar-width);
   border-radius: 50%;
   margin-bottom: 15px;
-  margin-top: 10px;
   display: inline-block;
   z-index: 1;
   position: relative;
@@ -103,12 +104,11 @@
   background-color: var(--deensimc-marquee-tes-bg);
   padding: 30px 50px 65px 50px;
   font-weight: 500;
-  margin: 0 0 -50px;
   line-height: 1.6em;
 }
 
 .deensimc-testimonial-marquee .deensimc-tes-main .deensimc-tes-author {
-  margin-top: -20px;
+  margin-top: calc(calc(var(--avatar-width) / 2) * -1);
   text-transform: uppercase;
   text-align: center;
   color: var(--deensimc-marquee-tes-white);
