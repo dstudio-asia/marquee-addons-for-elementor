@@ -1,6 +1,16 @@
 # Changelog
 
 
+## [3.1.1](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.1.0...3.1.1) (2025-08-30)
+
+
+### Bug Fixes
+
+* Fix Accessibility issue ([d3e7e87](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/d3e7e875f6be0f330587f789e3bc5537ca926551))
+* Fix Accessibility issue ([847ad80](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/847ad809fa237b8415cb69887a19e591095450e1))
+* Fix Accessibility issue ([38514e2](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/38514e2a3da8aa229e636b58a885c9dd2c48bfc1))
+* Image sizing issue of the testimonial marquee ([8be6fa4](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/8be6fa48a96276712f658566206a5ae39f2a4d57))
+
 ## [3.1.0](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.0.2...3.1.0) (2025-08-28)
 
 
