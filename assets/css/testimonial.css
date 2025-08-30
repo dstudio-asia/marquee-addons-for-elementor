@@ -142,11 +142,21 @@
 /* ==========================================================================
      6. Icon and Star Rating Styles
      ========================================================================== */
+.deensimc-toggle {
+  all: unset;
 
-.deensimc-contents,
-.deensimc-show-more,
-.deensimc-toggle,
-.deensimc-tes-review-text {
+  &:hover {
+    all: unset;
+  }
+  &:focus {
+    all: unset;
+  }
+}
+
+.deensimc-testimonial-marquee .deensimc-contents,
+.deensimc-testimonial-marquee .deensimc-show-more,
+.deensimc-testimonial-marquee .deensimc-toggle,
+.deensimc-testimonial-marquee .deensimc-tes-review-text {
   font-weight: normal;
 }
 
@@ -266,7 +276,7 @@
   transform: scaleX(-1);
 }
 
-.deensimc-toggle {
+.deensimc-testimonial-marquee .deensimc-toggle {
   color: var(--deensimc-marquee-text-skyblue);
   cursor: pointer;
 }

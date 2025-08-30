@@ -128,7 +128,7 @@ trait Testimonial_Marquee_Style_Contents
 				'label' => esc_html__('Hover Color', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .deensimc-toggle:hover' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .deensimc-testimonial-marquee .deensimc-toggle:hover' => 'color: {{VALUE}}',
 				],
 			]
 		);
