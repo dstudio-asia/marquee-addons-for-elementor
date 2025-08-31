@@ -49,7 +49,7 @@ trait Testimonial_Marquee_Style_Contents_Box
 				],
 			
 				'selectors' => [
-					'{{WRAPPER}} .deensimc-testimonial-marquee .deensimc-tes-main' => 'max-width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .deensimc-testimonial-marquee .deensimc-tes-main' => 'width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
