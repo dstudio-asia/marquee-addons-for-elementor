@@ -30,6 +30,30 @@ trait Testimonial_Marquee_Style_Contents_Box
 			]
 		);
 
+		$this->add_responsive_control(
+			'deensimc_testimonial_widget_box_width',
+			[
+				'label' => esc_html__('Width', 'marquee-addons-for-elementor'),
+				'type' =>  Controls_Manager::SLIDER,
+				'size_units' => ['px', 'em', 'rem'],
+				'range' => [
+					'px' => [
+						'min' => 220,
+						'max' => 500,
+						'step' => 1,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 370,
+				],
+			
+				'selectors' => [
+					'{{WRAPPER}} .deensimc-testimonial-marquee .deensimc-tes-main' => 'max-width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
 		$this->add_control(
 			'deensimc_tesimonial_contents_background_overlay',
 			[
