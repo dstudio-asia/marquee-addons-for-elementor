@@ -1,6 +1,15 @@
 # Changelog
 
 
+## [3.2.0](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.1.1...3.2.0) (2025-08-31)
+
+
+### Features
+
+* adjust testimonial box width control for better responsiveness ([a3de03a](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/a3de03a9c236783d1df353965b93b677eed04dc6))
+* testimonial box width ([4bfea70](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/4bfea70b2294a4ba9db47f793bef63745e07d134))
+* update version to 3.2.0 and add changelog entry for testimonial marquee box width control ([6b8db49](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/6b8db49a9653c09516b28390d238f04d57408829))
+
 ## [3.1.1](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.1.0...3.1.1) (2025-08-30)
 
 
