@@ -68,8 +68,8 @@
   overflow: hidden;
   margin: 10px;
   min-width: 220px;
-  max-width: 370px;
-  width: 100%;
+  width: 370px;
+  max-width: 100%;
   text-align: left;
   box-shadow: none !important;
 }
