@@ -8,6 +8,7 @@ if (! defined('ABSPATH')) {
 use \Elementor\Controls_Manager;
 use \Elementor\Repeater;
 use \Elementor\Utils;
+use \Elementor\Group_Control_Background;
 
 trait Testimonial_Marquee_Contents
 {
@@ -64,6 +65,17 @@ trait Testimonial_Marquee_Contents
 				'type' =>  Controls_Manager::TEXT,
 				'default' => esc_html__('Engineer', 'marquee-addons-for-elementor'),
 				'placeholder' => esc_html__('Enter title here', 'marquee-addons-for-elementor'),
+			]
+		);
+
+		$deensimc_testimonial_repeater->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'deensimc_testimonial_contents_background',
+				'types' => [ 'classic', 'gradient'],
+				'exclude' => [ 'image' ],
+				'selector' => '{{WRAPPER}} {{CURRENT_ITEM}} .deensimc-tes-text',
+
 			]
 		);
 
