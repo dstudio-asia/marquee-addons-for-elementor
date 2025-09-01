@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.3.0](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.2.0...3.3.0) (2025-09-01)
+
+
+### Features
+
+* update version to 3.3.0 and add background color option for testimonial items ([6f43520](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/6f43520d3890344fee78c42d18a550b1c0a25826))
+
 ## [3.2.0](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.1.1...3.2.0) (2025-08-31)
 
 
