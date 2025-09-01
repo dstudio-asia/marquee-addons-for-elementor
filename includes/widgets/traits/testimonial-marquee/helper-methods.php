@@ -89,12 +89,12 @@ trait Testimonial_Marquee_Helper_Methods
         $word_count       = str_word_count(wp_strip_all_tags($testimonial_text));
 
     ?>
-        <li class="deensimc-tes-item deensimc-tes-wrapper"
+        <li class="deensimc-tes-item deensimc-tes-wrapper elementor-repeater-item-<?php echo esc_attr( $testimonial['_id'] ); ?>"
             aria-hidden="<?php echo esc_attr($is_dup ? 'true' : 'false') ?>">
             <figure class="deensimc-tes-main">
 
                 <?php if (!empty($testimonial_text)) : ?>
-                    <blockquote class="deensimc-tes-text">
+                    <blockquote class="deensimc-tes-text ">
                         <div class="contents-wrapper" data-visible-length="<?php echo esc_attr($visible_word_length) ?>">
 
                             <?php if (! empty($settings['deensimc_testimonial_quote_left_icon']['value'])) : ?>
