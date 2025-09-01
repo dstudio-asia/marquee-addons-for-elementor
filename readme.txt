@@ -1,9 +1,9 @@
 === Marquee Addons for Elementor – Advanced Elements & Modern Motion Widgets ===
 Contributors: debuggersstudio
-Tags: marquee, product marquee, image marquee, video marquee, text marquee
+Tags: elementor, text marquee, image marquee, video marquee, Product slider
 Requires at least: 5.8
 Tested up to: 6.8
-Stable tag: 3.2.0
+Stable tag: 3.3.0
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -211,6 +211,9 @@ The developers release regular updates to improve features, fix bugs, and ensure
 First, ensure that you've activated the plugin correctly. If the issue persists, try clearing your browser cache or updating your Elementor plugin. If the problem continues, you can reach out to the support team for assistance.
 
 == Changelog ==
+
+= 3.3.0
+- New: Backgroud color option for each testimonial item.
 
 = 3.2.0
 - New: Box width control for testimonial marquee
