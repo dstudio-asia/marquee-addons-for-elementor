@@ -115,7 +115,7 @@ class Deensimc_Image_Marquee extends Widget_Base
 			}
 
 			echo '<figure class="deensimc-img-wrapper"' . ($is_dup ? ' aria-hidden="true"' : '') . '>';
-			echo '<div class="img"><img src="' . esc_url($image['url']) . '" ' . esc_html($lazy_load_attr) . ' alt="' . esc_attr($alt) . '"></div>';
+			echo '<div class="deensimc-img"><img src="' . esc_url($image['url']) . '" ' . esc_html($lazy_load_attr) . ' alt="' . esc_attr($alt) . '"></div>';
 			echo '<figcaption class="deensimc-image-marquee-caption">'
 				. esc_html($this->deensimc_get_caption($image, $settings['deensimc_caption_type']))
 				. '</figcaption>';
