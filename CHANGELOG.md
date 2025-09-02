@@ -1,6 +1,19 @@
 # Changelog
 
 
+## [3.4.0](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.3.0...3.4.0) (2025-09-02)
+
+
+### Features
+
+* add CSS filter controls for image marquee normal and hover states ([a1cb6d7](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/a1cb6d7d6a7336dab99182f49f7cb5fd676bf344))
+* update version to 3.4.0 and add CSS filter option for image marquee ([e5cefb9](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/e5cefb9324799108ba47f70e8dd8c2716b1a9fc7))
+
+
+### Bug Fixes
+
+* update class names for image marquee to ensure consistent styling and functionality ([1b7bc94](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/1b7bc941a8aab85eab9f75f935b3d068c4944705))
+
 ## [3.3.0](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.2.0...3.3.0) (2025-09-01)
 
 
