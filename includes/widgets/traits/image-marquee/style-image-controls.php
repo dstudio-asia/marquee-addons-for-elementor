@@ -104,7 +104,7 @@ trait Deensimc_Image_Marquee_Image_Style
 					'size' => 250,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .deensimc-img-wrapper .img' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .deensimc-img-wrapper .deensimc-img' => 'width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -124,7 +124,7 @@ trait Deensimc_Image_Marquee_Image_Style
 				],
 
 				'selectors' => [
-					'{{WRAPPER}} .deensimc-img-wrapper .img' => 'height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .deensimc-img-wrapper .deensimc-img' => 'height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -193,7 +193,7 @@ trait Deensimc_Image_Marquee_Image_Style
 			Group_Control_Css_Filter::get_type(),
 			[
 				'name' => 'deensimc_images_css_filter_hover',
-				'selector' => '{{WRAPPER}} .deensimc-img-wrapper div:hover img',
+				'selector' => '{{WRAPPER}} .deensimc-img-wrapper .deensimc-img:hover img',
 			]
 		);
 
