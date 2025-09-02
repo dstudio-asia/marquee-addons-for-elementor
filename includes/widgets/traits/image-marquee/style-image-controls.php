@@ -7,6 +7,7 @@ if (! defined('ABSPATH')) {
 // Elementor Classes
 use \Elementor\Controls_Manager;
 use Elementor\Group_Control_Border;
+use \Elementor\Group_Control_Css_Filter;
 
 trait Deensimc_Image_Marquee_Image_Style
 {
@@ -159,6 +160,46 @@ trait Deensimc_Image_Marquee_Image_Style
 				],
 			]
 		);
+
+		$this->start_controls_tabs(
+			'deensimc_images_css_filter'
+		);
+
+		$this->start_controls_tab(
+			'deensimc_images_css_filter_normal_tab',
+			[
+				'label' => esc_html__( 'Normal', 'marquee-addons-for-elementor'  ),
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Css_Filter::get_type(),
+			[
+				'name' => 'deensimc_images_css_filter_normal',
+				'selector' => '{{WRAPPER}} .deensimc-img-wrapper img',
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->start_controls_tab(
+			'deensimc_images_css_filter_hover_tab',
+			[
+				'label' => esc_html__( 'Hover', 'marquee-addons-for-elementor'  ),
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Css_Filter::get_type(),
+			[
+				'name' => 'deensimc_images_css_filter_hover',
+				'selector' => '{{WRAPPER}} .deensimc-img-wrapper div:hover img',
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
 
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
