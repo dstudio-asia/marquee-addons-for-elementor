@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.5.0](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.4.0...3.5.0) (2025-09-03)
+
+
+### Features
+
+* Add CTA in image accordion ([9498075](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/9498075fb46aed5774988b5ab209f6da519fd131))
+
 ## [3.4.0](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.3.0...3.4.0) (2025-09-02)
 
 
