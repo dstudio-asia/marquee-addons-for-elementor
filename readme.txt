@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: elementor, text marquee, image marquee, video marquee, Product slider
 Requires at least: 5.8
 Tested up to: 6.8
-Stable tag: 3.4.0
+Stable tag: 3.5.0
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -212,11 +212,14 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 
 == Changelog ==
 
+= 3.5.0
+- New: CTA in Image Accordion
+
 = 3.4.0
 - New: Css Filter option for image marquee
 
 = 3.3.0
-- New: Backgroud color option for each testimonial item.
+- New: Background color option for each testimonial item.
 
 = 3.2.0
 - New: Box width control for testimonial marquee

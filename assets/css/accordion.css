@@ -17,265 +17,273 @@
    1. Variables
    ========================================================================== */
 
-   :root {
-    --deensimc-color-white: #ffffff;
-    --deensimc-color-deep-purple: #6b0f9c;
-    --deensimc-color-light-gray: #f7f7f7;
-    --deensimc-color-dark-grayish-blue: #54595f;
-    --deensimc-dark-dark-gray: #474F53;
-    --deensimc-panel-rgba: rgba(255, 255, 255, 0.1);
-    --deensimc-image-panel-rgba-one: rgba(0, 0, 0, 0.72);
-    --deensimc-image-panel-rgba-two: rgba(0, 0, 0, 0.45);
-  }
-  
-  /* ==========================================================================
+:root {
+  --deensimc-color-white: #ffffff;
+  --deensimc-color-deep-purple: #6b0f9c;
+  --deensimc-color-light-gray: #f7f7f7;
+  --deensimc-color-dark-grayish-blue: #54595f;
+  --deensimc-dark-dark-gray: #474f53;
+  --deensimc-panel-rgba: rgba(255, 255, 255, 0.1);
+  --deensimc-image-panel-rgba-one: rgba(0, 0, 0, 0.72);
+  --deensimc-image-panel-rgba-two: rgba(0, 0, 0, 0.45);
+}
+
+/* ==========================================================================
      2. Image Panel
      ========================================================================== */
-  
-  .deensimc-panels {
-    height: 600px;
-    overflow: hidden;
-    display: flex;
-    gap: 10px;
-  }
-  
-  .deensimc-panel {
-    background: var(--deensimc-color-deep-purple);
-    box-shadow: inset 0 0 0 5px var(--deensimc-panel-rgba);
-    color: var(--deensimc-color-white);
-    text-align: center;
-    transition: font-size 0.7s cubic-bezier(0, 1.09, 1, -2.06), flex 0.3s ease-in-out, background 0.2s, height 0.3s ease-in-out;
-    font-size: 20px;
-    background-size: cover;
-    background-position: center;
-    flex: 1;
-    justify-content: center;
-    display: flex;
-    overflow: clip;
-    position: relative;
-    align-items: flex-start;
-    isolation: isolate;
-  }
-  
-  .deensimc-panel::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    transition: opacity 0.5s;
-    z-index: 1;
-  }
 
-  /*
+.deensimc-panels {
+  height: 600px;
+  overflow: hidden;
+  display: flex;
+  gap: 10px;
+}
+
+.deensimc-panel {
+  background: var(--deensimc-color-deep-purple);
+  box-shadow: inset 0 0 0 5px var(--deensimc-panel-rgba);
+  color: var(--deensimc-color-white);
+  text-align: center;
+  transition: font-size 0.7s cubic-bezier(0, 1.09, 1, -2.06),
+    flex 0.3s ease-in-out, background 0.2s, height 0.3s ease-in-out;
+  font-size: 20px;
+  background-size: cover;
+  background-position: center;
+  flex: 1;
+  justify-content: center;
+  display: flex;
+  overflow: clip;
+  position: relative;
+  align-items: flex-start;
+  isolation: isolate;
+}
+
+.deensimc-panel::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.5s;
+  z-index: 1;
+}
+
+/*
   accordion hover styles start
   */
-  .deensimc-panel-content {
-    position: absolute;
-    inset: 0;
-    transform: translateY(110%);
-    transition: all 300ms ease-in-out;
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    justify-content: end;
-    text-align: left;
-    z-index: 2;
-    overflow: hidden;
-  }
+.deensimc-panel-content {
+  position: absolute;
+  inset: 0;
+  transform: translateY(110%);
+  transition: all 300ms ease-in-out;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: end;
+  text-align: left;
+  z-index: 2;
+  overflow: hidden;
+}
 
-  .deensimc-panel-content h2 {
-    color: var(--deensimc-color-white);
-  }
+.deensimc-panel-content h2 {
+  color: var(--deensimc-color-white);
+}
 
-  .deensimc-panels .deensimc-panel.open img{
-    filter: none !important;
-  }
+.deensimc-panels .deensimc-panel.open img {
+  filter: none !important;
+}
 
-  .open .deensimc-panel-content{
-    transform: translateY(0);
-  }
+.open .deensimc-panel-content {
+  transform: translateY(0);
+}
 
-  .open .deensimc-panel-default-title {
-    visibility: hidden;
-  }
+.open .deensimc-panel-default-title {
+  visibility: hidden;
+}
 
-  /*
+/*
   accordion hover styles end
   */
 
-  .deensimc-acc-description {
-    padding-left: 20px;
-    padding-bottom: 20px;
-  }
+.deensimc-panel > *:first-child {
+  transform: translateY(-100%);
+}
 
-  .deensimc-panel > *:first-child {
-    transform: translateY(-100%);
-  }
-  
-  .deensimc-panel.open-active > *:first-child {
-    transform: translateY(0) rotate(-90deg);
-  }
-  
-  .deensimc-panel .deensimc-panel-default-title.tb-rl {
-    writing-mode: tb-rl; 
-    transform: rotate(180deg);
-  }
-  
-  .deensimc-panel .deensimc-panel-default-title.rl {
-    writing-mode: rl; 
-    transform: rotate(0deg);
-  }
-  
-  .deensimc-panel .deensimc-panel-default-title {
-    text-transform: uppercase;
-    text-shadow: 0 0 4px var(--deensimc-image-panel-rgba-one), 0 0 14px var(--deensimc-image-panel-rgba-two);
-    font-size: 1.5em;
-    z-index: 11;
-    transform-origin: center;
-    padding-inline: 60px;
-    word-break: break-all;
-    text-align: left;
-    line-height: 61px;
-  }
+.deensimc-panel.open-active > *:first-child {
+  transform: translateY(0) rotate(-90deg);
+}
 
-  .deensimc-panel-content h2 {
-    text-transform: uppercase;
-    font-size: 1.5em;
-    z-index: 11;
-    transform-origin: center;
-    word-break: break-all;
-    text-align: left;
-    line-height: 61px;
-  }
-  
-  .deensimc-panel .deensimc-panel-default-title, .deensimc-panel-content h2 {
-    font-size: 36px;
-    margin-bottom: 0;
-    padding: 20px 20px 20px 20px;
-  }
+.deensimc-panel .deensimc-panel-default-title.tb-rl {
+  writing-mode: tb-rl;
+  transform: rotate(180deg);
+}
 
-  .deensimc-acc-bg-img {
-    position: absolute;
-    inset: 0;
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover;
-    z-index: -1;
-  }
+.deensimc-panel .deensimc-panel-default-title.rl {
+  writing-mode: rl;
+  transform: rotate(0deg);
+}
 
-  /* ==========================================================================
+.deensimc-panel .deensimc-panel-default-title {
+  text-transform: uppercase;
+  text-shadow: 0 0 4px var(--deensimc-image-panel-rgba-one),
+    0 0 14px var(--deensimc-image-panel-rgba-two);
+  font-size: 1.5em;
+  z-index: 11;
+  transform-origin: center;
+  padding-inline: 60px;
+  word-break: break-all;
+  text-align: left;
+  line-height: 61px;
+  cursor: default;
+}
+
+.deensimc-panel-content h2 {
+  text-transform: uppercase;
+  font-size: 1.5em;
+  z-index: 11;
+  transform-origin: center;
+  word-break: break-all;
+  text-align: left;
+  line-height: 61px;
+  font-size: 32px;
+  margin-bottom: 0;
+}
+
+.deensimc-panel .deensimc-panel-default-title,
+.deensimc-panel-content {
+  padding: 20px 20px 20px 20px;
+}
+
+.deensimc-panel-content .deensimc-acc-description * {
+  margin-bottom: 0;
+}
+
+.deensimc-acc-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.deensimc-acc-cta {
+  white-space: nowrap;
+  font-size: 18px;
+  font-weight: 500;
+  background: #f7f7f7;
+  color: #000;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  width: fit-content;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* ==========================================================================
      3. Hover Effects
      ========================================================================== */
-  
-  .open.deensimc-panel {
-    flex: 2;
-  }
-  
-  /* ==========================================================================
+
+.open.deensimc-panel {
+  flex: 2;
+}
+
+/* ==========================================================================
      4. Media Queries
      ========================================================================== */
-  
-  /* Mobile Devices */
-  @media only screen and (max-width: 880px) {
-  
-    .deensimc-panels {
-     display: block;
-     height: auto !important;
-    }
 
-     .deensimc-panel {
-      height: 100px;
-    }
-  
-    .deensimc-panel p {
-      font-size: 1em;
-      transform: rotate(0deg);
-      writing-mode: horizontal-tb;
-      text-align: start;
-    }
+/* Mobile Devices */
+@media only screen and (max-width: 880px) {
+  .deensimc-panels {
+    display: block;
+    height: auto !important;
+  }
 
-    .deensimc-panel .deensimc-panel-default-title.tb-rl {
-      writing-mode: rl; 
-      transform: rotate(0deg);
-    }
-  
-    .deensimc-panel .deensimc-panel-default-title.rl {
-      writing-mode: lr; 
-      transform: rotate(0deg);
-    }
-    
-    .deensimc-panel.open-active > *:first-child {
-      transform: translateY(0) rotate(0deg);
-    }
-    
-    .deensimc-panel.open-active > *:last-child {
-      transform: translateY(0) rotate(0deg);
-    }
+  .deensimc-panel {
+    height: 100px;
+  }
 
-    .open.deensimc-panel {
-      height: 400px;
-    }
-    
+  .deensimc-panel p {
+    font-size: 1em;
+    transform: rotate(0deg);
+    writing-mode: horizontal-tb;
+    text-align: start;
   }
-  
-  /* Tablet Devices */
-  @media (max-width: 1201px) {
-  
-    .deensimc-panel p.tb-rl-laptop {
-      writing-mode: tb-rl; 
-      transform: rotate(180deg);
-    }
-  
-    .deensimc-panel p.rl-laptop {
-      writing-mode: rl; 
-      transform: rotate(0deg);
-    }
-  
+
+  .deensimc-panel .deensimc-panel-default-title.tb-rl {
+    writing-mode: rl;
+    transform: rotate(0deg);
   }
-  
-  /* Landscape Tablet Devices */
-  @media (max-width: 1025px) and (orientation: landscape) {
-  
-    .deensimc-panel p.tb-rl-tab {
-      writing-mode: tb-rl; 
-      transform: rotate(180deg);
-    }
-  
-    .deensimc-panel p.rl-tab {
-      writing-mode: rl; 
-      transform: rotate(0deg);
-    }
-  
+
+  .deensimc-panel .deensimc-panel-default-title.rl {
+    writing-mode: lr;
+    transform: rotate(0deg);
   }
-  
-  /* Extra Small Mobile Devices */
-  @media (max-width: 880px) and (orientation: landscape) {
-  
-    .deensimc-panel p.tb-rl-mobile-extra {
-      writing-mode: tb-rl; 
-      transform: rotate(180deg);
-    }
-  
-    .deensimc-panel p.rl-mobile-extra {
-      writing-mode: rl; 
-      transform: rotate(0deg);
-    }
-  
+
+  .deensimc-panel.open-active > *:first-child {
+    transform: translateY(0) rotate(0deg);
   }
-  
-  @media (max-width: 767px) {
-  
-    .deensimc-panel p.tb-rl-mobile {
-      writing-mode: tb-rl; 
-      transform: rotate(180deg);
-    }
-  
-    .deensimc-panel p.rl-mobile {
-      writing-mode: rl; 
-      transform: rotate(0deg);
-    }
-  
+
+  .deensimc-panel.open-active > *:last-child {
+    transform: translateY(0) rotate(0deg);
   }
+
+  .open.deensimc-panel {
+    height: 400px;
+  }
+}
+
+/* Tablet Devices */
+@media (max-width: 1201px) {
+  .deensimc-panel p.tb-rl-laptop {
+    writing-mode: tb-rl;
+    transform: rotate(180deg);
+  }
+
+  .deensimc-panel p.rl-laptop {
+    writing-mode: rl;
+    transform: rotate(0deg);
+  }
+}
+
+/* Landscape Tablet Devices */
+@media (max-width: 1025px) and (orientation: landscape) {
+  .deensimc-panel p.tb-rl-tab {
+    writing-mode: tb-rl;
+    transform: rotate(180deg);
+  }
+
+  .deensimc-panel p.rl-tab {
+    writing-mode: rl;
+    transform: rotate(0deg);
+  }
+}
+
+/* Extra Small Mobile Devices */
+@media (max-width: 880px) and (orientation: landscape) {
+  .deensimc-panel p.tb-rl-mobile-extra {
+    writing-mode: tb-rl;
+    transform: rotate(180deg);
+  }
+
+  .deensimc-panel p.rl-mobile-extra {
+    writing-mode: rl;
+    transform: rotate(0deg);
+  }
+}
+
+@media (max-width: 767px) {
+  .deensimc-panel p.tb-rl-mobile {
+    writing-mode: tb-rl;
+    transform: rotate(180deg);
+  }
+
+  .deensimc-panel p.rl-mobile {
+    writing-mode: rl;
+    transform: rotate(0deg);
+  }
+}
