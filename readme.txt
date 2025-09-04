@@ -214,7 +214,6 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 
 = 3.5.1
 - New: Bangla (bn_BD) translation
-- Tweak: load text domain earlier on plugins_loaded
 
 = 3.5.0
 - New: CTA in Image Accordion

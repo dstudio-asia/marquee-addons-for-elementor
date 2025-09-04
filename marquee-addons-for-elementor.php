@@ -28,10 +28,6 @@
 	define( 'DEENSIMC_VERSION' , '3.5.1' ); 
 
 	function deensimc_load_plugin_data() {
-		// Load text domain
-		load_plugin_textdomain( 'marquee-addons-for-elementor', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
-
-		// Load Widget
 		require_once( DEENSIMC__DIR__ . '/includes/widget.php' );
 		\Deensimc_Marquee\Marquee::instance();
 	}
