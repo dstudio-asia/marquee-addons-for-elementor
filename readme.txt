@@ -212,7 +212,7 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 
 == Changelog ==
 
-= 2.5.2
+= 3.5.2
 - New: Spanish (es_ES) translation
 
 = 3.5.1
