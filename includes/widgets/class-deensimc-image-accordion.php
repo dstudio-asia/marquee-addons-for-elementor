@@ -6,6 +6,7 @@ if (! defined('ABSPATH')) {
 
 // Elementor Classes
 use \Elementor\Widget_Base;
+use \Elementor\Icons_Manager;
 
 /**
  * Class Deensimc_Image_Accordion
@@ -51,6 +52,60 @@ class Deensimc_Image_Accordion extends Widget_Base
 	{
 		return ['deensimc-image-accordion-script'];
 	}
+
+	function deensimc_allowed_icon_html() 
+	{
+		$allowed = wp_kses_allowed_html( 'post' );
+
+		$allowed['svg'] = [
+			'class'        => true,
+			'xmlns'        => true,
+			'viewbox'      => true,
+			'role'         => true,
+			'aria-hidden'  => true,
+			'focusable'    => true,
+			'width'        => true,
+			'height'       => true,
+			'fill'         => true,
+		];
+
+		$allowed['g'] = [
+			'fill'         => true,
+			'fill-rule'    => true,
+			'stroke'       => true,
+			'stroke-width' => true,
+			'transform'    => true,
+		];
+
+		$allowed['path'] = [
+			'd'            => true,
+			'fill'         => true,
+			'fill-rule'    => true,
+			'stroke'       => true,
+			'stroke-width' => true,
+			'transform'    => true,
+		];
+
+		$allowed['use'] = [
+			'href'         => true,
+			'xlink:href'   => true,
+		];
+
+		$allowed['title'] = [];
+		
+		$allowed['i'] = [
+			'class'        => true,
+			'aria-hidden'  => true,
+		];
+
+		$allowed['span'] = [
+			'class'        => true,
+			'aria-hidden'  => true,
+		];
+
+    	return $allowed;
+	}
+
 
 	protected function register_controls()
 	{
@@ -106,34 +161,15 @@ class Deensimc_Image_Accordion extends Widget_Base
 									<?php
 									$cta_text     = $images['deensimc_image_acc_cta_text'] ?? '';
 									$cta_url      = !empty($images['deensimc_image_acc_cta_url']['url']) ? $images['deensimc_image_acc_cta_url']['url'] : '#';
-									$cta_icon     = $images['deensimc_image_acc_cta_icon'] ?? [];
-									$icon_pos     = $images['deensimc_image_acc_cta_icon_position'] ?? 'left';
-
 									$target       = !empty($images['deensimc_image_acc_cta_url']['is_external']) ? ' target="_blank"' : '';
 									$nofollow     = !empty($images['deensimc_image_acc_cta_url']['nofollow']) ? ' rel="nofollow"' : '';
-
-									$icon_html    = '';
-									if (!empty($cta_icon['value'])) {
-										ob_start();
-										\Elementor\Icons_Manager::render_icon(
-											$cta_icon,
-											['aria-hidden' => 'true']
-										);
-										$icon_html = ob_get_clean();
-									}
 									?>
-									<a href="<?php echo esc_url($cta_url); ?>" class="deensimc-acc-cta" <?php echo $target . $nofollow; ?>>
-										<?php if ($icon_pos === 'left' && $icon_html) : ?>
-											<span class="deensimc-acc-cta-icon deensimc-acc-cta-icon-left"><?php echo $icon_html; ?></span>
-										<?php endif; ?>
-										<span class="deensimc-acc-cta-text"><?php echo esc_html($cta_text); ?></span>
-										<?php if ($icon_pos === 'right' && $icon_html) : ?>
-											<span class="deensimc-acc-cta-icon deensimc-acc-cta-icon-right"><?php echo $icon_html; ?></span>
-										<?php endif; ?>
+									<a href="<?php echo esc_url( $cta_url ); ?>" class="deensimc-acc-cta" <?php echo esc_attr( $target ) . esc_attr( $nofollow ); ?>>
+										<span class="deensimc-acc-cta-text"><?php echo esc_html( $cta_text ); ?></span>
 									</a>
 								<?php endif; ?>
 							</div>
-							<img src="<?php echo esc_url($images['deensimc_bg_image']['url']) ?>" alt="background image" class="deensimc-acc-bg-img">
+							<img src="<?php echo esc_url( $images['deensimc_bg_image']['url'] ) ?>" alt="background image" class="deensimc-acc-bg-img">
 						</div>
 				<?php
 					}

@@ -91,46 +91,6 @@ trait ImageAccordion_Contents
             ]
         );
 
-        $image_repeater->add_control(
-            'deensimc_image_acc_cta_icon',
-            [
-                'label'     => esc_html__('CTA Icon', 'marquee-addons-for-elementor'),
-                'type'      => Controls_Manager::ICONS,
-                'skin'      => 'inline', // inline skin
-                'default'   => [
-                    'value'   => '',
-                    'library' => 'solid',
-                ],
-                'condition' => [
-                    'deensimc_image_acc_cta_switch' => 'yes',
-                ],
-            ]
-        );
-
-        $image_repeater->add_control(
-            'deensimc_image_acc_cta_icon_position',
-            [
-                'label'     => esc_html__('Icon Position', 'marquee-addons-for-elementor'),
-                'type'      => Controls_Manager::CHOOSE,
-                'options'   => [
-                    'left'  => [
-                        'title' => esc_html__('Left', 'marquee-addons-for-elementor'),
-                        'icon'  => 'eicon-h-align-left',
-                    ],
-                    'right' => [
-                        'title' => esc_html__('Right', 'marquee-addons-for-elementor'),
-                        'icon'  => 'eicon-h-align-right',
-                    ],
-                ],
-                'default'   => 'left',
-                'toggle'    => true,
-                'condition' => [
-                    'deensimc_image_acc_cta_switch' => 'yes',
-                    'deensimc_image_acc_cta_icon[value]!' => '', // only show if icon selected
-                ],
-            ]
-        );
-
 
         $this->add_control(
             'deensimc_bg_image_repeater',

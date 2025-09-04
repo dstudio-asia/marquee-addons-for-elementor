@@ -9,7 +9,7 @@ trait Button_Controls
     $this->start_controls_section(
       'deensimc_button_marquee_button_section',
       [
-        'label' => __('Button', 'marquee-addons-for-elementor'),
+        'label' => esc_html__('Button', 'marquee-addons-for-elementor'),
         'tab'   => Controls_Manager::TAB_CONTENT,
       ]
     );
@@ -18,10 +18,10 @@ trait Button_Controls
     $this->add_control(
       'deensimc_button_text',
       [
-        'label'       => __('Text', 'marquee-addons-for-elementor'),
+        'label'       => esc_html__('Text', 'marquee-addons-for-elementor'),
         'type'        => Controls_Manager::TEXT,
-        'default'     => __('Click here', 'marquee-addons-for-elementor'),
-        'placeholder' => __('Enter button text', 'marquee-addons-for-elementor'),
+        'default'     => esc_html__('Click here', 'marquee-addons-for-elementor'),
+        'placeholder' => esc_html__('Enter button text', 'marquee-addons-for-elementor'),
         'dynamic'     => [
           'active' => 'true'
         ]
@@ -32,9 +32,9 @@ trait Button_Controls
     $this->add_control(
       'deensimc_button_link',
       [
-        'label'       => __('Link', 'marquee-addons-for-elementor'),
+        'label'       => esc_html__('Link', 'marquee-addons-for-elementor'),
         'type'        => Controls_Manager::URL,
-        'placeholder' => __('https://your-link.com', 'marquee-addons-for-elementor'),
+        'placeholder' => esc_html__('https://your-link.com', 'marquee-addons-for-elementor'),
         'dynamic'     => [
           'active' => 'true'
         ],
@@ -48,7 +48,7 @@ trait Button_Controls
     $this->add_control(
       'deensimc_button_icon',
       [
-        'label' => __('Icon', 'marquee-addons-for-elementor'),
+        'label' => esc_html__('Icon', 'marquee-addons-for-elementor'),
         'type'  => Controls_Manager::ICONS,
         'skin' => 'inline',
         'label_block' => false,
@@ -60,15 +60,15 @@ trait Button_Controls
     $this->add_control(
       'deensimc_button_icon_position',
       [
-        'label' => __('Icon Position', 'marquee-addons-for-elementor'),
+        'label' => esc_html__('Icon Position', 'marquee-addons-for-elementor'),
         'type' => Controls_Manager::CHOOSE,
         'options' => [
           'row' => [
-            'title' => __('Left', 'marquee-addons-for-elementor'),
+            'title' => esc_html__('Left', 'marquee-addons-for-elementor'),
             'icon' => 'eicon-h-align-left',
           ],
           'row-reverse' => [
-            'title' => __('Right', 'marquee-addons-for-elementor'),
+            'title' => esc_html__('Right', 'marquee-addons-for-elementor'),
             'icon' => 'eicon-h-align-right',
           ],
         ],
@@ -88,7 +88,7 @@ trait Button_Controls
     $this->add_responsive_control(
       'deensimc_button_icon_spacing',
       [
-        'label' => __('Icon Spacing', 'marquee-addons-for-elementor'),
+        'label' => esc_html__('Icon Spacing', 'marquee-addons-for-elementor'),
         'type'  => Controls_Manager::SLIDER,
         'size_units' => ['px', 'em', 'rem'],
         'range' => [
@@ -108,13 +108,13 @@ trait Button_Controls
     $this->add_control(
       'deensimc_button_id',
       [
-        'label'       => __('Button ID', 'marquee-addons-for-elementor'),
+        'label'       => esc_html__('Button ID', 'marquee-addons-for-elementor'),
         'type'        => Controls_Manager::TEXT,
         'dynamic'     => [
           'active' => true,
         ],
         'separator'   => 'before',
-        'description' => __('Please make sure the ID is unique and not used elsewhere on the page this form is displayed. This field allows A-Z, a-z, 0-9 & underscore chars without spaces.', 'marquee-addons-for-elementor'),
+        'description' => esc_html__('Please make sure the ID is unique and not used elsewhere on the page this form is displayed. This field allows A-Z, a-z, 0-9 & underscore chars without spaces.', 'marquee-addons-for-elementor'),
       ]
     );
 
