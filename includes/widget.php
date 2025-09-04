@@ -137,9 +137,9 @@ final class Marquee
 	{
 
 		$message = sprintf(
-			/* translators: %1$s is replaced with "MarqueeAddons - Smooth Infinite marquee carousel loop for elementor"  and %2$s is replaced with "Elementor"*/
+			/* translators: %1$s is replaced with " Marquee Addons for Elementor – Advanced Elements & Modern Motion Widgets"  and %2$s is replaced with "Elementor"*/
 			esc_html__('"%1$s" requires "%2$s" to be installed and activated.', 'marquee-addons-for-elementor'),
-			'<strong>' . esc_html__('MarqueeAddons - Smooth Infinite marquee carousel loop for elementor', 'marquee-addons-for-elementor') . '</strong>',
+			'<strong>' . esc_html__(' Marquee Addons for Elementor – Advanced Elements & Modern Motion Widgets', 'marquee-addons-for-elementor') . '</strong>',
 			'<strong>' . esc_html__('Elementor', 'marquee-addons-for-elementor') . '</strong>'
 
 		);
@@ -160,9 +160,9 @@ final class Marquee
 	{
 
 		$message = sprintf(
-			/* translators: %1$s is replaced with "MarqueeAddons - Smooth Infinite marquee carousel loop for elementor", %2$s is replaced with "Elementor", %3$s is replaced with "3.8.0" */
+			/* translators: %1$s is replaced with " Marquee Addons for Elementor – Advanced Elements & Modern Motion Widgets", %2$s is replaced with "Elementor", %3$s is replaced with "3.8.0" */
 			esc_html__('"%1$s" requires "%2$s" version %3$s or greater.', 'marquee-addons-for-elementor'),
-			'<strong>' . esc_html__('MarqueeAddons - Smooth Infinite marquee carousel loop for elementor', 'marquee-addons-for-elementor') . '</strong>',
+			'<strong>' . esc_html__(' Marquee Addons for Elementor – Advanced Elements & Modern Motion Widgets', 'marquee-addons-for-elementor') . '</strong>',
 			'<strong>' . esc_html__('Elementor', 'marquee-addons-for-elementor') . '</strong>',
 			self::MINIMUM_ELEMENTOR_VERSION
 
@@ -184,9 +184,9 @@ final class Marquee
 	{
 
 		$message = sprintf(
-			/* translators: %1$s is replaced with "MarqueeAddons - Smooth Infinite marquee carousel loop for elementor", %2$s is replaced with "php", %3$s is replaced with "7.4" */
+			/* translators: %1$s is replaced with " Marquee Addons for Elementor – Advanced Elements & Modern Motion Widgets", %2$s is replaced with "php", %3$s is replaced with "7.4" */
 			esc_html__('"%1$s" requires "%2$s" version %3$s or greater.', 'marquee-addons-for-elementor'),
-			'<strong>' . esc_html__('MarqueeAddons - Smooth Infinite marquee carousel loop for elementor', 'marquee-addons-for-elementor') . '</strong>',
+			'<strong>' . esc_html__(' Marquee Addons for Elementor – Advanced Elements & Modern Motion Widgets', 'marquee-addons-for-elementor') . '</strong>',
 			'<strong>' . esc_html__('PHP', 'marquee-addons-for-elementor') . '</strong>',
 			self::MINIMUM_PHP_VERSION
 
