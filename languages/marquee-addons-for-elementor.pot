@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2025-09-04 10:23+0600\n"
+"POT-Creation-Date: 2025-09-04 15:39+0600\n"
 "PO-Revision-Date: 2023-11-22 15:26+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -64,7 +64,7 @@ msgstr ""
 msgid "Button Marquee"
 msgstr ""
 
-#: widgets/class-deensimc-image-accordion.php:27
+#: widgets/class-deensimc-image-accordion.php:28
 msgid "Image Accordion"
 msgstr ""
 
@@ -119,7 +119,6 @@ msgstr ""
 #: widgets/traits/animated-word-roller/content-text-repeater.php:115
 #: widgets/traits/button-marquee/trait-button-controls.php:67
 #: widgets/traits/button-marquee/trait-button-style-controls.php:30
-#: widgets/traits/image-accordion/content.php:117
 #: widgets/traits/image-marquee/style-caption-controls.php:35
 #: widgets/traits/image-marquee/style-image-controls.php:31
 #: widgets/traits/stacked-slider/content-primary.php:28
@@ -137,8 +136,8 @@ msgstr ""
 #: widgets/traits/animated-heading/trait-title-controls.php:57
 #: widgets/traits/animated-word-roller/content-text-repeater.php:119
 #: widgets/traits/button-marquee/trait-button-style-controls.php:34
-#: widgets/traits/image-accordion/content.php:192
-#: widgets/traits/image-accordion/content.php:219
+#: widgets/traits/image-accordion/content.php:152
+#: widgets/traits/image-accordion/content.php:179
 #: widgets/traits/image-marquee/style-caption-controls.php:39
 #: widgets/traits/image-marquee/style-image-controls.php:35
 #: widgets/traits/image-marquee/style-image-controls.php:70
@@ -158,7 +157,6 @@ msgstr ""
 #: widgets/traits/animated-word-roller/content-text-repeater.php:123
 #: widgets/traits/button-marquee/trait-button-controls.php:71
 #: widgets/traits/button-marquee/trait-button-style-controls.php:38
-#: widgets/traits/image-accordion/content.php:121
 #: widgets/traits/image-marquee/style-caption-controls.php:43
 #: widgets/traits/image-marquee/style-image-controls.php:39
 #: widgets/traits/stacked-slider/content-primary.php:36
@@ -707,7 +705,6 @@ msgid "Icon"
 msgstr ""
 
 #: widgets/traits/button-marquee/trait-button-controls.php:63
-#: widgets/traits/image-accordion/content.php:113
 msgid "Icon Position"
 msgstr ""
 
@@ -789,7 +786,7 @@ msgid "Normal"
 msgstr ""
 
 #: widgets/traits/button-marquee/trait-button-style-controls.php:138
-#: widgets/traits/image-accordion/content.php:175
+#: widgets/traits/image-accordion/content.php:135
 #: widgets/traits/image-accordion/style.php:148
 #: widgets/traits/image-accordion/style.php:326
 #: widgets/traits/image-accordion/style.php:465
@@ -915,7 +912,7 @@ msgid "Blur"
 msgstr ""
 
 #: widgets/traits/image-accordion/content.php:19
-#: widgets/traits/image-accordion/content.php:138
+#: widgets/traits/image-accordion/content.php:98
 #: widgets/traits/image-accordion/style.php:23
 #: widgets/traits/image-marquee/content-image.php:19
 #: widgets/traits/testimonial-marquee/style-image.php:18
@@ -935,11 +932,11 @@ msgid "Description"
 msgstr ""
 
 #: widgets/traits/image-accordion/content.php:52
-#: widgets/traits/image-accordion/content.php:144
-#: widgets/traits/image-accordion/content.php:148
-#: widgets/traits/image-accordion/content.php:152
-#: widgets/traits/image-accordion/content.php:156
-#: widgets/traits/image-accordion/content.php:160
+#: widgets/traits/image-accordion/content.php:104
+#: widgets/traits/image-accordion/content.php:108
+#: widgets/traits/image-accordion/content.php:112
+#: widgets/traits/image-accordion/content.php:116
+#: widgets/traits/image-accordion/content.php:120
 msgid "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
 msgstr ""
 
@@ -964,56 +961,52 @@ msgstr ""
 msgid "CTA URL"
 msgstr ""
 
-#: widgets/traits/image-accordion/content.php:97
-msgid "CTA Icon"
-msgstr ""
-
-#: widgets/traits/image-accordion/content.php:143
+#: widgets/traits/image-accordion/content.php:103
 msgid "Set"
 msgstr ""
 
-#: widgets/traits/image-accordion/content.php:147
+#: widgets/traits/image-accordion/content.php:107
 msgid "Your"
 msgstr ""
 
-#: widgets/traits/image-accordion/content.php:151
+#: widgets/traits/image-accordion/content.php:111
 msgid "Journey"
 msgstr ""
 
-#: widgets/traits/image-accordion/content.php:155
+#: widgets/traits/image-accordion/content.php:115
 msgid "To"
 msgstr ""
 
-#: widgets/traits/image-accordion/content.php:159
+#: widgets/traits/image-accordion/content.php:119
 msgid "Success"
 msgstr ""
 
-#: widgets/traits/image-accordion/content.php:170
+#: widgets/traits/image-accordion/content.php:130
 msgid "Active Behaviour"
 msgstr ""
 
-#: widgets/traits/image-accordion/content.php:174
+#: widgets/traits/image-accordion/content.php:134
 msgid "Click"
 msgstr ""
 
-#: widgets/traits/image-accordion/content.php:184
+#: widgets/traits/image-accordion/content.php:144
 msgid "Title Horizontal Alignment"
 msgstr ""
 
-#: widgets/traits/image-accordion/content.php:188
+#: widgets/traits/image-accordion/content.php:148
 msgid "Start"
 msgstr ""
 
-#: widgets/traits/image-accordion/content.php:196
-#: widgets/traits/image-accordion/content.php:223
+#: widgets/traits/image-accordion/content.php:156
+#: widgets/traits/image-accordion/content.php:183
 msgid "End"
 msgstr ""
 
-#: widgets/traits/image-accordion/content.php:211
+#: widgets/traits/image-accordion/content.php:171
 msgid "Title Vertical Alignment"
 msgstr ""
 
-#: widgets/traits/image-accordion/content.php:215
+#: widgets/traits/image-accordion/content.php:175
 #: widgets/traits/image-marquee/style-image-controls.php:66
 #: widgets/traits/stacked-slider/content-primary.php:32
 #: widgets/traits/text-marquee/style-text-contents.php:159
