@@ -1,6 +1,18 @@
 # Changelog
 
 
+## [3.5.2](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.5.1...3.5.2) (2025-09-06)
+
+
+### Features
+
+* spainsch translation support ([9b85706](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/9b85706fc59f24f69e297c3b5ba89dcbce5ca151))
+
+
+### Bug Fixes
+
+* update stable tag to 3.5.2 in readme ([fcd4fa5](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/fcd4fa5311ffd5afbcfd77c0866b97561b71a848))
+
 ## [3.5.0](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.4.0...3.5.0) (2025-09-03)
 
 
