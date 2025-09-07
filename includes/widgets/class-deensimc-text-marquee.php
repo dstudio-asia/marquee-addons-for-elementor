@@ -74,17 +74,24 @@ class Deensimc_Text_Marquee extends Widget_Base
 	 */
 	protected function render_marquee_texts($texts, $is_vertical)
 	{
-		$texts_count = count($texts);
-		$min_item = $is_vertical ? 12 : 6;
-		if ($texts_count < $min_item) {
-			$needed = $min_item - $texts_count;
-			for ($i = 0; $i < $needed; $i++) {
-				$texts[] = $texts[$i % $texts_count];
+		$required = $is_vertical ? 12 : 6;
+		$count    = count($texts);
+		if ( $count > 0 && $count < $required ) {
+			$original = $texts;
+			// Duplicate full batches until we have at least $required
+			while ( count( $texts ) < $required ) {
+				foreach ( $original as $text ) {
+					$dup = $text;
+					$dup['_is_dup'] = true;
+					$texts[] = $dup;
+				}
 			}
 		}
 		foreach ($texts as $text) {
-?>
-			<div class="deensimc-text-wrapper">
+			$is_dup = !empty($text['_is_dup']);
+
+		?>
+			<div class="deensimc-text-wrapper" aria-hidden="<?php echo esc_attr ( $is_dup ? 'true': 'false' ) ?>" >
 				<?php Icons_Manager::render_icon($text['deensimc_repeater_text_icon'], ['aria-hidden' => 'true']); ?>
 				<p class="deensimc-scroll-text">
 					<?php
