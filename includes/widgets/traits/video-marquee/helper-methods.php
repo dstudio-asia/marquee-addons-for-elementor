@@ -282,18 +282,20 @@ trait Video_Marquee_Helper_Methods
      */
     protected function render_video_item($video_list)
     {
-        $count  = count($video_list);
+        $required = 8;
+		$count    = count($video_list);
 
-        // If less than 8, duplicate until at least 8
-        if ($count > 0 && $count < 8) {
-            $i = 0;
-            while (count($video_list) < 8) {
-                $duplicate           = $video_list[$i % $count];
-                $duplicate['_is_dup'] = true; // Mark as duplicate
-                $video_list[]         = $duplicate;
-                $i++;
-            }
-        }
+		if ( $count > 0 && $count < $required ) {
+			$original = $video_list;
+			// Duplicate full batches until we have at least $required
+			while ( count( $video_list ) < $required ) {
+				foreach ( $original as $video ) {
+					$dup = $video;
+					$dup['_is_dup'] = true;
+					$video_list[] = $dup;
+				}
+			}
+		}
 
         foreach ($video_list as $video_link) {
             $video_type = $video_link['deensimc_video_type'];

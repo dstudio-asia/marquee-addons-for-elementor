@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: elementor, text marquee, image marquee, video marquee, Product slider
 Requires at least: 5.8
 Tested up to: 6.8
-Stable tag: 3.5.2
+Stable tag: 3.5.3
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -13,6 +13,8 @@ MarqueeAddons is a smooth video, text, image, and testimonial marquee carousel l
 == Description ==
 
 MarqueeAddons makes it easy to add smooth marquee effects for text, button, images, testimonials, videos, and cards to websites built with Elementor. It helps you create a continuous smooth scrolling loop for your content. You can customize the direction to scroll left, right, top, or bottom, either horizontally or vertically. With flexible options, it provides a smooth and user-friendly experience for your visitors while keeping your site looking modern and functional.
+
+[youtube https://youtu.be/CmW0U8Ij8o0?si=FEjPCccSyR3Om0K1]
 
 [Plugin Demo](https://marqueeaddons.com/) | [Documentation](https://marqueeaddons.com/docs/) | [Get Pro for Advanced Features](https://marqueeaddons.com/free-vs-pro/)
  
@@ -212,47 +214,50 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 
 == Changelog ==
 
-= 3.5.2
+= 3.5.3 - 2025-09-07
+- Fix: Item rendering issue in (image, text, video ) marquee
+
+= 3.5.2 - 2025-09-06
 - New: Spanish (es_ES) translation
 
-= 3.5.1
+= 3.5.1 - 2025-09-04
 - New: Bangla (bn_BD) translation
 
-= 3.5.0
+= 3.5.0 - 2025-09-03
 - New: CTA in Image Accordion
 
-= 3.4.0
+= 3.4.0 - 2025-09-02
 - New: Css Filter option for image marquee
 
-= 3.3.0
+= 3.3.0 - 2025-09-01
 - New: Background color option for each testimonial item.
 
-= 3.2.0
+= 3.2.0 - 2025-08-31
 - New: Box width control for testimonial marquee
 
-= 3.1.1
+= 3.1.1 - 2025-08-30
 - Fix: Image size issue in testimonial marquee
 
-= 3.1.0
+= 3.1.0 - 2025-08-28
 - New: Description option in Image Accordion
 
-= 3.0.2
+= 3.0.2 - 2025-08-27
 - Fix: Null fold/unfold text issue in Testimonial Marquee.
 
-= 3.0.1
+= 3.0.1 - 2025-08-26
 - Fix: Image size issue in Image Marquee
 
-= 3.0.0
+= 3.0.0 - 2025-08-25
 - New: Fully refactored plugin codebase for improved performance and maintainability
 - New: Improved file structure and coding standards
 - Tweak: Enhanced RTL support, vertical/horizontal orientation, and show more/less functionality
 - Tweak: Improved HTML escaping and security handling
 - Breaking Change: Marquee settings (orientation, direction, speed and shadow ) can be reset. Please review your integrations after upgrading.
 
-= 2.4.3
+= 2.4.3 - 2025-08-24
 - Tweak: readme.txt content updated
 
-= 2.4.0
+= 2.4.0 - 2025-08-23
 - New: Button Marquee Widget
 
 = 2.3.1
