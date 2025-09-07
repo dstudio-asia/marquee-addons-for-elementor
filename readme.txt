@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: elementor, text marquee, image marquee, video marquee, Product slider
 Requires at least: 5.8
 Tested up to: 6.8
-Stable tag: 3.5.2
+Stable tag: 3.5.3
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -13,6 +13,8 @@ MarqueeAddons is a smooth video, text, image, and testimonial marquee carousel l
 == Description ==
 
 MarqueeAddons makes it easy to add smooth marquee effects for text, button, images, testimonials, videos, and cards to websites built with Elementor. It helps you create a continuous smooth scrolling loop for your content. You can customize the direction to scroll left, right, top, or bottom, either horizontally or vertically. With flexible options, it provides a smooth and user-friendly experience for your visitors while keeping your site looking modern and functional.
+
+[youtube https://youtu.be/CmW0U8Ij8o0?si=FEjPCccSyR3Om0K1]
 
 [Plugin Demo](https://marqueeaddons.com/) | [Documentation](https://marqueeaddons.com/docs/) | [Get Pro for Advanced Features](https://marqueeaddons.com/free-vs-pro/)
  
@@ -211,6 +213,9 @@ The developers release regular updates to improve features, fix bugs, and ensure
 First, ensure that you've activated the plugin correctly. If the issue persists, try clearing your browser cache or updating your Elementor plugin. If the problem continues, you can reach out to the support team for assistance.
 
 == Changelog ==
+
+= 3.5.3
+- Fix: Item rendering issue in (image, text, video and news ticker) marquee
 
 = 3.5.2
 - New: Spanish (es_ES) translation
