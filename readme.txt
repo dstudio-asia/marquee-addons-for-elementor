@@ -215,7 +215,7 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 == Changelog ==
 
 = 3.5.3
-- Fix: Item rendering issue in (image, text, video and news ticker) marquee
+- Fix: Item rendering issue in (image, text, video ) marquee
 
 = 3.5.2
 - New: Spanish (es_ES) translation
