@@ -88,16 +88,18 @@ class Deensimc_Image_Marquee extends Widget_Base
 	protected function render_image_gallery_group($settings, $link_type, $lazy_load_attr, $open_lightbox)
 	{
 		$images = $settings['deensimc_upload_gallery'] ?? [];
-		$count  = count($images);
+		$required = 8;
+		$count    = count($images);
 
-		// If less than 8, duplicate until at least 8
-		if ($count > 0 && $count < 8) {
-			$i = 0;
-			while (count($images) < 8) {
-				$duplicate           = $images[$i % $count];
-				$duplicate['_is_dup'] = true; // Mark as duplicate
-				$images[]            = $duplicate;
-				$i++;
+		if ( $count > 0 && $count < $required ) {
+			$original = $images;
+			// Duplicate full batches until we have at least $required
+			while ( count( $images ) < $required ) {
+				foreach ( $original as $img ) {
+					$dup = $img;
+					$dup['_is_dup'] = true;
+					$images[] = $dup;
+				}
 			}
 		}
 

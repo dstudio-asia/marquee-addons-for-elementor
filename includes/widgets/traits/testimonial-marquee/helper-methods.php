@@ -14,16 +14,20 @@ trait Testimonial_Marquee_Helper_Methods
      */
     private function prepare_testimonials(array $testimonials): array
     {
-        $count = count($testimonials);
-        if ($count > 0 && $count < 8) {
-            $i = 0;
-            while (count($testimonials) < 8) {
-                $duplicate            = $testimonials[$i % $count];
-                $duplicate['_is_dup'] = true;
-                $testimonials[]       = $duplicate;
-                $i++;
-            }
-        }
+        $required = 8;
+		$count    = count($testimonials);
+        
+		if ( $count > 0 && $count < $required ) {
+			$original = $testimonials;
+			// Duplicate full batches until we have at least $required
+			while ( count( $testimonials ) < $required ) {
+				foreach ( $original as $testimonial ) {
+					$dup = $testimonial;
+					$dup['_is_dup'] = true;
+					$testimonials[] = $dup;
+				}
+			}
+		}
         return $testimonials;
     }
 
