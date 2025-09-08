@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: elementor, text marquee, image marquee, video marquee, Product slider
 Requires at least: 5.8
 Tested up to: 6.8
-Stable tag: 3.5.3
+Stable tag: 3.5.4
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -214,56 +214,59 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 
 == Changelog ==
 
-= 3.5.3 - 2025-09-07
+= 3.5.4 - 2025-09-08 =
+- New: French (fr_FR) translation
+
+= 3.5.3 - 2025-09-07 =
 - Fix: Item rendering issue in (image, text, video ) marquee
 
-= 3.5.2 - 2025-09-06
+= 3.5.2 - 2025-09-06 =
 - New: Spanish (es_ES) translation
 
-= 3.5.1 - 2025-09-04
+= 3.5.1 - 2025-09-04 =
 - New: Bangla (bn_BD) translation
 
-= 3.5.0 - 2025-09-03
+= 3.5.0 - 2025-09-03 = 
 - New: CTA in Image Accordion
 
-= 3.4.0 - 2025-09-02
+= 3.4.0 - 2025-09-02 =
 - New: Css Filter option for image marquee
 
-= 3.3.0 - 2025-09-01
+= 3.3.0 - 2025-09-01 = 
 - New: Background color option for each testimonial item.
 
-= 3.2.0 - 2025-08-31
+= 3.2.0 - 2025-08-31 = 
 - New: Box width control for testimonial marquee
 
-= 3.1.1 - 2025-08-30
+= 3.1.1 - 2025-08-30 =
 - Fix: Image size issue in testimonial marquee
 
-= 3.1.0 - 2025-08-28
+= 3.1.0 - 2025-08-28 =
 - New: Description option in Image Accordion
 
-= 3.0.2 - 2025-08-27
+= 3.0.2 - 2025-08-27 =
 - Fix: Null fold/unfold text issue in Testimonial Marquee.
 
-= 3.0.1 - 2025-08-26
+= 3.0.1 - 2025-08-26 =
 - Fix: Image size issue in Image Marquee
 
-= 3.0.0 - 2025-08-25
+= 3.0.0 - 2025-08-25 =
 - New: Fully refactored plugin codebase for improved performance and maintainability
 - New: Improved file structure and coding standards
 - Tweak: Enhanced RTL support, vertical/horizontal orientation, and show more/less functionality
 - Tweak: Improved HTML escaping and security handling
 - Breaking Change: Marquee settings (orientation, direction, speed and shadow ) can be reset. Please review your integrations after upgrading.
 
-= 2.4.3 - 2025-08-24
+= 2.4.3 - 2025-08-24 =
 - Tweak: readme.txt content updated
 
-= 2.4.0 - 2025-08-23
+= 2.4.0 - 2025-08-23 =
 - New: Button Marquee Widget
 
-= 2.3.1
+= 2.3.1 =
 - Tweak: placeholder image for Image Marquee
 
-= 2.3.0
+= 2.3.0 =
 - New: Animated Heading widget
 - New: Animated Word Roller widget
 - New: Vertical orientation support for Testimonial Marquee
@@ -273,79 +276,79 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 - Fix: Shadow and gap control in Testimonial Marquee
 - Fix: Section height for vertical layout on small devices (Text Marquee)
 
-= 2.2.3
+= 2.2.3 =
 - New: bg overlay color for testimonial
 - Tweak: content style control in testimonial
 
-= 2.2.2
+= 2.2.2 = 
 - Fix: headers already sent warning
 - New: add animated widget icon
 
-= 2.2.1
+= 2.2.1 =
 - New: “Need Help” link for each widget
 - Tweak: updated widget icons for improved visual consistency
 
-= 2.2.0
+= 2.2.0 =
 - New: News Ticker widget
 - New: promotional banner, “Rate Us” link, and “Get Pro” link
 - Tweak: renamed and regrouped controls for Image, Text, Testimonial, and Video Marquee widgets
 - Tweak: edge shadow controls and behavior
 - Tweak: updated widget icons for a more unified style
 
-= 2.1.9
+= 2.1.9 =
 - Tweak: removed demo import functionality
 
-= 2.1.8
+= 2.1.8 =
 - Fix: the shadow issue in each marquee.
 
-= 2.1.7
+= 2.1.7 =
 - Tweak: renamed controls in Testimonial widget for better clarity
 
-= 2.1.6
+= 2.1.6 =
 - New: RTL (Right-to-Left) language support for Testimonial widget and icons
 
-= 2.1.5
+= 2.1.5 =
 - Fix: Empty review counter displayed even when no reviews were available in Testimonial widget
 
-= 2.1.4
+= 2.1.4 =
 - New: RTL language support for Image, Text, and Video Marquee widgets
 
-= 2.1.3
+= 2.1.3 =
 - Fix: elementor lightbox compatibility issue
 - Tweak: replaced custom Swiper.js implementation with Elementor’s native Swiper.js for improved performance and compatibility
 
-= 2.1.2
+= 2.1.2 =
 - Tweak: Removed opacity from heading styles
 
-= 2.1.1
+= 2.1.1 =
 - Fix: browser compatible issue on Firefox.
 
-= 2.1.0
+= 2.1.0 =
 - Fix: animation speed issue on Testimonial Addon.
 
-= 2.0.0
+= 2.0.0 =
 - Fix: Animation speed now adjusts dynamically based on content length, ensuring consistent and linear scrolling across varying item counts.
 
-= 1.2.8
+= 1.2.8 =
 - Feat: load marquee when it comes into viewport.
 
-= 1.2.7
+= 1.2.7 =
 - Feat: choose preferred font awesome icons for the opening and closing quote marks in testimonial.
 
-= 1.2.6 
+= 1.2.6 =
 - Fix: edit issue image marquee in Safari.
 
-= 1.2.5
+= 1.2.5 =
 - Fix: the problem where only 8 images are showing and make sure more images can be displayed after that.
 
-= 1.2.2
+= 1.2.2 =
 - Fix: disappearing text and images in Safari on iPhone.
 
-= 1.2.0
+= 1.2.0 =
 - New: template library added.
 
-= 1.1.1
+= 1.1.1 =
 - Tweak: removed fontawesome library.
 
-= 1.0.0
+= 1.0.0 =
 - Initial release.
