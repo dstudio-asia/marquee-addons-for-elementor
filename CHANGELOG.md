@@ -1,6 +1,14 @@
 # Changelog
 
 
+## [3.5.3](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.5.2...3.5.3) (2025-09-07)
+
+
+### Bug Fixes
+
+* update changelog to clarify item rendering issue in marquee types ([deb455b](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/deb455b8704f7f6f71c3298599b1bc265976c3a6))
+* update changelog with release dates and item rendering issue details ([b7a27f6](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/b7a27f64c774368c7da6607b72d91e4b42d8f6d6))
+
 ## [3.5.2](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.5.1...3.5.2) (2025-09-06)
 
 
