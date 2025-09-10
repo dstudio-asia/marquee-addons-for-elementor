@@ -82,7 +82,7 @@ trait Testimonial_Marquee_Style_Image
 			]
 		);
 
-		$this->add_responsive_control(
+		$this->add_control(
 			'deensimc_tesimonial_image_border_radius',
 			[
 				'label' => esc_html__('Border Radius', 'marquee-addons-for-elementor'),

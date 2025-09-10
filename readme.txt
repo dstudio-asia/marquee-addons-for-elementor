@@ -215,7 +215,7 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 == Changelog ==
 
 = 3.5.6 - 2025-09-10
-- Tweak: Responsive controls ( padding, border radius, spacing and size ) in testimonail marquee 
+- Tweak: Responsive controls ( padding, spacing and size ) in testimonail marquee 
 
 = 3.5.5 - 2025-09-09 =
 - New: German (de_DE) translation
