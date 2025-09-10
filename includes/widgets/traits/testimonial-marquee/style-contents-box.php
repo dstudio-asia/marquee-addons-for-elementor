@@ -97,7 +97,7 @@ trait Testimonial_Marquee_Style_Contents_Box
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'deensimc_tesimonial_contents_padding',
 			[
 				'label' => esc_html__('Padding', 'marquee-addons-for-elementor'),
@@ -120,7 +120,7 @@ trait Testimonial_Marquee_Style_Contents_Box
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'deensimc_testimonial_box_border_radius',
 			[
 				'label' => esc_html__('Border Radius', 'marquee-addons-for-elementor'),

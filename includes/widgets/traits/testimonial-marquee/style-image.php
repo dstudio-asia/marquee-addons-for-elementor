@@ -20,7 +20,7 @@ trait Testimonial_Marquee_Style_Image
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'deensimc_tesimonial_image_spacing',
 			[
 				'label' => esc_html__('Image Spacing', 'marquee-addons-for-elementor'),
@@ -47,7 +47,7 @@ trait Testimonial_Marquee_Style_Image
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'deensimc_tesimonial_image_resulation',
 			[
 				'label' => esc_html__('Image Size', 'marquee-addons-for-elementor'),
@@ -82,7 +82,7 @@ trait Testimonial_Marquee_Style_Image
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'deensimc_tesimonial_image_border_radius',
 			[
 				'label' => esc_html__('Border Radius', 'marquee-addons-for-elementor'),
