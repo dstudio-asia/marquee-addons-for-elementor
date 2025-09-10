@@ -27,7 +27,7 @@ trait Testimonial_Marquee_Style_Review
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'deensimc_tesimonial_star_spacing',
 			[
 				'label' => esc_html__('Spacing', 'marquee-addons-for-elementor'),
