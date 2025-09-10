@@ -38,7 +38,7 @@ trait Testimonial_Marquee_Style_Name_Title
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'deensimc_tesimonial_name_spacing',
 			[
 				'label' => esc_html__('Spacing', 'marquee-addons-for-elementor'),
