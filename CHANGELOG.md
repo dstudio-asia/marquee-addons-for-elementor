@@ -1,6 +1,18 @@
 # Changelog
 
 
+## [3.5.6](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.5.4...3.5.6) (2025-09-11)
+
+
+### Features
+
+* german translate ([37b4d12](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/37b4d12a64935a613049874edf4b6ad88481708a))
+
+
+### Bug Fixes
+
+* update testimonial marquee controls to remove responsive border radius ([665d16d](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/665d16d1175fd53c6f4f24f26f6fc49cc34c8a7b))
+
 ## [3.5.3](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.5.2...3.5.3) (2025-09-07)
 
 
