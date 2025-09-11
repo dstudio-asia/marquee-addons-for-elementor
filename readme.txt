@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: elementor, text marquee, image marquee, video marquee, Product slider
 Requires at least: 5.8
 Tested up to: 6.8
-Stable tag: 3.5.6
+Stable tag: 3.5.7
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -214,7 +214,10 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 
 == Changelog ==
 
-= 3.5.6 - 2025-09-10
+= 3.5.7 - 2025-09-11 =
+- New: Brazilian Portuguese (pt_BR) translation
+
+= 3.5.6 - 2025-09-10 =
 - Tweak: Responsive controls ( padding, spacing and size ) in testimonail marquee 
 
 = 3.5.5 - 2025-09-09 =
