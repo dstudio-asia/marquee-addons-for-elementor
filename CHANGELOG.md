@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.5.7](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.5.6...3.5.7) (2025-09-13)
+
+
+### Features
+
+* Brazilian Portuguese (pt_BR) translation ([6cfd381](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/6cfd381992f28d6a04983526c0a98a31382e11a6))
+
 ## [3.5.6](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.5.4...3.5.6) (2025-09-11)
 
 
