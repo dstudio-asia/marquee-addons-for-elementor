@@ -417,69 +417,7 @@ trait ImageAccordion_Styles
                 ],
             ]
         );
-
-        // 🔹 Icon Controls
-        $this->add_control(
-            'deensimc_image_acc_cta_icon_size',
-            [
-                'label' => esc_html__('Icon Size', 'marquee-addons-for-elementor'),
-                'type'  => Controls_Manager::SLIDER,
-                'range' => [
-                    'px' => [
-                        'min' => 8,
-                        'max' => 100,
-                    ],
-                ],
-                'selectors' => [
-                    '{{WRAPPER}} .deensimc-acc-cta i' => 'font-size: {{SIZE}}{{UNIT}};',
-                    '{{WRAPPER}} .deensimc-acc-cta svg' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
-                ],
-            ]
-        );
-        $this->start_controls_tabs('deensimc_image_acc_cta_icon_tabs');
-        // Normal
-        $this->start_controls_tab(
-            'deensimc_image_acc_cta_icon_normal',
-            [
-                'label' => esc_html__('Normal', 'marquee-addons-for-elementor'),
-            ]
-        );
-        $this->add_control(
-            'deensimc_image_acc_cta_icon_color_normal',
-            [
-                'label'     => esc_html__('Icon Color', 'marquee-addons-for-elementor'),
-                'type'      => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .deensimc-acc-cta i' => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .deensimc-acc-cta svg' => 'fill: {{VALUE}};',
-                ],
-            ]
-        );
-
-        $this->end_controls_tab();
-
-        // Hover
-        $this->start_controls_tab(
-            'deensimc_image_acc_cta_icon_hover',
-            [
-                'label' => esc_html__('Hover', 'marquee-addons-for-elementor'),
-            ]
-        );
-
-        $this->add_control(
-            'deensimc_image_acc_cta_icon_color_hover',
-            [
-                'label'     => esc_html__('Icon Color', 'marquee-addons-for-elementor'),
-                'type'      => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .deensimc-acc-cta:hover i' => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .deensimc-acc-cta:hover svg' => 'fill: {{VALUE}};',
-                ],
-            ]
-        );
-
-        $this->end_controls_tab();
-        $this->end_controls_tabs();
+        
         $this->end_controls_section();
     }
 }
