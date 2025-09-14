@@ -11,7 +11,7 @@ final class Marquee
 	 * @var string The addon version.
 	 */
 
-	const VERSION = '3.5.8';
+	const VERSION = '3.5.9';
 
 	/**
 	 * Minimum Elementor Version
