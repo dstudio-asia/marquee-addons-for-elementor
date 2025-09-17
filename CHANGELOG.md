@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.6.1](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.6.0...3.6.1) (2025-09-17)
+
+
+### Features
+
+* update version to 3.6.1 and add Dutch translation ([4f3c5bb](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/4f3c5bb222b5f82636f8de0b82aee9c101be3b37))
+
 ## [3.6.0](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.5.9...3.6.0) (2025-09-15)
 
 
