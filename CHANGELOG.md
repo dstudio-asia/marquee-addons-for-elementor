@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.6.2](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.6.1...3.6.2) (2025-09-18)
+
+
+### Features
+
+* update version to 3.6.2 and add Polish translation ([40d0785](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/40d078559fe4154bb7de4250df4bbfdc99437983))
+
 ## [3.6.1](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.6.0...3.6.1) (2025-09-17)
 
 
