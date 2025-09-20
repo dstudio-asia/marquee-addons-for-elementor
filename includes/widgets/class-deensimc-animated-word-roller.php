@@ -101,24 +101,25 @@ class Deensimc_Animated_Word_Roller extends Widget_Base
 						<?php
 						if (! empty($settings['deensimc_repeater_text_main'])) :
 							foreach ($settings['deensimc_repeater_text_main'] as $item) :
-								if (! empty($item['deensimc_infinite_text_rotation_icon']['value'])) :
 						?>
-									<div class="deensimc-rotate-text">
-										<div class="deensimc-rotating-word">
-											<?php echo esc_html($item['deensimc_infinite_text_rotation_text']); ?>
-										</div>
-										<?php
-										\Elementor\Icons_Manager::render_icon(
+								<div class="deensimc-rotate-text">
+									<div class="deensimc-rotating-word">
+										<?php echo esc_html($item['deensimc_infinite_text_rotation_text']); ?>
+									</div>
+									<?php
+									if (! empty($item['deensimc_infinite_text_rotation_icon']['value'])) {
+										Icons_Manager::render_icon(
 											$item['deensimc_infinite_text_rotation_icon'],
 											['aria-hidden' => 'true']
 										);
-										?>
-									</div>
+									}
+									?>
+								</div>
 						<?php
-								endif;
 							endforeach;
 						endif;
 						?>
+
 					</div>
 				</div>
 			</<?php echo esc_attr($html_tag); ?>>
@@ -147,23 +148,31 @@ class Deensimc_Animated_Word_Roller extends Widget_Base
 							{{ settings.deensimc_infinite_text_rotation_widget_title }}
 						</span>
 						<# } #>
+
 							<div class="deensimc-text-rotator-container">
 								<div class="deensimc-vertical-scroll-track"
 									data-total-text="{{ total_text }}"
 									data-rotation-delay="{{ rotation_delay }}"
 									data-visible-word="{{ visible_word }}">
+
 									<# if ( settings.deensimc_repeater_text_main && settings.deensimc_repeater_text_main.length ) { #>
 										<# _.each( settings.deensimc_repeater_text_main, function( item ) { #>
-											<# if ( item.deensimc_infinite_text_rotation_icon && item.deensimc_infinite_text_rotation_icon.value ) { #>
-												<div class="deensimc-rotate-text">
-													<div class="deensimc-rotating-word">
-														{{ item.deensimc_infinite_text_rotation_text }}
-													</div>
-													{{{ elementor.helpers.renderIcon(view, item.deensimc_infinite_text_rotation_icon, { 'aria-hidden': true }, 'i', 'object').value }}}
+											<div class="deensimc-rotate-text">
+												<div class="deensimc-rotating-word">
+													{{ item.deensimc_infinite_text_rotation_text }}
 												</div>
+												<# if ( item.deensimc_infinite_text_rotation_icon && item.deensimc_infinite_text_rotation_icon.value ) { #>
+													{{{ elementor.helpers.renderIcon(
+										view,
+										item.deensimc_infinite_text_rotation_icon,
+										{ 'aria-hidden': true },
+										'i',
+										'object'
+									).value }}}
+													<# } #>
+											</div>
+											<# }); #>
 												<# } #>
-													<# } ); #>
-														<# } #>
 								</div>
 							</div>
 				</{{ html_tag }}>
@@ -171,4 +180,3 @@ class Deensimc_Animated_Word_Roller extends Widget_Base
 	<?php
 	}
 }
-	?>
