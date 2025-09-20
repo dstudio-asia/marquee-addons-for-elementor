@@ -94,6 +94,11 @@
   color: #fff;
   border-radius: 3px;
   font-size: 14px;
+  white-space: nowrap;
+}
+
+.deensimc-seperator-date {
+  white-space: nowrap;
 }
 
 .deensimc-seperator-feature-image img {
