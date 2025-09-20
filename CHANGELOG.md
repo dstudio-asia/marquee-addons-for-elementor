@@ -1,6 +1,14 @@
 # Changelog
 
 
+## [3.6.4](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.6.2...3.6.4) (2025-09-20)
+
+
+### Bug Fixes
+
+* Fix word roller text rendering ([d5a2368](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/d5a2368228f740f538a4a602af7ae0ab3c161e4f))
+* Separator display inline issue in news ticker ([2bf7cd3](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/2bf7cd3e79a3a865178b02c9bbe7654a445e1580))
+
 ## [3.6.2](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.6.1...3.6.2) (2025-09-18)
 
 
