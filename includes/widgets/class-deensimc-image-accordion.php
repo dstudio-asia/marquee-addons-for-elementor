@@ -40,7 +40,7 @@ class Deensimc_Image_Accordion extends Widget_Base
 
 	public function get_keywords()
 	{
-		return ['image', 'image-accordion', 'accordion'];
+		return ['image', 'image-accordion', 'accordion', 'marquee', 'marquee addons'];
 	}
 
 	public function get_style_depends()
