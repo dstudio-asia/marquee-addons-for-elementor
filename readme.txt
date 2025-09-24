@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: elementor, text marquee, image marquee, video marquee, Product slider
 Requires at least: 5.8
 Tested up to: 6.8
-Stable tag: 3.6.7
+Stable tag: 3.6.8
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -46,15 +46,15 @@ Show several images in a stacked slider format, where users can shuffle through 
  
 Create an engaging accordion-style effect with images, Where each image expands as the user hovers over it. Ideal for displaying portfolios, product features or any content that requires a unique, interactive display.
 
-### Animated Headline:
+### [Animated Headline](https://marqueeaddons.com/animated-heading/):
 
 Create attention-grabbing headlines by combining static text with engaging animations like typing, flipping, or fade effects. Add custom text before or after the animated section to match your design needs and create an interactive, modern heading that stands out on any page.
 
-### Animated Word Roller:
+### [Animated Word Roller](https://marqueeaddons.com/animated-word-roller/):
 
 Combines a static heading with rotating words or phrases that roll through the same spot. Set the duration per word, looping behavior, and the number of visible words, and style the title and animated words separately.
 
-### Marquee Button:
+### [Marquee Button](https://marqueeaddons.com/button-marquee/):
 
 An eye-catching marquee button featuring auto-scrolling animated text. On Button hover, you can set the text loop smoothly from left to right, instantly drawing user attention. Perfect as a modern website CTA (Call-to-Action) button.
 
@@ -99,9 +99,11 @@ Turn static testimonials into scrolling stories that stand out. The Advanced Tes
 
 Add rotating circular text for badges, hero sections, and callouts. Adjust radius, direction, and speed, with options like pause on hover and rotate on scroll. Style it fully with typography and text-stroke controls. You can even turn it into an interactive call-to-action button, linking to any page or section you choose.
 
-### Marquee Templates (Pro):
+### [Marquee Templates](https://marqueeaddons.com/marquee-templates/) (Pro):
 
-Start faster with one-click demo import and beautifully pre-built marquee templates. From portfolios to product carousels, each template is crafted for modern design and instant impact. Simply import a ready-made template into your page, fine-tune the settings, and launch, saving hours of setup while keeping full creative control. Every template is designed to make your site look modern, engaging, and effortless to set up.
+Start faster with one-click demo import and beautifully pre-built templates. These done-for-you Elementor templates help you ship better-looking sites faster - saving 10+ hours on every client build.
+
+With our Marquee Addon for Elementor, you don’t just get widgets - you also get a collection of professionally designed ready-made templates that you can import in a single click. Perfect for  SAAS, Startups, agencies, and creators who want to: Every template is designed to make your site look modern, engaging, and 10X Awesome to set up.
  
 ## Key features:
  
@@ -213,6 +215,9 @@ The developers release regular updates to improve features, fix bugs, and ensure
 First, ensure that you've activated the plugin correctly. If the issue persists, try clearing your browser cache or updating your Elementor plugin. If the problem continues, you can reach out to the support team for assistance.
 
 == Changelog ==
+
+= 3.6.8 - 2025-09-24 =
+- New: Ukrainian (uk_UA) translation
 
 = 3.6.7 - 2025-09-23 =
 - New: Indonesian (id_ID) translation
