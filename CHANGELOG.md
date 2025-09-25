@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.6.8](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.6.7...3.6.8) (2025-09-25)
+
+
+### Features
+
+* ukrainian translation ([1c371f2](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/1c371f2a294a345710651afbf33d9ccc400a08e4))
+
 ## [3.6.7](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.6.5...3.6.7) (2025-09-24)
 
 
