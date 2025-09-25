@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: elementor, text marquee, image marquee, video marquee, Product slider
 Requires at least: 5.8
 Tested up to: 6.8
-Stable tag: 3.6.8
+Stable tag: 3.6.9
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -215,6 +215,9 @@ The developers release regular updates to improve features, fix bugs, and ensure
 First, ensure that you've activated the plugin correctly. If the issue persists, try clearing your browser cache or updating your Elementor plugin. If the problem continues, you can reach out to the support team for assistance.
 
 == Changelog ==
+
+= 3.6.9 - 2025-09-25 =
+- New: Hindi (hi_IN) translation
 
 = 3.6.8 - 2025-09-24 =
 - New: Ukrainian (uk_UA) translation
