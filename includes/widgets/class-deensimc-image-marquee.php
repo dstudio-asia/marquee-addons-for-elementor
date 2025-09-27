@@ -56,6 +56,11 @@ class Deensimc_Image_Marquee extends Widget_Base
 		return ['slider', 'marquee', 'slide', 'deen', 'smooth', 'vertical', 'horizontal', 'scroll'];
 	}
 
+	public function get_custom_help_url(): string
+	{
+		return 'https://marqueeaddons.com/how-to-use-the-image-marquee-widget-in-elementor/';
+	}
+
 	protected function register_controls()
 	{
 		$this->content_image();
