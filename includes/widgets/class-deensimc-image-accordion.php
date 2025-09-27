@@ -106,6 +106,10 @@ class Deensimc_Image_Accordion extends Widget_Base
     	return $allowed;
 	}
 
+	public function get_custom_help_url(): string
+	{
+		return 'https://marqueeaddons.com/how-to-use-the-image-accordion-widget-in-elementor/';
+	}
 
 	protected function register_controls()
 	{
