@@ -58,6 +58,11 @@ class Deensimc_Stacked_Slider extends Widget_Base
 		return ['slider', 'staked', 'slide', 'marquee'];
 	}
 
+	public function get_custom_help_url(): string
+	{
+		return 'https://marqueeaddons.com/how-to-use-the-stacked-slider-widget-in-elementor/';
+	}
+
 	protected function register_controls()
 	{
 		$this->contents_primary();

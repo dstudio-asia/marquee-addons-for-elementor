@@ -62,6 +62,11 @@ class Deensimc_Testimonial_Marquee extends Widget_Base
 		return ['testimonail', 'slide', 'deen', 'slider'];
 	}
 
+	public function get_custom_help_url(): string
+	{
+		return 'https://marqueeaddons.com/how-to-use-the-advanced-testimonial-marquee-widget-in-elementor/';
+	}
+
 	protected function register_controls()
 	{
 		$this->register_content_controls();
