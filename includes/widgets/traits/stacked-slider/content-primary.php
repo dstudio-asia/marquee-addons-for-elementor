@@ -122,8 +122,8 @@ trait Stackedslider_Contents_Primary {
 				'options' => [ 'url', 'is_external', 'nofollow' ],
 				'default' => [
 					'url' => '',
-					'is_external' => true,
-					'nofollow' => true,
+					'is_external' => false,
+					'nofollow' => false,
 				],
 				'label_block' => true,
 			]

@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: elementor, text marquee, image marquee, video marquee, Product slider
 Requires at least: 5.8
 Tested up to: 6.8
-Stable tag: 3.7.0
+Stable tag: 3.7.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -216,8 +216,11 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 
 == Changelog ==
 
+= 3.7.1 - 2025-09-29 =
+- Fix: Stacked slider button url not working
+
 = 3.7.0 - 2025-09-27 =
-- Fix: Widget need help url.
+- Fix: Widget need help url
 
 = 3.6.9 - 2025-09-25 =
 - New: Hindi (hi_IN) translation
