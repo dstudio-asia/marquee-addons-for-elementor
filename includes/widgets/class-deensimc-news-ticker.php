@@ -61,6 +61,11 @@ class Deensimc_News_Ticker extends Widget_Base
 		return array_diff_key($post_types, ['elementor_library', 'attachment']);
 	}
 
+	public function get_custom_help_url(): string
+	{
+		return 'https://marqueeaddons.com/how-to-use-the-news-ticker-widget-in-elementor/';
+	}
+
 	protected function register_controls(): void
 	{
 

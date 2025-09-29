@@ -64,6 +64,11 @@ class Deensimc_Animated_Word_Roller extends Widget_Base
 		return ['animated word roller', 'animated word', 'animated', 'word', 'smooth', 'roller', 'rotation', 'scroll', 'marquee'];
 	}
 
+	public function get_custom_help_url(): string
+	{
+		return 'https://marqueeaddons.com/how-to-use-the-animated-word-roller-widget-in-elementor/';
+	}
+
 	protected function register_controls(): void
 	{
 
