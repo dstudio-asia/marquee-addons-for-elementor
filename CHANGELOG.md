@@ -1,6 +1,18 @@
 # Changelog
 
 
+## [3.7.0](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.6.8...3.7.0) (2025-09-29)
+
+
+### Features
+
+* hindi translation ([b040979](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/b040979bf609e1184adcd9b76c36fa66bc29154a))
+
+
+### Bug Fixes
+
+* wrong docs url in widgets ([8c07869](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/8c07869a36ce2d2dc29cabb7c1fd0f56df6455aa))
+
 ## [3.6.8](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.6.7...3.6.8) (2025-09-25)
 
 
