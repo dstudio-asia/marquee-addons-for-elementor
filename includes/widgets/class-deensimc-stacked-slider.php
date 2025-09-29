@@ -111,6 +111,9 @@ class Deensimc_Stacked_Slider extends Widget_Base
 		<?php
 		// Slider button text
 		if ($settings['deensimc_content_button_text'] !== '') {
+			if ( ! empty( $settings['deensimc_content_button_link']['url'] ) ) {
+				$this->add_link_attributes( 'deensimc_content_button_link', $settings['deensimc_content_button_link'] );
+			}
 		?>
 			<div class="deensimc-button-content-wraper">
 				<a <?php $this->print_render_attribute_string('deensimc_content_button_link'); ?>>
