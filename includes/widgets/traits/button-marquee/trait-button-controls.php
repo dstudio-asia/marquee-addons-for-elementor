@@ -28,6 +28,21 @@ trait Button_Controls
       ]
     );
 
+    $this->add_control(
+      'deensimc_button_link_type',
+      [
+        'label' => __('Link Type', 'marquee-addons-for-elementor'),
+        'type' => Controls_Manager::SELECT,
+        'default' => 'custom',
+        'options' => [
+          'custom' => __('Custom link', 'marquee-addons-for-elementor'),
+          'youtube' => __('Youtube', 'marquee-addons-for-elementor'),
+          'vimeo' => __('Vimeo', 'marquee-addons-for-elementor'),
+          'hosted' => __('Self hosted', 'marquee-addons-for-elementor'),
+        ],
+      ]
+    );
+
     // Button Link
     $this->add_control(
       'deensimc_button_link',
@@ -40,6 +55,47 @@ trait Button_Controls
         ],
         'default'     => [
           'url' => '#',
+        ],
+        'condition' => [
+          'deensimc_button_link_type' => 'custom'
+        ]
+      ]
+    );
+    $this->add_control(
+      'deensimc_button_yt_video_link',
+      [
+        'label' => esc_html__('Link',  'marquee-addons-for-elementor'),
+        'type' => Controls_Manager::TEXT,
+        'placeholder' => esc_html__('Enter your URL',  'marquee-addons-for-elementor'),
+        'label_block' => true,
+        'condition' => [
+          'deensimc_button_link_type' => ['youtube'],
+        ],
+      ]
+    );
+    $this->add_control(
+      'deensimc_button_vimeo_video_link',
+      [
+        'label' => esc_html__('Link',  'marquee-addons-for-elementor'),
+        'type' => Controls_Manager::TEXT,
+        'placeholder' => esc_html__('Enter your URL',  'marquee-addons-for-elementor'),
+        'label_block' => true,
+        'condition' => [
+          'deensimc_button_link_type' => ['vimeo'],
+        ],
+      ]
+    );
+
+    $this->add_control(
+      'deensimc_button_hosted_video_link',
+      [
+        'label' => esc_html__('Choose Video File',  'marquee-addons-for-elementor'),
+        'type' => Controls_Manager::MEDIA,
+        'media_types' => [
+          'video',
+        ],
+        'condition' => [
+          'deensimc_button_link_type' => 'hosted',
         ],
       ]
     );
