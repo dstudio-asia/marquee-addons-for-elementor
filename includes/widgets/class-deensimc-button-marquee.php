@@ -13,6 +13,7 @@ class Deensimc_Button_marquee extends Widget_Base
   use Button_Controls;
   use Button_Style_Controls;
   use Button_Marquee_Controls;
+  use Button_Helper_Method;
 
   public function get_style_depends()
   {
@@ -85,15 +86,7 @@ class Deensimc_Button_marquee extends Widget_Base
     } else {
       $this->add_render_attribute('button', 'href', 'javascript:void(0)');
 
-      $video_links = [
-        'youtube' => $settings['deensimc_button_yt_video_link'] ?? '',
-        'vimeo' => $settings['deensimc_button_vimeo_video_link'] ?? '',
-        'hosted' => $settings['deensimc_button_hosted_video_link']['url'] ?? '',
-      ];
-
-      if (!empty($video_links[$link_type])) {
-        $this->add_render_attribute('button', 'data-link', esc_url($video_links[$link_type]));
-      }
+      $this->handle_video_url($link_type, $settings);
     }
 
     $this->add_render_attribute('button', 'class', 'deensimc-button');
@@ -102,12 +95,6 @@ class Deensimc_Button_marquee extends Widget_Base
 
 ?>
     <div class="deensimc-marquee-main-container deensimc-button-marquee <?php echo esc_attr(implode(' ', $conditional_class)) ?>" data-is-marquee-on="<?php echo esc_attr($is_marquee_on) ?>" data-marquee-speed="<?php echo esc_attr($marquee_speed) ?>">
-      <?php if ($link_type !== 'custom') { ?>
-        <div class="deensimc-button-marquee-cl">
-          <span class="deensimc-button-marquee-cl-close">×</span>
-          <div class="deensimc-button-marquee-video-container"></div>
-        </div>
-      <?php } ?>
       <a <?php echo $this->get_render_attribute_string('button'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
           ?>>
         <?php if ($settings['deensimc_button_icon']['value']) { ?>
