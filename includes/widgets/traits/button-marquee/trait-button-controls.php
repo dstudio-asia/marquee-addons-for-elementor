@@ -62,14 +62,26 @@ trait Button_Controls
       ]
     );
     $this->add_control(
-      'deensimc_button_video_link',
+      'deensimc_button_yt_video_link',
       [
         'label' => esc_html__('Link',  'marquee-addons-for-elementor'),
         'type' => Controls_Manager::TEXT,
         'placeholder' => esc_html__('Enter your URL',  'marquee-addons-for-elementor'),
         'label_block' => true,
         'condition' => [
-          'deensimc_button_link_type' => ['youtube', 'vimeo'],
+          'deensimc_button_link_type' => ['youtube'],
+        ],
+      ]
+    );
+    $this->add_control(
+      'deensimc_button_vimeo_video_link',
+      [
+        'label' => esc_html__('Link',  'marquee-addons-for-elementor'),
+        'type' => Controls_Manager::TEXT,
+        'placeholder' => esc_html__('Enter your URL',  'marquee-addons-for-elementor'),
+        'label_block' => true,
+        'condition' => [
+          'deensimc_button_link_type' => ['vimeo'],
         ],
       ]
     );

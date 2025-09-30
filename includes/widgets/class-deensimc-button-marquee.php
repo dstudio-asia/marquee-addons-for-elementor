@@ -78,16 +78,39 @@ class Deensimc_Button_marquee extends Widget_Base
       $conditional_class[] = 'deensimc-button-marquee-init';
     }
 
-    // ✅ Add attributes for the anchor
-    $this->add_link_attributes('button', $settings['deensimc_button_link']);
+    $link_type = $settings['deensimc_button_link_type'];
+
+    if ($link_type === 'custom') {
+      $this->add_link_attributes('button', $settings['deensimc_button_link']);
+    } else {
+      $this->add_render_attribute('button', 'href', 'javascript:void(0)');
+
+      $video_links = [
+        'youtube' => $settings['deensimc_button_yt_video_link'] ?? '',
+        'vimeo' => $settings['deensimc_button_vimeo_video_link'] ?? '',
+        'hosted' => $settings['deensimc_button_hosted_video_link']['url'] ?? '',
+      ];
+
+      if (!empty($video_links[$link_type])) {
+        $this->add_render_attribute('button', 'data-link', esc_url($video_links[$link_type]));
+      }
+    }
+
     $this->add_render_attribute('button', 'class', 'deensimc-button');
     $this->add_render_attribute('button', 'id', $button_id);
+    $this->add_render_attribute('button', 'data-link-type', $link_type);
 
 ?>
     <div class="deensimc-marquee-main-container deensimc-button-marquee <?php echo esc_attr(implode(' ', $conditional_class)) ?>" data-is-marquee-on="<?php echo esc_attr($is_marquee_on) ?>" data-marquee-speed="<?php echo esc_attr($marquee_speed) ?>">
+      <?php if ($link_type !== 'custom') { ?>
+        <div class="deensimc-button-marquee-cl">
+          <span class="deensimc-button-marquee-cl-close">×</span>
+          <div class="deensimc-button-marquee-video-container"></div>
+        </div>
+      <?php } ?>
       <a <?php echo $this->get_render_attribute_string('button'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
           ?>>
-        <?php if ($settings['deensimc_button_icon']) { ?>
+        <?php if ($settings['deensimc_button_icon']['value']) { ?>
           <span class="deensimc-button-marquee-icon"><?php Icons_Manager::render_icon($settings['deensimc_button_icon'], ['aria-hidden' => 'true']); ?></span>
         <?php } ?>
         <span><?php echo esc_html($text); ?></span>
