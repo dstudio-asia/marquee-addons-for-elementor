@@ -1,6 +1,20 @@
 # Changelog
 
 
+## [3.7.2](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.7.0...3.7.2) (2025-10-01)
+
+
+### Features
+
+* Add link type and their respective controls ([ea495cb](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/ea495cb2cff09445171ff11c0006ac8dafcd67a3))
+* Add the link type in render conditionally ([03768cb](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/03768cbfc0ad2f9ec71080cd0589942764b86b77))
+* Bump version to 3.7.2 in plugin files and update readme for new features ([783ca5a](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/783ca5a84b953ab2ca5adf55104af5c104ab63c9))
+
+
+### Bug Fixes
+
+* Stacked slider button url not working ([c0539d8](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/c0539d81517f124786511d05e6b2dd871a904d81))
+
 ## [3.7.0](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.6.8...3.7.0) (2025-09-29)
 
 
