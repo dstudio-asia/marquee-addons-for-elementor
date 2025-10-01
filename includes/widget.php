@@ -11,7 +11,7 @@ final class Marquee
 	 * @var string The addon version.
 	 */
 
-	const VERSION = '3.7.1';
+	const VERSION = '3.7.2';
 
 	/**
 	 * Minimum Elementor Version
@@ -213,7 +213,7 @@ final class Marquee
 			add_action('admin_notices', [$this, 'deensimc_rate_us'], 10);
 			add_action('wp_ajax_deensimc_notice_dismiss', [$this, 'deensimc_notice_dismiss'], 10);
 		}
-		add_action('elementor/frontend/after_enqueue_styles', [$this, 'deensimc_frontend_styles'], 20); 
+		add_action('elementor/frontend/after_enqueue_styles', [$this, 'deensimc_frontend_styles'], 20);
 		add_action('elementor/frontend/after_register_scripts', [$this, 'deensimc_frontend_scripts'], 20);
 		add_action('elementor/widgets/register', [$this, 'deensimc_register_widgets'], 10);
 		add_action('elementor/elements/categories_registered', [$this, 'deensimc_add_categories'], 10);
@@ -445,6 +445,7 @@ final class Marquee
 		require_once(__DIR__ . '/widgets/traits/button-marquee/trait-button-controls.php');
 		require_once(__DIR__ . '/widgets/traits/button-marquee/trait-button-style-controls.php');
 		require_once(__DIR__ . '/widgets/traits/button-marquee/trait-button-marquee-controls.php');
+		require_once(__DIR__ . '/widgets/traits/button-marquee/trait-button-helper-methods.php');
 
 		require_once(__DIR__ . '/widgets/class-deensimc-image-marquee.php');
 		require_once(__DIR__ . '/widgets/class-deensimc-stacked-slider.php');
