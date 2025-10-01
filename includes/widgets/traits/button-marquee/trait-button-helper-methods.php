@@ -25,7 +25,7 @@ trait Button_Helper_Method
 
     if ($link_type === 'vimeo' && !empty($settings['deensimc_button_vimeo_video_link'])) {
       $vimeo_url = $settings['deensimc_button_vimeo_video_link'];
-      $path = parse_url($vimeo_url, PHP_URL_PATH);
+      $path = wp_parse_url($vimeo_url, PHP_URL_PATH);
       $url_parts = explode('/', trim($path, '/'));
       $potential_id_with_query = end($url_parts);
       $video_id = current(explode('?', $potential_id_with_query));
