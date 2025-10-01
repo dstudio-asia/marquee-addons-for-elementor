@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: elementor, text marquee, image marquee, video marquee, Product slider
 Requires at least: 5.8
 Tested up to: 6.8
-Stable tag: 3.7.0
+Stable tag: 3.7.2
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -56,7 +56,7 @@ Combines a static heading with rotating words or phrases that roll through the s
 
 ### [Marquee Button](https://marqueeaddons.com/button-marquee/):
 
-An eye-catching marquee button featuring auto-scrolling animated text. On Button hover, you can set the text loop smoothly from left to right, instantly drawing user attention. Perfect as a modern website CTA (Call-to-Action) button.
+With Marquee Button, create an interactive button with auto-scrolling text that grabs attention. Pick solid, outline, or ghost styles, set corners, add icons, and control loop speed and direction. On hover, the text loops smoothly left to right. Perfect for modern CTAs. Click can open a link or a video popup from YouTube, Vimeo, or self-hosted. Built to keep page load light.
 
 ## PRO WIDGETS – UNLOCK ADVANCED CAPABILITIES:
 
@@ -216,8 +216,14 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 
 == Changelog ==
 
+= 3.7.2 - 2025-10-01 =
+- New: Added youtube, vimeo and self-hosted video popup link options in marquee button
+
+= 3.7.1 - 2025-09-29 =
+- Fix: Stacked slider button url not working
+
 = 3.7.0 - 2025-09-27 =
-- Fix: Widget need help url.
+- Fix: Widget need help url
 
 = 3.6.9 - 2025-09-25 =
 - New: Hindi (hi_IN) translation
