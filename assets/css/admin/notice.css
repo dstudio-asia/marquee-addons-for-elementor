@@ -36,6 +36,10 @@
   color: #fff;
   margin-right: 8px;
 }
+
+button.button.deensimc-never-show {
+  margin-left: 8px;
+}
 .deensimc-dismiss-btn {
   background: transparent;
   border: 1px solid #ccd0d4;
