@@ -11,7 +11,7 @@ final class Marquee
 	 * @var string The addon version.
 	 */
 
-	const VERSION = '3.7.4';
+	const VERSION = '3.7.5';
 
 	/**
 	 * Minimum Elementor Version
@@ -212,6 +212,7 @@ final class Marquee
 		if (!class_exists('\Deensimcpro_Marquee\Marqueepro')) {
 			add_action('admin_notices', [$this, 'deensimc_rate_us'], 10);
 			add_action('wp_ajax_deensimc_notice_dismiss', [$this, 'deensimc_notice_dismiss'], 10);
+			add_action('wp_ajax_deensimc_never_show_notice', [$this, 'deensimc_never_show_notice']);
 		}
 		add_action('elementor/frontend/after_enqueue_styles', [$this, 'deensimc_frontend_styles'], 20);
 		add_action('elementor/frontend/after_register_scripts', [$this, 'deensimc_frontend_scripts'], 20);
@@ -262,19 +263,16 @@ final class Marquee
 
 		global $pagenow;
 
-		if ($pagenow !== 'plugins.php') {
-			return;
-		}
+		if ( $pagenow !== 'plugins.php' ) { return; }
 
-		if (! current_user_can('manage_options')) {
-			return;
-		}
+		if ( !current_user_can( 'manage_options' ) ) { return; }
 
-		if (get_transient('deensimc_rate_us_' . self::VERSION)) {
-			return;
-		}
+		if ( get_transient( 'deensimc_rate_us_' . self::VERSION ) ) { return; }
 
-		echo '<div id="deensimc-feedback-notice" class="deensimc-notice-wrap notice is-dismissible deensimc-dismiss-btn">';
+		if ( get_option( 'deensimc_never_show_notice' ) ) { return; }
+
+
+		echo '<div id="deensimc-feedback-notice" class="deensimc-notice-wrap notice is-dismissible">';
 		echo '  <div class="deensimc-notice-icon">';
 		echo '    <img src="' . esc_url(DEENSIMC_ASSETS_URL) . 'images/library-icon.png" alt="Notice Icon" />';
 		echo '  </div>';
@@ -282,7 +280,9 @@ final class Marquee
 		echo '    <h3>Upgrade to Marquee Addons Pro</h3>';
 		echo '    <p>Unlock more advance widgets and make your Elementor website 10x better with Marquee Addons.</p>';
 		echo '    <a href="https://marqueeaddons.com/pricing/" target="_blank" class="button button-primary">Upgrade to Pro</a>';
-		echo '    <button class="button deensimc-dismiss-btn">No thanks</button>';
+		echo '    <a href="https://wordpress.org/support/plugin/marquee-addons-for-elementor/reviews/#new-post" target="_blank" class="button button-primary">Rate Us</a>';;
+		echo '    <button class="button deensimc-dismiss-btn">Remind me later</button>';
+    	echo '    <button class="button deensimc-never-show">Don\'t show me again</button>';
 		echo '  </div>';
 		echo '</div>';
 	}
@@ -295,6 +295,13 @@ final class Marquee
 			true,
 			30 * 86400
 		);
+		wp_send_json_success();
+	}
+
+	public function deensimc_never_show_notice()
+	{
+		check_ajax_referer('deensimc_dismiss_nonce', 'nonce');
+		update_option('deensimc_never_show_notice', true);
 		wp_send_json_success();
 	}
 
