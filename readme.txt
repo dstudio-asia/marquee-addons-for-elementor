@@ -99,6 +99,22 @@ Turn static testimonials into scrolling stories that stand out. The Advanced Tes
 
 Add rotating circular text for badges, hero sections, and callouts. Adjust radius, direction, and speed, with options like pause on hover and rotate on scroll. Style it fully with typography and text-stroke controls. You can even turn it into an interactive call-to-action button, linking to any page or section you choose.
 
+### [Smart Tabs Widget for Elementor](https://marqueeaddons.com/smart-tabs/) (Pro)
+
+The Smart Tabs Widget helps you present information in a clean, structured, and user-friendly way. Instead of overwhelming your visitors with long text sections, organize your content into beautiful tabs that switch smoothly on click or hover. It’s perfect for displaying pricing plans, product details, FAQs, or service comparisons. You can fully customize the tab design, icons, typography, and colors to match your brand style. Whether you’re designing a landing page or a service page, Smart Tabs keeps your layout neat and interactive — improving readability and overall user experience.
+
+### [Sticky Cards Widget for Elementor](https://marqueeaddons.com/sticky-cards/) (Pro)
+
+The Sticky Cards Widget turns your scroll experience into a storytelling journey. Each card remains visible for a moment as users scroll, allowing you to highlight messages, visuals, or steps with impact. This widget is ideal for creating timelines, feature showcases, team intros, or process sections. You can easily customize card layouts, animations, and background effects to fit any theme. The scroll-triggered movement feels modern and immersive, helping you guide visitors through content naturally — without clutter or extra effort.
+
+### [Image Accordion Pro Widget for Elementor](https://marqueeaddons.com/image-accordion-pro/) (Pro)
+
+The Image Accordion Pro Widget adds dynamic motion to your website by transforming static images into interactive panels. Each image expands beautifully on hover or click, revealing additional content such as titles, descriptions, or buttons. It’s perfect for showcasing portfolios, team members, projects, or product collections while keeping your layout compact. You can control animation effects, alignment, spacing, and responsiveness for a seamless experience across devices. With its sleek transitions and easy customization, Image Accordion Pro helps your visuals tell a story that captures attention instantly.
+
+### [3D Grid Marquee Widget for Elementor](https://marqueeaddons.com/3d-grid-marquee/) (Pro)
+
+Bring your site to life with the 3D Grid Marquee Widget — a visually striking way to display images, logos, or text in a continuous 3D scrolling grid. It adds depth, motion, and modern design flair to your hero sections or brand showcases. The widget’s flexible settings let you control direction, speed, spacing, and 3D perspective, ensuring smooth and captivating movement. Whether you’re showcasing client logos, featured works, or promotional visuals, this widget gives your website a bold, creative edge that keeps visitors engaged.
+
 ### [Elementor Templates](https://marqueeaddons.com/marquee-templates/) (Pro):
 
 Start faster with one-click demo import and beautifully pre-built templates. These done-for-you Elementor templates help you ship better-looking sites faster - saving 10+ hours on every client build.
