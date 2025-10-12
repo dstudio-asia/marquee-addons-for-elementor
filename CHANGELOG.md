@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.7.6](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.7.5...3.7.6) (2025-10-12)
+
+
+### Features
+
+* danish translation ([141b37d](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/141b37de1654b9fde91c03107c206c0849941dc7))
+
 ## [3.7.4](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.7.3...3.7.4) (2025-10-07)
 
 
