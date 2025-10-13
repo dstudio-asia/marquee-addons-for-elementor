@@ -1,0 +1,206 @@
+.deensimc-deactivation-popup {
+    position: fixed;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    opacity: 1;
+    visibility: visible;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+}
+
+.deensimc-deactivation-popup.deensimc-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.deensimc-deactivation-popup .deensimc-overlay {
+    position: relative;
+    padding: 20px;
+    background: #fff;
+    overflow: auto;
+    max-height: 90%;
+    max-width: 90%;
+    border-radius: 10px;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.deensimc-deactivation-popup * {
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.deensimc-deactivation-popup .deensimc-close {
+    cursor: pointer;
+    position: absolute;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    top: 6px;
+    right: 6px;
+    width: 30px;
+    height: 30px;
+    color: #252c59;
+    background: #f7f7f7;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.deensimc-deactivation-popup .deensimc-body {
+    position: relative;
+    display: block;
+    max-width: 360px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.deensimc-deactivation-popup .deensimc-body .deensimc-title-wrap {
+    position: relative;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #1d2327;
+}
+
+.deensimc-deactivation-popup .deensimc-img-wrap {
+    margin-right: 10px;
+}
+
+.deensimc-deactivation-popup img {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.deensimc-deactivation-popup .deensimc-body > div {
+    margin-bottom: 15px;
+}
+
+.deensimc-deactivation-popup .deensimc-messages-wrap p,  
+.deensimc-deactivation-popup .deensimc-checkbox-label, 
+.deensimc-deactivation-popup .deensimc-skip-btn {
+    margin: 5px 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #646970;
+}
+
+.deensimc-deactivation-popup .deensimc-options-wrap :not([type="radio"]):not([type="checkbox"]) {
+    width: 100%;
+}
+
+.deensimc-deactivation-popup .deensimc-options-wrap .deensimc-textarea {
+    max-height: 150px;
+    min-height: 50px;
+    padding: 8px 12px;
+    border: 1px solid #dcdcde;
+    border-radius: 4px;
+    font-size: 14px;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+.deensimc-deactivation-popup .deensimc-options-wrap .deensimc-textarea:focus {
+    border-color: #2271b1;
+    outline: none;
+    box-shadow: 0 0 0 1px #2271b1;
+}
+
+.deensimc-deactivation-popup .deensimc-body .deensimc-options-wrap {
+    padding: 15px;
+    border-radius: 10px;
+    background: #f3f3f3;
+}
+
+.deensimc-deactivation-popup .deensimc-body .deensimc-options-wrap.dennsimc-anonymous {
+    background: #fff;
+    padding: 10px 0;
+}
+
+.deensimc-deactivation-popup .deensimc-option-label,
+.deensimc-deactivation-popup .deensimc-textarea-label {
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #2c3338;
+    line-height: 1.4;
+}
+
+.deensimc-deactivation-popup .deensimc-option-label:last-child,
+.deensimc-deactivation-popup .deensimc-checkbox-label:last-child,
+.deensimc-deactivation-popup .deensimc-textarea-label:last-child {
+    margin-bottom: 0;
+}
+
+.deensimc-deactivation-popup .deensimc-radio,
+.deensimc-deactivation-popup .deensimc-checkbox {
+    margin-right: 8px;
+}
+
+.deensimc-deactivation-popup input[type=radio]:checked::before
+{
+    background-color: #7456ff;
+}
+
+.deensimc-deactivation-popup input[type=radio]:focus {
+    box-shadow: none;
+}   
+
+/* Buttons Styling */
+.deensimc-deactivation-popup .deensimc-buttons-wrap {
+    text-align: right;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.deensimc-deactivation-popup .deensimc-btn {
+    border: 0px solid;
+    padding: 5px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.deensimc-skip-btn {
+    color: rgb(60, 67, 74);
+    font-weight: normal !important;
+    background: transparent;
+}
+
+.deensimc-submit-btn {
+    color: #fff;
+    background-color: #7456ff;
+}
+
+/* Hidden state */
+.deensimc-hidden {
+    display: none !important;
+}
