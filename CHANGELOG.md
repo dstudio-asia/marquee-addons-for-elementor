@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.7.8](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.7.7...3.7.8) (2025-10-13)
+
+
+### Features
+
+* plugin deactivation feedback form ([18acfc8](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/18acfc84021f2994507f1cf266271ff4e598fe5f))
+
 ## [3.7.7](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.7.6...3.7.7) (2025-10-13)
 
 
