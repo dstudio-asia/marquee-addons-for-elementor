@@ -3,150 +3,122 @@
 ![WordPress Plugin Version](https://img.shields.io/wordpress/plugin/v/marquee-addons-for-elementor)
 ![WordPress Tested](https://img.shields.io/wordpress/v/marquee-addons-for-elementor?label=WordPress)
 ![Elementor Required](https://img.shields.io/badge/Elementor-3.7%2B-blue)
+![PHP Required](https://img.shields.io/badge/PHP-7.4%2B-purple)
 ![License](https://img.shields.io/badge/License-GPLv2%2B-green)
 
-Create ultra-modern, animated WordPress sites with **Marquee Addons**, a powerful Elementor toolkit featuring smooth, configurable marquee widgets for text, images, icons, videos, logos, and more. Built for performance, accessibility, and a clean Elementor editing experience.
+MarqueeAddons is a smooth video, text, image, and testimonial marquee carousel loop plugin for Elementor on WordPress. Create continuous smooth scrolling loops for your content with customizable directions and flexible options.
 
-## 🎯 What Marquee Addons Does
+## 🎥 Watch the Demo
 
-MarqueeAddons makes it easy to add smooth marquee effects for text, buttons, images, testimonials, videos, and cards to websites built with Elementor. Create continuous smooth scrolling loops for your content with customizable directions (left, right, top, bottom) and flexible options that keep your site modern and functional.
+[![Marquee Addons Demo](https://img.youtube.com/vi/CmW0U8Ij8o0/0.jpg)](https://youtu.be/CmW0U8Ij8o0?si=FEjPCccSyR3Om0K1)
 
-[**Plugin Demo**](https://marqueeaddons.com/) | [**Documentation**](https://marqueeaddons.com/docs/) | [**Get Pro**](https://marqueeaddons.com/free-vs-pro/)
+[**Plugin Demo**](https://marqueeaddons.com/) | [**Documentation**](https://marqueeaddons.com/docs/) | [**Get Pro for Advanced Features**](https://marqueeaddons.com/free-vs-pro/)
 
 ## 🆓 Free Widgets
 
-### 📷 Image Marquee
-Smooth scrolling marquee effects for images with lightbox, image links, lazy loading, and customizable scrolling direction.
+### 📷 [Image Marquee](https://marqueeaddons.com/image-marquee/)
+Smooth scrolling marquee effects for images featuring lightbox, image links, lazy loading, adjustable animation speed, and customizable scrolling direction. Perfect for showcasing image loops on your website.
 
-[**Demo**](https://marqueeaddons.com/image-marquee/)
+### 📝 [Text Marquee](https://marqueeaddons.com/text-marquee/)
+Display scrolling marquee texts with icons and repeat content as needed. Set scrolling direction vertically or horizontally to match your website's design flow and layout.
 
-### 📝 Text Marquee
-Display scrolling marquee texts with icons and repeat content as needed. Set vertical or horizontal scrolling direction.
+### 💬 [Testimonial Marquee](https://marqueeaddons.com/testimonial-marquee/)
+Share client feedback, names, and ratings in a smooth, continuous scroll. A clean and effortless way to highlight customer reviews, build trust, and keep your site looking modern and professional.
 
-[**Demo**](https://marqueeaddons.com/text-marquee/)
+### 🎥 [Video Marquee](https://marqueeaddons.com/video-marquee/)
+Create continuous video reels supporting YouTube, Vimeo, Dailymotion, or self-hosted videos. Control autoplay, mute, and loop options for smooth experience across devices.
 
-### 💬 Testimonial Marquee
-Share client feedback, names, and ratings in a smooth, continuous scroll to build trust with modern design.
+### 📰 [News Ticker](https://marqueeaddons.com/news-ticker/)
+Display highlighted news, updates, or announcements in an endless loop format. Customize appearance, speed, and content for real-time news, blog posts, discount offers, or important alerts.
 
-[**Demo**](https://marqueeaddons.com/testimonial-marquee/)
+### 🎴 [Stacked Slider](https://marqueeaddons.com/stacked-slider/)
+Show several images in a stacked slider format where users shuffle through different layers of visuals. Great for displaying product collections and portfolios in a neat, interactive manner.
 
-### 🎥 Video Marquee
-Create continuous video reels supporting YouTube, Vimeo, Dailymotion, or self-hosted videos with autoplay controls.
+### 🖼️ [Image Accordion](https://marqueeaddons.com/image-accordion/)
+Create engaging accordion-style effects with images where each image expands as the user hovers over it. Ideal for portfolios, product features, or any content requiring unique, interactive display.
 
-[**Demo**](https://marqueeaddons.com/video-marquee/)
+### ✨ [Animated Headline](https://marqueeaddons.com/animated-heading/)
+Create attention-grabbing headlines by combining static text with engaging animations like typing, flipping, or fade effects. Add custom text before or after animated sections.
 
-### 📰 News Ticker
-Display highlighted news, updates, or announcements in an endless loop format for real-time content.
+### 🔄 [Animated Word Roller](https://marqueeaddons.com/animated-word-roller/)
+Combine static heading with rotating words or phrases that roll through the same spot. Set duration per word, looping behavior, visible words count, and style title/animated words separately.
 
-[**Demo**](https://marqueeaddons.com/news-ticker/)
+### 🎯 [Marquee Button](https://marqueeaddons.com/button-marquee/)
+Create interactive buttons with auto-scrolling text. Pick solid, outline, or ghost styles, set corners, add icons, control loop speed and direction. Perfect for modern CTAs with video popups.
 
-### 🎴 Stacked Slider
-Show images in a stacked slider format where users shuffle through different visual layers.
+## 🚀 Pro Widgets – Advanced Capabilities
 
-[**Demo**](https://marqueeaddons.com/stacked-slider/)
+MarqueeAddons Pro brings smooth marquee effects and motion design widgets to Elementor. Create advanced scrolling text, media, testimonials, videos, 3D effects, cards, posts, products, and more in endless loops.
 
-### 🖼️ Image Accordion
-Create engaging accordion-style effects with images that expand on hover for portfolios and product features.
+### 🃏 [Card Marquee](https://marqueeaddons.com/card-marquee/) (Pro)
+Create engaging carousels of cards that move in smooth, continuous loops. Each card includes icons, images, background overlays, titles, and call-to-action buttons for products, services, or featured content.
 
-[**Demo**](https://marqueeaddons.com/image-accordion/)
+### 📱 [Media Marquee](https://marqueeaddons.com/media-marquee/) (Pro)
+Flexible way to showcase media in motion. Build infinite loops of images (linkable, lightbox-ready) and video carousels with continuous playback. Combine images and videos in a single strip.
 
-### ✨ Animated Headline
-Create attention-grabbing headlines with typing, flipping, or fade animations combined with static text.
+### 📄 [Post Marquee](https://marqueeaddons.com/post-marquee/) (Pro)
+Display posts in motion with smooth, continuous carousels. Highlight featured images, titles, and call-to-action links for blogs, news, products, or custom post types.
 
-[**Demo**](https://marqueeaddons.com/animated-heading/)
+### 🛍️ [Products Marquee](https://marqueeaddons.com/product-marquee/) (Pro)
+Showcase products in smooth, infinite carousels that keep them always in view. Display images, titles, prices, and add-to-cart buttons for featured, upsell, sale, or new items.
 
-### 🔄 Animated Word Roller
-Combine static headings with rotating words or phrases that roll through the same spot with customizable timing.
+### 📂 [Product Category Marquee](https://marqueeaddons.com/product-marquee/) (Pro)
+Present product categories in smooth, continuous carousels. Each category includes images, titles, and links. Perfect for popular or seasonal categories.
 
-[**Demo**](https://marqueeaddons.com/animated-word-roller/)
+### ⭐ [Advanced Testimonial Marquee](https://marqueeaddons.com/testimonial-marquee/) (Pro)
+Bring testimonials to life with continuous marquee carousels in multiple layouts. Scroll-triggered motion, vertical style, highlighted reviews, and interactive hover effects.
 
-### 🎯 Marquee Button
-Create interactive buttons with auto-scrolling text that grabs attention with hover effects and video popups.
+### 🎪 [Advanced Text Marquee](https://marqueeaddons.com/text-marquee/) (Pro)
+Turn static testimonials into scrolling stories with multiple layouts (vertical, horizontal, scroll-triggered). Add hover effects and spotlight featured reviews.
 
-[**Demo**](https://marqueeaddons.com/button-marquee/)
+### 🔵 [Circular Text Rotation](https://marqueeaddons.com/circular-text-rotation/) (Pro)
+Add rotating circular text for badges, hero sections, and callouts. Adjust radius, direction, speed with pause on hover and rotate on scroll options.
 
-## 🚀 Pro Widgets
+### 📑 [Smart Tabs](https://marqueeaddons.com/smart-tabs/) (Pro)
+Group long content into clean, switchable tabs for steps, services, team info, and product details. Switch on click or hover with smooth transitions.
 
-### 🃏 Card Marquee
-Create engaging card carousels with icons, images, overlays, titles, and CTA buttons for products and services.
+### 📋 [Sticky Cards](https://marqueeaddons.com/sticky-cards/) (Pro)
+Turn vertical sections into sticky stacking cards. Each card pauses on scroll to highlight features, timelines, team members, or processes.
 
-[**Learn More**](https://marqueeaddons.com/card-marquee/)
+### 🖼️ [Image Accordion Pro](https://marqueeaddons.com/image-accordion-pro/) (Pro)
+Turn image rows into expandable panels that open on hover or click. Show titles, descriptions, and clear call-to-action with optional hover wave effect.
 
-### 📱 Media Marquee
-Showcase mixed media in motion with infinite loops of images and videos in a single strip.
+### 🎮 [3D Grid Marquee](https://marqueeaddons.com/3d-grid-marquee/) (Pro)
+Animated Elementor widget with 3D perspective, smooth scrolling, and column animations using CSS 3D transforms. Ideal for hero sections and portfolios.
 
-[**Learn More**](https://marqueeaddons.com/media-marquee/)
-
-### 📄 Post Marquee
-Display posts in motion with smooth carousels featuring images, titles, and CTAs for blogs and news.
-
-[**Learn More**](https://marqueeaddons.com/post-marquee/)
-
-### 🛍️ Products Marquee
-Showcase products in infinite carousels with images, titles, prices, and add-to-cart buttons.
-
-[**Learn More**](https://marqueeaddons.com/product-marquee/)
-
-### 📂 Product Category Marquee
-Present product categories in continuous carousels with images, titles, and links.
-
-[**Learn More**](https://marqueeaddons.com/product-marquee/)
-
-### ⭐ Advanced Testimonial Marquee
-Multiple layouts, scroll-triggered motion, vertical styles, and interactive hover effects.
-
-[**Learn More**](https://marqueeaddons.com/testimonial-marquee/)
-
-### 🎪 Advanced Text Marquee
-Vertical, horizontal, or scroll-triggered motion with hover effects and featured reviews.
-
-[**Learn More**](https://marqueeaddons.com/text-marquee/)
-
-### 🔵 Circular Text Rotation
-Rotating circular text for badges and hero sections with radius, direction, and speed controls.
-
-[**Learn More**](https://marqueeaddons.com/circular-text-rotation/)
-
-### 📑 Smart Tabs
-Clean, switchable tabs for steps, services, team info, and product details with smooth transitions.
-
-[**Learn More**](https://marqueeaddons.com/smart-tabs/)
-
-### 📋 Sticky Cards
-Sticky stacking cards that pause on scroll for features, timelines, and team members.
-
-[**Learn More**](https://marqueeaddons.com/sticky-cards/)
-
-### 🖼️ Image Accordion Pro
-Expandable panels that open on hover or click with titles, descriptions, and CTAs.
-
-[**Learn More**](https://marqueeaddons.com/image-accordion-pro/)
-
-### 🎮 3D Grid Marquee
-Animated 3D perspective grids with smooth scrolling for hero sections and portfolios.
-
-[**Learn More**](https://marqueeaddons.com/3d-grid-marquee/)
-
-### 🎨 Elementor Templates
-One-click demo imports and pre-built templates to save 10+ hours on client builds.
-
-[**Learn More**](https://marqueeaddons.com/marquee-templates/)
+### 🎨 [Elementor Templates](https://marqueeaddons.com/marquee-templates/) (Pro)
+Start faster with one-click demo import and pre-built templates. Save 10+ hours on client builds with professionally designed, modern templates.
 
 ## ✨ Key Features
 
-* **Horizontal and Vertical Positioning** - Full control over content display
-* **Multiple Scrolling Directions** - Left, right, up, down scrolling options
-* **Complete Customization** - Match brand colors, fonts, and styles
-* **Universal Media Support** - All image formats, icons, and text
-* **Video Compatibility** - YouTube, Vimeo, Dailymotion, self-hosted
-* **Fully Responsive** - Perfect display on all devices
-* **Lazy Loading** - Boost performance by loading content when visible
-* **RTL & Multi-Language** - Full right-to-left language support
+### 🎯 Core Features
+* **Horizontal and Vertical Positioning** - Full control over content display in both layouts
+* **Multiple Scrolling Directions** - Left to right, right to left, top to bottom scrolling options
+* **Complete Customization** - Match brand colors, fonts, and styles perfectly
+* **Universal Media Support** - JPG, PNG, GIF images, all icon types, and text content
+* **Video Compatibility** - YouTube, Vimeo, Dailymotion, and self-hosted videos
+* **Fully Responsive** - Perfect display on all devices without extra adjustments
+* **Lazy Loading** - Boost performance by loading content only when visible
+* **RTL & Multi-Language** - Full right-to-left language and translation plugin support
 
 ### 🚀 Pro Features
-* **Lightbox & Linking** - Distraction-free viewing and flexible links
-* **Scroll Trigger Animation** - Start marquees only when in view
-* **Custom CSS** - Complete design freedom beyond defaults
+* **Lightbox and Linking** - Distraction-free viewing and flexible internal/external linking
+* **Marquee on Scroll Trigger** - Start animations only when content comes into view
+* **Custom CSS** - Complete design freedom beyond default options
+
+## 💡 Design & Performance Tips
+
+* **Keep things clear** - Set comfortable speed, adequate spacing, and pause-on-hover for longer content
+* **Use lighter media** - Compress images and use short, optimized video clips (10-15 items recommended)
+* **Find balance** - One or two marquees per page is usually sufficient
+* **Load smart** - Enable lazy loading and use thumbnails with overlays
+
+## ♿ Accessibility Notes
+
+* Provide ALT text for informative images
+* Use SEO-friendly heading levels (H2/H3) matching page hierarchy
+* Offer pause or reading options for long testimonials or dense text
+* Keep animations subtle and avoid excessive motion
 
 ## 📥 Installation
 
