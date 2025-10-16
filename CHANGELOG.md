@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.7.9](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.7.8...3.7.9) (2025-10-16)
+
+
+### Features
+
+* romanian translation ([7e1fc95](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/7e1fc9561aa28ce942f70e24745fb377afb7ef5f))
+
 ## [3.7.8](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.7.7...3.7.8) (2025-10-13)
 
 
