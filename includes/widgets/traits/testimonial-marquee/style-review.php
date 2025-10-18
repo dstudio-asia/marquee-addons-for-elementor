@@ -50,6 +50,29 @@ trait Testimonial_Marquee_Style_Review
 			]
 		);
 
+		$this->add_responsive_control(
+			'deensimc_testimonial_star_icon_size',
+			[
+				'label' => esc_html__('Size', 'marquee-addons-for-elementor'),
+				'type' =>  Controls_Manager::SLIDER,
+				'size_units' => ['px'],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 100,
+						'step' => 1,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 16,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .deensimc-tes-ratings i' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .deensimc-tes-ratings svg' => 'height: {{SIZE}}{{UNIT}}; width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
 		$this->add_control(
 			'deensimc_tesimonial_review_star_color',
 			[
