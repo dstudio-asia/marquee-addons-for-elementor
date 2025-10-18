@@ -1,6 +1,5 @@
 .deensimc-video-marquee .deensimc-video-item {
   display: grid;
-  background: #000;
   place-items: center;
   min-width: 100px;
   width: 300px;
