@@ -1,6 +1,20 @@
 # Changelog
 
 
+## [3.7.11](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.7.9...3.7.11) (2025-10-20)
+
+
+### Features
+
+* add responsive control for testimonial star icon size ([b915374](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/b915374e1ca2cdba8a13c7ec4c50123dcae55e61))
+* increase star icon size ([638d837](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/638d83722589446c1fca3c308be7b5a99588e8e2))
+* norwegian translation ([24e825c](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/24e825ca8d2509f6f5222540fd05f7a7a5b21fb6))
+
+
+### Bug Fixes
+
+* remove unnecessary background color from video marquee items ([173d0ee](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/173d0ee5ed647a29ea3e8bda5845f8ceca0f3c1e))
+
 ## [3.7.9](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.7.8...3.7.9) (2025-10-16)
 
 
