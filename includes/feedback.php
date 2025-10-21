@@ -7,7 +7,7 @@ class deensimc_feedback {
     private $plugin_version = DEENSIMC_VERSION;
     private $plugin_name    = 'Marquee Addons for Elementor – Advanced Elements & Modern Motion Widgets';
     private $plugin_slug    = 'marquee-addons-for-elementor';
-    private $feedback_url   = 'https://crm.dstudio.asia/api/marquee-feedback';
+    private $feedback_url   = 'https://crm.dstudio.asia/api/feedback';
 
     public function __construct() {
         add_action('admin_enqueue_scripts', array($this, 'deensimc_enqueue_feedback_scripts'));
@@ -259,6 +259,7 @@ class deensimc_feedback {
             'email'          => $anonymous ? null : $feedback_data['user_data']['email'],
             'domain'         => $anonymous ? null : $feedback_data['user_data']['domain'],
             'site_id'        => $anonymous ? 'anonymous_' . wp_generate_password(12, false) : md5(get_site_url() . '-13'),
+            'product_uuid' => '1761028074-8691d3e4ae764e91aa611f6bacc4ba73',
             'anonymous'      => $anonymous,
             'comprehensive_data' => $feedback_data,
         );
