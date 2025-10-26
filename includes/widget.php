@@ -215,6 +215,12 @@ final class Marquee
 			add_action('admin_notices', [$this, 'deensimc_rate_us'], 10);
 			add_action('wp_ajax_deensimc_notice_dismiss', [$this, 'deensimc_notice_dismiss'], 10);
 			add_action('wp_ajax_deensimc_never_show_notice', [$this, 'deensimc_never_show_notice']);
+			add_action(
+				'elementor/editor/init',
+				function () {
+					require_once __DIR__ . '/misc/class-pro-widgets-placeholder.php';
+				}
+			);
 		}
 		add_action('elementor/frontend/after_enqueue_styles', [$this, 'deensimc_frontend_styles'], 20);
 		add_action('elementor/frontend/after_register_scripts', [$this, 'deensimc_frontend_scripts'], 20);
@@ -224,14 +230,6 @@ final class Marquee
 		add_action('elementor/editor/after_enqueue_scripts', [$this, 'deensimc_editor_script'], 10);
 		add_action('elementor/frontend/after_enqueue_scripts', [$this, 'deensimc_elementor_library'], 20);
 		add_filter('plugin_action_links_marquee-addons-for-elementor/marquee-addons-for-elementor.php', [$this, 'deensimc_upgrade_link'], 10);
-
-		add_action(
-			'elementor/editor/init',
-			function () {
-				require_once __DIR__ . '/misc/class-pro-widgets-placeholder.php';
-			}
-		);
-		add_action('elementor/editor/after_enqueue_scripts', [Marquee_Addons_Pro_Widgets_Placeholder::class, 'editor_enqueue'], 20);
 	}
 
 

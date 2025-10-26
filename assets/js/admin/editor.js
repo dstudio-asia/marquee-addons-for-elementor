@@ -13,8 +13,6 @@
     elementor.hooks.addFilter(
       "panel/elements/regionViews",
       function (regionViews) {
-        console.log({ MarqueeAddonsEditor });
-        console.log({ regionViews });
         if (
           MarqueeAddonsEditor.hasPro ||
           _.isEmpty(MarqueeAddonsEditor.placeholder_widgets)
@@ -33,7 +31,7 @@
           MarqueeAddonsEditor.placeholder_widgets,
           function (widget, name) {
             elementsCollection.add({
-              name: "ha-" + name,
+              name: "ma-" + name,
               title: widget.title,
               icon: widget.icon,
               categories: [CATEGORY_NAME],
@@ -47,14 +45,14 @@
           }
         });
         freeCategoryIndex = categoriesCollection.findIndex({
-          name: "happy_addons_category",
+          name: "deensimc_smooth_marquee",
         });
         if (freeCategoryIndex) {
           categoriesCollection.add(
             {
               name: "marquee_addons_pro",
-              title: "Happy Addons Pro",
-              icon: "hm hm-happyaddons",
+              title: "Marquee Addons Pro",
+              //   icon: "hm hm-happyaddons",
               defaultActive: false,
               sort: true,
               hideIfEmpty: true,
@@ -69,17 +67,17 @@
         ElementView = {
           className: function className() {
             var className = this.constructor.__super__.className.call(this);
-            if (!this.isEditable() && this.isHappyWidget()) {
-              className += " ha-element--promotion";
+            if (!this.isEditable() && this.isMAWidget()) {
+              className += " ma-element--promotion";
             }
             return className;
           },
-          isHappyWidget: function isHappyWidget() {
+          isMAWidget: function isMAWidget() {
             var widgetName = this.model.get("name");
-            return widgetName != undefined && widgetName.indexOf("ha-") === 0;
+            return widgetName != undefined && widgetName.indexOf("ma-") === 0;
           },
           onMouseDown: function onMouseDown() {
-            if (!this.isHappyWidget()) {
+            if (!this.isMAWidget()) {
               this.constructor.__super__.onMouseDown.call(this);
               return;
             }
@@ -95,9 +93,9 @@
                 blockStart: "-7",
               },
               actionButton: {
-                url: "https://marqueeaddons.com/pricing/?utm_source=ma-editor-pro-widgets&utm_medium=wp-elementor-editor&utm_campaign=ma-upgrade-pro",
+                url: "https://marqueeaddons.com/pricing",
                 text: MarqueeAddonsEditor.i18n.promotionDialogBtnTxt,
-                classes: ["elementor-button", "ha-btn--promotion", "go-pro"],
+                classes: ["elementor-button", "go-pro"],
               },
             });
           },
