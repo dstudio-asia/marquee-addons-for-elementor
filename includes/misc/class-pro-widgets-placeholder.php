@@ -14,7 +14,7 @@ class Marquee_Addons_Pro_Widgets_Placeholder
     public static function get_pro_widget_map()
     {
         return [
-            '3d-grid-marquee'          => [
+            'deensimcpro-3d-grid-marquee'          => [
                 'cat'    => 'general',
                 'title'  => __('3D Grid Marquee', 'marquee-addons-for-elementor'),
                 'icon'   => 'deensimcpro-3d-grid-marquee-icon eicon-deensimc-pro',
