@@ -107,7 +107,9 @@ class Marquee_Addons_Pro_Widgets_Placeholder
             'placeholder_widgets' => [],
             'hasPro'                  => !!class_exists('\Deensimcpro_Marquee\Marqueepro'),
             'i18n' => [
+                /* translators: %s: Widget name */
                 'promotionDialogHeader'     => esc_html__('%s Widget', 'marquee-addons-for-elementor'),
+                /* translators: %s: Widget name (used in promotional message) */
                 'promotionDialogMessage'    => esc_html__('Use %s widget with other exclusive pro widgets and 100% unique features to extend your toolbox and build sites faster and better.', 'marquee-addons-for-elementor'),
                 'promotionDialogBtnTxt'    => esc_html__('Upgrade Now', 'marquee-addons-for-elementor'),
                 'templatesEmptyTitle'       => esc_html__('No Templates Found', 'marquee-addons-for-elementor'),
