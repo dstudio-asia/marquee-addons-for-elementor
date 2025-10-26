@@ -8,10 +8,13 @@
       MarqueeAddonsEditor.i18n
     );
   };
+
   if (typeof elementor !== "undefined" && elementor.hooks) {
     elementor.hooks.addFilter(
       "panel/elements/regionViews",
       function (regionViews) {
+        console.log({ MarqueeAddonsEditor });
+        console.log({ regionViews });
         if (
           MarqueeAddonsEditor.hasPro ||
           _.isEmpty(MarqueeAddonsEditor.placeholder_widgets)
@@ -30,7 +33,7 @@
           MarqueeAddonsEditor.placeholder_widgets,
           function (widget, name) {
             elementsCollection.add({
-              name: "ma-" + name,
+              name: "ha-" + name,
               title: widget.title,
               icon: widget.icon,
               categories: [CATEGORY_NAME],
@@ -44,14 +47,14 @@
           }
         });
         freeCategoryIndex = categoriesCollection.findIndex({
-          name: "deensimc_smooth_marquee",
+          name: "happy_addons_category",
         });
         if (freeCategoryIndex) {
           categoriesCollection.add(
             {
               name: "marquee_addons_pro",
-              title: "Marquee Addons Pro",
-              //   icon: "hm hm-happyaddons",
+              title: "Happy Addons Pro",
+              icon: "hm hm-happyaddons",
               defaultActive: false,
               sort: true,
               hideIfEmpty: true,
@@ -92,7 +95,7 @@
                 blockStart: "-7",
               },
               actionButton: {
-                url: "https://marqueeaddons.com/pricing",
+                url: "https://marqueeaddons.com/pricing/?utm_source=ma-editor-pro-widgets&utm_medium=wp-elementor-editor&utm_campaign=ma-upgrade-pro",
                 text: MarqueeAddonsEditor.i18n.promotionDialogBtnTxt,
                 classes: ["elementor-button", "ha-btn--promotion", "go-pro"],
               },
