@@ -14,6 +14,7 @@
       "panel/elements/regionViews",
       function (regionViews) {
         if (
+          typeof MarqueeAddonsEditor === "undefined" ||
           MarqueeAddonsEditor.hasPro ||
           _.isEmpty(MarqueeAddonsEditor.placeholder_widgets)
         ) {

@@ -28,7 +28,7 @@ class Marquee_Addons_Pro_Widgets_Placeholder
     {
         $localize_data = [
             'placeholder_widgets' => [],
-            'hasPro'                  => false,
+            'hasPro'                  => !!class_exists('\Deensimcpro_Marquee\Marqueepro'),
             'i18n' => [
                 'promotionDialogHeader'     => esc_html__('%s Widget', 'marquee-addons-for-elementor'),
                 'promotionDialogMessage'    => esc_html__('Use %s widget with other exclusive pro widgets and 100% unique features to extend your toolbox and build sites faster and better.', 'marquee-addons-for-elementor'),

@@ -2,8 +2,6 @@
 
 namespace Deensimc_Marquee;
 
-use Deensimc_Marquee\Misc\Marquee_Addons_Pro_Widgets_Placeholder;
-
 final class Marquee
 {
 	/**
@@ -215,12 +213,7 @@ final class Marquee
 			add_action('admin_notices', [$this, 'deensimc_rate_us'], 10);
 			add_action('wp_ajax_deensimc_notice_dismiss', [$this, 'deensimc_notice_dismiss'], 10);
 			add_action('wp_ajax_deensimc_never_show_notice', [$this, 'deensimc_never_show_notice']);
-			add_action(
-				'elementor/editor/init',
-				function () {
-					require_once __DIR__ . '/misc/class-pro-widgets-placeholder.php';
-				}
-			);
+			add_action('elementor/editor/init',	[$this, 'init_pro_placeholder']);
 		}
 		add_action('elementor/frontend/after_enqueue_styles', [$this, 'deensimc_frontend_styles'], 20);
 		add_action('elementor/frontend/after_register_scripts', [$this, 'deensimc_frontend_scripts'], 20);
@@ -509,12 +502,19 @@ final class Marquee
 				'icon' => 'fa fa-plug',
 			]
 		);
-		$elements_manager->add_category(
-			'marquee_addons_pro',
-			[
-				'title' => esc_html__('Marquee Addons Pro', 'marquee-addons-for-elementor'),
-				'icon' => 'fa fa-plug',
-			]
-		);
+		if (!class_exists('\Deensimcpro_Marquee\Marqueepro')) {
+			$elements_manager->add_category(
+				'marquee_addons_pro',
+				[
+					'title' => esc_html__('Marquee Addons Pro', 'marquee-addons-for-elementor'),
+					'icon' => 'fa fa-plug',
+				]
+			);
+		}
+	}
+
+	function init_pro_placeholder()
+	{
+		require_once __DIR__ . '/misc/class-pro-widgets-placeholder.php';
 	}
 }
