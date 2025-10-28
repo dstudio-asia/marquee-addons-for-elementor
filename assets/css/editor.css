@@ -7,7 +7,6 @@
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 1;
   padding: 3px 4px;
   border: 1px solid #474242;
   border-right: none;
@@ -213,10 +212,7 @@ Pro
   }
 }
 
-.elementor-panel
-  #elementor-panel-category-marquee_addons_pro
-  .elementor-element--promotion
-  .elementor-element {
+.elementor-panel .ma-element--promotion {
   opacity: 0.5;
 }
 
