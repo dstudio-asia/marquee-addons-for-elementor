@@ -1,6 +1,25 @@
 # Changelog
 
 
+## [3.7.15](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.7.12...3.7.15) (2025-10-29)
+
+
+### Features
+
+* add MA Pro widgets placeholder system ([b707fe9](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/b707fe927077f355cf2433ea529ac604ddd117f1))
+* add new Pro widget placeholders to MA Pro mapping ([fa5d181](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/fa5d181b04c079c31349c44c9abcad96e8bdde0a))
+* add Pro widgets placeholder integration in Elementor editor ([08c06ae](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/08c06aef592c969e467480d8b521a23c99ced93d))
+* add translation strings for widget promotion dialog ([82fb795](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/82fb7958779cc590c8ed4483bfc0128452be56fe))
+* slovak translation ([5771e13](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/5771e136aa6c8f1905962abfffdc16ff91716a73))
+
+
+### Bug Fixes
+
+* adjust editor panel styles for promotion elements ([b6de39c](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/b6de39cbab2d288cd25a317aeae1806597ce75ea))
+* Fix the url redirection ([14d710d](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/14d710df1c7db94a5c645a4db47d35162afeeeeb))
+* improve Pro placeholder initialization and class detection ([ddb563c](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/ddb563cbb0f5b8c9079bbabf30d25addfa8d6c55))
+* promotional widget serach css issue and version update ([cb2b532](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/cb2b53273c3d0e8699d7afa2560303ed3e25908f))
+
 ## [3.7.11](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.7.9...3.7.11) (2025-10-20)
 
 
