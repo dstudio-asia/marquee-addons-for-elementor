@@ -1,0 +1,19 @@
+.deensimc-number-ticker .deensimc-number {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.deensimc-number-ticker .deensimc-number-ticker-icon {
+  position: relative;
+  font-size: 16px;
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+.deensimc-number-ticker .deensimc-number-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+}
