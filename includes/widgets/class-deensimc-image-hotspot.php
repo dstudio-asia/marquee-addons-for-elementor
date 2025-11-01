@@ -1,20 +1,27 @@
 <?php
 
-use Elementor\Controls_Manager;
-use Elementor\Group_Control_Typography;
 use Elementor\Group_Control_Image_Size;
-use Elementor\Repeater;
-use Elementor\Group_Control_Box_Shadow;
 use Elementor\Icons_Manager;
 use Elementor\Utils;
 use Elementor\Widget_Image;
 
-if (! defined('ABSPATH')) {
+if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly
 }
 
+require_once __DIR__ . '/traits/image-hotspot/trait-deensimc-image-controls.php';
+require_once __DIR__ . '/traits/image-hotspot/trait-deensimc-hotspots-controls.php';
+require_once __DIR__ . '/traits/image-hotspot/trait-deensimc-tooltip-controls.php';
+require_once __DIR__ . '/traits/image-hotspot/trait-deensimc-style-hotspot-controls.php';
+require_once __DIR__ . '/traits/image-hotspot/trait-deensimc-style-tooltip-controls.php';
+
 class Deensimc_Image_Hotspot extends Widget_Image
 {
+	use Deensimc_Image_Controls;
+	use Deensimc_Hotspots_Controls;
+	use Deensimc_Tooltip_Controls;
+	use Deensimc_Style_Hotspot_Controls;
+	use Deensimc_Style_Tooltip_Controls;
 
 	public function get_name()
 	{
@@ -36,20 +43,11 @@ class Deensimc_Image_Hotspot extends Widget_Image
 		return ['image', 'tooltip', 'CTA', 'dot', 'marquee', 'hotspot'];
 	}
 
-	/**
-	 * Get style dependencies.
-	 *
-	 * Retrieve the list of style dependencies the widget requires.
-	 *
-	 * @since 3.24.0
-	 * @access public
-	 *
-	 * @return array Widget style dependencies.
-	 */
 	public function get_style_depends(): array
 	{
 		return ['deensimc-image-hotspot-style'];
 	}
+
 	public function get_script_depends(): array
 	{
 		return ['deensimc-image-hotspot-script'];
@@ -57,973 +55,12 @@ class Deensimc_Image_Hotspot extends Widget_Image
 
 	protected function register_controls()
 	{
-		parent::register_controls();
-
-		/**
-		 * Image Section
-		 */
-
-		$this->remove_control('caption_source');
-		$this->remove_control('caption');
-		$this->remove_control('link_to');
-		$this->remove_control('link');
-		$this->remove_control('open_lightbox');
-
-		/**
-		 * Section Hotspot
-		 */
-		$this->start_controls_section(
-			'hotspot_section',
-			[
-				'label' => esc_html__('Hotspot', 'marquee-addons-for-elementor'),
-			]
-		);
-
-		$repeater = new Repeater();
-
-		$repeater->start_controls_tabs('hotspot_repeater');
-
-		$repeater->start_controls_tab(
-			'hotspot_content_tab',
-			[
-				'label' => esc_html__('Content', 'marquee-addons-for-elementor'),
-			]
-		);
-
-		$repeater->add_control(
-			'hotspot_label',
-			[
-				'label' => esc_html__('Label', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::TEXT,
-				'default' => '',
-				'label_block' => true,
-				'dynamic' => [
-					'active' => true,
-				],
-			]
-		);
-
-		$repeater->add_control(
-			'hotspot_link',
-			[
-				'label' => esc_html__('Link', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::URL,
-				'dynamic' => [
-					'active' => true,
-				],
-			]
-		);
-
-		$repeater->add_control(
-			'hotspot_icon',
-			[
-				'label' => esc_html__('Icon', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::ICONS,
-				'skin' => 'inline',
-				'label_block' => false,
-			]
-		);
-
-		$start = is_rtl() ? 'right' : 'left';
-		$end = is_rtl() ? 'left' : 'right';
-
-		$repeater->add_control(
-			'hotspot_icon_position',
-			[
-				'label' => esc_html__('Icon Position', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::CHOOSE,
-				'options' => [
-					'start' => [
-						'title' => esc_html__('Start', 'marquee-addons-for-elementor'),
-						'icon' => "eicon-h-align-{$start}",
-					],
-					'end' => [
-						'title' => esc_html__('End', 'marquee-addons-for-elementor'),
-						'icon' => "eicon-h-align-{$end}",
-					],
-				],
-				'selectors_dictionary' => [
-					'start' => 'grid-column: 1;',
-					'end' => 'grid-column: 2;',
-				],
-				'condition' => [
-					'hotspot_icon[value]!' => '',
-					'hotspot_label[value]!' => '',
-				],
-				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}} .deensimc-image-hotspot__icon' => '{{VALUE}}',
-				],
-				'default' => 'start',
-			]
-		);
-
-		$repeater->add_control(
-			'hotspot_icon_spacing',
-			[
-				'label' => esc_html__('Icon Spacing', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => ['px', 'em', 'rem', 'custom'],
-				'range' => [
-					'px' => [
-						'max' => 100,
-					],
-					'em' => [
-						'max' => 10,
-					],
-					'rem' => [
-						'max' => 10,
-					],
-				],
-				'default' => [
-					'size' => 5,
-				],
-				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}} .deensimc-image-hotspot__button' =>
-					'grid-gap: {{SIZE}}{{UNIT}};',
-				],
-				'condition' => [
-					'hotspot_icon[value]!' => '',
-					'hotspot_label[value]!' => '',
-				],
-			]
-		);
-
-		$repeater->add_control(
-			'hotspot_custom_size',
-			[
-				'label' => esc_html__('Custom Hotspot Size', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::SWITCHER,
-				'label_off' => esc_html__('Off', 'marquee-addons-for-elementor'),
-				'label_on' => esc_html__('On', 'marquee-addons-for-elementor'),
-				'default' => 'no',
-				'description' => esc_html__('Set custom Hotspot size that will only affect this specific hotspot.', 'marquee-addons-for-elementor'),
-			]
-		);
-
-		$repeater->add_control(
-			'hotspot_width',
-			[
-				'label' => esc_html__('Min Width', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => ['px', '%', 'em', 'rem', 'vw', 'custom'],
-				'range' => [
-					'px' => [
-						'max' => 1000,
-					],
-					'em' => [
-						'max' => 100,
-					],
-					'rem' => [
-						'max' => 100,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}}' => '--hotspot-min-width: {{SIZE}}{{UNIT}}',
-				],
-				'condition' => [
-					'hotspot_custom_size' => 'yes',
-				],
-			]
-		);
-
-		$repeater->add_control(
-			'hotspot_height',
-			[
-				'label' => esc_html__('Min Height', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => ['px', 'em', 'rem', 'vh', 'custom'],
-				'range' => [
-					'px' => [
-						'max' => 1000,
-					],
-					'em' => [
-						'max' => 100,
-					],
-					'rem' => [
-						'max' => 100,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}}' => '--hotspot-min-height: {{SIZE}}{{UNIT}}',
-				],
-				'condition' => [
-					'hotspot_custom_size' => 'yes',
-				],
-			]
-		);
-
-		$repeater->add_control(
-			'hotspot_tooltip_content',
-			[
-				'render_type' => 'template',
-				'label' => esc_html__('Tooltip Content', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::WYSIWYG,
-				'default' => esc_html__('Add Your Tooltip Text Here', 'marquee-addons-for-elementor'),
-			]
-		);
-
-		$repeater->end_controls_tab();
-
-		$repeater->start_controls_tab(
-			'hotspot_position_tab',
-			[
-				'label' => esc_html__('Position', 'marquee-addons-for-elementor'),
-			]
-		);
-
-		$repeater->add_control(
-			'hotspot_horizontal',
-			[
-				'label' => esc_html__('Horizontal Orientation', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::CHOOSE,
-				'default' => is_rtl() ? 'right' : 'left',
-				'options' => [
-					'left' => [
-						'title' => esc_html__('Left', 'marquee-addons-for-elementor'),
-						'icon' => 'eicon-h-align-left',
-					],
-					'right' => [
-						'title' => esc_html__('Right', 'marquee-addons-for-elementor'),
-						'icon' => 'eicon-h-align-right',
-					],
-				],
-				'toggle' => false,
-			]
-		);
-
-		$repeater->add_responsive_control(
-			'hotspot_offset_x',
-			[
-				'label' => esc_html__('Offset', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => ['%'],
-				'default' => [
-					'unit' => '%',
-					'size' => 50,
-				],
-				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}}' =>
-					'{{hotspot_horizontal.VALUE}}: {{SIZE}}%; --hotspot-translate-x: {{SIZE}}%;',
-				],
-			]
-		);
-
-		$repeater->add_control(
-			'hotspot_vertical',
-			[
-				'label' => esc_html__('Vertical Orientation', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::CHOOSE,
-				'options' => [
-					'top' => [
-						'title' => esc_html__('Top', 'marquee-addons-for-elementor'),
-						'icon' => 'eicon-v-align-top',
-					],
-					'bottom' => [
-						'title' => esc_html__('Bottom', 'marquee-addons-for-elementor'),
-						'icon' => 'eicon-v-align-bottom',
-					],
-				],
-				'default' => 'top',
-				'toggle' => false,
-			]
-		);
-
-		$repeater->add_responsive_control(
-			'hotspot_offset_y',
-			[
-				'label' => esc_html__('Offset', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => ['%'],
-				'default' => [
-					'unit' => '%',
-					'size' => 50,
-				],
-				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}}' =>
-					'{{hotspot_vertical.VALUE}}: {{SIZE}}%; --hotspot-translate-y: {{SIZE}}%;',
-				],
-			]
-		);
-
-		$repeater->add_control(
-			'hotspot_tooltip_position',
-			[
-				'label' => esc_html__('Custom Tooltip Properties', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::SWITCHER,
-				'label_off' => esc_html__('Off', 'marquee-addons-for-elementor'),
-				'label_on' => esc_html__('On', 'marquee-addons-for-elementor'),
-				'default' => 'no',
-				'description' => esc_html__('Set custom Tooltip opening that will only affect this specific hotspot.', 'marquee-addons-for-elementor'),
-			]
-		);
-
-		$repeater->add_control(
-			'hotspot_heading',
-			[
-				'label' => esc_html__('Box', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::HEADING,
-				'condition' => [
-					'hotspot_tooltip_position' => 'yes',
-				],
-			]
-		);
-
-		$repeater->add_responsive_control(
-			'hotspot_position',
-			[
-				'label' => esc_html__('Position', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::CHOOSE,
-				'options' => [
-					'right' => [
-						'title' => esc_html__('Left', 'marquee-addons-for-elementor'),
-						'icon' => 'eicon-h-align-left',
-					],
-					'bottom' => [
-						'title' => esc_html__('Top', 'marquee-addons-for-elementor'),
-						'icon' => 'eicon-v-align-top',
-					],
-					'left' => [
-						'title' => esc_html__('Right', 'marquee-addons-for-elementor'),
-						'icon' => 'eicon-h-align-right',
-					],
-					'top' => [
-						'title' => esc_html__('Bottom', 'marquee-addons-for-elementor'),
-						'icon' => 'eicon-v-align-bottom',
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}} .deensimc-image-hotspot--tooltip-position' => 'right: initial;bottom: initial;left: initial;top: initial;{{VALUE}}: calc(100% + 5px );',
-				],
-				'condition' => [
-					'hotspot_tooltip_position' => 'yes',
-				],
-				'render_type' => 'template',
-			]
-		);
-
-		$repeater->add_responsive_control(
-			'hotspot_tooltip_width',
-			[
-				'label' => esc_html__('Min Width', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => ['px', '%', 'em', 'rem', 'vw', 'custom'],
-				'range' => [
-					'px' => [
-						'max' => 2000,
-					],
-					'em' => [
-						'max' => 200,
-					],
-					'rem' => [
-						'max' => 200,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}} .deensimc-image-hotspot__tooltip' => 'min-width: {{SIZE}}{{UNIT}}',
-				],
-				'condition' => [
-					'hotspot_tooltip_position' => 'yes',
-				],
-			]
-		);
-
-		$repeater->add_control(
-			'hotspot_tooltip_text_wrap',
-			[
-				'label' => esc_html__('Text Wrap', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::SWITCHER,
-				'label_off' => esc_html__('Off', 'marquee-addons-for-elementor'),
-				'label_on' => esc_html__('On', 'marquee-addons-for-elementor'),
-				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}}' => '--white-space: normal',
-				],
-				'condition' => [
-					'hotspot_tooltip_position' => 'yes',
-				],
-			]
-		);
-
-		$repeater->end_controls_tab();
-
-		$repeater->end_controls_tabs();
-
-		$this->add_control(
-			'hotspot',
-			[
-				'label' => esc_html__('Hotspot', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::REPEATER,
-				'fields' => $repeater->get_controls(),
-				'title_field' => '{{{ hotspot_label }}}',
-				'default' => [
-					[
-						// Default #1 circle
-					],
-				],
-				'frontend_available' => true,
-			]
-		);
-
-		$this->add_control(
-			'hotspot_animation',
-			[
-				'label' => esc_html__('Animation', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::SELECT,
-				'options' => [
-					'deensimc-image-hotspot--soft-beat' => esc_html__('Soft Beat', 'marquee-addons-for-elementor'),
-					'deensimc-image-hotspot--expand' => esc_html__('Expand', 'marquee-addons-for-elementor'),
-					'deensimc-image-hotspot--overlay' => esc_html__('Overlay', 'marquee-addons-for-elementor'),
-					'' => esc_html__('None', 'marquee-addons-for-elementor'),
-				],
-				'default' => 'deensimc-image-hotspot--expand',
-				'separator' => 'before',
-			]
-		);
-
-		$this->add_control(
-			'hotspot_sequenced_animation',
-			[
-				'label' => esc_html__('Sequenced Animation', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::SWITCHER,
-				'label_off' => esc_html__('Off', 'marquee-addons-for-elementor'),
-				'label_on' => esc_html__('On', 'marquee-addons-for-elementor'),
-				'default' => 'no',
-				'frontend_available' => true,
-				'render_type' => 'none',
-			]
-		);
-
-		$this->add_control(
-			'hotspot_sequenced_animation_duration',
-			[
-				'label' => esc_html__('Sequence Duration', 'marquee-addons-for-elementor') . ' (ms)',
-				'type' => Controls_Manager::SLIDER,
-				'range' => [
-					'px' => [
-						'min' => 0,
-						'max' => 20000,
-						'step' => 100,
-					],
-				],
-				'condition' => [
-					'hotspot_sequenced_animation' => 'yes',
-				],
-				'frontend_available' => true,
-				'render_type' => 'ui',
-			]
-		);
-
-		$this->end_controls_section();
-
-		/**
-		 * Tooltip Section
-		 */
-		$this->start_controls_section(
-			'tooltip_section',
-			[
-				'label' => esc_html__('Tooltip', 'marquee-addons-for-elementor'),
-			]
-		);
-
-		$this->add_responsive_control(
-			'tooltip_position',
-			[
-				'label' => esc_html__('Position', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::CHOOSE,
-				'default' => 'top',
-				'toggle' => false,
-				'options' => [
-					'right' => [
-						'title' => esc_html__('Left', 'marquee-addons-for-elementor'),
-						'icon' => 'eicon-h-align-left',
-					],
-					'bottom' => [
-						'title' => esc_html__('Top', 'marquee-addons-for-elementor'),
-						'icon' => 'eicon-v-align-top',
-					],
-					'left' => [
-						'title' => esc_html__('Right', 'marquee-addons-for-elementor'),
-						'icon' => 'eicon-h-align-right',
-					],
-					'top' => [
-						'title' => esc_html__('Bottom', 'marquee-addons-for-elementor'),
-						'icon' => 'eicon-v-align-bottom',
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} .deensimc-image-hotspot--tooltip-position' => 'right: initial;bottom: initial;left: initial;top: initial;{{VALUE}}: calc(100% + 5px );',
-				],
-				'frontend_available' => true,
-			]
-		);
-
-		$this->add_responsive_control(
-			'tooltip_trigger',
-			[
-				'label' => esc_html__('Trigger', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::SELECT,
-				'options' => [
-					'mouseenter' => esc_html__('Hover', 'marquee-addons-for-elementor'),
-					'click' => esc_html__('Click', 'marquee-addons-for-elementor'),
-					'none' => esc_html__('None', 'marquee-addons-for-elementor'),
-				],
-				'default' => 'click',
-				'frontend_available' => true,
-			]
-		);
-
-		$this->add_control(
-			'tooltip_animation',
-			[
-				'label' => esc_html__('Animation', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::SELECT,
-				'options' => [
-					'deensimc-image-hotspot--fade-in-out' => esc_html__('Fade In/Out', 'marquee-addons-for-elementor'),
-					'deensimc-image-hotspot--fade-grow' => esc_html__('Fade Grow', 'marquee-addons-for-elementor'),
-					'deensimc-image-hotspot--fade-direction' => esc_html__('Fade By Direction', 'marquee-addons-for-elementor'),
-					'deensimc-image-hotspot--slide-direction' => esc_html__('Slide By Direction', 'marquee-addons-for-elementor'),
-				],
-				'default' => 'deensimc-image-hotspot--fade-in-out',
-				'placeholder' => esc_html__('Enter your image caption', 'marquee-addons-for-elementor'),
-				'condition' => [
-					'tooltip_trigger!' => 'none',
-				],
-				'frontend_available' => true,
-			]
-		);
-
-		$this->add_control(
-			'tooltip_animation_duration',
-			[
-				'label' => esc_html__('Animation Duration', 'marquee-addons-for-elementor') . ' (ms)',
-				'type' => Controls_Manager::SLIDER,
-				'range' => [
-					'px' => [
-						'min' => 0,
-						'max' => 10000,
-						'step' => 100,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}}' => '--tooltip-transition-duration: {{SIZE}}ms;',
-				],
-				'condition' => [
-					'tooltip_trigger!' => 'none',
-				],
-			]
-		);
-
-		$this->end_controls_section();
-
-		/*************
-		 * Style Tab
-		 ************/
-		/**
-		 * Section Style Image
-		 */
-
-		$this->remove_control('section_style_caption');
-
-		$this->remove_control('caption_align');
-
-		$this->remove_control('text_color');
-
-		$this->remove_control('caption_background_color');
-
-		$this->remove_control('caption_typography');
-
-		$this->remove_control('caption_text_shadow');
-
-		$this->remove_control('caption_space');
-
-		$this->update_control('align', [
-			'options' => [
-				'flex-start' => [
-					'title' => esc_html__('Start', 'marquee-addons-for-elementor'),
-					'icon' => 'eicon-text-align-left',
-				],
-				'center' => [
-					'title' => esc_html__('Center', 'marquee-addons-for-elementor'),
-					'icon' => 'eicon-text-align-center',
-				],
-				'flex-end' => [
-					'title' => esc_html__('End', 'marquee-addons-for-elementor'),
-					'icon' => 'eicon-text-align-right',
-				],
-			],
-			'selectors' => [
-				'{{WRAPPER}}' => '--background-align: {{VALUE}};',
-			],
-		]);
-
-		$this->update_control(
-			'width',
-			[
-				'selectors' => [
-					'{{WRAPPER}}' => '--container-width: {{SIZE}}{{UNIT}}; --image-width: 100%;',
-				],
-			]
-		);
-
-		$this->update_control(
-			'space',
-			[
-				'selectors' => [
-					'{{WRAPPER}}' => '--container-max-width: {{SIZE}}{{UNIT}}',
-				],
-			]
-		);
-
-		$this->update_control(
-			'height',
-			[
-				'selectors' => [
-					'{{WRAPPER}}' => '--container-height: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-
-		$this->remove_control('hover_animation');
-
-		$this->update_control(
-			'opacity',
-			[
-				'selectors' => [
-					'{{WRAPPER}}' => '--opacity: {{SIZE}};',
-				],
-			]
-		);
-
-		$this->update_control(
-			'opacity_hover',
-			[
-				'selectors' => [
-					'{{WRAPPER}} .elementor-widget-container>img:hover' => '--opacity: {{SIZE}};',
-				],
-			]
-		);
-
-		/**
-		 * Section Style Hotspot
-		 */
-		$this->start_controls_section(
-			'section_style_hotspot',
-			[
-				'label' => esc_html__('Hotspot', 'marquee-addons-for-elementor'),
-				'tab' => Controls_Manager::TAB_STYLE,
-			]
-		);
-
-		$this->add_control(
-			'style_hotspot_color',
-			[
-				'label' => esc_html__('Color', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}}' => '--hotspot-color: {{VALUE}};',
-				],
-
-			]
-		);
-
-		$this->add_responsive_control(
-			'style_hotspot_size',
-			[
-				'label' => esc_html__('Size', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
-				'range' => [
-					'px' => [
-						'max' => 300,
-					],
-					'em' => [
-						'max' => 30,
-					],
-					'rem' => [
-						'max' => 30,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}}' => '--hotspot-size: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name' => 'style_typography',
-				'selector' => '{{WRAPPER}} .deensimc-image-hotspot__label',
-
-			]
-		);
-
-		$this->add_responsive_control(
-			'style_hotspot_width',
-			[
-				'label' => esc_html__('Min Width', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => ['px', '%', 'em', 'rem', 'vw', 'custom'],
-				'range' => [
-					'px' => [
-						'max' => 1000,
-					],
-					'em' => [
-						'max' => 100,
-					],
-					'rem' => [
-						'max' => 100,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}}' => '--hotspot-min-width: {{SIZE}}{{UNIT}}',
-				],
-			]
-		);
-
-		$this->add_responsive_control(
-			'style_hotspot_height',
-			[
-				'label' => esc_html__('Min Height', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => ['px', 'em', 'rem', 'vh', 'custom'],
-				'range' => [
-					'px' => [
-						'max' => 1000,
-					],
-					'em' => [
-						'max' => 100,
-					],
-					'rem' => [
-						'max' => 100,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}}' => '--hotspot-min-height: {{SIZE}}{{UNIT}}',
-				],
-			]
-		);
-
-		$this->add_control(
-			'style_hotspot_box_color',
-			[
-				'label' => esc_html__('Box Color', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}}' => '--hotspot-box-color: {{VALUE}};',
-				],
-
-			]
-		);
-
-		$this->add_responsive_control(
-			'style_hotspot_padding',
-			[
-				'label' => esc_html__('Padding', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => ['px', '%', 'em', 'rem', 'vw', 'custom'],
-				'range' => [
-					'px' => [
-						'max' => 100,
-					],
-					'em' => [
-						'max' => 10,
-					],
-					'rem' => [
-						'max' => 10,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}}' => '--hotspot-padding: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-
-		$this->add_control(
-			'style_hotspot_border_radius',
-			[
-				'label' => esc_html__('Border Radius', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
-				'selectors' => [
-					'{{WRAPPER}}' => '--hotspot-border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Box_Shadow::get_type(),
-			[
-				'name' => 'style_hotspot_box_shadow',
-				'selector' => '
-					{{WRAPPER}} .deensimc-image-hotspot:not(.deensimc-image-hotspot--circle) .deensimc-image-hotspot__button,
-					{{WRAPPER}} .deensimc-image-hotspot.deensimc-image-hotspot--circle .deensimc-image-hotspot__button .deensimc-image-hotspot__outer-circle
-				',
-			]
-		);
-
-		$this->end_controls_section();
-
-		/**
-		 * Section Style Tooltip
-		 */
-		$this->start_controls_section(
-			'section_style_tooltip',
-			[
-				'label' => esc_html__('Tooltip', 'marquee-addons-for-elementor'),
-				'tab' => Controls_Manager::TAB_STYLE,
-			]
-		);
-
-		$this->add_control(
-			'style_tooltip_text_color',
-			[
-				'label' => esc_html__('Text Color', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}}' => '--tooltip-text-color: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name' => 'style_tooltip_typography',
-				'selector' => '{{WRAPPER}} .deensimc-image-hotspot__tooltip',
-
-			]
-		);
-
-		$this->add_responsive_control(
-			'style_tooltip_align',
-			[
-				'label' => esc_html__('Alignment', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::CHOOSE,
-				'options' => [
-					'left' => [
-						'title' => esc_html__('Left', 'marquee-addons-for-elementor'),
-						'icon' => 'eicon-text-align-left',
-					],
-					'center' => [
-						'title' => esc_html__('Center', 'marquee-addons-for-elementor'),
-						'icon' => 'eicon-text-align-center',
-					],
-					'right' => [
-						'title' => esc_html__('Right', 'marquee-addons-for-elementor'),
-						'icon' => 'eicon-text-align-right',
-					],
-					'justify' => [
-						'title' => esc_html__('Justified', 'marquee-addons-for-elementor'),
-						'icon' => 'eicon-text-align-justify',
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}}' => '--tooltip-align: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->add_control(
-			'style_tooltip_heading',
-			[
-				'label' => esc_html__('Box', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::HEADING,
-				'separator' => 'before',
-			]
-		);
-
-		$this->add_responsive_control(
-			'style_tooltip_width',
-			[
-				'label' => esc_html__('Min Width', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => ['px', 'em', 'rem', 'vw', 'custom'],
-				'range' => [
-					'px' => [
-						'max' => 2000,
-					],
-					'em' => [
-						'max' => 200,
-					],
-					'rem' => [
-						'max' => 200,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}}' => '--tooltip-min-width: {{SIZE}}{{UNIT}}',
-				],
-			]
-		);
-
-		$this->add_responsive_control(
-			'style_tooltip_max_width',
-			[
-				'label' => esc_html__('Max Width', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => ['px', 'em', 'rem', 'vw', 'custom'],
-				'range' => [
-					'px' => [
-						'max' => 2000,
-					],
-					'em' => [
-						'max' => 200,
-					],
-					'rem' => [
-						'max' => 200,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}}' => '--tooltip-max-width: {{SIZE}}{{UNIT}}',
-				],
-			]
-		);
-
-		$this->add_responsive_control(
-			'style_tooltip_padding',
-			[
-				'label' => esc_html__('Padding', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => ['px', '%', 'em', 'rem', 'vw', 'custom'],
-				'selectors' => [
-					'{{WRAPPER}}' => '--tooltip-padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-
-		$this->add_control(
-			'style_tooltip_color',
-			[
-				'label' => esc_html__('Color', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}}' => '--tooltip-color: {{VALUE}}',
-				],
-			]
-		);
-
-		$this->add_control(
-			'style_tooltip_border_radius',
-			[
-				'label' => esc_html__('Border Radius', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
-				'selectors' => [
-					'{{WRAPPER}}' => '--tooltip-border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Box_Shadow::get_type(),
-			[
-				'name' => 'style_tooltip_box_shadow',
-				'selector' => '{{WRAPPER}} .deensimc-image-hotspot__tooltip',
-			]
-		);
-
-		$this->end_controls_section();
+		$this->register_deensimc_image_section_controls();
+		$this->register_deensimc_hotspots_section_controls();
+		$this->register_deensimc_tooltip_section_controls();
+		$this->register_deensimc_style_hotspot_section_controls();
+		$this->register_deensimc_style_tooltip_section_controls();
 	}
-
 
 	protected function render()
 	{
@@ -1033,24 +70,24 @@ class Deensimc_Image_Hotspot extends Widget_Image
 			return;
 		}
 
-		$is_tooltip_direction_animation = 'deensimc-image-hotspot--slide-direction' === $settings['tooltip_animation'] || 'deensimc-image-hotspot--fade-direction' === $settings['tooltip_animation'];
-		$show_tooltip = 'none' === $settings['tooltip_trigger'];
-		$sequenced_animation_class = 'yes' === $settings['hotspot_sequenced_animation'] ? 'deensimc-image-hotspot--sequenced' : '';
+		$is_tooltip_direction_animation = 'deensimc-image-hotspot--slide-direction' === $settings['deensimc_tooltip_animation'] || 'deensimc-image-hotspot--fade-direction' === $settings['deensimc_tooltip_animation'];
+		$show_tooltip = 'none' === $settings['deensimc_tooltip_trigger'];
+		$sequenced_animation_class = 'yes' === $settings['deensimc_hotspot_sequenced_animation'] ? 'deensimc-image-hotspot--sequenced' : '';
 
 		// Main Image
 		Group_Control_Image_Size::print_attachment_image_html($settings, 'image', 'image');
 
 		// Hotspot
-		foreach ($settings['hotspot'] as $key => $hotspot) :
-			$is_circle = ! $hotspot['hotspot_label'] && ! $hotspot['hotspot_icon']['value'];
-			$is_only_icon = ! $hotspot['hotspot_label'] && $hotspot['hotspot_icon']['value'];
-			$hotspot_position_x = ( isset( $hotspot['hotspot_offset_x']['unit'] ) && '%' === $hotspot['hotspot_offset_x']['unit'] ) ? 'deensimc-image-hotspot--position-' . $hotspot['hotspot_horizontal'] : '';
-			$hotspot_position_y = ( isset( $hotspot['hotspot_offset_y']['unit'] ) && '%' === $hotspot['hotspot_offset_y']['unit'] ) ? 'deensimc-image-hotspot--position-' . $hotspot['hotspot_vertical'] : '';
-			$is_hotspot_link = ! empty($hotspot['hotspot_link']['url']);
+		foreach ($settings['deensimc_hotspot'] as $key => $hotspot) :
+			$is_circle = !$hotspot['deensimc_hotspot_label'] && !$hotspot['deensimc_hotspot_icon']['value'];
+			$is_only_icon = !$hotspot['deensimc_hotspot_label'] && $hotspot['deensimc_hotspot_icon']['value'];
+			$hotspot_position_x = (isset($hotspot['deensimc_hotspot_offset_x']['unit']) && '%' === $hotspot['deensimc_hotspot_offset_x']['unit']) ? 'deensimc-image-hotspot--position-' . $hotspot['deensimc_hotspot_horizontal'] : '';
+			$hotspot_position_y = (isset($hotspot['deensimc_hotspot_offset_y']['unit']) && '%' === $hotspot['deensimc_hotspot_offset_y']['unit']) ? 'deensimc-image-hotspot--position-' . $hotspot['deensimc_hotspot_vertical'] : '';
+			$is_hotspot_link = !empty($hotspot['deensimc_hotspot_link']['url']);
 			$hotspot_element_tag = $is_hotspot_link ? 'a' : 'div';
 
 			// hotspot attributes
-			$hotspot_repeater_setting_key = $this->get_repeater_setting_key('hotspot', 'hotspots', $key);
+			$hotspot_repeater_setting_key = $this->get_repeater_setting_key('hotspot', 'deensimc_hotspot', $key);
 			$this->add_render_attribute(
 				$hotspot_repeater_setting_key,
 				[
@@ -1061,7 +98,7 @@ class Deensimc_Image_Hotspot extends Widget_Image
 						$hotspot_position_x,
 						$hotspot_position_y,
 						$is_hotspot_link ? 'deensimc-image-hotspot--link' : '',
-						('click' === $settings['tooltip_trigger'] && $is_hotspot_link) ? 'deensimc-image-hotspot--no-tooltip' : '',
+						('click' === $settings['deensimc_tooltip_trigger'] && $is_hotspot_link) ? 'deensimc-image-hotspot--no-tooltip' : '',
 					],
 				]
 			);
@@ -1073,23 +110,23 @@ class Deensimc_Image_Hotspot extends Widget_Image
 			}
 
 			if ($is_hotspot_link) {
-				$this->add_link_attributes($hotspot_repeater_setting_key, $hotspot['hotspot_link']);
+				$this->add_link_attributes($hotspot_repeater_setting_key, $hotspot['deensimc_hotspot_link']);
 			}
 
 			// hotspot trigger attributes
-			$trigger_repeater_setting_key = $this->get_repeater_setting_key('trigger', 'hotspots', $key);
+			$trigger_repeater_setting_key = $this->get_repeater_setting_key('trigger', 'deensimc_hotspot', $key);
 			$this->add_render_attribute(
 				$trigger_repeater_setting_key,
 				[
 					'class' => [
 						'deensimc-image-hotspot__button',
-						$settings['hotspot_animation'],
+						$settings['deensimc_hotspot_animation'],
 					],
 				]
 			);
 
 			//direction mask attributes
-			$direction_mask_repeater_setting_key = $this->get_repeater_setting_key('deensimc-image-hotspot__direction-mask', 'hotspots', $key);
+			$direction_mask_repeater_setting_key = $this->get_repeater_setting_key('deensimc-image-hotspot__direction-mask', 'deensimc_hotspot', $key);
 			$this->add_render_attribute(
 				$direction_mask_repeater_setting_key,
 				[
@@ -1101,54 +138,46 @@ class Deensimc_Image_Hotspot extends Widget_Image
 			);
 
 			//tooltip attributes
-			$tooltip_custom_position = ($is_tooltip_direction_animation && $hotspot['hotspot_tooltip_position'] && $hotspot['hotspot_position']) ? 'deensimc-image-hotspot--override-tooltip-animation-from-' . $hotspot['hotspot_position'] : '';
-			$tooltip_repeater_setting_key = $this->get_repeater_setting_key('tooltip', 'hotspots', $key);
+			$tooltip_custom_position = ($is_tooltip_direction_animation && $hotspot['deensimc_hotspot_tooltip_position'] && $hotspot['deensimc_hotspot_position']) ? 'deensimc-image-hotspot--override-tooltip-animation-from-' . $hotspot['deensimc_hotspot_position'] : '';
+			$tooltip_repeater_setting_key = $this->get_repeater_setting_key('tooltip', 'deensimc_hotspot', $key);
 			$this->add_render_attribute(
 				$tooltip_repeater_setting_key,
 				[
 					'class' => [
 						'deensimc-image-hotspot__tooltip',
 						($show_tooltip) ? 'deensimc-image-hotspot--show-tooltip' : '',
-						(! $is_tooltip_direction_animation) ? 'deensimc-image-hotspot--tooltip-position' : '',
-						(! $show_tooltip) ? $settings['tooltip_animation'] : '',
+						(!$is_tooltip_direction_animation) ? 'deensimc-image-hotspot--tooltip-position' : '',
+						(!$show_tooltip) ? $settings['deensimc_tooltip_animation'] : '',
 						$tooltip_custom_position,
 					],
 				]
 			); ?>
 
-			<?php // Hotspot 
-			?>
 			<<?php Utils::print_validated_html_tag($hotspot_element_tag); ?> <?php $this->print_render_attribute_string($hotspot_repeater_setting_key); ?>>
 
-				<?php // Hotspot Trigger 
-				?>
 				<div <?php $this->print_render_attribute_string($trigger_repeater_setting_key); ?>>
 					<?php if ($is_circle) : ?>
 						<div class="deensimc-image-hotspot__outer-circle"></div>
 						<div class="deensimc-image-hotspot__inner-circle"></div>
 					<?php else : ?>
-						<?php if ($hotspot['hotspot_icon']['value']) : ?>
-							<div class="deensimc-image-hotspot__icon"><?php Icons_Manager::render_icon($hotspot['hotspot_icon']); ?></div>
+						<?php if ($hotspot['deensimc_hotspot_icon']['value']) : ?>
+							<div class="deensimc-image-hotspot__icon"><?php Icons_Manager::render_icon($hotspot['deensimc_hotspot_icon']); ?></div>
 						<?php endif; ?>
-						<?php if ($hotspot['hotspot_label']) : ?>
+						<?php if ($hotspot['deensimc_hotspot_label']) : ?>
 							<div class="deensimc-image-hotspot__label"><?php
-															// PHPCS - the main text of a widget should not be escaped.
-															echo $hotspot['hotspot_label']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-															?></div>
+																		echo $hotspot['deensimc_hotspot_label']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+																		?></div>
 						<?php endif; ?>
 					<?php endif; ?>
 				</div>
 
-				<?php // Hotspot Tooltip 
-				?>
-				<?php if ($hotspot['hotspot_tooltip_content'] && ! ('click' === $settings['tooltip_trigger'] && $is_hotspot_link)) : ?>
+				<?php if ($hotspot['deensimc_hotspot_tooltip_content'] && !('click' === $settings['deensimc_tooltip_trigger'] && $is_hotspot_link)) : ?>
 					<?php if ($is_tooltip_direction_animation) : ?>
 						<div <?php $this->print_render_attribute_string($direction_mask_repeater_setting_key); ?>>
 						<?php endif; ?>
 						<div <?php $this->print_render_attribute_string($tooltip_repeater_setting_key); ?>>
 							<?php
-							// PHPCS - the main text of a widget should not be escaped.
-							echo $hotspot['hotspot_tooltip_content']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+							echo $hotspot['deensimc_hotspot_tooltip_content']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 							?>
 						</div>
 						<?php if ($is_tooltip_direction_animation) : ?>
@@ -1163,16 +192,9 @@ class Deensimc_Image_Hotspot extends Widget_Image
 	<?php
 	}
 
-	/**
-	 * Render Hotspot widget output in the editor.
-	 *
-	 * Written as a Backbone JavaScript template and used to generate the live preview.
-	 *
-	 * @since  2.9.0
-	 * @access protected
-	 */
 	protected function content_template()
-	{         ?>
+	{
+	?>
 		<#
 			const image={
 			id: settings.image.id,
@@ -1182,75 +204,74 @@ class Deensimc_Image_Hotspot extends Widget_Image
 			model: view.getEditModel()
 			};
 
-			const imageUrl=elementor.imagesManager.getImageUrl( image );
+			const imageUrl=elementor.imagesManager.getImageUrl(image);
 
-			if ( ! imageUrl ) {
+			if (!imageUrl) {
 			return;
 			}
 			#>
 			<img src="{{ imageUrl }}" title="" alt="">
 			<#
-				const isTooltipDirectionAnimation=(settings.tooltip_animation==='deensimc-image-hotspot--slide-direction' || settings.tooltip_animation==='deensimc-image-hotspot--fade-direction' ) ? true : false;
-				const showTooltip=( settings.tooltip_trigger==='none' );
+				const isTooltipDirectionAnimation=(settings.deensimc_tooltip_animation==='deensimc-image-hotspot--slide-direction' || settings.deensimc_tooltip_animation==='deensimc-image-hotspot--fade-direction' ) ? true : false;
+				const showTooltip=(settings.deensimc_tooltip_trigger==='none' );
 
-				_.each( settings.hotspot, ( hotspot, index )=> {
-				const iconHTML = elementor.helpers.renderIcon( view, hotspot.hotspot_icon, {}, 'i' , 'object' );
+				_.each(settings.deensimc_hotspot, (hotspot, index)=> {
+				const iconHTML = elementor.helpers.renderIcon(view, hotspot.deensimc_hotspot_icon, {}, 'i', 'object');
 
-				const isCircle = !hotspot.hotspot_label && !hotspot.hotspot_icon.value;
-				const isOnlyIcon = !hotspot.hotspot_label && hotspot.hotspot_icon.value;
-				const hotspotPositionX = '%' === hotspot.hotspot_offset_x.unit ? 'deensimc-image-hotspot--position-' + hotspot.hotspot_horizontal : '';
-				const hotspotPositionY = '%' === hotspot.hotspot_offset_y.unit ? 'deensimc-image-hotspot--position-' + hotspot.hotspot_vertical : '';
-				const hotspotLink = hotspot.hotspot_link.url;
-				const hotspotElementTag = hotspotLink ? 'a': 'div';
+				const isCircle = !hotspot.deensimc_hotspot_label && !hotspot.deensimc_hotspot_icon.value;
+				const isOnlyIcon = !hotspot.deensimc_hotspot_label && hotspot.deensimc_hotspot_icon.value;
+				const hotspotPositionX = '%' === hotspot.deensimc_hotspot_offset_x.unit ? 'deensimc-image-hotspot--position-' + hotspot.deensimc_hotspot_horizontal : '';
+				const hotspotPositionY = '%' === hotspot.deensimc_hotspot_offset_y.unit ? 'deensimc-image-hotspot--position-' + hotspot.deensimc_hotspot_vertical : '';
+				const hotspotLink = hotspot.deensimc_hotspot_link.url;
+				const hotspotElementTag = hotspotLink ? 'a' : 'div';
 
 				// hotspot attributes
-				const hotspotRepeaterSettingKey = view.getRepeaterSettingKey( 'hotspot', 'hotspots', index );
-				view.addRenderAttribute( hotspotRepeaterSettingKey, {
-				'class' : [
+				const hotspotRepeaterSettingKey = view.getRepeaterSettingKey('hotspot', 'deensimc_hotspot', index);
+				view.addRenderAttribute(hotspotRepeaterSettingKey, {
+				'class': [
 				'deensimc-image-hotspot',
 				'elementor-repeater-item-' + hotspot._id,
 				hotspotPositionX,
 				hotspotPositionY,
-				hotspotLink ? 'deensimc-image-hotspot--link' : '',,
+				hotspotLink ? 'deensimc-image-hotspot--link' : '', ,
 				]
 				});
 
-				if ( isCircle ) {
-				view.addRenderAttribute( hotspotRepeaterSettingKey, 'class', 'deensimc-image-hotspot--circle' );
+				if (isCircle) {
+				view.addRenderAttribute(hotspotRepeaterSettingKey, 'class', 'deensimc-image-hotspot--circle');
 				}
 
-				if ( isOnlyIcon ) {
-				view.addRenderAttribute( hotspotRepeaterSettingKey, 'class', 'deensimc-image-hotspot--icon' );
+				if (isOnlyIcon) {
+				view.addRenderAttribute(hotspotRepeaterSettingKey, 'class', 'deensimc-image-hotspot--icon');
 				}
 
 				// hotspot trigger attributes
-				const triggerRepeaterSettingKey = view.getRepeaterSettingKey( 'trigger', 'hotspots', index );
+				const triggerRepeaterSettingKey = view.getRepeaterSettingKey('trigger', 'deensimc_hotspot', index);
 				view.addRenderAttribute(triggerRepeaterSettingKey, {
-				'class' : [
+				'class': [
 				'deensimc-image-hotspot__button',
-				settings.hotspot_animation,
-				//'hotspot-trigger-' + hotspot.hotspot_icon_position
+				settings.deensimc_hotspot_animation,
 				]
 				});
 
 				//direction mask attributes
-				const directionMaskRepeaterSettingKey = view.getRepeaterSettingKey( 'deensimc-image-hotspot__direction-mask', 'hotspots', index );
+				const directionMaskRepeaterSettingKey = view.getRepeaterSettingKey('deensimc-image-hotspot__direction-mask', 'deensimc_hotspot', index);
 				view.addRenderAttribute(directionMaskRepeaterSettingKey, {
-				'class' : [
+				'class': [
 				'deensimc-image-hotspot__direction-mask',
-				( isTooltipDirectionAnimation ) ? 'deensimc-image-hotspot--tooltip-position' : ''
+				(isTooltipDirectionAnimation) ? 'deensimc-image-hotspot--tooltip-position' : ''
 				]
 				});
 
 				//tooltip attributes
-				const tooltipCustomPosition = ( isTooltipDirectionAnimation && hotspot.hotspot_tooltip_position && hotspot.hotspot_position ) ? 'deensimc-image-hotspot--override-tooltip-animation-from-' + hotspot.hotspot_position : '';
-				const tooltipRepeaterSettingKey = view.getRepeaterSettingKey('tooltip', 'hotspots', index);
-				view.addRenderAttribute( tooltipRepeaterSettingKey, {
+				const tooltipCustomPosition = (isTooltipDirectionAnimation && hotspot.deensimc_hotspot_tooltip_position && hotspot.deensimc_hotspot_position) ? 'deensimc-image-hotspot--override-tooltip-animation-from-' + hotspot.deensimc_hotspot_position : '';
+				const tooltipRepeaterSettingKey = view.getRepeaterSettingKey('tooltip', 'deensimc_hotspot', index);
+				view.addRenderAttribute(tooltipRepeaterSettingKey, {
 				'class': [
 				'deensimc-image-hotspot__tooltip',
-				( showTooltip ) ? 'deensimc-image-hotspot--show-tooltip' : '',
-				( !isTooltipDirectionAnimation ) ? 'deensimc-image-hotspot--tooltip-position' : '',
-				( !showTooltip ) ? settings.tooltip_animation : '',
+				(showTooltip) ? 'deensimc-image-hotspot--show-tooltip' : '',
+				(!isTooltipDirectionAnimation) ? 'deensimc-image-hotspot--tooltip-position' : '',
+				(!showTooltip) ? settings.deensimc_tooltip_animation : '',
 				tooltipCustomPosition
 				],
 				});
@@ -1258,30 +279,26 @@ class Deensimc_Image_Hotspot extends Widget_Image
 				#>
 				<{{{ hotspotElementTag }}} {{{ view.getRenderAttributeString( hotspotRepeaterSettingKey ) }}}>
 
-					<?php // Hotspot Trigger 
-					?>
 					<div {{{ view.getRenderAttributeString( triggerRepeaterSettingKey ) }}}>
 						<# if ( isCircle ) { #>
 							<div class="deensimc-image-hotspot__outer-circle"></div>
 							<div class="deensimc-image-hotspot__inner-circle"></div>
 							<# } else { #>
-								<# if (hotspot.hotspot_icon.value){ #>
+								<# if (hotspot.deensimc_hotspot_icon.value){ #>
 									<div class="deensimc-image-hotspot__icon">{{{ iconHTML.value }}}</div>
 									<# } #>
-										<# if ( hotspot.hotspot_label ){ #>
-											<div class="deensimc-image-hotspot__label">{{{ hotspot.hotspot_label }}}</div>
+										<# if ( hotspot.deensimc_hotspot_label ){ #>
+											<div class="deensimc-image-hotspot__label">{{{ hotspot.deensimc_hotspot_label }}}</div>
 											<# } #>
 												<# } #>
 					</div>
 
-					<?php // Hotspot Tooltip 
-					?>
-					<# if( hotspot.hotspot_tooltip_content && ! ( 'click'===settings.tooltip_trigger && hotspotLink ) ){ #>
+					<# if( hotspot.deensimc_hotspot_tooltip_content && ! ( 'click'===settings.deensimc_tooltip_trigger && hotspotLink ) ){ #>
 						<# if( isTooltipDirectionAnimation ){ #>
 							<div {{{ view.getRenderAttributeString( directionMaskRepeaterSettingKey ) }}}>
 								<# } #>
 									<div {{{ view.getRenderAttributeString( tooltipRepeaterSettingKey ) }}}>
-										{{{ hotspot.hotspot_tooltip_content }}}
+										{{{ hotspot.deensimc_hotspot_tooltip_content }}}
 									</div>
 									<# if( isTooltipDirectionAnimation ){ #>
 							</div>

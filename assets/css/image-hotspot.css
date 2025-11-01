@@ -134,17 +134,20 @@
 .deensimc-image-hotspot__button svg {
   fill: var(--hotspot-color);
 }
-.deensimc-image-hotspot:not(.deensimc-image-hotspot--circle) .deensimc-image-hotspot__button {
+.deensimc-image-hotspot:not(.deensimc-image-hotspot--circle)
+  .deensimc-image-hotspot__button {
   background-color: var(--hotspot-box-color);
   border-radius: var(--hotspot-border-radius, 3px);
   min-height: var(--hotspot-min-height);
   min-width: var(--hotspot-min-width);
   padding: var(--hotspot-padding, 4px);
 }
-.deensimc-image-hotspot:not(.deensimc-image-hotspot--circle) .deensimc-image-hotspot__button:before {
+.deensimc-image-hotspot:not(.deensimc-image-hotspot--circle)
+  .deensimc-image-hotspot__button:before {
   border-radius: var(--hotspot-border-radius, 3px);
 }
-.deensimc-image-hotspot:not(.deensimc-image-hotspot--circle) .deensimc-image-hotspot--expand:before {
+.deensimc-image-hotspot:not(.deensimc-image-hotspot--circle)
+  .deensimc-image-hotspot--expand:before {
   background-color: var(--hotspot-box-color);
 }
 .deensimc-image-hotspot--overlay {
@@ -162,7 +165,8 @@
 .deensimc-image-hotspot--expand .deensimc-image-hotspot__outer-circle {
   animation: deensimc-image-hotspot-expand 2s infinite;
 }
-.deensimc-image-hotspot:not(.deensimc-image-hotspot--circle) .deensimc-image-hotspot--expand:before {
+.deensimc-image-hotspot:not(.deensimc-image-hotspot--circle)
+  .deensimc-image-hotspot--expand:before {
   animation: deensimc-image-hotspot-expand 2s infinite;
   content: "";
   height: 100%;
@@ -197,7 +201,7 @@
   white-space: var(--white-space, nowrap);
 }
 .deensimc-image-hotspot__tooltip p:last-of-type {
-  margin-bottom: 0;
+  margin: 0;
 }
 .deensimc-image-hotspot__direction-mask .deensimc-image-hotspot__tooltip {
   box-shadow: none !important;

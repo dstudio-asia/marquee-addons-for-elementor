@@ -68,7 +68,7 @@
 
     // --- Bind events to hotspots ---
     const bindEvents = () => {
-      const tooltipTrigger = getResponsiveSetting("tooltip_trigger");
+      const tooltipTrigger = getResponsiveSetting("deensimc_tooltip_trigger");
       const triggerEvent =
         tooltipTrigger === "mouseenter"
           ? "mouseleave mouseenter"
@@ -81,8 +81,8 @@
 
     // --- Adjust tooltip position for directional animations ---
     const setTooltipPosition = () => {
-      const animation = settings.tooltip_animation;
-      const position = settings.tooltip_position;
+      const animation = settings.deensimc_tooltip_animation;
+      const position = settings.deensimc_tooltip_position;
 
       const isDirectionalAnimation =
         animation && animation.match(/^deensimc-image-hotspot--(slide|fade)-direction/);
@@ -97,7 +97,7 @@
 
     // --- Handle sequenced animation ---
     const runSequencedAnimation = () => {
-      const isSequenced = settings.hotspot_sequenced_animation === 'yes';
+      const isSequenced = settings.deensimc_hotspot_sequenced_animation === 'yes';
       $hotspot.toggleClass('deensimc-image-hotspot--sequenced', isSequenced);
       
       if (!isSequenced) return;
@@ -112,7 +112,7 @@
             $hotspot.each((index, element) => {
               if (index === 0) return;
 
-              const duration = settings.hotspot_sequenced_animation_duration?.size || 1000;
+              const duration = settings.deensimc_hotspot_sequenced_animation_duration?.size || 1000;
               const delay = index * (duration / $hotspot.length);
               element.style.animationDelay = `${delay}ms`;
             });
