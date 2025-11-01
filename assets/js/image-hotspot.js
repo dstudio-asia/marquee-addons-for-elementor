@@ -13,13 +13,13 @@
     const settings = getElementSettings();
 
     const selectors = {
-      hotspot: ".e-hotspot",
-      tooltip: ".e-hotspot__tooltip",
+      hotspot: ".deensimc-image-hotspot",
+      tooltip: ".deensimc-image-hotspot__tooltip",
     };
 
     const $hotspot = $widgetElement.find(selectors.hotspot);
     const $hotspotsExcludesLinks = $hotspot.filter(
-      ":not(.e-hotspot--no-tooltip)"
+      ":not(.deensimc-image-hotspot--no-tooltip)"
     );
     const $tooltip = $widgetElement.find(selectors.tooltip);
 
@@ -49,20 +49,20 @@
     // --- Event handler for hotspot interaction ---
     const onHotspotTriggerEvent = (event) => {
         const $target = $(event.target);
-        const isHotspotButton = $target.closest(".e-hotspot__button").length;
+        const isHotspotButton = $target.closest(".deensimc-image-hotspot__button").length;
         const isTooltipMouseLeave =
             event.type === "mouseleave" &&
-            ($target.is(".e-hotspot--tooltip-position") ||
-            $target.parents(".e-hotspot--tooltip-position").length);
+            ($target.is(".deensimc-image-hotspot--tooltip-position") ||
+            $target.parents(".deensimc-image-hotspot--tooltip-position").length);
         const isMobile = window.elementorFrontend.getCurrentDeviceMode() === "mobile";
-        const isLink = $target.closest(".e-hotspot--link").length;
+        const isLink = $target.closest(".deensimc-image-hotspot--link").length;
 
         const shouldTriggerTooltip = !(isLink && isMobile && (event.type === 'mouseleave' || event.type === 'mouseenter'));
 
         if (shouldTriggerTooltip && (isHotspotButton || isTooltipMouseLeave)) {
             const $currentHotspot = $(event.currentTarget);
-            $hotspot.not($currentHotspot).removeClass("e-hotspot--active");
-            $currentHotspot.toggleClass("e-hotspot--active");
+            $hotspot.not($currentHotspot).removeClass("deensimc-image-hotspot--active");
+            $currentHotspot.toggleClass("deensimc-image-hotspot--active");
         }
     };
 
@@ -85,20 +85,20 @@
       const position = settings.tooltip_position;
 
       const isDirectionalAnimation =
-        animation && animation.match(/^e-hotspot--(slide|fade)-direction/);
+        animation && animation.match(/^deensimc-image-hotspot--(slide|fade)-direction/);
 
       if (isDirectionalAnimation) {
         $tooltip.removeClass(
-          "e-hotspot--tooltip-animation-from-left e-hotspot--tooltip-animation-from-top e-hotspot--tooltip-animation-from-right e-hotspot--tooltip-animation-from-bottom"
+          "deensimc-image-hotspot--tooltip-animation-from-left deensimc-image-hotspot--tooltip-animation-from-top deensimc-image-hotspot--tooltip-animation-from-right deensimc-image-hotspot--tooltip-animation-from-bottom"
         );
-        $tooltip.addClass(`e-hotspot--tooltip-animation-from-${position}`);
+        $tooltip.addClass(`deensimc-image-hotspot--tooltip-animation-from-${position}`);
       }
     };
 
     // --- Handle sequenced animation ---
     const runSequencedAnimation = () => {
       const isSequenced = settings.hotspot_sequenced_animation === 'yes';
-      $hotspot.toggleClass('e-hotspot--sequenced', isSequenced);
+      $hotspot.toggleClass('deensimc-image-hotspot--sequenced', isSequenced);
       
       if (!isSequenced) return;
 
