@@ -1,6 +1,14 @@
 # Changelog
 
 
+## [3.7.16](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.7.15...3.7.16) (2025-11-01)
+
+
+### Features
+
+* add Animated List widget entry to Pro widgets placeholder ([5022bfe](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/5022bfef43bd138d38aa18a59a3c7849fc8ea2ea))
+* serbian translation ([cb2e221](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/cb2e221b211ee051178a990d71ee89bfa495d716))
+
 ## [3.7.15](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.7.12...3.7.15) (2025-10-29)
 
 
