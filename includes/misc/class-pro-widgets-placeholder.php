@@ -98,6 +98,13 @@ class Marquee_Addons_Pro_Widgets_Placeholder
                 'is_pro' => true,
                 'demo'      => 'https://marqueeaddons.com/pricing',
             ],
+            'deensimcpro-animated-list'          => [
+                'cat'    => 'general',
+                'title'  => __('Animated List', 'marquee-addons-for-elementor'),
+                'icon'   => 'eicon-post-list eicon-deensimc-pro',
+                'is_pro' => true,
+                'demo'      => 'https://marqueeaddons.com/pricing',
+            ],
         ];
     }
 
