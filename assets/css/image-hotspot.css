@@ -186,11 +186,11 @@
   position: absolute;
 }
 .deensimc-image-hotspot__tooltip {
-  background-color: var(--tooltip-color);
+  background-color: var(--tooltip-color, #fff);
   border-radius: var(--tooltip-border-radius);
-  color: var(--tooltip-text-color, #fff);
+  color: var(--tooltip-text-color, #111);
   max-width: var(--tooltip-max-width);
-  min-width: var(--tooltip-min-width);
+  min-width: var(--tooltip-min-width, 200px);
   padding: var(--tooltip-padding, 8px);
   pointer-events: none;
   position: absolute;
