@@ -332,6 +332,7 @@ final class Marquee
 		wp_register_style('deensimc-swiper-bundle-min-style', DEENSIMC_ASSETS_URL . 'css/swiper-bundle.min.css', null, self::VERSION, false);
 		wp_register_style('deensimc-swiper-style', DEENSIMC_ASSETS_URL . 'css/swiper.css', null, self::VERSION, false);
 		wp_register_style('deensimc-accordion-style', DEENSIMC_ASSETS_URL . 'css/accordion.css', null, self::VERSION, false);
+		wp_register_style('deensimc-image-hotspot-style', DEENSIMC_ASSETS_URL . 'css/image-hotspot.css', null, self::VERSION, false);
 
 		wp_enqueue_style('deensimc-marquee-common-styles');
 		// refactored code end
@@ -367,6 +368,7 @@ final class Marquee
 		wp_register_script('deensimc-animated-word-roller', DEENSIMC_ASSETS_URL  . 'js/animated-word-roller.js', ['jquery'], self::VERSION, false);
 		wp_register_script('deensimc-image-accordion-script', DEENSIMC_ASSETS_URL  . 'js/image-accordion.js', ['jquery'], self::VERSION, false);
 		wp_register_script('deensimc-stacked-slider-script', DEENSIMC_ASSETS_URL  . 'js/stacked-slider.js', ['jquery'], self::VERSION, false);
+		wp_register_script('deensimc-image-hotspot-script', DEENSIMC_ASSETS_URL  . 'js/image-hotspot.js', ['jquery'], self::VERSION, false);
 
 
 		wp_enqueue_script('deensimc-handle-animation-duration');
@@ -479,6 +481,7 @@ final class Marquee
 		require_once(__DIR__ . '/widgets/class-deensimc-animated-word-roller.php');
 		require_once(__DIR__ . '/widgets/class-deensimc-animated-heading.php');
 		require_once(__DIR__ . '/widgets/class-deensimc-button-marquee.php');
+		require_once(__DIR__ . '/widgets/class-deensimc-image-hotspot.php');
 
 		$widgets_manager->register(new \Deensimc_Image_Marquee());
 		$widgets_manager->register(new \Deensimc_Stacked_Slider());
@@ -490,6 +493,7 @@ final class Marquee
 		$widgets_manager->register(new \Deensimc_Animated_Word_Roller());
 		$widgets_manager->register(new \Deensimc_Animated_Heading_Widget());
 		$widgets_manager->register(new \Deensimc_Button_marquee());
+		$widgets_manager->register(new \Deensimc_Image_Hotspot());
 	}
 
 	function deensimc_add_categories($elements_manager)
