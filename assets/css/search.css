@@ -1,0 +1,80 @@
+.deensimc-input-container {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.deensimc-search-input-triggerer {
+  background: #ccc;
+  border: none;
+  padding: 16px; /* Dynamic */
+  font-size: 20px; /* Dynamic */
+}
+.deensimc-input-field-wrapper {
+  --deensimc-search-field-padding: 8px; /* Dynamic */
+  display: flex;
+  align-items: stretch;
+  background-color: rgb(199, 229, 255); /* Dynamic */
+  gap: 8px; /* Dynamic */
+  width: 100%;
+  overflow: hidden;
+}
+.deensimc-input-field {
+  border: none !important;
+  background-color: transparent;
+  font-size: 20px; /* Dynamic */
+  flex-grow: 1;
+  &:focus {
+    border: none !important;
+    outline: none !important;
+  }
+}
+.deensimc-left-input .deensimc-input-container {
+  align-items: stretch;
+}
+
+.deensimc-input-field-icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  opacity: 0.5;
+  padding: 8px;
+}
+.deensimc-input-field-clear-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  opacity: 1;
+  &:focus {
+    border: none !important;
+    outline: none !important;
+  }
+}
+
+/*
+  conditional classes
+  */
+.deensimc-left-input .deensimc-input-field-wrapper {
+  transition: width 0.2s ease;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+}
+.deensimc-left-input .deensimc-input-field-wrapper.deensimc-search-open {
+  width: 400px; /* Dynamic */
+}
+.deensimc-left-input
+  .deensimc-input-field-wrapper.deensimc-search-open
+  .deensimc-input-field-icon {
+  padding: var(--deensimc-search-field-padding);
+}
+
+.deensimc-popup-input .deensimc-input-field-wrapper {
+  position: fixed;
+  width: 0;
+  top: 80px;
+  left: 0;
+}
+
+.deensimc-popup-input .deensimc-input-field-wrapper.deensimc-search-open {
+  width: 100%;
+}
