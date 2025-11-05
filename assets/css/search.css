@@ -2,6 +2,9 @@
   display: flex;
   align-items: center;
   justify-content: end;
+  position: relative;
+  width: fit-content;
+  margin-left: auto; /* Temporary */
 }
 .deensimc-search-input-triggerer {
   background: #ccc;
@@ -17,6 +20,7 @@
   gap: 8px; /* Dynamic */
   width: 100%;
   overflow: hidden;
+  position: absolute;
 }
 .deensimc-input-field {
   border: none !important;
@@ -58,6 +62,8 @@
   overflow: hidden;
   white-space: nowrap;
   width: 0;
+  height: 100%;
+  right: 100%;
 }
 .deensimc-left-input .deensimc-input-field-wrapper.deensimc-search-open {
   width: 400px; /* Dynamic */
