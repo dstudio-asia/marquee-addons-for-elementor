@@ -50,6 +50,31 @@ trait Deensimc_Search_Field_Styles_Controls
             ]
         );
         $this->add_responsive_control(
+            'deensimc_search_field_popup_width',
+            [
+                'label' => esc_html__('Width', 'marquee-addons-for-elementor'),
+                'type' =>  Controls_Manager::SLIDER,
+                'size_units' => ['px', '%', 'em', 'rem', 'custom'],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 2000,
+                        'step' => 1,
+                    ],
+                    '%' => [
+                        'min' => 0,
+                        'max' => 100,
+                    ],
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .deensimc-popup-input .deensimc-input-field-wrapper.deensimc-search-open' => 'width: {{SIZE}}{{UNIT}};',
+                ],
+                'condition' => [
+                    'deensimc_search_style' => 'popup'
+                ]
+            ]
+        );
+        $this->add_responsive_control(
             'deensimc_search_field_alignment',
             [
                 'label' => esc_html__('Position', 'marquee-addons-for-elementor'),
