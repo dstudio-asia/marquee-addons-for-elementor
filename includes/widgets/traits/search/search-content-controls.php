@@ -9,7 +9,7 @@ use \Elementor\Controls_Manager;
 trait Deensimc_Search_Field_Content_Controls
 {
 
-    protected function register_marquee_control()
+    protected function register_content_control()
     {
         $this->start_controls_section(
             'deensimc-search-field-control-section',

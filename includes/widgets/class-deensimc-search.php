@@ -9,6 +9,7 @@ if (!defined('ABSPATH')) {
 class Deensimc_Search_Widget extends Widget_Base
 {
   use Deensimc_Search_Field_Content_Controls;
+  use Deensimc_Search_Field_Query_Controls;
   public function get_style_depends()
   {
     return ['deensimc-search-style'];
@@ -46,7 +47,36 @@ class Deensimc_Search_Widget extends Widget_Base
 
   protected function register_controls()
   {
-    $this->register_marquee_control();
+    $this->register_content_control();
+    $this->register_content_section_query();
+  }
+
+  protected function get_all_terms()
+  {
+    $all_terms = get_terms([
+      'hide_empty' => false,
+    ]);
+
+    $options = [];
+    if (!empty($all_terms) && !is_wp_error($all_terms)) {
+      foreach ($all_terms as $term) {
+        $options[$term->term_id] = $term->name;
+      }
+    }
+    return $options;
+  }
+
+  protected function get_all_authors()
+  {
+    $all_authors = get_users();
+
+    $options = [];
+    if (!empty($all_authors) && !is_wp_error($all_authors)) {
+      foreach ($all_authors as $author) {
+        $options[$author->ID] = $author->display_name;
+      }
+    }
+    return $options;
   }
 
   protected function render()
