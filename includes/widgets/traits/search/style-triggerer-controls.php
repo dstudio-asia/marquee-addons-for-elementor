@@ -37,7 +37,7 @@ trait Deensimc_Search_Triggerer_Styles_Controls
                 ],
                 'selectors' => [
                     '{{WRAPPER}} .deensimc-input-container .deensimc-search-input-triggerer' => 'font-size: {{SIZE}}{{UNIT}};',
-                    '{{WRAPPER}} .deensimc-input-container .deensimc-search-input-triggerer svg' => 'width: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .deensimc-input-container .deensimc-search-input-triggerer svg' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
