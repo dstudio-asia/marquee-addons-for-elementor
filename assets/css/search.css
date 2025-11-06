@@ -50,10 +50,11 @@
   flex-shrink: 0;
   opacity: 0.5;
   font-size: 16px;
-  color: #000;
+  color: #6f6f6f;
   svg {
     width: 16px;
     height: 16px;
+    fill: #6f6f6f;
   }
   &:hover {
     background-color: transparent !important;
@@ -81,6 +82,14 @@
   align-items: center;
   gap: 8px;
   flex-shrink: 0;
+  color: #272727;
+  font-size: 16px;
+
+  svg {
+    width: 16px;
+    height: 16px;
+    fill: #272727;
+  }
 }
 
 /*
