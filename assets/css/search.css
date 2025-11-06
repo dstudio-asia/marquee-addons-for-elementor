@@ -21,6 +21,7 @@
   width: 100%;
   overflow: hidden;
   position: absolute;
+  z-index: 99999999;
 }
 .deensimc-text-field-wrapper {
   padding: 8px;
@@ -107,4 +108,6 @@
 
 .deensimc-popup-input .deensimc-input-field-wrapper.deensimc-search-open {
   width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
 }
