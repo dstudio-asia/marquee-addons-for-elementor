@@ -185,13 +185,15 @@ class Deensimc_Search_Widget extends Widget_Base
             class="deensimc-input-field-icon deensimc-input-field-clear-button">
             <?php Icons_Manager::render_icon($settings['deensimc_search_clear_button_icon'], ['aria-hidden' => 'true']); ?>
           </button>
+
+          <?php if ('popup' === $style) : ?>
+            <button type="submit" class="deensimc-search-submit-button">
+              <?php echo esc_html($settings['deensimc_search_submit_button_text']); ?>
+              <?php Icons_Manager::render_icon($settings['deensimc_search_submit_button_icon'], ['aria-hidden' => 'true']); ?>
+            </button>
+          <?php endif; ?>
         </div>
-        <?php if ('popup' === $style) : ?>
-          <button type="submit" class="deensimc-search-submit-button">
-            <?php echo esc_html($settings['deensimc_search_submit_button_text']); ?>
-            <?php Icons_Manager::render_icon($settings['deensimc_search_submit_button_icon'], ['aria-hidden' => 'true']); ?>
-          </button>
-        <?php endif; ?>
+
         <button type="button" class="deensimc-search-input-triggerer">
           <?php Icons_Manager::render_icon([
             'value' => 'fas fa-search',

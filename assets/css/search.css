@@ -6,11 +6,14 @@
   width: fit-content;
   margin-left: auto; /* Temporary */
 }
+.deensimc-search-submit-button,
 .deensimc-search-input-triggerer {
   background: #ccc;
   border: none;
   padding: 16px; /* Dynamic */
   font-size: 20px; /* Dynamic */
+  border-radius: 0;
+  color: #000;
 }
 .deensimc-input-field-wrapper {
   --deensimc-search-field-padding: 8px; /* Dynamic */
@@ -22,9 +25,9 @@
   overflow: hidden;
   position: absolute;
 }
-.deensimc-input-field {
+.deensimc-input-container .deensimc-input-field {
   border: none !important;
-  background-color: transparent;
+  background-color: transparent !important;
   font-size: 20px; /* Dynamic */
   flex-grow: 1;
   &:focus {
@@ -43,8 +46,12 @@
   opacity: 0.5;
   padding: 8px;
   font-size: 20px;
+  color: #000;
   svg {
     width: 20px;
+  }
+  &:hover {
+    background-color: transparent !important;
   }
 }
 .deensimc-input-field-clear-button {

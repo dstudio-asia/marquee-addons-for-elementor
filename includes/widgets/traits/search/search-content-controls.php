@@ -56,7 +56,7 @@ trait Deensimc_Search_Field_Content_Controls
                 'type' => Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'fas fa-search',
-                    'library' => 'solid',
+                    'library' => 'fa-solid',
                 ],
                 'skin' => 'inline',
                 'label_block' => false,
@@ -91,7 +91,7 @@ trait Deensimc_Search_Field_Content_Controls
                 'type' => Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'fas fa-times',
-                    'library' => 'solid',
+                    'library' => 'fa-solid',
                 ],
                 'skin' => 'inline',
                 'label_block' => false,
