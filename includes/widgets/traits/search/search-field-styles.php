@@ -277,7 +277,7 @@ trait Deensimc_Search_Field_Styles_Controls
                 ],
                 'selectors' => [
                     '{{WRAPPER}} .deensimc-input-container .deensimc-placeholder-icon' => 'font-size: {{SIZE}}{{UNIT}};',
-                    '{{WRAPPER}} .deensimc-input-container .deensimc-placeholder-icon svg' => 'width: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .deensimc-input-container .deensimc-placeholder-icon svg' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
                 ],
                 'separator' => 'before',
             ]
