@@ -176,7 +176,7 @@ class Deensimc_Search_Widget extends Widget_Base
     $query_args['s'] = $search_query;
 
     // Common values
-    $placeholder   = $settings['deensimc_search_placeholder_text'] ?? esc_html__('Search...', 'textdomain');
+    $placeholder   = $settings['deensimc_search_placeholder_text'] ?? esc_html__('Search...', 'marquee-addons-for-elementor');
     $autocomplete  = !empty($settings['deensimc_search_autocomplete']) && $settings['deensimc_search_autocomplete'] === 'yes' ? 'on' : 'off';
 
     // Button text/icon settings
