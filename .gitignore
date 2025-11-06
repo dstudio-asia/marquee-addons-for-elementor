@@ -1,3 +1,4 @@
 .vscode/
-# .AI*
+.AI*
+AI-TASK
 .gemini

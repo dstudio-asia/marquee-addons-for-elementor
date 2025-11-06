@@ -80,13 +80,94 @@ class Deensimc_Search_Widget extends Widget_Base
     return $options;
   }
 
+  protected function get_query_args()
+  {
+    $settings = $this->get_settings_for_display();
+    $args = [];
+
+    // Source
+    $source = $settings['deensimc_search_source'];
+    if ('all' !== $source) {
+      $args['post_type'] = $source;
+    }
+
+    // Include By
+    if (!empty($settings['deensimc_search_include_by'])) {
+      foreach ($settings['deensimc_search_include_by'] as $include_type) {
+        if ('term' === $include_type && !empty($settings['deensimc_include_terms'])) {
+          $args['tax_query'][] = [
+            'taxonomy' => 'category', // Assuming 'category' for terms, needs to be dynamic if multiple taxonomies are supported
+            'field' => 'term_id',
+            'terms' => $settings['deensimc_include_terms'],
+          ];
+        } elseif ('author' === $include_type && !empty($settings['deensimc_include_authors'])) {
+          $args['author__in'] = $settings['deensimc_include_authors'];
+        }
+      }
+    }
+
+    // Exclude By
+    if (!empty($settings['deensimc_search_exclude_by'])) {
+      foreach ($settings['deensimc_search_exclude_by'] as $exclude_type) {
+        if ('term' === $exclude_type && !empty($settings['deensimc_exclude_terms'])) {
+          $args['tax_query'][] = [
+            'taxonomy' => 'category', // Assuming 'category' for terms, needs to be dynamic if multiple taxonomies are supported
+            'field' => 'term_id',
+            'terms' => $settings['deensimc_exclude_terms'],
+            'operator' => 'NOT IN',
+          ];
+        } elseif ('author' === $exclude_type && !empty($settings['deensimc_exclude_authors'])) {
+          $args['author__not_in'] = $settings['deensimc_exclude_authors'];
+        }
+      }
+    }
+
+    // Date Query
+    $date_query = $settings['deensimc_search_date_query'];
+    if ('all' !== $date_query) {
+      $date_args = [];
+      switch ($date_query) {
+        case 'past_day':
+          $date_args = ['after' => '1 day ago'];
+          break;
+        case 'past_week':
+          $date_args = ['after' => '1 week ago'];
+          break;
+        case 'past_month':
+          $date_args = ['after' => '1 month ago'];
+          break;
+        case 'past_quarter':
+          $date_args = ['after' => '3 months ago'];
+          break;
+        case 'past_year':
+          $date_args = ['after' => '1 year ago'];
+          break;
+        case 'custom':
+          // Custom date range logic would go here if implemented in controls
+          break;
+      }
+      if (!empty($date_args)) {
+        $args['date_query'][] = $date_args;
+      }
+    }
+
+    // Order By
+    $args['orderby'] = $settings['deensimc_search_orderby'];
+    $args['order'] = $settings['deensimc_search_order'];
+
+    return $args;
+  }
+
   protected function render()
   {
     $settings = $this->get_settings_for_display();
     $style = $settings['deensimc_search_style'];
-
+    $search_query = get_search_query();
+    $query_args = $this->get_query_args();
+    $query_args['s'] = $search_query;
 ?>
-    <form action="" class="deensimc-search-form <?php echo esc_attr($style === 'expand' ? 'deensimc-left-input' : 'deensimc-popup-input') ?>">
+
+    <form action="<?php echo esc_url(home_url('/')); ?>" class="deensimc-search-form <?php echo esc_attr($style === 'expand' ? 'deensimc-left-input' : 'deensimc-popup-input') ?>">
       <div class="deensimc-input-container">
         <div class="deensimc-input-field-wrapper">
           <span class="deensimc-input-field-icon">
@@ -95,6 +176,8 @@ class Deensimc_Search_Widget extends Widget_Base
           <input
             type="text"
             class="deensimc-input-field"
+            name="s"
+            value="<?php echo esc_attr($search_query); ?>"
             placeholder="<?php echo esc_attr($settings['deensimc_search_placeholder_text']); ?>"
             <?php echo ($settings['deensimc_search_autocomplete'] === 'yes' ? 'autocomplete="on"' : 'autocomplete="off"'); ?> />
           <button
