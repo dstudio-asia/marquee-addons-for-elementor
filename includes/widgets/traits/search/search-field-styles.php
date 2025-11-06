@@ -44,6 +44,29 @@ trait Deensimc_Search_Field_Styles_Controls
                 'selectors' => [
                     '{{WRAPPER}} .deensimc-left-input .deensimc-input-field-wrapper.deensimc-search-open' => 'width: {{SIZE}}{{UNIT}};',
                 ],
+                'condition' => [
+                    'deensimc_search_style' => 'expand'
+                ]
+            ]
+        );
+        $this->add_responsive_control(
+            'deensimc_search_field_alignment',
+            [
+                'label' => esc_html__('Position', 'marquee-addons-for-elementor'),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => ['px', 'em', 'rem', 'vw'],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 1000,
+                    ],
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .deensimc-popup-input .deensimc-input-field-wrapper' => 'top: {{SIZE}}{{UNIT}};',
+                ],
+                'condition' => [
+                    'deensimc_search_style' => 'popup'
+                ]
             ]
         );
 
@@ -141,7 +164,8 @@ trait Deensimc_Search_Field_Styles_Controls
                 'name'     => 'deensimc_search_field_focus_background_color',
                 'types'    => ['classic', 'gradient'],
                 'exclude' => ['image'],
-                'selector' => '{{WRAPPER}} .deensimc-button-marquee',
+                'selector' => '{{WRAPPER}} .deensimc-input-container:focus-within .deensimc-text-field-wrapper',
+
             ]
         );
         $this->add_control(
@@ -150,7 +174,7 @@ trait Deensimc_Search_Field_Styles_Controls
                 'label' => esc_html__('Text Color', 'marquee-addons-for-elementor'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} placeholder_selector:focus' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .deensimc-input-container .deensimc-input-field:focus' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -161,7 +185,8 @@ trait Deensimc_Search_Field_Styles_Controls
                 'label' => esc_html__('Icon Color', 'marquee-addons-for-elementor'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} placeholder_selector_icon:focus' => 'fill: {{VALUE}};',
+                    '{{WRAPPER}} .deensimc-input-container:focus-within .deensimc-placeholder-icon' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .deensimc-input-container:focus-within .deensimc-placeholder-icon svg' => 'fill: {{VALUE}};',
                 ],
             ]
         );
@@ -171,7 +196,7 @@ trait Deensimc_Search_Field_Styles_Controls
             [
                 'name' => 'deensimc_search_field_focus_border',
                 'label' => esc_html__('Border', 'marquee-addons-for-elementor'),
-                'selector' => '{{WRAPPER}} placeholder_selector:focus',
+                'selector' => '{{WRAPPER}} .deensimc-input-container:focus-within .deensimc-text-field-wrapper',
             ]
         );
 
@@ -180,7 +205,7 @@ trait Deensimc_Search_Field_Styles_Controls
             [
                 'name' => 'deensimc_search_field_focus_box_shadow',
                 'label' => esc_html__('Box Shadow', 'marquee-addons-for-elementor'),
-                'selector' => '{{WRAPPER}} placeholder_selector:focus',
+                'selector' => '{{WRAPPER}} .deensimc-input-container:focus-within .deensimc-text-field-wrapper',
             ]
         );
 
