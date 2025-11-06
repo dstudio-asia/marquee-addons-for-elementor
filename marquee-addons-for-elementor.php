@@ -28,9 +28,11 @@
 	define( 'DEENSIMC_VERSION' , '3.7.17' );
 
 	function deensimc_load_plugin_data() {
+		require_once( DEENSIMC__DIR__ . '/base.php' );
 		require_once( DEENSIMC__DIR__ . '/includes/widget.php' );
 		require_once( DEENSIMC__DIR__ . '/includes/feedback.php' );
 		\Deensimc_Marquee\Marquee::instance();
+		\Deensimc_Marquee\Base::instance();
 	}
 
 	add_action( 'plugins_loaded', 'deensimc_load_plugin_data' );
