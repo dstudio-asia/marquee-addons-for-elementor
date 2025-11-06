@@ -58,7 +58,7 @@ Combines a static heading with rotating words or phrases that roll through the s
 
 With Marquee Button, create an interactive button with auto-scrolling text that grabs attention. Pick solid, outline, or ghost styles, set corners, add icons, and control loop speed and direction. On hover, the text loops smoothly left to right. Perfect for modern CTAs. Click can open a link or a video popup from YouTube, Vimeo, or self-hosted. Built to keep page load light.
 
-### [Search Box]:
+### Search Box:
 
 This is a mobile-friendly Interactive search widget with expandable input and popup dropdown results. Designed to deliver fast, interactive search experiences inside Elementor.
 
