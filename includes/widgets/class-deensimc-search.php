@@ -11,6 +11,8 @@ class Deensimc_Search_Widget extends Widget_Base
 {
   use Deensimc_Search_Field_Content_Controls;
   use Deensimc_Search_Field_Query_Controls;
+  use Deensimc_Search_Field_Styles_Controls;
+
   public function get_style_depends()
   {
     return ['deensimc-search-style'];
@@ -50,6 +52,7 @@ class Deensimc_Search_Widget extends Widget_Base
   {
     $this->register_content_control();
     $this->register_content_section_query();
+    $this->register_search_field_styles_control();
   }
 
   protected function get_all_terms()
@@ -183,32 +186,34 @@ class Deensimc_Search_Widget extends Widget_Base
       <div class="deensimc-input-container">
         <div class="deensimc-input-field-wrapper">
 
-          <!-- Search Icon -->
-          <span class="deensimc-input-field-icon">
-            <?php
-            if (!empty($settings['deensimc_search_icon']['value'])) {
-              Icons_Manager::render_icon($settings['deensimc_search_icon'], ['aria-hidden' => 'true']);
-            }
-            ?>
-          </span>
+          <div class="deensimc-text-field-wrapper">
+            <!-- Search Icon -->
+            <span class="deensimc-input-field-icon deensimc-placeholder-icon">
+              <?php
+              if (!empty($settings['deensimc_search_icon']['value'])) {
+                Icons_Manager::render_icon($settings['deensimc_search_icon'], ['aria-hidden' => 'true']);
+              }
+              ?>
+            </span>
 
-          <!-- Search Input -->
-          <input
-            type="text"
-            class="deensimc-input-field"
-            name="s"
-            value="<?php echo esc_attr($search_query); ?>"
-            placeholder="<?php echo esc_attr($placeholder); ?>"
-            autocomplete="<?php echo esc_attr($autocomplete); ?>" />
+            <!-- Search Input -->
+            <input
+              type="text"
+              class="deensimc-input-field"
+              name="s"
+              value="<?php echo esc_attr($search_query); ?>"
+              placeholder="<?php echo esc_attr($placeholder); ?>"
+              autocomplete="<?php echo esc_attr($autocomplete); ?>" />
 
-          <!-- Clear Button -->
-          <button type="button" class="deensimc-input-field-icon deensimc-input-field-clear-button">
-            <?php
-            if (!empty($settings['deensimc_search_clear_button_icon']['value'])) {
-              Icons_Manager::render_icon($settings['deensimc_search_clear_button_icon'], ['aria-hidden' => 'true']);
-            }
-            ?>
-          </button>
+            <!-- Clear Button -->
+            <button type="button" class="deensimc-input-field-icon deensimc-input-field-clear-button">
+              <?php
+              if (!empty($settings['deensimc_search_clear_button_icon']['value'])) {
+                Icons_Manager::render_icon($settings['deensimc_search_clear_button_icon'], ['aria-hidden' => 'true']);
+              }
+              ?>
+            </button>
+          </div>
 
           <!-- Popup submit button (optional) -->
           <?php if ('popup' === $style && ($has_submit_icon || $has_submit_text)) : ?>
