@@ -58,6 +58,11 @@ Combines a static heading with rotating words or phrases that roll through the s
 
 With Marquee Button, create an interactive button with auto-scrolling text that grabs attention. Pick solid, outline, or ghost styles, set corners, add icons, and control loop speed and direction. On hover, the text loops smoothly left to right. Perfect for modern CTAs. Click can open a link or a video popup from YouTube, Vimeo, or self-hosted. Built to keep page load light.
 
+### [Search Box:](https://marqueeaddons.com/search-box/):
+
+This is a mobile-friendly Interactive search widget with expandable input and popup dropdown results. Designed to deliver fast, interactive search experiences inside Elementor.
+
+
 ## PRO WIDGETS – UNLOCK ADVANCED CAPABILITIES:
 
 MarqueeAddons Pro brings smooth marquee effects and motion design widgets to Elementor. Create advanced scrolling text, Media, testimonials, videos, 3D effect, cards, posts, products, and more in endless loops. Whether you are a designer, an agency, or a store owner, MarqueeAddons Pro helps you Make your 
@@ -233,10 +238,7 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 == Changelog ==
 
 = 3.7.18 - 2025-11-06 =
-- New: Search Widget
-
-= 3.7.16 - 2025-10-30 =
-- New: Serbian (Latin, Serbia) translation
+- New: Search Box Widget
 
 = 3.7.13 - 2025-10-16 = 
 - New: Slovak (sk_SK) translation
