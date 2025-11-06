@@ -160,45 +160,79 @@ class Deensimc_Search_Widget extends Widget_Base
 
   protected function render()
   {
-    $settings = $this->get_settings_for_display();
-    $style = $settings['deensimc_search_style'];
-    $search_query = get_search_query();
-    $query_args = $this->get_query_args();
+    $settings      = $this->get_settings_for_display();
+    $style         = $settings['deensimc_search_style'] ?? 'expand';
+    $search_query  = get_search_query();
+    $query_args    = $this->get_query_args();
     $query_args['s'] = $search_query;
-?>
 
-    <form action="<?php echo esc_url(home_url('/')); ?>" class="deensimc-search-form <?php echo esc_attr($style === 'expand' ? 'deensimc-left-input' : 'deensimc-popup-input') ?>">
+    // Common values
+    $placeholder   = $settings['deensimc_search_placeholder_text'] ?? esc_html__('Search...', 'textdomain');
+    $autocomplete  = !empty($settings['deensimc_search_autocomplete']) && $settings['deensimc_search_autocomplete'] === 'yes' ? 'on' : 'off';
+
+    // Button text/icon settings
+    $submit_text   = $settings['deensimc_search_submit_button_text'] ?? '';
+    $submit_icon   = $settings['deensimc_search_submit_button_icon'] ?? '';
+    $has_submit_icon = !empty($submit_icon['value']);
+    $has_submit_text = !empty($submit_text);
+
+?>
+    <form action="<?php echo esc_url(home_url('/')); ?>"
+      class="deensimc-search-form <?php echo esc_attr($style === 'expand' ? 'deensimc-left-input' : 'deensimc-popup-input'); ?>">
+
       <div class="deensimc-input-container">
         <div class="deensimc-input-field-wrapper">
+
+          <!-- Search Icon -->
           <span class="deensimc-input-field-icon">
-            <?php Icons_Manager::render_icon($settings['deensimc_search_icon'], ['aria-hidden' => 'true']); ?>
+            <?php
+            if (!empty($settings['deensimc_search_icon']['value'])) {
+              Icons_Manager::render_icon($settings['deensimc_search_icon'], ['aria-hidden' => 'true']);
+            }
+            ?>
           </span>
+
+          <!-- Search Input -->
           <input
             type="text"
             class="deensimc-input-field"
             name="s"
             value="<?php echo esc_attr($search_query); ?>"
-            placeholder="<?php echo esc_attr($settings['deensimc_search_placeholder_text']); ?>"
-            <?php echo ($settings['deensimc_search_autocomplete'] === 'yes' ? 'autocomplete="on"' : 'autocomplete="off"'); ?> />
-          <button
-            type="button"
-            class="deensimc-input-field-icon deensimc-input-field-clear-button">
-            <?php Icons_Manager::render_icon($settings['deensimc_search_clear_button_icon'], ['aria-hidden' => 'true']); ?>
+            placeholder="<?php echo esc_attr($placeholder); ?>"
+            autocomplete="<?php echo esc_attr($autocomplete); ?>" />
+
+          <!-- Clear Button -->
+          <button type="button" class="deensimc-input-field-icon deensimc-input-field-clear-button">
+            <?php
+            if (!empty($settings['deensimc_search_clear_button_icon']['value'])) {
+              Icons_Manager::render_icon($settings['deensimc_search_clear_button_icon'], ['aria-hidden' => 'true']);
+            }
+            ?>
           </button>
 
-          <?php if ('popup' === $style) : ?>
+          <!-- Popup submit button (optional) -->
+          <?php if ('popup' === $style && ($has_submit_icon || $has_submit_text)) : ?>
             <button type="submit" class="deensimc-search-submit-button">
-              <?php echo esc_html($settings['deensimc_search_submit_button_text']); ?>
-              <?php Icons_Manager::render_icon($settings['deensimc_search_submit_button_icon'], ['aria-hidden' => 'true']); ?>
+              <?php
+              if ($has_submit_icon) {
+                Icons_Manager::render_icon($submit_icon, ['aria-hidden' => 'true']);
+              }
+              if ($has_submit_text) {
+                echo esc_html($submit_text);
+              }
+              ?>
             </button>
           <?php endif; ?>
         </div>
 
+        <!-- Trigger button (always shown) -->
         <button type="button" class="deensimc-search-input-triggerer">
-          <?php Icons_Manager::render_icon([
-            'value' => 'fas fa-search',
-            'library' => 'solid',
-          ], ['aria-hidden' => 'true']); ?>
+          <?php
+          Icons_Manager::render_icon(
+            ['value' => 'fas fa-search', 'library' => 'solid'],
+            ['aria-hidden' => 'true']
+          );
+          ?>
         </button>
       </div>
     </form>

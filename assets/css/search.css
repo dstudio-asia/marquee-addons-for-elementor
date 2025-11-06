@@ -65,6 +65,12 @@
   }
 }
 
+.deensimc-search-submit-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 /*
   conditional classes
   */

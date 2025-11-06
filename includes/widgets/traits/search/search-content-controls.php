@@ -134,6 +134,33 @@ trait Deensimc_Search_Field_Content_Controls
             ]
         );
 
+        // Icon Position
+        $this->add_control(
+            'deensimc_search_submit_button_icon_position',
+            [
+                'label' => esc_html__('Icon Position', 'marquee-addons-for-elementor'),
+                'type' => Controls_Manager::CHOOSE,
+                'options' => [
+                    'row' => [
+                        'title' => esc_html__('Left', 'marquee-addons-for-elementor'),
+                        'icon' => 'eicon-h-align-left',
+                    ],
+                    'row-reverse' => [
+                        'title' => esc_html__('Right', 'marquee-addons-for-elementor'),
+                        'icon' => 'eicon-h-align-right',
+                    ],
+                ],
+                'default' => 'row',
+                'toggle' => true,
+                'condition' => [
+                    'deensimc_search_submit_button_icon[value]!' => '',
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .deensimc-input-container .deensimc-search-submit-button ' => 'flex-direction: {{VALUE}};',
+                ],
+            ]
+        );
+
         $this->end_controls_section();
     }
 }
