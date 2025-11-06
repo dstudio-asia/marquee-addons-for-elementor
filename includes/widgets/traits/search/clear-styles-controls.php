@@ -33,7 +33,7 @@ trait Deensimc_Search_Clear_Styles_Controls
                 ],
                 'selectors' => [
                     '{{WRAPPER}} .deensimc-input-container .deensimc-input-field-clear-button' => 'font-size: {{SIZE}}{{UNIT}};',
-                    '{{WRAPPER}} .deensimc-input-container .deensimc-input-field-clear-button svg' => 'width: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .deensimc-input-container .deensimc-input-field-clear-button svg' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );

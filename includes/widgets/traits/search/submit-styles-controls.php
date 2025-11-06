@@ -52,7 +52,7 @@ trait Deensimc_Search_Submit_Styles_Controls
                 ],
                 'selectors' => [
                     '{{WRAPPER}} .deensimc-input-container .deensimc-search-submit-button i' => 'font-size: {{SIZE}}{{UNIT}};',
-                    '{{WRAPPER}} .deensimc-input-container .deensimc-search-submit-button svg' => 'width: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .deensimc-input-container .deensimc-search-submit-button svg' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
                 ],
                 'condition' => [
                     'deensimc_search_submit_button_icon[value]!' => '',
