@@ -14,6 +14,7 @@ class Deensimc_Search_Widget extends Widget_Base
   use Deensimc_Search_Field_Styles_Controls;
   use Deensimc_Search_Triggerer_Styles_Controls;
   use Deensimc_Search_Clear_Styles_Controls;
+  use Deensimc_Search_Submit_Styles_Controls;
 
   public function get_style_depends()
   {
@@ -57,6 +58,7 @@ class Deensimc_Search_Widget extends Widget_Base
     $this->register_search_field_styles_control();
     $this->register_search_triggerer_styles_control();
     $this->register_search_clear_styles_control();
+    $this->register_search_submit_styles_control();
   }
 
   protected function get_all_terms()

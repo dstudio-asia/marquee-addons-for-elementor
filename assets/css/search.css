@@ -18,7 +18,6 @@
 .deensimc-input-field-wrapper {
   display: flex;
   align-items: stretch;
-  gap: 8px; /* Dynamic */
   width: 100%;
   overflow: hidden;
   position: absolute;

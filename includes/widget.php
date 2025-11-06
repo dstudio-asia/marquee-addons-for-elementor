@@ -476,6 +476,7 @@ final class Marquee
 		require_once(__DIR__ . '/widgets/traits/search/search-field-styles.php');
 		require_once(__DIR__ . '/widgets/traits/search/style-triggerer-controls.php');
 		require_once(__DIR__ . '/widgets/traits/search/clear-styles-controls.php');
+		require_once(__DIR__ . '/widgets/traits/search/submit-styles-controls.php');
 
 		require_once(__DIR__ . '/widgets/class-deensimc-image-marquee.php');
 		require_once(__DIR__ . '/widgets/class-deensimc-stacked-slider.php');
