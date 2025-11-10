@@ -179,6 +179,9 @@ class Deensimc_Search_Widget extends Widget_Base
     $placeholder   = $settings['deensimc_search_placeholder_text'] ?? esc_html__('Search...', 'marquee-addons-for-elementor');
     $autocomplete  = !empty($settings['deensimc_search_autocomplete']) && $settings['deensimc_search_autocomplete'] === 'yes' ? 'on' : 'off';
 
+    $triggerer_icon   = $settings['deensimc_triggerer_icon'] ?? '';
+    $has_triggerer_icon = !empty($triggerer_icon['value']);
+
     // Button text/icon settings
     $submit_text   = $settings['deensimc_search_submit_button_text'] ?? '';
     $submit_icon   = $settings['deensimc_search_submit_button_icon'] ?? '';
@@ -239,8 +242,8 @@ class Deensimc_Search_Widget extends Widget_Base
         <!-- Trigger button (always shown) -->
         <button type="button" class="deensimc-search-input-triggerer">
           <?php
-          Icons_Manager::render_icon(
-            ['value' => 'fas fa-search', 'library' => 'solid'],
+          $has_triggerer_icon ? Icons_Manager::render_icon($triggerer_icon, ['aria-hidden' => 'true']) : Icons_Manager::render_icon(
+            ['value' => 'fas fa-search', 'library' => 'fa-solid'],
             ['aria-hidden' => 'true']
           );
           ?>
