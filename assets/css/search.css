@@ -10,11 +10,21 @@
 .deensimc-search-input-triggerer {
   background: #ccc;
   border: none;
-  padding: 16px; /* Dynamic */
-  font-size: 20px; /* Dynamic */
+  padding: 16px;
   border-radius: 0;
-  color: #000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  color: #272727;
+  font-size: 16px;
+  svg {
+    width: 16px;
+    height: 16px;
+    fill: #272727;
+  }
 }
+
 .deensimc-input-field-wrapper {
   display: flex;
   align-items: stretch;
@@ -36,6 +46,7 @@
   flex-grow: 1;
   padding: 0 !important;
   height: auto !important;
+  font-size: 16px;
   &:focus {
     border: none !important;
     outline: none !important;
@@ -76,21 +87,6 @@
 
 .deensimc-placeholder-icon {
   margin-right: 8px;
-}
-
-.deensimc-search-submit-button {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-shrink: 0;
-  color: #272727;
-  font-size: 16px;
-
-  svg {
-    width: 16px;
-    height: 16px;
-    fill: #272727;
-  }
 }
 
 /*
