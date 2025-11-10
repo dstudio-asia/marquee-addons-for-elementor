@@ -32,6 +32,29 @@ trait Deensimc_Search_Field_Content_Controls
             ]
         );
         $this->add_control(
+            'deensimc_search_triggerer_heading',
+            [
+                'label' => esc_html__('Triggerer', 'marquee-addons-for-elementor'),
+                'type' => Controls_Manager::HEADING,
+                'separator' => 'before',
+            ]
+        );
+
+        $this->add_control(
+            'deensimc_triggerer_icon',
+            [
+                'label' => esc_html__('Icon', 'marquee-addons-for-elementor'),
+                'type' => Controls_Manager::ICONS,
+                'default' => [
+                    'value' => 'fas fa-search',
+                    'library' => 'fa-solid',
+                ],
+                'skin' => 'inline',
+                'label_block' => false,
+            ]
+        );
+
+        $this->add_control(
             'deensimc_search_placeholder_heading',
             [
                 'label' => esc_html__('Placeholder', 'marquee-addons-for-elementor'),

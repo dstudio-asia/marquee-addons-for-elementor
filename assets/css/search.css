@@ -10,11 +10,21 @@
 .deensimc-search-input-triggerer {
   background: #ccc;
   border: none;
-  padding: 16px; /* Dynamic */
-  font-size: 20px; /* Dynamic */
+  padding: 16px;
   border-radius: 0;
-  color: #000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  color: #272727;
+  font-size: 16px;
+  svg {
+    width: 16px;
+    height: 16px;
+    fill: #272727;
+  }
 }
+
 .deensimc-input-field-wrapper {
   display: flex;
   align-items: stretch;
@@ -35,6 +45,8 @@
   background-color: transparent !important;
   flex-grow: 1;
   padding: 0 !important;
+  height: auto !important;
+  font-size: 16px;
   &:focus {
     border: none !important;
     outline: none !important;
@@ -77,21 +89,6 @@
   margin-right: 8px;
 }
 
-.deensimc-search-submit-button {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-shrink: 0;
-  color: #272727;
-  font-size: 16px;
-
-  svg {
-    width: 16px;
-    height: 16px;
-    fill: #272727;
-  }
-}
-
 /*
   conditional classes
   */
@@ -110,13 +107,16 @@
 
 .deensimc-popup-input .deensimc-input-field-wrapper {
   position: fixed;
-  width: 0;
+  width: 100%;
   top: 80px;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  max-height: 0;
+  transition: max-height 0.3s ease-in-out;
+  pointer-events: none;
 }
 
 .deensimc-popup-input .deensimc-input-field-wrapper.deensimc-search-open {
-  width: 100%;
-  left: 50%;
-  transform: translateX(-50%);
+  max-height: 200px;
+  pointer-events: all;
 }
