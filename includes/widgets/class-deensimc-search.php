@@ -240,7 +240,7 @@ class Deensimc_Search_Widget extends Widget_Base
         <button type="button" class="deensimc-search-input-triggerer">
           <?php
           Icons_Manager::render_icon(
-            ['value' => 'fas fa-search', 'library' => 'solid'],
+            ['value' => 'fas fa-search', 'library' => 'fa-solid'],
             ['aria-hidden' => 'true']
           );
           ?>
