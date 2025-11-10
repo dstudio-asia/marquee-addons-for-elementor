@@ -72,7 +72,7 @@ class Widgets_Manager {
      */
     private function get_widgets_config() {
         return [
-            'image-marquee' => [
+            'deensimc-image-marquee' => [
                 'traits' => [
                     '/includes/widgets/traits/image-marquee/content-image.php',
                     '/includes/widgets/traits/image-marquee/style-image-controls.php',
@@ -81,7 +81,7 @@ class Widgets_Manager {
                 'file' => '/includes/widgets/class-deensimc-image-marquee.php',
                 'class' => '\Deensimc_Image_Marquee',
             ],
-            'stacked-slider' => [
+            'deensimc-stacked-slider' => [
                 'traits' => [
                     '/includes/widgets/traits/stacked-slider/content-advance.php',
                     '/includes/widgets/traits/stacked-slider/content-primary.php',
@@ -97,7 +97,7 @@ class Widgets_Manager {
                 'file' => '/includes/widgets/class-deensimc-stacked-slider.php',
                 'class' => '\Deensimc_Stacked_Slider',
             ],
-            'image-accordion' => [
+            'deensimc-image-accordion' => [
                 'traits' => [
                     '/includes/widgets/traits/image-accordion/content.php',
                     '/includes/widgets/traits/image-accordion/style.php',
@@ -105,7 +105,7 @@ class Widgets_Manager {
                 'file' => '/includes/widgets/class-deensimc-image-accordion.php',
                 'class' => '\Deensimc_Image_Accordion',
             ],
-            'text-marquee' => [
+            'deensimc-text-marquee' => [
                 'traits' => [
                     '/includes/widgets/traits/text-marquee/content-text-repeater.php',
                     '/includes/widgets/traits/text-marquee/style-text-contents.php',
@@ -113,7 +113,7 @@ class Widgets_Manager {
                 'file' => '/includes/widgets/class-deensimc-text-marquee.php',
                 'class' => '\Deensimc_Text_Marquee',
             ],
-            'testimonial-marquee' => [
+            'deensimc-testimonial-marquee' => [
                 'traits' => [
                     '/includes/widgets/traits/testimonial-marquee/helper-methods.php',
                     '/includes/widgets/traits/testimonial-marquee/content-repeater.php',
@@ -127,7 +127,7 @@ class Widgets_Manager {
                 'file' => '/includes/widgets/class-deensimc-testimonial-marquee.php',
                 'class' => '\Deensimc_Testimonial_Marquee',
             ],
-            'video-marquee' => [
+            'deensimc-video-marquee' => [
                 'traits' => [
                     '/includes/widgets/traits/video-marquee/helper-methods.php',
                     '/includes/widgets/traits/video-marquee/content-url-fields.php',
@@ -141,7 +141,7 @@ class Widgets_Manager {
                 'file' => '/includes/widgets/class-deensimc-video-marquee.php',
                 'class' => '\Deensimc_Video_Marquee',
             ],
-            'news-ticker' => [
+            'deensimc-news-ticker' => [
                 'traits' => [
                     '/includes/widgets/traits/news-ticker/news-ticker-layout-control.php',
                     '/includes/widgets/traits/news-ticker/style-section-control.php',
@@ -150,7 +150,7 @@ class Widgets_Manager {
                 'file' => '/includes/widgets/class-deensimc-news-ticker.php',
                 'class' => '\Deensimc_News_Ticker',
             ],
-            'animated-word-roller' => [
+            'deensimc-animated-word-roller' => [
                 'traits' => [
                     '/includes/widgets/traits/animated-word-roller/content-additional-options.php',
                     '/includes/widgets/traits/animated-word-roller/content-text-repeater.php',
@@ -159,7 +159,7 @@ class Widgets_Manager {
                 'file' => '/includes/widgets/class-deensimc-animated-word-roller.php',
                 'class' => '\Deensimc_Animated_Word_Roller',
             ],
-            'animated-heading' => [
+            'deensimc-animated-heading' => [
                 'traits' => [
                     '/includes/widgets/traits/animated-heading/trait-animated-text-effect-controls.php',
                     '/includes/widgets/traits/animated-heading/trait-animation-controls.php',
@@ -169,7 +169,7 @@ class Widgets_Manager {
                 'file' => '/includes/widgets/class-deensimc-animated-heading.php',
                 'class' => '\Deensimc_Animated_Heading_Widget',
             ],
-            'button-marquee' => [
+            'deensimc-button-marquee' => [
                 'traits' => [
                     '/includes/widgets/traits/button-marquee/trait-button-controls.php',
                     '/includes/widgets/traits/button-marquee/trait-button-style-controls.php',

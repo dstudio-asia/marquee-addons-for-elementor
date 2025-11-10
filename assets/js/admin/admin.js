@@ -7,21 +7,69 @@
     $(document).ready(function() {
         
         // Tab Switching
-        $('.marquee-tab-btn').on('click', function() {
+        $('.deensimc-tab-btn').on('click', function() {
             const tabId = $(this).data('tab');
             
             // Update active tab button
-            $('.marquee-tab-btn').removeClass('active');
+            $('.deensimc-tab-btn').removeClass('active');
             $(this).addClass('active');
             
             // Update active tab content
-            $('.marquee-tab-content').removeClass('active');
+            $('.deensimc-tab-content').removeClass('active');
             $('#tab-' + tabId).addClass('active');
+        });
+
+        // PRO Widget Click - Redirect to upgrade page
+        $('.deensimc-widget-card').on('click', function(e) {
+            const $card = $(this);
+            
+            // Only handle PRO locked cards
+            if (!$card.hasClass('deensimc-pro-locked')) {
+                return;
+            }
+            
+            // Don't redirect if clicking on the toggle/checkbox area
+            const $target = $(e.target);
+            if ($target.closest('.deensimc-widget-toggle').length > 0 || 
+                $target.is('input') ||
+                $target.is('label') ||
+                $target.hasClass('deensimc-slider') ||
+                $target.hasClass('deensimc-toggle-label')) {
+                return;
+            }
+            
+            const proUrl = $card.attr('data-pro-url');
+            
+            if (proUrl && proUrl !== '' && proUrl !== 'undefined') {
+                window.open(proUrl, '_blank');
+            } else {
+            }
+        });
+
+        // Add visual feedback for PRO cards
+        $('.deensimc-widget-card.pro-locked').css({
+            'cursor': 'pointer',
+            'transition': 'all 0.3s ease'
+        }).attr('title', 'Click to upgrade to PRO');
+        
+        // Enhanced hover effect
+        $('.deensimc-widget-card.pro-locked').hover(
+            function() {
+                $(this).css('transform', 'translateY(-2px)');
+            },
+            function() {
+                $(this).css('transform', 'translateY(0)');
+            }
+        );
+        
+        // Prevent toggle clicks from bubbling
+        $('.deensimc-widget-card.pro-locked .deensimc-widget-toggle').on('click', function(e) {
+            e.stopPropagation();
         });
 
         // Enable All Widgets
         $('#enable-all').on('click', function() {
-            $('.marquee-widget-card input[type="checkbox"]').each(function() {
+            $('.deensimc-widget-card input[type="checkbox"]').each(function() {
                 // Only enable non-PRO widgets or if not disabled
                 if (!$(this).is(':disabled')) {
                     $(this).prop('checked', true).trigger('change');
@@ -32,8 +80,7 @@
 
         // Disable All Widgets
         $('#disable-all').on('click', function() {
-            $('.marquee-widget-card input[type="checkbox"]').each(function() {
-                // Only disable non-PRO locked widgets
+            $('.deensimc-widget-card input[type="checkbox"]').each(function() {
                 if (!$(this).is(':disabled')) {
                     $(this).prop('checked', false).trigger('change');
                 }
@@ -42,13 +89,12 @@
         });
 
         // Toggle Label Update
-        $('.marquee-switch input').on('change', function() {
-            // Skip if disabled (PRO locked)
+        $('.deensimc-switch input').on('change', function() {
             if ($(this).is(':disabled')) {
                 return;
             }
             
-            const label = $(this).closest('.widget-toggle').find('.toggle-label');
+            const label = $(this).closest('.deensimc-widget-toggle').find('.deensimc-toggle-label');
             
             if ($(this).is(':checked')) {
                 label.text('Enabled').css('color', '#00a32a');
@@ -58,12 +104,12 @@
         });
 
         // Initialize toggle labels
-        $('.marquee-switch input').each(function() {
-            const label = $(this).closest('.widget-toggle').find('.toggle-label');
+        $('.deensimc-switch input').each(function() {
+            const label = $(this).closest('.deensimc-widget-toggle').find('.deensimc-toggle-label');
             
             // If disabled (PRO locked), keep the locked label
             if ($(this).is(':disabled')) {
-                label.text('Disabled').css('color', '#856404');
+                label.text('Locked').css('color', '#856404');
                 return;
             }
             
@@ -75,68 +121,25 @@
         });
 
         // Form Submit Handler
-        $('form').on('submit', function() {
-            const submitBtn = $(this).find('button[type="submit"]');
-            submitBtn.prop('disabled', true).text('Saving...');
-            
-            // Re-enable after a delay (WordPress will handle the actual save)
-            setTimeout(function() {
-                submitBtn.prop('disabled', false).text('Save Changes');
-            }, 2000);
+        $('form').on('submit', function(e) {
+            const submitBtn = $(this).find('#submit');
+            submitBtn.prop('disabled', true).val('Saving...');
         });
-
-        // Search/Filter Widgets (Optional Enhancement)
-        let searchTimeout;
         
-        // Add search box dynamically if needed
-        const addSearchBox = function() {
-            if ($('#widget-search').length === 0) {
-                const searchHtml = `
-                    <div style="margin-bottom: 20px;">
-                        <input 
-                            type="text" 
-                            id="widget-search" 
-                            class="regular-text" 
-                            placeholder="Search widgets..."
-                            style="width: 300px;"
-                        >
-                    </div>
-                `;
-                $('.marquee-widgets-grid').before(searchHtml);
-                
-                // Search functionality
-                $('#widget-search').on('keyup', function() {
-                    clearTimeout(searchTimeout);
-                    const searchTerm = $(this).val().toLowerCase();
-                    
-                    searchTimeout = setTimeout(function() {
-                        if (searchTerm === '') {
-                            $('.marquee-widget-card').show();
-                        } else {
-                            $('.marquee-widget-card').each(function() {
-                                const title = $(this).find('h3').text().toLowerCase();
-                                const description = $(this).find('.widget-description').text().toLowerCase();
-                                
-                                if (title.includes(searchTerm) || description.includes(searchTerm)) {
-                                    $(this).show();
-                                } else {
-                                    $(this).hide();
-                                }
-                            });
-                        }
-                    }, 300);
-                });
-            }
-        };
+        // Check for success parameter in URL
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('settings-updated') === 'true') {
+            showNotification('Settings saved successfully!', 'success');
+            
+            // Remove the parameter from URL without reload
+            const newUrl = window.location.pathname + window.location.search.replace(/[?&]settings-updated=true/, '').replace(/^&/, '?');
+            window.history.replaceState({}, '', newUrl || window.location.pathname);
+        }
         
-        // Uncomment to enable search box
-        // addSearchBox();
-
         // Widget Count Display
         const updateWidgetCount = function() {
-            const totalWidgets = $('.marquee-widget-card').length;
-            const enabledWidgets = $('.marquee-widget-card input:checked:not(:disabled)').length;
-            const availableWidgets = $('.marquee-widget-card input:not(:disabled)').length;
+            const enabledWidgets = $('.deensimc-widget-card input:checked:not(:disabled)').length;
+            const availableWidgets = $('.deensimc-widget-card input:not(:disabled)').length;
             
             if ($('#widget-count').length === 0) {
                 const countHtml = `
@@ -144,7 +147,7 @@
                         <strong>${enabledWidgets}</strong> of <strong>${availableWidgets}</strong> available widgets enabled
                     </div>
                 `;
-                $('.marquee-bulk-actions').after(countHtml);
+                $('.deensimc-bulk-actions').after(countHtml);
             } else {
                 $('#widget-count').html(
                     `<strong>${enabledWidgets}</strong> of <strong>${availableWidgets}</strong> available widgets enabled`
@@ -156,7 +159,7 @@
         updateWidgetCount();
         
         // Update count when toggles change
-        $('.marquee-widget-card input').on('change', updateWidgetCount);
+        $('.deensimc-widget-card input').on('change', updateWidgetCount);
 
         // Keyboard Shortcuts
         $(document).on('keydown', function(e) {
@@ -167,26 +170,16 @@
             }
         });
 
-        // Smooth Scroll to Section
-        const scrollToSection = function(sectionId) {
-            const section = $('#' + sectionId);
-            if (section.length) {
-                $('html, body').animate({
-                    scrollTop: section.offset().top - 50
-                }, 500);
-            }
-        };
-
         // Handle URL hash for deep linking
         if (window.location.hash) {
             const hash = window.location.hash.substring(1);
             if (hash === 'widgets' || hash === 'general') {
-                $('.marquee-tab-btn[data-tab="' + hash + '"]').click();
+                $('.deensimc-tab-btn[data-tab="' + hash + '"]').click();
             }
         }
 
         // Update URL hash on tab change
-        $('.marquee-tab-btn').on('click', function() {
+        $('.deensimc-tab-btn').on('click', function() {
             const tabId = $(this).data('tab');
             window.location.hash = tabId;
         });
@@ -198,12 +191,12 @@
             type = type || 'success';
             
             // Remove existing notifications
-            $('.marquee-notice').remove();
+            $('.deensimc-notice').remove();
             
-            const noticeClass = type === 'error' ? 'marquee-notice error' : 'marquee-notice';
+            const noticeClass = type === 'error' ? 'deensimc-notice error' : 'deensimc-notice';
             const notice = $('<div class="' + noticeClass + '">' + message + '</div>');
             
-            $('.marquee-settings-container').prepend(notice);
+            $('.deensimc-settings-container').prepend(notice);
             
             // Auto-hide after 3 seconds
             setTimeout(function() {
@@ -215,7 +208,7 @@
 
         // Add loading state during save
         $('form').on('submit', function() {
-            $('.marquee-settings-container').addClass('marquee-loading');
+            $('.deensimc-settings-container').addClass('deensimc-loading');
         });
 
         // Confirm before leaving with unsaved changes
