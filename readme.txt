@@ -237,7 +237,7 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 
 == Changelog ==
 
-= 3.7.21 - 2025-11-10 =
+= 3.7.21 - 2025-11-11 =
 - Tweak: Add scale transition to search popup
 
 = 3.7.20 - 2025-11-10 =
