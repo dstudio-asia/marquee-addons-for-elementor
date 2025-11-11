@@ -110,13 +110,15 @@
   width: 100%;
   top: 80px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) scaleY(0);
   max-height: 0;
-  transition: max-height 0.3s ease-in-out;
+  transition: max-height 0.3s, transform 0.3s;
+  transform-origin: top;
   pointer-events: none;
 }
 
 .deensimc-popup-input .deensimc-input-field-wrapper.deensimc-search-open {
-  max-height: 200px;
+  max-height: 100px;
   pointer-events: all;
+  transform: translateX(-50%) scaleY(1);
 }
