@@ -91,9 +91,16 @@ a.toplevel_page_marquee-addons-settings .wp-menu-image img {
     margin-top: 15px;
 } */
 
-.deensimc-enable-btn, .deensimc-disable-btn {
+.deensimc-settings-container .deensimc-enable-btn, 
+.deensimc-settings-container .deensimc-disable-btn {
     border: 1px solid #7456ff;
     color: #7456ff;
+    background-color: #fff;
+}
+
+.deensimc-settings-footer #submit {
+    background-color: #7456ff;
+    border-color: #7456ff;
 }
 
 /* Widgets Grid */

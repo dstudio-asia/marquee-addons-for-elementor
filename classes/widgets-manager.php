@@ -5,7 +5,7 @@
  * This file handles the registration of Elementor widgets based on Control Manager settings
  */
 
-namespace MarqueeAddons;
+namespace Deensimc_Marquee;
 
 if (!defined('ABSPATH')) exit;
 

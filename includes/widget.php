@@ -213,7 +213,6 @@ final class Marquee
 			add_action('admin_notices', [$this, 'deensimc_rate_us'], 10);
 			add_action('wp_ajax_deensimc_notice_dismiss', [$this, 'deensimc_notice_dismiss'], 10);
 			add_action('wp_ajax_deensimc_never_show_notice', [$this, 'deensimc_never_show_notice']);
-			add_action('elementor/editor/init',	[$this, 'init_pro_placeholder']);
 		}
 		add_action('elementor/frontend/after_enqueue_styles', [$this, 'deensimc_frontend_styles'], 20);
 		add_action('elementor/frontend/after_register_scripts', [$this, 'deensimc_frontend_scripts'], 20);
@@ -424,10 +423,5 @@ final class Marquee
 				]
 			);
 		}
-	}
-
-	function init_pro_placeholder()
-	{
-		require_once __DIR__ . '/misc/class-pro-widgets-placeholder.php';
 	}
 }
