@@ -1,119 +1,145 @@
-(function ($, _) {
+(function ($, _, window) {
   "use strict";
-  window.haGetTranslated = function (stringKey, templateArgs) {
-    return elementorCommon.translate(
+  window.MarqueeAddonsEditor = window.MarqueeAddonsEditor || {};
+
+  if (typeof window.MarqueeAddonsEditor.getTranslated === "undefined") {
+    window.MarqueeAddonsEditor.getTranslated = function (
       stringKey,
-      null,
-      templateArgs,
-      MarqueeAddonsEditor.i18n
-    );
-  };
+      templateArgs
+    ) {
+      return elementorCommon.translate(
+        stringKey,
+        null,
+        templateArgs,
+        window.MarqueeAddonsEditor.i18n
+      );
+    };
+  }
 
   if (typeof elementor !== "undefined" && elementor.hooks) {
     elementor.hooks.addFilter(
       "panel/elements/regionViews",
       function (regionViews) {
-        if (
-          typeof MarqueeAddonsEditor === "undefined" ||
-          MarqueeAddonsEditor.hasPro ||
-          _.isEmpty(MarqueeAddonsEditor.placeholder_widgets)
-        ) {
+        const MAE = window.MarqueeAddonsEditor;
+        if (!MAE || MAE.hasPro || _.isEmpty(MAE.placeholder_widgets)) {
           return regionViews;
         }
-        var CATEGORY_NAME = "marquee_addons_pro",
-          elementsView = regionViews.elements.view,
-          categoriesView = regionViews.categories.view,
-          elementsCollection = regionViews.elements.options.collection,
-          categoriesCollection = regionViews.categories.options.collection,
-          proWidgets = [],
-          ElementView,
-          freeCategoryIndex;
-        _.each(
-          MarqueeAddonsEditor.placeholder_widgets,
-          function (widget, name) {
-            elementsCollection.add({
-              name: "ma-" + name,
-              title: widget.title,
-              icon: widget.icon,
-              categories: [CATEGORY_NAME],
-              editable: false,
-            });
-          }
-        );
-        elementsCollection.each(function (element) {
-          if (element.get("categories")[0] === CATEGORY_NAME) {
-            proWidgets.push(element);
-          }
+
+        const CATEGORY_NAME = "marquee_addons_pro";
+        const prevElementsView = regionViews.elements.view;
+        const prevCategoriesView = regionViews.categories.view;
+        const elementsCollection = regionViews.elements.options.collection;
+        const categoriesCollection = regionViews.categories.options.collection;
+
+        _.each(MAE.placeholder_widgets, function (widget, name) {
+          elementsCollection.add({
+            name: "ma-" + name,
+            title: widget.title,
+            icon: widget.icon,
+            categories: [CATEGORY_NAME],
+            editable: false,
+          });
         });
-        freeCategoryIndex = categoriesCollection.findIndex({
+
+        const proWidgets = elementsCollection.filter(function (el) {
+          return (el.get("categories") || [])[0] === CATEGORY_NAME;
+        });
+
+        const freeCategoryIndex = categoriesCollection.findIndex({
           name: "deensimc_smooth_marquee",
         });
-        if (freeCategoryIndex) {
+
+        if (freeCategoryIndex >= 0) {
           categoriesCollection.add(
             {
-              name: "marquee_addons_pro",
+              name: CATEGORY_NAME,
               title: "Marquee Addons Pro",
-              //   icon: "hm hm-happyaddons",
               defaultActive: false,
               sort: true,
               hideIfEmpty: true,
               items: proWidgets,
-              promotion: false,
             },
-            {
-              at: freeCategoryIndex + 1,
-            }
+            { at: freeCategoryIndex + 1 }
           );
         }
-        ElementView = {
-          className: function className() {
-            var className = this.constructor.__super__.className.call(this);
-            if (!this.isEditable() && this.isMAWidget()) {
-              className += " ma-element--promotion";
+
+        // ✅ Protect from double extension
+        if (prevElementsView.__MAExtended) return regionViews;
+
+        const BaseElementChildView = prevElementsView.prototype.childView;
+        const BaseCategoryChildView = prevCategoriesView.prototype.childView;
+
+        const ElementViewExtension = {
+          className: function () {
+            let baseClassName = "";
+            const proto = Object.getPrototypeOf(this);
+            if (proto && proto.className) {
+              try {
+                baseClassName = proto.className.call(this);
+              } catch (err) {
+                baseClassName = "";
+              }
             }
-            return className;
+
+            if (!this.isEditable?.() && this.isMAWidget?.()) {
+              baseClassName += " ma-element--promotion";
+            }
+            return baseClassName.trim();
           },
-          isMAWidget: function isMAWidget() {
-            var widgetName = this.model.get("name");
-            return widgetName != undefined && widgetName.indexOf("ma-") === 0;
+
+          isMAWidget: function () {
+            const name = this.model?.get("name");
+            return name && name.startsWith("ma-");
           },
-          onMouseDown: function onMouseDown() {
-            if (!this.isMAWidget()) {
-              this.constructor.__super__.onMouseDown.call(this);
+
+          onMouseDown: function (evt) {
+            if (!this.isMAWidget?.()) {
+              const proto = Object.getPrototypeOf(this);
+              if (proto && proto.onMouseDown) {
+                return proto.onMouseDown.call(this, evt);
+              }
               return;
             }
+
             elementor.promotion.showDialog({
-              title: haGetTranslated("promotionDialogHeader", [
+              title: MAE.getTranslated("promotionDialogHeader", [
                 this.model.get("title"),
               ]),
-              content: haGetTranslated("promotionDialogMessage", [
+              content: MAE.getTranslated("promotionDialogMessage", [
                 this.model.get("title"),
               ]),
               targetElement: this.el,
-              position: {
-                blockStart: "-7",
-              },
+              position: { blockStart: "-7" },
               actionButton: {
                 url: "https://marqueeaddons.com/pricing",
-                text: MarqueeAddonsEditor.i18n.promotionDialogBtnTxt,
+                text: MAE.i18n?.promotionDialogBtnTxt || "Get Pro",
                 classes: ["elementor-button", "go-pro"],
               },
             });
           },
         };
-        regionViews.elements.view = elementsView.extend({
-          childView: elementsView.prototype.childView.extend(ElementView),
+
+        regionViews.elements.view = prevElementsView.extend({
+          childView: BaseElementChildView.extend(ElementViewExtension),
         });
-        regionViews.categories.view = categoriesView.extend({
-          childView: categoriesView.prototype.childView.extend({
-            childView:
-              categoriesView.prototype.childView.prototype.childView.extend(
-                ElementView
-              ),
-          }),
-        });
+
+        regionViews.elements.view.__MAExtended = true;
+
+        const NestedCategoryChildView =
+          BaseCategoryChildView?.prototype?.childView || null;
+
+        if (NestedCategoryChildView) {
+          const ExtendedCategoryChild = BaseCategoryChildView.extend({
+            childView: NestedCategoryChildView.extend(ElementViewExtension),
+          });
+
+          regionViews.categories.view = prevCategoriesView.extend({
+            childView: ExtendedCategoryChild,
+          });
+        }
+
         return regionViews;
       }
     );
   }
-})(jQuery, window._);
+})(jQuery, window._, window);
