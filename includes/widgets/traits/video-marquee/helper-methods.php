@@ -195,7 +195,7 @@ trait Video_Marquee_Helper_Methods
             );
         ?>
             <div class="deensimc-video-item">
-                <?php $this->image_overlay(video_link: $video_link); ?>
+                <?php $this->image_overlay($video_link); ?>
                 <iframe class="deensimc-video-wrapper <?php echo esc_attr($video_display); ?>" src="<?php echo esc_url($embed_url); ?>"
                     frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen>
                 </iframe>
