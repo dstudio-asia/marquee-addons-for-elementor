@@ -238,7 +238,7 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 == Changelog ==
 
 = 3.7.23 - 2025-11-15 =
-- Fix: Video Marquee syntax error 
+- Fix: Video Marquee syntax error in image overlay
 
 = 3.7.22 - 2025-11-15 =
 - New: Bulgarian (bg_BG) translation
