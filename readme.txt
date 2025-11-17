@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: elementor, text marquee, image marquee, video marquee, Product slider
 Requires at least: 5.8
 Tested up to: 6.8
-Stable tag: 3.7.22
+Stable tag: 3.7.23
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -237,8 +237,11 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 
 == Changelog ==
 
+= 3.7.23 - 2025-11-15 =
+- Fix: Video Marquee syntax error 
+
 = 3.7.22 - 2025-11-15 =
- New: Bulgarian (bg_BG) translation
+- New: Bulgarian (bg_BG) translation
 
 = 3.7.21 - 2025-11-11 =
 - Tweak: Add scale transition to search popup
