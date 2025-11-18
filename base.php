@@ -25,9 +25,9 @@ final class Base
 
     public function load_dependencies()
     {
-		// Load Autoload
-		require_once( DEENSIMC__DIR__ . '/includes/autoload.php' );
-
+		// Loader 
+		require_once( DEENSIMC__DIR__ . '/includes/loader.php' );
+		
         // Load Actions
         add_action('admin_enqueue_scripts', [$this, 'deensimc_admin_enqueue_scripts'], 10);
     }

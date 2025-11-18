@@ -2,11 +2,11 @@
 
 namespace Deensimc_Marquee;
 
-use Deensimc_Marquee\Misc\Deensimcpro_Promo;
+// use Deensimc_Marquee\Misc\Deensimcpro_Promo;
 
 final class Marquee
 {
-	use Deensimcpro_Promo;
+	// use Deensimcpro_Promo;
 	/**
 	 * Addon Version
 	 *
@@ -218,7 +218,7 @@ final class Marquee
 			add_action('wp_ajax_deensimc_never_show_notice', [$this, 'deensimc_never_show_notice']);
 
 			add_action('elementor/editor/before_enqueue_styles', [$this, 'deensimc_promotion_styles'], 10);
-			add_filter('elementor/editor/localize_settings', [$this, 'promote_pro_elements']);
+			// add_filter('elementor/editor/localize_settings', [$this, 'promote_pro_elements']);
 			add_action('elementor/editor/after_enqueue_scripts', [$this, 'deensimc_promotion_script'], 10);
 		}
 		add_action('elementor/frontend/after_enqueue_styles', [$this, 'deensimc_frontend_styles'], 20);

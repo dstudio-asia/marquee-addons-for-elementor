@@ -1,7 +1,5 @@
 <?php
 
-namespace Deensimc_Marquee\Misc;
-
 
 trait Deensimcpro_Promo
 {

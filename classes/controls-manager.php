@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
 class Control_Manager {
 
-    use WidgetsList;
+    use Deensimcpro_Promo;
     
     private static $_instance = null;
     
@@ -215,7 +215,7 @@ class Control_Manager {
             ],
         ];
 
-        // Merge free widgets with pro widgets from trait
+        // Merge free widgets with pro widgets from the new trait
         return array_merge($free_widgets, self::get_widgets_list());
     }
 
