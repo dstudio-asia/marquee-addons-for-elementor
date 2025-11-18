@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: elementor, text marquee, image marquee, video marquee, Product slider
 Requires at least: 5.8
 Tested up to: 6.8
-Stable tag: 3.7.23
+Stable tag: 3.7.24
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -120,12 +120,20 @@ With this elementor widget, you can turn simple image rows into expandable panel
 
 The 3D Marquee is an animated Elementor widget with 3D perspective, smooth scrolling, and smooth column animations, supporting CSS 3D transforms. It provides a 3D marquee effect with a grid, ideal for hero sections, brand walls, and featured work or portfolio. Use the 3D Grid Marquee to display logos, images in a continuous 3D scrolling grid. The smooth 3D movement adds visual energy while staying performant and easy to configure.
 
-### [Elementor Templates](https://marqueeaddons.com/marquee-templates/) (Pro):
+### [Elementor Templates](https://marqueeaddons.com/marquee-templates/) (Pro)
 
 Start faster with one-click demo import and beautifully pre-built templates. These done-for-you Elementor templates help you ship better-looking sites faster - saving 10+ hours on every client build.
 
 With our Marquee Addon for Elementor, you don’t just get widgets - you also get a collection of professionally designed ready-made templates that you can import in a single click. Perfect for  SAAS, Startups, agencies, and creators who want to: Every template is designed to make your site look modern, engaging, and 10X Awesome to set up.
  
+### Bento Grid (Pro)
+
+Create modern, asymmetric Bento Box layouts in Elementor with complete design freedom. Set custom row and column spans for each item, fine-tune spacing, and build editorial-style sections that stand out from traditional grids. Includes support for skewed grid layouts with title, description, and a header component for a more dynamic design. The perfect Elementor widget to help you design clean, responsive Bento Grids on your Elementor website.
+
+### Animated List (Pro)
+
+A list widget that animates each item in sequence with adjustable delay, perfect for showcasing notifications or events on Elementor landing pages. Bring lists to life in Elementor with smooth, continuous motion. Ideal for features, steps, or benefits. Control visible items, alignment, speed, and looping with no coding required.
+
 ## Key features:
  
 * **Horizontal and Vertical Positioning**: Easily position all marquee addons in either horizontal or vertical layouts to suit your design needs; it gives you full control over how your content is displayed.
@@ -236,6 +244,11 @@ The developers release regular updates to improve features, fix bugs, and ensure
 First, ensure that you've activated the plugin correctly. If the issue persists, try clearing your browser cache or updating your Elementor plugin. If the problem continues, you can reach out to the support team for assistance.
 
 == Changelog ==
+
+= 3.7.24 - 2025-11-18 =
+- Fix: Performance issue in editor
+- Feat: Added Bento Grid (Pro)
+- Feat: Added Animated List (Pro)
 
 = 3.7.23 - 2025-11-17 =
 - Fix: Video Marquee syntax error in image overlay
