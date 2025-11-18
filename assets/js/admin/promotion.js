@@ -1,1 +1,90 @@
-!function(t,e,o){"use strict";elementor.on("panel:init",(function(){void 0!==parent.document&&parent.document.addEventListener("mousedown",(function(t){const e=parent.document.querySelectorAll(".elementor-element--promotion");if(0!==e.length)for(let o=0;o<e.length;o++)if(e[o].contains(t.target)){const n=parent.document.querySelector("#elementor-element--promotion__dialog");if(!n)continue;const i=e[o].querySelector(".icon > i"),a=n.querySelector(".dialog-buttons-action:not(.ma-dialog-buttons-action)");let l=n.querySelector(".ma-dialog-buttons-action");i&&i.classList.toString().includes("deensimc-pro")?(t.stopImmediatePropagation(),a&&(a.style.display="none"),l||(l=document.createElement("a"),l.textContent="Upgrade to Marquee Addons Pro",l.setAttribute("href","https://marqueeaddons.com/pricing/"),l.setAttribute("target","_blank"),l.classList.add("dialog-button","dialog-action","dialog-buttons-action","elementor-button","go-pro","elementor-button-success","ma-dialog-buttons-action"),a?a.insertAdjacentElement("afterend",l):n.querySelector(".dialog-buttons").appendChild(l)),l.style.display="inline-block"):(a&&(a.style.display="inline-block"),l&&(l.style.display="none"));break}}))}))}(jQuery,window._,window);
+(function ($, _, window) {
+  "use strict";
+
+  // Handle Pro Widget Promotion Modal (Following Essential Addons pattern)
+  elementor.on("panel:init", function () {
+    if (typeof parent.document === "undefined") {
+      return;
+    }
+
+    parent.document.addEventListener("mousedown", function (e) {
+      const widgets = parent.document.querySelectorAll(
+        ".elementor-element--promotion"
+      );
+
+      if (widgets.length === 0) {
+        return;
+      }
+
+      for (let i = 0; i < widgets.length; i++) {
+        if (widgets[i].contains(e.target)) {
+          const dialog = parent.document.querySelector(
+            "#elementor-element--promotion__dialog"
+          );
+          if (!dialog) {
+            continue;
+          }
+
+          const icon = widgets[i].querySelector(".icon > i");
+          const defaultButton = dialog.querySelector(
+            "button.elementor-button.go-pro.dialog-button.dialog-action.dialog-buttons-action"
+          );
+          let maButton = dialog.querySelector(".ma-dialog-buttons-action");
+
+          // Check if the widget belongs to Marquee Addons by its icon class.
+          if (icon && icon.classList.toString().includes("deensimc-pro")) {
+            // It's a Marquee widget.
+            e.stopImmediatePropagation();
+
+            // Hide default button.
+            if (defaultButton) {
+              defaultButton.style.display = "none";
+              console.log(defaultButton);
+            }
+
+            // Create or show the Marquee button.
+            if (!maButton) {
+              maButton = document.createElement("a");
+              maButton.textContent = "Upgrade to Marquee Addons Pro";
+              maButton.setAttribute(
+                "href",
+                "https://marqueeaddons.com/pricing/"
+              );
+              maButton.setAttribute("target", "_blank");
+              maButton.classList.add(
+                "dialog-button",
+                "dialog-action",
+                "dialog-buttons-action",
+                "elementor-button",
+                "go-pro",
+                "elementor-button-success",
+                "ma-dialog-buttons-action"
+              );
+
+              if (defaultButton) {
+                defaultButton.insertAdjacentElement("afterend", maButton);
+              } else {
+                dialog.querySelector(".dialog-buttons").appendChild(maButton);
+              }
+            }
+
+            maButton.style.display = "block";
+          } else {
+            // It's not a Marquee widget, so ensure our button is hidden and the default is shown.
+            console.log(defaultButton);
+            if (defaultButton) {
+              defaultButton.style.display = "block";
+            }
+
+            if (maButton) {
+              maButton.style.display = "none";
+            }
+          }
+
+          // We found the clicked widget, so stop the loop.
+          break;
+        }
+      }
+    });
+  });
+})(jQuery, window._, window);
