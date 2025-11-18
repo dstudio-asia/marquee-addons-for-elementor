@@ -1,6 +1,39 @@
 # Changelog
 
 
+## [3.7.23](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.7.17...3.7.23) (2025-11-18)
+
+
+### Features
+
+* add clear button style controls for search widget ([3c0fe7f](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/3c0fe7fb99af2e9f3736e822ff6e42df11a6f318))
+* add customizable trigger icon control for search widget ([70e9468](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/70e94680e7524c1a458b546dfe87a277d9509508))
+* add dynamic query handling to Search widget ([1476dd0](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/1476dd0984225f53b91f68eb83790c9cb18b25f4))
+* add Elementor search query controls and enhance search widget integration ([54117e7](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/54117e7ef6da7379e7de77425dd7879d09dba574))
+* add new Elementor static search widget ([49ece3d](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/49ece3d9276bbc9f4c54e0c00acaac500bc82a6e))
+* add popup search field width control and improve styling ([8fa40ea](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/8fa40eab786897a11755a02bb2322f79e37a0af2))
+* add search field style controls and restructure field layout ([196a9f3](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/196a9f3d06a4d4e4a2b04ee4440a001a23a1f8bd))
+* add submit button style controls for search widget ([6e5d2d0](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/6e5d2d0125f26d5f3ac5ea6c4355f0ece4c7ca01))
+* add triggerer style controls and improve search field alignment ([9fe03dc](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/9fe03dc5ec80647949de1367025226dbcd7dfc98))
+* enhance Elementor search widget with content controls and improved CSS ([0b07ba7](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/0b07ba70d64c0da0a6c1b93aab5585657a9e69ad))
+* implement WordPress search functionality and fix placeholder/icon rendering ([789d981](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/789d981716878ae73f14d2a4d7a552f36a7618d9))
+* integrate dynamic control values into Search widget render method ([a3e0b9e](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/a3e0b9e320891b0440a7a35cfb3e54d244406869))
+* update version to 3.7.22 and add Bulgarian translation ([8f75c40](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/8f75c404f83b89f588c3636941c33e329c139f9c))
+* version 3.7.20 ([7d9ffa9](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/7d9ffa91e5197050e5f864002bc6388a986f32c7))
+* version update ([3e9a23b](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/3e9a23b277e1372b46bcc506d0462c45962a6a86))
+* version updated ([bc569c5](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/bc569c5fb382b77b5731e4580c7ebcb06710fda5))
+* version updated ([52c57de](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/52c57de5bcfe94517aa72abc9116e23b0a0280fd))
+
+
+### Bug Fixes
+
+* improve search widget UI and icon configuration ([769aee7](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/769aee727e15513f350654ccce40305c70eefe16))
+* update changelog date for video marquee syntax error fix ([88222d8](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/88222d8ce42e7dc44c279648aacb8f77c2d61968))
+* update heading format for Search Box section in readme.txt ([7d4a922](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/7d4a922ac6d6fd407af211e223abdb6c8b30bfef))
+* update textdomain for search field placeholder ([e3cc278](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/e3cc278438a498a895455fad56631a477dbcdf59))
+* update video marquee syntax error description in changelog ([b379111](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/b379111b26b5fba01be901139b1f27355c7e0d9e))
+* video marquee syntax ([4d1cf82](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/4d1cf8239ec3857e71db9b212b7379164bc356b4))
+
 ## [3.7.17](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.7.16...3.7.17) (2025-11-06)
 
 
