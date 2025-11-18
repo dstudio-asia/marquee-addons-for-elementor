@@ -28,6 +28,7 @@
 	define( 'DEENSIMC_VERSION' , '3.7.23' );
 
 	function deensimc_load_plugin_data() {
+		require_once( DEENSIMC__DIR__ . '/includes/misc/class-deensimcpro-promo.php' );
 		require_once( DEENSIMC__DIR__ . '/includes/widget.php' );
 		require_once( DEENSIMC__DIR__ . '/includes/feedback.php' );
 		\Deensimc_Marquee\Marquee::instance();

@@ -2,8 +2,11 @@
 
 namespace Deensimc_Marquee;
 
+use Deensimc_Marquee\Misc\Deensimcpro_Promo;
+
 final class Marquee
 {
+	use Deensimcpro_Promo;
 	/**
 	 * Addon Version
 	 *
@@ -214,6 +217,9 @@ final class Marquee
 			add_action('wp_ajax_deensimc_notice_dismiss', [$this, 'deensimc_notice_dismiss'], 10);
 			add_action('wp_ajax_deensimc_never_show_notice', [$this, 'deensimc_never_show_notice']);
 			add_action('elementor/editor/init',	[$this, 'init_pro_placeholder']);
+			add_action('elementor/editor/before_enqueue_styles', [$this, 'deensimc_promotion_styles'], 10);
+			add_filter('elementor/editor/localize_settings', [$this, 'promote_pro_elements']);
+			add_action('elementor/editor/after_enqueue_scripts', [$this, 'deensimc_promotion_script'], 10);
 		}
 		add_action('elementor/frontend/after_enqueue_styles', [$this, 'deensimc_frontend_styles'], 20);
 		add_action('elementor/frontend/after_register_scripts', [$this, 'deensimc_frontend_scripts'], 20);
@@ -380,10 +386,20 @@ final class Marquee
 		wp_register_style('deensimc-editor-css', DEENSIMC_ASSETS_URL . 'css/editor.css', null, self::VERSION, false);
 		wp_enqueue_style('deensimc-editor-css');
 	}
+	public function deensimc_promotion_styles()
+	{
+		wp_register_style('deensimc-promotion-css', DEENSIMC_ASSETS_URL . 'css/admin/promotion.css', null, self::VERSION, false);
+		wp_enqueue_style('deensimc-promotion-css');
+	}
 	public function deensimc_editor_script()
 	{
 		wp_register_script('deensimc-editor-script', DEENSIMC_ASSETS_URL . 'js/admin/editor.js', ['jquery'], self::VERSION, true);
 		wp_enqueue_script('deensimc-editor-script');
+	}
+	public function deensimc_promotion_script()
+	{
+		wp_register_script('deensimc-promotion-script', DEENSIMC_ASSETS_URL . 'js/admin/promotion.js', ['jquery'], self::VERSION, true);
+		wp_enqueue_script('deensimc-promotion-script');
 	}
 
 	public function deensimc_upgrade_link($actions)
@@ -515,7 +531,7 @@ final class Marquee
 		);
 		if (!class_exists('\Deensimcpro_Marquee\Marqueepro')) {
 			$elements_manager->add_category(
-				'marquee_addons_pro',
+				'marquee_addons_pro_promo',
 				[
 					'title' => esc_html__('Marquee Addons Pro', 'marquee-addons-for-elementor'),
 					'icon' => 'fa fa-plug',
