@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: elementor, text marquee, image marquee, video marquee, Product slider
 Requires at least: 5.8
 Tested up to: 6.8
-Stable tag: 3.7.17
+Stable tag: 3.7.23
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -57,6 +57,11 @@ Combines a static heading with rotating words or phrases that roll through the s
 ### [Marquee Button](https://marqueeaddons.com/button-marquee/):
 
 With Marquee Button, create an interactive button with auto-scrolling text that grabs attention. Pick solid, outline, or ghost styles, set corners, add icons, and control loop speed and direction. On hover, the text loops smoothly left to right. Perfect for modern CTAs. Click can open a link or a video popup from YouTube, Vimeo, or self-hosted. Built to keep page load light.
+
+### Search Box:
+
+This is a mobile-friendly Interactive search widget with expandable input and popup dropdown results. Designed to deliver fast, interactive search experiences inside Elementor.
+
 
 ## PRO WIDGETS – UNLOCK ADVANCED CAPABILITIES:
 
@@ -232,8 +237,20 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 
 == Changelog ==
 
-= 3.7.16 - 2025-10-30 =
-- New: Serbian (Latin, Serbia) translation
+= 3.7.23 - 2025-11-17 =
+- Fix: Video Marquee syntax error in image overlay
+
+= 3.7.22 - 2025-11-15 =
+- New: Bulgarian (bg_BG) translation
+
+= 3.7.21 - 2025-11-11 =
+- Tweak: Add scale transition to search popup
+
+= 3.7.20 - 2025-11-10 =
+- New: Add customizable trigger icon control for search widget
+
+= 3.7.18 - 2025-11-06 =
+- New: Search Box Widget
 
 = 3.7.13 - 2025-10-16 = 
 - New: Slovak (sk_SK) translation
