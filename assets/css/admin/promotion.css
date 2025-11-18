@@ -98,15 +98,20 @@
   }
 }
 
-#elementor-panel-category-marquee_addons_pro_promo
+/* #elementor-panel-category-marquee_addons_pro_promo
   .elementor-element--promotion,
 .elementor-element--promotion:has(.eicon-deensimc-pro) {
   opacity: 0.7;
-}
+} */
 
 #elementor-panel-category-marquee_addons_pro_promo .eicon-lock,
 .elementor-element--promotion:has(.eicon-deensimc-pro) .eicon-lock {
   right: auto;
   left: 4px;
   width: fit-content;
+}
+
+.dialog-buttons-buttons-wrapper:has(.ma-dialog-buttons-action)
+  .dialog-buttons-action:not(.ma-dialog-buttons-action) {
+  display: none !important;
 }
