@@ -96,6 +96,12 @@ trait Deensimcpro_Promo
                     'icon'       => 'eicon-post-list eicon-deensimc-pro',
                     'categories' => '["marquee_addons_pro_promo"]',
                 ],
+                [
+                    'name'       => 'deensimcpro-bento-grid',
+                    'title'      => __('Bento Grid', 'marquee-addons-for-elementor'),
+                    'icon'       => 'eicon-gallery-grid eicon-deensimc-pro',
+                    'categories' => '["marquee_addons_pro_promo"]',
+                ],
             ]
         );
 

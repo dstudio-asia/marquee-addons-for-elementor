@@ -14,7 +14,7 @@ final class Marquee
 	 * @var string The addon version.
 	 */
 
-	const VERSION = '3.7.23';
+	const VERSION = '3.7.24';
 
 	/**
 	 * Minimum Elementor Version
@@ -216,7 +216,6 @@ final class Marquee
 			add_action('admin_notices', [$this, 'deensimc_rate_us'], 10);
 			add_action('wp_ajax_deensimc_notice_dismiss', [$this, 'deensimc_notice_dismiss'], 10);
 			add_action('wp_ajax_deensimc_never_show_notice', [$this, 'deensimc_never_show_notice']);
-			add_action('elementor/editor/init',	[$this, 'init_pro_placeholder']);
 			add_action('elementor/editor/before_enqueue_styles', [$this, 'deensimc_promotion_styles'], 10);
 			add_filter('elementor/editor/localize_settings', [$this, 'promote_pro_elements']);
 			add_action('elementor/editor/after_enqueue_scripts', [$this, 'deensimc_promotion_script'], 10);
@@ -411,7 +410,7 @@ final class Marquee
 		);
 
 		if (!class_exists('\Deensimcpro_Marquee\Marqueepro')) {
-			$pro_url = 'https://marqueeaddons.com/';
+			$pro_url = 'https://marqueeaddons.com/pricing/';
 			$actions['upgrade_to_pro'] = sprintf(
 				'<a href="%1$s" target="_blank" style="color:#e2498a; font-weight: bold;">%2$s</a>',
 				esc_url($pro_url),
@@ -538,10 +537,5 @@ final class Marquee
 				]
 			);
 		}
-	}
-
-	function init_pro_placeholder()
-	{
-		require_once __DIR__ . '/misc/class-pro-widgets-placeholder.php';
 	}
 }
