@@ -247,7 +247,8 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 
 = 3.7.24 - 2025-11-18 =
 - Fix: Performance issue in editor
-- Feat: Bento Grid (Pro) and Animated List (Pro) added
+- Feat: Added Bento Grid (Pro)
+- Feat: Added Animated List (Pro)
 
 = 3.7.23 - 2025-11-17 =
 - Fix: Video Marquee syntax error in image overlay
