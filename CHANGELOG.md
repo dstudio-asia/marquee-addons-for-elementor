@@ -1,6 +1,19 @@
 # Changelog
 
 
+## [3.7.24](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.7.23...3.7.24) (2025-11-19)
+
+
+### Features
+
+* improve promo modal logic and hide default upgrade button ([72205ad](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/72205ad7b83529904ce433cff3521a88f26db8d4))
+
+
+### Bug Fixes
+
+* Pannel fridging while searching for widget ([51a97da](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/51a97daac998de8ef9268910a2698909116a58de))
+* performance issue in editor ([e27bc08](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/e27bc08e402dd930ac19eedaed86a5d6ceaa5597))
+
 ## [3.7.23](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.7.17...3.7.23) (2025-11-18)
 
 
