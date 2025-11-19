@@ -57,7 +57,7 @@ trait WidgetsList {
                 'demo'   => 'https://marqueeaddons.com/pricing',
                 'pro_url' => 'https://marqueeaddons.com/pricing/'
             ],
-            'deensimcpro_product_category_marquee' => [
+            'deensimcpro-product-category-marquee' => [
                 'cat'    => 'general',
                 'title'  => __('Product Category Marquee', 'marquee-addons-for-elementor'),
                 'icon'   => 'deensimcpro-product-cat-marquee-icon eicon-deensimc-pro',
@@ -65,7 +65,7 @@ trait WidgetsList {
                 'demo'   => 'https://marqueeaddons.com/pricing',
                 'pro_url' => 'https://marqueeaddons.com/pricing/'
             ],
-            'deensimcpro_product_marquee' => [
+            'deensimcpro-product-marquee' => [
                 'cat'    => 'general',
                 'title'  => __('Product Marquee', 'marquee-addons-for-elementor'),
                 'icon'   => 'deensimcpro-product-marquee-icon eicon-deensimc-pro',
