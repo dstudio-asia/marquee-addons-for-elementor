@@ -68,7 +68,7 @@
               }
             }
 
-            maButton.style.display = "block";
+            maButton.style.display = "inline-block";
           } else {
             // It's not a Marquee widget, so ensure our button is hidden and the default is shown.
             console.log(defaultButton);

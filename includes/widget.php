@@ -14,7 +14,7 @@ final class Marquee
 	 * @var string The addon version.
 	 */
 
-	const VERSION = '3.7.23';
+	const VERSION = '3.7.24';
 
 	/**
 	 * Minimum Elementor Version
@@ -410,7 +410,7 @@ final class Marquee
 		);
 
 		if (!class_exists('\Deensimcpro_Marquee\Marqueepro')) {
-			$pro_url = 'https://marqueeaddons.com/';
+			$pro_url = 'https://marqueeaddons.com/pricing/';
 			$actions['upgrade_to_pro'] = sprintf(
 				'<a href="%1$s" target="_blank" style="color:#e2498a; font-weight: bold;">%2$s</a>',
 				esc_url($pro_url),
