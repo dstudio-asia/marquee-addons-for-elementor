@@ -7,7 +7,7 @@
 
 namespace Deensimc_Marquee;
 
-if (!defined('ABSPATH')) exit; // Exit if accessed directly
+if (!defined('ABSPATH')) exit;
 
 class Control_Manager {
 
@@ -25,7 +25,7 @@ class Control_Manager {
     }
     
     public function __construct() {
-        // Check if PRO version is active
+        
         $this->is_pro_active = $this->check_pro_version();
         
         add_action('admin_menu', [$this, 'add_settings_page']);
@@ -38,16 +38,13 @@ class Control_Manager {
     
     /**
      * Check if PRO version is active
-     * Modify this method based on your PRO plugin structure
      */
     private function check_pro_version() {
-        
-        // Option 2: Check if PRO plugin is in active plugins list
+
         if (in_array('marquee-addons-pro/marquee-addons-pro.php', apply_filters('active_plugins', get_option('active_plugins')))) {
             return true;
         }
         
-        // Option 3: Check via function exists
         if (function_exists('marquee_addons_pro_init')) {
             return true;
         }
@@ -61,12 +58,11 @@ class Control_Manager {
     public function initialize_default_settings() {
         $current_settings = get_option('marquee_addons_widgets', []);
         
-        // If no settings exist yet, set all widgets to enabled by default
+        // If no settings exist yet, set all non-PRO-locked widgets to enabled by default
         if (empty($current_settings)) {
             $default_settings = [];
             
             foreach ($this->get_all_widgets() as $key => $widget) {
-                // Only enable if not PRO locked
                 $is_pro_locked = $widget['is_pro'] && !$this->is_pro_active;
                 if (!$is_pro_locked) {
                     $default_settings[$key] = 'on';
@@ -107,6 +103,7 @@ class Control_Manager {
     
     /**
      * Sanitize widgets settings before saving
+     * FIXED: Don't save PRO widgets when in free mode
      */
     public function sanitize_widgets_settings($input) {
         $sanitized = [];
@@ -116,11 +113,17 @@ class Control_Manager {
             return $input;
         }
         
-        // Process each widget from ALL widgets (not just trait)
+        // Get current settings to preserve PRO widget states
+        $current_settings = get_option('marquee_addons_widgets', []);
+        
+        // Process each widget from ALL widgets
         foreach ($this->get_all_widgets() as $key => $widget) {
             $is_pro_locked = $widget['is_pro'] && !$this->is_pro_active;
+            
             if ($is_pro_locked) {
-                $sanitized[$key] = '';
+                if (isset($current_settings[$key])) {
+                    $sanitized[$key] = $current_settings[$key];
+                }
             } else {
                 $sanitized[$key] = (isset($input[$key]) && $input[$key] === 'on') ? 'on' : '';
             }
@@ -244,6 +247,10 @@ class Control_Manager {
         return array_merge($free_widgets, self::get_widgets_list());
     }
 
+    /**
+     * Check if a widget is enabled
+     * FIXED: Handle PRO widgets properly when PRO is active
+     */
     public function is_widget_enabled($widget_key) {
         $widgets_list = $this->get_all_widgets();
         
@@ -254,9 +261,19 @@ class Control_Manager {
         
         $widgets = get_option('marquee_addons_widgets', []);
         
-        // If option doesn't exist or widget setting doesn't exist, enable by default
+        // For PRO widgets when PRO is active, if no setting exists, enable by default
+        if (isset($widgets_list[$widget_key]) && $widgets_list[$widget_key]['is_pro'] && $this->is_pro_active) {
+            if (!isset($widgets[$widget_key])) {
+                return true; 
+            }
+        }
+        
+        // If option doesn't exist or widget setting doesn't exist, enable by default for non-PRO widgets
         if (empty($widgets) || !isset($widgets[$widget_key])) {
-            return true;
+            if (isset($widgets_list[$widget_key]) && !$widgets_list[$widget_key]['is_pro']) {
+                return true;
+            }
+            return false;
         }
         
         return $widgets[$widget_key] === 'on';
@@ -264,7 +281,6 @@ class Control_Manager {
     
     /**
      * Get list of disabled widgets
-     * Use this in your main plugin file to prevent widget registration
      */
     public function get_disabled_widgets() {
         $disabled = [];
