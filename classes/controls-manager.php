@@ -7,7 +7,7 @@
 
 namespace Deensimc_Marquee;
 
-if (!defined('ABSPATH')) exit; // Exit if accessed directly
+if (!defined('ABSPATH')) exit;
 
 class Control_Manager {
 
@@ -25,7 +25,7 @@ class Control_Manager {
     }
     
     public function __construct() {
-        // Check if PRO version is active
+        
         $this->is_pro_active = $this->check_pro_version();
         
         add_action('admin_menu', [$this, 'add_settings_page']);
@@ -40,12 +40,11 @@ class Control_Manager {
      * Check if PRO version is active
      */
     private function check_pro_version() {
-        // Option 1: Check if PRO plugin is in active plugins list
+
         if (in_array('marquee-addons-pro/marquee-addons-pro.php', apply_filters('active_plugins', get_option('active_plugins')))) {
             return true;
         }
         
-        // Option 2: Check via function exists
         if (function_exists('marquee_addons_pro_init')) {
             return true;
         }
@@ -64,7 +63,6 @@ class Control_Manager {
             $default_settings = [];
             
             foreach ($this->get_all_widgets() as $key => $widget) {
-                // Only enable if not PRO locked
                 $is_pro_locked = $widget['is_pro'] && !$this->is_pro_active;
                 if (!$is_pro_locked) {
                     $default_settings[$key] = 'on';
@@ -123,14 +121,10 @@ class Control_Manager {
             $is_pro_locked = $widget['is_pro'] && !$this->is_pro_active;
             
             if ($is_pro_locked) {
-                // Don't save PRO widgets when in free mode - keep their current state
-                // This prevents overwriting PRO widget states with empty values
                 if (isset($current_settings[$key])) {
                     $sanitized[$key] = $current_settings[$key];
                 }
-                // If no current setting exists, don't set anything (will use default when PRO is active)
             } else {
-                // For free widgets and PRO widgets when PRO is active, save the current choice
                 $sanitized[$key] = (isset($input[$key]) && $input[$key] === 'on') ? 'on' : '';
             }
         }
@@ -270,14 +264,14 @@ class Control_Manager {
         // For PRO widgets when PRO is active, if no setting exists, enable by default
         if (isset($widgets_list[$widget_key]) && $widgets_list[$widget_key]['is_pro'] && $this->is_pro_active) {
             if (!isset($widgets[$widget_key])) {
-                return true; // Enable PRO widgets by default when PRO is active
+                return true; 
             }
         }
         
         // If option doesn't exist or widget setting doesn't exist, enable by default for non-PRO widgets
         if (empty($widgets) || !isset($widgets[$widget_key])) {
             if (isset($widgets_list[$widget_key]) && !$widgets_list[$widget_key]['is_pro']) {
-                return true; // Enable free widgets by default
+                return true;
             }
             return false;
         }
