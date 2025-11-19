@@ -29,7 +29,7 @@
 
 	function deensimc_load_plugin_data(): void {
 		require_once( DEENSIMC__DIR__ . '/base.php' );
-		// require_once( DEENSIMC__DIR__ . '/includes/misc/class-deensimcpro-promo.php' );
+		require_once( DEENSIMC__DIR__ . '/includes/misc/class-deensimcpro-promo.php' );
 		require_once( DEENSIMC__DIR__ . '/includes/widget.php' );
 		require_once( DEENSIMC__DIR__ . '/includes/feedback.php' );
 		\Deensimc_Marquee\Marquee::instance();
