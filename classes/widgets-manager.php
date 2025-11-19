@@ -40,7 +40,7 @@ class Widgets_Manager {
         
         // Register only enabled widgets
         foreach ($widgets_config as $key => $config) {
-            // Check if widget is enabled in Control Manager
+            
             if ($control_manager->is_widget_enabled($key)) {
                 $this->register_single_widget($config, $widgets_manager);
             }
