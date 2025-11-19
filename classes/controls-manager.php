@@ -31,6 +31,9 @@ class Control_Manager {
         add_action('admin_menu', [$this, 'add_settings_page']);
         add_action('admin_init', [$this, 'register_settings']);
         add_action('admin_enqueue_scripts', [$this, 'enqueue_admin_scripts']);
+        
+        // Initialize default settings if they don't exist
+        add_action('admin_init', [$this, 'initialize_default_settings']);
     }
     
     /**
@@ -50,6 +53,28 @@ class Control_Manager {
         }
         
         return false;
+    }
+    
+    /**
+     * Initialize default settings for all widgets
+     */
+    public function initialize_default_settings() {
+        $current_settings = get_option('marquee_addons_widgets', []);
+        
+        // If no settings exist yet, set all widgets to enabled by default
+        if (empty($current_settings)) {
+            $default_settings = [];
+            
+            foreach ($this->get_all_widgets() as $key => $widget) {
+                // Only enable if not PRO locked
+                $is_pro_locked = $widget['is_pro'] && !$this->is_pro_active;
+                if (!$is_pro_locked) {
+                    $default_settings[$key] = 'on';
+                }
+            }
+            
+            update_option('marquee_addons_widgets', $default_settings);
+        }
     }
     
     /**
@@ -229,14 +254,12 @@ class Control_Manager {
         
         $widgets = get_option('marquee_addons_widgets', []);
         
-        // If option doesn't exist (first time), enable all non-PRO widgets by default
-        if (empty($widgets)) {
-            if (isset($widgets_list[$widget_key]) && !$widgets_list[$widget_key]['is_pro']) {
-                return true;
-            }
-            return false;
+        // If option doesn't exist or widget setting doesn't exist, enable by default
+        if (empty($widgets) || !isset($widgets[$widget_key])) {
+            return true;
         }
-        return isset($widgets[$widget_key]) && $widgets[$widget_key] === 'on';
+        
+        return $widgets[$widget_key] === 'on';
     }
     
     /**
