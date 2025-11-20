@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: elementor, text marquee, image marquee, video marquee, Product slider
 Requires at least: 5.8
 Tested up to: 6.8
-Stable tag: 3.7.24
+Stable tag: 3.7.25
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -92,47 +92,47 @@ Showcase your products in a smooth, infinite carousel that keeps them always in 
 
 Present your product categories in a smooth, continuous carousel. Each category can include an image, title, and link, styled to fit your store’s design. A great way to feature popular or seasonal categories and guide shoppers toward the right products.
 
-### [Advanced Testimonial Marquee](https://marqueeaddons.com/testimonial-marquee/) (Pro)
+### [Advanced Testimonial Marquee](https://marqueeaddons.com/testimonial-marquee/) (Pro):
 
 Bring testimonials and reviews to life with a continuous marquee carousel in multiple layouts. Unlock advanced options like scroll-triggered motion, vertical style, highlighted reviews, and interactive hover effects to make feedback stand out.
 
-### [Advanced Text Marquee](https://marqueeaddons.com/text-marquee/) (Pro)
+### [Advanced Text Marquee](https://marqueeaddons.com/text-marquee/) (Pro):
 
 Turn static testimonials into scrolling stories that stand out. The Advanced Testimonial Marquee lets you highlight reviews in multiple layouts, vertical, horizontal, or scroll-triggered motion. Add hover effects, spotlight featured reviews, and create a dynamic wall of trust that makes your brand more credible.
 
-### [Circular Text Rotation](https://marqueeaddons.com/circular-text-rotation/) (Pro)
+### [Circular Text Rotation](https://marqueeaddons.com/circular-text-rotation/) (Pro):
 
 Add rotating circular text for badges, hero sections, and callouts. Adjust radius, direction, and speed, with options like pause on hover and rotate on scroll. Style it fully with typography and text-stroke controls. You can even turn it into an interactive call-to-action button, linking to any page or section you choose.
 
-### [Smart Tabs](https://marqueeaddons.com/smart-tabs/) (Pro)
+### [Smart Tabs](https://marqueeaddons.com/smart-tabs/) (Pro):
 
 Use Smart Tabs to group long content into clean, switchable tabs perfect for highlighting steps, services, team info, and product details in elementor. Switch tabs on click or hover to keep pages tidy and easy to scan. Customize titles, icons, sub-headings, and content. Smooth transitions and accessible markup help visitors find information fast without endless scrolling.
 
-### [Sticky Cards](https://marqueeaddons.com/sticky-cards/) (Pro)
+### [Sticky Cards](https://marqueeaddons.com/sticky-cards/) (Pro):
 
 With Sticky Cards to turn any vertical section into sticky stacking cards in elementor. As visitors scroll, each card pauses on screen so you can highlight features, timelines, team members, or processes. Fit more content into less space with smooth, stacked vertical cards that stay focused and easy to read. The design feels modern, keeps attention, and delivers a premium experience without extra complexity.
 
-### [Image Accordion](https://marqueeaddons.com/image-accordion-pro/) (Pro)
+### [Image Accordion](https://marqueeaddons.com/image-accordion-pro/) (Pro):
 
 With this elementor widget, you can turn simple image rows into expandable panels that open on hover or click to show titles, descriptions, and a clear call-to-action. Use it for portfolios, product collections, team profiles, or project highlights when you want to show many visuals in a small space. Add the optional hover wave effect for extra polish and guide visitors to detail pages or actions without cluttering the layout.
 
-### [3D Grid Marquee](https://marqueeaddons.com/3d-grid-marquee/) (Pro)
+### [3D Grid Marquee](https://marqueeaddons.com/3d-grid-marquee/) (Pro):
 
 The 3D Marquee is an animated Elementor widget with 3D perspective, smooth scrolling, and smooth column animations, supporting CSS 3D transforms. It provides a 3D marquee effect with a grid, ideal for hero sections, brand walls, and featured work or portfolio. Use the 3D Grid Marquee to display logos, images in a continuous 3D scrolling grid. The smooth 3D movement adds visual energy while staying performant and easy to configure.
+
+### Bento Grid (Pro):
+
+Create modern, asymmetric Bento Box layouts in Elementor with complete design freedom. Set custom row and column spans for each item, fine-tune spacing, and build editorial-style sections that stand out from traditional grids. Includes support for skewed grid layouts with title, description, and a header component for a more dynamic design. The perfect Elementor widget to help you design clean, responsive Bento Grids on your Elementor website.
+
+### Animated List (Pro):
+
+A list widget that animates each item in sequence with adjustable delay, perfect for showcasing notifications or events on Elementor landing pages. Bring lists to life in Elementor with smooth, continuous motion. Ideal for features, steps, or benefits. Control visible items, alignment, speed, and looping with no coding required.
 
 ### [Elementor Templates](https://marqueeaddons.com/marquee-templates/) (Pro)
 
 Start faster with one-click demo import and beautifully pre-built templates. These done-for-you Elementor templates help you ship better-looking sites faster - saving 10+ hours on every client build.
 
 With our Marquee Addon for Elementor, you don’t just get widgets - you also get a collection of professionally designed ready-made templates that you can import in a single click. Perfect for  SAAS, Startups, agencies, and creators who want to: Every template is designed to make your site look modern, engaging, and 10X Awesome to set up.
- 
-### Bento Grid (Pro)
-
-Create modern, asymmetric Bento Box layouts in Elementor with complete design freedom. Set custom row and column spans for each item, fine-tune spacing, and build editorial-style sections that stand out from traditional grids. Includes support for skewed grid layouts with title, description, and a header component for a more dynamic design. The perfect Elementor widget to help you design clean, responsive Bento Grids on your Elementor website.
-
-### Animated List (Pro)
-
-A list widget that animates each item in sequence with adjustable delay, perfect for showcasing notifications or events on Elementor landing pages. Bring lists to life in Elementor with smooth, continuous motion. Ideal for features, steps, or benefits. Control visible items, alignment, speed, and looping with no coding required.
 
 ## Key features:
  
@@ -244,6 +244,9 @@ The developers release regular updates to improve features, fix bugs, and ensure
 First, ensure that you've activated the plugin correctly. If the issue persists, try clearing your browser cache or updating your Elementor plugin. If the problem continues, you can reach out to the support team for assistance.
 
 == Changelog ==
+
+= 3.7.25 - 2025-11-18 =
+- Feat: Added conditional widget loading via Controls Manager
 
 = 3.7.24 - 2025-11-18 =
 - Fix: Performance issue in editor

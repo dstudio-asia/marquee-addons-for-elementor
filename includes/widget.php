@@ -14,7 +14,7 @@ final class Marquee
 	 * @var string The addon version.
 	 */
 
-	const VERSION = '3.7.24';
+	const VERSION = '3.7.25';
 
 	/**
 	 * Minimum Elementor Version
@@ -216,13 +216,13 @@ final class Marquee
 			add_action('admin_notices', [$this, 'deensimc_rate_us'], 10);
 			add_action('wp_ajax_deensimc_notice_dismiss', [$this, 'deensimc_notice_dismiss'], 10);
 			add_action('wp_ajax_deensimc_never_show_notice', [$this, 'deensimc_never_show_notice']);
+
 			add_action('elementor/editor/before_enqueue_styles', [$this, 'deensimc_promotion_styles'], 10);
 			add_filter('elementor/editor/localize_settings', [$this, 'promote_pro_elements']);
 			add_action('elementor/editor/after_enqueue_scripts', [$this, 'deensimc_promotion_script'], 10);
 		}
 		add_action('elementor/frontend/after_enqueue_styles', [$this, 'deensimc_frontend_styles'], 20);
 		add_action('elementor/frontend/after_register_scripts', [$this, 'deensimc_frontend_scripts'], 20);
-		add_action('elementor/widgets/register', [$this, 'deensimc_register_widgets'], 10);
 		add_action('elementor/elements/categories_registered', [$this, 'deensimc_add_categories'], 10);
 		add_action('elementor/editor/before_enqueue_styles', [$this, 'deensimc_editor_styles'], 10);
 		add_action('elementor/editor/after_enqueue_scripts', [$this, 'deensimc_editor_script'], 10);
@@ -419,103 +419,6 @@ final class Marquee
 		}
 
 		return $actions;
-	}
-
-	function deensimc_register_widgets($widgets_manager)
-	{
-
-		require_once(__DIR__ . '/widgets/traits/common-controls/promotional-banner.php');
-		require_once(__DIR__ . '/widgets/traits/common-controls/gap-control.php');
-		require_once(__DIR__ . '/widgets/traits/common-controls/marquee-controls.php');
-		require_once(__DIR__ . '/widgets/traits/common-controls/style-edge-shadow.php');
-
-		require_once(__DIR__ . '/widgets/traits/image-accordion/content.php');
-		require_once(__DIR__ . '/widgets/traits/image-accordion/style.php');
-
-		require_once(__DIR__ . '/widgets/traits/stacked-slider/content-advance.php');
-		require_once(__DIR__ . '/widgets/traits/stacked-slider/content-primary.php');
-		require_once(__DIR__ . '/widgets/traits/stacked-slider/style-box.php');
-		require_once(__DIR__ . '/widgets/traits/stacked-slider/content-parts/style-title-controls.php');
-		require_once(__DIR__ . '/widgets/traits/stacked-slider/content-parts/style-description-controls.php');
-		require_once(__DIR__ . '/widgets/traits/stacked-slider/content-parts/style-color-controls.php');
-		require_once(__DIR__ . '/widgets/traits/stacked-slider/content-parts/style-button-controls.php');
-		require_once(__DIR__ . '/widgets/traits/stacked-slider/style-contents.php');
-		require_once(__DIR__ . '/widgets/traits/stacked-slider/style-image.php');
-		require_once(__DIR__ . '/widgets/traits/stacked-slider/style-dots.php');
-
-		require_once(__DIR__ . '/widgets/traits/video-marquee/helper-methods.php');
-		require_once(__DIR__ . '/widgets/traits/video-marquee/content-url-fields.php');
-		require_once(__DIR__ . '/widgets/traits/video-marquee/content-video-options.php');
-		require_once(__DIR__ . '/widgets/traits/video-marquee/content-youtube-vimeo.php');
-		require_once(__DIR__ . '/widgets/traits/video-marquee/content-hosted.php');
-		require_once(__DIR__ . '/widgets/traits/video-marquee/content-image-overlay.php');
-		require_once(__DIR__ . '/widgets/traits/video-marquee/style-contents.php');
-		require_once(__DIR__ . '/widgets/traits/video-marquee/style-play-icon.php');
-
-		require_once(__DIR__ . '/widgets/traits/testimonial-marquee/helper-methods.php');
-		require_once(__DIR__ . '/widgets/traits/testimonial-marquee/content-repeater.php');
-		require_once(__DIR__ . '/widgets/traits/testimonial-marquee/content-text-unfold.php');
-		require_once(__DIR__ . '/widgets/traits/testimonial-marquee/style-contents-box.php');
-		require_once(__DIR__ . '/widgets/traits/testimonial-marquee/style-contents.php');
-		require_once(__DIR__ . '/widgets/traits/testimonial-marquee/style-image.php');
-		require_once(__DIR__ . '/widgets/traits/testimonial-marquee/style-name-title.php');
-		require_once(__DIR__ . '/widgets/traits/testimonial-marquee/style-review.php');
-
-		require_once(__DIR__ . '/widgets/traits/image-marquee/content-image.php');
-		require_once(__DIR__ . '/widgets/traits/image-marquee/style-image-controls.php');
-		require_once(__DIR__ . '/widgets/traits/image-marquee/style-caption-controls.php');
-
-		require_once(__DIR__ . '/widgets/traits/text-marquee/content-text-repeater.php');
-		require_once(__DIR__ . '/widgets/traits/text-marquee/style-text-contents.php');
-
-		require_once(__DIR__ . '/widgets/traits/news-ticker/news-ticker-layout-control.php');
-		require_once(__DIR__ . '/widgets/traits/news-ticker/style-section-control.php');
-		require_once(__DIR__ . '/widgets/traits/news-ticker/news-ticker-query-control.php');
-
-		require_once(__DIR__ . '/widgets/traits/animated-word-roller/content-additional-options.php');
-		require_once(__DIR__ . '/widgets/traits/animated-word-roller/content-text-repeater.php');
-		require_once(__DIR__ . '/widgets/traits/animated-word-roller/style-contents.php');
-
-		require_once(__DIR__ . '/widgets/traits/animated-heading/trait-animated-text-effect-controls.php');
-		require_once(__DIR__ . '/widgets/traits/animated-heading/trait-animation-controls.php');
-		require_once(__DIR__ . '/widgets/traits/animated-heading/trait-text-styles-controls.php');
-		require_once(__DIR__ . '/widgets/traits/animated-heading/trait-title-controls.php');
-
-		require_once(__DIR__ . '/widgets/traits/button-marquee/trait-button-controls.php');
-		require_once(__DIR__ . '/widgets/traits/button-marquee/trait-button-style-controls.php');
-		require_once(__DIR__ . '/widgets/traits/button-marquee/trait-button-marquee-controls.php');
-		require_once(__DIR__ . '/widgets/traits/button-marquee/trait-button-helper-methods.php');
-
-		require_once(__DIR__ . '/widgets/traits/search/search-content-controls.php');
-		require_once(__DIR__ . '/widgets/traits/search/query-content-controls.php');
-		require_once(__DIR__ . '/widgets/traits/search/search-field-styles.php');
-		require_once(__DIR__ . '/widgets/traits/search/style-triggerer-controls.php');
-		require_once(__DIR__ . '/widgets/traits/search/clear-styles-controls.php');
-		require_once(__DIR__ . '/widgets/traits/search/submit-styles-controls.php');
-
-		require_once(__DIR__ . '/widgets/class-deensimc-image-marquee.php');
-		require_once(__DIR__ . '/widgets/class-deensimc-stacked-slider.php');
-		require_once(__DIR__ . '/widgets/class-deensimc-image-accordion.php');
-		require_once(__DIR__ . '/widgets/class-deensimc-text-marquee.php');
-		require_once(__DIR__ . '/widgets/class-deensimc-testimonial-marquee.php');
-		require_once(__DIR__ . '/widgets/class-deensimc-video-marquee.php');
-		require_once(__DIR__ . '/widgets/class-deensimc-news-ticker.php');
-		require_once(__DIR__ . '/widgets/class-deensimc-animated-word-roller.php');
-		require_once(__DIR__ . '/widgets/class-deensimc-animated-heading.php');
-		require_once(__DIR__ . '/widgets/class-deensimc-button-marquee.php');
-		require_once(__DIR__ . '/widgets/class-deensimc-search.php');
-
-		$widgets_manager->register(new \Deensimc_Image_Marquee());
-		$widgets_manager->register(new \Deensimc_Stacked_Slider());
-		$widgets_manager->register(new \Deensimc_Image_Accordion());
-		$widgets_manager->register(new \Deensimc_Text_Marquee());
-		$widgets_manager->register(new \Deensimc_Testimonial_Marquee());
-		$widgets_manager->register(new \Deensimc_Video_Marquee());
-		$widgets_manager->register(new \Deensimc_News_Ticker());
-		$widgets_manager->register(new \Deensimc_Animated_Word_Roller());
-		$widgets_manager->register(new \Deensimc_Animated_Heading_Widget());
-		$widgets_manager->register(new \Deensimc_Button_marquee());
-		$widgets_manager->register(new \Deensimc_Search_Widget());
 	}
 
 	function deensimc_add_categories($elements_manager)
