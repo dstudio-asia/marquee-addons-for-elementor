@@ -1,377 +1,417 @@
 /* Marquee Addons Admin Styles */
 a.toplevel_page_marquee-addons-settings .wp-menu-image img {
-    width: 23px;
-    margin-top: -3px;
+  width: 23px;
+  margin-top: -3px;
 }
 
 .deensimc-addons-settings {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .deensimc-marquee-settings-container {
-    background: #fff;
-    border: 1px solid #ccd0d4;
-    box-shadow: 0 1px 1px rgba(0,0,0,.04);
-    margin-top: 20px;
+  background: #fff;
+  border: 1px solid #ccd0d4;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+  margin-top: 20px;
 }
 
 /* Tabs Navigation */
 .deensimc-tabs {
-    display: flex;
-    border-bottom: 1px solid #ccd0d4;
-    background: #f3f4f5;
+  display: flex;
+  border-bottom: 1px solid #ccd0d4;
+  background: #f3f4f5;
 }
 
 .deensimc-tab-btn {
-    padding: 15px 25px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 500;
-    color: #555;
-    border-bottom: 3px solid transparent;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  padding: 15px 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .deensimc-tab-btn:hover {
-    background: #fff;
-    color: #7456ff;
+  background: #fff;
+  color: #7456ff;
 }
 
 .deensimc-tab-btn.active {
-    background: #fff;
-    color: #7456ff;
-    border-bottom-color: #7456ff;
+  background: #fff;
+  color: #7456ff;
+  border-bottom-color: #7456ff;
 }
 
 .deensimc-tab-btn .dashicons {
-    font-size: 18px;
-    width: 18px;
-    height: 18px;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
 }
 
 /* Tab Content */
 .deensimc-tab-content {
-    display: none;
-    padding: 30px;
+  display: none;
+  padding: 24px;
 }
 
 .deensimc-tab-content.active {
-    display: block;
+  display: block;
 }
 
 /* Section Styles */
 .deensimc-section {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .deensimc-section-header {
-    margin-bottom: 25px;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 .deensimc-section-header h2 {
-    margin: 0 0 10px 0;
-    font-size: 20px;
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.5;
 }
 
-.deensimc-section-header .description {
-    font-size: 13px;
-    color: #646970;
-    margin-bottom: 15px;
+.deensimc-section-header p.deensimc-description {
+  font-size: 13px;
+  color: #646970;
+  margin: 0;
+  margin-bottom: 15px;
 }
 
 /* Bulk Actions */
-/* .deensimc-bulk-actions {
-    display: flex;
-    gap: 10px;
-    margin-top: 15px;
-} */
+.deensimc-bulk-actions {
+  display: flex;
+  gap: 12px;
+}
 
-.deensimc-settings-container .deensimc-enable-btn, 
+.deensimc-settings-container {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+.deensimc-settings-container .deensimc-enable-btn {
+  border: 1px solid #7456ff;
+  color: #7456ff;
+  background-color: #fff;
+}
 .deensimc-settings-container .deensimc-disable-btn {
-    border: 1px solid #7456ff;
-    color: #7456ff;
-    background-color: #fff;
+  border: 1px solid #f00;
+  color: #f00;
+  background-color: #fff;
 }
 
 .deensimc-settings-footer #submit {
-    background-color: #7456ff;
-    border-color: #7456ff;
+  background-color: #7456ff;
+  border-color: #7456ff;
 }
 
 /* Widgets Grid */
 .deensimc-widgets-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
 }
 
 /* Widget Card */
 .deensimc-widget-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    background: #fff;
-    transition: all 0.3s ease;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 24px;
+  background: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
 }
 
 .deensimc-widget-card:hover {
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
 }
 
 /* PRO Locked Card */
 .deensimc-widget-card.deensimc-pro-locked {
-    opacity: 0.7;
-    background: #f9f9f9;
-    position: relative;
-    cursor: pointer !important;
-    transition: all 0.3s ease;
-    user-select: none;
+  opacity: 0.7;
+  background: #f9f9f9;
+  position: relative;
+  cursor: pointer !important;
+  transition: all 0.3s ease;
+  user-select: none;
 }
 
 .deensimc-widget-card.deensimc-pro-locked:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 2px 8px rgba(116, 86, 255, 0.2);
-    opacity: 0.85;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(116, 86, 255, 0.2);
+  opacity: 0.85;
 }
 
 .deensimc-widget-card.deensimc-pro-locked * {
-    cursor: pointer !important;
+  cursor: pointer !important;
 }
 
 .deensimc-widget-card.deensimc-pro-locked .deensimc-widget-toggle,
 .deensimc-widget-card.deensimc-pro-locked .deensimc-widget-toggle * {
-    cursor: not-allowed !important;
+  cursor: not-allowed !important;
 }
 
 .deensimc-widget-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
 }
 
 .deensimc-widget-header .dashicons {
-    font-size: 24px;
-    width: 24px;
-    height: 24px;
-    color: #7456ff;
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  color: #7456ff;
 }
 
 .deensimc-widget-custom-icon {
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.deensimc-settings-header {
+  padding: 0;
 }
 
 .deensimc-widget-header h3 {
-    margin: 0;
-    font-size: 16px;
-    font-weight: 600;
-    flex: 1;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  flex: 1;
 }
 
 .deensimc-pro-badge {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: #fff;
-    font-size: 10px;
-    font-weight: 700;
-    padding: 3px 8px;
-    border-radius: 3px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  user-select: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: rotateZ(-45deg) translate(-26%, -80%);
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .deensimc-widget-description {
-    color: #646970;
-    font-size: 13px;
-    line-height: 1.5;
-    margin: 0 0 15px 0;
+  color: #646970;
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0 0 15px 0;
 }
 
 .deensimc-widget-toggle {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding-top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .deensimc-toggle-label {
-    font-size: 13px;
-    color: #646970;
-    font-weight: 500;
+  font-size: 13px;
+  color: #646970;
+  font-weight: 500;
 }
 
 /* PRO Lock Notice */
 .deensimc-pro-lock-notice {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 12px;
-    background: #fff3cd;
-    border: 1px solid #ffc107;
-    border-radius: 4px;
-    margin: 10px 0;
-    font-size: 12px;
-    color: #856404;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: #fff3cd;
+  border: 1px solid #ffc107;
+  border-radius: 4px;
+  margin: 10px 0;
+  font-size: 12px;
+  color: #856404;
 }
 
 .deensimc-pro-lock-notice .dashicons {
-    font-size: 16px;
-    width: 16px;
-    height: 16px;
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
 }
 
 /* Toggle Switch */
 .deensimc-switch {
-    position: relative;
-    display: inline-block;
-    width: 48px;
-    height: 24px;
+  position: relative;
+  display: inline-block;
+  width: 32px;
+  height: 18px;
 }
 
 .deensimc-switch.disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .deensimc-switch.disabled .slider {
-    cursor: not-allowed;
+  cursor: not-allowed;
 }
 
 .deensimc-switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
 .deensimc-switch .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: .3s;
-    border-radius: 24px;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.3s;
+  border-radius: 24px;
 }
 
 .deensimc-switch .slider:before {
-    position: absolute;
-    content: "";
-    height: 18px;
-    width: 18px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white;
-    transition: .3s;
-    border-radius: 50%;
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 50%;
 }
 
 .deensimc-switch input:checked + .slider {
-    background-color: #7456ff;
+  background-color: #7456ff;
 }
 
 .deensimc-switch input:focus + .slider {
-    box-shadow: 0 0 1px #7456ff;
+  box-shadow: 0 0 1px #7456ff;
 }
 
 .deensimc-switch input:checked + .slider:before {
-    transform: translateX(24px);
+  transform: translateX(14px);
 }
 
 /* Settings Footer */
 .deensimc-settings-footer {
-    padding: 20px 30px;
-    background: #f9f9f9;
-    border-top: 1px solid #ccd0d4;
-    display: flex;
-    gap: 10px;
-    align-items: center;
+  padding: 20px 30px;
+  background: #f9f9f9;
+  border-top: 1px solid #ccd0d4;
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
 /* Form Table Adjustments */
 .deensimc-tab-content .form-table th {
-    padding: 20px 10px 20px 0;
-    width: 220px;
+  padding: 20px 10px 20px 0;
+  width: 220px;
 }
 
 .deensimc-tab-content .form-table td {
-    padding: 20px 10px;
+  padding: 20px 10px;
 }
 
 .deensimc-tab-content .form-table .description {
-    margin-top: 8px;
+  margin-top: 8px;
 }
 
 /* Responsive Design */
 @media screen and (max-width: 782px) {
-    .deensimc-widgets-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .deensimc-tab-content {
-        padding: 20px;
-    }
-    
-    .deensimc-settings-footer {
-        padding: 15px 20px;
-        flex-direction: column;
-        align-items: stretch;
-    }
-    
-    .deensimc-settings-footer .button {
-        width: 100%;
-        text-align: center;
-    }
+  .deensimc-widgets-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .deensimc-tab-content {
+    padding: 20px;
+  }
+
+  .deensimc-settings-footer {
+    padding: 15px 20px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .deensimc-settings-footer .button {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 /* Success Message */
-.deensimc-notice {
-    margin: 20px 0;
-    padding: 12px 15px;
-    border-left: 4px solid #00a32a;
-    background: #f0f6fc;
-    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+div.deensimc-notice {
+  position: fixed;
+  right: 0;
+  top: 32px;
+  margin: 20px 0;
+  padding: 12px 15px;
+  border-left: 4px solid #0f0;
+  background: #f8fff8;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
 }
 
-.deensimc-notice.error {
-    border-left-color: #d63638;
+div.deensimc-notice.error {
+  border-left-color: #d63638;
+  background: #fff6f6;
+}
+
+div.deensimc-notice.info {
+  border-left-color: #7456ff;
+  background: #f8f7ff;
 }
 
 /* Loading State */
 .deensimc-loading {
-    opacity: 0.6;
-    pointer-events: none;
+  opacity: 0.6;
+  pointer-events: none;
 }
 
 .deensimc-loading::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: 3px solid #f3f3f3;
-    border-top: 3px solid #2271b1;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    animation: spin 1s linear infinite;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #2271b1;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
-    0% { transform: translate(-50%, -50%) rotate(0deg); }
-    100% { transform: translate(-50%, -50%) rotate(360deg); }
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 .deensimc-toggle-label {
-    transition: color 0.3s ease;
+  transition: color 0.3s ease;
 }
-
