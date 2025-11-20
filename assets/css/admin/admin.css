@@ -202,7 +202,7 @@ a.toplevel_page_marquee-addons-settings .wp-menu-image img {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-
+  user-select: none;
   position: absolute;
   left: 0;
   top: 0;

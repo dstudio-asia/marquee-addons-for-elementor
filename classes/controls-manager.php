@@ -325,14 +325,14 @@ class Control_Manager
                     </button>
                 </div>
 
-                <form method="post" action="options.php">
-                    <?php settings_fields('marquee_addons_settings'); ?>
+                <!-- Widgets Tab -->
+                <div class="deensimc-tab-content active" id="tab-widgets">
+                    <form method="post" action="options.php">
+                        <?php settings_fields('marquee_addons_settings'); ?>
 
-                    <!-- Hidden field to track that form was submitted -->
-                    <input type="hidden" name="marquee_addons_widgets_submitted" value="1">
+                        <!-- Hidden field to track that form was submitted -->
+                        <input type="hidden" name="marquee_addons_widgets_submitted" value="1">
 
-                    <!-- Widgets Tab -->
-                    <div class="deensimc-tab-content active" id="tab-widgets">
                         <div class="deensimc-section">
                             <div class="deensimc-section-header">
                                 <div>
@@ -384,12 +384,13 @@ class Control_Manager
                                 <?php endforeach; ?>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="deensimc-settings-footer">
-                        <?php submit_button(__('Save Changes', 'marquee-addons-for-elementor'), 'primary', 'submit', false); ?>
-                    </div>
-                </form>
+
+                        <div class="deensimc-settings-footer">
+                            <?php submit_button(__('Save Changes', 'marquee-addons-for-elementor'), 'primary', 'submit', false); ?>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
 <?php
