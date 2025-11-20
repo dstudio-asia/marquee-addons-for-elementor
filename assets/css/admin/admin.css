@@ -188,6 +188,10 @@ a.toplevel_page_marquee-addons-settings .wp-menu-image img {
   object-fit: contain;
 }
 
+.deensimc-settings-header {
+  padding: 0;
+}
+
 .deensimc-widget-header h3 {
   margin: 0;
   font-size: 16px;

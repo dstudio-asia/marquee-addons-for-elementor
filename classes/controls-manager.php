@@ -313,8 +313,8 @@ class Control_Manager
     public function render_settings_page()
     {
 ?>
-        <div class="wrap deensimc-addons-settings">
-            <h1 style="padding: 0;"><?php echo esc_html(get_admin_page_title()); ?></h1>
+        <div class="deensimc-addons-settings">
+            <h1 class="deensimc-settings-header"><?php echo esc_html(get_admin_page_title()); ?></h1>
 
             <div class="deensimc-settings-container">
                 <!-- Tabs Navigation -->
