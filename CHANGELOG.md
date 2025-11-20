@@ -1,6 +1,19 @@
 # Changelog
 
 
+## [3.7.25](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.7.24...3.7.25) (2025-11-20)
+
+
+### Features
+
+* add default settings initialization for widgets ([0124e64](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/0124e64248dfb7137d76d989924074a2a3aff3f8))
+* control manager done ([5a52b7d](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/5a52b7da2956a8ca16b8eb5c3f95d64637240b85))
+
+
+### Bug Fixes
+
+* conditional logic not working for pro ([e4e28fa](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/e4e28fad09fed9fb37406ec2c7091fdfe9deb806))
+
 ## [3.7.24](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.7.23...3.7.24) (2025-11-19)
 
 
