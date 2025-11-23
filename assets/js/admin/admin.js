@@ -4,6 +4,31 @@
 (function ($) {
   "use strict";
 
+  /**
+   *Helper function to show notification message
+   */
+  function showNotification(message, type = "info") {
+    // Remove existing notifications
+    $(".deensimc-notice").remove();
+
+    const noticeClass = `deensimc-notice ${type}`;
+
+    const notice = $('<div class="' + noticeClass + '">' + message + "</div>");
+
+    $(".deensimc-settings-container").prepend(notice);
+
+    // Auto-hide after 3 seconds
+    setTimeout(function () {
+      notice.fadeOut(300, function () {
+        $(this).remove();
+      });
+    }, 3000);
+  }
+
+  // Expose the notification function to the window object
+  window.marqueeAddonsAdmin = window.marqueeAddonsAdmin || {};
+  window.marqueeAddonsAdmin.showNotification = showNotification;
+
   $(document).ready(function () {
     // Tab Switching
     $(".deensimc-tab-btn").on("click", function () {
@@ -201,29 +226,6 @@
       const tabId = $(this).data("tab");
       window.location.hash = tabId;
     });
-
-    /**
-     * Show notification message
-     */
-    function showNotification(message, type = "info") {
-      // Remove existing notifications
-      $(".deensimc-notice").remove();
-
-      const noticeClass = `deensimc-notice ${type}`;
-
-      const notice = $(
-        '<div class="' + noticeClass + '">' + message + "</div>"
-      );
-
-      $(".deensimc-settings-container").prepend(notice);
-
-      // Auto-hide after 3 seconds
-      setTimeout(function () {
-        notice.fadeOut(300, function () {
-          $(this).remove();
-        });
-      }, 3000);
-    }
 
     // Add loading state during save
     $("form").on("submit", function () {
