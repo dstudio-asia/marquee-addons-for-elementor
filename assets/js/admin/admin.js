@@ -30,6 +30,9 @@
   window.marqueeAddonsAdmin.showNotification = showNotification;
 
   $(document).ready(function () {
+    $(".deensimc-see-demo-btn").on("click", function (e) {
+      e.stopPropagation();
+    });
     // Tab Switching
     $(".deensimc-tab-btn").on("click", function () {
       const tabId = $(this).data("tab");

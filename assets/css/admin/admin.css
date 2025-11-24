@@ -339,6 +339,16 @@ a.toplevel_page_marquee-addons-settings .wp-menu-image img {
   margin-top: 8px;
 }
 
+.deensimc-toggle-demo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.deensimc-see-demo-btn {
+  color: #7456ff;
+  font-weight: 500;
+}
+
 /* Responsive Design */
 @media screen and (max-width: 782px) {
   .deensimc-widgets-grid {
@@ -400,10 +410,10 @@ div.deensimc-notice.info {
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  animation: spin 1s linear infinite;
+  animation: deensimc-spin 1s linear infinite;
 }
 
-@keyframes spin {
+@keyframes deensimc-spin {
   0% {
     transform: translate(-50%, -50%) rotate(0deg);
   }
