@@ -216,7 +216,9 @@ final class Marquee
 			add_action('admin_notices', [$this, 'deensimc_rate_us'], 10);
 			add_action('wp_ajax_deensimc_notice_dismiss', [$this, 'deensimc_notice_dismiss'], 10);
 			add_action('wp_ajax_deensimc_never_show_notice', [$this, 'deensimc_never_show_notice']);
+		}
 
+		if (!class_exists('\Deensimcpro_Marquee\Marqueepro') || !apply_filters('marquee_addons_is_license_active', false)) {
 			add_action('elementor/editor/before_enqueue_styles', [$this, 'deensimc_promotion_styles'], 10);
 			add_filter('elementor/editor/localize_settings', [$this, 'promote_pro_elements']);
 			add_action('elementor/editor/after_enqueue_scripts', [$this, 'deensimc_promotion_script'], 10);
@@ -399,6 +401,7 @@ final class Marquee
 	{
 		wp_register_script('deensimc-promotion-script', DEENSIMC_ASSETS_URL . 'js/admin/promotion.js', ['jquery'], self::VERSION, true);
 		wp_enqueue_script('deensimc-promotion-script');
+		$this->localize_promotion_script();
 	}
 
 	public function deensimc_upgrade_link($actions)
@@ -431,7 +434,7 @@ final class Marquee
 				'icon' => 'fa fa-plug',
 			]
 		);
-		if (!class_exists('\Deensimcpro_Marquee\Marqueepro')) {
+		if (!class_exists('\Deensimcpro_Marquee\Marqueepro') || !apply_filters('marquee_addons_is_license_active', false)) {
 			$elements_manager->add_category(
 				'marquee_addons_pro_promo',
 				[
