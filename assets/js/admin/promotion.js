@@ -15,6 +15,12 @@
       if (widgets.length === 0) {
         return;
       }
+      let btnText = "Upgrade to Marquee Addons Pro";
+      let btnUrl = "https://marqueeaddons.com/pricing/";
+      if (DeensimcPromo.is_pro_active && !DeensimcPromo.is_license_active) {
+        btnText = "Activate";
+        btnUrl = DeensimcPromo.license_page;
+      }
 
       for (let i = 0; i < widgets.length; i++) {
         if (widgets[i].contains(e.target)) {
@@ -39,17 +45,13 @@
             // Hide default button.
             if (defaultButton) {
               defaultButton.style.display = "none";
-              console.log(defaultButton);
             }
 
             // Create or show the Marquee button.
             if (!maButton) {
               maButton = document.createElement("a");
-              maButton.textContent = "Upgrade to Marquee Addons Pro";
-              maButton.setAttribute(
-                "href",
-                "https://marqueeaddons.com/pricing/"
-              );
+              maButton.textContent = btnText;
+              maButton.setAttribute("href", btnUrl);
               maButton.setAttribute("target", "_blank");
               maButton.classList.add(
                 "dialog-button",
@@ -71,7 +73,6 @@
             maButton.style.display = "inline-block";
           } else {
             // It's not a Marquee widget, so ensure our button is hidden and the default is shown.
-            console.log(defaultButton);
             if (defaultButton) {
               defaultButton.style.display = "block";
             }
