@@ -1,6 +1,14 @@
 # Changelog
 
 
+## [3.7.27](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.7.25...v3.7.27) (2025-11-24)
+
+
+### Features
+
+* add demo links and UI improvements for widget controls ([e06966b](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/e06966b6ff3711193c872e203f168fd8df7fa0c0))
+* improve promo button logic and license-aware localization ([4e97011](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/4e970112a74548df382947647db1df623257ed99))
+
 ## [3.7.27](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.7.25...3.7.27) (2025-11-24)
 
 
