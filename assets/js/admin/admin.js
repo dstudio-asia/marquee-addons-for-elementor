@@ -15,7 +15,7 @@
 
     const notice = $('<div class="' + noticeClass + '">' + message + "</div>");
 
-    $(".deensimc-settings-container").prepend(notice);
+    $("body").prepend(notice);
 
     // Auto-hide after 3 seconds
     setTimeout(function () {
