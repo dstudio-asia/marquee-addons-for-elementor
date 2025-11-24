@@ -177,7 +177,7 @@ class Control_Manager
                 'title'  => __('Image Marquee', 'marquee-addons-for-elementor'),
                 'icon'   => 'deensimc-image-marquee-icon',
                 'is_pro' => false,
-                'demo'   => '#',
+                'demo'   => 'https://marqueeaddons.com/image-marquee/',
                 'pro_url' => ''
             ],
             'deensimc-text-marquee' => [
@@ -185,7 +185,7 @@ class Control_Manager
                 'title'  => __('Text Marquee', 'marquee-addons-for-elementor'),
                 'icon'   => 'deensimc-text-marquee-icon',
                 'is_pro' => false,
-                'demo'   => '#',
+                'demo'   => 'https://marqueeaddons.com/text-marquee/',
                 'pro_url' => ''
             ],
             'deensimc-testimonial-marquee' => [
@@ -193,7 +193,7 @@ class Control_Manager
                 'title'  => __('Testimonial Marquee', 'marquee-addons-for-elementor'),
                 'icon'   => 'deensimc-testimonial-marquee-icon',
                 'is_pro' => false,
-                'demo'   => '#',
+                'demo'   => 'https://marqueeaddons.com/testimonial-marquee/',
                 'pro_url' => ''
             ],
             'deensimc-video-marquee' => [
@@ -201,7 +201,7 @@ class Control_Manager
                 'title'  => __('Video Marquee', 'marquee-addons-for-elementor'),
                 'icon'   => 'deensimc-video-marquee-icon',
                 'is_pro' => false,
-                'demo'   => '#',
+                'demo'   => 'https://marqueeaddons.com/video-marquee/',
                 'pro_url' => ''
             ],
             'deensimc-stacked-slider' => [
@@ -209,7 +209,7 @@ class Control_Manager
                 'title'  => __('Stacked Slider', 'marquee-addons-for-elementor'),
                 'icon'   => 'deensimc-stacked-slider-icon',
                 'is_pro' => false,
-                'demo'   => '#',
+                'demo'   => 'https://marqueeaddons.com/stacked-slider/',
                 'pro_url' => ''
             ],
             'deensimc-image-accordion' => [
@@ -217,7 +217,7 @@ class Control_Manager
                 'title'  => __('Image Accordion', 'marquee-addons-for-elementor'),
                 'icon'   => 'deensimc-image-accordion-icon',
                 'is_pro' => false,
-                'demo'   => '#',
+                'demo'   => 'https://marqueeaddons.com/marquee-demos/image-accordion/',
                 'pro_url' => ''
             ],
             'deensimc-news-ticker' => [
@@ -225,7 +225,7 @@ class Control_Manager
                 'title'  => __('News Ticker', 'marquee-addons-for-elementor'),
                 'icon'   => 'deensimc-news-ticker-icon',
                 'is_pro' => false,
-                'demo'   => '#',
+                'demo'   => 'https://marqueeaddons.com/news-ticker/',
                 'pro_url' => ''
             ],
             'deensimc-animated-word-roller' => [
@@ -233,7 +233,7 @@ class Control_Manager
                 'title'  => __('Animated Word Roller', 'marquee-addons-for-elementor'),
                 'icon'   => 'deensimc-animated-word-roller-icon',
                 'is_pro' => false,
-                'demo'   => '#',
+                'demo'   => 'https://marqueeaddons.com/marquee-demos/animated-word-roller/',
                 'pro_url' => ''
             ],
             'deensimc-animated-heading' => [
@@ -241,7 +241,7 @@ class Control_Manager
                 'title'  => __('Animated Heading', 'marquee-addons-for-elementor'),
                 'icon'   => 'deensimc-animated-heading-icon',
                 'is_pro' => false,
-                'demo'   => '#',
+                'demo'   => 'https://marqueeaddons.com/animated-heading/',
                 'pro_url' => ''
             ],
             'deensimc-button-marquee' => [
@@ -249,7 +249,7 @@ class Control_Manager
                 'title'  => __('Button Marquee', 'marquee-addons-for-elementor'),
                 'icon'   => 'deensimc-button-marquee-icon',
                 'is_pro' => false,
-                'demo'   => '#',
+                'demo'   => 'https://marqueeaddons.com/button-marquee/',
                 'pro_url' => ''
             ],
         ];
@@ -367,18 +367,20 @@ class Control_Manager
                                             <h3><?php echo esc_html($widget['title']); ?></h3>
 
                                         </div>
-
-                                        <div class="deensimc-widget-toggle">
-                                            <label class="deensimc-switch <?php echo $is_pro_locked ? 'disabled' : ''; ?>">
-                                                <input
-                                                    type="checkbox"
-                                                    name="marquee_addons_widgets[<?php echo esc_attr($key); ?>]"
-                                                    <?php checked($is_checked, true); ?>
-                                                    <?php disabled($is_pro_locked); ?>
-                                                    value="on"
-                                                    data-is-pro="<?php echo $widget['is_pro'] ? '1' : '0'; ?>">
-                                                <span class="slider"></span>
-                                            </label>
+                                        <div class="deensimc-toggle-demo-wrapper">
+                                            <div class="deensimc-widget-toggle">
+                                                <label class="deensimc-switch <?php echo $is_pro_locked ? 'disabled' : ''; ?>">
+                                                    <input
+                                                        type="checkbox"
+                                                        name="marquee_addons_widgets[<?php echo esc_attr($key); ?>]"
+                                                        <?php checked($is_checked, true); ?>
+                                                        <?php disabled($is_pro_locked); ?>
+                                                        value="on"
+                                                        data-is-pro="<?php echo $widget['is_pro'] ? '1' : '0'; ?>">
+                                                    <span class="slider"></span>
+                                                </label>
+                                            </div>
+                                            <a href="<?php echo esc_url($widget['demo']); ?>" class="deensimc-see-demo-btn" target="_blank" rel="nofollow"> Demo</a>
                                         </div>
                                     </div>
                                 <?php endforeach; ?>
