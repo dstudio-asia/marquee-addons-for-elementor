@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.7.27](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.7.27...v3.7.27) (2025-11-24)
+
+
+### Bug Fixes
+
+* update widget manager ([8483586](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/848358643933463718ec140b611374091f6e10a4))
+
 ## [3.7.27](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.7.25...v3.7.27) (2025-11-24)
 
 
