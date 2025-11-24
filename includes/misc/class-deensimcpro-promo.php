@@ -6,9 +6,21 @@ namespace Deensimc_Marquee\Misc;
 trait Deensimcpro_Promo
 {
 
+    public function localize_promotion_script()
+    {
+        wp_localize_script(
+            'deensimc-promotion-script',
+            'DeensimcPromo',
+            [
+                'is_pro_active' =>  class_exists('\Deensimcpro_Marquee\Marqueepro'),
+                'is_license_active' =>  apply_filters('marquee_addons_is_license_active', false),
+                'license_page' => home_url() . '/wp-admin/admin.php?page=marquee-addons-license'
+            ]
+        );
+    }
+
     public function promote_pro_elements($config)
     {
-
         $promotion_widgets = [];
 
         if (isset($config['promotionWidgets'])) {

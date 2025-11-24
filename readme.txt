@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: elementor, text marquee, image marquee, video marquee, Product slider
 Requires at least: 5.8
 Tested up to: 6.8
-Stable tag: 3.7.25
+Stable tag: 3.7.27
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -245,7 +245,13 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 
 == Changelog ==
 
-= 3.7.25 - 2025-11-18 =
+= 3.7.27 - 2025-11-24 = 
+- New: Add demo links in control panel
+
+= 3.7.26 - 2025-11-20 = 
+- Tweak: Improved Control Manager UI
+
+= 3.7.25 - 2025-11-19 =
 - Feat: Added conditional widget loading via Controls Manager
 
 = 3.7.24 - 2025-11-18 =
