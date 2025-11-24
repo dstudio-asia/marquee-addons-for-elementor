@@ -46,7 +46,7 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}
         run: |
           zip -r "marquee-addons-for-elementor.zip" . \
-            -x ".git/*" ".github/*" ".gitignore" "README.md"  ".wordpress-org" ".distignore" "CHANGELOG.md"
+            -x ".git/*" ".github/*" ".gitignore" "README.md"  ".wordpress-org/*" ".distignore" "CHANGELOG.md"
 
       - name: Upload Release Asset
         if: ${{ steps.release.outputs.release_created }}
