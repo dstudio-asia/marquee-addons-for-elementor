@@ -45,12 +45,7 @@ class Control_Manager
      */
     private function check_pro_version()
     {
-
-        if (in_array('marquee-addons-pro/marquee-addons-pro.php', apply_filters('active_plugins', get_option('active_plugins')))) {
-            return true;
-        }
-
-        if (function_exists('marquee_addons_pro_init')) {
+        if ( class_exists('\Deensimcpro_Marquee\Marqueepro') ) {
             return true;
         }
 
@@ -93,6 +88,15 @@ class Control_Manager
             DEENSIMC_ASSETS_URL . 'images/logo.png',
             59
         );
+
+        add_submenu_page(
+            'marquee-addons-settings',
+            __('Element Manger', 'marquee-addons-for-elementor'),
+            __('Element Manager', 'marquee-addons-for-elementor'),
+            'manage_options',
+            'marquee-addons-settings',
+            [$this, 'render_settings_page']
+        );
     }
 
     /**
@@ -111,7 +115,6 @@ class Control_Manager
 
     /**
      * Sanitize widgets settings before saving
-     * FIXED: Don't save PRO widgets when in free mode
      */
     public function sanitize_widgets_settings($input)
     {
@@ -260,27 +263,23 @@ class Control_Manager
 
     /**
      * Check if a widget is enabled
-     * FIXED: Handle PRO widgets properly when PRO is active
      */
     public function is_widget_enabled($widget_key)
     {
         $widgets_list = $this->get_all_widgets();
 
-        // Check if widget is PRO and PRO version is not active
         if (isset($widgets_list[$widget_key]) && $widgets_list[$widget_key]['is_pro'] && !$this->is_pro_active) {
             return false;
         }
 
         $widgets = get_option('marquee_addons_widgets', []);
 
-        // For PRO widgets when PRO is active, if no setting exists, enable by default
         if (isset($widgets_list[$widget_key]) && $widgets_list[$widget_key]['is_pro'] && $this->is_pro_active) {
             if (!isset($widgets[$widget_key])) {
                 return true;
             }
         }
 
-        // If option doesn't exist or widget setting doesn't exist, enable by default for non-PRO widgets
         if (empty($widgets) || !isset($widgets[$widget_key])) {
             if (isset($widgets_list[$widget_key]) && !$widgets_list[$widget_key]['is_pro']) {
                 return true;
