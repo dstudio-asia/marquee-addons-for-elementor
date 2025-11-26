@@ -46,8 +46,7 @@ class Widgets_Manager {
             }
         }
     }
-    
-    /**
+        /**
      * Load common trait files that are always needed
      */
     private function load_common_traits() {
