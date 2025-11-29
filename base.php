@@ -7,7 +7,7 @@ final class Base
 {
 
 	private static $_instance = null;
-    const VERSION = '3.7.28';
+    const VERSION = '3.7.29';
 
     public function __construct()
 	{

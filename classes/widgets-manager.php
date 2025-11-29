@@ -29,16 +29,9 @@ class Widgets_Manager {
      * Register widgets based on Control Manager settings
      */
     public function register_widgets($widgets_manager) {
-        // Get Control Manager instance
         $control_manager = Control_Manager::instance();
-        
-        // Load common trait files (always needed)
         $this->load_common_traits();
-        
-        // Define widgets with their dependencies and class info
         $widgets_config = $this->get_widgets_config();
-        
-        // Register only enabled widgets
         foreach ($widgets_config as $key => $config) {
             
             if ($control_manager->is_widget_enabled($key)) {
@@ -46,7 +39,8 @@ class Widgets_Manager {
             }
         }
     }
-        /**
+    
+    /**
      * Load common trait files that are always needed
      */
     private function load_common_traits() {
@@ -185,7 +179,6 @@ class Widgets_Manager {
      * Register a single widget with its dependencies
      */
     private function register_single_widget($config, $widgets_manager) {
-        // Use the plugin root directory constant
         $base_path = DEENSIMC__DIR__;
         
         // Load trait files first
@@ -210,22 +203,6 @@ class Widgets_Manager {
         if (class_exists($config['class'])) {
             $widgets_manager->register(new $config['class']());
         }
-    }
-    
-    /**
-     * Get list of active widgets (for debugging)
-     */
-    public function get_active_widgets() {
-        $control_manager = Control_Manager::instance();
-        $active = [];
-        
-        foreach ($control_manager->get_widgets_list() as $key => $widget) {
-            if ($control_manager->is_widget_enabled($key)) {
-                $active[] = $key;
-            }
-        }
-        
-        return $active;
     }
 }
 
