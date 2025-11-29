@@ -119,6 +119,17 @@ a.toplevel_page_marquee-addons-settings .wp-menu-image img {
   border-color: #7456ff;
 }
 
+.deensimc-category-section {
+  margin: 30px 0 20px 0;
+}
+
+.deensimc-category-title {
+  font-size: 18px;
+  margin: 0 0 20px 0; 
+  padding: 0; 
+  color: #1d2327;
+}
+
 /* Widgets Grid */
 .deensimc-widgets-grid {
   display: grid;
