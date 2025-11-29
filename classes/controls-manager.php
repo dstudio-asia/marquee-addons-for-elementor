@@ -367,7 +367,7 @@ class Control_Manager
                 'title' => __('WooCommerce Widgets', 'marquee-addons-for-elementor'),
             ],
             'extensions' => [
-                'title' => __('Extensions & Features', 'marquee-addons-for-elementor'),
+                'title' => __('Features', 'marquee-addons-for-elementor'),
             ]
         ];
 ?>
