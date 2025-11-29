@@ -252,4 +252,25 @@
       }
     });
   });
+
+  $(".deensimc-enable-category").on("click", function () {
+    const category = $(this).data("category");
+    $(`.deensimc-widget-card[data-category="${category}"] input[type="checkbox"]`).each(function () {
+      if (!$(this).is(":disabled")) {
+        $(this).prop("checked", true).trigger("change");
+      }
+    });
+    showNotification(`All ${category} items enabled successfully!`, "success");
+  });
+
+  $(".deensimc-disable-category").on("click", function () {
+    const category = $(this).data("category");
+    $(`.deensimc-widget-card[data-category="${category}"] input[type="checkbox"]`).each(function () {
+      if (!$(this).is(":disabled")) {
+        $(this).prop("checked", false).trigger("change");
+      }
+    });
+    showNotification(`All ${category} items disabled successfully!`, "info");
+  });
+  
 })(jQuery);
