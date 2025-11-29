@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.7.29](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.7.28...v3.7.29) (2025-11-29)
+
+
+### Features
+
+* improved  control panel UI ([692fa02](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/692fa025aec127dc910121bc7fb840f4231abee4))
+
 ## [3.7.28](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.7.27...v3.7.28) (2025-11-26)
 
 
