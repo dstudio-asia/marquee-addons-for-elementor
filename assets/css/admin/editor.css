@@ -30,24 +30,24 @@
   animation: deensimcMarqueeIconScroll 3s infinite alternate ease-in-out;
 }
 .elementor-element .deensimc-text-marquee-icon:before {
-  background-image: url("../icons/text.svg");
+  background-image: url("../../icons/text.svg");
 }
 .elementor-element .deensimc-testimonial-marquee-icon:before {
-  background-image: url("../icons/testimonial.svg");
+  background-image: url("../../icons/testimonial.svg");
 }
 .elementor-element .deensimc-image-marquee-icon:before {
-  background-image: url("../icons/image-icon.svg");
+  background-image: url("../../icons/image-icon.svg");
 }
 .elementor-element .deensimc-video-marquee-icon:before {
-  background-image: url("../icons/video-icon.svg");
+  background-image: url("../../icons/video-icon.svg");
 }
 .elementor-element .deensimc-news-ticker-icon:before {
-  background-image: url("../icons/news.svg");
+  background-image: url("../../icons/news.svg");
 }
 
 .elementor-element .deensimc-word-roller-icon:before {
   content: "";
-  background-image: url("../icons/word-roller-5.svg");
+  background-image: url("../../icons/word-roller-5.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center top;
@@ -104,52 +104,3 @@
     background-position: center 100%;
   }
 }
-
-/* Target Column label (Media + Product marquee gaps) 
-.elementor-control-deensimcpro_media_marquee_gap
-  .elementor-control-gap-label[for*="column"],
-.elementor-control-deensimcpro_cat_marquee_gap
-  .elementor-control-gap-label[for*="column"],
-.elementor-control-deensimcpro_testimonial_marquee_gap
-  .elementor-control-gap-label[for*="column"],
-.elementor-control-deensimcpro_product_marquee_gap
-  .elementor-control-gap-label[for*="column"] {
-  font-size: 0; 
-}
-
-.elementor-control-deensimcpro_media_marquee_gap
-  .elementor-control-gap-label[for*="column"]::after,
-.elementor-control-deensimcpro_cat_marquee_gap
-  .elementor-control-gap-label[for*="column"]::after,
-.elementor-control-deensimcpro_testimonial_marquee_gap
-  .elementor-control-gap-label[for*="column"]::after,
-.elementor-control-deensimcpro_product_marquee_gap
-  .elementor-control-gap-label[for*="column"]::after {
-  content: "Card";
-  font-size: 10px;
-}
-
-
-.elementor-control-deensimcpro_media_marquee_gap
-  .elementor-control-gap-label[for*="row"],
-.elementor-control-deensimcpro_cat_marquee_gap
-  .elementor-control-gap-label[for*="row"],
-.elementor-control-deensimcpro_testimonial_marquee_gap
-  .elementor-control-gap-label[for*="row"],
-.elementor-control-deensimcpro_product_marquee_gap
-  .elementor-control-gap-label[for*="row"] {
-  font-size: 0; 
-}
-
-.elementor-control-deensimcpro_media_marquee_gap
-  .elementor-control-gap-label[for*="row"]::after,
-.elementor-control-deensimcpro_cat_marquee_gap
-  .elementor-control-gap-label[for*="row"]::after,
-.elementor-control-deensimcpro_testimonial_marquee_gap
-  .elementor-control-gap-label[for*="row"]::after,
-.elementor-control-deensimcpro_product_marquee_gap
-  .elementor-control-gap-label[for*="row"]::after {
-  content: "Top & Bottom";
-  font-size: 10px;
-}
-*/
