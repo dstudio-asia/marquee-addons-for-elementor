@@ -14,7 +14,7 @@ final class Marquee
 	 * @var string The addon version.
 	 */
 
-	const VERSION = '3.7.29';
+	const VERSION = '3.8.0';
 
 	/**
 	 * Minimum Elementor Version
@@ -327,25 +327,22 @@ final class Marquee
 	public function deensimc_frontend_styles()
 	{
 		// refactored code start
-		wp_register_style('deensimc-marquee-common-styles', DEENSIMC_ASSETS_URL . 'css/common-styles.css', null, self::VERSION, false);
-		wp_register_style('deensimc-button-marquee-style', DEENSIMC_ASSETS_URL . 'css/button-marquee.css', null, self::VERSION, false);
-		wp_register_style('deensimc-image-marquee-style', DEENSIMC_ASSETS_URL . 'css/image-marquee.css', null, self::VERSION, false);
-		wp_register_style('deensimc-news-ticker-style', DEENSIMC_ASSETS_URL . 'css/news-ticker.css', null, self::VERSION, false);
-		wp_register_style('deensimc-text-marquee-style', DEENSIMC_ASSETS_URL . 'css/text-marquee.css', null, self::VERSION, false);
-		wp_register_style('deensimc-video-marquee-style', DEENSIMC_ASSETS_URL . 'css/video-marquee.css', null, self::VERSION, false);
-		wp_register_style('deensimc-testimonial-style', DEENSIMC_ASSETS_URL . 'css/testimonial.css', null, self::VERSION, false);
-		wp_register_style('deensimc-animated-word-roller-style', DEENSIMC_ASSETS_URL . 'css/animated-word-roller.css', null, self::VERSION, false);
-		wp_register_style('deensimc-animated-heading-style', DEENSIMC_ASSETS_URL . 'css/animated-heading.css', null, self::VERSION, false);
-		wp_register_style('deensimc-swiper-bundle-min-style', DEENSIMC_ASSETS_URL . 'css/swiper-bundle.min.css', null, self::VERSION, false);
-		wp_register_style('deensimc-swiper-style', DEENSIMC_ASSETS_URL . 'css/swiper.css', null, self::VERSION, false);
-		wp_register_style('deensimc-accordion-style', DEENSIMC_ASSETS_URL . 'css/accordion.css', null, self::VERSION, false);
-		wp_register_style('deensimc-search-style', DEENSIMC_ASSETS_URL . 'css/search.css', null, self::VERSION, false);
+		wp_register_style('deensimc-marquee-common-styles', DEENSIMC_ASSETS_URL . 'css/common-styles.min.css', null, self::VERSION, false);
+		wp_register_style('deensimc-button-marquee-style', DEENSIMC_ASSETS_URL . 'css/widgets/button-marquee.css', null, self::VERSION, false);
+		wp_register_style('deensimc-image-marquee-style', DEENSIMC_ASSETS_URL . 'css/widgets/image-marquee.css', null, self::VERSION, false);
+		wp_register_style('deensimc-news-ticker-style', DEENSIMC_ASSETS_URL . 'css/widgets/news-ticker.css', null, self::VERSION, false);
+		wp_register_style('deensimc-text-marquee-style', DEENSIMC_ASSETS_URL . 'css/widgets/text-marquee.css', null, self::VERSION, false);
+		wp_register_style('deensimc-video-marquee-style', DEENSIMC_ASSETS_URL . 'css/widgets/video-marquee.css', null, self::VERSION, false);
+		wp_register_style('deensimc-testimonial-style', DEENSIMC_ASSETS_URL . 'css/widgets/testimonial.css', null, self::VERSION, false);
+		wp_register_style('deensimc-animated-word-roller-style', DEENSIMC_ASSETS_URL . 'css/widgets/animated-word-roller.css', null, self::VERSION, false);
+		wp_register_style('deensimc-animated-heading-style', DEENSIMC_ASSETS_URL . 'css/widgets/animated-heading.css', null, self::VERSION, false);
+		wp_register_style('deensimc-swiper-bundle-min-style', DEENSIMC_ASSETS_URL . 'css/widgets/swiper-bundle.min.css', null, self::VERSION, false);
+		wp_register_style('deensimc-swiper-style', DEENSIMC_ASSETS_URL . 'css/widgets/swiper.css', null, self::VERSION, false);
+		wp_register_style('deensimc-accordion-style', DEENSIMC_ASSETS_URL . 'css/widgets/accordion.css', null, self::VERSION, false);
+		wp_register_style('deensimc-search-style', DEENSIMC_ASSETS_URL . 'css/widgets/search.css', null, self::VERSION, false);
 
 		wp_enqueue_style('deensimc-marquee-common-styles');
 		// refactored code end
-
-
-
 	}
 
 	public function deensimc_elementor_library()
@@ -384,7 +381,7 @@ final class Marquee
 
 	public function deensimc_editor_styles()
 	{
-		wp_register_style('deensimc-editor-css', DEENSIMC_ASSETS_URL . 'css/editor.css', null, self::VERSION, false);
+		wp_register_style('deensimc-editor-css', DEENSIMC_ASSETS_URL . 'css/admin/editor.css', null, self::VERSION, false);
 		wp_enqueue_style('deensimc-editor-css');
 	}
 	public function deensimc_promotion_styles()

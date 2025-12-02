@@ -172,6 +172,18 @@ class Widgets_Manager {
                 'file' => '/includes/widgets/class-deensimc-button-marquee.php',
                 'class' => '\Deensimc_Button_marquee',
             ],
+            'deensimc-search-box' => [
+                'traits' => [
+                    '/includes/widgets/traits/search/clear-styles-controls.php',
+                    '/includes/widgets/traits/search/query-content-controls.php',
+                    '/includes/widgets/traits/search/search-content-controls.php',
+                    '/includes/widgets/traits/search/search-field-styles.php',
+                    '/includes/widgets/traits/search/style-triggerer-controls.php',
+                    '/includes/widgets/traits/search/submit-styles-controls.php',
+                ],
+                'file' => '/includes/widgets/class-deensimc-search.php',
+                'class' => '\Deensimc_Search_Widget',
+            ],
         ];
     }
     
