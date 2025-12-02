@@ -248,6 +248,14 @@ class Control_Manager
                 'demo'   => 'https://marqueeaddons.com/button-marquee/',
                 'pro_url' => ''
             ],
+            'deensimc-search-box' => [
+                'cat'    => 'general',
+                'title'  => __('Search Box', 'marquee-addons-for-elementor'),
+                'icon'   => 'deensimc-search-icon',
+                'is_pro' => false,
+                'demo'   => '#',
+                'pro_url' => ''
+            ],
         ];
 
         // Get PRO widgets and categorize them
