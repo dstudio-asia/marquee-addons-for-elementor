@@ -33,9 +33,41 @@ final class Base
     }
 
     function deensimc_admin_enqueue_scripts()
-	{
-		wp_enqueue_style( 'deensimc-admin-style', DEENSIMC_ASSETS_URL . 'css/admin/admin.css', null, self::VERSION, false );
-		wp_enqueue_script( 'deensimc-admin-scripts', DEENSIMC_ASSETS_URL . 'js/admin/admin.js', ['jquery'], self::VERSION, true);
-	}
+{
+    // CSS
+    $admin_css        = 'css/admin/admin.css';
+    $admin_css_min    = 'css/admin/admin.min.css';
+
+    $css_path         = DEENSIMC_ASSETS_URL . $admin_css_min;
+    $css_url          = file_exists($css_path)
+                        ? DEENSIMC_ASSETS_URL . $admin_css_min
+                        : DEENSIMC_ASSETS_URL . $admin_css;
+
+    wp_enqueue_style(
+        'deensimc-admin-style',
+        $css_url,
+        null,
+        self::VERSION,
+        false
+    );
+
+    // JS
+    $admin_js        = 'js/admin/admin.js';
+    $admin_js_min    = 'js/admin/admin.min.js';
+
+    $js_path         = DEENSIMC_ASSETS_URL . $admin_js_min;
+    $js_url          = file_exists($js_path)
+                        ? DEENSIMC_ASSETS_URL . $admin_js_min
+                        : DEENSIMC_ASSETS_URL . $admin_js;
+
+    wp_enqueue_script(
+        'deensimc-admin-scripts',
+        $js_url,
+        ['jquery'],
+        self::VERSION,
+        true
+    );
+}
+
 
 }
