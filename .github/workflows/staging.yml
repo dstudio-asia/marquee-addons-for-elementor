@@ -23,11 +23,11 @@ jobs:
       - name: Run build script (minify assets)
         run: npm run build
 
-      - name: Remove unminified CSS files
-        run: find assets/css -type f -name '*.css' ! -name '*.min.css' ! -path 'assets/css/plugins/*' -delete
+      # - name: Remove unminified CSS files
+      #   run: find assets/css -type f -name '*.css' ! -name '*.min.css' ! -path 'assets/css/plugins/*' -delete
 
-      - name: Remove unminified JS files
-        run: find assets/js -type f -name '*.js' ! -name '*.min.js' ! -path 'assets/js/plugins/*' -delete
+      # - name: Remove unminified JS files
+      #   run: find assets/js -type f -name '*.js' ! -name '*.min.js' ! -path 'assets/js/plugins/*' -delete
 
       - name: 📂 Sync files to marquee-addon-pro test server
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
