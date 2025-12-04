@@ -32,6 +32,18 @@ jobs:
           echo "Found version: $VERSION"
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
 
+      # These steps run ONLY when release was created
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+
+      - name: Install npm dependencies
+        run: npm install
+
+      - name: Run build script (minify assets)
+        run: npm run build
+
       # Release-please (no file commits, no PR — release only)
       - name: Release Please
         id: release
