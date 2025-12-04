@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.8.1](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.8.0...v3.8.1) (2025-12-04)
+
+
+### Features
+
+* add package.json and package-lock.json for dependency management ([fd84801](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/fd8480161d5b0153bedaea58062050d143c6892c))
+
 ## [3.7.29](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.7.28...v3.7.29) (2025-11-29)
 
 
