@@ -233,38 +233,32 @@ final class Marquee
 	}
 
 
-	public function deensimc_notice_enqueue_scripts($hook)
-	{
-		if ($hook !== 'plugins.php') {
-			return;
-		}
+	private function load_style($handle, $path)
+{
+    $normal = DEENSIMC_ASSETS_URL . $path;
+    $min    = str_replace('.css', '.min.css', $normal);
 
-		wp_enqueue_style(
-			'deensimc-feedback-style',
-			DEENSIMC_ASSETS_URL . 'css/admin/notice.css',
-			null,
-			self::VERSION,
-			false
-		);
+    $src = file_exists($min)
+        ? DEENSIMC_ASSETS_URL . str_replace('.css', '.min.css', $path)
+        : DEENSIMC_ASSETS_URL . $path;
 
-		wp_enqueue_script(
-			'deensimc-feedback-script',
-			DEENSIMC_ASSETS_URL . 'js/admin/dismiss.js',
-			['jquery'],
-			self::VERSION,
-			true
-		);
+    wp_register_style($handle, $src, null, self::VERSION, false);
+    wp_enqueue_style($handle);
+}
 
-		wp_localize_script(
-			'deensimc-feedback-script',
-			'DeensimcFB',
-			[
-				'ajax_url' => admin_url('admin-ajax.php'),
-				'nonce'    => wp_create_nonce('deensimc_dismiss_nonce'),
-				'days'     => 30,
-			]
-		);
-	}
+private function load_script($handle, $path, $deps = ['jquery'])
+{
+    $normal = DEENSIMC_ASSETS_URL . $path;
+    $min    = str_replace('.js', '.min.js', $normal);
+
+    $src = file_exists($min)
+        ? DEENSIMC_ASSETS_URL . str_replace('.js', '.min.js', $path)
+        : DEENSIMC_ASSETS_URL . $path;
+
+    wp_register_script($handle, $src, $deps, self::VERSION, true);
+    wp_enqueue_script($handle);
+}
+
 
 
 	public function deensimc_rate_us()
@@ -344,7 +338,7 @@ final class Marquee
 
 		foreach ($styles as $handle => $path) {
 
-			$normal_path = DEENSIMC_ASSETS_PATH . $path;
+			$normal_path = DEENSIMC_ASSETS_URL . $path;
 			$min_path    = str_replace('.css', '.min.css', $normal_path);
 
 			if (file_exists($min_path)) {
@@ -394,7 +388,7 @@ final class Marquee
 
 		foreach ($scripts as $handle => $data) {
 
-			$normal_path = DEENSIMC_ASSETS_PATH . $data['path'];
+			$normal_path = DEENSIMC_ASSETS_URL . $data['path'];
 			$min_path    = str_replace('.js', '.min.js', $normal_path);
 
 			if (file_exists($min_path)) {
@@ -411,28 +405,48 @@ final class Marquee
 		wp_enqueue_script('deensimc-handle-animation-duration');
 		wp_enqueue_script('deensimc-init-text-length-toggle');
 	}
+public function deensimc_notice_enqueue_scripts($hook)
+{
+    if ($hook !== 'plugins.php') {
+        return;
+    }
+
+    // Load minified version first (fallback to normal)
+    $this->load_style('deensimc-feedback-style', 'css/admin/notice.css');
+    $this->load_script('deensimc-feedback-script', 'js/admin/dismiss.js', ['jquery']);
+
+    wp_localize_script(
+        'deensimc-feedback-script',
+        'DeensimcFB',
+        [
+            'ajax_url' => admin_url('admin-ajax.php'),
+            'nonce'    => wp_create_nonce('deensimc_dismiss_nonce'),
+            'days'     => 30,
+        ]
+    );
+}
+
 
 	public function deensimc_editor_styles()
-	{
-		wp_register_style('deensimc-editor-css', DEENSIMC_ASSETS_URL . 'css/admin/editor.css', null, self::VERSION, false);
-		wp_enqueue_style('deensimc-editor-css');
-	}
-	public function deensimc_promotion_styles()
-	{
-		wp_register_style('deensimc-promotion-css', DEENSIMC_ASSETS_URL . 'css/admin/promotion.css', null, self::VERSION, false);
-		wp_enqueue_style('deensimc-promotion-css');
-	}
-	public function deensimc_editor_script()
-	{
-		wp_register_script('deensimc-editor-script', DEENSIMC_ASSETS_URL . 'js/admin/editor.js', ['jquery'], self::VERSION, true);
-		wp_enqueue_script('deensimc-editor-script');
-	}
-	public function deensimc_promotion_script()
-	{
-		wp_register_script('deensimc-promotion-script', DEENSIMC_ASSETS_URL . 'js/admin/promotion.js', ['jquery'], self::VERSION, true);
-		wp_enqueue_script('deensimc-promotion-script');
-		$this->localize_promotion_script();
-	}
+{
+    $this->load_style('deensimc-editor-css', 'css/admin/editor.css');
+}
+public function deensimc_promotion_styles()
+{
+    $this->load_style('deensimc-promotion-css', 'css/admin/promotion.css');
+}
+public function deensimc_editor_script()
+{
+    $this->load_script('deensimc-editor-script', 'js/admin/editor.js');
+}
+
+public function deensimc_promotion_script()
+{
+    $this->load_script('deensimc-promotion-script', 'js/admin/promotion.js');
+    $this->localize_promotion_script();
+}
+
+
 
 	public function deensimc_upgrade_link($actions)
 	{
