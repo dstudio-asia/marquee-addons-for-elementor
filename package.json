@@ -1,0 +1,23 @@
+{
+  "name": "marquee-addons-for-elementor",
+  "version": "1.6.4",
+  "description": "Marquee Addons for Elementor – Advanced Elements & Modern Motion Widgets",
+  "main": "marquee-addons-for-elementor.php",
+  "scripts": {
+    "release": "semantic-release",
+    "build:css": "find assets/css -type f -name '*.css' ! -name '*.min.css' -exec sh -c 'sass --no-source-map --style=compressed \"$1\" \"${1%.css}.min.css\"' _ {} \\;",
+    "build:js": "find assets/js -type f -name '*.js' ! -name '*.min.js' -exec sh -c 'terser \"$1\" --mangle toplevel -o \"${1%.js}.min.js\"' _ {} \\;",
+    "build": "npm run build:css && npm run build:js"
+  },
+  "keywords": [
+    "wordpress",
+    "elementor",
+    "marquee"
+  ],
+  "author": "Debuggers Studio",
+  "license": "GPL-2.0-or-later",
+  "devDependencies": {
+    "sass": "^1.94.1",
+    "terser": "^5.44.1"
+  }
+}
