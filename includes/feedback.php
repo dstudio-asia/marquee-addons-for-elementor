@@ -14,16 +14,51 @@ class deensimc_feedback {
         add_action('admin_head', array($this, 'deensimc_show_deactivate_feedback_popup'));
         add_action('wp_ajax_' . $this->plugin_slug . '_deensimc_submit_deactivation_response', array($this, 'deensimc_submit_deactivation_response'));
     }
+public function deensimc_enqueue_feedback_scripts()
+{
+    $screen = get_current_screen();
+    if (!empty($screen) && $screen->id === 'plugins') {
 
-    function deensimc_enqueue_feedback_scripts() {
-        $screen = get_current_screen();
-        if (isset($screen) && $screen->id == 'plugins') {
-            $ajax_nonce = wp_create_nonce( 'deensimc_deactivate_plugin' );
-            wp_enqueue_style('deensimc-deactivation-css', DEENSIMC_ASSETS_URL . 'css/admin/feedback.css', null, $this->plugin_version);
-            wp_enqueue_script('deensimc-deactivation-script', DEENSIMC_ASSETS_URL . 'js/admin/feedback.js', array('jquery'), $this->plugin_version, true);
-            wp_localize_script( 'deensimc-deactivation-script', 'deensimc_ajax', array( 'nonce' => $ajax_nonce ) );
-        }
+        $ajax_nonce = wp_create_nonce('deensimc_deactivate_plugin');
+
+        // Load minified versions first
+        $this->feedback_load_style('deensimc-deactivation-css', 'css/admin/feedback.css');
+        $this->feedback_load_script('deensimc-deactivation-script', 'js/admin/feedback.js', ['jquery']);
+
+        wp_localize_script(
+            'deensimc-deactivation-script',
+            'deensimc_ajax',
+            [ 'nonce' => $ajax_nonce ]
+        );
     }
+}
+
+private function feedback_load_style($handle, $path)
+{
+    $normal = DEENSIMC_ASSETS_URL . $path;
+    $min    = str_replace('.css', '.min.css', $normal);
+
+    $src = file_exists($min)
+        ? DEENSIMC_ASSETS_URL . str_replace('.css', '.min.css', $path)
+        : DEENSIMC_ASSETS_URL . $path;
+
+    wp_register_style($handle, $src, null, $this->plugin_version, false);
+    wp_enqueue_style($handle);
+}
+
+private function feedback_load_script($handle, $path, $deps = ['jquery'])
+{
+    $normal = DEENSIMC_ASSETS_URL . $path;
+    $min    = str_replace('.js', '.min.js', $normal);
+
+    $src = file_exists($min)
+        ? DEENSIMC_ASSETS_URL . str_replace('.js', '.min.js', $path)
+        : DEENSIMC_ASSETS_URL . $path;
+
+    wp_register_script($handle, $src, $deps, $this->plugin_version, true);
+    wp_enqueue_script($handle);
+}
+
 
     public function deensimc_show_deactivate_feedback_popup() {
         $screen = get_current_screen();
