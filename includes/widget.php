@@ -147,7 +147,7 @@ final class Marquee
 		if ($hook !== 'plugins.php') {
 			return;
 		}
-		
+
 		$admin_styles = [
 			'deensimc-feedback-style' => 'css/admin/notice.css',
 		];
@@ -244,7 +244,7 @@ final class Marquee
 	{
 		// All frontend widget styles with minification support
 		$styles = [
-			'deensimc-marquee-common-styles' => 'css/common-styles.css',
+			'deensimc-marquee-common-styles' => 'css/plugins/common-styles.css',
 			'deensimc-button-marquee-style' => 'css/widgets/button-marquee.css',
 			'deensimc-image-marquee-style' => 'css/widgets/image-marquee.css',
 			'deensimc-news-ticker-style' => 'css/widgets/news-ticker.css',
@@ -253,8 +253,8 @@ final class Marquee
 			'deensimc-testimonial-style' => 'css/widgets/testimonial.css',
 			'deensimc-animated-word-roller-style' => 'css/widgets/animated-word-roller.css',
 			'deensimc-animated-heading-style' => 'css/widgets/animated-heading.css',
-			'deensimc-swiper-bundle-min-style' => 'css/widgets/swiper-bundle.min.css',
-			'deensimc-swiper-style' => 'css/widgets/swiper.css',
+			'deensimc-swiper-bundle-min-style' => 'css/plugins/swiper-bundle.min.css',
+			'deensimc-swiper-style' => 'css/widgets/stacked.css',
 			'deensimc-accordion-style' => 'css/widgets/accordion.css',
 			'deensimc-search-style' => 'css/widgets/search.css',
 		];
