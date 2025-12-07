@@ -253,7 +253,7 @@ final class Marquee
 			'deensimc-testimonial-style' => 'css/widgets/testimonial.css',
 			'deensimc-animated-word-roller-style' => 'css/widgets/animated-word-roller.css',
 			'deensimc-animated-heading-style' => 'css/widgets/animated-heading.css',
-			'deensimc-swiper-bundle-min-style' => 'css/widgets/swiper-bundle.min.css',
+			'deensimc-swiper-bundle-min-style' => 'css/plugins/swiper-bundle.min.css',
 			'deensimc-swiper-style' => 'css/widgets/stacked.css',
 			'deensimc-accordion-style' => 'css/widgets/accordion.css',
 			'deensimc-search-style' => 'css/widgets/search.css',
