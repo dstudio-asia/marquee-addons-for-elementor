@@ -8,9 +8,9 @@ final class Marquee
 {
 	use Deensimcpro_Promo;
 	
-	const VERSION = '3.8.1';
+	const VERSION = '3.8.2';
 	const MINIMUM_ELEMENTOR_VERSION = '3.5.0';
-	const MINIMUM_PHP_VERSION = '7.4';
+	const MINIMUM_PHP_VERSION = '8.0';
 	
 	private static $_instance = null;
 
@@ -110,7 +110,7 @@ final class Marquee
 	public function admin_notice_minimum_php_version()
 	{
 		$message = sprintf(
-			/* translators: %1$s is replaced with " Marquee Addons for Elementor – Advanced Elements & Modern Motion Widgets", %2$s is replaced with "php", %3$s is replaced with "7.4" */
+			/* translators: %1$s is replaced with " Marquee Addons for Elementor – Advanced Elements & Modern Motion Widgets", %2$s is replaced with "php", %3$s is replaced with "8.0" */
 			esc_html__('"%1$s" requires "%2$s" version %3$s or greater.', 'marquee-addons-for-elementor'),
 			'<strong>' . esc_html__(' Marquee Addons for Elementor – Advanced Elements & Modern Motion Widgets', 'marquee-addons-for-elementor') . '</strong>',
 			'<strong>' . esc_html__('PHP', 'marquee-addons-for-elementor') . '</strong>',
