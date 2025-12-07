@@ -8,7 +8,7 @@ final class Marquee
 {
 	use Deensimcpro_Promo;
 	
-	const VERSION = '3.8.1';
+	const VERSION = '3.8.2';
 	const MINIMUM_ELEMENTOR_VERSION = '3.5.0';
 	const MINIMUM_PHP_VERSION = '8.0';
 	
