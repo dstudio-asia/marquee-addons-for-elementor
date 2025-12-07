@@ -5,7 +5,7 @@
  * Description: MarqueeAddons an Elementor addon to create smooth, endless marquee carousels, showcases images, logos, or content with dynamic movement to engage visitors. It also allows you to create image accordions, stacked sliders, and text marquees.
  * Version: 3.8.1
  * Requires at least: 5.8
- * Requires PHP: 7.4
+ * Requires PHP: 8.0
  * Elementor tested up to: 3.32.0
  * Author: Debuggers Studio
  * Author URI: https://debuggersstudio.com
