@@ -2,7 +2,7 @@
 Contributors: debuggersstudio
 Tags: elementor, text marquee, image marquee, video marquee, Product slider
 Requires at least: 5.8
-Tested up to: 6.8
+Tested up to: 6.9
 Stable tag: 3.8.1
 Requires PHP: 7.4
 License: GPLv2 or later
@@ -244,6 +244,9 @@ The developers release regular updates to improve features, fix bugs, and ensure
 First, ensure that you've activated the plugin correctly. If the issue persists, try clearing your browser cache or updating your Elementor plugin. If the problem continues, you can reach out to the support team for assistance.
 
 == Changelog ==
+
+= 3.8.1 - 2025-12-07 =
+- Tweak: Minified CSS and JS files to improve overall performance and loading speed
 
 = 3.8.0 - 2025-12-02 =
 - Tweak: Improved performance
