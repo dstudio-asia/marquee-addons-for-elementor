@@ -3,7 +3,7 @@
 ![WordPress Plugin Version](https://img.shields.io/wordpress/plugin/v/marquee-addons-for-elementor)
 ![WordPress Tested](https://img.shields.io/wordpress/v/marquee-addons-for-elementor?label=WordPress)
 ![Elementor Required](https://img.shields.io/badge/Elementor-3.7%2B-blue)
-![PHP Required](https://img.shields.io/badge/PHP-8.0%2B-purple)
+![PHP Required](https://img.shields.io/badge/PHP-7.4%2B-purple)
 ![License](https://img.shields.io/badge/License-GPLv2%2B-green)
 
 MarqueeAddons is a smooth video, text, image, and testimonial marquee carousel loop plugin for Elementor on WordPress. Create continuous smooth scrolling loops for your content with customizable directions and flexible options.
