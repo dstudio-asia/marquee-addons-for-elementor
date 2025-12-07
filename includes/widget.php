@@ -7,77 +7,23 @@ use Deensimc_Marquee\Misc\Deensimcpro_Promo;
 final class Marquee
 {
 	use Deensimcpro_Promo;
-	/**
-	 * Addon Version
-	 *
-	 * @since 1.0.0
-	 * @var string The addon version.
-	 */
-
+	
 	const VERSION = '3.8.1';
-
-	/**
-	 * Minimum Elementor Version
-	 *
-	 * @since 1.0.0
-	 * @var string Minimum Elementor version required to run the addon.
-	 */
-
 	const MINIMUM_ELEMENTOR_VERSION = '3.5.0';
-
-	/**
-	 * Minimum PHP Version
-	 *
-	 * @since 1.0.0
-	 * @var string Minimum PHP version required to run the addon.
-	 */
-
 	const MINIMUM_PHP_VERSION = '7.4';
-
-	/**
-	 * Instance
-	 *
-	 * @since 1.0.0
-	 * @access private
-	 * @static
-	 * @var \Deensimc_Marquee\Marquee The single instance of the class.
-	 */
-
+	
 	private static $_instance = null;
-
-	/**
-	 * Instance
-	 *
-	 * Ensures only one instance of the class is loaded or can be loaded.
-	 *
-	 * @since 1.0.0
-	 * @access public
-	 * @static
-	 * @return \Deensimc_Marquee\Marquee  An instance of the class.
-	 */
 
 	public static function instance()
 	{
-
 		if (is_null(self::$_instance)) {
 			self::$_instance = new self();
 		}
 		return self::$_instance;
 	}
 
-	/**
-	 * Constructor
-	 *
-	 * Perform some compatibility checks to make sure basic requirements are meet.
-	 * If all compatibility checks pass, initialize the functionality.
-	 *
-	 * @since 1.0.0
-	 * @access public
-	 */
-
 	public function __construct()
 	{
-
 		if ($this->is_compatible()) {
 			add_action('elementor/init', [$this, 'init']);
 		}
@@ -85,40 +31,24 @@ final class Marquee
 
 	public function deensimc_allowed_tags()
 	{
-		$allowed_tags = array(
-			'strong' => array(),
-		);
-		return $allowed_tags;
+		return ['strong' => []];
 	}
-
-	/**
-	 * Compatibility Checks
-	 *
-	 * Checks whether the site meets the addon requirement.
-	 *
-	 * @since 1.0.0
-	 * @access public
-	 */
 
 	public function is_compatible()
 	{
-
 		// Check if Elementor installed and activated
-
 		if (! did_action('elementor/loaded')) {
 			add_action('admin_notices', [$this, 'admin_notice_missing_main_plugin']);
 			return false;
 		}
 
 		// Check for required Elementor version
-
 		if (! version_compare(ELEMENTOR_VERSION, self::MINIMUM_ELEMENTOR_VERSION, '>=')) {
 			add_action('admin_notices', [$this, 'admin_notice_minimum_elementor_version']);
 			return false;
 		}
 
 		// Check for required PHP version
-
 		if (version_compare(PHP_VERSION, self::MINIMUM_PHP_VERSION, '<')) {
 			add_action('admin_notices', [$this, 'admin_notice_minimum_php_version']);
 			return false;
@@ -128,90 +58,69 @@ final class Marquee
 	}
 
 	/**
-	 * Admin notice
-	 *
-	 * Warning when the site doesn't have Elementor installed or activated.
-	 *
-	 * @since 1.0.0
-	 * @access public
+	 * Get minified asset URL if exists, otherwise fallback to unminified
+	 * 
+	 * @param string $path Relative path to asset
+	 * @param string $type 'css' or 'js'
+	 * @return string Asset URL
 	 */
+	private function get_asset_url($path, $type = 'css')
+	{
+		// Check for minified version first
+		$min_path = str_replace(".$type", ".min.$type", $path);
+		
+		// Build the full file path
+		$base_path = plugin_dir_path(__FILE__) . '../assets/';
+		$full_min_path = $base_path . $min_path;
+		
+		// If minified version exists, use it
+		if (file_exists($full_min_path)) {
+			return DEENSIMC_ASSETS_URL . $min_path;
+		}
+		
+		// Fallback to unminified version
+		return DEENSIMC_ASSETS_URL . $path;
+	}
 
 	public function admin_notice_missing_main_plugin()
 	{
-
 		$message = sprintf(
-			/* translators: %1$s is replaced with " Marquee Addons for Elementor – Advanced Elements & Modern Motion Widgets"  and %2$s is replaced with "Elementor"*/
 			esc_html__('"%1$s" requires "%2$s" to be installed and activated.', 'marquee-addons-for-elementor'),
 			'<strong>' . esc_html__(' Marquee Addons for Elementor – Advanced Elements & Modern Motion Widgets', 'marquee-addons-for-elementor') . '</strong>',
 			'<strong>' . esc_html__('Elementor', 'marquee-addons-for-elementor') . '</strong>'
-
 		);
 
 		printf('<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', wp_kses($message, $this->deensimc_allowed_tags()));
 	}
 
-	/**
-	 * Admin notice
-	 *
-	 * Warning when the site doesn't have a minimum required Elementor version.
-	 *
-	 * @since 1.0.0
-	 * @access public
-	 */
-
 	public function admin_notice_minimum_elementor_version()
 	{
-
 		$message = sprintf(
-			/* translators: %1$s is replaced with " Marquee Addons for Elementor – Advanced Elements & Modern Motion Widgets", %2$s is replaced with "Elementor", %3$s is replaced with "3.8.0" */
 			esc_html__('"%1$s" requires "%2$s" version %3$s or greater.', 'marquee-addons-for-elementor'),
 			'<strong>' . esc_html__(' Marquee Addons for Elementor – Advanced Elements & Modern Motion Widgets', 'marquee-addons-for-elementor') . '</strong>',
 			'<strong>' . esc_html__('Elementor', 'marquee-addons-for-elementor') . '</strong>',
 			self::MINIMUM_ELEMENTOR_VERSION
-
 		);
 
 		printf('<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', wp_kses($message, $this->deensimc_allowed_tags()));
 	}
 
-	/**
-	 * Admin notice
-	 *
-	 * Warning when the site doesn't have a minimum required PHP version.
-	 *
-	 * @since 1.0.0
-	 * @access public
-	 */
-
 	public function admin_notice_minimum_php_version()
 	{
-
 		$message = sprintf(
-			/* translators: %1$s is replaced with " Marquee Addons for Elementor – Advanced Elements & Modern Motion Widgets", %2$s is replaced with "php", %3$s is replaced with "7.4" */
 			esc_html__('"%1$s" requires "%2$s" version %3$s or greater.', 'marquee-addons-for-elementor'),
 			'<strong>' . esc_html__(' Marquee Addons for Elementor – Advanced Elements & Modern Motion Widgets', 'marquee-addons-for-elementor') . '</strong>',
 			'<strong>' . esc_html__('PHP', 'marquee-addons-for-elementor') . '</strong>',
 			self::MINIMUM_PHP_VERSION
-
 		);
 
 		printf('<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', wp_kses($message, $this->deensimc_allowed_tags()));
 	}
 
-	/**
-	 * Initialize
-	 *
-	 * Load the addons functionality only after Elementor is initialized.
-	 *
-	 * Fired by `elementor/init` action hook.
-	 *
-	 * @since 1.0.0
-	 * @access public
-	 */
-
 	public function init()
 	{
 		add_action('admin_enqueue_scripts', [$this, 'deensimc_notice_enqueue_scripts'], 10);
+		
 		if (!class_exists('\Deensimcpro_Marquee\Marqueepro')) {
 			add_action('admin_notices', [$this, 'deensimc_rate_us'], 10);
 			add_action('wp_ajax_deensimc_notice_dismiss', [$this, 'deensimc_notice_dismiss'], 10);
@@ -223,6 +132,7 @@ final class Marquee
 			add_filter('elementor/editor/localize_settings', [$this, 'promote_pro_elements']);
 			add_action('elementor/editor/after_enqueue_scripts', [$this, 'deensimc_promotion_script'], 10);
 		}
+		
 		add_action('elementor/frontend/after_enqueue_styles', [$this, 'deensimc_frontend_styles'], 20);
 		add_action('elementor/frontend/after_register_scripts', [$this, 'deensimc_frontend_scripts'], 20);
 		add_action('elementor/elements/categories_registered', [$this, 'deensimc_add_categories'], 10);
@@ -232,28 +142,39 @@ final class Marquee
 		add_filter('plugin_action_links_marquee-addons-for-elementor/marquee-addons-for-elementor.php', [$this, 'deensimc_upgrade_link'], 10);
 	}
 
-
 	public function deensimc_notice_enqueue_scripts($hook)
 	{
 		if ($hook !== 'plugins.php') {
 			return;
 		}
+		
+		$admin_styles = [
+			'deensimc-feedback-style' => 'css/admin/notice.css',
+		];
 
-		wp_enqueue_style(
-			'deensimc-feedback-style',
-			DEENSIMC_ASSETS_URL . 'css/admin/notice.css',
-			null,
-			self::VERSION,
-			false
-		);
+		foreach ($admin_styles as $handle => $path) {
+			wp_enqueue_style(
+				$handle,
+				$this->get_asset_url($path, 'css'),
+				null,
+				self::VERSION,
+				false
+			);
+		}
 
-		wp_enqueue_script(
-			'deensimc-feedback-script',
-			DEENSIMC_ASSETS_URL . 'js/admin/dismiss.js',
-			['jquery'],
-			self::VERSION,
-			true
-		);
+		$admin_scripts = [
+			'deensimc-feedback-script' => 'js/admin/dismiss.js',
+		];
+
+		foreach ($admin_scripts as $handle => $path) {
+			wp_enqueue_script(
+				$handle,
+				$this->get_asset_url($path, 'js'),
+				['jquery'],
+				self::VERSION,
+				true
+			);
+		}
 
 		wp_localize_script(
 			'deensimc-feedback-script',
@@ -266,10 +187,8 @@ final class Marquee
 		);
 	}
 
-
 	public function deensimc_rate_us()
 	{
-
 		global $pagenow;
 
 		if ($pagenow !== 'plugins.php') {
@@ -288,7 +207,6 @@ final class Marquee
 			return;
 		}
 
-
 		echo '<div id="deensimc-feedback-notice" class="deensimc-notice-wrap notice is-dismissible">';
 		echo '  <div class="deensimc-notice-icon">';
 		echo '    <img src="' . esc_url(DEENSIMC_ASSETS_URL) . 'images/library-icon.png" alt="Notice Icon" />';
@@ -297,7 +215,7 @@ final class Marquee
 		echo '    <h3>Upgrade to Marquee Addons Pro</h3>';
 		echo '    <p>Unlock more advance widgets and make your Elementor website 10x better with Marquee Addons.</p>';
 		echo '    <a href="https://marqueeaddons.com/pricing/" target="_blank" class="button button-primary">Upgrade to Pro</a>';
-		echo '    <a href="https://wordpress.org/support/plugin/marquee-addons-for-elementor/reviews/#new-post" target="_blank" class="button button-primary">Rate Us</a>';;
+		echo '    <a href="https://wordpress.org/support/plugin/marquee-addons-for-elementor/reviews/#new-post" target="_blank" class="button button-primary">Rate Us</a>';
 		echo '    <button class="button deensimc-dismiss-btn">Remind me later</button>';
 		echo '    <button class="button deensimc-never-show">Don\'t show me again</button>';
 		echo '  </div>';
@@ -322,27 +240,36 @@ final class Marquee
 		wp_send_json_success();
 	}
 
-
-
 	public function deensimc_frontend_styles()
 	{
-		// refactored code start
-		wp_register_style('deensimc-marquee-common-styles', DEENSIMC_ASSETS_URL . 'css/common-styles.min.css', null, self::VERSION, false);
-		wp_register_style('deensimc-button-marquee-style', DEENSIMC_ASSETS_URL . 'css/widgets/button-marquee.css', null, self::VERSION, false);
-		wp_register_style('deensimc-image-marquee-style', DEENSIMC_ASSETS_URL . 'css/widgets/image-marquee.css', null, self::VERSION, false);
-		wp_register_style('deensimc-news-ticker-style', DEENSIMC_ASSETS_URL . 'css/widgets/news-ticker.css', null, self::VERSION, false);
-		wp_register_style('deensimc-text-marquee-style', DEENSIMC_ASSETS_URL . 'css/widgets/text-marquee.css', null, self::VERSION, false);
-		wp_register_style('deensimc-video-marquee-style', DEENSIMC_ASSETS_URL . 'css/widgets/video-marquee.css', null, self::VERSION, false);
-		wp_register_style('deensimc-testimonial-style', DEENSIMC_ASSETS_URL . 'css/widgets/testimonial.css', null, self::VERSION, false);
-		wp_register_style('deensimc-animated-word-roller-style', DEENSIMC_ASSETS_URL . 'css/widgets/animated-word-roller.css', null, self::VERSION, false);
-		wp_register_style('deensimc-animated-heading-style', DEENSIMC_ASSETS_URL . 'css/widgets/animated-heading.css', null, self::VERSION, false);
-		wp_register_style('deensimc-swiper-bundle-min-style', DEENSIMC_ASSETS_URL . 'css/widgets/swiper-bundle.min.css', null, self::VERSION, false);
-		wp_register_style('deensimc-swiper-style', DEENSIMC_ASSETS_URL . 'css/widgets/swiper.css', null, self::VERSION, false);
-		wp_register_style('deensimc-accordion-style', DEENSIMC_ASSETS_URL . 'css/widgets/accordion.css', null, self::VERSION, false);
-		wp_register_style('deensimc-search-style', DEENSIMC_ASSETS_URL . 'css/widgets/search.css', null, self::VERSION, false);
+		// All frontend widget styles with minification support
+		$styles = [
+			'deensimc-marquee-common-styles' => 'css/common-styles.css',
+			'deensimc-button-marquee-style' => 'css/widgets/button-marquee.css',
+			'deensimc-image-marquee-style' => 'css/widgets/image-marquee.css',
+			'deensimc-news-ticker-style' => 'css/widgets/news-ticker.css',
+			'deensimc-text-marquee-style' => 'css/widgets/text-marquee.css',
+			'deensimc-video-marquee-style' => 'css/widgets/video-marquee.css',
+			'deensimc-testimonial-style' => 'css/widgets/testimonial.css',
+			'deensimc-animated-word-roller-style' => 'css/widgets/animated-word-roller.css',
+			'deensimc-animated-heading-style' => 'css/widgets/animated-heading.css',
+			'deensimc-swiper-bundle-min-style' => 'css/widgets/swiper-bundle.min.css',
+			'deensimc-swiper-style' => 'css/widgets/swiper.css',
+			'deensimc-accordion-style' => 'css/widgets/accordion.css',
+			'deensimc-search-style' => 'css/widgets/search.css',
+		];
+
+		foreach ($styles as $handle => $path) {
+			wp_register_style(
+				$handle,
+				$this->get_asset_url($path, 'css'),
+				null,
+				self::VERSION,
+				false
+			);
+		}
 
 		wp_enqueue_style('deensimc-marquee-common-styles');
-		// refactored code end
 	}
 
 	public function deensimc_elementor_library()
@@ -352,28 +279,39 @@ final class Marquee
 
 	public function deensimc_frontend_scripts()
 	{
-		// refactored code start
-		wp_register_script('deensimc-handle-animation-duration', DEENSIMC_ASSETS_URL  . 'js/handle-animation-duration.js', ['jquery'], self::VERSION, false);
-		wp_register_script('deensimc-init-text-length-toggle', DEENSIMC_ASSETS_URL  . 'js/initTextLengthToggle.js', ['jquery'], self::VERSION, false);
-		wp_register_script('deensimc-button-marquee-script', DEENSIMC_ASSETS_URL  . 'js/button-marquee.js', ['jquery'], self::VERSION, false);
-		wp_register_script('deensimc-image-marquee-script', DEENSIMC_ASSETS_URL  . 'js/image-marquee.js', ['jquery'], self::VERSION, false);
-		wp_register_script('deensimc-news-ticker-marquee-script', DEENSIMC_ASSETS_URL  . 'js/news-ticker.js', ['jquery'], self::VERSION, false);
-		wp_register_script('deensimc-text-marquee-script', DEENSIMC_ASSETS_URL  . 'js/text-marquee.js', ['jquery'], self::VERSION, false);
-		wp_register_script('deensimc-video-marquee-script', DEENSIMC_ASSETS_URL  . 'js/video-marquee.js', ['jquery'], self::VERSION, false);
-		wp_register_script('deensimc-testimonial-marquee-script', DEENSIMC_ASSETS_URL  . 'js/testimonial-marquee.js', ['jquery'], self::VERSION, false);
-		wp_register_script('deensimc-waveSwingTiltLeanAnimation', DEENSIMC_ASSETS_URL  . 'js/animated-heading/waveSwingTiltLeanAnimation.js', ['jquery'], self::VERSION, false);
-		wp_register_script('deensimc-typing-word', DEENSIMC_ASSETS_URL  . 'js/animated-heading/typing-word.js', ['jquery'], self::VERSION, false);
-		wp_register_script('deensimc-twisting-text', DEENSIMC_ASSETS_URL  . 'js/animated-heading/twisting-text.js', ['jquery'], self::VERSION, false);
-		wp_register_script('deensimc-slide-word', DEENSIMC_ASSETS_URL  . 'js/animated-heading/slide-word.js', ['jquery'], self::VERSION, false);
-		wp_register_script('deensimc-rotation-3d', DEENSIMC_ASSETS_URL  . 'js/animated-heading/rotation-3d.js', ['jquery'], self::VERSION, false);
-		wp_register_script('deensimc-lines-animation', DEENSIMC_ASSETS_URL  . 'js/animated-heading/lines-animation.js', ['jquery'], self::VERSION, false);
-		wp_register_script('deensimc-construct-word', DEENSIMC_ASSETS_URL  . 'js/animated-heading/construct-word.js', ['jquery'], self::VERSION, false);
-		wp_register_script('deensimc-animated-heading', DEENSIMC_ASSETS_URL  . 'js/animated-heading/animated-heading.js', ['jquery'], self::VERSION, false);
-		wp_register_script('deensimc-animated-word-roller', DEENSIMC_ASSETS_URL  . 'js/animated-word-roller.js', ['jquery'], self::VERSION, false);
-		wp_register_script('deensimc-image-accordion-script', DEENSIMC_ASSETS_URL  . 'js/image-accordion.js', ['jquery'], self::VERSION, false);
-		wp_register_script('deensimc-stacked-slider-script', DEENSIMC_ASSETS_URL  . 'js/stacked-slider.js', ['jquery'], self::VERSION, false);
-		wp_register_script('deensimc-search-script', DEENSIMC_ASSETS_URL  . 'js/search.js', ['jquery'], self::VERSION, false);
+		// All frontend widget scripts with minification support
+		$scripts = [
+			'deensimc-handle-animation-duration' => 'js/handle-animation-duration.js',
+			'deensimc-init-text-length-toggle' => 'js/initTextLengthToggle.js',
+			'deensimc-button-marquee-script' => 'js/button-marquee.js',
+			'deensimc-image-marquee-script' => 'js/image-marquee.js',
+			'deensimc-news-ticker-marquee-script' => 'js/news-ticker.js',
+			'deensimc-text-marquee-script' => 'js/text-marquee.js',
+			'deensimc-video-marquee-script' => 'js/video-marquee.js',
+			'deensimc-testimonial-marquee-script' => 'js/testimonial-marquee.js',
+			'deensimc-waveSwingTiltLeanAnimation' => 'js/animated-heading/waveSwingTiltLeanAnimation.js',
+			'deensimc-typing-word' => 'js/animated-heading/typing-word.js',
+			'deensimc-twisting-text' => 'js/animated-heading/twisting-text.js',
+			'deensimc-slide-word' => 'js/animated-heading/slide-word.js',
+			'deensimc-rotation-3d' => 'js/animated-heading/rotation-3d.js',
+			'deensimc-lines-animation' => 'js/animated-heading/lines-animation.js',
+			'deensimc-construct-word' => 'js/animated-heading/construct-word.js',
+			'deensimc-animated-heading' => 'js/animated-heading/animated-heading.js',
+			'deensimc-animated-word-roller' => 'js/animated-word-roller.js',
+			'deensimc-image-accordion-script' => 'js/image-accordion.js',
+			'deensimc-stacked-slider-script' => 'js/stacked-slider.js',
+			'deensimc-search-script' => 'js/search.js',
+		];
 
+		foreach ($scripts as $handle => $path) {
+			wp_register_script(
+				$handle,
+				$this->get_asset_url($path, 'js'),
+				['jquery'],
+				self::VERSION,
+				false
+			);
+		}
 
 		wp_enqueue_script('deensimc-handle-animation-duration');
 		wp_enqueue_script('deensimc-init-text-length-toggle');
@@ -381,29 +319,83 @@ final class Marquee
 
 	public function deensimc_editor_styles()
 	{
-		wp_register_style('deensimc-editor-css', DEENSIMC_ASSETS_URL . 'css/admin/editor.css', null, self::VERSION, false);
+		$editor_styles = [
+			'deensimc-editor-css' => 'css/admin/editor.css',
+		];
+
+		foreach ($editor_styles as $handle => $path) {
+			wp_register_style(
+				$handle,
+				$this->get_asset_url($path, 'css'),
+				null,
+				self::VERSION,
+				false
+			);
+		}
+
 		wp_enqueue_style('deensimc-editor-css');
 	}
+	
 	public function deensimc_promotion_styles()
 	{
-		wp_register_style('deensimc-promotion-css', DEENSIMC_ASSETS_URL . 'css/admin/promotion.css', null, self::VERSION, false);
+		$promotion_styles = [
+			'deensimc-promotion-css' => 'css/admin/promotion.css',
+		];
+
+		foreach ($promotion_styles as $handle => $path) {
+			wp_register_style(
+				$handle,
+				$this->get_asset_url($path, 'css'),
+				null,
+				self::VERSION,
+				false
+			);
+		}
+
 		wp_enqueue_style('deensimc-promotion-css');
 	}
+	
 	public function deensimc_editor_script()
 	{
-		wp_register_script('deensimc-editor-script', DEENSIMC_ASSETS_URL . 'js/admin/editor.js', ['jquery'], self::VERSION, true);
+		$editor_scripts = [
+			'deensimc-editor-script' => 'js/admin/editor.js',
+		];
+
+		foreach ($editor_scripts as $handle => $path) {
+			wp_register_script(
+				$handle,
+				$this->get_asset_url($path, 'js'),
+				['jquery'],
+				self::VERSION,
+				true
+			);
+		}
+
 		wp_enqueue_script('deensimc-editor-script');
 	}
+	
 	public function deensimc_promotion_script()
 	{
-		wp_register_script('deensimc-promotion-script', DEENSIMC_ASSETS_URL . 'js/admin/promotion.js', ['jquery'], self::VERSION, true);
+		$promotion_scripts = [
+			'deensimc-promotion-script' => 'js/admin/promotion.js',
+		];
+
+		foreach ($promotion_scripts as $handle => $path) {
+			wp_register_script(
+				$handle,
+				$this->get_asset_url($path, 'js'),
+				['jquery'],
+				self::VERSION,
+				true
+			);
+		}
+
 		wp_enqueue_script('deensimc-promotion-script');
 		$this->localize_promotion_script();
 	}
 
 	public function deensimc_upgrade_link($actions)
 	{
-
 		$actions['rate_us'] = sprintf(
 			'<a href="https://wordpress.org/support/plugin/marquee-addons-for-elementor/reviews/#new-post" target="_blank">%1$s</a>',
 			__('Rate Us', 'marquee-addons-for-elementor')
@@ -423,7 +415,6 @@ final class Marquee
 
 	function deensimc_add_categories($elements_manager)
 	{
-
 		$elements_manager->add_category(
 			'deensimc_smooth_marquee',
 			[
@@ -431,6 +422,7 @@ final class Marquee
 				'icon' => 'fa fa-plug',
 			]
 		);
+		
 		if (!class_exists('\Deensimcpro_Marquee\Marqueepro') || !apply_filters('marquee_addons_is_license_active', false)) {
 			$elements_manager->add_category(
 				'marquee_addons_pro_promo',
