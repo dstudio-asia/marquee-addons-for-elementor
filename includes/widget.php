@@ -85,6 +85,7 @@ final class Marquee
 	public function admin_notice_missing_main_plugin()
 	{
 		$message = sprintf(
+			/* translators: %1$s is replaced with " Marquee Addons for Elementor – Advanced Elements & Modern Motion Widgets"  and %2$s is replaced with "Elementor"*/
 			esc_html__('"%1$s" requires "%2$s" to be installed and activated.', 'marquee-addons-for-elementor'),
 			'<strong>' . esc_html__(' Marquee Addons for Elementor – Advanced Elements & Modern Motion Widgets', 'marquee-addons-for-elementor') . '</strong>',
 			'<strong>' . esc_html__('Elementor', 'marquee-addons-for-elementor') . '</strong>'
@@ -96,6 +97,7 @@ final class Marquee
 	public function admin_notice_minimum_elementor_version()
 	{
 		$message = sprintf(
+			/* translators: %1$s is replaced with " Marquee Addons for Elementor – Advanced Elements & Modern Motion Widgets", %2$s is replaced with "Elementor", %3$s is replaced with "3.8.0" */
 			esc_html__('"%1$s" requires "%2$s" version %3$s or greater.', 'marquee-addons-for-elementor'),
 			'<strong>' . esc_html__(' Marquee Addons for Elementor – Advanced Elements & Modern Motion Widgets', 'marquee-addons-for-elementor') . '</strong>',
 			'<strong>' . esc_html__('Elementor', 'marquee-addons-for-elementor') . '</strong>',
@@ -108,6 +110,7 @@ final class Marquee
 	public function admin_notice_minimum_php_version()
 	{
 		$message = sprintf(
+			/* translators: %1$s is replaced with " Marquee Addons for Elementor – Advanced Elements & Modern Motion Widgets", %2$s is replaced with "php", %3$s is replaced with "7.4" */
 			esc_html__('"%1$s" requires "%2$s" version %3$s or greater.', 'marquee-addons-for-elementor'),
 			'<strong>' . esc_html__(' Marquee Addons for Elementor – Advanced Elements & Modern Motion Widgets', 'marquee-addons-for-elementor') . '</strong>',
 			'<strong>' . esc_html__('PHP', 'marquee-addons-for-elementor') . '</strong>',
