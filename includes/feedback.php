@@ -14,51 +14,61 @@ class deensimc_feedback {
         add_action('admin_head', array($this, 'deensimc_show_deactivate_feedback_popup'));
         add_action('wp_ajax_' . $this->plugin_slug . '_deensimc_submit_deactivation_response', array($this, 'deensimc_submit_deactivation_response'));
     }
-public function deensimc_enqueue_feedback_scripts()
-{
-    $screen = get_current_screen();
-    if (!empty($screen) && $screen->id === 'plugins') {
 
-        $ajax_nonce = wp_create_nonce('deensimc_deactivate_plugin');
-
-        // Load minified versions first
-        $this->feedback_load_style('deensimc-deactivation-css', 'css/admin/feedback.css');
-        $this->feedback_load_script('deensimc-deactivation-script', 'js/admin/feedback.js', ['jquery']);
-
-        wp_localize_script(
-            'deensimc-deactivation-script',
-            'deensimc_ajax',
-            [ 'nonce' => $ajax_nonce ]
-        );
+    /**
+     * Get minified asset URL if exists, otherwise fallback to unminified
+     * 
+     * @param string $path Relative path to asset
+     * @param string $type 'css' or 'js'
+     * @return string Asset URL
+     */
+    private function get_asset_url($path, $type = 'css')
+    {
+        $min_path = str_replace(".$type", ".min.$type", $path);
+        $base_path = plugin_dir_path(__FILE__) . '../assets/';
+        $full_min_path = $base_path . $min_path;
+    
+        if (file_exists($full_min_path)) {
+            return DEENSIMC_ASSETS_URL . $min_path;
+        }
+        
+        return DEENSIMC_ASSETS_URL . $path;
     }
-}
 
-private function feedback_load_style($handle, $path)
-{
-    $normal = DEENSIMC_ASSETS_URL . $path;
-    $min    = str_replace('.css', '.min.css', $normal);
+    function deensimc_enqueue_feedback_scripts() {
+        $screen = get_current_screen();
+        if (isset($screen) && $screen->id == 'plugins') {
+            $ajax_nonce = wp_create_nonce('deensimc_deactivate_plugin');
+            $feedback_styles = [
+                'deensimc-deactivation-css' => 'css/admin/feedback.css',
+            ];
 
-    $src = file_exists($min)
-        ? DEENSIMC_ASSETS_URL . str_replace('.css', '.min.css', $path)
-        : DEENSIMC_ASSETS_URL . $path;
+            foreach ($feedback_styles as $handle => $path) {
+                wp_enqueue_style(
+                    $handle,
+                    $this->get_asset_url($path, 'css'),
+                    null,
+                    $this->plugin_version
+                );
+            }
 
-    wp_register_style($handle, $src, null, $this->plugin_version, false);
-    wp_enqueue_style($handle);
-}
+            $feedback_scripts = [
+                'deensimc-deactivation-script' => 'js/admin/feedback.js',
+            ];
 
-private function feedback_load_script($handle, $path, $deps = ['jquery'])
-{
-    $normal = DEENSIMC_ASSETS_URL . $path;
-    $min    = str_replace('.js', '.min.js', $normal);
-
-    $src = file_exists($min)
-        ? DEENSIMC_ASSETS_URL . str_replace('.js', '.min.js', $path)
-        : DEENSIMC_ASSETS_URL . $path;
-
-    wp_register_script($handle, $src, $deps, $this->plugin_version, true);
-    wp_enqueue_script($handle);
-}
-
+            foreach ($feedback_scripts as $handle => $path) {
+                wp_enqueue_script(
+                    $handle,
+                    $this->get_asset_url($path, 'js'),
+                    array('jquery'),
+                    $this->plugin_version,
+                    true
+                );
+            }
+            
+            wp_localize_script('deensimc-deactivation-script', 'deensimc_ajax', array('nonce' => $ajax_nonce));
+        }
+    }
 
     public function deensimc_show_deactivate_feedback_popup() {
         $screen = get_current_screen();
@@ -178,7 +188,7 @@ private function feedback_load_script($handle, $path, $deps = ['jquery'])
             'wp_memory_limit' => ini_get('memory_limit'),
             'php_version' => phpversion(),
             'mysql_version' => $wpdb->db_version(),
-            'server_software' => isset($_SERVER['SERVER_SOFTWARE']) ? sanitize_text_field( wp_unslash( $_SERVER['SERVER_SOFTWARE'] ) ) : 'N/A'
+            'server_software' => isset($_SERVER['SERVER_SOFTWARE']) ? sanitize_text_field(wp_unslash($_SERVER['SERVER_SOFTWARE'])) : 'N/A'
         );
 
         // Theme and plugins data
@@ -251,17 +261,17 @@ private function feedback_load_script($handle, $path, $deps = ['jquery'])
     }
 
     function deensimc_submit_deactivation_response() {
-        if ( ! current_user_can( 'manage_options' ) ) {
-            wp_send_json_error( 'Insufficient permissions' );
+        if (!current_user_can('manage_options')) {
+            wp_send_json_error('Insufficient permissions');
         }
 
-        if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( sanitize_key( wp_unslash( $_POST['_wpnonce'] ) ) , 'deensimc_deactivate_plugin' ) ) {
-            wp_send_json_error( 'Security check failed' );
+        if (!isset($_POST['_wpnonce']) || !wp_verify_nonce(sanitize_key(wp_unslash($_POST['_wpnonce'])), 'deensimc_deactivate_plugin')) {
+            wp_send_json_error('Security check failed');
         }
 
         // Get the submitted data from JavaScript
-        $reason = isset( $_POST['reason'] ) ? sanitize_text_field( wp_unslash( $_POST['reason'] ) ) : 'other';
-        $message = isset( $_POST['message'] ) ? sanitize_textarea_field( wp_unslash( $_POST['message'] ) ) : 'N/A';
+        $reason = isset($_POST['reason']) ? sanitize_text_field(wp_unslash($_POST['reason'])) : 'other';
+        $message = isset($_POST['message']) ? sanitize_textarea_field(wp_unslash($_POST['message'])) : 'N/A';
         $anonymous = isset($_POST['anonymous']) && $_POST['anonymous'] === '1';
 
         // Map reasons to expected API values
@@ -305,13 +315,12 @@ private function feedback_load_script($handle, $path, $deps = ['jquery'])
                 'Content-Type' => 'application/json; charset=utf-8',
                 'Accept'       => 'application/json',
             ),
-            'body'    => wp_json_encode( $api_data ),
+            'body'    => wp_json_encode($api_data),
         );         
 
-        $response = wp_remote_post( $this->feedback_url, $args );
+        $response = wp_remote_post($this->feedback_url, $args);
 
-        wp_send_json_success( 'Feedback submitted successfully' );
-
+        wp_send_json_success('Feedback submitted successfully');
     }
 }
 
