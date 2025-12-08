@@ -6,7 +6,7 @@
 
 .deensimc-text-marquee .deensimc-scroll-text {
   white-space: nowrap;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease;
 }
 
 .deensimc-marquee-vertical .deensimc-scroll-text {
