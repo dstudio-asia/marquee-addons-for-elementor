@@ -8,6 +8,7 @@
   white-space: nowrap;
   line-height: 1.2;
   margin-bottom: 0;
+  transition: color 0.2s ease;
 }
 
 .deensimc-marquee-vertical .deensimc-scroll-text {
