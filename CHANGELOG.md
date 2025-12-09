@@ -1,6 +1,37 @@
 # Changelog
 
 
+## [3.8.2](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.8.1...v3.8.2) (2025-12-08)
+
+
+### Features
+
+* add common styles and swiper bundle CSS, and update widget styles references ([5b0b000](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/5b0b00093dbaae88a72625b1d8441124e8757628))
+* add workflow steps for Node.js setup, npm installation, asset minification, and cleanup of unminified files ([f2df978](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/f2df97801e6f0fa2153f1941cf1fdf5a5244ba40))
+* enhance asset management by adding Node.js setup and minificati… ([a5c35e1](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/a5c35e1f26a4c5ab4a6765fd6e32fdd71b82d5d3))
+* enhance asset management by adding Node.js setup and minification steps in CI workflow; refactor style and script registration in widget ([feafd2d](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/feafd2ddabe4ba0c0d00e24643a3f46e3e1f0352))
+* improve asset loading by implementing minified file checks and … ([a04a987](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/a04a987283b85202223f64e51080b0017c2efd69))
+* improve asset loading by implementing minified file checks and refactoring script/style enqueueing in admin ([7d19cac](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/7d19cac240dac858bb642de3c0d1ae01b34064f1))
+
+
+### Bug Fixes
+
+* add translation comments for admin notices regarding plugin and version requirements ([4359d9a](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/4359d9aed6e99c110fd23a813656aaaf8047005a))
+* enhance text marquee controls with color options for normal and … ([60bcb0d](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/60bcb0d7806de8d2adfe326253842870a4e479c8))
+* enhance text marquee controls with color options for normal and hover states ([1487710](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/1487710678d08d73ec9c350d79a20fa2e8616fd3))
+* revert version to 3.8.0 and refactor script/style loading in widget ([85ca392](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/85ca392873dea8af51a851af355cea84148d5fd1))
+* revert version to 3.8.0 and refactor script/style loading in widget ([8371a3f](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/8371a3f5202c4b1e9dfacf0599db80f215d82001))
+* text alignment update for live ([8c31eb8](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/8c31eb81076943e1cb72773d287788fb769c87b3))
+* text alignment update for live ([2683378](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/26833787cb5ed13b70a1398d0c1e0d6977058d98))
+* text color transition duration update ([89b9bcc](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/89b9bccde83a68168466140eaaf8bb364856fa8d))
+* update Elementor compatibility to 3.32.0 and improve performance in readme ([dce622f](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/dce622fb036f5e1f100bb16433a7371f3a0917ea))
+* update Elementor compatibility to 3.32.0 and improve performance… ([c4aaa75](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/c4aaa75ea838ade340b920703e9f6601a004044b))
+* update minimum PHP version requirement from 7.4 to 8.0 ([0079f12](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/0079f12656ef2af4b93d64c91d8320b4032c04b8))
+* update minimum PHP version requirement from 7.4 to 8.0 in multiple files ([7ace8a0](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/7ace8a0d3c57ec5cb9be47adbcfe87a04c7c27d9))
+* update path for swiper bundle minified CSS in widget styles ([3a901ab](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/3a901ab906d61bc50d54098d838b152cf18f1ff5))
+* update version number to 3.8.2 in multiple files ([a3bb711](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/a3bb7112ca2dbc18d2148786f6f4560c6e84459d))
+* update version to 3.8.1 in base and widget classes ([7e0c034](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/7e0c03457147cfa0cc93541aec604fc564b142f0))
+
 ## [3.8.1](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.8.1...v3.8.1) (2025-12-07)
 
 
