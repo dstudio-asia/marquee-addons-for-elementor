@@ -130,6 +130,30 @@ trait Textmarquee_Style_Text_Contents
 			]
 		);
 
+		$this->add_control(
+			'deensimc_icon_rotation',
+			[
+				'label' => esc_html__('Rotate', 'marquee-addons-for-elementor'),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'deg' => [
+						'min' => 0,
+						'max' => 360,
+						'step' => 1,
+					],
+				],
+				'default' => [
+					'unit' => 'deg',
+					'size' => 0,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .deensimc-text-wrapper svg' => 'transform: rotate({{SIZE}}deg);',
+					'{{WRAPPER}} .deensimc-text-wrapper i' => 'transform: rotate({{SIZE}}deg);',
+				],
+			]
+		);
+
+
 		$this->add_responsive_control(
 			'deensimc_icon_size',
 			[
