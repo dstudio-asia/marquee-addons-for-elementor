@@ -6,6 +6,7 @@ class Deensimc_Loader {
     }
 
     protected static function load_files() {
+        require_once DEENSIMC__DIR__ . '/traits/Utils.php';
         require_once DEENSIMC__DIR__ . '/traits/WidgetsList.php';
         require_once DEENSIMC__DIR__ . '/classes/widgets-manager.php';
         require_once DEENSIMC__DIR__ . '/classes/controls-manager.php';

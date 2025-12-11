@@ -19,8 +19,8 @@ use \Elementor\Group_Control_Typography;
 
 class Deensimc_Animated_Word_Roller extends Widget_Base
 {
+	use Deensimc_Utils;
 	use Deensimc_Promotional_Banner;
-
 	use Animated_Word_Roller_Content_Additional_Options;
 	use Animated_Word_Roller_Content_Text_Repeater;
 	use Animated_Word_Roller_Style_Text_Contents;
@@ -87,7 +87,7 @@ class Deensimc_Animated_Word_Roller extends Widget_Base
 		$total_text     = ! empty($settings['deensimc_repeater_text_main']) ? count($settings['deensimc_repeater_text_main']) : 0;
 		$rotation_delay = ! empty($settings['deensimc_infinite_text_rotation_delay']) ? $settings['deensimc_infinite_text_rotation_delay'] : 1;
 		$visible_word   = ! empty($settings['deensimc_infinite_text_rotation_visible_word']) ? $settings['deensimc_infinite_text_rotation_visible_word'] : 5;
-		$html_tag       = isset($settings['deensimc_infinite_text_rotation_html_tag']) ? $settings['deensimc_infinite_text_rotation_html_tag'] : 'h2';
+		$html_tag       = self::validate_html_tag( $settings['deensimc_infinite_text_rotation_html_tag'] );
 ?>
 		<div class="infinite-rotation-main-wrapper">
 			<<?php echo esc_attr($html_tag); ?> class="deensimc-infinite-rotation-container">
