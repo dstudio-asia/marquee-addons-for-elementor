@@ -1,6 +1,18 @@
 # Changelog
 
 
+## [3.8.3](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.8.2...v3.8.3) (2025-12-11)
+
+
+### Features
+
+* Add icon rotation control to Text Marquee widget ([af769fd](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/af769fd549300b994ce196cb6a32499133f06bef))
+
+
+### Bug Fixes
+
+* Implement HTML tag validation utility and integrate it into widgets ([e683290](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/e683290298af181d1b23bd6f2a528b01851cef27))
+
 ## [3.8.2](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.8.1...v3.8.2) (2025-12-08)
 
 
