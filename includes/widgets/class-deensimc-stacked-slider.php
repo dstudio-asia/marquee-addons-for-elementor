@@ -14,8 +14,8 @@ use \Elementor\Utils;
 
 class Deensimc_Stacked_Slider extends Widget_Base
 {
+	use Deensimc_Utils;
 	use Deensimc_Promotional_Banner;
-
 	use Stackedslider_Contents_Primary;
 	use Stackedslider_Contents_Advance;
 	use Stackedslider_Style_Box;
@@ -89,7 +89,7 @@ class Deensimc_Stacked_Slider extends Widget_Base
 		if ($settings['deensimc_content_title'] !== '') {
 		?>
 			<div class="deensimc-slider-heading">
-				<?php printf('<%1$s class="deensimc-content-title"> %2$s </%1$s>', esc_html($settings['deensimc_content_title_tags']), esc_html($settings['deensimc_content_title'])); ?>
+				<?php printf('<%1$s class="deensimc-content-title"> %2$s </%1$s>', esc_html( self::validate_html_tag( $settings['deensimc_content_title_tags'] ) ), esc_html($settings['deensimc_content_title'])); ?>
 			</div>
 		<?php
 		}
