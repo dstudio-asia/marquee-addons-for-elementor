@@ -11,8 +11,8 @@ use \Elementor\Icons_Manager;
 
 class Deensimc_News_Ticker extends Widget_Base
 {
+	use Deensimc_Utils;
 	use Deensimc_Promotional_Banner;
-
 	use Deensimc_Marquee_Controls;
 	use NewsTickerLayoutControl;
 	use NewsTickerStyleControl;
@@ -143,7 +143,7 @@ class Deensimc_News_Ticker extends Widget_Base
 
 				<div class="deensimc-label-heading">
 					<?php
-					$label_tag = isset($settings['deensimc_label_heading_tag']) ? esc_attr($settings['deensimc_label_heading_tag']) : 'h4';
+					$label_tag = self::validate_html_tag( $settings['deensimc_label_heading_tag'] ) ;
 					?>
 					<<?php echo esc_html($label_tag); ?>>
 						<?php echo esc_html($settings['deensimc_label_heading']); ?>
