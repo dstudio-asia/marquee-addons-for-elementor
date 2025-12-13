@@ -43,7 +43,7 @@ class Control_Manager
      */
     private function check_pro_version()
     {
-        if ( class_exists('\Deensimcpro_Marquee\Marqueepro') ) {
+        if (class_exists('\Deensimcpro_Marquee\Marqueepro')) {
             return true;
         }
 
@@ -256,20 +256,28 @@ class Control_Manager
                 'demo'   => '#',
                 'pro_url' => ''
             ],
+            'deensimc-image-hotspot' => [
+                'cat'    => 'general',
+                'title'  => __('Image Hotspot', 'marquee-addons-for-elementor'),
+                'icon'   => 'eicon-image-hotspot',
+                'is_pro' => false,
+                'demo'   => '#',
+                'pro_url' => ''
+            ],
         ];
 
         // Get PRO widgets and categorize them
         $pro_widgets = self::get_widgets_list();
         $categorized_pro_widgets = [];
-        
+
         foreach ($pro_widgets as $key => $widget) {
             $category = 'general';
-            
+
             // Categorize WooCommerce widgets
             if (in_array($key, ['deensimcpro-product-category-marquee', 'deensimcpro-product-marquee'])) {
                 $category = 'woocommerce';
             }
-            
+
             $categorized_pro_widgets[$key] = array_merge($widget, [
                 'cat' => $category
             ]);
@@ -312,7 +320,7 @@ class Control_Manager
     public function get_widgets_by_category($category)
     {
         $all_widgets = $this->get_all_widgets();
-        return array_filter($all_widgets, function($widget) use ($category) {
+        return array_filter($all_widgets, function ($widget) use ($category) {
             return $widget['cat'] === $category;
         });
     }
@@ -412,7 +420,7 @@ class Control_Manager
                                 </div>
                             </div>
 
-                            <?php foreach ($categories as $cat_key => $cat_info): 
+                            <?php foreach ($categories as $cat_key => $cat_info):
                                 $category_widgets = $this->get_widgets_by_category($cat_key);
                                 if (empty($category_widgets)) continue;
                             ?>
@@ -420,7 +428,7 @@ class Control_Manager
                                     <h3 class="deensimc-category-title">
                                         <?php echo esc_html($cat_info['title']); ?>
                                     </h3>
-                                    
+
                                     <div class="deensimc-widgets-grid">
                                         <?php foreach ($category_widgets as $key => $widget) :
                                             $is_pro_locked = $widget['is_pro'] && !$this->is_pro_active;
