@@ -1,17 +1,16 @@
-# Deploy to WP.org
-name: Deploy to WordPress.org
-
+name: 🚀 Deploy website on push
 on:
   push:
-    tags:
-    - "*"
-    
+    branches:
+      - staging
 jobs:
-  deploy:
-    runs-on: ubuntu-22.04
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v3
+      
       # These steps run ONLY when release was created
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -29,11 +28,11 @@ jobs:
 
       - name: Remove unminified JS files
         run: find assets/js -type f -name '*.js' ! -name '*.min.js' ! -path 'assets/js/plugins/*' -delete
-      
-      - name: WordPress Plugin Deploy
-        id: deploy
-        uses: 10up/action-wordpress-plugin-deploy@stable
-        env:
-          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
-          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
-          SLUG: marquee-addons-for-elementor
+
+      - name: 📂 Sync files to marquee-addon-pro test server
+        uses: SamKirkland/FTP-Deploy-Action@4.3.3
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: /marquee-addons-for-elementor/

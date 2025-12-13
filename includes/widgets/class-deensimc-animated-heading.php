@@ -8,8 +8,8 @@ if (!defined('ABSPATH')) {
 
 class Deensimc_Animated_Heading_Widget extends Widget_Base
 {
+  use Deensimc_Utils;
   use Deensimc_Promotional_Banner;
-
   use Title_Controls;
   use Animation_Controls;
   use Text_Styles_Controls;
@@ -72,7 +72,7 @@ class Deensimc_Animated_Heading_Widget extends Widget_Base
   protected function render()
   {
     $settings = $this->get_settings_for_display();
-    $tag = $settings['deensimc_heading_tag'] ?? 'h2';
+    $tag = self::validate_html_tag( $settings['deensimc_heading_tag'] );
     $before = $settings['deensimc_before_text'] ?? '';
     $after = $settings['deensimc_after_text'] ?? '';
     $texts = $settings['deensimc_animated_texts'] ?? [];

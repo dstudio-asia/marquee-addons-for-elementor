@@ -3,7 +3,7 @@ name: Release-Please
 on:
   push:
     branches:
-      - main   # <- change to 'dev' if you release from dev
+      - main
 
 permissions:
   contents: write
@@ -13,6 +13,10 @@ permissions:
 jobs:
   release-please:
     runs-on: ubuntu-latest
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+      upload_url: ${{ steps.release.outputs.upload_url }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -28,15 +32,47 @@ jobs:
           echo "Found version: $VERSION"
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
 
-      # Run Release Please WITHOUT touching any files
-      - name: Release Please (no file changes)
-        uses: google-github-actions/release-please-action@v3
+      # These steps run ONLY when release was created
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+
+      - name: Install npm dependencies
+        run: npm install
+
+      - name: Run build script (minify assets)
+        run: npm run build
+
+      # Release-please (no file commits, no PR — release only)
+      - name: Release Please
+        id: release
+        uses: googleapis/release-please-action@v4
         with:
           release-type: simple
-          package-name: marquee-addon
-          default-branch: main               # <- change to 'dev' if needed
-          include-v-in-tag: false
+          token: ${{ secrets.GITHUB_TOKEN }}
+          target-branch: main
           release-as: ${{ steps.readme_version.outputs.version }}
-          # NOTE: do NOT set 'version-file' or 'extra-files'
-          # This ensures nothing in the repo gets edited.
 
+      - name: 🔧 Zip all repository files
+        if: ${{ steps.release.outputs.release_created }}
+        run: |
+          zip -r "marquee-addons-for-elementor.zip" . -x ".git/*" ".github/*" ".gitignore" "README.md" ".wordpress-org/*" ".distignore" "CHANGELOG.md"
+
+      - name: Upload Release Asset
+        if: ${{ steps.release.outputs.release_created }}
+        uses: actions/upload-release-asset@v1
+        with:
+          upload_url: ${{ steps.release.outputs.upload_url }}
+          asset_path: ./marquee-addons-for-elementor.zip
+          asset_name: marquee-addons-for-elementor.zip
+          asset_content_type: application/zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload artifact for deployment
+        if: ${{ steps.release.outputs.release_created }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: marquee-addons-for-elementor
+          path: marquee-addons-for-elementor.zip

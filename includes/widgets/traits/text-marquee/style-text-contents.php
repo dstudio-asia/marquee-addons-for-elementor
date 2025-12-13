@@ -37,17 +37,49 @@ trait Textmarquee_Style_Text_Contents
 			]
 		);
 
+		$this->start_controls_tabs('deensimc_scroll_text_color_tabs');
+
+		$this->start_controls_tab(
+			'deensimc_scroll_text_color_normal',
+			[
+				'label' => esc_html__('Normal', 'marquee-addons-for-elementor'),
+			]
+		);
+
 		$this->add_control(
 			'deensimc_scroll_text_color',
 			[
 				'label' => esc_html__('Color', 'marquee-addons-for-elementor'),
-				'type' =>  Controls_Manager::COLOR,
+				'type'  => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .deensimc-scroll-text' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .deensimc-scroll-text' => 'color: {{VALUE}};',
 				],
 			]
 		);
 
+		$this->end_controls_tab();
+
+		$this->start_controls_tab(
+			'deensimc_scroll_text_color_hover',
+			[
+				'label' => esc_html__('Hover', 'marquee-addons-for-elementor'),
+			]
+		);
+
+		$this->add_control(
+			'deensimc_scroll_text_hover_color',
+			[
+				'label' => esc_html__('Color', 'marquee-addons-for-elementor'),
+				'type'  => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .deensimc-scroll-text:hover' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
 
 		$this->add_responsive_control(
 			'deensimc_widget_height',
@@ -97,6 +129,30 @@ trait Textmarquee_Style_Text_Contents
 				],
 			]
 		);
+
+		$this->add_control(
+			'deensimc_icon_rotation',
+			[
+				'label' => esc_html__('Rotate', 'marquee-addons-for-elementor'),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'deg' => [
+						'min' => 0,
+						'max' => 360,
+						'step' => 1,
+					],
+				],
+				'default' => [
+					'unit' => 'deg',
+					'size' => 0,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .deensimc-text-wrapper svg' => 'transform: rotate({{SIZE}}deg);',
+					'{{WRAPPER}} .deensimc-text-wrapper i' => 'transform: rotate({{SIZE}}deg);',
+				],
+			]
+		);
+
 
 		$this->add_responsive_control(
 			'deensimc_icon_size',
