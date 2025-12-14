@@ -146,7 +146,7 @@ trait Textmarquee_Style_Text_Contents
 				],
 				'default' => [
 					'unit' => 'px',
-					'size' => 16,
+					'size' => 24,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .deensimc-text-wrapper svg' => 'height: {{SIZE}}{{UNIT}}; width: {{SIZE}}{{UNIT}};',
@@ -253,12 +253,12 @@ trait Textmarquee_Style_Text_Contents
 		$this->add_control(
 			'deensimc_icon_animation',
 			[
-				'label' => esc_html__('Rotation', 'marquee-addons-for-elementor'),
+				'label' => esc_html__('Auto Rotation', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::SWITCHER,
 				'label_on' => esc_html__('Yes', 'marquee-addons-for-elementor'),
 				'label_off' => esc_html__('No', 'marquee-addons-for-elementor'),
 				'return_value' => 'yes',
-				'default' => 'yes',
+				'default' => '',
 			]
 		);
 

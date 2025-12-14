@@ -42,8 +42,8 @@
 }
 
 /* Counter clockwise */
-.deensimc-icon-rotate.ccw svg,
-.deensimc-icon-rotate.ccw i {
+.deensimc-icon-rotate.deensimc-icon-rotate-ccw svg,
+.deensimc-icon-rotate.deensimc-icon-rotate-ccw i {
   animation-direction: reverse;
 }
 
