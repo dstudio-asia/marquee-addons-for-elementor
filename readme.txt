@@ -245,7 +245,7 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 
 == Changelog ==
 
-= 3.8.4 - 2025-12-11 =
+= 3.8.4 - 2025-12-14 =
 - New: Added icon rotation animation in Text Marquee.
 
 = 3.8.3 - 2025-12-11 =
