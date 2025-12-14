@@ -123,12 +123,25 @@ class Deensimc_Text_Marquee extends Widget_Base
 		$marquee_speed = $settings['deensimc_marquee_speed'];
 		$is_show_edge_shadow = $settings['deensimc_show_edge_shadow'] === 'yes';
 		//icon rotation 
-		$icon_class = ($settings['deensimc_icon_animation'] === 'yes') ? 'deensimc-icon-rotate' : '';
-		$icon_pause = ($settings['deensimc_icon_pause_on_hover'] === 'yes') ? 'deensimc-icon-pause' : '';
-		$direction  = ($settings['deensimc_icon_rotation_direction'] === 'clockwise') ? 'cw' : 'ccw';
-		$speed_val = (int) $settings['deensimc_icon_rotation_speed'];
-		$duration = 20 / $speed_val;
-		$speed = '--icon-speed:' . round($duration, 2) . 's;';
+		if (isset($settings['deensimc_icon_animation']) && $settings['deensimc_icon_animation'] === 'yes') {
+
+			$icon_class = 'deensimc-icon-rotate';
+
+			$icon_pause = (
+				isset($settings['deensimc_icon_pause_on_hover']) &&
+				$settings['deensimc_icon_pause_on_hover'] === 'yes'
+			) ? 'deensimc-icon-pause' : '';
+
+			$direction = (
+				isset($settings['deensimc_icon_rotation_direction']) &&
+				$settings['deensimc_icon_rotation_direction'] === 'clockwise'
+			) ? 'cw' : 'ccw';
+
+			$speed_val = max(1, (int) ($settings['deensimc_icon_rotation_speed'] ?? 5));
+			$duration  = 20 / $speed_val;
+
+			$speed = '--icon-speed:' . round($duration, 2) . 's;';
+		}
 
 		$conditional_class = [];
 		if ($is_vertical) {
