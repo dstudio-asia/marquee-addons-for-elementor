@@ -145,7 +145,7 @@ class Deensimc_Text_Marquee extends Widget_Base
 		}
 
 		?>
-		<div class="deensimc-marquee-main-container deensimc-text-marquee <?php echo esc_attr(implode(' ', $conditional_class)) ?>  <?php echo esc_attr("$icon_class $icon_pause $direction"); ?>" data-marquee-speed="<?php echo esc_attr($marquee_speed) ?>">
+		<div class="deensimc-marquee-main-container deensimc-text-marquee <?php echo esc_attr(implode(' ', $conditional_class)) ?>  <?php echo esc_attr("$icon_class $icon_pause $direction"); ?>" data-marquee-speed="<?php echo esc_attr($marquee_speed) ?>" style="<?php echo esc_attr($speed); ?>">
 			<div class="deensimc-marquee-track-wrapper">
 				<div class="deensimc-marquee-track">
 					<?php $this->render_marquee_texts($texts, $is_vertical) ?>
