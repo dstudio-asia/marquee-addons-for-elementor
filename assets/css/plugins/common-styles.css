@@ -188,3 +188,12 @@
     transform: translateY(calc(-100% - var(--deensimc-item-gap)));
   }
 }
+
+@keyframes deensimc-rotate-360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

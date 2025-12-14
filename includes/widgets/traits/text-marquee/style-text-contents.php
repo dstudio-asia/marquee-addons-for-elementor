@@ -267,7 +267,7 @@ trait Textmarquee_Style_Text_Contents
 			[
 				'label' => esc_html__('Speed', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::NUMBER,
-				'default' => 5,
+				'default' => 10,
 				'min' => 0,
 				'max' => 100,
 				'step' => 1,

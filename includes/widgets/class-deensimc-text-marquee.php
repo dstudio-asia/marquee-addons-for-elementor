@@ -123,29 +123,6 @@ class Deensimc_Text_Marquee extends Widget_Base
 		$marquee_speed = $settings['deensimc_marquee_speed'];
 		$is_show_edge_shadow = $settings['deensimc_show_edge_shadow'] === 'yes';
 
-		//icon rotation 
-		if (isset($settings['deensimc_icon_animation']) && $settings['deensimc_icon_animation'] === 'yes') {
-
-			$icon_class = 'deensimc-icon-rotate';
-
-			$icon_pause = (
-				isset($settings['deensimc_icon_pause_on_hover']) &&
-				$settings['deensimc_icon_pause_on_hover'] === 'yes'
-			) ? 'deensimc-icon-pause' : '';
-
-			$direction = (
-				isset($settings['deensimc_icon_rotation_direction']) &&
-				$settings['deensimc_icon_rotation_direction'] === 'clockwise'
-			) ? '' : 'deensimc-icon-rotate-ccw';
-
-			$speed_val = max(1, (int) ($settings['deensimc_icon_rotation_speed'] ?? 5));
-			$duration  = 20 / $speed_val;
-
-			$speed = '--icon-speed:' . round($duration, 2) . 's;';
-		}
-
-		$icon_rotation_classes = $settings['deensimc_icon_animation'] === 'yes' ? $icon_class . " " . $icon_pause . " " . $direction : '';
-
 		$conditional_class = [];
 		if ($is_vertical) {
 			$conditional_class[] = 'deensimc-marquee-vertical';
@@ -159,12 +136,27 @@ class Deensimc_Text_Marquee extends Widget_Base
 		if ($is_show_edge_shadow) {
 			$conditional_class[] = 'deensimc-marquee-edge-shadow';
 		}
+		// icon rotation 
+		if (isset($settings['deensimc_icon_animation']) && $settings['deensimc_icon_animation'] === 'yes') {
+			$conditional_class[] = 'deensimc-icon-rotate';
+
+			if (isset($settings['deensimc_icon_pause_on_hover']) && $settings['deensimc_icon_pause_on_hover'] === 'yes') {
+				$conditional_class[] = 'deensimc-icon-pause';
+			}
+
+			if (isset($settings['deensimc_icon_rotation_direction']) && $settings['deensimc_icon_rotation_direction'] !== 'clockwise') {
+				$conditional_class[] = 'deensimc-icon-rotate-ccw';
+			}
+
+			$speed_val = $settings['deensimc_icon_rotation_speed'];
+			$duration  = $speed_val ? 20 / $speed_val : 0;
+			$speed = '--icon-speed:' . round($duration, 2) . 's;';
+		}
 
 		?>
 		<div class="deensimc-marquee-main-container deensimc-text-marquee
 		<?php
-		echo $conditional_class ? ' ' . esc_attr(implode(' ', $conditional_class)) : '';
-		echo $icon_rotation_classes ? ' ' . esc_attr($icon_rotation_classes) : '';
+		echo esc_attr(implode(' ', $conditional_class));
 		?>"
 			data-marquee-speed="<?php echo esc_attr($marquee_speed) ?>"
 			<?php echo isset($speed) && $speed ? 'style="' . esc_attr($speed) . '"' : ''; ?>>
