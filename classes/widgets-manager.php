@@ -190,19 +190,7 @@ class Widgets_Manager
                 ],
                 'file' => '/includes/widgets/class-deensimc-search.php',
                 'class' => '\Deensimc_Search_Widget',
-            ],
-            'deensimc-image-hotspot' => [
-                'traits' => [
-                    '/includes/widgets/traits/image-hotspot/trait-deensimc-hotspots-controls.php',
-                    '/includes/widgets/traits/image-hotspot/trait-deensimc-image-controls.php',
-                    '/includes/widgets/traits/image-hotspot/trait-deensimc-style-hotspot-controls.php',
-                    '/includes/widgets/traits/image-hotspot/trait-deensimc-style-tooltip-controls.php',
-                    '/includes/widgets/traits/image-hotspot/trait-deensimc-tooltip-controls.php',
-
-                ],
-                'file' => '/includes/widgets/class-deensimc-image-hotspot.php',
-                'class' => '\Deensimc_Image_Hotspot',
-            ],
+            ]
         ];
     }
 
