@@ -255,7 +255,15 @@ class Control_Manager
                 'is_pro' => false,
                 'demo'   => '#',
                 'pro_url' => ''
-            ]
+            ],
+            'deensimc-image-hotspot' => [
+                'cat'    => 'general',
+                'title'  => __('Image Hotspot', 'marquee-addons-for-elementor'),
+                'icon'   => 'eicon-image-hotspot',
+                'is_pro' => false,
+                'demo'   => '#',
+                'pro_url' => ''
+            ],
         ];
 
         // Get PRO widgets and categorize them
