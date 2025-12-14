@@ -1,6 +1,26 @@
 # Changelog
 
 
+## [3.8.4](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.8.3...v3.8.4) (2025-12-14)
+
+
+### Features
+
+* ADD IMAGE HOTSPOT WIDGET AND REGISTER AS CORE ([929ca3f](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/929ca3f9454ea1053cebbbdfb92a673b3cf5bd4d))
+* Implement icon rotation animation for Text Marquee widget ([64a552a](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/64a552a137985fbc465ca19531f32c6b6ca1d3bc))
+* Implement icon rotation animation for Text Marquee widget ([0c0a731](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/0c0a731e7cb98776bf91a47145abb1a2a406744f))
+* Release version 3.8.4 with icon rotation animation ([1ecaea8](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/1ecaea82e83f82c09208584c5dc9cfc6df505251))
+* Release version 3.8.4 with icon rotation animation ([3e951d7](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/3e951d752e7749b1a0dd6b22227279bdd3a89f77))
+
+
+### Bug Fixes
+
+* Apply icon rotation speed via inline style in Text Marquee widget ([cac2664](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/cac2664bb1a69ca3f402f541c2a257a959cab93f))
+* Improve icon rotation in Text Marquee ([92a23a8](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/92a23a8bad9ef2bbd9a554e23759828486948ebf))
+* Refine icon rotation and animation logic in Text Marquee widget ([4488ea4](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/4488ea4c1941d334c7eef68e40016457fb6aab87))
+* Refine icon rotation and defaults in Text Marquee widget ([684e797](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/684e7971d0622453b9faefe64c8a698f7a7b3d75))
+* Update changelog date for version 3.8.4 ([720978d](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/720978d15ee59c20a3b06ecb8a762fd019df7bd3))
+
 ## [3.8.3](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.8.2...v3.8.3) (2025-12-11)
 
 
