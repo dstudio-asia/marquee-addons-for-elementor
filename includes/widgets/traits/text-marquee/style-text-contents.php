@@ -130,29 +130,6 @@ trait Textmarquee_Style_Text_Contents
 			]
 		);
 
-		$this->add_control(
-			'deensimc_icon_rotation',
-			[
-				'label' => esc_html__('Rotate', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::SLIDER,
-				'range' => [
-					'deg' => [
-						'min' => 0,
-						'max' => 360,
-						'step' => 1,
-					],
-				],
-				'default' => [
-					'unit' => 'deg',
-					'size' => 0,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .deensimc-text-wrapper svg' => 'transform: rotate({{SIZE}}deg);',
-					'{{WRAPPER}} .deensimc-text-wrapper i' => 'transform: rotate({{SIZE}}deg);',
-				],
-			]
-		);
-
 
 		$this->add_responsive_control(
 			'deensimc_icon_size',
@@ -270,6 +247,49 @@ trait Textmarquee_Style_Text_Contents
 				'condition' => [
 					'deensimc_marquee_vertical_orientation' => 'yes',
 				],
+			]
+		);
+		// animation 
+		$this->add_control(
+			'deensimc_icon_animation',
+			[
+				'label' => esc_html__('Rotation', 'marquee-addons-for-elementor'),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => esc_html__('Yes', 'marquee-addons-for-elementor'),
+				'label_off' => esc_html__('No', 'marquee-addons-for-elementor'),
+				'return_value' => 'yes',
+				'default' => 'yes',
+			]
+		);
+
+		$this->add_control(
+			'deensimc_icon_rotation_speed',
+			[
+				'label' => esc_html__('Speed', 'marquee-addons-for-elementor'),
+				'type' => Controls_Manager::NUMBER,
+				'default' => 5,
+				'min' => 0,
+				'max' => 100,
+				'step' => 1,
+				'condition' => [
+					'deensimc_icon_animation' => 'yes'
+				]
+			]
+		);
+
+		$this->add_control(
+			'deensimc_icon_rotation_direction',
+			[
+				'label' => esc_html__('Direction', 'marquee-addons-for-elementor'),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'anticlockwise' => esc_html__('Anti-Clockwise', 'marquee-addons-for-elementor'),
+					'clockwise' => esc_html__('Clockwise', 'marquee-addons-for-elementor'),
+				],
+				'default' => 'anticlockwise',
+				'condition' => [
+					'deensimc_icon_animation' => 'yes'
+				]
 			]
 		);
 		$this->end_controls_section();

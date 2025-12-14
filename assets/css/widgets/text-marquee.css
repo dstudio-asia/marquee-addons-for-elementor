@@ -21,3 +21,35 @@
     white-space: nowrap;
   }
 }
+
+
+@keyframes deensimc-icon-rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Apply animation to SVG via wrapper */
+.deensimc-icon-rotate svg,
+.deensimc-icon-rotate i {
+  animation-name: deensimc-icon-rotation;
+  animation-duration: var(--icon-speed, 5s);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* Counter clockwise */
+.deensimc-icon-rotate.ccw svg,
+.deensimc-icon-rotate.ccw i {
+  animation-direction: reverse;
+}
+
+/* Pause on hover */
+.deensimc-marquee-pause-on-hover:hover svg,
+.deensimc-marquee-pause-on-hover:hover i {
+  animation-play-state: paused;
+}
+
