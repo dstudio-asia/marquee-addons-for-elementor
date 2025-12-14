@@ -5,7 +5,7 @@ namespace Deensimc_Marquee;
 final class Base
 {
     private static $_instance = null;
-    const VERSION = '3.8.3';
+    const VERSION = '3.8.4';
 
     public function __construct()
     {
@@ -32,11 +32,11 @@ final class Base
         $min_path = str_replace(".$type", ".min.$type", $path);
         $base_path = DEENSIMC__DIR__ . '/assets/';
         $full_min_path = $base_path . $min_path;
-        
+
         if (file_exists($full_min_path)) {
             return DEENSIMC_ASSETS_URL . $min_path;
         }
-        
+
         return DEENSIMC_ASSETS_URL . $path;
     }
 
@@ -44,7 +44,7 @@ final class Base
     {
         // Loader 
         require_once(DEENSIMC__DIR__ . '/includes/loader.php');
-        
+
         // Load Actions
         add_action('admin_enqueue_scripts', [$this, 'deensimc_admin_enqueue_scripts'], 10);
     }
@@ -53,7 +53,7 @@ final class Base
     {
         $admin_styles = [
             'deensimc-admin-style' => 'css/admin/admin.css',
-			'deensimc-deactivation-css' => 'css/admin/feedback.css',
+            'deensimc-deactivation-css' => 'css/admin/feedback.css',
         ];
 
         foreach ($admin_styles as $handle => $path) {
@@ -68,7 +68,7 @@ final class Base
 
         $admin_scripts = [
             'deensimc-admin-scripts' => 'js/admin/admin.js',
-			'deensimc-deactivation-script' => 'js/admin/feedback.js'
+            'deensimc-deactivation-script' => 'js/admin/feedback.js'
         ];
 
         foreach ($admin_scripts as $handle => $path) {

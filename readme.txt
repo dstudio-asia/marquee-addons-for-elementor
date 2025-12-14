@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: elementor, text marquee, image marquee, video marquee, Product slider
 Requires at least: 5.8
 Tested up to: 6.9
-Stable tag: 3.8.3
+Stable tag: 3.8.4
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -245,6 +245,9 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 
 == Changelog ==
 
+= 3.8.4 - 2025-12-14 =
+- New: Added icon rotation animation in Text Marquee.
+
 = 3.8.3 - 2025-12-11 =
 - Fix: Patched a potential XSS vulnerability reported in frontend input handling.
 
@@ -267,12 +270,12 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 - Tweak: Improved Control Manager UI
 
 = 3.7.25 - 2025-11-19 =
-- Feat: Added conditional widget loading via Controls Manager
+- New: Added conditional widget loading via Controls Manager
 
 = 3.7.24 - 2025-11-18 =
 - Fix: Performance issue in editor
-- Feat: Added Bento Grid (Pro)
-- Feat: Added Animated List (Pro)
+- New: Added Bento Grid (Pro)
+- New: Added Animated List (Pro)
 
 = 3.7.23 - 2025-11-17 =
 - Fix: Video Marquee syntax error in image overlay
@@ -490,10 +493,10 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 - Fix: Animation speed now adjusts dynamically based on content length, ensuring consistent and linear scrolling across varying item counts.
 
 = 1.2.8 =
-- Feat: load marquee when it comes into viewport.
+- New: load marquee when it comes into viewport.
 
 = 1.2.7 =
-- Feat: choose preferred font awesome icons for the opening and closing quote marks in testimonial.
+- New: choose preferred font awesome icons for the opening and closing quote marks in testimonial.
 
 = 1.2.6 =
 - Fix: edit issue image marquee in Safari.
