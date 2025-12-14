@@ -7,11 +7,11 @@ use Deensimc_Marquee\Misc\Deensimcpro_Promo;
 final class Marquee
 {
 	use Deensimcpro_Promo;
-	
+
 	const VERSION = '3.8.3';
 	const MINIMUM_ELEMENTOR_VERSION = '3.5.0';
 	const MINIMUM_PHP_VERSION = '7.4';
-	
+
 	private static $_instance = null;
 
 	public static function instance()
@@ -68,16 +68,16 @@ final class Marquee
 	{
 		// Check for minified version first
 		$min_path = str_replace(".$type", ".min.$type", $path);
-		
+
 		// Build the full file path
 		$base_path = plugin_dir_path(__FILE__) . '../assets/';
 		$full_min_path = $base_path . $min_path;
-		
+
 		// If minified version exists, use it
 		if (file_exists($full_min_path)) {
 			return DEENSIMC_ASSETS_URL . $min_path;
 		}
-		
+
 		// Fallback to unminified version
 		return DEENSIMC_ASSETS_URL . $path;
 	}
@@ -123,7 +123,7 @@ final class Marquee
 	public function init()
 	{
 		add_action('admin_enqueue_scripts', [$this, 'deensimc_notice_enqueue_scripts'], 10);
-		
+
 		if (!class_exists('\Deensimcpro_Marquee\Marqueepro')) {
 			add_action('admin_notices', [$this, 'deensimc_rate_us'], 10);
 			add_action('wp_ajax_deensimc_notice_dismiss', [$this, 'deensimc_notice_dismiss'], 10);
@@ -135,7 +135,7 @@ final class Marquee
 			add_filter('elementor/editor/localize_settings', [$this, 'promote_pro_elements']);
 			add_action('elementor/editor/after_enqueue_scripts', [$this, 'deensimc_promotion_script'], 10);
 		}
-		
+
 		add_action('elementor/frontend/after_enqueue_styles', [$this, 'deensimc_frontend_styles'], 20);
 		add_action('elementor/frontend/after_register_scripts', [$this, 'deensimc_frontend_scripts'], 20);
 		add_action('elementor/elements/categories_registered', [$this, 'deensimc_add_categories'], 10);
@@ -338,7 +338,7 @@ final class Marquee
 
 		wp_enqueue_style('deensimc-editor-css');
 	}
-	
+
 	public function deensimc_promotion_styles()
 	{
 		$promotion_styles = [
@@ -357,7 +357,7 @@ final class Marquee
 
 		wp_enqueue_style('deensimc-promotion-css');
 	}
-	
+
 	public function deensimc_editor_script()
 	{
 		$editor_scripts = [
@@ -376,7 +376,7 @@ final class Marquee
 
 		wp_enqueue_script('deensimc-editor-script');
 	}
-	
+
 	public function deensimc_promotion_script()
 	{
 		$promotion_scripts = [
@@ -425,7 +425,7 @@ final class Marquee
 				'icon' => 'fa fa-plug',
 			]
 		);
-		
+
 		if (!class_exists('\Deensimcpro_Marquee\Marqueepro') || !apply_filters('marquee_addons_is_license_active', false)) {
 			$elements_manager->add_category(
 				'marquee_addons_pro_promo',

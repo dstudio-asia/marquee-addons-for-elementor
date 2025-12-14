@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Widgets Manager for Marquee Addons
  * 
@@ -9,48 +10,53 @@ namespace Deensimc_Marquee;
 
 if (!defined('ABSPATH')) exit;
 
-class Widgets_Manager {
-    
+class Widgets_Manager
+{
+
     private static $_instance = null;
-    
-    public static function instance() {
+
+    public static function instance()
+    {
         if (is_null(self::$_instance)) {
             self::$_instance = new self();
         }
         return self::$_instance;
     }
-    
-    public function __construct() {
+
+    public function __construct()
+    {
         // Register widgets on Elementor init
         add_action('elementor/widgets/register', [$this, 'register_widgets']);
     }
-    
+
     /**
      * Register widgets based on Control Manager settings
      */
-    public function register_widgets($widgets_manager) {
+    public function register_widgets($widgets_manager)
+    {
         $control_manager = Control_Manager::instance();
         $this->load_common_traits();
         $widgets_config = $this->get_widgets_config();
         foreach ($widgets_config as $key => $config) {
-            
+
             if ($control_manager->is_widget_enabled($key)) {
                 $this->register_single_widget($config, $widgets_manager);
             }
         }
     }
-    
+
     /**
      * Load common trait files that are always needed
      */
-    private function load_common_traits() {
+    private function load_common_traits()
+    {
         $common_traits = [
             '/includes/widgets/traits/common-controls/promotional-banner.php',
             '/includes/widgets/traits/common-controls/gap-control.php',
             '/includes/widgets/traits/common-controls/marquee-controls.php',
             '/includes/widgets/traits/common-controls/style-edge-shadow.php',
         ];
-        
+
         foreach ($common_traits as $file) {
             $file_path = DEENSIMC__DIR__ . $file;
             if (file_exists($file_path)) {
@@ -58,12 +64,13 @@ class Widgets_Manager {
             }
         }
     }
-    
+
     /**
      * Get widgets configuration
      * Each widget has its traits, main file, and class name
      */
-    private function get_widgets_config() {
+    private function get_widgets_config()
+    {
         return [
             'deensimc-image-marquee' => [
                 'traits' => [
@@ -183,16 +190,17 @@ class Widgets_Manager {
                 ],
                 'file' => '/includes/widgets/class-deensimc-search.php',
                 'class' => '\Deensimc_Search_Widget',
-            ],
+            ]
         ];
     }
-    
+
     /**
      * Register a single widget with its dependencies
      */
-    private function register_single_widget($config, $widgets_manager) {
+    private function register_single_widget($config, $widgets_manager)
+    {
         $base_path = DEENSIMC__DIR__;
-        
+
         // Load trait files first
         if (isset($config['traits']) && is_array($config['traits'])) {
             foreach ($config['traits'] as $trait) {
@@ -202,15 +210,15 @@ class Widgets_Manager {
                 }
             }
         }
-        
+
         // Load main widget file
         $widget_path = $base_path . $config['file'];
         if (!file_exists($widget_path)) {
             return;
         }
-        
+
         require_once($widget_path);
-        
+
         // Check if class exists and register
         if (class_exists($config['class'])) {
             $widgets_manager->register(new $config['class']());
