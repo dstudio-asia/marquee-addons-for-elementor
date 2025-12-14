@@ -9,7 +9,7 @@ use Elementor\Icons_Manager;
 use Elementor\Utils;
 use Elementor\Widget_Image;
 
-class Deensimc_Image_Hotspots extends Widget_Image
+class Deensimc_Image_Hotspot extends Widget_Image
 {
 	use Deensimc_Image_Controls;
 	use Deensimc_Hotspots_Controls;
