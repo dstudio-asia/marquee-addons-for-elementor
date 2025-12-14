@@ -81,11 +81,11 @@ class Deensimc_Text_Marquee extends Widget_Base
 	{
 		$required = $is_vertical ? 12 : 6;
 		$count    = count($texts);
-		if ( $count > 0 && $count < $required ) {
+		if ($count > 0 && $count < $required) {
 			$original = $texts;
 			// Duplicate full batches until we have at least $required
-			while ( count( $texts ) < $required ) {
-				foreach ( $original as $text ) {
+			while (count($texts) < $required) {
+				foreach ($original as $text) {
 					$dup = $text;
 					$dup['_is_dup'] = true;
 					$texts[] = $dup;
@@ -95,8 +95,8 @@ class Deensimc_Text_Marquee extends Widget_Base
 		foreach ($texts as $text) {
 			$is_dup = !empty($text['_is_dup']);
 
-		?>
-			<div class="deensimc-text-wrapper" aria-hidden="<?php echo esc_attr ( $is_dup ? 'true': 'false' ) ?>" >
+?>
+			<div class="deensimc-text-wrapper" aria-hidden="<?php echo esc_attr($is_dup ? 'true' : 'false') ?>">
 				<?php Icons_Manager::render_icon($text['deensimc_repeater_text_icon'], ['aria-hidden' => 'true']); ?>
 				<p class="deensimc-scroll-text">
 					<?php
@@ -136,9 +136,30 @@ class Deensimc_Text_Marquee extends Widget_Base
 		if ($is_show_edge_shadow) {
 			$conditional_class[] = 'deensimc-marquee-edge-shadow';
 		}
+		// icon rotation 
+		if (isset($settings['deensimc_icon_animation']) && $settings['deensimc_icon_animation'] === 'yes') {
+			$conditional_class[] = 'deensimc-icon-rotate';
+
+			if (isset($settings['deensimc_icon_pause_on_hover']) && $settings['deensimc_icon_pause_on_hover'] === 'yes') {
+				$conditional_class[] = 'deensimc-icon-pause';
+			}
+
+			if (isset($settings['deensimc_icon_rotation_direction']) && $settings['deensimc_icon_rotation_direction'] !== 'clockwise') {
+				$conditional_class[] = 'deensimc-icon-rotate-ccw';
+			}
+
+			$speed_val = $settings['deensimc_icon_rotation_speed'];
+			$duration  = $speed_val ? 20 / $speed_val : 0;
+			$speed = '--icon-speed:' . round($duration, 2) . 's;';
+		}
 
 		?>
-		<div class="deensimc-marquee-main-container deensimc-text-marquee <?php echo esc_attr(implode(' ', $conditional_class)) ?>" data-marquee-speed="<?php echo esc_attr($marquee_speed) ?>">
+		<div class="deensimc-marquee-main-container deensimc-text-marquee
+		<?php
+		echo esc_attr(implode(' ', $conditional_class));
+		?>"
+			data-marquee-speed="<?php echo esc_attr($marquee_speed) ?>"
+			<?php echo isset($speed) && $speed ? 'style="' . esc_attr($speed) . '"' : ''; ?>>
 			<div class="deensimc-marquee-track-wrapper">
 				<div class="deensimc-marquee-track">
 					<?php $this->render_marquee_texts($texts, $is_vertical) ?>
