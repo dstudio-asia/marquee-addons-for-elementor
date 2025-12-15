@@ -161,6 +161,14 @@ trait Deensimc_Image_Marquee_Image_Style
 			]
 		);
 
+		$this->add_group_control(
+			\Elementor\Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'deensimc_images_shadow_normal',
+				'selector' => '{{WRAPPER}} .deensimc-img-wrapper img',
+			]
+		);
+
 		$this->start_controls_tabs(
 			'deensimc_images_css_filter'
 		);
@@ -168,7 +176,7 @@ trait Deensimc_Image_Marquee_Image_Style
 		$this->start_controls_tab(
 			'deensimc_images_css_filter_normal_tab',
 			[
-				'label' => esc_html__( 'Normal', 'marquee-addons-for-elementor'  ),
+				'label' => esc_html__('Normal', 'marquee-addons-for-elementor'),
 			]
 		);
 
@@ -185,7 +193,7 @@ trait Deensimc_Image_Marquee_Image_Style
 		$this->start_controls_tab(
 			'deensimc_images_css_filter_hover_tab',
 			[
-				'label' => esc_html__( 'Hover', 'marquee-addons-for-elementor'  ),
+				'label' => esc_html__('Hover', 'marquee-addons-for-elementor'),
 			]
 		);
 
