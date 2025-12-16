@@ -18,16 +18,16 @@ use \Elementor\Repeater;
 class Deensimc_Video_Marquee extends Widget_Base
 {
 	use Deensimc_Promotional_Banner;
-	use Video_Marquee_Helper_Methods;
-	use Videomarquee_Content_Url_Fields;
-	use Videomarquee_Content_Video_Options;
-	use Videomarquee_Content_Youtube_Vimeo_Options;
-	use Videomarquee_Content_Hosted_Options;
-	use Videomarquee_Content_Image_Overlay;
+	use Deensimc_Video_Marquee_Helper_Methods;
+	use Deensimc_Videomarquee_Content_Url_Fields;
+	use Deensimc_Videomarquee_Content_Video_Options;
+	use Deensimc_Videomarquee_Content_Youtube_Vimeo_Options;
+	use Deensimc_Videomarquee_Content_Hosted_Options;
+	use Deensimc_Videomarquee_Content_Image_Overlay;
 	use Deensimc_Marquee_Controls;
 	use Deensimc_Marquee_Gap_Controls;
-	use Videomarquee_Style_Contents;
-	use Videomarquee_Style_Play_Icon;
+	use Deensimc_Videomarquee_Style_Contents;
+	use Deensimc_Videomarquee_Style_Play_Icon;
 	use Deensimc_Style_Edge_Shadow;
 
 

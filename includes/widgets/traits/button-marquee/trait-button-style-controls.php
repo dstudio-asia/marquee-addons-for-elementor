@@ -7,7 +7,7 @@ use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Background;
 
-trait Button_Style_Controls
+trait Deensimc_Button_Style_Controls
 {
   private function register_button_style_section_controls()
   {

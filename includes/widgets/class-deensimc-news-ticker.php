@@ -14,9 +14,9 @@ class Deensimc_News_Ticker extends Widget_Base
 	use Deensimc_Utils;
 	use Deensimc_Promotional_Banner;
 	use Deensimc_Marquee_Controls;
-	use NewsTickerLayoutControl;
-	use NewsTickerStyleControl;
-	use NewsTickerQueryControl;
+	use Deensimc_NewsTickerLayoutControl;
+	use Deensimc_NewsTickerStyleControl;
+	use Deensimc_NewsTickerQueryControl;
 
 	public function get_style_depends()
 	{

@@ -21,9 +21,9 @@ class Deensimc_Animated_Word_Roller extends Widget_Base
 {
 	use Deensimc_Utils;
 	use Deensimc_Promotional_Banner;
-	use Animated_Word_Roller_Content_Additional_Options;
-	use Animated_Word_Roller_Content_Text_Repeater;
-	use Animated_Word_Roller_Style_Text_Contents;
+	use Deensimc_Animated_Word_Roller_Content_Additional_Options;
+	use Deensimc_Animated_Word_Roller_Content_Text_Repeater;
+	use Deensimc_Animated_Word_Roller_Style_Text_Contents;
 
 	public function get_style_depends()
 	{

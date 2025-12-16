@@ -8,7 +8,7 @@ if (! defined('ABSPATH')) {
 use \Elementor\Controls_Manager;
 use \Elementor\Group_Control_Typography;
 
-trait Textmarquee_Style_Text_Contents
+trait Deensimc_Textmarquee_Style_Text_Contents
 {
 	protected function style_text_contents()
 	{

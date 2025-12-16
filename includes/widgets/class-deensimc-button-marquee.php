@@ -10,10 +10,10 @@ if (!defined('ABSPATH')) {
 class Deensimc_Button_marquee extends Widget_Base
 {
   use Deensimc_Promotional_Banner;
-  use Button_Controls;
-  use Button_Style_Controls;
-  use Button_Marquee_Controls;
-  use Button_Helper_Method;
+  use Deensimc_Button_Controls;
+  use Deensimc_Button_Style_Controls;
+  use Deensimc_Button_Marquee_Controls;
+  use Deensimc_Button_Helper_Method;
 
   public function get_style_depends()
   {

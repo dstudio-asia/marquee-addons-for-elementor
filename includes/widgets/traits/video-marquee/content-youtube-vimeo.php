@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Elementor Classes
 use \Elementor\Controls_Manager;
 
-trait Videomarquee_Content_Youtube_Vimeo_Options {
+trait Deensimc_Videomarquee_Content_Youtube_Vimeo_Options {
     protected function content_youtube_vimeo_options( $videos_repeater )
     {
         // YouTube.

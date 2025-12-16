@@ -8,7 +8,7 @@ if (! defined('ABSPATH')) {
 use \Elementor\Controls_Manager;
 use \Elementor\Repeater;
 
-trait Textmarquee_Content_Text_Repeater
+trait Deensimc_Textmarquee_Content_Text_Repeater
 {
 	use Deensimc_Marquee_Gap_Controls;
 
