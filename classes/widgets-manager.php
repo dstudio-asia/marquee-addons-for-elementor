@@ -93,7 +93,7 @@ class Widgets_Manager
         }
 
         // Load main widget file
-        $widget_path = $base_path . $config['file'];
+        $widget_path = $base_path . '/includes/widgets/' . $config['file'];
         if (!file_exists($widget_path)) {
             return;
         }

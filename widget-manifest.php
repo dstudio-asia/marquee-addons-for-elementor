@@ -20,7 +20,7 @@ return [
         'trait_dirs' => [
             '/includes/widgets/traits/image-marquee/',
         ],
-        'file' => '/includes/widgets/class-deensimc-image-marquee.php',
+        'file' => 'class-deensimc-image-marquee.php',
         'class' => '\Deensimc_Image_Marquee',
     ],
     'deensimc-text-marquee' => [
@@ -33,7 +33,7 @@ return [
         'trait_dirs' => [
             '/includes/widgets/traits/text-marquee/',
         ],
-        'file' => '/includes/widgets/class-deensimc-text-marquee.php',
+        'file' => 'class-deensimc-text-marquee.php',
         'class' => '\Deensimc_Text_Marquee',
     ],
     'deensimc-testimonial-marquee' => [
@@ -46,7 +46,7 @@ return [
         'trait_dirs' => [
             '/includes/widgets/traits/testimonial-marquee/',
         ],
-        'file' => '/includes/widgets/class-deensimc-testimonial-marquee.php',
+        'file' => 'class-deensimc-testimonial-marquee.php',
         'class' => '\Deensimc_Testimonial_Marquee',
     ],
     'deensimc-video-marquee' => [
@@ -59,7 +59,7 @@ return [
         'trait_dirs' => [
             '/includes/widgets/traits/video-marquee/',
         ],
-        'file' => '/includes/widgets/class-deensimc-video-marquee.php',
+        'file' => 'class-deensimc-video-marquee.php',
         'class' => '\Deensimc_Video_Marquee',
     ],
     'deensimc-stacked-slider' => [
@@ -73,7 +73,7 @@ return [
             '/includes/widgets/traits/stacked-slider/',
             '/includes/widgets/traits/stacked-slider/content-parts/',
         ],
-        'file' => '/includes/widgets/class-deensimc-stacked-slider.php',
+        'file' => 'class-deensimc-stacked-slider.php',
         'class' => '\Deensimc_Stacked_Slider',
     ],
     'deensimc-image-accordion' => [
@@ -86,7 +86,7 @@ return [
         'trait_dirs' => [
             '/includes/widgets/traits/image-accordion/',
         ],
-        'file' => '/includes/widgets/class-deensimc-image-accordion.php',
+        'file' => 'class-deensimc-image-accordion.php',
         'class' => '\Deensimc_Image_Accordion',
     ],
     'deensimc-news-ticker' => [
@@ -99,7 +99,7 @@ return [
         'trait_dirs' => [
             '/includes/widgets/traits/news-ticker/',
         ],
-        'file' => '/includes/widgets/class-deensimc-news-ticker.php',
+        'file' => 'class-deensimc-news-ticker.php',
         'class' => '\Deensimc_News_Ticker',
     ],
     'deensimc-animated-word-roller' => [
@@ -112,7 +112,7 @@ return [
         'trait_dirs' => [
             '/includes/widgets/traits/animated-word-roller/',
         ],
-        'file' => '/includes/widgets/class-deensimc-animated-word-roller.php',
+        'file' => 'class-deensimc-animated-word-roller.php',
         'class' => '\Deensimc_Animated_Word_Roller',
     ],
     'deensimc-animated-heading' => [
@@ -125,7 +125,7 @@ return [
         'trait_dirs' => [
             '/includes/widgets/traits/animated-heading/',
         ],
-        'file' => '/includes/widgets/class-deensimc-animated-heading.php',
+        'file' => 'class-deensimc-animated-heading.php',
         'class' => '\Deensimc_Animated_Heading_Widget',
     ],
     'deensimc-button-marquee' => [
@@ -138,7 +138,7 @@ return [
         'trait_dirs' => [
             '/includes/widgets/traits/button-marquee/',
         ],
-        'file' => '/includes/widgets/class-deensimc-button-marquee.php',
+        'file' => 'class-deensimc-button-marquee.php',
         'class' => '\Deensimc_Button_marquee',
     ],
     'deensimc-search-box' => [
@@ -151,7 +151,7 @@ return [
         'trait_dirs' => [
             '/includes/widgets/traits/search/',
         ],
-        'file' => '/includes/widgets/class-deensimc-search.php',
+        'file' => 'class-deensimc-search.php',
         'class' => '\Deensimc_Search_Widget',
     ],
 
