@@ -17,4 +17,4 @@ jobs:
           server: ${{ secrets.RKZ_FTP_SERVER }}
           username: ${{ secrets.RKZ_FTP_USERNAME }}
           password: ${{ secrets.RKZ_FTP_PASSWORD }}
-          server-dir: /marquee-addons-pro/
+          server-dir: /marquee-addons-for-elementor/
