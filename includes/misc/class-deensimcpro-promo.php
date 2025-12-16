@@ -13,6 +13,7 @@ trait Deensimcpro_Promo
             'DeensimcPromo',
             [
                 'is_pro_active' =>  class_exists('\Deensimcpro_Marquee\Marqueepro'),
+                // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
                 'is_license_active' =>  apply_filters('marquee_addons_is_license_active', false),
                 'license_page' => home_url() . '/wp-admin/admin.php?page=marquee-addons-license'
             ]

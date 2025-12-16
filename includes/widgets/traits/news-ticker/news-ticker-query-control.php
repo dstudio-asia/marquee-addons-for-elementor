@@ -5,7 +5,7 @@ if (! defined('ABSPATH')) {
 
 use \Elementor\Controls_Manager;
 
-trait NewsTickerQueryControl
+trait Deensimc_NewsTickerQueryControl
 {
 
 	protected function news_ticker_query_control()

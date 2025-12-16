@@ -16,10 +16,9 @@ use \Elementor\Icons_Manager;
 class Deensimc_Text_Marquee extends Widget_Base
 {
 	use Deensimc_Promotional_Banner;
-
-	use Textmarquee_Content_Text_Repeater;
+	use Deensimc_Textmarquee_Content_Text_Repeater;
 	use Deensimc_Marquee_Controls;
-	use Textmarquee_Style_Text_Contents;
+	use Deensimc_Textmarquee_Style_Text_Contents;
 	use Deensimc_Style_Edge_Shadow;
 
 	public function get_style_depends()
@@ -139,10 +138,6 @@ class Deensimc_Text_Marquee extends Widget_Base
 		// icon rotation 
 		if (isset($settings['deensimc_icon_animation']) && $settings['deensimc_icon_animation'] === 'yes') {
 			$conditional_class[] = 'deensimc-icon-rotate';
-
-			if (isset($settings['deensimc_icon_pause_on_hover']) && $settings['deensimc_icon_pause_on_hover'] === 'yes') {
-				$conditional_class[] = 'deensimc-icon-pause';
-			}
 
 			if (isset($settings['deensimc_icon_rotation_direction']) && $settings['deensimc_icon_rotation_direction'] !== 'clockwise') {
 				$conditional_class[] = 'deensimc-icon-rotate-ccw';

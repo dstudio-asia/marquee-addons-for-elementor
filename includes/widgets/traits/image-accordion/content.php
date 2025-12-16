@@ -9,7 +9,7 @@ use \Elementor\Controls_Manager;
 use \Elementor\Repeater;
 use \Elementor\Utils;
 
-trait ImageAccordion_Contents
+trait Deensimc_ImageAccordion_Contents
 {
     protected function content_controls()
     {

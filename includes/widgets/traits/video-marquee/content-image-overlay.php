@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 use \Elementor\Controls_Manager;
 use \Elementor\Utils;
 
-trait Videomarquee_Content_Image_Overlay {
+trait Deensimc_Videomarquee_Content_Image_Overlay {
     protected function content_image_overlay( $videos_repeater )
     {
         $videos_repeater->add_control(

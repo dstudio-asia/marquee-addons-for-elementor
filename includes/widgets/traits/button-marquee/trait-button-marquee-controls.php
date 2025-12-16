@@ -7,7 +7,7 @@ if (! defined('ABSPATH')) {
 // Elementor Classes
 use \Elementor\Controls_Manager;
 
-trait Button_Marquee_Controls
+trait Deensimc_Button_Marquee_Controls
 {
 	protected function register_button_marquee_section_controls()
 	{
