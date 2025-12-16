@@ -5,7 +5,7 @@ if (! defined('ABSPATH')) {
 
 use \Elementor\Controls_Manager;
 
-trait NewsTickerLayoutControl
+trait Deensimc_NewsTickerLayoutControl
 {
 	use Deensimc_Marquee_Gap_Controls;
 	protected function layout_control()

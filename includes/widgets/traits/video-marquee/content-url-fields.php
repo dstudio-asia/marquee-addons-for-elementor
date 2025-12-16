@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Elementor Classes
 use \Elementor\Controls_Manager;
 
-trait Videomarquee_Content_Url_Fields {
+trait Deensimc_Videomarquee_Content_Url_Fields {
     protected function content_url_fields( $videos_repeater )
     {
         $videos_repeater->add_control(

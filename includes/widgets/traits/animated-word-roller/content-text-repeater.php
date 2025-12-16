@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 use \Elementor\Controls_Manager;
 use \Elementor\Repeater;
 
-trait Animated_Word_Roller_Content_Text_Repeater {
+trait Deensimc_Animated_Word_Roller_Content_Text_Repeater {
 	protected function content_text_repeater() 
 	{
 		$this->start_controls_section(
