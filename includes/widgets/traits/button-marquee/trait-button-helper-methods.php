@@ -1,6 +1,6 @@
 <?php
 
-trait Button_Helper_Method
+trait Deensimc_Button_Helper_Method
 {
   private function handle_video_url($link_type, $settings)
   {

@@ -6,7 +6,7 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-trait Video_Marquee_Helper_Methods
+trait Deensimc_Video_Marquee_Helper_Methods
 {
     /**
      * Converts a YouTube watch link into an embeddable URL.

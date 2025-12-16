@@ -10,7 +10,7 @@ use \Elementor\Group_Control_Css_Filter;
 use \Elementor\Group_Control_Box_Shadow;
 use \Elementor\Group_Control_Border;
 
-trait Videomarquee_Style_Contents
+trait Deensimc_Videomarquee_Style_Contents
 {
 	protected function style_contents()
 	{

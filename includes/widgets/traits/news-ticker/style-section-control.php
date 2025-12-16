@@ -11,7 +11,7 @@ use \Elementor\Core\Kits\Documents\Tabs\Global_Colors;
 use \Elementor\Core\Kits\Documents\Tabs\Global_Typography;
 use Elementor\Group_Control_Background;
 
-trait NewsTickerStyleControl
+trait Deensimc_NewsTickerStyleControl
 {
 
 	protected function style_section_control()
