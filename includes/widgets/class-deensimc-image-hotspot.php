@@ -6,14 +6,8 @@ use Elementor\Utils;
 use Elementor\Widget_Image;
 
 if (!defined('ABSPATH')) {
-	exit; // Exit if accessed directly
+	exit;
 }
-
-require_once __DIR__ . '/traits/image-hotspot/trait-deensimc-image-controls.php';
-require_once __DIR__ . '/traits/image-hotspot/trait-deensimc-hotspots-controls.php';
-require_once __DIR__ . '/traits/image-hotspot/trait-deensimc-tooltip-controls.php';
-require_once __DIR__ . '/traits/image-hotspot/trait-deensimc-style-hotspot-controls.php';
-require_once __DIR__ . '/traits/image-hotspot/trait-deensimc-style-tooltip-controls.php';
 
 class Deensimc_Image_Hotspot extends Widget_Image
 {
@@ -36,6 +30,11 @@ class Deensimc_Image_Hotspot extends Widget_Image
 	public function get_icon()
 	{
 		return 'eicon-image-hotspot eicon-deensimc';
+	}
+
+	public function get_categories()
+	{
+		return ['deensimc_smooth_marquee'];
 	}
 
 	public function get_keywords()

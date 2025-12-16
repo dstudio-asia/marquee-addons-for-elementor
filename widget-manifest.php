@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Widget Manifest for Marquee Addons
  *
@@ -153,6 +154,19 @@ return [
         ],
         'file' => 'class-deensimc-search.php',
         'class' => '\Deensimc_Search_Widget',
+    ],
+    'deensimc-image-hotspot' => [
+        'title'  => __('Image Hotspot', 'marquee-addons-for-elementor'),
+        'icon'   => 'eicon-image-hotspot',
+        'is_pro' => false,
+        'demo'   => '#',
+        'cat'    => 'general',
+        'pro_url' => '',
+        'trait_dirs' => [
+            '/includes/widgets/traits/image-hotspot/',
+        ],
+        'file' => 'class-deensimc-image-hotspot.php',
+        'class' => '\Deensimc_Image_Hotspot',
     ],
 
     // PRO Widgets & Extensions
