@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Widget Manifest for Marquee Addons
  *
@@ -18,10 +17,8 @@ return [
         'demo'   => 'https://marqueeaddons.com/image-marquee/',
         'cat'    => 'general',
         'pro_url' => '',
-        'traits' => [
-            '/includes/widgets/traits/image-marquee/content-image.php',
-            '/includes/widgets/traits/image-marquee/style-image-controls.php',
-            '/includes/widgets/traits/image-marquee/style-caption-controls.php',
+        'trait_dirs' => [
+            '/includes/widgets/traits/image-marquee/',
         ],
         'file' => '/includes/widgets/class-deensimc-image-marquee.php',
         'class' => '\Deensimc_Image_Marquee',
@@ -33,9 +30,8 @@ return [
         'demo'   => 'https://marqueeaddons.com/text-marquee/',
         'cat'    => 'general',
         'pro_url' => '',
-        'traits' => [
-            '/includes/widgets/traits/text-marquee/content-text-repeater.php',
-            '/includes/widgets/traits/text-marquee/style-text-contents.php',
+        'trait_dirs' => [
+            '/includes/widgets/traits/text-marquee/',
         ],
         'file' => '/includes/widgets/class-deensimc-text-marquee.php',
         'class' => '\Deensimc_Text_Marquee',
@@ -47,15 +43,8 @@ return [
         'demo'   => 'https://marqueeaddons.com/testimonial-marquee/',
         'cat'    => 'general',
         'pro_url' => '',
-        'traits' => [
-            '/includes/widgets/traits/testimonial-marquee/helper-methods.php',
-            '/includes/widgets/traits/testimonial-marquee/content-repeater.php',
-            '/includes/widgets/traits/testimonial-marquee/content-text-unfold.php',
-            '/includes/widgets/traits/testimonial-marquee/style-contents-box.php',
-            '/includes/widgets/traits/testimonial-marquee/style-contents.php',
-            '/includes/widgets/traits/testimonial-marquee/style-image.php',
-            '/includes/widgets/traits/testimonial-marquee/style-name-title.php',
-            '/includes/widgets/traits/testimonial-marquee/style-review.php',
+        'trait_dirs' => [
+            '/includes/widgets/traits/testimonial-marquee/',
         ],
         'file' => '/includes/widgets/class-deensimc-testimonial-marquee.php',
         'class' => '\Deensimc_Testimonial_Marquee',
@@ -67,15 +56,8 @@ return [
         'demo'   => 'https://marqueeaddons.com/video-marquee/',
         'cat'    => 'general',
         'pro_url' => '',
-        'traits' => [
-            '/includes/widgets/traits/video-marquee/helper-methods.php',
-            '/includes/widgets/traits/video-marquee/content-url-fields.php',
-            '/includes/widgets/traits/video-marquee/content-video-options.php',
-            '/includes/widgets/traits/video-marquee/content-youtube-vimeo.php',
-            '/includes/widgets/traits/video-marquee/content-hosted.php',
-            '/includes/widgets/traits/video-marquee/content-image-overlay.php',
-            '/includes/widgets/traits/video-marquee/style-contents.php',
-            '/includes/widgets/traits/video-marquee/style-play-icon.php',
+        'trait_dirs' => [
+            '/includes/widgets/traits/video-marquee/',
         ],
         'file' => '/includes/widgets/class-deensimc-video-marquee.php',
         'class' => '\Deensimc_Video_Marquee',
@@ -87,17 +69,9 @@ return [
         'demo'   => 'https://marqueeaddons.com/stacked-slider/',
         'cat'    => 'general',
         'pro_url' => '',
-        'traits' => [
-            '/includes/widgets/traits/stacked-slider/content-advance.php',
-            '/includes/widgets/traits/stacked-slider/content-primary.php',
-            '/includes/widgets/traits/stacked-slider/style-box.php',
-            '/includes/widgets/traits/stacked-slider/content-parts/style-title-controls.php',
-            '/includes/widgets/traits/stacked-slider/content-parts/style-description-controls.php',
-            '/includes/widgets/traits/stacked-slider/content-parts/style-color-controls.php',
-            '/includes/widgets/traits/stacked-slider/content-parts/style-button-controls.php',
-            '/includes/widgets/traits/stacked-slider/style-contents.php',
-            '/includes/widgets/traits/stacked-slider/style-image.php',
-            '/includes/widgets/traits/stacked-slider/style-dots.php',
+        'trait_dirs' => [
+            '/includes/widgets/traits/stacked-slider/',
+            '/includes/widgets/traits/stacked-slider/content-parts/',
         ],
         'file' => '/includes/widgets/class-deensimc-stacked-slider.php',
         'class' => '\Deensimc_Stacked_Slider',
@@ -109,9 +83,8 @@ return [
         'demo'   => 'https://marqueeaddons.com/marquee-demos/image-accordion/',
         'cat'    => 'general',
         'pro_url' => '',
-        'traits' => [
-            '/includes/widgets/traits/image-accordion/content.php',
-            '/includes/widgets/traits/image-accordion/style.php',
+        'trait_dirs' => [
+            '/includes/widgets/traits/image-accordion/',
         ],
         'file' => '/includes/widgets/class-deensimc-image-accordion.php',
         'class' => '\Deensimc_Image_Accordion',
@@ -123,10 +96,8 @@ return [
         'demo'   => 'https://marqueeaddons.com/news-ticker/',
         'cat'    => 'general',
         'pro_url' => '',
-        'traits' => [
-            '/includes/widgets/traits/news-ticker/news-ticker-layout-control.php',
-            '/includes/widgets/traits/news-ticker/style-section-control.php',
-            '/includes/widgets/traits/news-ticker/news-ticker-query-control.php',
+        'trait_dirs' => [
+            '/includes/widgets/traits/news-ticker/',
         ],
         'file' => '/includes/widgets/class-deensimc-news-ticker.php',
         'class' => '\Deensimc_News_Ticker',
@@ -138,10 +109,8 @@ return [
         'demo'   => 'https://marqueeaddons.com/marquee-demos/animated-word-roller/',
         'cat'    => 'general',
         'pro_url' => '',
-        'traits' => [
-            '/includes/widgets/traits/animated-word-roller/content-additional-options.php',
-            '/includes/widgets/traits/animated-word-roller/content-text-repeater.php',
-            '/includes/widgets/traits/animated-word-roller/style-contents.php',
+        'trait_dirs' => [
+            '/includes/widgets/traits/animated-word-roller/',
         ],
         'file' => '/includes/widgets/class-deensimc-animated-word-roller.php',
         'class' => '\Deensimc_Animated_Word_Roller',
@@ -153,11 +122,8 @@ return [
         'demo'   => 'https://marqueeaddons.com/animated-heading/',
         'cat'    => 'general',
         'pro_url' => '',
-        'traits' => [
-            '/includes/widgets/traits/animated-heading/trait-animated-text-effect-controls.php',
-            '/includes/widgets/traits/animated-heading/trait-animation-controls.php',
-            '/includes/widgets/traits/animated-heading/trait-text-styles-controls.php',
-            '/includes/widgets/traits/animated-heading/trait-title-controls.php',
+        'trait_dirs' => [
+            '/includes/widgets/traits/animated-heading/',
         ],
         'file' => '/includes/widgets/class-deensimc-animated-heading.php',
         'class' => '\Deensimc_Animated_Heading_Widget',
@@ -169,11 +135,8 @@ return [
         'demo'   => 'https://marqueeaddons.com/button-marquee/',
         'cat'    => 'general',
         'pro_url' => '',
-        'traits' => [
-            '/includes/widgets/traits/button-marquee/trait-button-controls.php',
-            '/includes/widgets/traits/button-marquee/trait-button-style-controls.php',
-            '/includes/widgets/traits/button-marquee/trait-button-marquee-controls.php',
-            '/includes/widgets/traits/button-marquee/trait-button-helper-methods.php',
+        'trait_dirs' => [
+            '/includes/widgets/traits/button-marquee/',
         ],
         'file' => '/includes/widgets/class-deensimc-button-marquee.php',
         'class' => '\Deensimc_Button_marquee',
@@ -185,26 +148,24 @@ return [
         'demo'   => '#',
         'cat'    => 'general',
         'pro_url' => '',
-        'traits' => [
-            '/includes/widgets/traits/search/clear-styles-controls.php',
-            '/includes/widgets/traits/search/query-content-controls.php',
-            '/includes/widgets/traits/search/search-content-controls.php',
-            '/includes/widgets/traits/search/search-field-styles.php',
-            '/includes/widgets/traits/search/style-triggerer-controls.php',
-            '/includes/widgets/traits/search/submit-styles-controls.php',
+        'trait_dirs' => [
+            '/includes/widgets/traits/search/',
         ],
         'file' => '/includes/widgets/class-deensimc-search.php',
         'class' => '\Deensimc_Search_Widget',
     ],
 
-    // PRO Widgets
+    // PRO Widgets & Extensions
     'deensimcpro-3d-grid-marquee' => [
         'cat'    => 'general',
         'title'  => __('3D Grid Marquee', 'marquee-addons-for-elementor'),
         'icon'   => 'deensimcpro-3d-grid-marquee-icon eicon-deensimc-pro',
         'is_pro' => true,
         'demo'   => 'https://marqueeaddons.com/3d-grid-marquee/',
-        'pro_url' => 'https://marqueeaddons.com/pricing/'
+        'pro_url' => 'https://marqueeaddons.com/pricing/',
+        // 'trait_dirs' => [], // TODO: Add PRO trait directories
+        // 'file' => '',   // TODO: Add PRO file
+        // 'class' => '',  // TODO: Add PRO class
     ],
     'deensimcpro-card-list' => [
         'cat'    => 'general',
@@ -212,7 +173,10 @@ return [
         'icon'   => 'deensimcpro-card-marquee-icon eicon-deensimc-pro',
         'is_pro' => true,
         'demo'   => 'https://marqueeaddons.com/card-marquee/',
-        'pro_url' => 'https://marqueeaddons.com/pricing/'
+        'pro_url' => 'https://marqueeaddons.com/pricing/',
+        // 'trait_dirs' => [], // TODO: Add PRO trait directories
+        // 'file' => '',   // TODO: Add PRO file
+        // 'class' => '',  // TODO: Add PRO class
     ],
     'deensimcpro-circular-text-pro' => [
         'cat'    => 'general',
@@ -220,7 +184,10 @@ return [
         'icon'   => 'deensimcpro-circular-text-icon eicon-deensimc-pro',
         'is_pro' => true,
         'demo'   => 'https://marqueeaddons.com/circular-text-rotation/',
-        'pro_url' => 'https://marqueeaddons.com/pricing/'
+        'pro_url' => 'https://marqueeaddons.com/pricing/',
+        // 'trait_dirs' => [], // TODO: Add PRO trait directories
+        // 'file' => '',   // TODO: Add PRO file
+        // 'class' => '',  // TODO: Add PRO class
     ],
     'deensimcpro-image-accordion' => [
         'cat'    => 'general',
@@ -228,7 +195,10 @@ return [
         'icon'   => 'deensimcpro-image-accordion-icon eicon-deensimc-pro',
         'is_pro' => true,
         'demo'   => 'https://marqueeaddons.com/image-accordion-pro/',
-        'pro_url' => 'https://marqueeaddons.com/pricing/'
+        'pro_url' => 'https://marqueeaddons.com/pricing/',
+        // 'trait_dirs' => [], // TODO: Add PRO trait directories
+        // 'file' => '',   // TODO: Add PRO file
+        // 'class' => '',  // TODO: Add PRO class
     ],
     'deensimcpro-media-marquee' => [
         'cat'    => 'general',
@@ -236,7 +206,10 @@ return [
         'icon'   => 'deensimcpro-media-marquee-icon eicon-deensimc-pro',
         'is_pro' => true,
         'demo'   => 'https://marqueeaddons.com/pricing',
-        'pro_url' => 'https://marqueeaddons.com/pricing/'
+        'pro_url' => 'https://marqueeaddons.com/pricing/',
+        // 'trait_dirs' => [], // TODO: Add PRO trait directories
+        // 'file' => '',   // TODO: Add PRO file
+        // 'class' => '',  // TODO: Add PRO class
     ],
     'deensimcpro-post-marquee' => [
         'cat'    => 'general',
@@ -244,23 +217,32 @@ return [
         'icon'   => 'deensimcpro-post-marquee-icon eicon-deensimc-pro',
         'is_pro' => true,
         'demo'   => 'https://marqueeaddons.com/post-marquee/',
-        'pro_url' => 'https://marqueeaddons.com/pricing/'
+        'pro_url' => 'https://marqueeaddons.com/pricing/',
+        // 'trait_dirs' => [], // TODO: Add PRO trait directories
+        // 'file' => '',   // TODO: Add PRO file
+        // 'class' => '',  // TODO: Add PRO class
     ],
     'deensimcpro-product-category-marquee' => [
-        'cat'    => 'general',
+        'cat'    => 'woocommerce',
         'title'  => __('Product Category Marquee', 'marquee-addons-for-elementor'),
         'icon'   => 'deensimcpro-product-cat-marquee-icon eicon-deensimc-pro',
         'is_pro' => true,
         'demo'   => 'https://marqueeaddons.com/product-marquee/',
-        'pro_url' => 'https://marqueeaddons.com/pricing/'
+        'pro_url' => 'https://marqueeaddons.com/pricing/',
+        // 'trait_dirs' => [], // TODO: Add PRO trait directories
+        // 'file' => '',   // TODO: Add PRO file
+        // 'class' => '',  // TODO: Add PRO class
     ],
     'deensimcpro-product-marquee' => [
-        'cat'    => 'general',
+        'cat'    => 'woocommerce',
         'title'  => __('Product Marquee', 'marquee-addons-for-elementor'),
         'icon'   => 'deensimcpro-product-marquee-icon eicon-deensimc-pro',
         'is_pro' => true,
         'demo'   => 'https://marqueeaddons.com/product-marquee/',
-        'pro_url' => 'https://marqueeaddons.com/pricing/'
+        'pro_url' => 'https://marqueeaddons.com/pricing/',
+        // 'trait_dirs' => [], // TODO: Add PRO trait directories
+        // 'file' => '',   // TODO: Add PRO file
+        // 'class' => '',  // TODO: Add PRO class
     ],
     'deensimcpro-sticky-cards' => [
         'cat'    => 'general',
@@ -268,7 +250,10 @@ return [
         'icon'   => 'deensimcpro-sticky-cards-icon eicon-deensimc-pro',
         'is_pro' => true,
         'demo'   => 'https://marqueeaddons.com/sticky-cards/',
-        'pro_url' => 'https://marqueeaddons.com/pricing/'
+        'pro_url' => 'https://marqueeaddons.com/pricing/',
+        // 'trait_dirs' => [], // TODO: Add PRO trait directories
+        // 'file' => '',   // TODO: Add PRO file
+        // 'class' => '',  // TODO: Add PRO class
     ],
     'deensimc-testimonial-pro' => [
         'cat'    => 'general',
@@ -276,7 +261,10 @@ return [
         'icon'   => 'deensimcpro-testimonial-marquee-icon eicon-deensimc-pro',
         'is_pro' => true,
         'demo'   => 'https://marqueeaddons.com/testimonial-marquee/',
-        'pro_url' => 'https://marqueeaddons.com/pricing/'
+        'pro_url' => 'https://marqueeaddons.com/pricing/',
+        // 'trait_dirs' => [], // TODO: Add PRO trait directories
+        // 'file' => '',   // TODO: Add PRO file
+        // 'class' => '',  // TODO: Add PRO class
     ],
     'deensimc-smooth-text-pro' => [
         'cat'    => 'general',
@@ -284,7 +272,10 @@ return [
         'icon'   => 'deensimcpro-text-marquee-icon eicon-deensimc-pro',
         'is_pro' => true,
         'demo'   => 'https://marqueeaddons.com/text-marquee/',
-        'pro_url' => 'https://marqueeaddons.com/pricing/'
+        'pro_url' => 'https://marqueeaddons.com/pricing/',
+        // 'trait_dirs' => [], // TODO: Add PRO trait directories
+        // 'file' => '',   // TODO: Add PRO file
+        // 'class' => '',  // TODO: Add PRO class
     ],
     'deensimcpro-smart-tabs' => [
         'cat'    => 'general',
@@ -292,7 +283,10 @@ return [
         'icon'   => 'eicon-tabs eicon-deensimc-pro',
         'is_pro' => true,
         'demo'   => 'https://marqueeaddons.com/smart-tabs/',
-        'pro_url' => 'https://marqueeaddons.com/pricing/'
+        'pro_url' => 'https://marqueeaddons.com/pricing/',
+        // 'trait_dirs' => [], // TODO: Add PRO trait directories
+        // 'file' => '',   // TODO: Add PRO file
+        // 'class' => '',  // TODO: Add PRO class
     ],
     'deensimcpro-animated-list' => [
         'cat'    => 'general',
@@ -300,7 +294,10 @@ return [
         'icon'   => 'eicon-post-list eicon-deensimc-pro',
         'is_pro' => true,
         'demo'   => 'https://marqueeaddons.com/pricing',
-        'pro_url' => 'https://marqueeaddons.com/pricing/'
+        'pro_url' => 'https://marqueeaddons.com/pricing/',
+        // 'trait_dirs' => [], // TODO: Add PRO trait directories
+        // 'file' => '',   // TODO: Add PRO file
+        // 'class' => '',  // TODO: Add PRO class
     ],
     'deensimcpro-bento-grid' => [
         'cat'    => 'general',
@@ -308,10 +305,11 @@ return [
         'icon'   => 'eicon-gallery-grid eicon-deensimc-pro',
         'is_pro' => true,
         'demo'   => 'https://marqueeaddons.com/pricing',
-        'pro_url' => 'https://marqueeaddons.com/pricing/'
+        'pro_url' => 'https://marqueeaddons.com/pricing/',
+        // 'trait_dirs' => [], // TODO: Add PRO trait directories
+        // 'file' => '',   // TODO: Add PRO file
+        // 'class' => '',  // TODO: Add PRO class
     ],
-
-    // Extensions (PRO Features)
     'deensimcpro-container-background' => [
         'title'  => __('Container Background', 'marquee-addons-for-elementor'),
         'icon'   => 'dashicons dashicons-admin-appearance',
@@ -319,6 +317,9 @@ return [
         'demo'   => 'https://marqueeaddons.com/',
         'cat'    => 'extensions',
         'pro_url' => 'https://marqueeaddons.com/pricing/',
+        // 'trait_dirs' => [], // TODO: Add trait directories
+        // 'file' => '',   // TODO: Add file
+        // 'class' => '',  // TODO: Add class
     ],
     'deensimcpro-heading-effect' => [
         'title'  => __('Heading Effect', 'marquee-addons-for-elementor'),
@@ -327,6 +328,9 @@ return [
         'demo'   => 'https://marqueeaddons.com/',
         'cat'    => 'extensions',
         'pro_url' => 'https://marqueeaddons.com/pricing/',
+        // 'trait_dirs' => [], // TODO: Add trait directories
+        // 'file' => '',   // TODO: Add file
+        // 'class' => '',  // TODO: Add class
     ],
     'deensimcpro-image-rotation' => [
         'title'  => __('Image Rotation', 'marquee-addons-for-elementor'),
@@ -335,5 +339,8 @@ return [
         'demo'   => 'https://marqueeaddons.com/',
         'cat'    => 'extensions',
         'pro_url' => 'https://marqueeaddons.com/pricing/',
+        // 'trait_dirs' => [], // TODO: Add trait directories
+        // 'file' => '',   // TODO: Add file
+        // 'class' => '',  // TODO: Add class
     ],
 ];

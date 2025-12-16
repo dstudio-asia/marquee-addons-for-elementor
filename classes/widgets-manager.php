@@ -78,12 +78,16 @@ class Widgets_Manager
     {
         $base_path = DEENSIMC__DIR__;
 
-        // Load trait files first
-        if (isset($config['traits']) && is_array($config['traits'])) {
-            foreach ($config['traits'] as $trait) {
-                $trait_path = $base_path . $trait;
-                if (file_exists($trait_path)) {
-                    require_once($trait_path);
+        // Load traits from directories
+        if (isset($config['trait_dirs']) && is_array($config['trait_dirs'])) {
+            foreach ($config['trait_dirs'] as $trait_dir) {
+                $full_dir_path = $base_path . $trait_dir;
+                if (is_dir($full_dir_path)) {
+                    // Get all PHP files in the directory
+                    $trait_files = glob($full_dir_path . '*.php');
+                    foreach ($trait_files as $trait_file) {
+                        require_once $trait_file;
+                    }
                 }
             }
         }

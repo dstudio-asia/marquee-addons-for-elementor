@@ -16,6 +16,10 @@ class Deensimc_Stacked_Slider extends Widget_Base
 {
 	use Deensimc_Utils;
 	use Deensimc_Promotional_Banner;
+	use Stackedslider_Style_Title_Controls;
+	use Stackedslider_Style_Description_Controls;
+	use Stackedslider_Style_Color_Controls;
+	use Stackedslider_Style_Button_Controls;
 	use Stackedslider_Contents_Primary;
 	use Stackedslider_Contents_Advance;
 	use Stackedslider_Style_Box;
@@ -89,7 +93,7 @@ class Deensimc_Stacked_Slider extends Widget_Base
 		if ($settings['deensimc_content_title'] !== '') {
 		?>
 			<div class="deensimc-slider-heading">
-				<?php printf('<%1$s class="deensimc-content-title"> %2$s </%1$s>', esc_html( self::validate_html_tag( $settings['deensimc_content_title_tags'] ) ), esc_html($settings['deensimc_content_title'])); ?>
+				<?php printf('<%1$s class="deensimc-content-title"> %2$s </%1$s>', esc_html(self::validate_html_tag($settings['deensimc_content_title_tags'])), esc_html($settings['deensimc_content_title'])); ?>
 			</div>
 		<?php
 		}
@@ -111,8 +115,8 @@ class Deensimc_Stacked_Slider extends Widget_Base
 		<?php
 		// Slider button text
 		if ($settings['deensimc_content_button_text'] !== '') {
-			if ( ! empty( $settings['deensimc_content_button_link']['url'] ) ) {
-				$this->add_link_attributes( 'deensimc_content_button_link', $settings['deensimc_content_button_link'] );
+			if (! empty($settings['deensimc_content_button_link']['url'])) {
+				$this->add_link_attributes('deensimc_content_button_link', $settings['deensimc_content_button_link']);
 			}
 		?>
 			<div class="deensimc-button-content-wraper">

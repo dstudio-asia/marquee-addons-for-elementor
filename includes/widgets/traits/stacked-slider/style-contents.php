@@ -11,11 +11,6 @@ use \Elementor\Group_Control_Typography;
 
 trait Stackedslider_Style_Contents {
 
-	use Stackedslider_Style_Title_Controls;
-	use Stackedslider_Style_Description_Controls;
-	use Stackedslider_Style_Color_Controls;
-	use Stackedslider_Style_Button_Controls;
-
     protected function style_contents() 
     {
         $this->start_controls_section(
