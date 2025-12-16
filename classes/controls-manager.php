@@ -13,7 +13,6 @@ if (!defined('ABSPATH')) exit;
 
 class Control_Manager
 {
-    use WidgetsList;
     use Manifest_Loader;
 
     private static $_instance = null;
@@ -60,6 +59,10 @@ class Control_Manager
      */
     private function prepare_widget_statuses()
     {
+        if (empty($this->all_widgets)) {
+            return;
+        }
+        
         foreach ($this->all_widgets as $key => $widget) {
             $is_pro = !empty($widget['is_pro']);
 
@@ -101,7 +104,7 @@ class Control_Manager
      */
     public function initialize_default_settings()
     {
-        if (empty($this->widget_settings)) {
+        if (empty($this->widget_settings) && !empty($this->all_widgets)) {
             $default_settings = [];
             foreach ($this->all_widgets as $key => $widget) {
                 $is_pro_locked = !empty($widget['is_pro']) && !$this->is_pro_active;
@@ -165,10 +168,15 @@ class Control_Manager
         if (!isset($_POST['marquee_addons_widgets_submitted'])) {
             return $this->widget_settings;
         }
-
+        
         $current_settings = $this->widget_settings;
+        $all_widgets = $this->get_all_widgets();
 
-        foreach ($this->get_all_widgets() as $key => $widget) {
+        if(empty($all_widgets)) {
+            return $sanitized;
+        }
+
+        foreach ($all_widgets as $key => $widget) {
             $is_pro_locked = !empty($widget['is_pro']) && !$this->is_pro_active;
 
             if ($is_pro_locked) {
@@ -209,24 +217,12 @@ class Control_Manager
     }
 
     /**
-     * Get all widgets (free + pro) by merging manifest with dynamic PRO widgets.
+     * Get all widgets from the manifest file.
      */
     public function get_all_widgets()
     {
         if ($this->all_widgets === null) {
-            $free_and_extension_widgets = self::get_manifest();
-            $pro_widgets = self::get_widgets_list();
-            $categorized_pro_widgets = [];
-
-            foreach ($pro_widgets as $key => $widget) {
-                $category = 'general';
-                if (in_array($key, ['deensimcpro-product-category-marquee', 'deensimcpro-product-marquee'])) {
-                    $category = 'woocommerce';
-                }
-                $categorized_pro_widgets[$key] = array_merge($widget, ['cat' => $category]);
-            }
-
-            $this->all_widgets = $free_and_extension_widgets + $categorized_pro_widgets;
+            $this->all_widgets = self::get_manifest();
         }
 
         return $this->all_widgets;
@@ -237,6 +233,9 @@ class Control_Manager
      */
     public function get_widgets_by_category($category)
     {
+        if (empty($this->all_widgets)) {
+            return [];
+        }
         return array_filter($this->all_widgets, function ($widget) use ($category) {
             return isset($widget['cat']) && $widget['cat'] === $category;
         });
