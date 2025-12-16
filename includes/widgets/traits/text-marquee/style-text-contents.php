@@ -174,7 +174,7 @@ trait Deensimc_Textmarquee_Style_Text_Contents
 				],
 				'default' => [
 					'unit' => 'px',
-					'size' => 20,
+					'size' => 8,
 				],
 				'selectors' => [
 					'{{WRAPPER}} .deensimc-text-wrapper' => 'gap: {{SIZE}}{{UNIT}};',

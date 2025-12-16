@@ -139,10 +139,6 @@ class Deensimc_Text_Marquee extends Widget_Base
 		if (isset($settings['deensimc_icon_animation']) && $settings['deensimc_icon_animation'] === 'yes') {
 			$conditional_class[] = 'deensimc-icon-rotate';
 
-			if (isset($settings['deensimc_icon_pause_on_hover']) && $settings['deensimc_icon_pause_on_hover'] === 'yes') {
-				$conditional_class[] = 'deensimc-icon-pause';
-			}
-
 			if (isset($settings['deensimc_icon_rotation_direction']) && $settings['deensimc_icon_rotation_direction'] !== 'clockwise') {
 				$conditional_class[] = 'deensimc-icon-rotate-ccw';
 			}
