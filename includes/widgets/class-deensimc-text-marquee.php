@@ -16,10 +16,9 @@ use \Elementor\Icons_Manager;
 class Deensimc_Text_Marquee extends Widget_Base
 {
 	use Deensimc_Promotional_Banner;
-
-	use Textmarquee_Content_Text_Repeater;
+	use Deensimc_Textmarquee_Content_Text_Repeater;
 	use Deensimc_Marquee_Controls;
-	use Textmarquee_Style_Text_Contents;
+	use Deensimc_Textmarquee_Style_Text_Contents;
 	use Deensimc_Style_Edge_Shadow;
 
 	public function get_style_depends()

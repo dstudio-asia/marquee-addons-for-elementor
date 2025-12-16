@@ -8,7 +8,7 @@ if (! defined('ABSPATH')) {
 use \Elementor\Controls_Manager;
 use \Elementor\Group_Control_Box_Shadow;
 
-trait Videomarquee_Style_Play_Icon
+trait Deensimc_Videomarquee_Style_Play_Icon
 {
 	protected function style_play_icon()
 	{

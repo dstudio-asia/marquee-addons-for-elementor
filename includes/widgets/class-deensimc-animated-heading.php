@@ -10,10 +10,10 @@ class Deensimc_Animated_Heading_Widget extends Widget_Base
 {
   use Deensimc_Utils;
   use Deensimc_Promotional_Banner;
-  use Title_Controls;
-  use Animation_Controls;
-  use Text_Styles_Controls;
-  use Animated_Text_Effect_Controls;
+  use Deensimc_Title_Controls;
+  use Deensimc_Animation_Controls;
+  use Deensimc_Text_Styles_Controls;
+  use Deensimc_Animated_Text_Effect_Controls;
 
   public function get_style_depends()
   {

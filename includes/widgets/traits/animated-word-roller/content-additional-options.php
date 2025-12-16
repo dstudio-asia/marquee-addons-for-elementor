@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Elementor Classes
 use \Elementor\Controls_Manager;
 
-trait Animated_Word_Roller_Content_Additional_Options {
+trait Deensimc_Animated_Word_Roller_Content_Additional_Options {
 	protected function content_additional_options() 
 	{
 		$this->start_controls_section(

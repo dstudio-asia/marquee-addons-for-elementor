@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Elementor Classes
 use \Elementor\Controls_Manager;
 
-trait Videomarquee_Content_Video_Options {
+trait Deensimc_Videomarquee_Content_Video_Options {
     protected function content_video_optoins( $videos_repeater )
     {
         $videos_repeater->add_control(

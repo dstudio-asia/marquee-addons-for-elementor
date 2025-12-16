@@ -2,7 +2,7 @@
 
 use Elementor\Controls_Manager;
 
-trait Button_Controls
+trait Deensimc_Button_Controls
 {
   private function register_button_section_controls()
   {

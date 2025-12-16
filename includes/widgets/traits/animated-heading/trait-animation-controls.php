@@ -2,7 +2,7 @@
 
 use Elementor\Controls_Manager;
 
-trait Animation_Controls {
+trait Deensimc_Animation_Controls {
   private function register_animation_section_controls() {
     $this->start_controls_section(
       'deensimc_animation_section',

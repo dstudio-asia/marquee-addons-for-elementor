@@ -11,7 +11,7 @@ use \Elementor\Group_Control_Background;
 use Elementor\Group_Control_Border;
 use \Elementor\Group_Control_Css_Filter;
 
-trait ImageAccordion_Styles
+trait Deensimc_ImageAccordion_Styles
 {
 
     protected function style_controls()

@@ -15,8 +15,8 @@ use \Elementor\Icons_Manager;
 class Deensimc_Image_Accordion extends Widget_Base
 {
 
-	use ImageAccordion_Contents;
-	use ImageAccordion_Styles;
+	use Deensimc_ImageAccordion_Contents;
+	use Deensimc_ImageAccordion_Styles;
 
 	public function get_name()
 	{
