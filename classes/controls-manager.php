@@ -10,14 +10,19 @@ namespace Deensimc_Marquee;
 
 if (!defined('ABSPATH')) exit;
 
+
 class Control_Manager
 {
-
     use WidgetsList;
+    use Manifest_Loader;
 
     private static $_instance = null;
-
     private $is_pro_active = false;
+
+    // Caching properties
+    private $all_widgets = null;
+    private $widget_settings = null;
+    private $widget_statuses = [];
 
     public static function instance()
     {
@@ -29,8 +34,10 @@ class Control_Manager
 
     public function __construct()
     {
-
         $this->is_pro_active = $this->check_pro_version();
+
+        // Load and cache data once
+        $this->load_and_cache_data();
 
         add_action('admin_menu', [$this, 'add_settings_page']);
         add_action('admin_init', [$this, 'register_settings']);
@@ -39,15 +46,54 @@ class Control_Manager
     }
 
     /**
+     * Load manifest data and settings from DB, then compute widget statuses.
+     */
+    private function load_and_cache_data()
+    {
+        $this->all_widgets = $this->get_all_widgets();
+        $this->widget_settings = get_option('marquee_addons_widgets', []);
+        $this->prepare_widget_statuses();
+    }
+
+    /**
+     * Pre-calculates and caches the enabled/disabled status of all widgets.
+     */
+    private function prepare_widget_statuses()
+    {
+        foreach ($this->all_widgets as $key => $widget) {
+            $is_pro = !empty($widget['is_pro']);
+
+            // Pro widgets that aren't active are always disabled
+            if ($is_pro && !$this->is_pro_active) {
+                $this->widget_statuses[$key] = false;
+                continue;
+            }
+
+            // If a setting exists for the widget, use it
+            if (isset($this->widget_settings[$key])) {
+                $this->widget_statuses[$key] = ($this->widget_settings[$key] === 'on');
+            } else {
+                // Default behaviors for widgets without a saved setting
+                if ($is_pro && $this->is_pro_active) {
+                    // New PRO widgets are enabled by default when PRO is active
+                    $this->widget_statuses[$key] = true;
+                } elseif (!$is_pro) {
+                    // Free widgets are enabled by default
+                    $this->widget_statuses[$key] = true;
+                } else {
+                    $this->widget_statuses[$key] = false;
+                }
+            }
+        }
+    }
+
+
+    /**
      * Check if PRO version is active
      */
     private function check_pro_version()
     {
-        if (class_exists('\Deensimcpro_Marquee\Marqueepro')) {
-            return true;
-        }
-
-        return false;
+        return class_exists('\Deensimcpro_Marquee\Marqueepro');
     }
 
     /**
@@ -55,18 +101,18 @@ class Control_Manager
      */
     public function initialize_default_settings()
     {
-        $current_settings = get_option('marquee_addons_widgets', []);
-        if (empty($current_settings)) {
+        if (empty($this->widget_settings)) {
             $default_settings = [];
-
-            foreach ($this->get_all_widgets() as $key => $widget) {
-                $is_pro_locked = $widget['is_pro'] && !$this->is_pro_active;
+            foreach ($this->all_widgets as $key => $widget) {
+                $is_pro_locked = !empty($widget['is_pro']) && !$this->is_pro_active;
                 if (!$is_pro_locked) {
                     $default_settings[$key] = 'on';
                 }
             }
-
             update_option('marquee_addons_widgets', $default_settings);
+            // Refresh cache after updating options
+            $this->widget_settings = $default_settings;
+            $this->prepare_widget_statuses();
         }
     }
 
@@ -117,13 +163,13 @@ class Control_Manager
         $sanitized = [];
 
         if (!isset($_POST['marquee_addons_widgets_submitted'])) {
-            return $input;
+            return $this->widget_settings;
         }
 
-        $current_settings = get_option('marquee_addons_widgets', []);
+        $current_settings = $this->widget_settings;
 
         foreach ($this->get_all_widgets() as $key => $widget) {
-            $is_pro_locked = $widget['is_pro'] && !$this->is_pro_active;
+            $is_pro_locked = !empty($widget['is_pro']) && !$this->is_pro_active;
 
             if ($is_pro_locked) {
                 if (isset($current_settings[$key])) {
@@ -163,203 +209,55 @@ class Control_Manager
     }
 
     /**
-     * Get all widgets (free + pro) with consistent structure
+     * Get all widgets (free + pro) by merging manifest with dynamic PRO widgets.
      */
     public function get_all_widgets()
     {
-        $free_widgets = [
-            'deensimc-image-marquee' => [
-                'cat'    => 'general',
-                'title'  => __('Image Marquee', 'marquee-addons-for-elementor'),
-                'icon'   => 'deensimc-image-marquee-icon',
-                'is_pro' => false,
-                'demo'   => 'https://marqueeaddons.com/image-marquee/',
-                'pro_url' => ''
-            ],
-            'deensimc-text-marquee' => [
-                'cat'    => 'general',
-                'title'  => __('Text Marquee', 'marquee-addons-for-elementor'),
-                'icon'   => 'deensimc-text-marquee-icon',
-                'is_pro' => false,
-                'demo'   => 'https://marqueeaddons.com/text-marquee/',
-                'pro_url' => ''
-            ],
-            'deensimc-testimonial-marquee' => [
-                'cat'    => 'general',
-                'title'  => __('Testimonial Marquee', 'marquee-addons-for-elementor'),
-                'icon'   => 'deensimc-testimonial-marquee-icon',
-                'is_pro' => false,
-                'demo'   => 'https://marqueeaddons.com/testimonial-marquee/',
-                'pro_url' => ''
-            ],
-            'deensimc-video-marquee' => [
-                'cat'    => 'general',
-                'title'  => __('Video Marquee', 'marquee-addons-for-elementor'),
-                'icon'   => 'deensimc-video-marquee-icon',
-                'is_pro' => false,
-                'demo'   => 'https://marqueeaddons.com/video-marquee/',
-                'pro_url' => ''
-            ],
-            'deensimc-stacked-slider' => [
-                'cat'    => 'general',
-                'title'  => __('Stacked Slider', 'marquee-addons-for-elementor'),
-                'icon'   => 'deensimc-stacked-slider-icon',
-                'is_pro' => false,
-                'demo'   => 'https://marqueeaddons.com/stacked-slider/',
-                'pro_url' => ''
-            ],
-            'deensimc-image-accordion' => [
-                'cat'    => 'general',
-                'title'  => __('Image Accordion', 'marquee-addons-for-elementor'),
-                'icon'   => 'deensimc-image-accordion-icon',
-                'is_pro' => false,
-                'demo'   => 'https://marqueeaddons.com/marquee-demos/image-accordion/',
-                'pro_url' => ''
-            ],
-            'deensimc-news-ticker' => [
-                'cat'    => 'general',
-                'title'  => __('News Ticker', 'marquee-addons-for-elementor'),
-                'icon'   => 'deensimc-news-ticker-icon',
-                'is_pro' => false,
-                'demo'   => 'https://marqueeaddons.com/news-ticker/',
-                'pro_url' => ''
-            ],
-            'deensimc-animated-word-roller' => [
-                'cat'    => 'general',
-                'title'  => __('Animated Word Roller', 'marquee-addons-for-elementor'),
-                'icon'   => 'deensimc-animated-word-roller-icon',
-                'is_pro' => false,
-                'demo'   => 'https://marqueeaddons.com/marquee-demos/animated-word-roller/',
-                'pro_url' => ''
-            ],
-            'deensimc-animated-heading' => [
-                'cat'    => 'general',
-                'title'  => __('Animated Heading', 'marquee-addons-for-elementor'),
-                'icon'   => 'deensimc-animated-heading-icon',
-                'is_pro' => false,
-                'demo'   => 'https://marqueeaddons.com/animated-heading/',
-                'pro_url' => ''
-            ],
-            'deensimc-button-marquee' => [
-                'cat'    => 'general',
-                'title'  => __('Button Marquee', 'marquee-addons-for-elementor'),
-                'icon'   => 'deensimc-button-marquee-icon',
-                'is_pro' => false,
-                'demo'   => 'https://marqueeaddons.com/button-marquee/',
-                'pro_url' => ''
-            ],
-            'deensimc-search-box' => [
-                'cat'    => 'general',
-                'title'  => __('Search Box', 'marquee-addons-for-elementor'),
-                'icon'   => 'deensimc-search-icon',
-                'is_pro' => false,
-                'demo'   => '#',
-                'pro_url' => ''
-            ]
-        ];
+        if ($this->all_widgets === null) {
+            $free_and_extension_widgets = self::get_manifest();
+            $pro_widgets = self::get_widgets_list();
+            $categorized_pro_widgets = [];
 
-        // Get PRO widgets and categorize them
-        $pro_widgets = self::get_widgets_list();
-        $categorized_pro_widgets = [];
-
-        foreach ($pro_widgets as $key => $widget) {
-            $category = 'general';
-
-            // Categorize WooCommerce widgets
-            if (in_array($key, ['deensimcpro-product-category-marquee', 'deensimcpro-product-marquee'])) {
-                $category = 'woocommerce';
+            foreach ($pro_widgets as $key => $widget) {
+                $category = 'general';
+                if (in_array($key, ['deensimcpro-product-category-marquee', 'deensimcpro-product-marquee'])) {
+                    $category = 'woocommerce';
+                }
+                $categorized_pro_widgets[$key] = array_merge($widget, ['cat' => $category]);
             }
 
-            $categorized_pro_widgets[$key] = array_merge($widget, [
-                'cat' => $category
-            ]);
+            $this->all_widgets = $free_and_extension_widgets + $categorized_pro_widgets;
         }
 
-        // Add extensions
-        $extensions = [
-            'deensimcpro-container-background' => [
-                'cat'    => 'extensions',
-                'title'  => __('Container Background', 'marquee-addons-for-elementor'),
-                'icon'   => 'dashicons dashicons-admin-appearance',
-                'is_pro' => true,
-                'demo'   => 'https://marqueeaddons.com/',
-                'pro_url' => 'https://marqueeaddons.com/pricing/'
-            ],
-            'deensimcpro-heading-effect' => [
-                'cat'    => 'extensions',
-                'title'  => __('Heading Effect', 'marquee-addons-for-elementor'),
-                'icon'   => 'dashicons dashicons-editor-textcolor',
-                'is_pro' => true,
-                'demo'   => 'https://marqueeaddons.com/',
-                'pro_url' => 'https://marqueeaddons.com/pricing/'
-            ],
-            'deensimcpro-image-rotation' => [
-                'cat'    => 'extensions',
-                'title'  => __('Image Rotation', 'marquee-addons-for-elementor'),
-                'icon'   => 'dashicons dashicons-format-image',
-                'is_pro' => true,
-                'demo'   => 'https://marqueeaddons.com/',
-                'pro_url' => 'https://marqueeaddons.com/pricing/'
-            ],
-        ];
-
-        return array_merge($free_widgets, $categorized_pro_widgets, $extensions);
+        return $this->all_widgets;
     }
 
     /**
-     * Get widgets by category
+     * Get widgets by category from the cached list.
      */
     public function get_widgets_by_category($category)
     {
-        $all_widgets = $this->get_all_widgets();
-        return array_filter($all_widgets, function ($widget) use ($category) {
-            return $widget['cat'] === $category;
+        return array_filter($this->all_widgets, function ($widget) use ($category) {
+            return isset($widget['cat']) && $widget['cat'] === $category;
         });
     }
 
     /**
-     * Check if a widget is enabled
+     * Check if a widget is enabled from the cached statuses.
      */
     public function is_widget_enabled($widget_key)
     {
-        $widgets_list = $this->get_all_widgets();
-
-        if (isset($widgets_list[$widget_key]) && $widgets_list[$widget_key]['is_pro'] && !$this->is_pro_active) {
-            return false;
-        }
-
-        $widgets = get_option('marquee_addons_widgets', []);
-
-        if (isset($widgets_list[$widget_key]) && $widgets_list[$widget_key]['is_pro'] && $this->is_pro_active) {
-            if (!isset($widgets[$widget_key])) {
-                return true;
-            }
-        }
-
-        if (empty($widgets) || !isset($widgets[$widget_key])) {
-            if (isset($widgets_list[$widget_key]) && !$widgets_list[$widget_key]['is_pro']) {
-                return true;
-            }
-            return false;
-        }
-
-        return $widgets[$widget_key] === 'on';
+        return isset($this->widget_statuses[$widget_key]) && $this->widget_statuses[$widget_key];
     }
 
     /**
-     * Get list of disabled widgets
+     * Get list of disabled widgets from the cached statuses.
      */
     public function get_disabled_widgets()
     {
-        $disabled = [];
-
-        foreach ($this->get_all_widgets() as $key => $widget) {
-            if (!$this->is_widget_enabled($key)) {
-                $disabled[] = $key;
-            }
-        }
-
-        return $disabled;
+        return array_keys(array_filter($this->widget_statuses, function ($is_enabled) {
+            return !$is_enabled;
+        }));
     }
 
     /**
@@ -378,96 +276,9 @@ class Control_Manager
                 'title' => __('Features', 'marquee-addons-for-elementor'),
             ]
         ];
-?>
-        <div class="deensimc-addons-settings">
-            <h1 class="deensimc-settings-header"><?php echo esc_html(get_admin_page_title()); ?></h1>
 
-            <div class="deensimc-settings-container">
-                <!-- Tabs Navigation -->
-                <div class="deensimc-tabs">
-                    <button class="deensimc-tab-btn active" data-tab="widgets">
-                        <span class="dashicons dashicons-admin-plugins"></span>
-                        <?php echo esc_html__('Widgets', 'marquee-addons-for-elementor'); ?>
-                    </button>
-                </div>
-
-                <!-- Widgets Tab -->
-                <div class="deensimc-tab-content active" id="tab-widgets">
-                    <form method="post" action="options.php">
-                        <?php settings_fields('marquee_addons_settings'); ?>
-                        <input type="hidden" name="marquee_addons_widgets_submitted" value="1">
-                        <div class="deensimc-section">
-                            <div class="deensimc-section-header">
-                                <div>
-                                    <h2><?php echo esc_html__('Manage Widgets', 'marquee-addons-for-elementor'); ?></h2>
-                                    <p class="deensimc-description"></p>
-                                </div>
-                                <div class="deensimc-bulk-actions">
-                                    <button type="button" class="button deensimc-enable-btn" id="enable-all">
-                                        <?php echo esc_html__('Enable All', 'marquee-addons-for-elementor'); ?>
-                                    </button>
-                                    <button type="button" class="button deensimc-disable-btn" id="disable-all">
-                                        <?php echo esc_html__('Disable All', 'marquee-addons-for-elementor'); ?>
-                                    </button>
-                                </div>
-                            </div>
-
-                            <?php foreach ($categories as $cat_key => $cat_info):
-                                $category_widgets = $this->get_widgets_by_category($cat_key);
-                                if (empty($category_widgets)) continue;
-                            ?>
-                                <div class="deensimc-category-section">
-                                    <h3 class="deensimc-category-title">
-                                        <?php echo esc_html($cat_info['title']); ?>
-                                    </h3>
-
-                                    <div class="deensimc-widgets-grid">
-                                        <?php foreach ($category_widgets as $key => $widget) :
-                                            $is_pro_locked = $widget['is_pro'] && !$this->is_pro_active;
-                                            $is_checked = $this->is_widget_enabled($key);
-                                            $pro_url = isset($widget['pro_url']) ? $widget['pro_url'] : '';
-                                        ?>
-                                            <div class="deensimc-widget-card <?php echo $is_pro_locked ? 'deensimc-pro-locked' : ''; ?>"
-                                                data-pro-url="<?php echo esc_attr($pro_url); ?>"
-                                                data-is-locked="<?php echo $is_pro_locked ? '1' : '0'; ?>">
-                                                <?php if ($widget['is_pro']) : ?>
-                                                    <span class="deensimc-pro-badge"><?php echo esc_html__('PRO', 'marquee-addons-for-elementor'); ?></span>
-                                                <?php endif; ?>
-                                                <div class="deensimc-widget-header">
-                                                    <h3><?php echo esc_html($widget['title']); ?></h3>
-                                                </div>
-                                                <div class="deensimc-toggle-demo-wrapper">
-                                                    <div class="deensimc-widget-toggle">
-                                                        <label class="deensimc-switch <?php echo $is_pro_locked ? 'disabled' : ''; ?>">
-                                                            <input
-                                                                type="checkbox"
-                                                                name="marquee_addons_widgets[<?php echo esc_attr($key); ?>]"
-                                                                <?php checked($is_checked, true); ?>
-                                                                <?php disabled($is_pro_locked); ?>
-                                                                value="on"
-                                                                data-is-pro="<?php echo $widget['is_pro'] ? '1' : '0'; ?>">
-                                                            <span class="slider"></span>
-                                                        </label>
-                                                    </div>
-                                                    <a href="<?php echo esc_url($widget['demo']); ?>" class="deensimc-see-demo-btn" target="_blank" rel="nofollow">
-                                                        <?php echo esc_html__('Demo', 'marquee-addons-for-elementor'); ?>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        <?php endforeach; ?>
-                                    </div>
-                                </div>
-                            <?php endforeach; ?>
-                        </div>
-
-                        <div class="deensimc-settings-footer">
-                            <?php submit_button(__('Save Changes', 'marquee-addons-for-elementor'), 'primary', 'submit', false); ?>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-<?php
+        // The view file will have access to $this, which contains the cached data.
+        require DEENSIMC__DIR__ . '/includes/admin/views/settings-page-view.php';
     }
 }
 
