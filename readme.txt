@@ -247,6 +247,7 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 
 = 3.8.5 - 2025-12-16 =
 - New: Added box shadow in Image Marquee
+- Fix: Naming conventions for traits
 
 = 3.8.4 - 2025-12-14 =
 - New: Added icon rotation animation in Text Marquee.
