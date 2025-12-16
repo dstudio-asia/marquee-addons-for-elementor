@@ -1,6 +1,21 @@
 # Changelog
 
 
+## [3.8.5](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.8.4...v3.8.5) (2025-12-16)
+
+
+### Features
+
+* Add box shadow control to Image Marquee widget ([d35a5d7](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/d35a5d7d618ccecd0124630afbbe89803aac2c63))
+* Add box shadow control to Image Marquee widget ([c0e7924](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/c0e7924d66008202eef6cebf7c9658ffec5e1e86))
+
+
+### Bug Fixes
+
+* Add license check and update localization for promotion script ([517a444](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/517a44450992f79c40c6be35514d9eca0d14f168))
+* Naming conventions for traits ([e15eeb1](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/e15eeb1ff0db1bb41a985243e0e88ce81053c5f2))
+* plugn check NamingConventions error ([00840c3](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/00840c3e860210becee5bd83c394f1a341a16db9))
+
 ## [3.8.4](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.8.3...v3.8.4) (2025-12-14)
 
 
