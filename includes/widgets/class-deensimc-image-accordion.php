@@ -16,7 +16,10 @@ class Deensimc_Image_Accordion extends Widget_Base
 {
 
 	use Deensimc_ImageAccordion_Contents;
-	use Deensimc_ImageAccordion_Styles;
+	use Deensimc_ImageAccordion_Image_Style_Controls;
+	use Deensimc_ImageAccordion_Title_Style_Controls;
+	use Deensimc_ImageAccordion_Description_Style_Controls;
+	use Deensimc_ImageAccordion_Cta_Style_Controls;
 
 	public function get_name()
 	{
@@ -53,9 +56,9 @@ class Deensimc_Image_Accordion extends Widget_Base
 		return ['deensimc-image-accordion-script'];
 	}
 
-	function deensimc_allowed_icon_html() 
+	function deensimc_allowed_icon_html()
 	{
-		$allowed = wp_kses_allowed_html( 'post' );
+		$allowed = wp_kses_allowed_html('post');
 
 		$allowed['svg'] = [
 			'class'        => true,
@@ -92,7 +95,7 @@ class Deensimc_Image_Accordion extends Widget_Base
 		];
 
 		$allowed['title'] = [];
-		
+
 		$allowed['i'] = [
 			'class'        => true,
 			'aria-hidden'  => true,
@@ -103,7 +106,7 @@ class Deensimc_Image_Accordion extends Widget_Base
 			'aria-hidden'  => true,
 		];
 
-    	return $allowed;
+		return $allowed;
 	}
 
 	public function get_custom_help_url(): string
@@ -114,7 +117,10 @@ class Deensimc_Image_Accordion extends Widget_Base
 	protected function register_controls()
 	{
 		$this->content_controls();
-		$this->style_controls();
+		$this->image_style_controls();
+		$this->title_style_controls();
+		$this->description_style_controls();
+		$this->cta_style_controls();
 	}
 
 	/**
@@ -168,12 +174,12 @@ class Deensimc_Image_Accordion extends Widget_Base
 									$target       = !empty($images['deensimc_image_acc_cta_url']['is_external']) ? ' target="_blank"' : '';
 									$nofollow     = !empty($images['deensimc_image_acc_cta_url']['nofollow']) ? ' rel="nofollow"' : '';
 									?>
-									<a href="<?php echo esc_url( $cta_url ); ?>" class="deensimc-acc-cta" <?php echo esc_attr( $target ) . esc_attr( $nofollow ); ?>>
-										<span class="deensimc-acc-cta-text"><?php echo esc_html( $cta_text ); ?></span>
+									<a href="<?php echo esc_url($cta_url); ?>" class="deensimc-acc-cta" <?php echo esc_attr($target) . esc_attr($nofollow); ?>>
+										<span class="deensimc-acc-cta-text"><?php echo esc_html($cta_text); ?></span>
 									</a>
 								<?php endif; ?>
 							</div>
-							<img src="<?php echo esc_url( $images['deensimc_bg_image']['url'] ) ?>" alt="background image" class="deensimc-acc-bg-img">
+							<img src="<?php echo esc_url($images['deensimc_bg_image']['url']) ?>" alt="background image" class="deensimc-acc-bg-img">
 						</div>
 				<?php
 					}
