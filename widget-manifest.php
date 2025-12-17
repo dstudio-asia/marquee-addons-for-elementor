@@ -177,9 +177,6 @@ return [
         'is_pro' => true,
         'demo'   => 'https://marqueeaddons.com/3d-grid-marquee/',
         'pro_url' => 'https://marqueeaddons.com/pricing/',
-        // 'trait_dirs' => [], // TODO: Add PRO trait directories
-        // 'file' => '',   // TODO: Add PRO file
-        // 'class' => '',  // TODO: Add PRO class
     ],
     'deensimcpro-card-list' => [
         'cat'    => 'general',
@@ -188,9 +185,6 @@ return [
         'is_pro' => true,
         'demo'   => 'https://marqueeaddons.com/card-marquee/',
         'pro_url' => 'https://marqueeaddons.com/pricing/',
-        // 'trait_dirs' => [], // TODO: Add PRO trait directories
-        // 'file' => '',   // TODO: Add PRO file
-        // 'class' => '',  // TODO: Add PRO class
     ],
     'deensimcpro-circular-text-pro' => [
         'cat'    => 'general',
@@ -199,9 +193,6 @@ return [
         'is_pro' => true,
         'demo'   => 'https://marqueeaddons.com/circular-text-rotation/',
         'pro_url' => 'https://marqueeaddons.com/pricing/',
-        // 'trait_dirs' => [], // TODO: Add PRO trait directories
-        // 'file' => '',   // TODO: Add PRO file
-        // 'class' => '',  // TODO: Add PRO class
     ],
     'deensimcpro-image-accordion' => [
         'cat'    => 'general',
@@ -210,9 +201,6 @@ return [
         'is_pro' => true,
         'demo'   => 'https://marqueeaddons.com/image-accordion-pro/',
         'pro_url' => 'https://marqueeaddons.com/pricing/',
-        // 'trait_dirs' => [], // TODO: Add PRO trait directories
-        // 'file' => '',   // TODO: Add PRO file
-        // 'class' => '',  // TODO: Add PRO class
     ],
     'deensimcpro-media-marquee' => [
         'cat'    => 'general',
@@ -221,9 +209,6 @@ return [
         'is_pro' => true,
         'demo'   => 'https://marqueeaddons.com/pricing',
         'pro_url' => 'https://marqueeaddons.com/pricing/',
-        // 'trait_dirs' => [], // TODO: Add PRO trait directories
-        // 'file' => '',   // TODO: Add PRO file
-        // 'class' => '',  // TODO: Add PRO class
     ],
     'deensimcpro-post-marquee' => [
         'cat'    => 'general',
@@ -232,9 +217,6 @@ return [
         'is_pro' => true,
         'demo'   => 'https://marqueeaddons.com/post-marquee/',
         'pro_url' => 'https://marqueeaddons.com/pricing/',
-        // 'trait_dirs' => [], // TODO: Add PRO trait directories
-        // 'file' => '',   // TODO: Add PRO file
-        // 'class' => '',  // TODO: Add PRO class
     ],
     'deensimcpro-product-category-marquee' => [
         'cat'    => 'woocommerce',
@@ -243,9 +225,6 @@ return [
         'is_pro' => true,
         'demo'   => 'https://marqueeaddons.com/product-marquee/',
         'pro_url' => 'https://marqueeaddons.com/pricing/',
-        // 'trait_dirs' => [], // TODO: Add PRO trait directories
-        // 'file' => '',   // TODO: Add PRO file
-        // 'class' => '',  // TODO: Add PRO class
     ],
     'deensimcpro-product-marquee' => [
         'cat'    => 'woocommerce',
@@ -254,9 +233,6 @@ return [
         'is_pro' => true,
         'demo'   => 'https://marqueeaddons.com/product-marquee/',
         'pro_url' => 'https://marqueeaddons.com/pricing/',
-        // 'trait_dirs' => [], // TODO: Add PRO trait directories
-        // 'file' => '',   // TODO: Add PRO file
-        // 'class' => '',  // TODO: Add PRO class
     ],
     'deensimcpro-sticky-cards' => [
         'cat'    => 'general',
@@ -265,9 +241,6 @@ return [
         'is_pro' => true,
         'demo'   => 'https://marqueeaddons.com/sticky-cards/',
         'pro_url' => 'https://marqueeaddons.com/pricing/',
-        // 'trait_dirs' => [], // TODO: Add PRO trait directories
-        // 'file' => '',   // TODO: Add PRO file
-        // 'class' => '',  // TODO: Add PRO class
     ],
     'deensimc-testimonial-pro' => [
         'cat'    => 'general',
@@ -276,9 +249,6 @@ return [
         'is_pro' => true,
         'demo'   => 'https://marqueeaddons.com/testimonial-marquee/',
         'pro_url' => 'https://marqueeaddons.com/pricing/',
-        // 'trait_dirs' => [], // TODO: Add PRO trait directories
-        // 'file' => '',   // TODO: Add PRO file
-        // 'class' => '',  // TODO: Add PRO class
     ],
     'deensimc-smooth-text-pro' => [
         'cat'    => 'general',
@@ -287,9 +257,6 @@ return [
         'is_pro' => true,
         'demo'   => 'https://marqueeaddons.com/text-marquee/',
         'pro_url' => 'https://marqueeaddons.com/pricing/',
-        // 'trait_dirs' => [], // TODO: Add PRO trait directories
-        // 'file' => '',   // TODO: Add PRO file
-        // 'class' => '',  // TODO: Add PRO class
     ],
     'deensimcpro-smart-tabs' => [
         'cat'    => 'general',
@@ -298,9 +265,6 @@ return [
         'is_pro' => true,
         'demo'   => 'https://marqueeaddons.com/smart-tabs/',
         'pro_url' => 'https://marqueeaddons.com/pricing/',
-        // 'trait_dirs' => [], // TODO: Add PRO trait directories
-        // 'file' => '',   // TODO: Add PRO file
-        // 'class' => '',  // TODO: Add PRO class
     ],
     'deensimcpro-animated-list' => [
         'cat'    => 'general',
@@ -309,9 +273,6 @@ return [
         'is_pro' => true,
         'demo'   => 'https://marqueeaddons.com/pricing',
         'pro_url' => 'https://marqueeaddons.com/pricing/',
-        // 'trait_dirs' => [], // TODO: Add PRO trait directories
-        // 'file' => '',   // TODO: Add PRO file
-        // 'class' => '',  // TODO: Add PRO class
     ],
     'deensimcpro-bento-grid' => [
         'cat'    => 'general',
@@ -320,9 +281,6 @@ return [
         'is_pro' => true,
         'demo'   => 'https://marqueeaddons.com/pricing',
         'pro_url' => 'https://marqueeaddons.com/pricing/',
-        // 'trait_dirs' => [], // TODO: Add PRO trait directories
-        // 'file' => '',   // TODO: Add PRO file
-        // 'class' => '',  // TODO: Add PRO class
     ],
     'deensimcpro-container-background' => [
         'title'  => __('Container Background', 'marquee-addons-for-elementor'),
@@ -331,9 +289,6 @@ return [
         'demo'   => 'https://marqueeaddons.com/',
         'cat'    => 'extensions',
         'pro_url' => 'https://marqueeaddons.com/pricing/',
-        // 'trait_dirs' => [], // TODO: Add trait directories
-        // 'file' => '',   // TODO: Add file
-        // 'class' => '',  // TODO: Add class
     ],
     'deensimcpro-heading-effect' => [
         'title'  => __('Heading Effect', 'marquee-addons-for-elementor'),
@@ -342,9 +297,6 @@ return [
         'demo'   => 'https://marqueeaddons.com/',
         'cat'    => 'extensions',
         'pro_url' => 'https://marqueeaddons.com/pricing/',
-        // 'trait_dirs' => [], // TODO: Add trait directories
-        // 'file' => '',   // TODO: Add file
-        // 'class' => '',  // TODO: Add class
     ],
     'deensimcpro-image-rotation' => [
         'title'  => __('Image Rotation', 'marquee-addons-for-elementor'),
@@ -353,8 +305,5 @@ return [
         'demo'   => 'https://marqueeaddons.com/',
         'cat'    => 'extensions',
         'pro_url' => 'https://marqueeaddons.com/pricing/',
-        // 'trait_dirs' => [], // TODO: Add trait directories
-        // 'file' => '',   // TODO: Add file
-        // 'class' => '',  // TODO: Add class
     ],
 ];
