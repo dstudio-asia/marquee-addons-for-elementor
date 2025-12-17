@@ -16,16 +16,16 @@ class Deensimc_Stacked_Slider extends Widget_Base
 {
 	use Deensimc_Utils;
 	use Deensimc_Promotional_Banner;
-	use Stackedslider_Style_Title_Controls;
-	use Stackedslider_Style_Description_Controls;
-	use Stackedslider_Style_Color_Controls;
-	use Stackedslider_Style_Button_Controls;
-	use Stackedslider_Contents_Primary;
-	use Stackedslider_Contents_Advance;
-	use Stackedslider_Style_Box;
-	use Stackedslider_Style_Contents;
-	use Stackedslider_Style_Image;
-	use Stackedslider_Style_Dots;
+	use Deensimc_Stackedslider_Style_Title_Controls;
+	use Deensimc_Stackedslider_Style_Description_Controls;
+	use Deensimc_Stackedslider_Style_Color_Controls;
+	use Deensimc_Stackedslider_Style_Button_Controls;
+	use Deensimc_Stackedslider_Contents_Primary;
+	use Deensimc_Stackedslider_Contents_Advance;
+	use Deensimc_Stackedslider_Style_Box;
+	use Deensimc_Stackedslider_Style_Contents;
+	use Deensimc_Stackedslider_Style_Image;
+	use Deensimc_Stackedslider_Style_Dots;
 
 	public function get_style_depends()
 	{

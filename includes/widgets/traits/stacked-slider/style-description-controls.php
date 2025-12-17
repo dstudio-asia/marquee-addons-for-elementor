@@ -1,6 +1,6 @@
 <?php
 
-if ( ! defined( 'ABSPATH' ) ) {
+if (! defined('ABSPATH')) {
 	exit;
 }
 
@@ -9,20 +9,21 @@ use \Elementor\Controls_Manager;
 use \Elementor\Group_Control_Typography;
 use \Elementor\Group_Control_Text_Stroke;
 
-trait Stackedslider_Style_Description_Controls {
-    protected function style_description_controls() 
-    {
-        $this->add_control(
+trait Deensimc_Stackedslider_Style_Description_Controls
+{
+	protected function style_description_controls()
+	{
+		$this->add_control(
 			'deensimc_content_description_heading_style',
 			[
-				'label' => esc_html__( 'Descripton', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__('Descripton', 'marquee-addons-for-elementor'),
 				'type' =>  Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
 		);
 
 		$this->add_group_control(
-			 Group_Control_Typography::get_type(),
+			Group_Control_Typography::get_type(),
 			[
 				'name' => 'deensimc_content_description_typography_style',
 				'selector' => '{{WRAPPER}} .deensimc-content-description',
@@ -30,7 +31,7 @@ trait Stackedslider_Style_Description_Controls {
 		);
 
 		$this->add_group_control(
-			 Group_Control_Text_Stroke::get_type(),
+			Group_Control_Text_Stroke::get_type(),
 			[
 				'name' => 'deensimc_content_description_stroke',
 				'selector' => '{{WRAPPER}} .deensimc-content-description',
@@ -40,9 +41,9 @@ trait Stackedslider_Style_Description_Controls {
 		$this->add_responsive_control(
 			'deensimc_description_spacing',
 			[
-				'label' => esc_html__( 'Spacing', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__('Spacing', 'marquee-addons-for-elementor'),
 				'type' =>  Controls_Manager::SLIDER,
-				'size_units' => [ 'px', 'em', 'rem', 'custom' ],
+				'size_units' => ['px', 'em', 'rem', 'custom'],
 				'range' => [
 					'px' => [
 						'min' => 0,
@@ -59,5 +60,5 @@ trait Stackedslider_Style_Description_Controls {
 				],
 			]
 		);
-    }
+	}
 }

@@ -1,6 +1,6 @@
 <?php
 
-if ( ! defined( 'ABSPATH' ) ) {
+if (! defined('ABSPATH')) {
 	exit;
 }
 
@@ -8,13 +8,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 use \Elementor\Controls_Manager;
 
 
-trait Stackedslider_Style_Image {
-    protected function style_image() 
-    {
-        $this->start_controls_section(
+trait Deensimc_Stackedslider_Style_Image
+{
+	protected function style_image()
+	{
+		$this->start_controls_section(
 			'deensimc_image_style_section',
 			[
-				'label' => esc_html__( 'Image', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__('Image', 'marquee-addons-for-elementor'),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -22,19 +23,19 @@ trait Stackedslider_Style_Image {
 		$this->add_responsive_control(
 			'deensimc_image_alignment_control',
 			[
-				'label' => esc_html__( 'Alignment', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__('Alignment', 'marquee-addons-for-elementor'),
 				'type' =>  Controls_Manager::CHOOSE,
 				'options' => [
 					'auto 0 0 0' => [
-						'title' => esc_html__( 'Left', 'marquee-addons-for-elementor' ),
+						'title' => esc_html__('Left', 'marquee-addons-for-elementor'),
 						'icon' => 'eicon-text-align-left',
 					],
 					'0 auto' => [
-						'title' => esc_html__( 'Center', 'marquee-addons-for-elementor' ),
+						'title' => esc_html__('Center', 'marquee-addons-for-elementor'),
 						'icon' => 'eicon-text-align-center',
 					],
 					'0 0 0 auto' => [
-						'title' => esc_html__( 'Right', 'marquee-addons-for-elementor' ),
+						'title' => esc_html__('Right', 'marquee-addons-for-elementor'),
 						'icon' => 'eicon-text-align-right',
 					],
 				],
@@ -49,9 +50,9 @@ trait Stackedslider_Style_Image {
 		$this->add_responsive_control(
 			'deensimc_image_width',
 			[
-				'label' => esc_html__( 'Width', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__('Width', 'marquee-addons-for-elementor'),
 				'type' =>  Controls_Manager::SLIDER,
-				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ], 
+				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
 				'range' => [
 					'px' => [
 						'min' => 0,
@@ -72,13 +73,13 @@ trait Stackedslider_Style_Image {
 				],
 			]
 		);
-		
+
 		$this->add_responsive_control(
 			'deensimc_image_padding',
 			[
-				'label' => esc_html__( 'Padding', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__('Padding', 'marquee-addons-for-elementor'),
 				'type' =>  Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
 				'default' => [
 					'top' => 70,
 					'right' => 70,
@@ -94,5 +95,5 @@ trait Stackedslider_Style_Image {
 		);
 
 		$this->end_controls_section();
-    }
+	}
 }
