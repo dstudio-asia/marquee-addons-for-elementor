@@ -100,7 +100,10 @@ class Widgets_Manager
             'deensimc-image-accordion' => [
                 'traits' => [
                     '/includes/widgets/traits/image-accordion/content.php',
-                    '/includes/widgets/traits/image-accordion/style.php',
+                    '/includes/widgets/traits/image-accordion/trait-style-image-controls.php',
+                    '/includes/widgets/traits/image-accordion/trait-style-title-controls.php',
+                    '/includes/widgets/traits/image-accordion/trait-style-description-controls.php',
+                    '/includes/widgets/traits/image-accordion/trait-style-cta-controls.php',
                 ],
                 'file' => '/includes/widgets/class-deensimc-image-accordion.php',
                 'class' => '\Deensimc_Image_Accordion',
