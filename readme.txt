@@ -62,6 +62,9 @@ With Marquee Button, create an interactive button with auto-scrolling text that 
 
 This is a mobile-friendly Interactive search widget with expandable input and popup dropdown results. Designed to deliver fast, interactive search experiences inside Elementor.
 
+### Image Hotspot:
+
+is an Elementor widget that lets you turn any image into an interactive experience. You can add clickable hotspots to an image, and each hotspot displays helpful text on hover or click. This makes it easy to highlight product features, explain objects within an image, or showcase important details in a clear and engaging way.
 
 ## PRO WIDGETS – UNLOCK ADVANCED CAPABILITIES:
 
