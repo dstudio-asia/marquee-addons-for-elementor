@@ -44,36 +44,36 @@ if (!defined('ABSPATH')) exit;
                         </div>
                     </div>
 
-                    <?php foreach ($categories as $cat_key => $cat_info) :
-                        $category_widgets = $this->get_widgets_by_category($cat_key);
-                        if (empty($category_widgets)) continue;
+                    <?php foreach ($categories as $deensimc_cat_key => $deensimc_cat_info) :
+                        $deensimc_category_widgets = $this->get_widgets_by_category($deensimc_cat_key);
+                        if (empty($deensimc_category_widgets)) continue;
                     ?>
                         <div class="deensimc-category-section">
                             <h3 class="deensimc-category-title">
-                                <?php echo esc_html($cat_info['title']); ?>
+                                <?php echo esc_html($deensimc_cat_info['title']); ?>
                             </h3>
 
                             <div class="deensimc-widgets-grid">
-                                <?php foreach ($category_widgets as $key => $widget) :
-                                    $is_pro_locked = !empty($widget['is_pro']) && !$this->is_pro_active;
-                                    $is_checked = $this->is_widget_enabled($key);
-                                    $pro_url = isset($widget['pro_url']) ? $widget['pro_url'] : '';
+                                <?php foreach ($deensimc_category_widgets as $deensimc_cat_widget_key => $deensimc_widget) :
+                                    $deensimc_is_pro_locked = !empty($deensimc_widget['is_pro']) && !$this->is_pro_active;
+                                    $deensimc_is_checked = $this->is_widget_enabled($deensimc_cat_widget_key);
+                                    $deensimc_pro_url = isset($deensimc_widget['pro_url']) ? $deensimc_widget['pro_url'] : '';
                                 ?>
-                                    <div class="deensimc-widget-card <?php echo $is_pro_locked ? 'deensimc-pro-locked' : ''; ?>" data-pro-url="<?php echo esc_attr($pro_url); ?>" data-is-locked="<?php echo $is_pro_locked ? '1' : '0'; ?>">
-                                        <?php if (!empty($widget['is_pro'])) : ?>
+                                    <div class="deensimc-widget-card <?php echo $deensimc_is_pro_locked ? 'deensimc-pro-locked' : ''; ?>" data-pro-url="<?php echo esc_attr($deensimc_pro_url); ?>" data-is-locked="<?php echo $deensimc_is_pro_locked ? '1' : '0'; ?>">
+                                        <?php if (!empty($deensimc_widget['is_pro'])) : ?>
                                             <span class="deensimc-pro-badge"><?php echo esc_html__('PRO', 'marquee-addons-for-elementor'); ?></span>
                                         <?php endif; ?>
                                         <div class="deensimc-widget-header">
-                                            <h3><?php echo esc_html($widget['title']); ?></h3>
+                                            <h3><?php echo esc_html($deensimc_widget['title']); ?></h3>
                                         </div>
                                         <div class="deensimc-toggle-demo-wrapper">
                                             <div class="deensimc-widget-toggle">
-                                                <label class="deensimc-switch <?php echo $is_pro_locked ? 'disabled' : ''; ?>">
-                                                    <input type="checkbox" name="marquee_addons_widgets[<?php echo esc_attr($key); ?>]" <?php checked($is_checked, true); ?> <?php disabled($is_pro_locked); ?> value="on" data-is-pro="<?php echo !empty($widget['is_pro']) ? '1' : '0'; ?>">
+                                                <label class="deensimc-switch <?php echo $deensimc_is_pro_locked ? 'disabled' : ''; ?>">
+                                                    <input type="checkbox" name="marquee_addons_widgets[<?php echo esc_attr($deensimc_cat_widget_key); ?>]" <?php checked($deensimc_is_checked, true); ?> <?php disabled($deensimc_is_pro_locked); ?> value="on" data-is-pro="<?php echo !empty($deensimc_widget['is_pro']) ? '1' : '0'; ?>">
                                                     <span class="slider"></span>
                                                 </label>
                                             </div>
-                                            <a href="<?php echo esc_url($widget['demo']); ?>" class="deensimc-see-demo-btn" target="_blank" rel="nofollow">
+                                            <a href="<?php echo esc_url($deensimc_widget['demo']); ?>" class="deensimc-see-demo-btn" target="_blank" rel="nofollow">
                                                 <?php echo esc_html__('Demo', 'marquee-addons-for-elementor'); ?>
                                             </a>
                                         </div>
