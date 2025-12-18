@@ -115,6 +115,12 @@ trait Deensimcpro_Promo
                     'icon'       => 'eicon-gallery-grid eicon-deensimc-pro',
                     'categories' => '["marquee_addons_pro_promo"]',
                 ],
+                [
+                    'name'       => 'deensimcpro-text-reveal',
+                    'title'      => __('Text Reveal', 'marquee-addons-for-elementor'),
+                    'icon'       => 'eicon-animation-text eicon-deensimc-pro',
+                    'categories' => '["marquee_addons_pro_promo"]',
+                ],
             ]
         );
 
