@@ -8,7 +8,7 @@ final class Marquee
 {
 	use Deensimcpro_Promo;
 
-	const VERSION = '3.8.5';
+	const VERSION = '3.9.0';
 	const MINIMUM_ELEMENTOR_VERSION = '3.5.0';
 	const MINIMUM_PHP_VERSION = '7.4';
 
@@ -261,6 +261,7 @@ final class Marquee
 			'deensimc-swiper-style' => 'css/widgets/stacked.css',
 			'deensimc-accordion-style' => 'css/widgets/accordion.css',
 			'deensimc-search-style' => 'css/widgets/search.css',
+			'deensimc-image-hotspot-style' => 'css/widgets/image-hotspot.css',
 		];
 
 		foreach ($styles as $handle => $path) {
@@ -305,6 +306,7 @@ final class Marquee
 			'deensimc-image-accordion-script' => 'js/image-accordion.js',
 			'deensimc-stacked-slider-script' => 'js/stacked-slider.js',
 			'deensimc-search-script' => 'js/search.js',
+			'deensimc-image-hotspot-script' => 'js/image-hotspot.js',
 		];
 
 		foreach ($scripts as $handle => $path) {
