@@ -249,7 +249,7 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 == Changelog ==
 
 = 3.9.0 - 2025-12-18 =
-- New: Image Hotspot
+- New: Added Image Hotspot Widget
 
 = 3.8.5 - 2025-12-16 =
 - New: Added box shadow in Image Marquee
