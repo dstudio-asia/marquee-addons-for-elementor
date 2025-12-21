@@ -249,7 +249,7 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 == Changelog ==
 
 = 3.9.1 - 2025-12-21 =
-- Tweak: Renamed “CTA” to “Button” in the Image Accordion widget for clearer labeling.
+- Tweak: Renamed “CTA” to “Button” in the Image Accordion widget for clearer labeling
 
 = 3.9.0 - 2025-12-18 =
 - New: Added Image Hotspot Widget
