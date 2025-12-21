@@ -16,7 +16,7 @@ trait Deensimc_ImageAccordion_Cta_Style_Controls
         $this->start_controls_section(
             'deensimc_image_acc_cta_section_style',
             [
-                'label' => esc_html__('CTA Style', 'marquee-addons-for-elementor'),
+                'label' => esc_html__('Button', 'marquee-addons-for-elementor'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
