@@ -57,7 +57,7 @@ trait Deensimc_ImageAccordion_Contents
         $image_repeater->add_control(
             'deensimc_image_acc_cta_switch',
             [
-                'label'        => esc_html__('CTA', 'marquee-addons-for-elementor'),
+                'label'        => esc_html__('Button', 'marquee-addons-for-elementor'),
                 'type'         => Controls_Manager::SWITCHER,
                 'label_on'     => esc_html__('Show', 'marquee-addons-for-elementor'),
                 'label_off'    => esc_html__('Hide', 'marquee-addons-for-elementor'),
@@ -70,7 +70,7 @@ trait Deensimc_ImageAccordion_Contents
         $image_repeater->add_control(
             'deensimc_image_acc_cta_text',
             [
-                'label'     => esc_html__('CTA Text', 'marquee-addons-for-elementor'),
+                'label'     => esc_html__('Button Text', 'marquee-addons-for-elementor'),
                 'type'      => Controls_Manager::TEXT,
                 'default'   => esc_html__('Learn More', 'marquee-addons-for-elementor'),
                 'condition' => [
@@ -82,7 +82,7 @@ trait Deensimc_ImageAccordion_Contents
         $image_repeater->add_control(
             'deensimc_image_acc_cta_url',
             [
-                'label'       => esc_html__('CTA URL', 'marquee-addons-for-elementor'),
+                'label'       => esc_html__('Button URL', 'marquee-addons-for-elementor'),
                 'type'        => Controls_Manager::URL,
                 'placeholder' => esc_html__('https://your-link.com', 'marquee-addons-for-elementor'),
                 'condition'   => [

@@ -14,7 +14,7 @@ trait Deensimc_ImageAccordion_Description_Style_Controls
         $this->start_controls_section(
             'deensimc_images_description_section_style',
             [
-                'label' => esc_html__('Image Description', 'marquee-addons-for-elementor'),
+                'label' => esc_html__('Description', 'marquee-addons-for-elementor'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );

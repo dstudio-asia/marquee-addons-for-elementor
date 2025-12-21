@@ -14,7 +14,7 @@ trait Deensimc_ImageAccordion_Title_Style_Controls
         $this->start_controls_section(
             'deensimc_images_title_section_style',
             [
-                'label' => esc_html__('Image Title', 'marquee-addons-for-elementor'),
+                'label' => esc_html__('Title', 'marquee-addons-for-elementor'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
