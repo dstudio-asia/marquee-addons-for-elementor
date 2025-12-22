@@ -1,6 +1,18 @@
 # Changelog
 
 
+## [3.9.2](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.9.0...v3.9.2) (2025-12-22)
+
+
+### Bug Fixes
+
+* improve title alignment control labels ([de4ce36](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/de4ce3694efe35b6075443fbb9b85293ed72410e))
+* refactor changelog ([1986f20](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/1986f2049990a1091e0a8016a5ecea0758db7716))
+* update alignment labels for image accordion ([d71afa9](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/d71afa92e42b9d72741bbec14618f8fa3e9402ee))
+* update alignment labels for image accordion ([5f0ea34](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/5f0ea348e8cb917297ccb5ec942823a9e5d41d68))
+* version upadate ([0336891](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/0336891177672240b37f6a5abf0e2273819e6565))
+* version upadate ([115d5e4](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/115d5e439c501d4a704cdef85619203447c86493))
+
 ## [3.8.5](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.8.4...v3.8.5) (2025-12-16)
 
 
