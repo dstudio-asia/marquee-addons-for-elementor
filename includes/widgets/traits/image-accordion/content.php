@@ -137,11 +137,19 @@ trait Deensimc_ImageAccordion_Contents
                 'selectors' => [],
             ]
         );
+        $this->add_control(
+            'deensimc_title_alignment_heading',
+            [
+                'label' => esc_html__('Title Alignment', 'marquee-addons-for-elementor'),
+                'type' => Controls_Manager::HEADING,
+                'separator' => 'before',
+            ]
+        );
 
         $this->add_responsive_control(
             'deensimc_bg_image_title_horizontal_align',
             [
-                'label' => esc_html__('Title Horizontal Alignment', 'marquee-addons-for-elementor'),
+                'label' => esc_html__('Horizontal', 'marquee-addons-for-elementor'),
                 'type' =>  Controls_Manager::CHOOSE,
                 'options' => [
                     'start' => [
@@ -168,7 +176,7 @@ trait Deensimc_ImageAccordion_Contents
         $this->add_responsive_control(
             'deensimc_bg_image_title_vertical_align',
             [
-                'label' => esc_html__('Title Vertical Alignment', 'marquee-addons-for-elementor'),
+                'label' => esc_html__('Vertical', 'marquee-addons-for-elementor'),
                 'type' =>  Controls_Manager::CHOOSE,
                 'options' => [
                     'start' => [
