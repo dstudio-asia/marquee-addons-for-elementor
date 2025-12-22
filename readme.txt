@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: elementor, text marquee, image marquee, video marquee, Product slider
 Requires at least: 5.8
 Tested up to: 6.9
-Stable tag: 3.9.1
+Stable tag: 3.9.2
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -248,8 +248,11 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 
 == Changelog ==
 
+= 3.9.2 - 2025-12-22 =
+- Tweak: Improved labeling for title alignment controls in the Image Accordion widget
+
 = 3.9.1 - 2025-12-21 =
-- Tweak: Renamed “CTA” to “Button” in the Image Accordion widget for clearer labeling.
+- Tweak: Renamed “CTA” to “Button” in the Image Accordion widget for clearer labeling
 
 = 3.9.0 - 2025-12-18 =
 - New: Added Image Hotspot Widget
