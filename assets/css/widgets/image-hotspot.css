@@ -198,7 +198,7 @@
   transform-origin: center center;
   transition-duration: var(--tooltip-transition-duration, 0.5s);
   transition-property: transform, opacity;
-  white-space: var(--white-space, nowrap);
+  white-space: var(--white-space, normal);
 }
 .deensimc-image-hotspot__tooltip p:last-of-type {
   margin: 0;
