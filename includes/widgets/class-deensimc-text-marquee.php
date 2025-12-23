@@ -94,14 +94,27 @@ class Deensimc_Text_Marquee extends Widget_Base
 		foreach ($texts as $text) {
 			$is_dup = !empty($text['_is_dup']);
 
+			$url = $text['deensimc_repeater_text_link']['url'] ?? '';
+			$is_external = $text['deensimc_repeater_text_link']['is_external'];
+			$nofollow = $text['deensimc_repeater_text_link']['nofollow'];
+
+
 ?>
 			<div class="deensimc-text-wrapper" aria-hidden="<?php echo esc_attr($is_dup ? 'true' : 'false') ?>">
 				<?php Icons_Manager::render_icon($text['deensimc_repeater_text_icon'], ['aria-hidden' => 'true']); ?>
-				<p class="deensimc-scroll-text">
-					<?php
-					echo esc_html($text['deensimc_repeater_text']);
-					?>
-				</p>
+				<?php if (!empty($url)) : ?>
+					<a
+						class="deensimc-scroll-text"
+						href="<?php echo esc_url($url); ?>"
+						<?php echo $is_external ? 'target="_blank"' : ''; ?>
+						<?php echo $nofollow ? 'rel="nofollow"' : ''; ?>>
+						<?php echo esc_html($text['deensimc_repeater_text']); ?>
+					</a>
+				<?php else : ?>
+					<p class="deensimc-scroll-text">
+						<?php echo esc_html($text['deensimc_repeater_text']); ?>
+					</p>
+				<?php endif; ?>
 			</div>
 		<?php
 		}
