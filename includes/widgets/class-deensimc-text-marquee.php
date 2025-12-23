@@ -76,7 +76,7 @@ class Deensimc_Text_Marquee extends Widget_Base
 	 *
 	 * @param array $settings Widget settings containing the text and icon data.
 	 */
-	protected function render_marquee_texts($texts, $is_vertical)
+	protected function render_marquee_texts($texts, $is_vertical, $track_id)
 	{
 		$required = $is_vertical ? 12 : 6;
 		$count    = count($texts);
@@ -91,17 +91,32 @@ class Deensimc_Text_Marquee extends Widget_Base
 				}
 			}
 		}
-		foreach ($texts as $text) {
-			$is_dup = !empty($text['_is_dup']);
 
+		foreach ($texts as $index => $text) {
+
+			$is_dup = ! empty($text['_is_dup']);
+			$link   = $text['deensimc_repeater_text_link'] ?? [];
+
+			// Unique key per repeater item
+			$link_key = 'deensimc_text_link_' . $track_id . '_' . $index;
+
+			if (! empty($link['url'])) {
+				$this->add_link_attributes($link_key, $link);
+			}
 ?>
 			<div class="deensimc-text-wrapper" aria-hidden="<?php echo esc_attr($is_dup ? 'true' : 'false') ?>">
 				<?php Icons_Manager::render_icon($text['deensimc_repeater_text_icon'], ['aria-hidden' => 'true']); ?>
-				<p class="deensimc-scroll-text">
-					<?php
-					echo esc_html($text['deensimc_repeater_text']);
-					?>
-				</p>
+				<?php if (!empty($link['url'])) : ?>
+					<a
+						class="deensimc-scroll-text"
+						<?php $this->print_render_attribute_string($link_key); ?>>
+						<?php echo esc_html($text['deensimc_repeater_text']); ?>
+					</a>
+				<?php else : ?>
+					<p class="deensimc-scroll-text">
+						<?php echo esc_html($text['deensimc_repeater_text']); ?>
+					</p>
+				<?php endif; ?>
 			</div>
 		<?php
 		}
@@ -157,10 +172,10 @@ class Deensimc_Text_Marquee extends Widget_Base
 			<?php echo isset($speed) && $speed ? 'style="' . esc_attr($speed) . '"' : ''; ?>>
 			<div class="deensimc-marquee-track-wrapper">
 				<div class="deensimc-marquee-track">
-					<?php $this->render_marquee_texts($texts, $is_vertical) ?>
+					<?php $this->render_marquee_texts($texts, $is_vertical, 'track-1') ?>
 				</div>
 				<div aria-hidden="true" class="deensimc-marquee-track">
-					<?php $this->render_marquee_texts($texts, $is_vertical) ?>
+					<?php $this->render_marquee_texts($texts, $is_vertical, 'track-2') ?>
 				</div>
 			</div>
 		</div>

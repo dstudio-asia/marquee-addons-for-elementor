@@ -48,6 +48,22 @@ trait Deensimc_Textmarquee_Content_Text_Repeater
 			]
 		);
 
+		$deensimc_text_repeater->add_control(
+			'deensimc_repeater_text_link',
+			[
+				'label' => esc_html__('Link', 'marquee-addons-for-elementor'),
+				'type' => Controls_Manager::URL,
+				'placeholder' => esc_html__('https://your-link.com', 'marquee-addons-for-elementor'),
+				'options' => ['url', 'is_external', 'nofollow'],
+				'default'       => [
+					'url'         => '',
+					'is_external' => false,
+					'nofollow'    => false,
+				],
+				'label_block' => true,
+			]
+		);
+
 		$this->add_control(
 			'deensimc_repeater_text_main',
 			[
