@@ -76,7 +76,7 @@ class Deensimc_Text_Marquee extends Widget_Base
 	 *
 	 * @param array $settings Widget settings containing the text and icon data.
 	 */
-	protected function render_marquee_texts($texts, $is_vertical)
+	protected function render_marquee_texts($texts, $is_vertical, $track_id)
 	{
 		$required = $is_vertical ? 12 : 6;
 		$count    = count($texts);
@@ -98,7 +98,7 @@ class Deensimc_Text_Marquee extends Widget_Base
 			$link   = $text['deensimc_repeater_text_link'] ?? [];
 
 			// Unique key per repeater item
-			$link_key = 'deensimc_text_link_' . $index;
+			$link_key = 'deensimc_text_link_' . $track_id . '_' . $index;
 
 			if (! empty($link['url'])) {
 				$this->add_link_attributes($link_key, $link);
@@ -172,10 +172,10 @@ class Deensimc_Text_Marquee extends Widget_Base
 			<?php echo isset($speed) && $speed ? 'style="' . esc_attr($speed) . '"' : ''; ?>>
 			<div class="deensimc-marquee-track-wrapper">
 				<div class="deensimc-marquee-track">
-					<?php $this->render_marquee_texts($texts, $is_vertical) ?>
+					<?php $this->render_marquee_texts($texts, $is_vertical, 'track-1') ?>
 				</div>
 				<div aria-hidden="true" class="deensimc-marquee-track">
-					<?php $this->render_marquee_texts($texts, $is_vertical) ?>
+					<?php $this->render_marquee_texts($texts, $is_vertical, 'track-2') ?>
 				</div>
 			</div>
 		</div>
