@@ -91,23 +91,25 @@ class Deensimc_Text_Marquee extends Widget_Base
 				}
 			}
 		}
-		foreach ($texts as $text) {
-			$is_dup = !empty($text['_is_dup']);
 
-			$url = $text['deensimc_repeater_text_link']['url'] ?? '';
-			$is_external = $text['deensimc_repeater_text_link']['is_external'];
-			$nofollow = $text['deensimc_repeater_text_link']['nofollow'];
+		foreach ($texts as $index => $text) {
 
+			$is_dup = ! empty($text['_is_dup']);
+			$link   = $text['deensimc_repeater_text_link'] ?? [];
 
+			// Unique key per repeater item
+			$link_key = 'deensimc_text_link_' . $index;
+
+			if (! empty($link['url'])) {
+				$this->add_link_attributes($link_key, $link);
+			}
 ?>
 			<div class="deensimc-text-wrapper" aria-hidden="<?php echo esc_attr($is_dup ? 'true' : 'false') ?>">
 				<?php Icons_Manager::render_icon($text['deensimc_repeater_text_icon'], ['aria-hidden' => 'true']); ?>
-				<?php if (!empty($url)) : ?>
+				<?php if (!empty($link['url'])) : ?>
 					<a
 						class="deensimc-scroll-text"
-						href="<?php echo esc_url($url); ?>"
-						<?php echo $is_external ? 'target="_blank"' : ''; ?>
-						<?php echo $nofollow ? 'rel="nofollow"' : ''; ?>>
+						<?php $this->print_render_attribute_string($link_key); ?>>
 						<?php echo esc_html($text['deensimc_repeater_text']); ?>
 					</a>
 				<?php else : ?>

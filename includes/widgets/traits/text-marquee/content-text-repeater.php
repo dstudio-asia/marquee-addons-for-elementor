@@ -54,12 +54,13 @@ trait Deensimc_Textmarquee_Content_Text_Repeater
 				'label' => esc_html__('Link', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::URL,
 				'placeholder' => esc_html__('https://your-link.com', 'marquee-addons-for-elementor'),
-				'show_external' => true,
+				'options' => ['url', 'is_external', 'nofollow'],
 				'default'       => [
 					'url'         => '',
 					'is_external' => false,
 					'nofollow'    => false,
 				],
+				'label_block' => true,
 			]
 		);
 
