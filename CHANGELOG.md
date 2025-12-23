@@ -1,6 +1,24 @@
 # Changelog
 
 
+## [3.9.3](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.2...v3.9.3) (2025-12-23)
+
+
+### Features
+
+* link option add in text marquee items ([6d92592](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/6d92592a590ca65398414be9c1f1cdeb7c2a0834))
+* link option add in text marquee items ([aea517a](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/aea517a90bbec0571f2e23ce92072b0cbec3f367))
+
+
+### Bug Fixes
+
+* allow multiline text in image hotspot tooltip ([772e7a3](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/772e7a3f87a562f8e811b2dabe0b3b06bfb435d6))
+* ensure unique link attributes across marquee tracks ([6b34795](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/6b34795f0c0387f3d667146cd3bfe69e8e204e84))
+* ensure unique link attributes across marquee tracks ([ffe0496](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/ffe0496c023a9faa70b23d36b603c1bf79ff28b9))
+* update version ([54125b9](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/54125b97d874d16992306f1be424ad72d59ee91b))
+* update version ([2961bf6](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/2961bf66b75cefa74bda62742190f229e2f246a2))
+* use elementor link attributes for text marquee links ([7e6e9a3](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/7e6e9a37450285d5cbf3c57b0fa253be0e868dec))
+
 ## [3.9.2](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.9.0...v3.9.2) (2025-12-22)
 
 
