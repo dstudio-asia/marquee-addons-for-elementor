@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: elementor, text marquee, image marquee, video marquee, Product slider
 Requires at least: 5.8
 Tested up to: 6.9
-Stable tag: 3.9.3
+Stable tag: 3.9.4
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -20,11 +20,11 @@ MarqueeAddons makes it easy to add smooth marquee effects for text, button, imag
  
 ### [Image Marquee](https://marqueeaddons.com/image-marquee/):
  
-Lets you add smooth scrolling marquee effects for images, featuring lightbox, image links, lazy loading, adjustable animation speed, and customizable scrolling direction. It provides an easy and effective way to showcase your images loop on your website.
+Lets you add smooth scrolling marquee effects for images, featuring lightbox, image links, lazy loading, box shadow, adjustable animation speed, and customizable scrolling direction. It provides an easy and effective way to showcase your images loop on your website.
 
 ### [Text marquee](https://marqueeaddons.com/text-marquee/):
 
-Allows you to display scrolling marquee texts with icons and repeat the content as needed. You can set the scrolling direction vertical or horizontally, giving you flexibility to match the layout and flow of your website’s design.
+Text Marquee allows you to display scrolling marquee text with icons and repeat the content as needed. You can set the scrolling direction either vertically or horizontally, giving you full flexibility to match your website’s layout and visual flow. The text is also fully linkable, allowing you to turn any scrolling message into a clickable call-to-action that guides users to specific pages or external links.
 
 ### [Testimonial Marquee](https://marqueeaddons.com/testimonial-marquee/):
 
@@ -62,9 +62,9 @@ With Marquee Button, create an interactive button with auto-scrolling text that 
 
 This is a mobile-friendly Interactive search widget with expandable input and popup dropdown results. Designed to deliver fast, interactive search experiences inside Elementor.
 
-### Image Hotspot:
+### [Image Hotspot](https://marqueeaddons.com/image-hotspot/):
 
-is an Elementor widget that lets you turn any image into an interactive experience. You can add clickable hotspots to an image, and each hotspot displays helpful text on hover or click. This makes it easy to highlight product features, explain objects within an image, or showcase important details in a clear and engaging way.
+Add clickable hotspots to any image, with each hotspot showing helpful text on hover or click. This makes it easy to highlight product features, explain objects within an image, or showcase important details in a clear and engaging way.
 
 ## PRO WIDGETS – UNLOCK ADVANCED CAPABILITIES:
 
@@ -79,9 +79,7 @@ You have full control over styling so every card can be customized to match your
 
 ### [Media Marquee](https://marqueeaddons.com/media-marquee/) (Pro):
 
-This widget gives you a flexible way to showcase media in motion. You can build an infinite loop of images, each linkable, lightbox-ready, and customizable for uses like logos, book covers, or team photos. You can also create a video carousel with continuous playback and lightbox support, designed to run smoothly and efficiently.
-
-What makes it stand out is the ability to combine both images and videos in a single strip, so you are never limited to one format. Define aspect ratios, adjust spacing, add overlays, or include play icons for videos. You control the direction, speed, and hover behavior to create a reel that fits your site’s style. If you want an extra layer of interactivity, you can also enable a marquee scroll-trigger animation on this widget.
+Create a smooth, infinite media marquee with images and videos in one continuous carousel. Display logos, photos, or videos with lightbox support, customizable spacing, aspect ratios, overlays, and play icons. Control direction, speed, hover effects, and enable scroll-triggered animation for an engaging, high-performance media carousel.
 
 ### [Post Marquee](https://marqueeaddons.com/post-marquee/) (Pro):
 
@@ -123,13 +121,21 @@ With this elementor widget, you can turn simple image rows into expandable panel
 
 The 3D Marquee is an animated Elementor widget with 3D perspective, smooth scrolling, and smooth column animations, supporting CSS 3D transforms. It provides a 3D marquee effect with a grid, ideal for hero sections, brand walls, and featured work or portfolio. Use the 3D Grid Marquee to display logos, images in a continuous 3D scrolling grid. The smooth 3D movement adds visual energy while staying performant and easy to configure.
 
-### Bento Grid (Pro):
+### [Bento Grid](https://marqueeaddons.com/bento-grid/) (Pro):
 
 Create modern, asymmetric Bento Box layouts in Elementor with complete design freedom. Set custom row and column spans for each item, fine-tune spacing, and build editorial-style sections that stand out from traditional grids. Includes support for skewed grid layouts with title, description, and a header component for a more dynamic design. The perfect Elementor widget to help you design clean, responsive Bento Grids on your Elementor website.
 
 ### Animated List (Pro):
 
 A list widget that animates each item in sequence with adjustable delay, perfect for showcasing notifications or events on Elementor landing pages. Bring lists to life in Elementor with smooth, continuous motion. Ideal for features, steps, or benefits. Control visible items, alignment, speed, and looping with no coding required.
+
+### [Text Reveal](https://marqueeaddons.com/text-reveal/) (Pro):
+
+This Elementor widget fades in text as you scroll down the page, creating a smooth text-reveal effect. It uses subtle animations to make headlines and sentences appear at the right scroll position. You can customize the animation speed, colors, and direction, so your text appears exactly how and when you want.
+
+### [MA Background](https://marqueeaddons.com/ma-background/) (Pro):
+
+Add animated backgrounds to any Elementor container. Choose from unique styles such as moving light beams, flowing aurora effects, interactive background boxes, glowing gradients, and more to make your Elementor website backgrounds interactive and live. Easily control the animation speed, colors, and direction to perfectly match your design.
 
 ### [Elementor Templates](https://marqueeaddons.com/marquee-templates/) (Pro)
 
@@ -160,6 +166,8 @@ With our Marquee Addon for Elementor, you don’t just get widgets - you also ge
 * **Lightbox and Linking (Pro)**:  Open images and videos in a lightbox for a distraction-free view, or link any marquee item to internal pages, external sites, or specific sections. A simple way to add interactivity and guide visitors where you want them to go.
 
 * **Marquee on Scroll Trigger (Pro)**:  Keep motion meaningful by starting the marquee only when it comes into view. This helps performance, reduces distraction, and makes animations feel more natural on scroll.
+
+* **Image Rotation (Pro)**: Adds a smooth rotation effect to the standard Elementor Image widget, allowing your images to rotate in a continuous infinite loop. You can choose clockwise or counter-clockwise rotation to grab visitors’ attention and easily adjust the speed to make the movement as fast or as slow as you want.
 
 * **Custom CSS (Pro)**: Add your own CSS to any marquee for complete design freedom. Fine-tune layouts, animations, and styles beyond the default options to match your site exactly the way you want.
  
@@ -247,6 +255,9 @@ The developers release regular updates to improve features, fix bugs, and ensure
 First, ensure that you've activated the plugin correctly. If the issue persists, try clearing your browser cache or updating your Elementor plugin. If the problem continues, you can reach out to the support team for assistance.
 
 == Changelog ==
+
+= 3.9.4 - 2025-12-25 =
+- New: Added box shadow in Video Marquee.
 
 = 3.9.3 - 2025-12-23 =
 - New: Added URL linking option to the Text Marquee widget.
