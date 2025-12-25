@@ -1,6 +1,23 @@
 # Changelog
 
 
+## [3.9.4](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.3...v3.9.4) (2025-12-25)
+
+
+### Features
+
+* box shadow in video marquee ([957bab5](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/957bab573b4d032828459fc00ceeede7463ba175))
+* box shadow in video marquee ([77c62ee](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/77c62ee0f23820952c03ad0ed32d043e1406646e))
+
+
+### Bug Fixes
+
+* correct namespace for box shadow control in video marquee ([df103fe](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/df103feb3a5dc1a4742ccb500fde38543973652f))
+* spelling ([85d4389](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/85d4389b0a32e8e14e6e89a4df44c2a663db77b7))
+* spelling ([7e66b70](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/7e66b70b08a0f835e83fefc302732dfff82f5bb0))
+* update CSS filter and add box shadow control for video marquee ([0b48243](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/0b48243421d5b5dfcba01b03b4ce66fb3a166027))
+* update CSS filter and add box shadow control for video marquee ([22f5e93](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/22f5e93becb21fe19c05b7a26d37e8ef2bcf1b42))
+
 ## [3.9.3](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.2...v3.9.3) (2025-12-23)
 
 
