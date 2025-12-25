@@ -257,7 +257,7 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 == Changelog ==
 
 = 3.9.4 - 2025-12-25 =
-- New: Added box shadeow in Video Marquee.
+- New: Added box shadow in Video Marquee.
 
 = 3.9.3 - 2025-12-23 =
 - New: Added URL linking option to the Text Marquee widget.
