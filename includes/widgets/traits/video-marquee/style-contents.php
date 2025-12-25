@@ -102,7 +102,7 @@ trait Deensimc_Videomarquee_Style_Contents
 		);
 
 		$this->add_group_control(
-			\Elementor\Group_Control_Box_Shadow::get_type(),
+			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'deensimc_box_shadow',
 				'selector' => '{{WRAPPER}} .deensimc-video-marquee .deensimc-video-item',
