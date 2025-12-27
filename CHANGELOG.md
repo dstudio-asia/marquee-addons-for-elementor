@@ -1,6 +1,14 @@
 # Changelog
 
 
+## [3.9.5](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.4...v3.9.5) (2025-12-27)
+
+
+### Bug Fixes
+
+* update version to 3.9.5 and modify demo links in widget manifest ([d0131c6](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/d0131c65e1a31cdf9ec0313913c5458615581db7))
+* update version to 3.9.5 and modify demo links in widget manifest ([2be2836](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/2be2836bfe381822ae9b3962ca51e5c7f816d271))
+
 ## [3.9.4](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.3...v3.9.4) (2025-12-25)
 
 
