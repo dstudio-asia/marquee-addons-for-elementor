@@ -107,7 +107,7 @@ return [
         'title'  => __('Animated Word Roller', 'marquee-addons-for-elementor'),
         'icon'   => 'deensimc-animated-word-roller-icon',
         'is_pro' => false,
-        'demo'   => 'https://marqueeaddons.com/marquee-demos/animated-word-roller/',
+        'demo'   => 'https://marqueeaddons.com/animated-word-roller/',
         'cat'    => 'general',
         'pro_url' => '',
         'trait_dirs' => [
@@ -146,7 +146,7 @@ return [
         'title'  => __('Search Box', 'marquee-addons-for-elementor'),
         'icon'   => 'deensimc-search-icon',
         'is_pro' => false,
-        'demo'   => '#',
+        'demo'   => 'https://marqueeaddons.com',
         'cat'    => 'general',
         'pro_url' => '',
         'trait_dirs' => [
@@ -159,7 +159,7 @@ return [
         'title'  => __('Image Hotspot', 'marquee-addons-for-elementor'),
         'icon'   => 'eicon-image-hotspot',
         'is_pro' => false,
-        'demo'   => '#',
+        'demo'   => 'https://marqueeaddons.com/image-hotspot/',
         'cat'    => 'general',
         'pro_url' => '',
         'trait_dirs' => [
@@ -207,7 +207,7 @@ return [
         'title'  => __('Media Marquee', 'marquee-addons-for-elementor'),
         'icon'   => 'deensimcpro-media-marquee-icon eicon-deensimc-pro',
         'is_pro' => true,
-        'demo'   => 'https://marqueeaddons.com/pricing',
+        'demo'   => 'https://marqueeaddons.com/media-marquee/',
         'pro_url' => 'https://marqueeaddons.com/pricing/',
     ],
     'deensimcpro-post-marquee' => [
@@ -271,7 +271,7 @@ return [
         'title'  => __('Animated List', 'marquee-addons-for-elementor'),
         'icon'   => 'eicon-post-list eicon-deensimc-pro',
         'is_pro' => true,
-        'demo'   => 'https://marqueeaddons.com/pricing',
+        'demo'   => 'https://marqueeaddons.com',
         'pro_url' => 'https://marqueeaddons.com/pricing/',
     ],
     'deensimcpro-bento-grid' => [
@@ -279,7 +279,7 @@ return [
         'title'  => __('Bento Grid', 'marquee-addons-for-elementor'),
         'icon'   => 'eicon-gallery-grid eicon-deensimc-pro',
         'is_pro' => true,
-        'demo'   => 'https://marqueeaddons.com/pricing',
+        'demo'   => 'https://marqueeaddons.com/bento-grid/',
         'pro_url' => 'https://marqueeaddons.com/pricing/',
     ],
     'deensimcpro-text-reveal' => [
@@ -287,14 +287,14 @@ return [
         'title'  => __('Text Reveal', 'marquee-addons-for-elementor'),
         'icon'   => 'eicon-animation-text eicon-deensimc-pro',
         'is_pro' => true,
-        'demo'   => 'https://marqueeaddons.com/pricing',
+        'demo'   => 'https://marqueeaddons.com/text-reveal/',
         'pro_url' => 'https://marqueeaddons.com/pricing/',
     ],
     'deensimcpro-container-background' => [
         'title'  => __('Container Background', 'marquee-addons-for-elementor'),
         'icon'   => 'dashicons dashicons-admin-appearance',
         'is_pro' => true,
-        'demo'   => 'https://marqueeaddons.com/',
+        'demo'   => 'https://marqueeaddons.com/ma-background/',
         'cat'    => 'extensions',
         'pro_url' => 'https://marqueeaddons.com/pricing/',
     ],
