@@ -234,6 +234,14 @@ return [
         'demo'   => 'https://marqueeaddons.com/product-marquee/',
         'pro_url' => 'https://marqueeaddons.com/pricing/',
     ],
+    'deensimcpro-product-carousel' => [
+        'cat'    => 'woocommerce',
+        'title'  => __('Product Carousel', 'marquee-addons-for-elementor'),
+        'icon'   => 'deensimcpro-product-carousel-icon eicon-deensimc-pro',
+        'is_pro' => true,
+        'demo'   => 'https://marqueeaddons.com/pricing',
+        'pro_url' => 'https://marqueeaddons.com/pricing/',
+    ],
     'deensimcpro-sticky-cards' => [
         'cat'    => 'general',
         'title'  => __('Sticky Cards', 'marquee-addons-for-elementor'),
