@@ -114,3 +114,17 @@
   .dialog-buttons-action:not(.ma-dialog-buttons-action) {
   display: none !important;
 }
+
+.elementor-element .deensimcpro-product-carousel-icon:before {
+  content: "";
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left center;
+  width: 36px;
+  height: 24px;
+  margin-inline: auto;
+  display: block;
+}
+.elementor-element .deensimcpro-product-carousel-icon:before {
+  background-image: url("../../images/icons/product-carousel.svg");
+}
