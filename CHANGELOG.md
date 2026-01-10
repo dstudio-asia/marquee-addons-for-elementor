@@ -1,6 +1,19 @@
 # Changelog
 
 
+## [3.9.6](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.5...v3.9.6) (2026-01-10)
+
+
+### Features
+
+* **widget:** add Product Carousel widget with admin icon ([782a9f2](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/782a9f248a39c0f1ba6b2810baa4e432a228ab0e))
+
+
+### Bug Fixes
+
+* css optimization ([72754f1](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/72754f105b98fd78590025ead7a19a63ea30652a))
+* css optimization ([b8b641f](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/b8b641fd26402f6f643a2ef8457b70b1fbec5972))
+
 ## [3.9.5](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.4...v3.9.5) (2025-12-27)
 
 
