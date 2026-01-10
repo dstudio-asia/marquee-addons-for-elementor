@@ -1,6 +1,22 @@
 # Changelog
 
 
+## [3.9.7](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.6...v3.9.7) (2026-01-10)
+
+
+### Features
+
+* add HTML tag control for Text Marquee items ([21b2efe](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/21b2efeaf7e2f5e11e77a2a50a66e29e3b2e8c1f))
+* add HTML tag control for Text Marquee items ([fa9d68f](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/fa9d68fd736c70b2688d72830f341678e852f4d1))
+* update version to 3.9.7 in plugin files and readme ([086bc1c](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/086bc1c31d018f18be0932ed257c57be98f6a9c8))
+* update version to 3.9.7 in plugin files and readme ([5bc25d4](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/5bc25d4c7c73e6751fc41d63525ce2bdf373f4c7))
+
+
+### Bug Fixes
+
+* remove H1 option from HTML tag selection in Text Marquee ([e0fa238](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/e0fa238ba5acbcccc5044e7ea217956120605015))
+* set default Text Marquee HTML tag to p ([2617119](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/26171190b183f7db88324e6097e34eff55475cc9))
+
 ## [3.9.6](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.5...v3.9.6) (2026-01-10)
 
 
