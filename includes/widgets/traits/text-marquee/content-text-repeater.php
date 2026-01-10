@@ -123,7 +123,7 @@ trait Deensimc_Textmarquee_Content_Text_Repeater
 		 $this->add_control('deensimc_text_marquee_tag', [
 		'label' => __('HTML Tag', 'marquee-addons-for-elementor'),
 			'type' => Controls_Manager::SELECT,
-			'default' => 'h2',
+			'default' => 'p',
 			'options' => [
 				'h1' => 'H1',
 				'h2' => 'H2',
