@@ -211,6 +211,10 @@ For feature overviews, demo, and in‑depth [documentation](https://marqueeaddon
 5. Stacked Slider
 6. Image Accordion
 7. News Ticker
+8. Marquee Button
+9. Animated Word Roller
+10. Image Hotspot
+11. Animated Headline
 
 == Frequently Asked Questions ==
 
