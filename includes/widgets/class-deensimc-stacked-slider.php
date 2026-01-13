@@ -14,13 +14,28 @@ use \Elementor\Utils;
 
 class Deensimc_Stacked_Slider extends Widget_Base
 {
+	use Deensimc_Utils;
+	use Deensimc_Promotional_Banner;
+	use Deensimc_Stackedslider_Style_Title_Controls;
+	use Deensimc_Stackedslider_Style_Description_Controls;
+	use Deensimc_Stackedslider_Style_Color_Controls;
+	use Deensimc_Stackedslider_Style_Button_Controls;
+	use Deensimc_Stackedslider_Contents_Primary;
+	use Deensimc_Stackedslider_Contents_Advance;
+	use Deensimc_Stackedslider_Style_Box;
+	use Deensimc_Stackedslider_Style_Contents;
+	use Deensimc_Stackedslider_Style_Image;
+	use Deensimc_Stackedslider_Style_Dots;
 
-	use Stackedslider_Contents_Primary;
-	use Stackedslider_Contents_Advance;
-	use Stackedslider_Style_Box;
-	use Stackedslider_Style_Contents;
-	use Stackedslider_Style_Image;
-	use Stackedslider_Style_Dots;
+	public function get_style_depends()
+	{
+		return ['deensimc-swiper-bundle-min-style', 'deensimc-swiper-style'];
+	}
+
+	public function get_script_depends()
+	{
+		return ['deensimc-stacked-slider-script'];
+	}
 
 	public function get_name()
 	{
@@ -45,19 +60,6 @@ class Deensimc_Stacked_Slider extends Widget_Base
 	public function get_keywords()
 	{
 		return ['slider', 'staked', 'slide', 'marquee'];
-	}
-
-	protected function get_upsale_data(): array
-	{
-		return [
-			'condition' => !class_exists('\Deensimcpro_Marquee\Marqueepro'),
-			'image' => esc_url(ELEMENTOR_ASSETS_URL . 'images/go-pro.svg'),
-			'image_alt' => esc_attr__('Upgrade', 'marquee-addons-for-elementor'),
-			'title' => esc_html__('Get MarqueeAddons Pro', 'marquee-addons-for-elementor'),
-			'description' => esc_html__('Get the premium version of the MarqueeAddons and grow your website capabilities.', 'marquee-addons-for-elementor'),
-			'upgrade_url' => esc_url('https://marqueeaddons.com'),
-			'upgrade_text' => esc_html__('Upgrade Now', 'marquee-addons-for-elementor'),
-		];
 	}
 
 	public function get_custom_help_url(): string
@@ -91,7 +93,7 @@ class Deensimc_Stacked_Slider extends Widget_Base
 		if ($settings['deensimc_content_title'] !== '') {
 		?>
 			<div class="deensimc-slider-heading">
-				<?php printf('<%1$s class="deensimc-content-title"> %2$s </%1$s>', esc_html($settings['deensimc_content_title_tags']), esc_html($settings['deensimc_content_title'])); ?>
+				<?php printf('<%1$s class="deensimc-content-title"> %2$s </%1$s>', esc_html(self::validate_html_tag($settings['deensimc_content_title_tags'])), esc_html($settings['deensimc_content_title'])); ?>
 			</div>
 		<?php
 		}
@@ -113,6 +115,9 @@ class Deensimc_Stacked_Slider extends Widget_Base
 		<?php
 		// Slider button text
 		if ($settings['deensimc_content_button_text'] !== '') {
+			if (! empty($settings['deensimc_content_button_link']['url'])) {
+				$this->add_link_attributes('deensimc_content_button_link', $settings['deensimc_content_button_link']);
+			}
 		?>
 			<div class="deensimc-button-content-wraper">
 				<a <?php $this->print_render_attribute_string('deensimc_content_button_link'); ?>>

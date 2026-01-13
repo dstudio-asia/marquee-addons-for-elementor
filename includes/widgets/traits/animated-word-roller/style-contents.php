@@ -9,7 +9,7 @@ use \Elementor\Controls_Manager;
 use \Elementor\Group_Control_Typography;
 use Elementor\Group_Control_Text_Stroke;
 
-trait Animated_Word_Roller_Style_Text_Contents {
+trait Deensimc_Animated_Word_Roller_Style_Text_Contents {
     protected function style_contents() {
         $this->start_controls_section(
             'deensimc_infinite_text_rotation_content_style_section',

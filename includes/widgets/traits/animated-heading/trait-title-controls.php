@@ -3,7 +3,7 @@
 use Elementor\Controls_Manager;
 use Elementor\Repeater;
 
-trait Title_Controls {
+trait Deensimc_Title_Controls {
   private function register_title_section_controls() {
     $this->start_controls_section(
       'deensimc_title_section',

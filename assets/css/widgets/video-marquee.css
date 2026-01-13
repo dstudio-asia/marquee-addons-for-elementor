@@ -1,0 +1,86 @@
+.deensimc-video-marquee .deensimc-video-item {
+  display: grid;
+  place-items: center;
+  min-width: 100px;
+  width: 300px;
+  aspect-ratio: 16/9;
+  position: relative;
+  overflow: hidden;
+}
+.deensimc-video-marquee .deensimc-video-wrapper,
+.deensimc-video-marquee .deensimc-hosted-video {
+  width: 100%;
+  height: 100%;
+}
+
+.deensimc-video-placeholder {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+}
+
+.deensimc-video-marquee
+  .deensimc-video-placeholder
+  .deensimc-placeholder-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+     6. Invalid Video URL Styles
+     ========================================================================== */
+
+.deensimc-invalid-video-url {
+  width: 250px;
+  text-align: center;
+  vertical-align: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+/* ==========================================================================
+     3. Play Button Styles
+     ========================================================================== */
+
+.deensimc-play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.deensimc-play-button svg,
+.deensimc-play-button i {
+  width: 80px;
+  height: 80px;
+  fill: #fff;
+  color: #fff;
+}
+
+.deensimc-play-button i {
+  position: relative;
+}
+
+.deensimc-play-button i::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ==========================================================================
+     4. Utility Classes
+     ========================================================================== */
+
+.deensimc-d-none {
+  display: none;
+}

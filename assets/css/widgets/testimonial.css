@@ -1,0 +1,284 @@
+.deensimc-testimonial-marquee {
+  --deensimc-marquee-tes-white: #ffffff;
+  --deensimc-marquee-tes-boulder: #4e4e4e;
+  --deensimc-marquee-tes-yellow: #f4b400;
+  --deensimc-marquee-tes-bg: #e7e7e7;
+  --deensimc-marquee-box-shadow: #555353;
+  --deensimc-marquee-text-black: #000000;
+  --deensimc-marquee-text-gray: gray;
+  --deensimc-marquee-text-skyblue: #1e6fda;
+  --avatar-width: 70px;
+}
+
+.deensimc-tes-text {
+  position: relative;
+  isolation: isolate;
+}
+
+.deensimc-tes-bg-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.deensimc-tes-text p {
+  margin-bottom: 0;
+}
+
+.deensimc-tes-main blockquote {
+  border: unset;
+}
+
+.deensimc-testimonial-marquee .deensimc-marquee-track-wrapper {
+  align-items: start;
+}
+.deensimc-testimonial-marquee .deensimc-marquee-track {
+  min-width: fit-content;
+  align-items: start;
+}
+
+/* ==========================================================================
+     3. Marquee Styles
+     ========================================================================== */
+
+.deensimc-testimonial-marquee
+  .deensimc-marquee-track-wrapper
+  .deensimc-marquee-track
+  .deensimc-tes-item {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-shrink: 0;
+}
+
+.deensimc-testimonial-marquee
+  .deensimc-marquee-track-wrapper
+  .deensimc-marquee-track
+  .deensimc-tes-item
+  i {
+  font-style: normal;
+}
+
+/* ==========================================================================
+     5. Blockquote and Author Styles
+     ========================================================================== */
+
+.deensimc-testimonial-marquee .deensimc-tes-main {
+  position: relative;
+  margin: 10px;
+  min-width: 220px;
+  width: 370px;
+  max-width: 100%;
+  text-align: left;
+  box-shadow: none !important;
+}
+
+.deensimc-testimonial-marquee .deensimc-tes-main img {
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+
+  width: var(--avatar-width);
+  border-radius: 50%;
+  margin-bottom: 15px;
+  display: inline-block;
+  z-index: 1;
+  position: relative;
+}
+
+.deensimc-testimonial-marquee .deensimc-tes-main .deensimc-tes-author.no-image {
+  margin-top: 66px;
+}
+
+.deensimc-testimonial-marquee .deensimc-tes-main .deensimc-tes-author {
+  padding: 0 15px;
+}
+
+.deensimc-testimonial-marquee .deensimc-tes-main blockquote {
+  margin: 0;
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--deensimc-marquee-tes-bg);
+  padding: 30px 50px 65px 50px;
+  font-weight: 500;
+  line-height: 1.6em;
+}
+
+.deensimc-testimonial-marquee .deensimc-tes-main .deensimc-tes-author {
+  margin-top: calc(calc(var(--avatar-width) / 2) * -1);
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--deensimc-marquee-tes-white);
+}
+
+.deensimc-testimonial-marquee
+  .deensimc-tes-main
+  .deensimc-tes-author
+  .deensimc-tes-heading {
+  opacity: 1;
+  margin: 0;
+  font-weight: 800;
+  color: var(--deensimc-marquee-text-black);
+}
+
+.deensimc-testimonial-marquee
+  .deensimc-tes-main
+  .deensimc-tes-author
+  .deensimc-tes-heading
+  span {
+  font-weight: 400;
+  text-transform: none;
+  display: block;
+  color: var(--deensimc-marquee-text-black);
+}
+
+.deensimc-testimonial-marquee .contents-wrapper {
+  position: relative;
+}
+
+/* ==========================================================================
+     6. Icon and Star Rating Styles
+     ========================================================================== */
+.deensimc-toggle {
+  all: unset;
+
+  &:hover {
+    all: unset;
+  }
+  &:focus {
+    all: unset;
+  }
+}
+
+.deensimc-testimonial-marquee .deensimc-contents,
+.deensimc-testimonial-marquee .deensimc-show-more,
+.deensimc-testimonial-marquee .deensimc-toggle,
+.deensimc-testimonial-marquee .deensimc-tes-review-text {
+  font-weight: normal;
+}
+
+.deensimc-tes-name {
+  font-size: 18px;
+}
+
+.deensimc-tes-title {
+  font-size: 16px;
+}
+
+.deensimc-tes-icons-none i {
+  color: var(--deensimc-marquee-tes-boulder);
+}
+
+.deensimc-tes-icons i {
+  color: var(--deensimc-marquee-tes-yellow);
+}
+
+.deensimc-tes-star-icon small {
+  color: var(--deensimc-marquee-tes-boulder);
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.deensimc-tes
+  .deensimc-marquee-track-wrapper
+  .deensimc-marquee-track
+  .deensimc-tes-item
+  .deensimc-tes-star-icon
+  i {
+  font-size: 16px;
+}
+
+.deensimc-testimonial .deensimc-tes-star-icon small {
+  color: var(--deensimc-marquee-tes-white);
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.deensimc-tes-icons i,
+.deensimc-tes-icons-half i,
+.deensimc-tes-icons-none i {
+  display: inline-block;
+  position: relative;
+  font-style: normal;
+  cursor: default;
+}
+
+.deensimc-tes-icons i::after,
+.deensimc-tes-icons-half i::after,
+.deensimc-tes-icons-none i::after {
+  content: "\f005";
+  display: block;
+  font-size: inherit;
+  position: absolute;
+  overflow: hidden;
+  color: var(--deensimc-marquee-tes-yellow);
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.deensimc-tes-icons i,
+.deensimc-tes-icons-half i,
+.deensimc-tes-icons-none i {
+  color: var(--deensimc-marquee-tes-boulder);
+}
+
+.deensimc-tes-icons i::after {
+  width: 100%;
+}
+
+.deensimc-tes-icons-half i::after {
+  width: 50%;
+}
+
+.deensimc-tes-icons-none i::after {
+  width: 0;
+}
+
+/* ==========================================================================
+     7. Quote and Toggle Styles
+     ========================================================================== */
+
+.deensimc-testimonial-marquee .quote-left {
+  position: absolute;
+  transform: translate(-110%, -50%);
+  z-index: 1;
+  font-size: 40px;
+  color: var(--deensimc-marquee-text-gray);
+  opacity: unset;
+}
+
+[dir="rtl"] .deensimc-testimonial-marquee .quote-left {
+  transform: scaleX(-1) translateY(-50%);
+  right: 0;
+}
+
+.deensimc-testimonial-marquee .quote-right {
+  display: inline-block;
+  margin-left: 5px;
+  margin-top: 5px;
+  position: absolute;
+  z-index: 1;
+  font-size: 40px;
+  color: var(--deensimc-marquee-text-gray);
+  opacity: unset;
+}
+
+.deensimc-testimonial-marquee .quote-left svg,
+.deensimc-testimonial-marquee .quote-right svg {
+  fill: var(--deensimc-marquee-text-gray);
+}
+
+[dir="rtl"] .deensimc-testimonial-marquee .quote-right {
+  transform: scaleX(-1);
+}
+
+.deensimc-testimonial-marquee .deensimc-toggle {
+  color: var(--deensimc-marquee-text-skyblue);
+  cursor: pointer;
+}
+.deensimc-toggle .unfold-text {
+  display: none;
+}

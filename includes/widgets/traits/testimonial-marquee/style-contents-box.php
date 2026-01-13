@@ -1,7 +1,7 @@
 <?php
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; 
+if (! defined('ABSPATH')) {
+	exit;
 }
 
 // Elementor Classes
@@ -9,13 +9,14 @@ use \Elementor\Controls_Manager;
 use \Elementor\Group_Control_Background;
 use Elementor\Group_Control_Border;
 
-trait Testimonialmarquee_Style_Contents_Box {
-	protected function style_contents_box() 
+trait Testimonial_Marquee_Style_Contents_Box
+{
+	protected function style_contents_box()
 	{
 		$this->start_controls_section(
 			'deensimc_tesimonial_box_section',
 			[
-				'label' => esc_html__( 'Box', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__('Box', 'marquee-addons-for-elementor'),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -24,15 +25,39 @@ trait Testimonialmarquee_Style_Contents_Box {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'deensimc_tesimonial_contents_background',
-				'types' => [ 'classic', 'gradient', 'video' ],
+				'types' => ['classic', 'gradient', 'video'],
 				'selector' => '{{WRAPPER}} .deensimc-tes-text',
+			]
+		);
+
+		$this->add_responsive_control(
+			'deensimc_testimonial_widget_box_width',
+			[
+				'label' => esc_html__('Width', 'marquee-addons-for-elementor'),
+				'type' =>  Controls_Manager::SLIDER,
+				'size_units' => ['px', 'em', 'rem'],
+				'range' => [
+					'px' => [
+						'min' => 220,
+						'max' => 500,
+						'step' => 1,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 370,
+				],
+			
+				'selectors' => [
+					'{{WRAPPER}} .deensimc-testimonial-marquee .deensimc-tes-main' => 'width: {{SIZE}}{{UNIT}};',
+				],
 			]
 		);
 
 		$this->add_control(
 			'deensimc_tesimonial_contents_background_overlay',
 			[
-				'label' => esc_html__( 'Overlay Color', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__('Overlay Color', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .deensimc-tes-bg-overlay' => 'background-color: {{VALUE}}',
@@ -41,36 +66,9 @@ trait Testimonialmarquee_Style_Contents_Box {
 		);
 
 		$this->add_responsive_control(
-			'deensimc_tesimonial_contents_gap',
-			[
-				'label' => esc_html__( 'Box Gap', 'marquee-addons-for-elementor' ),
-				'type' =>  Controls_Manager::SLIDER,
-				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
-				'range' => [
-					'px' => [
-						'min' => 0,
-						'max' => 100,
-						'step' => 1,
-					],
-					'%' => [
-						'min' => 0,
-						'max' => 100,
-					],
-				],
-				'default' => [
-					'unit' => 'px',
-					'size' => 40,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .deensimc-tes .deensimc-tes-logo .deensimc-tes-content' => 'gap: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-
-		$this->add_responsive_control(
 			'deensimc_testimonial_widget_height',
 			[
-				'label' => esc_html__( 'Section Height', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__('Section Height', 'marquee-addons-for-elementor'),
 				'type' =>  Controls_Manager::SLIDER,
 				'size_units' => ['vh'],
 				'range' => [
@@ -87,28 +85,26 @@ trait Testimonialmarquee_Style_Contents_Box {
 				'conditions' => [
 					'terms' => [
 						[
-							'name' => 'deensimc_testimonial_vertical_section',
+							'name' => 'deensimc_marquee_vertical_orientation',
 							'operator' => '==',
 							'value' => 'yes',
 						],
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .deensimc-tes.vertical' => 'height: {{SIZE}}vh; overflow: hidden;',
-					'{{WRAPPER}} .deensimc-tes.vertical ul' => 'margin: 0; padding: 0; box-sizing: border-box;',
-					'{{WRAPPER}} .deensimc-tes.vertical ol' => 'margin: 0; padding: 0; box-sizing: border-box;',
+					'{{WRAPPER}} .deensimc-marquee-vertical.deensimc-marquee-main-container' => 'height: {{SIZE}}vh;',
 				],
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'deensimc_tesimonial_contents_padding',
 			[
-				'label' => esc_html__( 'Padding', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__('Padding', 'marquee-addons-for-elementor'),
 				'type' =>  Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+				'size_units' => ['px', '%', 'em', 'rem', 'custom'],
 				'selectors' => [
-					'{{WRAPPER}} .deensimc-tes .deensimc-tes-main blockquote' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .deensimc-tes-main blockquote' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'separator' => 'after',
 			]
@@ -119,7 +115,7 @@ trait Testimonialmarquee_Style_Contents_Box {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'deensimc_testimonial_box_border',
-				'selector' => '{{WRAPPER}} .deensimc-tes .deensimc-tes-main blockquote',
+				'selector' => '{{WRAPPER}} .deensimc-tes-main blockquote',
 				'separator' => 'before',
 			]
 		);
@@ -127,11 +123,11 @@ trait Testimonialmarquee_Style_Contents_Box {
 		$this->add_control(
 			'deensimc_testimonial_box_border_radius',
 			[
-				'label' => esc_html__( 'Border Radius', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__('Border Radius', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', 'rem' ], 
+				'size_units' => ['px', 'em', 'rem'],
 				'selectors' => [
-					'{{WRAPPER}} .deensimc-tes .deensimc-tes-main blockquote' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .deensimc-tes-main blockquote' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);

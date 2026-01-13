@@ -6,6 +6,7 @@ if (! defined('ABSPATH')) {
 
 // Elementor Classes
 use \Elementor\Widget_Base;
+use \Elementor\Icons_Manager;
 
 /**
  * Class Deensimc_Image_Accordion
@@ -14,8 +15,11 @@ use \Elementor\Widget_Base;
 class Deensimc_Image_Accordion extends Widget_Base
 {
 
-	use ImageAccordion_Contents;
-	use ImageAccordion_Styles;
+	use Deensimc_ImageAccordion_Contents;
+	use Deensimc_ImageAccordion_Image_Style_Controls;
+	use Deensimc_ImageAccordion_Title_Style_Controls;
+	use Deensimc_ImageAccordion_Description_Style_Controls;
+	use Deensimc_ImageAccordion_Cta_Style_Controls;
 
 	public function get_name()
 	{
@@ -39,20 +43,70 @@ class Deensimc_Image_Accordion extends Widget_Base
 
 	public function get_keywords()
 	{
-		return ['image', 'image-accordion', 'accordion', 'marquee'];
+		return ['image', 'image-accordion', 'accordion', 'marquee', 'marquee addons'];
 	}
 
-	protected function get_upsale_data(): array
+	public function get_style_depends()
 	{
-		return [
-			'condition' => !class_exists('\Deensimcpro_Marquee\Marqueepro'),
-			'image' => esc_url(ELEMENTOR_ASSETS_URL . 'images/go-pro.svg'),
-			'image_alt' => esc_attr__('Upgrade', 'marquee-addons-for-elementor'),
-			'title' => esc_html__('Get MarqueeAddons Pro', 'marquee-addons-for-elementor'),
-			'description' => esc_html__('Get the premium version of the MarqueeAddons and grow your website capabilities.', 'marquee-addons-for-elementor'),
-			'upgrade_url' => esc_url('https://marqueeaddons.com'),
-			'upgrade_text' => esc_html__('Upgrade Now', 'marquee-addons-for-elementor'),
+		return ['deensimc-accordion-style'];
+	}
+
+	public function get_script_depends()
+	{
+		return ['deensimc-image-accordion-script'];
+	}
+
+	function deensimc_allowed_icon_html()
+	{
+		$allowed = wp_kses_allowed_html('post');
+
+		$allowed['svg'] = [
+			'class'        => true,
+			'xmlns'        => true,
+			'viewbox'      => true,
+			'role'         => true,
+			'aria-hidden'  => true,
+			'focusable'    => true,
+			'width'        => true,
+			'height'       => true,
+			'fill'         => true,
 		];
+
+		$allowed['g'] = [
+			'fill'         => true,
+			'fill-rule'    => true,
+			'stroke'       => true,
+			'stroke-width' => true,
+			'transform'    => true,
+		];
+
+		$allowed['path'] = [
+			'd'            => true,
+			'fill'         => true,
+			'fill-rule'    => true,
+			'stroke'       => true,
+			'stroke-width' => true,
+			'transform'    => true,
+		];
+
+		$allowed['use'] = [
+			'href'         => true,
+			'xlink:href'   => true,
+		];
+
+		$allowed['title'] = [];
+
+		$allowed['i'] = [
+			'class'        => true,
+			'aria-hidden'  => true,
+		];
+
+		$allowed['span'] = [
+			'class'        => true,
+			'aria-hidden'  => true,
+		];
+
+		return $allowed;
 	}
 
 	public function get_custom_help_url(): string
@@ -63,7 +117,10 @@ class Deensimc_Image_Accordion extends Widget_Base
 	protected function register_controls()
 	{
 		$this->content_controls();
-		$this->style_controls();
+		$this->image_style_controls();
+		$this->title_style_controls();
+		$this->description_style_controls();
+		$this->cta_style_controls();
 	}
 
 	/**
@@ -95,14 +152,34 @@ class Deensimc_Image_Accordion extends Widget_Base
 		<div class="deensimc-image-panel">
 			<div class="deensimc-panels">
 				<?php
-				$deen_accordion_behaviour = $settings['deensimc_bg_image_active_behaviour'] === 'click' ? 'deensimc-click' : 'deensimc-hover';
+				$deen_accordion_behaviour = $settings['deensimc_bg_image_active_behaviour'] === 'click' ? 'click' : 'hover';
 				if ($settings['deensimc_bg_image_repeater']) {
 					foreach ($settings['deensimc_bg_image_repeater'] as $images) {
 				?>
-						<div class="<?php echo esc_attr($deen_accordion_behaviour); ?> deensimc-panel deensimc-panel-main" style="background-image: url( <?php echo esc_url($images['deensimc_bg_image']['url']) ?> )">
-							<p class="<?php echo esc_attr($devices_class); ?>">
+						<div
+							data-behaviour="<?php echo esc_attr($deen_accordion_behaviour); ?>"
+							class="deensimc-panel deensimc-panel-main ">
+							<p class="<?php echo esc_attr($devices_class); ?> deensimc-panel-default-title">
 								<?php echo esc_html($images['deensimc_bg_image_title']) ?>
 							</p>
+							<div class="deensimc-panel-content">
+								<h2> <?php echo esc_html($images['deensimc_bg_image_title']) ?> </h2>
+								<div class="deensimc-acc-description">
+									<?php echo wp_kses_post($images['deensimc_bg_image_description'] ?? ''); ?>
+								</div>
+								<?php if (!empty($images['deensimc_image_acc_cta_switch']) && $images['deensimc_image_acc_cta_switch'] === 'yes') : ?>
+									<?php
+									$cta_text     = $images['deensimc_image_acc_cta_text'] ?? '';
+									$cta_url      = !empty($images['deensimc_image_acc_cta_url']['url']) ? $images['deensimc_image_acc_cta_url']['url'] : '#';
+									$target       = !empty($images['deensimc_image_acc_cta_url']['is_external']) ? ' target="_blank"' : '';
+									$nofollow     = !empty($images['deensimc_image_acc_cta_url']['nofollow']) ? ' rel="nofollow"' : '';
+									?>
+									<a href="<?php echo esc_url($cta_url); ?>" class="deensimc-acc-cta" <?php echo esc_attr($target) . esc_attr($nofollow); ?>>
+										<span class="deensimc-acc-cta-text"><?php echo esc_html($cta_text); ?></span>
+									</a>
+								<?php endif; ?>
+							</div>
+							<img src="<?php echo esc_url($images['deensimc_bg_image']['url']) ?>" alt="background image" class="deensimc-acc-bg-img">
 						</div>
 				<?php
 					}
@@ -110,38 +187,6 @@ class Deensimc_Image_Accordion extends Widget_Base
 				?>
 			</div>
 		</div>
-	<?php
+<?php
 	}
-
-	/**
-	 * Renders dynamic image accordion contents in Elementor.
-	 * @return void
-	 */
-	protected function content_template()
-	{
-	?>
-		<#
-			let devices=[
-			settings.deensimc_images_title_rotating,
-			settings.deensimc_images_title_rotating_laptop ? settings.deensimc_images_title_rotating_laptop + '-laptop' : '' ,
-			settings.deensimc_images_title_rotating_tablet ? settings.deensimc_images_title_rotating_tablet + '-tab' : '' ,
-			settings.deensimc_images_title_rotating_mobile ? settings.deensimc_images_title_rotating_mobile + '-mobile' : '' ,
-			settings.deensimc_images_title_rotating_mobile_extra ? settings.deensimc_images_title_rotating_mobile_extra + '-mobile-extra' : ''
-			].join(' ').trim();
-		#>
-		<div class="deensimc-image-panel">
-			<div class="deensimc-panels">
-				<# var deen_accordion_behaviour = settings.deensimc_bg_image_active_behaviour === ' click' ? 'deensimc-click' : 'deensimc-hover' ; #>
-			<# if ( settings.deensimc_bg_image_repeater ) { #>
-				<# _.each( settings.deensimc_bg_image_repeater, function( images ) { #>
-					<div class="{{ deen_accordion_behaviour }} deensimc-panel deensimc-panel-main" style="background-image: url( {{{ images.deensimc_bg_image.url }}} )">
-						<p class="{{{ devices }}}">{{ images.deensimc_bg_image_title }}</p>
-					</div>
-					<# }); #>
-						<# } #>
-							</div>
-							</div>
-					<?php
-				}
-			}
-					?>
+}

@@ -11,6 +11,24 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v2
+
+      # These steps run ONLY when release was created
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+
+      - name: Install npm dependencies
+        run: npm install
+
+      - name: Run build script (minify assets)
+        run: npm run build
+
+      - name: Remove unminified CSS files
+        run: find assets/css -type f -name '*.css' ! -name '*.min.css' ! -path 'assets/css/plugins/*' -delete
+
+      - name: Remove unminified JS files
+        run: find assets/js -type f -name '*.js' ! -name '*.min.js' ! -path 'assets/js/plugins/*' -delete
       
       - name: WordPress Plugin Deploy
         id: deploy

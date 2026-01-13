@@ -5,13 +5,13 @@ use Elementor\Group_Control_Typography;
 use Elementor\Group_Control_Text_Stroke;
 use Elementor\Group_Control_Text_Shadow;
 
-trait Text_Styles_Controls {
+trait Deensimc_Text_Styles_Controls {
 
   private function add_text_style_controls($section_id, $label, $selector_prefix, $text_field_name) {
     $this->start_controls_section(
       $section_id,
       [
-        'label' => __($label, 'marquee-addons-for-elementor'),
+        'label' => esc_html( $label , 'marquee-addons-for-elementor'),
         'tab' => Controls_Manager::TAB_STYLE,
         'condition' => [
           $text_field_name . '!' => '',

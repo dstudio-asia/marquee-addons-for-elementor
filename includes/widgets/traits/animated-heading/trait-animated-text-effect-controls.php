@@ -3,7 +3,7 @@
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Background;
 
-trait Animated_Text_Effect_Controls
+trait Deensimc_Animated_Text_Effect_Controls
 {
 
   private function register_animated_text_effect_section_controls()

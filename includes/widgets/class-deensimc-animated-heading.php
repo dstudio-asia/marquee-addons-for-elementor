@@ -8,13 +8,16 @@ if (!defined('ABSPATH')) {
 
 class Deensimc_Animated_Heading_Widget extends Widget_Base
 {
-  use Title_Controls, Animation_Controls, Text_Styles_Controls, Animated_Text_Effect_Controls;
+  use Deensimc_Utils;
+  use Deensimc_Promotional_Banner;
+  use Deensimc_Title_Controls;
+  use Deensimc_Animation_Controls;
+  use Deensimc_Text_Styles_Controls;
+  use Deensimc_Animated_Text_Effect_Controls;
 
   public function get_style_depends()
   {
     return [
-      'deensimc-common-style',
-      'deensimc-animations-style',
       'deensimc-animated-heading-style'
     ];
   }
@@ -25,7 +28,7 @@ class Deensimc_Animated_Heading_Widget extends Widget_Base
       'deensimc-waveSwingTiltLeanAnimation',
       'deensimc-construct-word',
       'deensimc-typing-word',
-      'deensimc-twisting-word',
+      'deensimc-twisting-text',
       'deensimc-slide-word',
       'deensimc-lines-animation',
       'deensimc-rotation-3d',
@@ -69,7 +72,7 @@ class Deensimc_Animated_Heading_Widget extends Widget_Base
   protected function render()
   {
     $settings = $this->get_settings_for_display();
-    $tag = $settings['deensimc_heading_tag'] ?? 'h2';
+    $tag = self::validate_html_tag( $settings['deensimc_heading_tag'] );
     $before = $settings['deensimc_before_text'] ?? '';
     $after = $settings['deensimc_after_text'] ?? '';
     $texts = $settings['deensimc_animated_texts'] ?? [];

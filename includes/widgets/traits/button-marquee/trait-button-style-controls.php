@@ -7,14 +7,14 @@ use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Background;
 
-trait Button_Style_Controls
+trait Deensimc_Button_Style_Controls
 {
   private function register_button_style_section_controls()
   {
     $this->start_controls_section(
       'deensimc_button_marquee_button_style_section',
       [
-        'label' => __('Button', 'marquee-addons-for-elementor'),
+        'label' => esc_html__('Button', 'marquee-addons-for-elementor'),
         'tab'   => Controls_Manager::TAB_STYLE,
       ]
     );
@@ -23,23 +23,23 @@ trait Button_Style_Controls
     $this->add_responsive_control(
       'deensimc_button_alignment',
       [
-        'label'   => __('Position', 'marquee-addons-for-elementor'),
+        'label'   => esc_html__('Position', 'marquee-addons-for-elementor'),
         'type'    => Controls_Manager::CHOOSE,
         'options' => [
           'left'   => [
-            'title' => __('Left', 'marquee-addons-for-elementor'),
+            'title' => esc_html__('Left', 'marquee-addons-for-elementor'),
             'icon'  => 'eicon-h-align-left',
           ],
           'center' => [
-            'title' => __('Center', 'marquee-addons-for-elementor'),
+            'title' => esc_html__('Center', 'marquee-addons-for-elementor'),
             'icon'  => 'eicon-h-align-center',
           ],
           'right'  => [
-            'title' => __('Right', 'marquee-addons-for-elementor'),
+            'title' => esc_html__('Right', 'marquee-addons-for-elementor'),
             'icon'  => 'eicon-h-align-right',
           ],
           'full'  => [
-            'title' => __('Full', 'marquee-addons-for-elementor'),
+            'title' => esc_html__('Full', 'marquee-addons-for-elementor'),
             'icon'  => 'eicon-h-align-stretch',
           ],
         ],
@@ -51,13 +51,13 @@ trait Button_Style_Controls
           'full' => 'width: 100%;',
         ],
         'selectors' => [
-          '{{WRAPPER}} .deensimc-button-marquee-container' => '{{VALUE}};',
+          '{{WRAPPER}} .deensimc-button-marquee' => '{{VALUE}};',
         ],
       ]
     );
 
     $this->add_control('deensimc_button_text_gap', [
-      'label' => __('Gap', 'marquee-addons-for-elementor'),
+      'label' => esc_html__('Gap', 'marquee-addons-for-elementor'),
       'type' => Controls_Manager::SLIDER,
       'condition' => [
         'deensimc_button_marquee_state' => 'yes',
@@ -67,7 +67,7 @@ trait Button_Style_Controls
         'px' => ['min' => 0, 'max' => 150],
       ],
       'selectors' => [
-        '{{WRAPPER}} .deensimc-button-marquee-track-wrapper' => '--button-text-gap: {{SIZE}}{{UNIT}};',
+        '{{WRAPPER}} .deensimc-marquee-main-container' => '--deensimc-item-gap: {{SIZE}}{{UNIT}};',
       ],
     ]);
 
@@ -96,14 +96,14 @@ trait Button_Style_Controls
     $this->start_controls_tab(
       'deensimc_button_normal',
       [
-        'label' => __('Normal', 'marquee-addons-for-elementor'),
+        'label' => esc_html__('Normal', 'marquee-addons-for-elementor'),
       ]
     );
 
     $this->add_control(
       'deensimc_button_text_color',
       [
-        'label'     => __('Text Color', 'marquee-addons-for-elementor'),
+        'label'     => esc_html__('Text Color', 'marquee-addons-for-elementor'),
         'type'      => Controls_Manager::COLOR,
         'selectors' => [
           '{{WRAPPER}} .deensimc-button, {{WRAPPER}} .deensimc-button-text' => 'color: {{VALUE}};',
@@ -117,7 +117,7 @@ trait Button_Style_Controls
         'name'     => 'deensimc_button_background',
         'types'    => ['classic', 'gradient'],
         'exclude' => ['image'],
-        'selector' => '{{WRAPPER}} .deensimc-button-marquee-container',
+        'selector' => '{{WRAPPER}} .deensimc-button-marquee',
       ]
     );
 
@@ -125,7 +125,7 @@ trait Button_Style_Controls
       Group_Control_Box_Shadow::get_type(),
       [
         'name'     => 'deensimc_button_box_shadow',
-        'selector' => '{{WRAPPER}} .deensimc-button-marquee-container',
+        'selector' => '{{WRAPPER}} .deensimc-button-marquee',
       ]
     );
 
@@ -135,17 +135,17 @@ trait Button_Style_Controls
     $this->start_controls_tab(
       'deensimc_button_hover',
       [
-        'label' => __('Hover', 'marquee-addons-for-elementor'),
+        'label' => esc_html__('Hover', 'marquee-addons-for-elementor'),
       ]
     );
 
     $this->add_control(
       'deensimc_button_text_color_hover',
       [
-        'label'     => __('Text Color', 'marquee-addons-for-elementor'),
+        'label'     => esc_html__('Text Color', 'marquee-addons-for-elementor'),
         'type'      => Controls_Manager::COLOR,
         'selectors' => [
-          '{{WRAPPER}} .deensimc-button-marquee-container:hover .deensimc-button, {{WRAPPER}} .deensimc-button-marquee-container:hover .deensimc-button-text' => 'color: {{VALUE}};',
+          '{{WRAPPER}} .deensimc-button-marquee:hover .deensimc-button, {{WRAPPER}} .deensimc-button-marquee:hover .deensimc-button-text' => 'color: {{VALUE}};',
         ],
       ]
     );
@@ -156,17 +156,17 @@ trait Button_Style_Controls
         'name'     => 'deensimc_button_background_hover',
         'types'    => ['classic', 'gradient'],
         'exclude' => ['image'],
-        'selector' => '{{WRAPPER}} .deensimc-button-marquee-container:hover',
+        'selector' => '{{WRAPPER}} .deensimc-button-marquee:hover',
       ]
     );
 
     $this->add_control(
       'deensimc_button_border_color_hover',
       [
-        'label'     => __('Border Color', 'marquee-addons-for-elementor'),
+        'label'     => esc_html__('Border Color', 'marquee-addons-for-elementor'),
         'type'      => Controls_Manager::COLOR,
         'selectors' => [
-          '{{WRAPPER}} .deensimc-button-marquee-container:hover' => 'border-color: {{VALUE}};',
+          '{{WRAPPER}} .deensimc-button-marquee:hover' => 'border-color: {{VALUE}};',
         ],
       ]
     );
@@ -175,7 +175,7 @@ trait Button_Style_Controls
       Group_Control_Box_Shadow::get_type(),
       [
         'name'     => 'deensimc_button_box_shadow_hover',
-        'selector' => '{{WRAPPER}} .deensimc-button-marquee-container:hover',
+        'selector' => '{{WRAPPER}} .deensimc-button-marquee:hover',
       ]
     );
 
@@ -188,18 +188,18 @@ trait Button_Style_Controls
       [
         'name'     => 'deensimc_button_border',
         'separator' => 'before',
-        'selector' => '{{WRAPPER}} .deensimc-button-marquee-container',
+        'selector' => '{{WRAPPER}} .deensimc-button-marquee',
       ]
     );
 
     $this->add_responsive_control(
       'deensimc_button_border_radius',
       [
-        'label'      => __('Border Radius', 'marquee-addons-for-elementor'),
+        'label'      => esc_html__('Border Radius', 'marquee-addons-for-elementor'),
         'type'       => Controls_Manager::DIMENSIONS,
-        'size_units' => ['px', '%', 'em'],
+        'size_units' => ['px', '%', 'em', 'rem'],
         'selectors'  => [
-          '{{WRAPPER}} .deensimc-button-marquee-container' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+          '{{WRAPPER}} .deensimc-button-marquee' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
         ],
       ]
     );
@@ -208,10 +208,10 @@ trait Button_Style_Controls
     $this->add_responsive_control(
       'deensimc_button_padding',
       [
-        'label'      => __('Padding', 'marquee-addons-for-elementor'),
+        'label'      => esc_html__('Padding', 'marquee-addons-for-elementor'),
         'type'       => Controls_Manager::DIMENSIONS,
         'separator' => 'before',
-        'size_units' => ['px', '%', 'em'],
+        'size_units' => ['px', 'em', 'rem'],
         'selectors'  => [
           '{{WRAPPER}} .deensimc-button' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
         ],

@@ -1,20 +1,21 @@
 <?php
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; 
+if (! defined('ABSPATH')) {
+	exit;
 }
 
 // Elementor Classes
 use \Elementor\Controls_Manager;
 use \Elementor\Group_Control_Typography;
 
-trait Testimonialmarquee_Style_Contents {
-	protected function style_contents() 
+trait Testimonial_Marquee_Style_Contents
+{
+	protected function style_contents()
 	{
 		$this->start_controls_section(
 			'deensimc_tesimonial_content_section',
 			[
-				'label' => esc_html__( 'Contents', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__('Contents', 'marquee-addons-for-elementor'),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -22,7 +23,7 @@ trait Testimonialmarquee_Style_Contents {
 		$this->add_control(
 			'deensimc_tesimonial_content_heading',
 			[
-				'label' => esc_html__( 'Content', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__('Content', 'marquee-addons-for-elementor'),
 				'type' =>  Controls_Manager::HEADING,
 			]
 		);
@@ -38,7 +39,7 @@ trait Testimonialmarquee_Style_Contents {
 		$this->add_control(
 			'deensimc_tesimonial_content_color',
 			[
-				'label' => esc_html__( 'Color', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__('Color', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .deensimc-tes-text .deensimc-contents' => 'color: {{VALUE}}',
@@ -49,7 +50,7 @@ trait Testimonialmarquee_Style_Contents {
 		$this->add_control(
 			'deensimc_tesimonial_icon_heading',
 			[
-				'label' => esc_html__( 'Icon', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__('Icon', 'marquee-addons-for-elementor'),
 				'type' =>  Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -58,11 +59,11 @@ trait Testimonialmarquee_Style_Contents {
 		$this->add_control(
 			'deensimc_tesimonial_icon_color',
 			[
-				'label' => esc_html__( 'Color', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__('Color', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .deensimc-tes .deensimc-tes-logo .deensimc-tes-content .deensimc-tes-item blockquote i' => 'color: {{VALUE}}',
-					'{{WRAPPER}} .deensimc-tes .deensimc-tes-logo .deensimc-tes-content .deensimc-tes-item blockquote svg path' => 'fill: {{VALUE}}',
+					'{{WRAPPER}} .deensimc-testimonial-marquee .deensimc-tes-item blockquote i' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .deensimc-testimonial-marquee .deensimc-tes-item blockquote svg path' => 'fill: {{VALUE}}',
 				],
 			]
 		);
@@ -70,9 +71,9 @@ trait Testimonialmarquee_Style_Contents {
 		$this->add_responsive_control(
 			'deensimc_tesimonial_icon_size',
 			[
-				'label' => esc_html__( 'Size', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__('Size', 'marquee-addons-for-elementor'),
 				'type' =>  Controls_Manager::SLIDER,
-				'size_units' => [ 'px' ],
+				'size_units' => ['px'],
 				'range' => [
 					'px' => [
 						'min' => 0,
@@ -90,13 +91,13 @@ trait Testimonialmarquee_Style_Contents {
 				],
 			]
 		);
-		
+
 		$this->end_controls_section();
 
 		$this->start_controls_section(
 			'deensimc_tesimonial_unfold_section',
 			[
-				'label' => esc_html__( 'Text Unfold', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__('Text Unfold', 'marquee-addons-for-elementor'),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -112,7 +113,7 @@ trait Testimonialmarquee_Style_Contents {
 		$this->add_control(
 			'deensimc_tesimonial_excerpt_color',
 			[
-				'label' => esc_html__( 'Color', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__('Color', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .deensimc-toggle' => 'color: {{VALUE}}',
@@ -120,18 +121,18 @@ trait Testimonialmarquee_Style_Contents {
 			]
 		);
 
-		
+
 		$this->add_control(
 			'deensimc_tesimonial_excerpt_color_hover',
 			[
-				'label' => esc_html__( 'Hover Color', 'marquee-addons-for-elementor' ),
+				'label' => esc_html__('Hover Color', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .deensimc-toggle:hover' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .deensimc-testimonial-marquee .deensimc-toggle:hover' => 'color: {{VALUE}}',
 				],
 			]
 		);
-		
+
 
 		$this->end_controls_section();
 	}

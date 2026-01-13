@@ -5,7 +5,7 @@ if (! defined('ABSPATH')) {
 
 use \Elementor\Controls_Manager;
 
-trait NewsTickerQueryControl
+trait Deensimc_NewsTickerQueryControl
 {
 
 	protected function news_ticker_query_control()
@@ -106,8 +106,8 @@ trait NewsTickerQueryControl
 				'options' => [
 					'seperator_icon' => __('Icon', 'marquee-addons-for-elementor'),
 					'seperator_text' => __('Text', 'marquee-addons-for-elementor'),
-					'seperator_feature_image' => __('Feature Image', 'elementor-news-ticker'),
-					'seperator_date' => __('Date', 'elementor-news-ticker'),
+					'seperator_feature_image' => __('Feature Image', 'marquee-addons-for-elementor'),
+					'seperator_date' => __('Date', 'marquee-addons-for-elementor'),
 				],
 				'default' => 'seperator_text',
 				'separator' => 'before',
