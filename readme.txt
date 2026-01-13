@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: elementor, text marquee, image marquee, video marquee, Product slider
 Requires at least: 5.8
 Tested up to: 6.9
-Stable tag: 3.9.7
+Stable tag: 3.9.8
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -125,7 +125,7 @@ The 3D Marquee is an animated Elementor widget with 3D perspective, smooth scrol
 
 Create modern, asymmetric Bento Box layouts in Elementor with complete design freedom. Set custom row and column spans for each item, fine-tune spacing, and build editorial-style sections that stand out from traditional grids. Includes support for skewed grid layouts with title, description, and a header component for a more dynamic design. The perfect Elementor widget to help you design clean, responsive Bento Grids on your Elementor website.
 
-### Animated List (Pro):
+### [Animated List](https://marqueeaddons.com/animated-list/) (Pro):
 
 A list widget that animates each item in sequence with adjustable delay, perfect for showcasing notifications or events on Elementor landing pages. Bring lists to life in Elementor with smooth, continuous motion. Ideal for features, steps, or benefits. Control visible items, alignment, speed, and looping with no coding required.
 
@@ -211,6 +211,10 @@ For feature overviews, demo, and in‑depth [documentation](https://marqueeaddon
 5. Stacked Slider
 6. Image Accordion
 7. News Ticker
+8. Marquee Button
+9. Animated Word Roller
+10. Image Hotspot
+11. Animated Headline
 
 == Frequently Asked Questions ==
 
@@ -256,6 +260,9 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 
 == Changelog ==
 
+= 3.9.8 - 2026-01-13 = 
+- Tweak: Added a dedicated class to identify each image marquee item.
+
 = 3.9.7 - 2026-01-10 =
 - New: Added support for HTML tags in Text Marquee
 
@@ -279,24 +286,5 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 
 = 3.9.0 - 2025-12-18 =
 - New: Added Image Hotspot Widget
-
-= 3.8.5 - 2025-12-16 =
-- New: Added box shadow in Image Marquee
-- Fix: Naming conventions for traits
-
-= 3.8.4 - 2025-12-14 =
-- New: Added icon rotation animation in Text Marquee.
-
-= 3.8.3 - 2025-12-11 =
-- Fix: Patched a potential XSS vulnerability reported in frontend input handling.
-
-= 3.8.2 - 2025-12-08 =
-- New: Added text hover effect in Text Marquee
-
-= 3.8.1 - 2025-12-07 =
-- Tweak: Minified CSS and JS files to improve overall performance and loading speed
-
-= 3.8.0 - 2025-12-02 =
-- Tweak: Improved performance
 
 [See changelog for all versions.](https://marqueeaddons.com/changelog/)
