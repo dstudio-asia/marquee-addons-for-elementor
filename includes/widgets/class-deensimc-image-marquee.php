@@ -33,7 +33,7 @@ class Deensimc_Image_Marquee extends Widget_Base
 
 	public function get_name()
 	{
-		return 'deensimc-smooth-marquee'; //Image Marquee
+		return 'deensimc-smooth-marquee';
 	}
 
 	public function get_title()
@@ -109,7 +109,7 @@ class Deensimc_Image_Marquee extends Widget_Base
 		}
 
 		foreach ($images as $image) {
-			$is_dup = !empty($image['_is_dup']); // check if it's a duplicate
+			$is_dup = !empty($image['_is_dup']);
 			$alt = !empty($image['alt']) ? $image['alt'] : 'Image gallery marquee';
 
 			if ($link_type !== 'none') {
