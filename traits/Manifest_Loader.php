@@ -35,15 +35,15 @@ trait Manifest_Loader {
             
             // Check if pro plugin is installed
             if (class_exists('\Deensimcpro_Marquee\Marqueepro')) {
-                
-                $pro_manifest_path = DEENSIMCPRO__DIR__ . '/deensimcpro-widget-manifest.php';
-                
-                if (file_exists($pro_manifest_path)) {
-                    $pro_manifest_data = require $pro_manifest_path;
-                    if (isset($pro_manifest_data['pro'])) {
-                        $pro_widgets = $pro_manifest_data['pro'];
-                    } elseif (isset($pro_manifest_data['free'])) {
-                        $pro_widgets = $pro_manifest_data;
+                $pro_widgets = [];
+                if (defined('DEENSIMCPRO__DIR__')) {
+                    $pro_manifest_path = DEENSIMCPRO__DIR__ . '/deensimcpro-widget-manifest.php';
+                    
+                    if (file_exists($pro_manifest_path)) {
+                        $pro_manifest_data = require $pro_manifest_path;
+                        if (is_array($pro_manifest_data)) {
+                            $pro_widgets = $pro_manifest_data;
+                        }
                     }
                 }
             }
