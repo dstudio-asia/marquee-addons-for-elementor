@@ -1,6 +1,21 @@
 # Changelog
 
 
+## [3.9.8](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.7...v3.9.8) (2026-01-13)
+
+
+### Features
+
+* new screenshot ([1e68ee8](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/1e68ee8b598011af86ff72879edab4a85f19a87d))
+* version upated ([b9d0f36](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/b9d0f36cd161639f7d1b7ef835c12a30d5040404))
+
+
+### Bug Fixes
+
+* add image class for Image Marquee items ([326a7b5](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/326a7b5329e9ec8c17af92ad8b429913587c0e63))
+* add image class for Image Marquee items ([748ced4](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/748ced4b4fa336f5de0ec8f1aa5a1152ab27cb5e))
+* add image selector class in Image Marquee ([f408fff](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/f408fffc61e1b1e57e9450f38ea32e09e3b4d96b))
+
 ## [3.9.7](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.6...v3.9.7) (2026-01-10)
 
 
