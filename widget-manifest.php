@@ -9,7 +9,7 @@
 
 if (!defined('ABSPATH')) exit;
 
-return [
+$free_widgets = [
     // Free Widgets
     'deensimc-image-marquee' => [
         'title'  => __('Image Marquee', 'marquee-addons-for-elementor'),
@@ -167,9 +167,10 @@ return [
         ],
         'file' => 'class-deensimc-image-hotspot.php',
         'class' => '\Deensimc_Image_Hotspot',
-    ],
+    ]
+];
 
-    // PRO Widgets & Extensions
+$pro_widgets = [
     'deensimcpro-3d-grid-marquee' => [
         'cat'    => 'general',
         'title'  => __('3D Grid Marquee', 'marquee-addons-for-elementor'),
@@ -258,22 +259,22 @@ return [
         'demo'   => 'https://marqueeaddons.com/testimonial-marquee/',
         'pro_url' => 'https://marqueeaddons.com/pricing/',
     ],
-    'deensimc-smooth-text-pro' => [
-        'cat'    => 'general',
-        'title'  => __('Advanced Text Marquee', 'marquee-addons-for-elementor'),
-        'icon'   => 'deensimcpro-text-marquee-icon eicon-deensimc-pro',
-        'is_pro' => true,
-        'demo'   => 'https://marqueeaddons.com/text-marquee/',
-        'pro_url' => 'https://marqueeaddons.com/pricing/',
-    ],
-    'deensimcpro-smart-tabs' => [
-        'cat'    => 'general',
-        'title'  => __('Smart Tabs', 'marquee-addons-for-elementor'),
-        'icon'   => 'eicon-tabs eicon-deensimc-pro',
-        'is_pro' => true,
-        'demo'   => 'https://marqueeaddons.com/smart-tabs/',
-        'pro_url' => 'https://marqueeaddons.com/pricing/',
-    ],
+    // 'deensimc-smooth-text-pro' => [
+    //     'cat'    => 'general',
+    //     'title'  => __('Advanced Text Marquee', 'marquee-addons-for-elementor'),
+    //     'icon'   => 'deensimcpro-text-marquee-icon eicon-deensimc-pro',
+    //     'is_pro' => true,
+    //     'demo'   => 'https://marqueeaddons.com/text-marquee/',
+    //     'pro_url' => 'https://marqueeaddons.com/pricing/',
+    // ],
+    // 'deensimcpro-smart-tabs' => [
+    //     'cat'    => 'general',
+    //     'title'  => __('Smart Tabs', 'marquee-addons-for-elementor'),
+    //     'icon'   => 'eicon-tabs eicon-deensimc-pro',
+    //     'is_pro' => true,
+    //     'demo'   => 'https://marqueeaddons.com/smart-tabs/',
+    //     'pro_url' => 'https://marqueeaddons.com/pricing/',
+    // ],
     'deensimcpro-animated-list' => [
         'cat'    => 'general',
         'title'  => __('Animated List', 'marquee-addons-for-elementor'),
@@ -314,4 +315,9 @@ return [
         'cat'    => 'extensions',
         'pro_url' => 'https://marqueeaddons.com/pricing/',
     ],
+];
+
+return [
+    'free' => $free_widgets,
+    'pro'  => $pro_widgets
 ];
