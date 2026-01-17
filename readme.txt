@@ -170,6 +170,8 @@ With our Marquee Addon for Elementor, you don’t just get widgets - you also ge
 * **Image Rotation (Pro)**: Adds a smooth rotation effect to the standard Elementor Image widget, allowing your images to rotate in a continuous infinite loop. You can choose clockwise or counter-clockwise rotation to grab visitors’ attention and easily adjust the speed to make the movement as fast or as slow as you want.
 
 * **Custom CSS (Pro)**: Add your own CSS to any marquee for complete design freedom. Fine-tune layouts, animations, and styles beyond the default options to match your site exactly the way you want.
+
+* **Dynamic Tags (Pro)**: Integrate built‑in dynamic tags into the marquee widget, so pre‑created dynamic content (like titles, fields, etc.) can be inserted and displayed automatically.
  
 ## Design & Performance Tips:
  
