@@ -1,6 +1,22 @@
 # Changelog
 
 
+## [3.9.10](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.8...v3.9.10) (2026-01-17)
+
+
+### Features
+
+* add Dynamic Tags feature to marquee widget ([f930091](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/f93009115b09b7ab6ed4ed81ec57a4656bf019b6))
+* add title hover color control ([85aea8a](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/85aea8a49b9f1ce963b9b14e378577de30a1e9ae))
+* updated version to 3.9.9 ([215dcc6](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/215dcc6c5a06682a0055d357abe282a28d5881e8))
+* updated version to 3.9.9 ([8aa8aef](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/8aa8aefcb73e42b37ec280c3d2a6925d44de2dd6))
+* version updated to 3.9.10 ([848c3ac](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/848c3ac1f66f3644b5a1f1702ea2a2f7d95d6b04))
+
+
+### Bug Fixes
+
+* not prefixed javascript ([9abf695](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/9abf6957b41495a18c1c7f963e0eecb265a3d5ee))
+
 ## [3.9.8](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.7...v3.9.8) (2026-01-13)
 
 
