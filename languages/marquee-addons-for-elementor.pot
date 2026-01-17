@@ -44,7 +44,7 @@ msgid "Rate Us"
 msgstr ""
 
 #: widget.php:378 widgets/traits/common-controls/promotional-banner.php:15
-msgid "Get MarqueeAddons Pro"
+msgid "Get Marquee Addons Pro"
 msgstr ""
 
 #: widget.php:478
