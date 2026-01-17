@@ -1,18 +1,18 @@
-=== Marquee Addons for Elementor – Advanced Elements & Modern Motion Widgets ===
+=== Marquee Addons for Elementor - Essential Motion Widgets & Templates ===
 Contributors: debuggersstudio
 Tags: elementor, text marquee, image marquee, video marquee, Product slider
 Requires at least: 5.8
 Tested up to: 6.9
-Stable tag: 3.9.8
+Stable tag: 3.9.10
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-MarqueeAddons is a smooth video, text, image, and testimonial marquee carousel loop plugin for Elementor on WordPress
+Marquee Addons is a smooth video, text, image, and testimonial marquee carousel loop plugin for Elementor on WordPress
 
 == Description ==
 
-MarqueeAddons makes it easy to add smooth marquee effects for text, button, images, testimonials, videos, and cards to websites built with Elementor. It helps you create a continuous smooth scrolling loop for your content. You can customize the direction to scroll left, right, top, or bottom, either horizontally or vertically. With flexible options, it provides a smooth and user-friendly experience for your visitors while keeping your site looking modern and functional.
+Marquee Addons makes it easy to add smooth marquee effects for text, button, images, testimonials, videos, and cards to websites built with Elementor. It helps you create a continuous smooth scrolling loop for your content. You can customize the direction to scroll left, right, top, or bottom, either horizontally or vertically. With flexible options, it provides a smooth and user-friendly experience for your visitors while keeping your site looking modern and functional.
 
 [youtube https://youtu.be/CmW0U8Ij8o0?si=FEjPCccSyR3Om0K1]
 
@@ -68,7 +68,7 @@ Add clickable hotspots to any image, with each hotspot showing helpful text on h
 
 ## PRO WIDGETS – UNLOCK ADVANCED CAPABILITIES:
 
-MarqueeAddons Pro brings smooth marquee effects and motion design widgets to Elementor. Create advanced scrolling text, Media, testimonials, videos, 3D effect, cards, posts, products, and more in endless loops. Whether you are a designer, an agency, or a store owner, MarqueeAddons Pro helps you Make your 
+Marquee Addons Pro brings smooth marquee effects and motion design widgets to Elementor. Create advanced scrolling text, Media, testimonials, videos, 3D effect, cards, posts, products, and more in endless loops. Whether you are a designer, an agency, or a store owner, MarqueeAddons Pro helps you Make your 
 Elementor Websites Look 10x Better | Modern | Creative | Beautiful | Awesome
 
 ### [Card Marquee](https://marqueeaddons.com/card-marquee/) (Pro):
@@ -170,6 +170,8 @@ With our Marquee Addon for Elementor, you don’t just get widgets - you also ge
 * **Image Rotation (Pro)**: Adds a smooth rotation effect to the standard Elementor Image widget, allowing your images to rotate in a continuous infinite loop. You can choose clockwise or counter-clockwise rotation to grab visitors’ attention and easily adjust the speed to make the movement as fast or as slow as you want.
 
 * **Custom CSS (Pro)**: Add your own CSS to any marquee for complete design freedom. Fine-tune layouts, animations, and styles beyond the default options to match your site exactly the way you want.
+
+* **Dynamic Tags (Pro)**: Integrate built‑in dynamic tags into the marquee widget, so pre‑created dynamic content (like titles, fields, etc.) can be inserted and displayed automatically.
  
 ## Design & Performance Tips:
  
@@ -259,6 +261,12 @@ The developers release regular updates to improve features, fix bugs, and ensure
 First, ensure that you've activated the plugin correctly. If the issue persists, try clearing your browser cache or updating your Elementor plugin. If the problem continues, you can reach out to the support team for assistance.
 
 == Changelog ==
+
+= 3.9.10 - 2026-01-17 =
+- Fix: Adjust form submit handling with prefix class
+
+= 3.9.9 - 2026-01-15 =
+- New: Added title hover color in News Ticker Widget.
 
 = 3.9.8 - 2026-01-13 = 
 - Tweak: Added a dedicated class to identify each image marquee item.
