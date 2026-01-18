@@ -159,7 +159,7 @@
     });
 
     // Form Submit Handler
-    $("form").on("submit", function (e) {
+    $(".deensimc-addons-settings form").on("submit", function (e) {
       const submitBtn = $(this).find("#submit");
       submitBtn.prop("disabled", true).val("Saving...");
     });

@@ -8,7 +8,7 @@ final class Marquee
 {
 	use Deensimcpro_Promo;
 
-	const VERSION = '3.9.8';
+	const VERSION = '3.9.10';
 	const MINIMUM_ELEMENTOR_VERSION = '3.5.0';
 	const MINIMUM_PHP_VERSION = '7.4';
 
@@ -412,7 +412,7 @@ final class Marquee
 			$actions['upgrade_to_pro'] = sprintf(
 				'<a href="%1$s" target="_blank" style="color:#e2498a; font-weight: bold;">%2$s</a>',
 				esc_url($pro_url),
-				__('Get MarqueeAddons Pro', 'marquee-addons-for-elementor')
+				__('Get Marquee Addons Pro', 'marquee-addons-for-elementor')
 			);
 		}
 
