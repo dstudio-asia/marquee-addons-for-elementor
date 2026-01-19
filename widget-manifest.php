@@ -9,7 +9,7 @@
 
 if (!defined('ABSPATH')) exit;
 
-return [
+$free_widgets = [
     // Free Widgets
     'deensimc-image-marquee' => [
         'title'  => __('Image Marquee', 'marquee-addons-for-elementor'),
@@ -167,9 +167,10 @@ return [
         ],
         'file' => 'class-deensimc-image-hotspot.php',
         'class' => '\Deensimc_Image_Hotspot',
-    ],
+    ]
+];
 
-    // PRO Widgets & Extensions
+$pro_widgets = [
     'deensimcpro-3d-grid-marquee' => [
         'cat'    => 'general',
         'title'  => __('3D Grid Marquee', 'marquee-addons-for-elementor'),
@@ -312,6 +313,11 @@ return [
         'is_pro' => true,
         'demo'   => 'https://marqueeaddons.com/',
         'cat'    => 'extensions',
-        'pro_url' => 'https://marqueeaddons.com/pricing/',
+        'pro_url' => 'https://marqueeaddons.com/image-rotation/',
     ],
+];
+
+return [
+    'free' => $free_widgets,
+    'pro'  => $pro_widgets
 ];
