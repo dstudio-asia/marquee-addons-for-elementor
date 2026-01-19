@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: elementor, text marquee, image marquee, video marquee, Product slider
 Requires at least: 5.8
 Tested up to: 6.9
-Stable tag: 3.9.10
+Stable tag: 3.9.11
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -68,8 +68,7 @@ Add clickable hotspots to any image, with each hotspot showing helpful text on h
 
 ## PRO WIDGETS – UNLOCK ADVANCED CAPABILITIES:
 
-Marquee Addons Pro brings smooth marquee effects and motion design widgets to Elementor. Create advanced scrolling text, Media, testimonials, videos, 3D effect, cards, posts, products, and more in endless loops. Whether you are a designer, an agency, or a store owner, MarqueeAddons Pro helps you Make your 
-Elementor Websites Look 10x Better | Modern | Creative | Beautiful | Awesome
+Marquee Addons Pro brings smooth marquee effects and motion design widgets to Elementor. Create advanced scrolling text, Media, testimonials, videos, 3D effect, cards, posts, products, and more in endless loops. Whether you are a designer, an agency, or a store owner, Marquee Addons Pro helps you Make your Elementor Websites Look 10x Better | Modern | Creative | Beautiful | Awesome
 
 ### [Card Marquee](https://marqueeaddons.com/card-marquee/) (Pro):
 
