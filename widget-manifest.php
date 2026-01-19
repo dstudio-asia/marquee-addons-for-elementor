@@ -313,7 +313,7 @@ $pro_widgets = [
         'is_pro' => true,
         'demo'   => 'https://marqueeaddons.com/',
         'cat'    => 'extensions',
-        'pro_url' => 'https://marqueeaddons.com/pricing/',
+        'pro_url' => 'https://marqueeaddons.com/image-rotation/',
     ],
 ];
 

@@ -18,10 +18,10 @@ trait Manifest_Loader {
      *
      * @return array The widget manifest data.
      */
+
     protected static function get_manifest() {
 
         if (self::$manifest_data === null) {
-
             $manifest_path = DEENSIMC__DIR__ . '/widget-manifest.php';
             $free_manifest_data = [];
             
@@ -32,17 +32,18 @@ trait Manifest_Loader {
             // Initialize arrays
             $free_widgets = isset($free_manifest_data['free']) ? $free_manifest_data['free'] : [];
             $pro_widgets = isset($free_manifest_data['pro']) ? $free_manifest_data['pro'] : [];
+            $pro_active = class_exists('\Deensimcpro_Marquee\Marqueepro');
+            $pro_manifest_loaded = false;
             
-            // Check if pro plugin is installed
-            if (class_exists('\Deensimcpro_Marquee\Marqueepro')) {
-                $pro_widgets = [];
+            if ($pro_active) {
                 if (defined('DEENSIMCPRO__DIR__')) {
                     $pro_manifest_path = DEENSIMCPRO__DIR__ . '/deensimcpro-widget-manifest.php';
                     
                     if (file_exists($pro_manifest_path)) {
-                        $pro_manifest_data = require $pro_manifest_path;
-                        if (is_array($pro_manifest_data)) {
-                            $pro_widgets = $pro_manifest_data;
+                        $pro_widgets_from_pro = require $pro_manifest_path;
+                        if (is_array($pro_widgets_from_pro) && !empty($pro_widgets_from_pro)) {
+                            $pro_widgets = $pro_widgets_from_pro;
+                            $pro_manifest_loaded = true;
                         }
                     }
                 }
