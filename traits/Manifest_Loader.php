@@ -33,7 +33,6 @@ trait Manifest_Loader {
             $free_widgets = isset($free_manifest_data['free']) ? $free_manifest_data['free'] : [];
             $pro_widgets = isset($free_manifest_data['pro']) ? $free_manifest_data['pro'] : [];
             $pro_active = class_exists('\Deensimcpro_Marquee\Marqueepro');
-            $pro_manifest_loaded = false;
             
             if ($pro_active) {
                 if (defined('DEENSIMCPRO__DIR__')) {
@@ -43,7 +42,6 @@ trait Manifest_Loader {
                         $pro_widgets_from_pro = require $pro_manifest_path;
                         if (is_array($pro_widgets_from_pro) && !empty($pro_widgets_from_pro)) {
                             $pro_widgets = $pro_widgets_from_pro;
-                            $pro_manifest_loaded = true;
                         }
                     }
                 }
