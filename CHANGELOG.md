@@ -1,6 +1,20 @@
 # Changelog
 
 
+## [3.9.11](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.10...v3.9.11) (2026-01-19)
+
+
+### Features
+
+* version updated to 3.9.11 ([9e1d347](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/9e1d3473e0fbe8b72deb1897915579fa68e0f026))
+* version updated to 3.9.11 ([b40a17d](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/b40a17d11c4e653fe46cc866cf3565b6ef362d43))
+
+
+### Bug Fixes
+
+* remove unused variable ([461a8f1](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/461a8f179f9ebc30acd177cc1b94f45e02eeaae0))
+* update pro widget URL in widget manifest ([70a8768](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/70a87686cd0f1b7656b75b3d54d737aa79b2d59a))
+
 ## [3.9.10](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.8...v3.9.10) (2026-01-17)
 
 
