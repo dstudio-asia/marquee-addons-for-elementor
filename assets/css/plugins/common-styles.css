@@ -29,7 +29,6 @@
 }
 .deensimc-marquee-track {
   display: flex;
-  align-items: center;
   gap: var(--deensimc-item-gap);
   will-change: transform;
   -webkit-will-change: transform;
@@ -52,9 +51,7 @@
 .deensimc-marquee-vertical .deensimc-marquee-track-wrapper,
 .deensimc-marquee-vertical .deensimc-marquee-track {
   flex-direction: column;
-  align-items: center;
-  width: fit-content;
-  max-width: 100%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -131,51 +128,6 @@
 [dir="rtl"] .deensimc-marquee-vertical .deensimc-marquee-track-wrapper,
 [dir="rtl"] .deensimc-marquee-vertical .deensimc-marquee-track {
   flex-direction: column;
-}
-
-/* Force vertical layout on mobile */
-@media (max-width: 767px) {
-  .deensimc-marquee-vertical.deensimc-marquee-main-container {
-    height: auto !important;
-    padding-inline: 0;
-    padding-block: 1rem;
-    width: auto;
-  }
-
-  .deensimc-marquee-vertical .deensimc-marquee-track-wrapper,
-  .deensimc-marquee-vertical .deensimc-marquee-track {
-    flex-direction: row;
-    align-items: center;
-    width: auto;
-    max-width: none;
-  }
-
-  [dir="rtl"] .deensimc-marquee-vertical .deensimc-marquee-track-wrapper,
-  [dir="rtl"] .deensimc-marquee-vertical .deensimc-marquee-track {
-    flex-direction: row-reverse;
-  }
-
-  .deensimc-marquee-vertical .deensimc-marquee-track {
-    animation-name: deensimc_marquee_horizontal;
-  }
-
-  .deensimc-marquee-vertical.deensimc-marquee-edge-shadow {
-    &::after,
-    &::before {
-      width: 0;
-      height: 100%;
-    }
-
-    &::before {
-      left: 0;
-      right: auto;
-    }
-
-    &::after {
-      right: 0;
-      left: auto;
-    }
-  }
 }
 
 @keyframes deensimc_marquee_horizontal {
