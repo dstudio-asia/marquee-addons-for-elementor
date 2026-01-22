@@ -1,9 +1,9 @@
 === Marquee Addons for Elementor - Essential Motion Widgets & Templates ===
 Contributors: debuggersstudio
-Tags: elementor, text marquee, image marquee, video marquee, Product slider
+Tags: elementor, text marquee, image marquee, video marquee, elementor addons
 Requires at least: 5.8
 Tested up to: 6.9
-Stable tag: 3.9.11
+Stable tag: 3.9.12
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -92,6 +92,10 @@ Showcase your products in a smooth, infinite carousel that keeps them always in 
 
 Present your product categories in a smooth, continuous carousel. Each category can include an image, title, and link, styled to fit your store’s design. A great way to feature popular or seasonal categories and guide shoppers toward the right products.
 
+### [Product Carousel](https://marqueeaddons.com/product-marquee/) (Pro): 
+
+Display your products in a clean, swipe-friendly carousel that shoppers can browse in seconds. Perfect for homepages, product pages, and sections, this widget lets you showcase product image, title, price, ratings, and add-to-cart button in a modern slider layout. Highlight best sellers, featured items, new arrivals, or sale products with smooth navigation, responsive design, and full styling control to match your store perfectly.
+
 ### [Advanced Testimonial Marquee](https://marqueeaddons.com/testimonial-marquee/) (Pro):
 
 Bring testimonials and reviews to life with a continuous marquee carousel in multiple layouts. Unlock advanced options like scroll-triggered motion, vertical style, highlighted reviews, and interactive hover effects to make feedback stand out.
@@ -134,7 +138,7 @@ This Elementor widget fades in text as you scroll down the page, creating a smoo
 
 ### [MA Background](https://marqueeaddons.com/ma-background/) (Pro):
 
-Add animated backgrounds to any Elementor container. Choose from unique styles such as moving light beams, flowing aurora effects, interactive background boxes, glowing gradients, and more to make your Elementor website backgrounds interactive and live. Easily control the animation speed, colors, and direction to perfectly match your design.
+Add animated backgrounds to any Elementor container. Choose from unique styles such as moving light beams, flowing aurora effects, interactive background boxes, glowing gradients, light pulse effect and more to make your Elementor website backgrounds interactive and live. Easily control the animation speed, colors, and direction to perfectly match your design.
 
 ### [Elementor Templates](https://marqueeaddons.com/marquee-templates/) (Pro)
 
@@ -260,6 +264,9 @@ The developers release regular updates to improve features, fix bugs, and ensure
 First, ensure that you've activated the plugin correctly. If the issue persists, try clearing your browser cache or updating your Elementor plugin. If the problem continues, you can reach out to the support team for assistance.
 
 == Changelog ==
+
+= 3.9.12 - 2026-01-22 =
+- Tweak: Fixed vertical marquee direction on mobile in Text Marquee Widget.
 
 = 3.9.10 - 2026-01-17 =
 - Fix: Adjust form submit handling with prefix class
