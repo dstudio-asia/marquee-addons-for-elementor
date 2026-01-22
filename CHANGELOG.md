@@ -1,6 +1,20 @@
 # Changelog
 
 
+## [3.9.12](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.11...v3.9.12) (2026-01-22)
+
+
+### Features
+
+* updated to 3.9.12 ([dc11a88](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/dc11a885852c67bc5b4829024ba95e8f350944d9))
+* updated to 3.9.12 ([6efbfa7](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/6efbfa75f559cead3b4bde1730286e8f43309248))
+
+
+### Bug Fixes
+
+* Keep vertical text marquee on mobile ([518f287](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/518f287fe2e1b34d195d11ce1b13ce1f478026ed))
+* Keep vertical text marquee on mobile ([6bee78c](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/6bee78cea5e9d095d5df9185a49d70b5f5f56b4e))
+
 ## [3.9.11](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.10...v3.9.11) (2026-01-19)
 
 
