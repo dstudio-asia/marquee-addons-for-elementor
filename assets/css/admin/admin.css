@@ -154,31 +154,6 @@ a.toplevel_page_marquee-addons-settings .wp-menu-image img {
   transform: translateY(-2px);
 }
 
-/* PRO Locked Card */
-/* .deensimc-widget-card.deensimc-pro-locked {
-  opacity: 0.7;
-  background: #f9f9f9;
-  position: relative;
-  cursor: pointer !important;
-  transition: all 0.3s ease;
-  user-select: none;
-} */
-
-/* .deensimc-widget-card.deensimc-pro-locked:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 2px 8px rgba(116, 86, 255, 0.2);
-  opacity: 0.85;
-} */
-
-/* .deensimc-widget-card.deensimc-pro-locked * {
-  cursor: pointer !important;
-} */
-
-/* .deensimc-widget-card.deensimc-pro-locked .deensimc-widget-toggle,
-.deensimc-widget-card.deensimc-pro-locked .deensimc-widget-toggle * {
-  cursor: not-allowed !important;
-} */
-
 .deensimc-widget-header {
   display: flex;
   align-items: center;
@@ -455,11 +430,11 @@ div.deensimc-notice.info {
 .deensimc-pro-locked .slider[data-tooltip]::after {
   content: attr(data-tooltip);
   position: absolute;
-  top: -38px; /* move above */
+  top: -38px;
   left: 50%;
   transform: translateX(-50%) translateY(6px);
 
-  background: #6d6d6d; /* grey like screenshot */
+  background: #6d6d6d;
   color: #fff;
   font-size: 12px;
   font-weight: 600;
@@ -473,7 +448,7 @@ div.deensimc-notice.info {
   transition: 0.2s ease;
   z-index: 9999;
 }
-/* Show tooltip on hover */
+
 .deensimc-pro-locked:hover .slider[data-tooltip]::after {
   opacity: 1;
   visibility: visible;
