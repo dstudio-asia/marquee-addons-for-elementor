@@ -265,7 +265,7 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 
 == Changelog ==
 
-= 3.9.12 - 2026-01-24 =
+= 3.9.13 - 2026-01-24 =
 - New: Added documentation links to widgets in the Control Manager.
 
 = 3.9.12 - 2026-01-22 =
