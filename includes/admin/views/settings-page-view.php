@@ -93,14 +93,16 @@ if (!defined('ABSPATH')) exit;
 
                                             </div>
                                             <div class="deensimc-button-group-wrapper">
-
-                                                <a href="<?php echo esc_url($deensimc_widget['doc']); ?>" class="deensimc-see-demo-btn" target="_blank" rel="nofollow">
-                                                    <?php echo esc_html__('Doc', 'marquee-addons-for-elementor'); ?>
-                                                </a>
-
-                                                <a href="<?php echo esc_url($deensimc_widget['demo']); ?>" class="deensimc-see-demo-btn" target="_blank" rel="nofollow">
-                                                    <?php echo esc_html__('Demo', 'marquee-addons-for-elementor'); ?>
-                                                </a>
+                                                <?php if (! empty($deensimc_widget['doc'])) : ?>
+                                                    <a href="<?php echo esc_url($deensimc_widget['doc']); ?>" class="deensimc-see-demo-btn" target="_blank" rel="nofollow">
+                                                        <?php echo esc_html__('Doc', 'marquee-addons-for-elementor'); ?>
+                                                    </a>
+                                                <?php endif; ?>
+                                                <?php if (! empty($deensimc_widget['demo'])) : ?>
+                                                    <a href="<?php echo esc_url($deensimc_widget['demo']); ?>" class="deensimc-see-demo-btn" target="_blank" rel="nofollow">
+                                                        <?php echo esc_html__('Demo', 'marquee-addons-for-elementor'); ?>
+                                                    </a>
+                                                <?php endif; ?>
                                             </div>
                                         </div>
                                     </div>
