@@ -125,8 +125,8 @@ a.toplevel_page_marquee-addons-settings .wp-menu-image img {
 
 .deensimc-category-title {
   font-size: 18px;
-  margin: 0 0 20px 0; 
-  padding: 0; 
+  margin: 0 0 20px 0;
+  padding: 0;
   color: #1d2327;
 }
 
@@ -155,29 +155,29 @@ a.toplevel_page_marquee-addons-settings .wp-menu-image img {
 }
 
 /* PRO Locked Card */
-.deensimc-widget-card.deensimc-pro-locked {
+/* .deensimc-widget-card.deensimc-pro-locked {
   opacity: 0.7;
   background: #f9f9f9;
   position: relative;
   cursor: pointer !important;
   transition: all 0.3s ease;
   user-select: none;
-}
+} */
 
-.deensimc-widget-card.deensimc-pro-locked:hover {
+/* .deensimc-widget-card.deensimc-pro-locked:hover {
   transform: translateY(-2px);
   box-shadow: 0 2px 8px rgba(116, 86, 255, 0.2);
   opacity: 0.85;
-}
+} */
 
-.deensimc-widget-card.deensimc-pro-locked * {
+/* .deensimc-widget-card.deensimc-pro-locked * {
   cursor: pointer !important;
-}
+} */
 
-.deensimc-widget-card.deensimc-pro-locked .deensimc-widget-toggle,
+/* .deensimc-widget-card.deensimc-pro-locked .deensimc-widget-toggle,
 .deensimc-widget-card.deensimc-pro-locked .deensimc-widget-toggle * {
   cursor: not-allowed !important;
-}
+} */
 
 .deensimc-widget-header {
   display: flex;
@@ -435,4 +435,12 @@ div.deensimc-notice.info {
 
 .deensimc-toggle-label {
   transition: color 0.3s ease;
+}
+
+.deensimc-switch.deensimc-pro-locked:focus,
+.deensimc-switch.deensimc-pro-locked:active,
+.deensimc-see-demo-btn:focus,
+.deensimc-see-demo-btn:active {
+  outline: none !important;
+  box-shadow: none !important;
 }

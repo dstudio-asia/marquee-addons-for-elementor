@@ -90,7 +90,7 @@
       },
       function () {
         $(this).css("transform", "translateY(0)");
-      }
+      },
     );
 
     // Prevent toggle clicks from bubbling
@@ -98,7 +98,7 @@
       "click",
       function (e) {
         e.stopPropagation();
-      }
+      },
     );
 
     // Enable All Widgets
@@ -181,11 +181,9 @@
     // Widget Count Display
     const updateWidgetCount = function () {
       const enabledWidgets = $(
-        ".deensimc-widget-card input:checked:not(:disabled)"
+        ".deensimc-widget-card input:checked:not(:disabled)",
       ).length;
-      const availableWidgets = $(
-        ".deensimc-widget-card input:not(:disabled)"
-      ).length;
+      const availableWidgets = $(".deensimc-widget-card").length;
 
       if ($("#widget-count").length === 0) {
         const countHtml = `
@@ -196,7 +194,7 @@
         $(".deensimc-description").after(countHtml);
       } else {
         $("#widget-count").html(
-          `<strong>${enabledWidgets}</strong> of <strong>${availableWidgets}</strong> available widgets enabled`
+          `<strong>${enabledWidgets}</strong> of <strong>${availableWidgets}</strong> available widgets enabled`,
         );
       }
     };
@@ -255,7 +253,9 @@
 
   $(".deensimc-enable-category").on("click", function () {
     const category = $(this).data("category");
-    $(`.deensimc-widget-card[data-category="${category}"] input[type="checkbox"]`).each(function () {
+    $(
+      `.deensimc-widget-card[data-category="${category}"] input[type="checkbox"]`,
+    ).each(function () {
       if (!$(this).is(":disabled")) {
         $(this).prop("checked", true).trigger("change");
       }
@@ -265,12 +265,13 @@
 
   $(".deensimc-disable-category").on("click", function () {
     const category = $(this).data("category");
-    $(`.deensimc-widget-card[data-category="${category}"] input[type="checkbox"]`).each(function () {
+    $(
+      `.deensimc-widget-card[data-category="${category}"] input[type="checkbox"]`,
+    ).each(function () {
       if (!$(this).is(":disabled")) {
         $(this).prop("checked", false).trigger("change");
       }
     });
     showNotification(`All ${category} items disabled successfully!`, "info");
   });
-  
 })(jQuery);

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Admin Settings Page View
  *
@@ -59,7 +60,7 @@ if (!defined('ABSPATH')) exit;
                                     $deensimc_is_checked = $this->is_widget_enabled($deensimc_cat_widget_key);
                                     $deensimc_pro_url = isset($deensimc_widget['pro_url']) ? $deensimc_widget['pro_url'] : '';
                                 ?>
-                                    <div class="deensimc-widget-card <?php echo $deensimc_is_pro_locked ? 'deensimc-pro-locked' : ''; ?>" data-pro-url="<?php echo esc_attr($deensimc_pro_url); ?>" data-is-locked="<?php echo $deensimc_is_pro_locked ? '1' : '0'; ?>">
+                                    <div class="deensimc-widget-card <?php echo $deensimc_is_pro_locked ? '' : ''; ?>" data-pro-url="<?php echo esc_attr($deensimc_pro_url); ?>" data-is-locked="<?php echo $deensimc_is_pro_locked ? '1' : '0'; ?>">
                                         <?php if (!empty($deensimc_widget['is_pro'])) : ?>
                                             <span class="deensimc-pro-badge"><?php echo esc_html__('PRO', 'marquee-addons-for-elementor'); ?></span>
                                         <?php endif; ?>
@@ -68,10 +69,29 @@ if (!defined('ABSPATH')) exit;
                                         </div>
                                         <div class="deensimc-toggle-demo-wrapper">
                                             <div class="deensimc-widget-toggle">
-                                                <label class="deensimc-switch <?php echo $deensimc_is_pro_locked ? 'disabled' : ''; ?>">
-                                                    <input type="checkbox" name="marquee_addons_widgets[<?php echo esc_attr($deensimc_cat_widget_key); ?>]" <?php checked($deensimc_is_checked, true); ?> <?php disabled($deensimc_is_pro_locked); ?> value="on" data-is-pro="<?php echo !empty($deensimc_widget['is_pro']) ? '1' : '0'; ?>">
-                                                    <span class="slider"></span>
-                                                </label>
+                                                <?php if ($deensimc_is_pro_locked): ?>
+
+                                                    <a
+                                                        href="https://marqueeaddons.com/pricing/"
+                                                        class="deensimc-switch deensimc-pro-locked"
+                                                        title="<?php echo esc_attr__('Get Pro', 'marquee-addons-for-elementor'); ?>"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer">
+                                                        <span class="slider" data-tooltip="Get Pro"></span>
+                                                    </a>
+
+                                                <?php else: ?>
+
+                                                    <label class="deensimc-switch">
+                                                        <input type="checkbox"
+                                                            name="marquee_addons_widgets[<?php echo esc_attr($deensimc_cat_widget_key); ?>]"
+                                                            <?php checked($deensimc_is_checked, true); ?>
+                                                            value="on">
+                                                        <span class="slider"></span>
+                                                    </label>
+
+                                                <?php endif; ?>
+
                                             </div>
                                             <a href="<?php echo esc_url($deensimc_widget['demo']); ?>" class="deensimc-see-demo-btn" target="_blank" rel="nofollow">
                                                 <?php echo esc_html__('Demo', 'marquee-addons-for-elementor'); ?>
