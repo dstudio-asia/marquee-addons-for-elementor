@@ -444,3 +444,38 @@ div.deensimc-notice.info {
   outline: none !important;
   box-shadow: none !important;
 }
+
+.deensimc-button-group-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px !important;
+}
+
+/* Tooltip text bubble */
+.deensimc-pro-locked .slider[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: -38px; /* move above */
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+
+  background: #6d6d6d; /* grey like screenshot */
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 4px;
+  white-space: nowrap;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: 0.2s ease;
+  z-index: 9999;
+}
+/* Show tooltip on hover */
+.deensimc-pro-locked:hover .slider[data-tooltip]::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}

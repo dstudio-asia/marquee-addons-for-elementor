@@ -72,9 +72,8 @@ if (!defined('ABSPATH')) exit;
                                                 <?php if ($deensimc_is_pro_locked): ?>
 
                                                     <a
-                                                        href="https://marqueeaddons.com/pricing/"
+                                                        href="<?php echo esc_url($deensimc_widget['pro_url']); ?>"
                                                         class="deensimc-switch deensimc-pro-locked"
-                                                        title="<?php echo esc_attr__('Get Pro', 'marquee-addons-for-elementor'); ?>"
                                                         target="_blank"
                                                         rel="noopener noreferrer">
                                                         <span class="slider" data-tooltip="Get Pro"></span>
@@ -93,9 +92,16 @@ if (!defined('ABSPATH')) exit;
                                                 <?php endif; ?>
 
                                             </div>
-                                            <a href="<?php echo esc_url($deensimc_widget['demo']); ?>" class="deensimc-see-demo-btn" target="_blank" rel="nofollow">
-                                                <?php echo esc_html__('Demo', 'marquee-addons-for-elementor'); ?>
-                                            </a>
+                                            <div class="deensimc-button-group-wrapper">
+
+                                                <a href="<?php echo esc_url($deensimc_widget['doc']); ?>" class="deensimc-see-demo-btn" target="_blank" rel="nofollow">
+                                                    <?php echo esc_html__('Doc', 'marquee-addons-for-elementor'); ?>
+                                                </a>
+
+                                                <a href="<?php echo esc_url($deensimc_widget['demo']); ?>" class="deensimc-see-demo-btn" target="_blank" rel="nofollow">
+                                                    <?php echo esc_html__('Demo', 'marquee-addons-for-elementor'); ?>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 <?php endforeach; ?>
