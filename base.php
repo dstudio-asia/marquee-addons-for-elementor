@@ -5,7 +5,7 @@ namespace Deensimc_Marquee;
 final class Base
 {
     private static $_instance = null;
-    const VERSION = '3.9.13';
+    const VERSION = '3.9.14';
 
     public function __construct()
     {
