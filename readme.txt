@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: elementor, text marquee, image marquee, video marquee, elementor addons
 Requires at least: 5.8
 Tested up to: 6.9
-Stable tag: 3.9.12
+Stable tag: 3.9.14
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -264,6 +264,13 @@ The developers release regular updates to improve features, fix bugs, and ensure
 First, ensure that you've activated the plugin correctly. If the issue persists, try clearing your browser cache or updating your Elementor plugin. If the problem continues, you can reach out to the support team for assistance.
 
 == Changelog ==
+
+= 3.9.14 - 2026-01-25 =
+- Fix: Render only valid images in the gallery in Image Marquee.
+- Fix: Removed extra whitespace testimonial card in Testimonial marquee.
+
+= 3.9.13 - 2026-01-24 =
+- New: Added documentation links to widgets in the Control Manager.
 
 = 3.9.12 - 2026-01-22 =
 - Tweak: Fixed vertical marquee direction on mobile in Text Marquee Widget.

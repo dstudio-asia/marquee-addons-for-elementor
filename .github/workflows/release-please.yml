@@ -54,10 +54,29 @@ jobs:
           target-branch: main
           release-as: ${{ steps.readme_version.outputs.version }}
 
-      - name: 🔧 Zip all repository files
+      - name: 📦 Create ZIP with root folder
         if: ${{ steps.release.outputs.release_created }}
         run: |
-          zip -r "marquee-addons-for-elementor.zip" . -x ".git/*" ".github/*" ".gitignore" "README.md" ".wordpress-org/*" ".distignore" "CHANGELOG.md"
+          PLUGIN_SLUG="marquee-addons-for-elementor"
+          DIST_DIR="release_package"
+
+          rm -rf "$DIST_DIR"
+          mkdir -p "$DIST_DIR/$PLUGIN_SLUG"
+
+          rsync -a --delete \
+            --exclude=".git/" \
+            --exclude=".github/" \
+            --exclude=".wordpress-org/" \
+            --exclude=".distignore" \
+            --exclude=".gitignore" \
+            --exclude="README.md" \
+            --exclude="CHANGELOG.md" \
+            --exclude="$DIST_DIR/" \
+            ./ "$DIST_DIR/$PLUGIN_SLUG/"
+
+          cd "$DIST_DIR"
+          zip -r "../$PLUGIN_SLUG.zip" "$PLUGIN_SLUG"
+          cd ..
 
       - name: Upload Release Asset
         if: ${{ steps.release.outputs.release_created }}
