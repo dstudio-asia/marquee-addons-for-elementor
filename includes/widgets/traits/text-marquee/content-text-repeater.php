@@ -86,13 +86,19 @@ trait Deensimc_Textmarquee_Content_Text_Repeater
 		$this->add_responsive_control(
 			'deensimc_text_wrap',
 			[
-				'label' => esc_html__('Wrap', 'marquee-addons-for-elementor'),
+				'label' => esc_html__('Text wrap', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::SWITCHER,
 				'label_on' => esc_html__('On', 'marquee-addons-for-elementor'),
 				'label_off' => esc_html__('Off', 'marquee-addons-for-elementor'),
 				'return_value' => 'yes',
 				'default' => 'yes',
-
+				'desktop_default' => 'yes',
+				'laptop_default' => 'yes',
+				'tablet_default' => 'yes',
+				'tablet_extra_default' => 'yes',
+				'mobile_default' => 'yes',
+				'mobile_extra_default' => 'yes',
+				'widescreen_default' => 'yes',
 				'selectors_dictionary' => [
 					'yes' => 'white-space: normal;',
 					''    => 'white-space: nowrap;',
