@@ -87,7 +87,7 @@
 }
 
 .deensimc-testimonial-marquee .deensimc-tes-main .deensimc-tes-author.no-image {
-  margin-top: 66px;
+  margin-top: 16px;
 }
 
 .deensimc-testimonial-marquee .deensimc-tes-main .deensimc-tes-author {
@@ -101,9 +101,13 @@
   overflow: hidden;
   position: relative;
   background-color: var(--deensimc-marquee-tes-bg);
-  padding: 30px 50px 65px 50px;
+  padding: 30px 50px 30px 50px;
   font-weight: 500;
   line-height: 1.6em;
+}
+
+.deensimc-testimonial-marquee .deensimc-tes-main:has(img) blockquote {
+  padding: 30px 50px 65px 50px;
 }
 
 .deensimc-testimonial-marquee .deensimc-tes-main .deensimc-tes-author {
