@@ -1,6 +1,26 @@
 # Changelog
 
 
+## [3.9.14](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.12...v3.9.14) (2026-01-25)
+
+
+### Features
+
+* Add Doc links and improve Pro toggle tooltip ([4a6de11](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/4a6de1183d766e47e9a81541a928ef0c1ca1862f))
+* redirect pro-locked widget toggles to pricing ([d62e22f](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/d62e22f988cc48a78691a9931043958bb2b69f56))
+* updated to version 3.9.13 ([9c6f520](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/9c6f520c6c2c810106d783c3cb4c9f5e6833803c))
+* updated to version 3.9.13 ([899dc64](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/899dc64a98d9ed03561e0671e101ac550d380ea3))
+
+
+### Bug Fixes
+
+* **ci:** package plugin with proper root folder ([6bcb0d0](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/6bcb0d0f4c9265accf6b09e13965cfe32f7bc78c))
+* **image-marquee:** render only valid images in gallery ([ff84806](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/ff84806e159cfdf5108027a282bb8a3e14f7364c))
+* remove unused css of manage widget view ([51543d4](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/51543d483efef98e6b0c77a4d2e502f2d825b598))
+* Show Doc and Demo buttons only when available ([798972d](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/798972db2e95d32a27db8e907773fab254b876c0))
+* **ui:** adjust testimonial marquee spacing ([18ba1ee](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/18ba1eec53ccf744648137a19a2ed02e0f534bed))
+* **ui:** ensure text wrap defaults for all breakpoints ([073ce68](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/073ce6802f09407954d9d88bd70447334af64541))
+
 ## [3.9.12](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.11...v3.9.12) (2026-01-22)
 
 
