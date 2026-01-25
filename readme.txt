@@ -267,7 +267,7 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 
 = 3.9.14 - 2026-01-25 =
 - Fix: Render only valid images in the gallery in Image Marquee.
-- Fix: Removed extra whitespace testimonial card in Testimonial marquee.
+- Fix: Removed extra whitespace from testimonial card in Testimonial marquee.
 
 = 3.9.13 - 2026-01-24 =
 - New: Added documentation links to widgets in the Control Manager.
