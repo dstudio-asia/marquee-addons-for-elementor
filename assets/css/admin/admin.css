@@ -114,10 +114,10 @@ a.toplevel_page_marquee-addons-settings .wp-menu-image img {
   background-color: #fff;
 }
 
-.deensimc-settings-footer #submit {
+/* .deensimc-settings-footer #submit {
   background-color: #7456ff;
   border-color: #7456ff;
-}
+} */
 
 .deensimc-category-section {
   margin: 30px 0 20px 0;
@@ -303,12 +303,7 @@ a.toplevel_page_marquee-addons-settings .wp-menu-image img {
 
 /* Settings Footer */
 .deensimc-settings-footer {
-  padding: 20px 30px;
-  background: #f9f9f9;
-  border-top: 1px solid #ccd0d4;
-  display: flex;
-  gap: 10px;
-  align-items: center;
+  display: none;
 }
 
 /* Form Table Adjustments */
@@ -345,7 +340,7 @@ a.toplevel_page_marquee-addons-settings .wp-menu-image img {
     padding: 20px;
   }
 
-  .deensimc-settings-footer {
+  /* .deensimc-settings-footer {
     padding: 15px 20px;
     flex-direction: column;
     align-items: stretch;
@@ -354,7 +349,7 @@ a.toplevel_page_marquee-addons-settings .wp-menu-image img {
   .deensimc-settings-footer .button {
     width: 100%;
     text-align: center;
-  }
+  } */
 }
 
 /* Success Message */
