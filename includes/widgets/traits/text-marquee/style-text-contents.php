@@ -186,42 +186,42 @@ trait Deensimc_Textmarquee_Style_Text_Contents
 			]
 		);
 
-		$this->add_responsive_control(
-			'deensimc_icon_adjust_vertical_position',
-			[
-				'label' => esc_html__('Adjust Vertical Position', 'marquee-addons-for-elementor'),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => ['px', 'em', 'rem'],
-				'range' => [
-					'px' => [
-						'min' => -16,
-						'max' => 16,
-						'step' => 1,
-					],
-					'em' => [
-						'min' => -1,
-						'max' => 1,
-						'step' => 0.1,
-					],
-					'rem' => [
-						'min' => -1,
-						'max' => 1,
-						'step' => 0.1,
-					],
-				],
-				'default' => [
-					'unit' => 'px',
-					'size' => 0,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .deensimc-text-wrapper svg' => 'margin-block: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .deensimc-text-wrapper i' => 'margin-block: {{SIZE}}{{UNIT}};',
-				],
-				'condition' => [
-					'deensimc_marquee_vertical_orientation' => 'yes',
-				],
-			]
-		);
+		// $this->add_responsive_control(
+		// 	'deensimc_icon_adjust_vertical_position',
+		// 	[
+		// 		'label' => esc_html__('Adjust Vertical Position', 'marquee-addons-for-elementor'),
+		// 		'type' => Controls_Manager::SLIDER,
+		// 		'size_units' => ['px', 'em', 'rem'],
+		// 		'range' => [
+		// 			'px' => [
+		// 				'min' => -16,
+		// 				'max' => 16,
+		// 				'step' => 1,
+		// 			],
+		// 			'em' => [
+		// 				'min' => -1,
+		// 				'max' => 1,
+		// 				'step' => 0.1,
+		// 			],
+		// 			'rem' => [
+		// 				'min' => -1,
+		// 				'max' => 1,
+		// 				'step' => 0.1,
+		// 			],
+		// 		],
+		// 		'default' => [
+		// 			'unit' => 'px',
+		// 			'size' => 0,
+		// 		],
+		// 		'selectors' => [
+		// 			'{{WRAPPER}} .deensimc-text-wrapper svg' => 'margin-block: {{SIZE}}{{UNIT}};',
+		// 			'{{WRAPPER}} .deensimc-text-wrapper i' => 'margin-block: {{SIZE}}{{UNIT}};',
+		// 		],
+		// 		'condition' => [
+		// 			'deensimc_marquee_vertical_orientation' => 'yes',
+		// 		],
+		// 	]
+		// );
 		// animation 
 		$this->add_control(
 			'deensimc_icon_animation',
