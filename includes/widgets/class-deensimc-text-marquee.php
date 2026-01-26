@@ -18,6 +18,7 @@ class Deensimc_Text_Marquee extends Widget_Base
 	use Deensimc_Utils;
 	use Deensimc_Promotional_Banner;
 	use Deensimc_Textmarquee_Content_Text_Repeater;
+	use Deensimc_Textmarquee_Layout_Controls;
 	use Deensimc_Marquee_Controls;
 	use Deensimc_Textmarquee_Style_Text_Contents;
 	use Deensimc_Style_Edge_Shadow;
@@ -67,7 +68,7 @@ class Deensimc_Text_Marquee extends Widget_Base
 
 		$this->content_text_repeater();
 		$this->register_marquee_control('deensimc_text_marquee_options');
-
+		$this->register_layout_controls();
 		$this->style_text_contents();
 		$this->register_style_edge_shadow('deensimc_text_marquee_edge_shadow');
 	}
@@ -133,7 +134,7 @@ class Deensimc_Text_Marquee extends Widget_Base
 	{
 		$settings = $this->get_settings_for_display();
 		$texts = $settings['deensimc_repeater_text_main'];
-		$tag = self::validate_html_tag( $settings['deensimc_text_marquee_tag'] );
+		$tag = self::validate_html_tag($settings['deensimc_text_marquee_tag']);
 
 		$is_vertical = $settings['deensimc_marquee_vertical_orientation'] === 'yes';
 		$is_reverse = $settings['deensimc_marquee_reverse_direction'] === 'yes';
@@ -176,7 +177,7 @@ class Deensimc_Text_Marquee extends Widget_Base
 			<?php echo isset($speed) && $speed ? 'style="' . esc_attr($speed) . '"' : ''; ?>>
 			<div class="deensimc-marquee-track-wrapper">
 				<div class="deensimc-marquee-track">
-					<?php $this->render_marquee_texts($texts, $is_vertical, $tag,'track-1') ?>
+					<?php $this->render_marquee_texts($texts, $is_vertical, $tag, 'track-1') ?>
 				</div>
 				<div aria-hidden="true" class="deensimc-marquee-track">
 					<?php $this->render_marquee_texts($texts, $is_vertical, $tag, 'track-2') ?>

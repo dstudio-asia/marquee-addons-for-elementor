@@ -13,40 +13,6 @@ trait Deensimc_Textmarquee_Style_Text_Contents
 	protected function style_text_contents()
 	{
 		$this->start_controls_section(
-			'deensimc_layout_section',
-			[
-				'label' => esc_html__('Layout', 'marquee-addons-for-elementor'),
-				'tab' => Controls_Manager::TAB_STYLE,
-			]
-		);
-		$this->add_responsive_control(
-			'deensimc_widget_height',
-			[
-				'label' => esc_html__('Section Height', 'marquee-addons-for-elementor'),
-				'type' =>  Controls_Manager::SLIDER,
-				'size_units' => ['vh'],
-				'range' => [
-					'vh' => [
-						'min' => 1,
-						'max' => 100,
-						'step' => 1,
-					],
-				],
-
-				'default' => [
-					'unit' => 'vh',
-					'size' => 60,
-				],
-				'condition' => [
-					'deensimc_marquee_vertical_orientation' => 'yes',
-				],
-				'selectors' => [
-					'{{WRAPPER}} .deensimc-marquee-vertical.deensimc-marquee-main-container' => 'height: {{SIZE}}vh;',
-				],
-			]
-		);
-		$this->end_controls_section();
-		$this->start_controls_section(
 			'deensimc_style_section',
 			[
 				'label' => esc_html__('Texts', 'marquee-addons-for-elementor'),
