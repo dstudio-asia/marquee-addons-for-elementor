@@ -5,9 +5,7 @@
     const tracks = $scope.find(".deensimc-marquee-track");
     const isMarqueeOn = container.data("is-marquee-on") ?? true;
     const animationSpeed = container.data("marquee-speed");
-    const isVertical =
-      !window.matchMedia("(max-width: 767px)").matches &&
-      tracks.closest(".deensimc-marquee-vertical").length > 0;
+    const isVertical = tracks.closest(".deensimc-marquee-vertical").length > 0;
 
     if (isMarqueeOn && tracks.length) {
       let totalLength = 0;
