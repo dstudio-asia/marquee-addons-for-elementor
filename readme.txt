@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: elementor, text marquee, image marquee, video marquee, elementor addons
 Requires at least: 5.8
 Tested up to: 6.9
-Stable tag: 3.9.14
+Stable tag: 3.9.15
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -265,9 +265,15 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 
 == Changelog ==
 
+= 3.9.15 - 2026-01-25 =
+- Fix: Fixed an issue where animation speed increased on mobile.
+- New: Separated the Section Height control for Vertical Text Marquee for improved structure.
+- Fix: Removed the Icon Adjust Vertical Position control.
+- New: Implemented widget enable/disable functionality on toggle change for better user control.
+
 = 3.9.14 - 2026-01-25 =
 - Fix: Render only valid images in the gallery in Image Marquee.
-- Fix: Removed extra whitespace testimonial card in Testimonial marquee.
+- Fix: Removed extra whitespace from testimonial card in Testimonial marquee.
 
 = 3.9.13 - 2026-01-24 =
 - New: Added documentation links to widgets in the Control Manager.
