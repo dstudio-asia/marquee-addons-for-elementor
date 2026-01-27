@@ -124,44 +124,14 @@
 
     // Toggle Label Update and Form Submission
     $(".deensimc-switch input").on("change", function () {
-      // if ($(this).is(":disabled")) {
-      //   return;
-      // }
-
-      // // Update the label immediately
-      // const label = $(this)
-      //   .closest(".deensimc-widget-toggle")
-      //   .find(".deensimc-toggle-label");
-
-      // if ($(this).is(":checked")) {
-      //   label.text("Enabled").css("color", "#00a32a");
-      // } else {
-      //   label.text("Disabled").css("color", "#d63638");
-      // }
       setTimeout(() => {
         $("#submit").click();
-        $(".deensimc-widget-card").css({"opacity": "0.5", "pointer-events": "none"});
+        $(".deensimc-widget-card").css({
+          opacity: "0.5",
+          "pointer-events": "none",
+        });
       }, 100);
     });
-
-    // Initialize toggle labels
-    // $(".deensimc-switch input").each(function () {
-    //   const label = $(this)
-    //     .closest(".deensimc-widget-toggle")
-    //     .find(".deensimc-toggle-label");
-
-    //   // If disabled (PRO locked), keep the locked label
-    //   if ($(this).is(":disabled")) {
-    //     label.text("Locked").css("color", "#856404");
-    //     return;
-    //   }
-
-    //   if ($(this).is(":checked")) {
-    //     label.css("color", "#00a32a");
-    //   } else {
-    //     label.text("Disabled").css("color", "#d63638");
-    //   }
-    // });
 
     // Form Submit Handler
     $(".deensimc-addons-settings form").on("submit", function (e) {
@@ -232,11 +202,6 @@
       const tabId = $(this).data("tab");
       window.location.hash = tabId;
     });
-
-    // Add loading state during save
-    // $("form").on("submit", function () {
-    //   $(".deensimc-settings-container").addClass("deensimc-loading");
-    // });
 
     // Confirm before leaving with unsaved changes
     let formChanged = false;
