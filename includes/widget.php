@@ -8,7 +8,7 @@ final class Marquee
 {
 	use Deensimcpro_Promo;
 
-	const VERSION = '3.9.14';
+	const VERSION = '3.9.15';
 	const MINIMUM_ELEMENTOR_VERSION = '3.5.0';
 	const MINIMUM_PHP_VERSION = '7.4';
 
@@ -216,12 +216,19 @@ final class Marquee
 		echo '    <img src="' . esc_url(DEENSIMC_ASSETS_URL) . 'images/library-icon.png" alt="Notice Icon" />';
 		echo '  </div>';
 		echo '  <div class="deensimc-notice-content">';
-		echo '    <h3>Upgrade to Marquee Addons Pro</h3>';
-		echo '    <p>Unlock more advance widgets and make your Elementor website 10x better with Marquee Addons.</p>';
-		echo '    <a href="https://marqueeaddons.com/pricing/" target="_blank" class="button button-primary">Upgrade to Pro</a>';
+		echo '    <h3>Enjoying Marquee Addons?</h3>';
+		echo '    <p>A quick rating helps other Elementor users discover Marquee Addons. You can also share feature ideas or suggestions to help us improve.</p>';
+		echo '    <div class="deensimc-btns">';
+		echo '      <div class="deensimc-action-btns">';
 		echo '    <a href="https://wordpress.org/support/plugin/marquee-addons-for-elementor/reviews/#new-post" target="_blank" class="button button-primary">Rate Us</a>';
-		echo '    <button class="button deensimc-dismiss-btn">Remind me later</button>';
-		echo '    <button class="button deensimc-never-show">Don\'t show me again</button>';
+		echo '    <a href="https://wordpress.org/support/plugin/marquee-addons-for-elementor/" target="_blank" class="button"> Feature Request</a>';
+		echo '    <a href="https://marqueeaddons.com/pricing/" target="_blank" class="button">Upgrade to Pro</a>';
+		echo '      </div>';
+		echo '      <div class="deensimc-dismiss-btns">';
+		echo '    <button class="button deensimc-dismiss-btn button-tertiary">Remind me later</button>';
+		echo '    <button class="button deensimc-never-show button-tertiary">Don\'t show me again</button>';
+		echo '      </div>';
+		echo '    </div>';
 		echo '  </div>';
 		echo '</div>';
 	}
@@ -428,7 +435,7 @@ final class Marquee
 				'icon' => 'fa fa-plug',
 			]
 		);
-		
+
 		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 		if (!class_exists('\Deensimcpro_Marquee\Marqueepro') || !apply_filters('marquee_addons_is_license_active', false)) {
 			$elements_manager->add_category(
