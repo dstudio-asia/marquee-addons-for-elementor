@@ -1,6 +1,27 @@
 # Changelog
 
 
+## [3.9.15](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.14...v3.9.15) (2026-01-27)
+
+
+### Features
+
+* Add Section Height control for vertical Text Marquee ([037e062](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/037e0620118f372e5ed65eb5fb7838bd4d62047f))
+
+
+### Bug Fixes
+
+* add form submission on toggle change ([9ad0819](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/9ad08197012a288d203adb89b654087dcc164552))
+* Adjust layout control section order to avoid UI issues ([1bf9ba3](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/1bf9ba304dfe3df28b9ac6969bed08ec30a249f5))
+* improve admin notice styling and layout ([fccab54](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/fccab5462f7fc310b509aa55862bee27bf142e66))
+* improve admin notice styling and layout ([6e5d455](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/6e5d45545f4cda7b69094ca008192c7d5607794e))
+* **js:** simplify vertical marquee detection ([0e25357](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/0e253574af0248c8153eee4dcd0028c39db95844))
+* **readme:** correct testimonial whitespace changelog text ([fceee53](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/fceee539a2fa264c0273b199dfa90b52562136e9))
+* Remove Adjust Vertical Position control ([ed8d17d](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/ed8d17dc97b5687db05cf4eabf5c20082db340bc))
+* remove unused code ([85065c1](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/85065c12d631a9c5e19d040b6f976f4ab00a9b8f))
+* remove unused code ([2d3f6a1](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/2d3f6a13ac4b4f4377c2c113f830143a1f48f8c5))
+* remove unused code ([5e88a72](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/5e88a72cca75d666c0212222f020952ebb28b6cb))
+
 ## [3.9.14](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.12...v3.9.14) (2026-01-25)
 
 
