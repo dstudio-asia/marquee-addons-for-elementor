@@ -2,11 +2,11 @@
 #deensimc-feedback-notice.deensimc-notice-wrap {
   display: flex;
   align-items: flex-start;
-  border-left: 4px solid #4F46E5;
+  border-left: 4px solid #4f46e5;
   background: #fff;
   padding: 20px;
   margin: 20px 0;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 /* Left Icon */
@@ -20,6 +20,9 @@
 }
 
 /* Content */
+.deensimc-notice-content {
+  width: 100%;
+}
 .deensimc-notice-content h3 {
   margin: 0 0 8px;
   font-size: 1.25em;
@@ -31,21 +34,33 @@
 
 /* Buttons */
 .deensimc-notice-content .button-primary {
-  background-color: #4F46E5;
-  border-color: #4F46E5;
+  background-color: #4f46e5;
+  border-color: #4f46e5;
   color: #fff;
-  margin-right: 8px;
 }
 
 button.button.deensimc-never-show {
   margin-left: 8px;
 }
-.deensimc-dismiss-btn {
-  background: transparent;
-  border: 1px solid #ccd0d4;
-  color: #666;
+
+.deensimc-notice-content .deensimc-dismiss-btns,
+.deensimc-notice-content .deensimc-action-btns {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
 }
-.deensimc-dismiss-btn:hover {
-  background-color: #f0f0f0;
+.deensimc-notice-content .button-tertiary {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+.deensimc-notice-content .button-tertiary:hover {
+  background-color: transparent;
   color: #111;
+}
+.deensimc-notice-content .deensimc-btns {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
 }
