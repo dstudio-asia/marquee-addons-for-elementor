@@ -13,27 +13,6 @@ final class Base
         add_filter('plugin_row_meta', [$this, 'deensimc_add_row_meta_links'], 10, 2);
     }
 
-    public function deensimc_add_row_meta_links($links, $pluginFile)
-    {
-        if ($pluginFile !== 'marquee-addons-for-elementor/marquee-addons-for-elementor.php') {
-            return $links;
-        }
-
-        $links[] = sprintf(
-            '<a href="%s" target="_blank" rel="noopener noreferrer">%s</a>',
-            esc_url('https://marqueeaddons.com/docs/'),
-            esc_html__('Docs & FAQs', 'marquee-addons-for-elementor')
-        );
-
-        $links[] = sprintf(
-            '<a href="%s" target="_blank" rel="noopener noreferrer">%s</a>',
-            esc_url('https://www.youtube.com/playlist?list=PLCLMAp2dSeYVmhmX5Wej3gOhneM5RkSpY'),
-            esc_html__('Video Tutorials', 'marquee-addons-for-elementor')
-        );
-
-        return $links;
-    }
-
     public static function instance()
     {
         if (is_null(self::$_instance)) {
@@ -69,6 +48,27 @@ final class Base
 
         // Load Actions
         add_action('admin_enqueue_scripts', [$this, 'deensimc_admin_enqueue_scripts'], 10);
+    }
+
+    public function deensimc_add_row_meta_links($links, $pluginFile)
+    {
+        if ($pluginFile !== 'marquee-addons-for-elementor/marquee-addons-for-elementor.php') {
+            return $links;
+        }
+
+        $links[] = sprintf(
+            '<a href="%s" target="_blank" rel="noopener noreferrer">%s</a>',
+            esc_url('https://marqueeaddons.com/docs/'),
+            esc_html__('Docs & FAQs', 'marquee-addons-for-elementor')
+        );
+
+        $links[] = sprintf(
+            '<a href="%s" target="_blank" rel="noopener noreferrer">%s</a>',
+            esc_url('https://www.youtube.com/playlist?list=PLCLMAp2dSeYVmhmX5Wej3gOhneM5RkSpY'),
+            esc_html__('Video Tutorials', 'marquee-addons-for-elementor')
+        );
+
+        return $links;
     }
 
     function deensimc_admin_enqueue_scripts()
