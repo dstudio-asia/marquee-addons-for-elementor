@@ -53,6 +53,21 @@ trait Testimonial_Marquee_Style_Contents
 				'label' => esc_html__('Icon', 'marquee-addons-for-elementor'),
 				'type' =>  Controls_Manager::HEADING,
 				'separator' => 'before',
+				'conditions' => [
+					'relation' => 'or',
+					'terms' => [
+						[
+							'name' => 'deensimc_testimonial_quote_left_icon[value]',
+							'operator' => '!=',
+							'value' => '',
+						],
+						[
+							'name' => 'deensimc_testimonial_quote_right_icon[value]',
+							'operator' => '!=',
+							'value' => '',
+						],
+					],
+				],
 			]
 		);
 
@@ -64,6 +79,21 @@ trait Testimonial_Marquee_Style_Contents
 				'selectors' => [
 					'{{WRAPPER}} .deensimc-testimonial-marquee .deensimc-tes-item blockquote i' => 'color: {{VALUE}}',
 					'{{WRAPPER}} .deensimc-testimonial-marquee .deensimc-tes-item blockquote svg path' => 'fill: {{VALUE}}',
+				],
+				'conditions' => [
+					'relation' => 'or',
+					'terms' => [
+						[
+							'name' => 'deensimc_testimonial_quote_left_icon[value]',
+							'operator' => '!=',
+							'value' => '',
+						],
+						[
+							'name' => 'deensimc_testimonial_quote_right_icon[value]',
+							'operator' => '!=',
+							'value' => '',
+						],
+					],
 				],
 			]
 		);
@@ -88,6 +118,21 @@ trait Testimonial_Marquee_Style_Contents
 				'selectors' => [
 					'{{WRAPPER}} .deensimc-tes-text .contents-wrapper i' => 'font-size: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .deensimc-tes-text .contents-wrapper svg' => 'height: {{SIZE}}{{UNIT}}; width: {{SIZE}}{{UNIT}};',
+				],
+				'conditions' => [
+					'relation' => 'or',
+					'terms' => [
+						[
+							'name' => 'deensimc_testimonial_quote_left_icon[value]',
+							'operator' => '!=',
+							'value' => '',
+						],
+						[
+							'name' => 'deensimc_testimonial_quote_right_icon[value]',
+							'operator' => '!=',
+							'value' => '',
+						],
+					],
 				],
 			]
 		);

@@ -42,7 +42,7 @@ trait Deensimc_Textmarquee_Content_Text_Repeater
 			'deensimc_repeater_text',
 			[
 				'label' => esc_html__('Text', 'marquee-addons-for-elementor'),
-				'type' =>  Controls_Manager::TEXT,
+				'type' =>  Controls_Manager::TEXTAREA,
 				'default' => esc_html__('Lorem Ipsum is simply dummy text of the printing and typesetting industry', 'marquee-addons-for-elementor'),
 				'placeholder' => esc_html__('Type your title here', 'marquee-addons-for-elementor'),
 			]

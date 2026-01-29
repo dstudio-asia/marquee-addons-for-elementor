@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: elementor, text marquee, image marquee, video marquee, elementor addons
 Requires at least: 5.8
 Tested up to: 6.9
-Stable tag: 3.9.15
+Stable tag: 3.9.16
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -264,6 +264,11 @@ The developers release regular updates to improve features, fix bugs, and ensure
 First, ensure that you've activated the plugin correctly. If the issue persists, try clearing your browser cache or updating your Elementor plugin. If the problem continues, you can reach out to the support team for assistance.
 
 == Changelog ==
+
+= 3.9.16 - 2026-01-29
+- New: Added docs & FAQs and video tutorials links.
+- Tweak: Add Textarea field instead of of text field in text Marquee
+- Fix: Fixe Icon style controls rendering behavior in Testimonial marquee
 
 = 3.9.15 - 2026-01-25 =
 - Fix: Fixed an issue where animation speed increased on mobile.

@@ -8,7 +8,7 @@ final class Marquee
 {
 	use Deensimcpro_Promo;
 
-	const VERSION = '3.9.15';
+	const VERSION = '3.9.16';
 	const MINIMUM_ELEMENTOR_VERSION = '3.5.0';
 	const MINIMUM_PHP_VERSION = '7.4';
 
@@ -425,6 +425,7 @@ final class Marquee
 
 		return $actions;
 	}
+
 
 	function deensimc_add_categories($elements_manager)
 	{
