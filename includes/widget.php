@@ -426,6 +426,7 @@ final class Marquee
 		return $actions;
 	}
 
+
 	function deensimc_add_categories($elements_manager)
 	{
 		$elements_manager->add_category(
