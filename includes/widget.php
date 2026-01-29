@@ -144,7 +144,6 @@ final class Marquee
 		add_action('elementor/editor/after_enqueue_scripts', [$this, 'deensimc_editor_script'], 10);
 		add_action('elementor/frontend/after_enqueue_scripts', [$this, 'deensimc_elementor_library'], 20);
 		add_filter('plugin_action_links_marquee-addons-for-elementor/marquee-addons-for-elementor.php', [$this, 'deensimc_upgrade_link'], 10);
-		add_filter('plugin_row_meta', [$this, 'deensimc_add_row_meta_links'], 10, 2);
 	}
 
 	public function deensimc_notice_enqueue_scripts($hook)
@@ -425,27 +424,6 @@ final class Marquee
 		}
 
 		return $actions;
-	}
-
-	public function deensimc_add_row_meta_links($links, $pluginFile)
-	{
-		if ($pluginFile !== 'marquee-addons-for-elementor/marquee-addons-for-elementor.php') {
-			return $links;
-		}
-
-		$links[] = sprintf(
-			'<a href="%s" target="_blank" rel="noopener noreferrer">%s</a>',
-			esc_url('https://marqueeaddons.com/docs/'),
-			esc_html__('Docs & FAQs', 'marquee-addons-for-elementor')
-		);
-
-		$links[] = sprintf(
-			'<a href="%s" target="_blank" rel="noopener noreferrer">%s</a>',
-			esc_url('https://www.youtube.com/playlist?list=PLCLMAp2dSeYVmhmX5Wej3gOhneM5RkSpY'),
-			esc_html__('Video Tutorials', 'marquee-addons-for-elementor')
-		);
-
-		return $links;
 	}
 
 
