@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: elementor, text marquee, image marquee, video marquee, elementor addons
 Requires at least: 5.8
 Tested up to: 6.9
-Stable tag: 3.9.16
+Stable tag: 3.9.17
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -265,12 +265,15 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 
 == Changelog ==
 
-= 3.9.16 - 2026-01-29
-- New: Added docs & FAQs and video tutorials links.
-- Tweak: Add Textarea field instead of of text field in text Marquee
-- Fix: Fixe Icon style controls rendering behavior in Testimonial marquee
+= 3.9.17 - 2026-01-31 =
+- Tweak: Added default font size to testimonial blockquote.
 
-= 3.9.15 - 2026-01-25 =
+= 3.9.16 - 2026-01-29 =
+- New: Added docs & FAQs and video tutorials links.
+- Tweak: Add Textarea field instead of text field in text Marquee.
+- Fix: Icon style controls rendering behavior in Testimonial marquee.
+
+= 3.9.15 - 2026-01-27 =
 - Fix: Fixed an issue where animation speed increased on mobile.
 - New: Separated the Section Height control for Vertical Text Marquee for improved structure.
 - Fix: Removed the Icon Adjust Vertical Position control.
