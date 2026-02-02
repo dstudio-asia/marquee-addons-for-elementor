@@ -111,7 +111,7 @@ trait Deensimc_Search_Triggerer_Styles_Controls
                 'name'     => 'deensimc_search_triggerer_hover_background_color',
                 'types'    => ['classic', 'gradient'],
                 'exclude' => ['image'],
-                'selector' => '{{WRAPPER}} .deensimc-input-container .deensimc-search-input-triggerer',
+                'selector' => '{{WRAPPER}} .deensimc-input-container .deensimc-search-input-triggerer:hover',
             ]
         );
 
