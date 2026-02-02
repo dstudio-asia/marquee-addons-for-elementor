@@ -265,7 +265,7 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 
 == Changelog ==
 
-= 3.9.18 - 2026-01-31 =
+= 3.9.18 - 2026-02-02 =
 - Fix: Hover color works correctly for the search trigger button.
 - Tweak: Smoother hover and dropdown transitions.
 
