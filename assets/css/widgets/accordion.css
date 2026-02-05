@@ -44,8 +44,11 @@
   box-shadow: inset 0 0 0 5px var(--deensimc-panel-rgba);
   color: var(--deensimc-color-white);
   text-align: center;
-  transition: font-size 0.7s cubic-bezier(0, 1.09, 1, -2.06),
-    flex 0.3s ease-in-out, background 0.2s, height 0.3s ease-in-out;
+  transition:
+    font-size 0.7s cubic-bezier(0, 1.09, 1, -2.06),
+    flex 0.3s ease-in-out,
+    background 0.2s,
+    height 0.3s ease-in-out;
   font-size: 20px;
   background-size: cover;
   background-position: center;
@@ -87,7 +90,7 @@
   overflow: hidden;
 }
 
-.deensimc-panel-content h2 {
+.deensimc-panel-content .deensimc-acc-title {
   color: var(--deensimc-color-white);
 }
 
@@ -127,7 +130,8 @@
 
 .deensimc-panel .deensimc-panel-default-title {
   text-transform: uppercase;
-  text-shadow: 0 0 4px var(--deensimc-image-panel-rgba-one),
+  text-shadow:
+    0 0 4px var(--deensimc-image-panel-rgba-one),
     0 0 14px var(--deensimc-image-panel-rgba-two);
   font-size: 1.5em;
   z-index: 11;
@@ -139,7 +143,7 @@
   cursor: default;
 }
 
-.deensimc-panel-content h2 {
+.deensimc-panel-content .deensimc-acc-title {
   text-transform: uppercase;
   font-size: 1.5em;
   z-index: 11;

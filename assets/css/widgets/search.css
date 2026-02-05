@@ -22,7 +22,9 @@
     width: 16px;
     height: 16px;
     fill: #272727;
+    transition: all 0.2s;
   }
+  transition: all 0.2s;
 }
 
 .deensimc-input-field-wrapper {
@@ -112,7 +114,9 @@
   left: 50%;
   transform: translateX(-50%) scaleY(0);
   max-height: 0;
-  transition: max-height 0.3s, transform 0.3s;
+  transition:
+    max-height 0.3s,
+    transform 0.3s;
   transform-origin: top;
   pointer-events: none;
 }

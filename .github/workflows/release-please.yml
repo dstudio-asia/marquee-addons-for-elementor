@@ -32,17 +32,21 @@ jobs:
           echo "Found version: $VERSION"
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
 
-      # These steps run ONLY when release was created
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - name: Setup Node.js and Install Dependencies
+        uses: actions/setup-node@v4
         with:
           node-version: '22'
-
-      - name: Install npm dependencies
-        run: npm install
+          cache: 'npm'
+      - run: npm install
 
       - name: Run build script (minify assets)
         run: npm run build
+
+      - name: Remove unminified CSS files
+        run: find assets/css -type f -name '*.css' ! -name '*.min.css' ! -path 'assets/css/plugins/*' -delete
+
+      - name: Remove unminified JS files
+        run: find assets/js -type f -name '*.js' ! -name '*.min.js' ! -path 'assets/js/plugins/*' -delete
 
       # Release-please (no file commits, no PR — release only)
       - name: Release Please
@@ -89,9 +93,47 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Upload artifact for deployment
-        if: ${{ steps.release.outputs.release_created }}
-        uses: actions/upload-artifact@v4
+  deploy-to-WP:
+    needs: release-please
+    if: ${{ needs.release-please.outputs.release_created }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Read version from readme.txt (Stable tag: x.y.z)
+      - name: Read version from readme.txt
+        id: readme_version
+        run: |
+          VERSION=$(grep -oP '^Stable tag:\s*\K[0-9]+(\.[0-9]+)*' readme.txt)
+          if [ -z "$VERSION" ]; then
+            echo "❌ Stable tag not found in readme.txt"; exit 1
+          fi
+          echo "Found version: $VERSION"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      # Reusable setup (same as release job)
+      - name: Setup Node.js and Install Dependencies
+        uses: actions/setup-node@v4
         with:
-          name: marquee-addons-for-elementor
-          path: marquee-addons-for-elementor.zip
+          node-version: '22'
+          cache: 'npm'
+      - run: npm install
+
+      - name: Run build script (minify assets)
+        run: npm run build
+
+      - name: Remove unminified CSS files
+        run: find assets/css -type f -name '*.css' ! -name '*.min.css' ! -path 'assets/css/plugins/*' -delete
+
+      - name: Remove unminified JS files
+        run: find assets/js -type f -name '*.js' ! -name '*.min.js' ! -path 'assets/js/plugins/*' -delete
+      
+      - name: WordPress Plugin Deploy
+        id: deploy
+        uses: 10up/action-wordpress-plugin-deploy@stable
+        env:
+          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+          SLUG: marquee-addons-for-elementor
+          VERSION: ${{ steps.readme_version.outputs.version }} # Ensure `get_version` is correctly set
