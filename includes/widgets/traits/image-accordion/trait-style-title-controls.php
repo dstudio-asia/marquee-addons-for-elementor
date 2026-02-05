@@ -23,7 +23,7 @@ trait Deensimc_ImageAccordion_Title_Style_Controls
             Group_Control_Typography::get_type(),
             [
                 'name' => 'deensimc_image_title_typography',
-                'selector' => '{{WRAPPER}} .deensimc-image-panel .deensimc-panel .deensimc-panel-default-title, {{WRAPPER}} .deensimc-panel-content h2',
+                'selector' => '{{WRAPPER}} .deensimc-image-panel .deensimc-panel .deensimc-panel-default-title, {{WRAPPER}} .deensimc-panel-content .deensimc-acc-title',
             ]
         );
 
@@ -34,7 +34,7 @@ trait Deensimc_ImageAccordion_Title_Style_Controls
                 'type' =>  Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .deensimc-image-panel .deensimc-panel .deensimc-panel-default-title' => 'color: {{VALUE}}',
-                    '{{WRAPPER}} .deensimc-panel-content h2' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .deensimc-panel-content .deensimc-acc-title' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -60,7 +60,7 @@ trait Deensimc_ImageAccordion_Title_Style_Controls
                 'size_units' => ['px', '%', 'em', 'rem', 'custom'],
                 'selectors' => [
                     '{{WRAPPER}} .deensimc-panel-default-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                    '{{WRAPPER}} .deensimc-panel-content h2' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .deensimc-panel-content .deensimc-acc-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );

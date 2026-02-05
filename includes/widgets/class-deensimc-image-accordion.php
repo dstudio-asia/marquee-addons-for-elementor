@@ -148,6 +148,9 @@ class Deensimc_Image_Accordion extends Widget_Base
 		}
 
 		$devices_class = implode(' ', $devices);
+		$heading_tag = !empty($settings['deensimc_image_accordion_heading_tag'])
+			? $settings['deensimc_image_accordion_heading_tag']
+			: 'h3';
 ?>
 		<div class="deensimc-image-panel">
 			<div class="deensimc-panels">
@@ -163,7 +166,9 @@ class Deensimc_Image_Accordion extends Widget_Base
 								<?php echo esc_html($images['deensimc_bg_image_title']) ?>
 							</p>
 							<div class="deensimc-panel-content">
-								<h2> <?php echo esc_html($images['deensimc_bg_image_title']) ?> </h2>
+								<<?php echo esc_attr($heading_tag); ?> class="deensimc-acc-title">
+									<?php echo esc_html($images['deensimc_bg_image_title']); ?>
+								</<?php echo esc_attr($heading_tag); ?>>
 								<div class="deensimc-acc-description">
 									<?php echo wp_kses_post($images['deensimc_bg_image_description'] ?? ''); ?>
 								</div>
