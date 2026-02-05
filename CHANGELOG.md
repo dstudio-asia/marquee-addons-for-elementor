@@ -1,6 +1,27 @@
 # Changelog
 
 
+## [3.9.19](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.9.17...v3.9.19) (2026-02-05)
+
+
+### Features
+
+* make image accordion heading tag dynamic ([aeccb3d](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/aeccb3db83c0d19dc42d6689dfcb13e62118dff6))
+* make image accordion heading tag dynamic ([306f8f7](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/306f8f768715828b98dc99bd1870291aef8a30c1))
+* update to 3.9.18 ([8e9a9e4](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/8e9a9e4ecfe6f3c4aace9e69661a138fe9ac1e4e))
+* update to 3.9.18 ([c264edf](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/c264edff219c42915f6dc7432b3e8391d409edd7))
+* version updated to 3.9.19 ([b899830](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/b8998304962981fb9245629238b713f6b3c1c37c))
+* version updated to 3.9.19 ([20e55d5](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/20e55d57949ccf51e76426d190d7322e436e0f78))
+
+
+### Bug Fixes
+
+* add ABSPATH in base and widget php ([6ae3e6f](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/6ae3e6f907cafa462dbd4c9393656a4be67c1aa3))
+* fix hover color and add transitions ([12ea88f](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/12ea88fb6051838877e137347c319f7e58bccea0))
+* fix hover color and add transitions ([cf9e3ed](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/cf9e3ede0a7923edce7456c180bca71a21d265c5))
+* realse date on readme.txt ([95515dc](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/95515dc913627e78244a8ccfb6f877e27bffdd43))
+* validate heading tag in image accordion ([7398d2d](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/7398d2db0bfe979f7454dd3ec9081d393c000670))
+
 ## [3.9.15](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.14...v3.9.15) (2026-01-27)
 
 
