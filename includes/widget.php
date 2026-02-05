@@ -2,6 +2,8 @@
 
 namespace Deensimc_Marquee;
 
+if (!defined('ABSPATH')) exit;
+
 use Deensimc_Marquee\Misc\Deensimcpro_Promo;
 
 final class Marquee
