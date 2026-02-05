@@ -2,13 +2,15 @@
 
 namespace Deensimc_Marquee;
 
+if (!defined('ABSPATH')) exit;
+
 use Deensimc_Marquee\Misc\Deensimcpro_Promo;
 
 final class Marquee
 {
 	use Deensimcpro_Promo;
 
-	const VERSION = '3.9.18';
+	const VERSION = '3.9.19';
 	const MINIMUM_ELEMENTOR_VERSION = '3.5.0';
 	const MINIMUM_PHP_VERSION = '7.4';
 

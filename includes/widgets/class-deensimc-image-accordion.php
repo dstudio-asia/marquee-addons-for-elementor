@@ -14,7 +14,7 @@ use \Elementor\Icons_Manager;
  */
 class Deensimc_Image_Accordion extends Widget_Base
 {
-
+	use Deensimc_Utils;
 	use Deensimc_ImageAccordion_Contents;
 	use Deensimc_ImageAccordion_Image_Style_Controls;
 	use Deensimc_ImageAccordion_Title_Style_Controls;
@@ -130,6 +130,8 @@ class Deensimc_Image_Accordion extends Widget_Base
 	protected function render()
 	{
 		$settings = $this->get_settings_for_display();
+		$heading_tag = self::validate_html_tag($settings['deensimc_image_accordion_heading_tag']);
+
 		$devices = [];
 		if (isset($settings['deensimc_images_title_rotating'])) {
 			$devices[] = esc_attr($settings['deensimc_images_title_rotating']);
@@ -163,7 +165,9 @@ class Deensimc_Image_Accordion extends Widget_Base
 								<?php echo esc_html($images['deensimc_bg_image_title']) ?>
 							</p>
 							<div class="deensimc-panel-content">
-								<h2> <?php echo esc_html($images['deensimc_bg_image_title']) ?> </h2>
+								<<?php echo esc_attr($heading_tag); ?> class="deensimc-acc-title">
+									<?php echo esc_html($images['deensimc_bg_image_title']); ?>
+								</<?php echo esc_attr($heading_tag); ?>>
 								<div class="deensimc-acc-description">
 									<?php echo wp_kses_post($images['deensimc_bg_image_description'] ?? ''); ?>
 								</div>
