@@ -143,7 +143,7 @@ class Deensimc_News_Ticker extends Widget_Base
 
 				<div class="deensimc-label-heading">
 					<?php
-					$label_tag = self::validate_html_tag( $settings['deensimc_label_heading_tag'] ) ;
+					$label_tag = self::validate_html_tag($settings['deensimc_label_heading_tag']);
 					?>
 					<<?php echo esc_html($label_tag); ?>>
 						<?php echo esc_html($settings['deensimc_label_heading']); ?>
@@ -262,7 +262,7 @@ class Deensimc_News_Ticker extends Widget_Base
 
 		?>
 		<div class="deensimc-marquee-main-container deensimc-news-ticker <?php echo esc_attr(implode(' ', $conditional_class)) ?>" data-marquee-speed="<?php echo esc_attr($marquee_speed) ?>">
-			<?php if (!$is_reverse) $this->render_label($settings) ?>
+			<?php $this->render_label($settings); ?>
 			<div class="deensimc-marquee-track-wrapper">
 				<div class="deensimc-marquee-track">
 					<?php $this->render_news_ticker_texts($settings, $myposts); ?>
@@ -271,7 +271,6 @@ class Deensimc_News_Ticker extends Widget_Base
 					<?php $this->render_news_ticker_texts($settings, $myposts); ?>
 				</div>
 			</div>
-			<?php if ($is_reverse) $this->render_label($settings) ?>
 		</div>
 <?php
 	}

@@ -81,8 +81,32 @@ trait Deensimc_NewsTickerStyleControl
 		$this->add_control(
 			'deensimc_news_ticker_label_heading',
 			[
-				'label' => __('Label', 'marquee-addons-for-elementor'),
+				'label' => __('Title', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_control(
+			'deensimc_news_ticker_label_alignment',
+			[
+				'label' => esc_html__('Position', 'marquee-addons-for-elementor'),
+				'type' =>  Controls_Manager::CHOOSE,
+				'options' => [
+					'row' => [
+						'title' => esc_html__('Left', 'marquee-addons-pro'),
+						'icon' => 'eicon-order-start',
+					],
+					'row-reverse' => [
+						'title' => esc_html__('Right', 'marquee-addons-pro'),
+						'icon' => 'eicon-order-end',
+					],
+				],
+				'default' => 'row',
+				'toggle' => true,
+				'selectors' => [
+					'{{WRAPPER}} .deensimc-news-ticker' => 'flex-direction: {{VALUE}};',
+				],
 			]
 		);
 
@@ -93,7 +117,6 @@ trait Deensimc_NewsTickerStyleControl
 				'type' => Controls_Manager::COLOR,
 
 				'default' => '#fff',
-				'separator' => 'before',
 				'selectors' => [
 					'{{WRAPPER}} .deensimc-label-heading' => 'color: {{VALUE}};',
 
