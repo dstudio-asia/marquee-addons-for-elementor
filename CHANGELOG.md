@@ -1,6 +1,15 @@
 # Changelog
 
 
+## [3.9.20](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.19...v3.9.20) (2026-02-07)
+
+
+### Features
+
+* add news ticker title box position control ([b8674ef](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/b8674ef0b89a4170dc74386c76231b18f96904f8))
+* release v3.9.20 and improve News Ticker controls ([94963b1](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/94963b161c1a4378c62aede02ca96d1ec3eb3365))
+* release v3.9.20 and improve News Ticker controls ([ce43775](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/ce437759c270f86fa3beaef1a66d6103e458b319))
+
 ## [3.9.19](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.9.17...v3.9.19) (2026-02-05)
 
 
