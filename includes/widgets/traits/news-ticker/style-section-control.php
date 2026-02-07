@@ -94,11 +94,11 @@ trait Deensimc_NewsTickerStyleControl
 				'type' =>  Controls_Manager::CHOOSE,
 				'options' => [
 					'row' => [
-						'title' => esc_html__('Left', 'marquee-addons-pro'),
+						'title' => esc_html__('Left', 'marquee-addons-for-elementor'),
 						'icon' => 'eicon-order-start',
 					],
 					'row-reverse' => [
-						'title' => esc_html__('Right', 'marquee-addons-pro'),
+						'title' => esc_html__('Right', 'marquee-addons-for-elementor'),
 						'icon' => 'eicon-order-end',
 					],
 				],
