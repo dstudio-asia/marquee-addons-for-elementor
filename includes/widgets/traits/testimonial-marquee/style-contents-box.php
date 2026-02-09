@@ -8,6 +8,7 @@ if (! defined('ABSPATH')) {
 use \Elementor\Controls_Manager;
 use \Elementor\Group_Control_Background;
 use Elementor\Group_Control_Border;
+use Elementor\Group_Control_Box_Shadow;
 
 trait Testimonial_Marquee_Style_Contents_Box
 {
@@ -47,7 +48,7 @@ trait Testimonial_Marquee_Style_Contents_Box
 					'unit' => 'px',
 					'size' => 370,
 				],
-			
+
 				'selectors' => [
 					'{{WRAPPER}} .deensimc-testimonial-marquee .deensimc-tes-main' => 'width: {{SIZE}}{{UNIT}};',
 				],
@@ -129,6 +130,14 @@ trait Testimonial_Marquee_Style_Contents_Box
 				'selectors' => [
 					'{{WRAPPER}} .deensimc-tes-main blockquote' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'deensimc_testimonial_box_shadow',
+				'selector' => '{{WRAPPER}} .deensimc-tes-main blockquote',
 			]
 		);
 
