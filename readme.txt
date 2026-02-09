@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: elementor, text marquee, image marquee, video marquee, elementor addons
 Requires at least: 5.8
 Tested up to: 6.9
-Stable tag: 3.9.20
+Stable tag: 3.9.21
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -264,6 +264,9 @@ The developers release regular updates to improve features, fix bugs, and ensure
 First, ensure that you've activated the plugin correctly. If the issue persists, try clearing your browser cache or updating your Elementor plugin. If the problem continues, you can reach out to the support team for assistance.
 
 == Changelog ==
+
+= 3.9.21 - 2026-02-09 = 
+- New: Added box shadow control to testimonial box.
 
 = 3.9.20 - 2026-02-07 = 
 - New: Added title box position control to News Ticker.
