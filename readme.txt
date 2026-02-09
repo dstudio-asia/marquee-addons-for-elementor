@@ -266,7 +266,7 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 == Changelog ==
 
 = 3.9.21 - 2026-02-09 = 
-- New: Added box shadow option for testimonial box.
+- New: Added box shadow control to testimonial box.
 
 = 3.9.20 - 2026-02-07 = 
 - New: Added title box position control to News Ticker.
