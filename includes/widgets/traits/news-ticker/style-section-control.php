@@ -268,7 +268,7 @@ trait Deensimc_NewsTickerStyleControl
 		$this->start_controls_section(
 			'deensimc_icon_style',
 			[
-				'label' => __('Icon Separator', 'marquee-addons-for-elementor'),
+				'label' => __('Post Separator', 'marquee-addons-for-elementor'),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'deensimc_seperator_type' => 'seperator_icon',
@@ -323,7 +323,7 @@ trait Deensimc_NewsTickerStyleControl
 		$this->start_controls_section(
 			'deensimc_separator_text_style',
 			[
-				'label' => __('Text Separator', 'marquee-addons-for-elementor'),
+				'label' => __('Post Separator', 'marquee-addons-for-elementor'),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'deensimc_seperator_type' => 'seperator_text',
@@ -357,7 +357,7 @@ trait Deensimc_NewsTickerStyleControl
 		$this->start_controls_section(
 			'deensimc_seperator_date',
 			[
-				'label' => __('Date Separator', 'marquee-addons-for-elementor'),
+				'label' => __('Post Separator', 'marquee-addons-for-elementor'),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'deensimc_seperator_type' => 'seperator_date',
@@ -395,7 +395,7 @@ trait Deensimc_NewsTickerStyleControl
 		$this->start_controls_section(
 			'deensimc_seperator_image',
 			[
-				'label' => __('Feature Image Separator', 'marquee-addons-for-elementor'),
+				'label' => __('Post Separator', 'marquee-addons-for-elementor'),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'deensimc_seperator_type' => 'seperator_feature_image',
