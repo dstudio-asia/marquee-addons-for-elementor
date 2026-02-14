@@ -147,6 +147,10 @@ trait Deensimc_Button_Controls
         'label' => esc_html__('Icon Spacing', 'marquee-addons-for-elementor'),
         'type'  => Controls_Manager::SLIDER,
         'size_units' => ['px', 'em', 'rem'],
+        'default' => [
+          'unit' => 'px',
+          'size' => 8,
+        ],
         'range' => [
           'px' => ['min' => 0, 'max' => 100],
         ],
