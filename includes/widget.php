@@ -10,7 +10,7 @@ final class Marquee
 {
 	use Deensimcpro_Promo;
 
-	const VERSION = '3.9.23';
+	const VERSION = '3.9.24';
 	const MINIMUM_ELEMENTOR_VERSION = '3.5.0';
 	const MINIMUM_PHP_VERSION = '7.4';
 
@@ -40,7 +40,6 @@ final class Marquee
 	{
 		// Check if Elementor installed and activated
 		if (! did_action('elementor/loaded')) {
-			add_action('admin_notices', [$this, 'admin_notice_missing_main_plugin']);
 			return false;
 		}
 
@@ -84,17 +83,7 @@ final class Marquee
 		return DEENSIMC_ASSETS_URL . $path;
 	}
 
-	public function admin_notice_missing_main_plugin()
-	{
-		$message = sprintf(
-			/* translators: %1$s is replaced with " Marquee Addons for Elementor – Advanced Elements & Modern Motion Widgets"  and %2$s is replaced with "Elementor"*/
-			esc_html__('"%1$s" requires "%2$s" to be installed and activated.', 'marquee-addons-for-elementor'),
-			'<strong>' . esc_html__(' Marquee Addons for Elementor – Advanced Elements & Modern Motion Widgets', 'marquee-addons-for-elementor') . '</strong>',
-			'<strong>' . esc_html__('Elementor', 'marquee-addons-for-elementor') . '</strong>'
-		);
-
-		printf('<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', wp_kses($message, $this->deensimc_allowed_tags()));
-	}
+	
 
 	public function admin_notice_minimum_elementor_version()
 	{
