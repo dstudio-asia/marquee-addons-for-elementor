@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Marquee Addons for Elementor - Essential Motion Widgets & Templates
  * Description: Marquee Addons an Elementor addon to create smooth, endless marquee carousels, showcases images, logos, or content with dynamic movement to engage visitors. It also allows you to create image accordions, stacked sliders, and text marquees.
- * Version: 3.9.22
+ * Version: 3.9.24
  * Requires at least: 5.8
  * Requires PHP: 7.4
  * Elementor tested up to: 3.35.3
@@ -13,7 +13,6 @@
  * Domain Path: /languages
  * License: GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Requires Plugins: elementor
  */
 
 if (! defined('ABSPATH')) {
@@ -25,7 +24,7 @@ define('DEENSIMC__DIR__', __DIR__);
 define('DEENSIMC_URL', plugins_url('/', DEENSIMC__FILE__));
 define('DEENSIMC_PATH', plugin_dir_path(__FILE__));
 define('DEENSIMC_ASSETS_URL', DEENSIMC_URL . 'assets/');
-define('DEENSIMC_VERSION', '3.9.22');
+define('DEENSIMC_VERSION', '3.9.24');
 
 function deensimc_load_plugin_data(): void
 {

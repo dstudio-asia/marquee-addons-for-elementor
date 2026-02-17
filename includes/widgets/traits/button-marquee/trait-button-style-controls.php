@@ -235,6 +235,7 @@ trait Deensimc_Button_Style_Controls
       [
         'label'     => esc_html__('Icon Color', 'marquee-addons-for-elementor'),
         'type'      => Controls_Manager::COLOR,
+        'default' => '#fff',
         'selectors' => [
           '{{WRAPPER}} .deensimc-button svg'       => 'fill: {{VALUE}};',
           '{{WRAPPER}} .deensimc-button i'         => 'color: {{VALUE}};',
@@ -254,6 +255,10 @@ trait Deensimc_Button_Style_Controls
         'label' => esc_html__('Icon Size', 'marquee-addons-for-elementor'),
         'type'  => Controls_Manager::SLIDER,
         'size_units' => ['px', 'em', 'rem'],
+        'default' => [
+          'size' => 20,
+          'unit' => 'px',
+        ],
         'range' => [
           'px' => [
             'min' => 8,

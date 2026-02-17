@@ -7,12 +7,13 @@ if (!defined('ABSPATH')) exit;
 final class Base
 {
     private static $_instance = null;
-    const VERSION = '3.9.22';
+    const VERSION = '3.9.24';
 
     public function __construct()
     {
         add_action('elementor/init', [$this, 'load_dependencies']);
         add_filter('plugin_row_meta', [$this, 'deensimc_add_row_meta_links'], 10, 2);
+        $this->elementor_not_loaded();
     }
 
     public static function instance()
@@ -221,4 +222,75 @@ final class Base
             ]
         );
     }
+
+    public function is_plugin_installed( $basename ) {
+        if ( ! function_exists( 'get_plugins' ) ) {
+            require_once ABSPATH . 'wp-admin/includes/plugin.php';
+        }
+
+        $installed_plugins = get_plugins();
+        return isset( $installed_plugins[ $basename ] );
+    }
+
+    public function elementor_not_loaded() {
+
+        if ( ! current_user_can( 'activate_plugins' ) ) {
+            return;
+        }
+
+        global $pagenow;
+        $screens_to_skip = [ 'update.php', 'plugin-install.php', 'update-core.php' ];
+        if ( in_array( $pagenow, $screens_to_skip, true ) ) {
+            return;
+        }
+
+        if ( ! function_exists( 'is_plugin_active' ) || ! function_exists( 'get_plugins' ) ) {
+            require_once ABSPATH . 'wp-admin/includes/plugin.php';
+        }
+
+        $elementor_basename = 'elementor/elementor.php';
+
+        if ( is_plugin_active( $elementor_basename ) || defined( 'ELEMENTOR_VERSION' ) ) {
+            return;
+        }
+
+        $is_elementor_installed = $this->is_plugin_installed( $elementor_basename );
+
+        // Build the appropriate URL and message based on installation status.
+        if ( $is_elementor_installed ) {
+            $action_url = wp_nonce_url(
+                self_admin_url( 'plugins.php?action=activate&plugin=' . $elementor_basename ),
+                'activate-plugin_' . $elementor_basename
+            );
+            $button_text = __( 'Activate Elementor', 'marquee-addons-for-elementor' );
+            $message = sprintf(
+                /* translators: 1: opening strong tag, 2: closing strong tag */
+                __( '%1$sMarquee Addons for Elementor%2$s requires %1$sElementor%2$s plugin to be active. Please activate Elementor to continue.', 'marquee-addons-for-elementor' ),
+                '<strong>',
+                '</strong>'
+            );
+        } else {
+            $action_url = wp_nonce_url(
+                self_admin_url( 'update.php?action=install-plugin&plugin=elementor' ),
+                'install-plugin_elementor'
+            );
+            $button_text = __( 'Install Elementor', 'marquee-addons-for-elementor' );
+            $message = sprintf(
+                /* translators: 1: opening strong tag, 2: closing strong tag */
+                __( '%1$sMarquee Addons for Elementor%2$s requires %1$sElementor%2$s plugin to be installed and activated. Please install Elementor to continue.', 'marquee-addons-for-elementor' ),
+                '<strong>',
+                '</strong>'
+            );
+        }
+
+        $button = sprintf(
+            '<p><a href="%s" class="button-primary">%s</a></p>',
+            esc_url( $action_url ),
+            esc_html( $button_text )
+        );
+
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Message contains HTML but is escaped via sprintf with placeholders.
+        printf( '<div class="notice notice-error"><p>%s</p>%s</div>', $message, $button );
+    }
+
 }
