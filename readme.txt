@@ -265,8 +265,11 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 
 == Changelog ==
 
+= 3.9.24 - 2026-02-17 =
+- Tweak: Removed the required plugin name from the plugin header.
+
 = 3.9.23 - 2026-02-14 = 
-- Fix: Improved Button Marquee default icon visibility
+- Fix: Improved Button Marquee default icon visibility.
 
 = 3.9.22 - 2026-02-10 = 
 - Tweak: Clarified separator labels in the News Ticker widget.
