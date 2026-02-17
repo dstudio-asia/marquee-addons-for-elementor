@@ -1,6 +1,19 @@
 # Changelog
 
 
+## [3.9.24](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.21...v3.9.24) (2026-02-17)
+
+
+### Features
+
+* set default button icon styles ([8435c22](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/8435c22cdb7f748e4b2168811d6861e5388efc7a))
+
+
+### Bug Fixes
+
+* removed elementor required notification ([60b97a5](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/60b97a55546d3911400aa68cffcc916be3f80de8))
+* removed elementor required notification ([db3f803](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/db3f8036277f24edf49962047bcf7c45dd3c2e98))
+
 ## [3.9.20](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.19...v3.9.20) (2026-02-07)
 
 
