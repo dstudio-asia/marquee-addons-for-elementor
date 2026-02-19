@@ -1,6 +1,14 @@
 # Changelog
 
 
+## [3.9.25](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.24...v3.9.25) (2026-02-19)
+
+
+### Features
+
+* support svg in Image Marquee widget ([ef56e3c](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/ef56e3c942798e147f6570311fb1c2639e0d3d8c))
+* support svg in Image Marquee widget ([1dad7b7](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/1dad7b761bf4b6d8aabb870317ab204096af2c6e))
+
 ## [3.9.24](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.21...v3.9.24) (2026-02-17)
 
 
