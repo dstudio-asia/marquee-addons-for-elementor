@@ -109,7 +109,7 @@ class Deensimc_Image_Marquee extends Widget_Base
 		}
 
 		foreach ($images as $image) {
-			if (empty($image['url']) || !preg_match('/\.(jpe?g|png|gif|webp|avif|bmp)$/i', $image['url'])) {
+			if (empty($image['url']) || !preg_match('/\.(jpe?g|png|gif|webp|avif|bmp|svg)$/i', $image['url'])) {
 				continue;
 			}
 			$is_dup = !empty($image['_is_dup']);
