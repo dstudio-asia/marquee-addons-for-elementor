@@ -10,7 +10,7 @@ final class Marquee
 {
 	use Deensimcpro_Promo;
 
-	const VERSION = '3.9.24';
+	const VERSION = '3.9.25';
 	const MINIMUM_ELEMENTOR_VERSION = '3.5.0';
 	const MINIMUM_PHP_VERSION = '7.4';
 
@@ -83,7 +83,7 @@ final class Marquee
 		return DEENSIMC_ASSETS_URL . $path;
 	}
 
-	
+
 
 	public function admin_notice_minimum_elementor_version()
 	{

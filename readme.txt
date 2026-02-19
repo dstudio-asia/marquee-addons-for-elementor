@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: elementor, text marquee, image marquee, video marquee, elementor addons
 Requires at least: 5.8
 Tested up to: 6.9
-Stable tag: 3.9.24
+Stable tag: 3.9.25
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -265,11 +265,14 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 
 == Changelog ==
 
+= 3.9.25 - 2026-02-19 =
+- New: Added SVG support in the Image Marquee widget.
+
 = 3.9.24 - 2026-02-17 =
 - Tweak: Removed the required plugin name from the plugin header.
 
 = 3.9.23 - 2026-02-14 = 
-- Fix: Improved Button Marquee default icon visibility.
+- Tweak: Improved Button Marquee default icon visibility.
 
 = 3.9.22 - 2026-02-10 = 
 - Tweak: Clarified separator labels in the News Ticker widget.
