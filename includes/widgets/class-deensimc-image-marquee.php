@@ -119,7 +119,7 @@ class Deensimc_Image_Marquee extends Widget_Base
 
 			$image_url = $image['url'];
 
-			if ($image_id && ! $is_svg) {
+			if ($image_id && !$is_svg) {
 				$sized = Group_Control_Image_Size::get_attachment_image_src(
 					$image_id,
 					'deensimc_image_marquee',
