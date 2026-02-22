@@ -6,7 +6,7 @@ if (! defined('ABSPATH')) {
 
 // Elementor Classes
 use \Elementor\Widget_Base;
-use Elementor\Group_Control_Image_Size;
+use \Elementor\Group_Control_Image_Size;
 
 /**
  * Class Deensimc_Image_Marquee
