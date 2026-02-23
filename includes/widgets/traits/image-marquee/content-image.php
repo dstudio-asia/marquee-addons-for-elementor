@@ -7,6 +7,7 @@ if (! defined('ABSPATH')) {
 // Elementor Classes
 use \Elementor\Controls_Manager;
 use \Elementor\Utils;
+use \Elementor\Group_Control_Image_Size;
 
 trait Deensimc_Image_Marquee_Content_Image
 {
@@ -42,6 +43,14 @@ trait Deensimc_Image_Marquee_Content_Image
 				'type' => Controls_Manager::RAW_HTML,
 				'raw' => '<strong>💡 Tip:</strong> For best performance, use a maximum of <strong>20 images</strong>.',
 				'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Image_Size::get_type(),
+			[
+				'name' => 'deensimc_image_marquee',
+				'default' => 'full',
 			]
 		);
 
