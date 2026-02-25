@@ -261,7 +261,7 @@ $pro_widgets = [
         'icon'   => 'deensimcpro-product-carousel-icon eicon-deensimc-pro',
         'is_pro' => true,
         'demo'   => 'https://marqueeaddons.com/pricing',
-        'doc'   => 'https://marqueeaddons.com/how-to-use-the-product-marquee-in-elementor/',
+        'doc'   => 'https://marqueeaddons.com/how-to-create-the-product-carousel-in-elementor/',
         'pro_url' => 'https://marqueeaddons.com/pricing/',
     ],
     'deensimcpro-sticky-cards' => [
