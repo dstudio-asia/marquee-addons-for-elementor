@@ -1,6 +1,19 @@
 # Changelog
 
 
+## [3.9.26](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.25...v3.9.26) (2026-02-23)
+
+
+### Features
+
+* add image resolution control in Image Marquee ([4e8eefa](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/4e8eefaf0ce36f2948039bd46269ac10e9dcc6c5))
+* add image resolution control in Image Marquee ([69d00a6](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/69d00a6a758cf2339e461808bb8a41306343a260))
+
+
+### Bug Fixes
+
+* normalize negation spacing in image id check ([8390ce7](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/8390ce7c5ac13e09e88f55811cd88dfbcdf44991))
+
 ## [3.9.25](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.24...v3.9.25) (2026-02-19)
 
 
