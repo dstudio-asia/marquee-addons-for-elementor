@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.9.27](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.26...v3.9.27) (2026-02-26)
+
+
+### Bug Fixes
+
+* Update Product Carousel demo/doc links and bump to 3.9.27 ([5758f17](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/5758f178ed0fc4b3bac3221fe839b8c9027b17b6))
+
 ## [3.9.26](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.25...v3.9.26) (2026-02-23)
 
 
