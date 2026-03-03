@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.9.28](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.27...v3.9.28) (2026-03-03)
+
+
+### Features
+
+* add fixed width switch + width control for button marquee ([2196943](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/219694377bdf7a96fd9b848030d21b7cb5c306a3))
+
 ## [3.9.27](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.26...v3.9.27) (2026-02-26)
 
 
