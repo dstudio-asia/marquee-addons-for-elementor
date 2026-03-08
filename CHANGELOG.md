@@ -1,6 +1,14 @@
 # Changelog
 
 
+## [3.9.29](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.28...v3.9.29) (2026-03-08)
+
+
+### Features
+
+* upate plugin url ([159b519](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/159b51996eb78ea880921968c4457a949a6902d5))
+* upate plugin url ([ae8d3fb](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/ae8d3fbd0b2424fb7401a4e2a64f51136c626fde))
+
 ## [3.9.28](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.27...v3.9.28) (2026-03-03)
 
 
