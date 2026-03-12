@@ -14,6 +14,21 @@
   padding-block: var(--deensimc-container-padding);
 }
 
+.deensimc-noscript-notice {
+  margin-top: 0.75rem;
+  padding: 0.85rem 1rem;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  box-shadow:0 8px 24px rgba(0, 0, 0, 0.15);
+  color: #111111;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  letter-spacing: 0.4px;
+}
+
 .deensimc-marquee-main-container ul,
 .deensimc-marquee-main-container ol {
   list-style-type: none;
