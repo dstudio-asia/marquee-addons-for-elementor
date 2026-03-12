@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.9.30](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.29...v3.9.30) (2026-03-12)
+
+
+### Features
+
+* add noscript fallback for marquee widgets ([2214d48](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/2214d48ad43e41322863fd69e0876a09ea90ffc8))
+
 ## [3.9.29](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.28...v3.9.29) (2026-03-08)
 
 
