@@ -10,7 +10,7 @@ final class Marquee
 {
 	use Deensimcpro_Promo;
 
-	const VERSION = '3.9.29';
+	const VERSION = '3.9.30';
 	const MINIMUM_ELEMENTOR_VERSION = '3.5.0';
 	const MINIMUM_PHP_VERSION = '7.4';
 
@@ -122,6 +122,7 @@ final class Marquee
 
 		add_action('elementor/frontend/after_enqueue_styles', [$this, 'deensimc_frontend_styles'], 20);
 		add_action('elementor/frontend/after_register_scripts', [$this, 'deensimc_frontend_scripts'], 20);
+		add_action('elementor/frontend/widget/after_render', [$this, 'deensimc_render_noscript_notice'], 20, 1);
 		add_action('elementor/elements/categories_registered', [$this, 'deensimc_add_categories'], 10);
 		add_action('elementor/editor/before_enqueue_styles', [$this, 'deensimc_editor_styles'], 10);
 		add_action('elementor/editor/after_enqueue_scripts', [$this, 'deensimc_editor_script'], 10);
@@ -206,6 +207,26 @@ final class Marquee
 
 		wp_enqueue_script('deensimc-handle-animation-duration');
 		wp_enqueue_script('deensimc-init-text-length-toggle');
+	}
+
+	public function deensimc_render_noscript_notice($widget)
+	{
+		if (! is_object($widget) || ! method_exists($widget, 'get_categories')) {
+			return;
+		}
+
+		$categories = $widget->get_categories();
+
+		if (! is_array($categories) || ! in_array('deensimc_smooth_marquee', $categories, true)) {
+			return;
+		}
+?>
+		<noscript>
+			<div class="deensimc-noscript-notice" role="note">
+				<?php echo esc_html__('This section requires JavaScript to load properly. Please enable JavaScript in your browser and reload the page.', 'marquee-addons-for-elementor'); ?>
+			</div>
+		</noscript>
+<?php
 	}
 
 	public function deensimc_editor_styles()
