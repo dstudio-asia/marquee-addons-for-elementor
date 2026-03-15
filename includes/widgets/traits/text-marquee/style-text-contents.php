@@ -180,9 +180,6 @@ trait Deensimc_Textmarquee_Style_Text_Contents
 					'{{WRAPPER}} .deensimc-text-wrapper svg' => 'align-self: {{VALUE}}; flex-shrink: 0;',
 					'{{WRAPPER}} .deensimc-text-wrapper i' => 'align-self: {{VALUE}}; flex-shrink: 0;',
 				],
-				'condition' => [
-					'deensimc_marquee_vertical_orientation' => 'yes',
-				],
 			]
 		);
 
