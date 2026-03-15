@@ -1,6 +1,19 @@
 # Changelog
 
 
+## [3.9.31](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.30...v3.9.31) (2026-03-15)
+
+
+### Features
+
+* add icon offset controls ([998ca98](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/998ca985fab4ea681f069e326fee930f170aceca))
+* add icon offset controls ([9363edf](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/9363edfc44e4609b431c8f8f87262dbb639a6296))
+
+
+### Bug Fixes
+
+* remove icon alignment condition ([6e55655](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/6e556552128e21ac502f12099a11b5f172a578c3))
+
 ## [3.9.30](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.29...v3.9.30) (2026-03-12)
 
 
