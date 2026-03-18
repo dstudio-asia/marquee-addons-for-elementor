@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.9.32](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.31...v3.9.32) (2026-03-18)
+
+
+### Bug Fixes
+
+* remove unused image marquee alignment control ([dcb585a](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/dcb585abf5892b564327a81341cff0a0e6c38b51))
+
 ## [3.9.31](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.30...v3.9.31) (2026-03-15)
 
 
