@@ -80,20 +80,6 @@ class Deensimc_Text_Marquee extends Widget_Base
 	 */
 	protected function render_marquee_texts($texts, $is_vertical, $tag, $track_id)
 	{
-		$required = $is_vertical ? 12 : 6;
-		$count    = count($texts);
-		if ($count > 0 && $count < $required) {
-			$original = $texts;
-			// Duplicate full batches until we have at least $required
-			while (count($texts) < $required) {
-				foreach ($original as $text) {
-					$dup = $text;
-					$dup['_is_dup'] = true;
-					$texts[] = $dup;
-				}
-			}
-		}
-
 		foreach ($texts as $index => $text) {
 
 			$is_dup = ! empty($text['_is_dup']);
@@ -135,6 +121,10 @@ class Deensimc_Text_Marquee extends Widget_Base
 		$settings = $this->get_settings_for_display();
 		$texts = $settings['deensimc_repeater_text_main'];
 		$tag = self::validate_html_tag($settings['deensimc_text_marquee_tag']);
+		$widget_height = $settings['deensimc_widget_height'] ?? [];
+		$vertical_track_target = !empty($widget_height['size'])
+			? $widget_height['size']
+			: 60;
 
 		$is_vertical = $settings['deensimc_marquee_vertical_orientation'] === 'yes';
 		$is_reverse = $settings['deensimc_marquee_reverse_direction'] === 'yes';
@@ -174,6 +164,11 @@ class Deensimc_Text_Marquee extends Widget_Base
 		echo esc_attr(implode(' ', $conditional_class));
 		?>"
 			data-marquee-speed="<?php echo esc_attr($marquee_speed) ?>"
+			data-track-fill="yes"
+			data-track-item-selector=".deensimc-text-wrapper"
+			<?php echo $is_vertical
+				? 'data-track-target-vertical="' . esc_attr($vertical_track_target) . '"'
+				: 'data-track-target-horizontal="2560"'; ?>
 			<?php echo isset($speed) && $speed ? 'style="' . esc_attr($speed) . '"' : ''; ?>>
 			<div class="deensimc-marquee-track-wrapper">
 				<div class="deensimc-marquee-track">
