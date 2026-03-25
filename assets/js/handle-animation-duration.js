@@ -1,8 +1,17 @@
 (function ($, _) {
   "use strict";
+
   function handleAnimationDuration($scope) {
-    const container = $scope.find(".deensimc-marquee-main-container");
-    const tracks = $scope.find(".deensimc-marquee-track");
+    if (typeof window.autoRegisterTrackFillFromScope === "function") {
+      window.autoRegisterTrackFillFromScope($scope);
+    }
+
+    const container = $scope
+      .filter(".deensimc-marquee-main-container")
+      .add($scope.find(".deensimc-marquee-main-container"));
+    const tracks = $scope
+      .filter(".deensimc-marquee-track")
+      .add($scope.find(".deensimc-marquee-track"));
     const isMarqueeOn = container.data("is-marquee-on") ?? true;
     const animationSpeed = container.data("marquee-speed");
     const isVertical = tracks.closest(".deensimc-marquee-vertical").length > 0;

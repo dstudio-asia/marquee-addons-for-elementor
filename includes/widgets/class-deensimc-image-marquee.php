@@ -94,20 +94,6 @@ class Deensimc_Image_Marquee extends Widget_Base
 	protected function render_image_gallery_group($settings, $link_type, $lazy_load_attr, $open_lightbox)
 	{
 		$images = $settings['deensimc_upload_gallery'] ?? [];
-		$required = 8;
-		$count    = count($images);
-
-		if ($count > 0 && $count < $required) {
-			$original = $images;
-			// Duplicate full batches until we have at least $required
-			while (count($images) < $required) {
-				foreach ($original as $img) {
-					$dup = $img;
-					$dup['_is_dup'] = true;
-					$images[] = $dup;
-				}
-			}
-		}
 
 		foreach ($images as $image) {
 			if (empty($image['url'])) {
@@ -164,6 +150,10 @@ class Deensimc_Image_Marquee extends Widget_Base
 	protected function render()
 	{
 		$settings              = $this->get_settings_for_display();
+		$widget_height = $settings['deensimc_widget_height'] ?? [];
+		$vertical_track_target = !empty($widget_height['size'])
+			? $widget_height['size']
+			: 60;
 
 		if (!empty($settings['deensimc_link']['url'])) {
 			$this->add_link_attributes('deensimc_link', $settings['deensimc_link']);
@@ -192,7 +182,9 @@ class Deensimc_Image_Marquee extends Widget_Base
 			$conditional_class[] = 'deensimc-marquee-edge-shadow';
 		}
 			?>
-			<div class="deensimc-marquee-main-container deensimc-image-marquee <?php echo esc_attr(implode(' ', $conditional_class)) ?>" data-marquee-speed="<?php echo esc_attr($marquee_speed) ?>">
+			<div class="deensimc-marquee-main-container deensimc-image-marquee <?php echo esc_attr(implode(' ', $conditional_class)) ?>" data-marquee-speed="<?php echo esc_attr($marquee_speed) ?>" data-track-fill="yes" data-track-item-selector="*" <?php echo $is_vertical
+				? 'data-track-target-vertical="' . esc_attr($vertical_track_target) . '"'
+				: 'data-track-target-horizontal="2560"'; ?>>
 				<div class="deensimc-marquee-track-wrapper">
 					<div class="deensimc-marquee-track">
 						<?php $this->render_image_gallery_group($settings, $link_type, $lazy_load_attr, $open_lightbox); ?>
