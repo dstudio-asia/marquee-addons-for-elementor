@@ -10,7 +10,7 @@ final class Marquee
 {
 	use Deensimcpro_Promo;
 
-	const VERSION = '3.9.32';
+	const VERSION = '3.9.33';
 	const MINIMUM_ELEMENTOR_VERSION = '3.5.0';
 	const MINIMUM_PHP_VERSION = '7.4';
 
@@ -172,6 +172,7 @@ final class Marquee
 	{
 		// All frontend widget scripts with minification support
 		$scripts = [
+			'deensimc-marquee-track-fill' => 'js/marquee-track-fill.js',
 			'deensimc-handle-animation-duration' => 'js/handle-animation-duration.js',
 			'deensimc-init-text-length-toggle' => 'js/initTextLengthToggle.js',
 			'deensimc-button-marquee-script' => 'js/button-marquee.js',
@@ -195,16 +196,21 @@ final class Marquee
 			'deensimc-image-hotspot-script' => 'js/image-hotspot.js',
 		];
 
+		$script_dependencies = [
+			'deensimc-handle-animation-duration' => ['jquery', 'deensimc-marquee-track-fill'],
+		];
+
 		foreach ($scripts as $handle => $path) {
 			wp_register_script(
 				$handle,
 				$this->get_asset_url($path, 'js'),
-				['jquery'],
+				$script_dependencies[$handle] ?? ['jquery'],
 				self::VERSION,
 				false
 			);
 		}
 
+		wp_enqueue_script('deensimc-marquee-track-fill');
 		wp_enqueue_script('deensimc-handle-animation-duration');
 		wp_enqueue_script('deensimc-init-text-length-toggle');
 	}
