@@ -7,7 +7,7 @@ if (!defined('ABSPATH')) exit;
 final class Base
 {
     private static $_instance = null;
-    const VERSION = '3.9.32';
+    const VERSION = '3.9.33';
 
     public function __construct()
     {
