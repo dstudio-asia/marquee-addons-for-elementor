@@ -1,6 +1,14 @@
 # Changelog
 
 
+## [3.9.33](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.32...v3.9.33) (2026-03-26)
+
+
+### Bug Fixes
+
+* prevent blank gaps in marquee tracks ([0dfc6d3](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/0dfc6d35becf268e43410a7beec8ee6979c09649))
+* prevent blank gaps in marquee tracks ([78c54f1](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/78c54f1cdb4a073390d9e0ea8655015a77bbcf2c))
+
 ## [3.9.32](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.31...v3.9.32) (2026-03-18)
 
 
