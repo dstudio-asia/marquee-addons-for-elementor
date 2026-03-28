@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.9.34](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.33...v3.9.34) (2026-03-28)
+
+
+### Bug Fixes
+
+* remove unused testimonial control ([f54eeef](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/f54eeefbeacf2dcd080decfa1c46568e54be8f67))
+
 ## [3.9.33](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.32...v3.9.33) (2026-03-26)
 
 
