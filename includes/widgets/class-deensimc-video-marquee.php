@@ -118,41 +118,6 @@ class Deensimc_Video_Marquee extends Widget_Base
 			]
 		);
 
-		$this->add_responsive_control(
-			'deensimc_video_marquee_horizontal_align',
-			[
-				'label' => esc_html__('Alignment', 'marquee-addons-for-elementor'),
-				'type' =>  Controls_Manager::CHOOSE,
-				'options' => [
-					'left' => [
-						'title' => esc_html__('Left', 'marquee-addons-for-elementor'),
-						'icon' => 'eicon-h-align-left',
-					],
-					'center' => [
-						'title' => esc_html__('Center', 'marquee-addons-for-elementor'),
-						'icon' => 'eicon-h-align-center',
-					],
-					'right' => [
-						'title' => esc_html__('Right', 'marquee-addons-for-elementor'),
-						'icon' => 'eicon-h-align-right',
-					],
-				],
-				'default' => 'center',
-				'toggle' => true,
-				'selectors_dictionary' => [
-					'left' => 'margin-left: 0; margin-right: auto;',
-					'center' => 'margin-left: auto; margin-right: auto;',
-					'right' => 'margin-left: auto; margin-right: 0;',
-				],
-				'selectors' => [
-					'{{WRAPPER}} .deensimc-video-marquee .deensimc-marquee-track-wrapper' => '{{VALUE}};',
-				],
-				'condition' => [
-					'deensimc_marquee_vertical_orientation' => 'yes',
-				],
-			]
-		);
-
 		$this->register_gap_control();
 
 
