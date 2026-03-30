@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.9.35](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.34...v3.9.35) (2026-03-30)
+
+
+### Bug Fixes
+
+* Remove unused alignment control from video marquee ([bfea61d](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/bfea61d67ee612d74ef60579664ae2edf4d3c8ce))
+
 ## [3.9.34](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.33...v3.9.34) (2026-03-28)
 
 
