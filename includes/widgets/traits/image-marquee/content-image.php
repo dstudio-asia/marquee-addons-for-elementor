@@ -54,6 +54,25 @@ trait Deensimc_Image_Marquee_Content_Image
 			]
 		);
 
+		$this->add_control(
+			'deensimc_image_object_fit',
+			[
+				'label' => esc_html__('Object Fit', 'marquee-addons-for-elementor'),
+				'type' => Controls_Manager::SELECT,
+				'default' => 'cover',
+				'options' => [
+					'cover' => esc_html__('Cover', 'marquee-addons-for-elementor'),
+					'contain' => esc_html__('Contain', 'marquee-addons-for-elementor'),
+					'fill' => esc_html__('Fill', 'marquee-addons-for-elementor'),
+					'scale-down' => esc_html__('Scale Down', 'marquee-addons-for-elementor'),
+					'none' => esc_html__('None', 'marquee-addons-for-elementor'),
+				],
+				'selectors' => [
+					'{{WRAPPER}} .deensimc-marquee-image' => 'object-fit: {{VALUE}};',
+				],
+			]
+		);
+
 
 		$this->add_control(
 			'deensimc_link_to',
