@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.9.36](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.35...v3.9.36) (2026-04-02)
+
+
+### Features
+
+* add object fit control ([12d28b6](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/12d28b6050ec980a94bb9c72352e4921470893af))
+
 ## [3.9.35](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.34...v3.9.35) (2026-03-30)
 
 
