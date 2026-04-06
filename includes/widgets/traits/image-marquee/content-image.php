@@ -54,10 +54,10 @@ trait Deensimc_Image_Marquee_Content_Image
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'deensimc_image_object_fit',
 			[
-				'label' => esc_html__('Object Fit', 'marquee-addons-for-elementor'),
+				'label' => esc_html__('Display Size', 'marquee-addons-for-elementor'),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'cover',
 				'options' => [
@@ -70,6 +70,38 @@ trait Deensimc_Image_Marquee_Content_Image
 				'selectors' => [
 					'{{WRAPPER}} .deensimc-marquee-image' => 'object-fit: {{VALUE}};',
 				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'deensimc_image_position',
+			[
+				'label' => esc_html__('Position', 'marquee-addons-for-elementor'),
+				'type' => Controls_Manager::SELECT,
+				'default' => 'center center',
+				'options' => [
+					'left top' => esc_html__('Left Top', 'marquee-addons-for-elementor'),
+					'center top' => esc_html__('Center Top', 'marquee-addons-for-elementor'),
+					'right top' => esc_html__('Right Top', 'marquee-addons-for-elementor'),
+					'left center' => esc_html__('Left Center', 'marquee-addons-for-elementor'),
+					'center center' => esc_html__('Center', 'marquee-addons-for-elementor'),
+					'right center' => esc_html__('Right Center', 'marquee-addons-for-elementor'),
+					'left bottom' => esc_html__('Left Bottom', 'marquee-addons-for-elementor'),
+					'center bottom' => esc_html__('Center Bottom', 'marquee-addons-for-elementor'),
+					'right bottom' => esc_html__('Right Bottom', 'marquee-addons-for-elementor'),
+				],
+				'selectors' => [
+					'{{WRAPPER}} .deensimc-marquee-image' => 'object-position: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'deensimc_image_size_position_notice',
+			[
+				'type' => Controls_Manager::RAW_HTML,
+				'raw' => '<strong>⚠️ Note:</strong> To adjust the Display Size and Position, please set both the width and height.',
+				'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
 			]
 		);
 
