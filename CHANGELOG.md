@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.9.37](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.36...v3.9.37) (2026-04-06)
+
+
+### Features
+
+* add responsive object-fit and position controls for marquee images ([d66a7c8](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/d66a7c8547af8b3c13a3d0445569d83b47e13829))
+
 ## [3.9.36](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.35...v3.9.36) (2026-04-02)
 
 
