@@ -9,6 +9,52 @@ if (! defined('ABSPATH')) {
 trait Deensimc_Video_Marquee_Helper_Methods
 {
     /**
+     * Extracts a YouTube video ID from common YouTube URL formats.
+     *
+     * Supports watch URLs, short links, shorts URLs, and existing embed URLs.
+     *
+     * @param string $youtube_url The original YouTube URL.
+     * @return string
+     */
+    protected function get_youtube_video_id($youtube_url)
+    {
+        $url_parts = wp_parse_url(sanitize_text_field($youtube_url));
+
+        if (empty($url_parts)) {
+            return '';
+        }
+
+        if (isset($url_parts['query'])) {
+            parse_str($url_parts['query'], $query_params);
+            if (! empty($query_params['v'])) {
+                return sanitize_text_field($query_params['v']);
+            }
+        }
+
+        if (empty($url_parts['path'])) {
+            return '';
+        }
+
+        $path_segments = array_values(array_filter(explode('/', trim($url_parts['path'], '/'))));
+
+        if (empty($path_segments)) {
+            return '';
+        }
+
+        $host = strtolower($url_parts['host'] ?? '');
+
+        if ($host === 'youtu.be' || $host === 'www.youtu.be') {
+            return sanitize_text_field($path_segments[0]);
+        }
+
+        if (in_array($path_segments[0], ['embed', 'live'], true) && ! empty($path_segments[1])) {
+            return sanitize_text_field($path_segments[1]);
+        }
+
+        return '';
+    }
+
+    /**
      * Converts a YouTube watch link into an embeddable URL.
      *
      * This function takes a standard YouTube watch link, extracts the video ID, and returns the appropriate embed link. If privacy mode is enabled, it will return a URL that ensures YouTube does not track user interactions unless the video is played.
@@ -19,16 +65,15 @@ trait Deensimc_Video_Marquee_Helper_Methods
      */
     protected function youtube_embed($watchLink, $privacyEnabled = false)
     {
-        $urlParts = wp_parse_url(sanitize_text_field($watchLink));
-        if (isset($urlParts['query'])) {
-            parse_str($urlParts['query'], $queryParams);
-            if (isset($queryParams['v'])) {
-                $videoId = sanitize_text_field($queryParams['v']);
-                $baseUrl = $privacyEnabled ? "https://www.youtube-nocookie.com/embed/" : "https://www.youtube.com/embed/";
-                return esc_url($baseUrl . $videoId);
-            }
+        $video_id = $this->get_youtube_video_id($watchLink);
+
+        if (empty($video_id)) {
+            return null;
         }
-        return null;
+
+        $baseUrl = $privacyEnabled ? "https://www.youtube-nocookie.com/embed/" : "https://www.youtube.com/embed/";
+
+        return esc_url($baseUrl . $video_id);
     }
 
     /**
@@ -106,16 +151,7 @@ trait Deensimc_Video_Marquee_Helper_Methods
     {
         $youtube_url = $video_link['deensimc_video_youtube_url'] ?? '';
         $embed_url = $this->youtube_embed($youtube_url, $video_link['deensimc_video_privacy'] === 'yes');
-
-        // Extract the video id from the youtube url separately
-        $video_id = '';
-        if (isset($youtube_url)) {
-            $urlParts = wp_parse_url(sanitize_text_field($youtube_url));
-            if (isset($urlParts['query'])) {
-                parse_str($urlParts['query'], $queryParams);
-                $video_id = isset($queryParams['v']) ? sanitize_text_field($queryParams['v']) : '';
-            }
-        }
+        $video_id = $this->get_youtube_video_id($youtube_url);
 
         if ($embed_url) {
             $modest_branding = $video_link['deensimc_video_modestbranding'] === 'yes' ? 1 : 0;
