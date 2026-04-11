@@ -261,7 +261,7 @@ class Deensimc_News_Ticker extends Widget_Base
 		}
 
 		?>
-		<div class="deensimc-marquee-main-container deensimc-news-ticker <?php echo esc_attr(implode(' ', $conditional_class)) ?>" data-marquee-speed="<?php echo esc_attr($marquee_speed) ?>">
+		<div class="deensimc-marquee-main-container deensimc-news-ticker <?php echo esc_attr(implode(' ', $conditional_class)) ?>" data-marquee-speed="<?php echo esc_attr($marquee_speed) ?>" data-track-fill="yes" data-track-item-selector=".deensimc-news-wrapper">
 			<?php $this->render_label($settings); ?>
 			<div class="deensimc-marquee-track-wrapper">
 				<div class="deensimc-marquee-track">

@@ -162,7 +162,7 @@ class Deensimc_Video_Marquee extends Widget_Base
 
 		if (!empty($video_list)) {
 ?>
-			<div class="deensimc-marquee-main-container deensimc-video-marquee <?php echo esc_attr(implode(' ', $conditional_class)) ?>" data-marquee-speed="<?php echo esc_attr($marquee_speed) ?>">
+			<div class="deensimc-marquee-main-container deensimc-video-marquee <?php echo esc_attr(implode(' ', $conditional_class)) ?>" data-marquee-speed="<?php echo esc_attr($marquee_speed) ?>" data-track-fill="yes" data-track-item-selector=".deensimc-video-item">
 				<div class="deensimc-marquee-track-wrapper">
 					<div class="deensimc-marquee-track">
 						<?php $this->render_video_item($video_list); ?>
