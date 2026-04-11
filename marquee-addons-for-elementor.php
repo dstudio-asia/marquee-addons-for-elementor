@@ -7,7 +7,7 @@
  * Version: 3.9.38
  * Requires at least: 5.8
  * Requires PHP: 7.4
- * Elementor tested up to: 3.35.3
+ * Elementor tested up to: 4.0.1
  * Author: Debuggers Studio
  * Author URI: https://debuggersstudio.com
  * Text Domain: marquee-addons-for-elementor
