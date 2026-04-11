@@ -266,7 +266,7 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 == Changelog ==
 
 = 3.9.38 - 2026-04-11 =
-- Fix: Improved dynamic track fill support across marquee widgets.
+- Fix: Resolved blank space appearing issue when the number of marquee items is insufficient.
 - Fix: Improved YouTube URL parsing for Video Marquee embeds.
 
 = 3.9.37 - 2026-04-06 =
