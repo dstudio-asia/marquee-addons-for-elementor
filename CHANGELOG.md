@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.9.38](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.37...v3.9.38) (2026-04-11)
+
+
+### Features
+
+* **marquee:** add dynamic track fill support ([49a2ab5](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/49a2ab5a36b368afeed4644e97c801b03146d592))
+
 ## [3.9.37](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.36...v3.9.37) (2026-04-06)
 
 
