@@ -121,11 +121,6 @@ class Deensimc_Text_Marquee extends Widget_Base
 		$settings = $this->get_settings_for_display();
 		$texts = $settings['deensimc_repeater_text_main'];
 		$tag = self::validate_html_tag($settings['deensimc_text_marquee_tag']);
-		$widget_height = $settings['deensimc_widget_height'] ?? [];
-		$vertical_track_target = !empty($widget_height['size'])
-			? $widget_height['size']
-			: 60;
-
 		$is_vertical = $settings['deensimc_marquee_vertical_orientation'] === 'yes';
 		$is_reverse = $settings['deensimc_marquee_reverse_direction'] === 'yes';
 		$is_pause_on_hover = $settings['deensimc_pause_on_hover'] === 'yes';
@@ -166,9 +161,6 @@ class Deensimc_Text_Marquee extends Widget_Base
 			data-marquee-speed="<?php echo esc_attr($marquee_speed) ?>"
 			data-track-fill="yes"
 			data-track-item-selector=".deensimc-text-wrapper"
-			<?php echo $is_vertical
-				? 'data-track-target-vertical="' . esc_attr($vertical_track_target) . '"'
-				: 'data-track-target-horizontal="2560"'; ?>
 			<?php echo isset($speed) && $speed ? 'style="' . esc_attr($speed) . '"' : ''; ?>>
 			<div class="deensimc-marquee-track-wrapper">
 				<div class="deensimc-marquee-track">

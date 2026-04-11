@@ -94,7 +94,7 @@ class Deensimc_Button_marquee extends Widget_Base
     $this->add_render_attribute('button', 'data-link-type', $link_type);
 
 ?>
-    <div class="deensimc-marquee-main-container deensimc-button-marquee <?php echo esc_attr(implode(' ', $conditional_class)) ?>" data-is-marquee-on="<?php echo esc_attr($is_marquee_on) ?>" data-marquee-speed="<?php echo esc_attr($marquee_speed) ?>">
+    <div class="deensimc-marquee-main-container deensimc-button-marquee <?php echo esc_attr(implode(' ', $conditional_class)) ?>" data-is-marquee-on="<?php echo esc_attr($is_marquee_on) ?>" data-marquee-speed="<?php echo esc_attr($marquee_speed) ?>" data-track-fill="yes" data-track-item-selector=".deensimc-button-text">
       <a <?php echo $this->get_render_attribute_string('button'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
           ?>>
         <?php if ($settings['deensimc_button_icon']['value']) { ?>
@@ -105,24 +105,14 @@ class Deensimc_Button_marquee extends Widget_Base
       <?php if ($is_marquee_on) { ?>
         <div class="deensimc-marquee-track-wrapper" aria-hidden="true">
           <div class="deensimc-marquee-track">
-            <?php for ($i = 0; $i < 8; $i++) : ?>
-              <span class="deensimc-button-text">
-                <?php if ($settings['deensimc_button_icon']) { ?>
-                  <span class="deensimc-button-marquee-icon"><?php Icons_Manager::render_icon($settings['deensimc_button_icon'], ['aria-hidden' => 'true']); ?></span>
-                <?php } ?>
-                <span><?php echo esc_html($text); ?></span>
-              </span>
-            <?php endfor; ?>
+            <span class="deensimc-button-text">
+              <?php if ($settings['deensimc_button_icon']) { ?>
+                <span class="deensimc-button-marquee-icon"><?php Icons_Manager::render_icon($settings['deensimc_button_icon'], ['aria-hidden' => 'true']); ?></span>
+              <?php } ?>
+              <span><?php echo esc_html($text); ?></span>
+            </span>
           </div>
-          <div class="deensimc-marquee-track">
-            <?php for ($i = 0; $i < 8; $i++) : ?>
-              <span class="deensimc-button-text">
-                <?php if ($settings['deensimc_button_icon']) { ?>
-                  <span class="deensimc-button-marquee-icon"><?php Icons_Manager::render_icon($settings['deensimc_button_icon'], ['aria-hidden' => 'true']); ?></span>
-                <?php } ?>
-                <span><?php echo esc_html($text); ?></span>
-              </span>
-            <?php endfor; ?>
+          <div aria-hidden="true" class="deensimc-marquee-track">
           </div>
         </div>
       <?php } ?>
