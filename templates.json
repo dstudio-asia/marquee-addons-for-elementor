@@ -6,6 +6,13 @@
       "image_url": "https://marqueeaddons.com/wp-content/uploads/2026/01/ezistay.webp",
       "preview_url": "https://marqueeaddons.com/marquee-demos/ezistay/",
       "pricing_url": "https://marqueeaddons.com/pricing/"
+    },
+    {
+      "id": "trueliving",
+      "name": "TrueLiving",
+      "image_url": "https://marqueeaddons.com/wp-content/uploads/2025/12/truliving-300x240.webp",
+      "preview_url": "https://marqueeaddons.com/marquee-demos/truliving-real-estate-company/",
+      "pricing_url": "https://marqueeaddons.com/pricing/"
     }
   ]
 }
