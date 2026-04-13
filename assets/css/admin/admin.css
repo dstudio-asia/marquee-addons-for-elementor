@@ -434,3 +434,159 @@ div.deensimc-notice.info {
   visibility: visible;
   transform: translateX(-50%) translateY(0);
 }
+
+.deensimc-wrap {
+    margin: 20px 20px 0 0;
+}
+
+.deensimc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.deensimc-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.deensimc-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+
+.deensimc-card-image {
+    aspect-ratio: 16 / 9;
+    background: #f1f5f9;
+    overflow: hidden;
+}
+
+.deensimc-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.deensimc-card-content {
+    padding: 18px;
+}
+
+.deensimc-card-content h3 {
+    margin: 0 0 12px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.deensimc-actions {
+    display: flex;
+    gap: 12px;
+    margin-top:20px;
+}
+
+.deensimc-btn {
+    flex: 1;
+    text-align: center;
+    padding: 8px 12px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+}
+
+.deensimc-btn-preview {
+    background: #f0f0f1;
+    color: #1e293b;
+    border: 1px solid #ddd;
+}
+
+.deensimc-btn-preview:hover {
+    background: #e2e2e4;
+}
+
+.deensimc-btn-copy:hover {
+  cursor: pointer;
+} 
+
+.deensimc-btn-copy.copied {
+    background: #10b981;
+    color: #fff;
+}
+
+.deensimc-btn-copy:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.deensimc-toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: #1e293b;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 40px;
+    font-size: 0.85rem;
+    transition: transform 0.2s;
+    z-index: 10000;
+    pointer-events: none;
+}
+
+.deensimc-toast.show {
+    transform: translateX(-50%) translateY(0);
+}
+
+a.deensimc-tem-btn, button.deensimc-tem-btn {
+    padding: 5px 20px;
+    text-decoration: none;
+    border-radius: 30px;
+    border:none;
+}
+
+.deensimc-btn-locked {
+    opacity: 0.8;
+    cursor: not-allowed;
+    pointer-events: none;
+    background: #f0f0f1;
+    border-color: #c3c4c7;
+    color: #50575e;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Dashicons lock – enqueue dashicons if not already loaded */
+.deensimc-btn-locked .dashicons-lock {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    color: #d63638; /* subtle red */
+}
+
+/* Pro badge – always visible */
+.deensimc-pro-template {
+    background: #715aff;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 10px;
+    margin-left: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    line-height: 1.2;
+}
+
+/* Ensure dashicons are loaded in admin */
+.wrap.deensimc-wrap .dashicons {
+    font-family: dashicons;
+}

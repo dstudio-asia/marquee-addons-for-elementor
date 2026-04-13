@@ -1,0 +1,493 @@
+{
+  "templates": [
+    {
+      "id": "gradient-fashion-hero",
+      "name": "Gradient Fashion Hero",
+      "image_url": "https://utfs.io/f/c984dfa0-f94d-4b62-9ce3-c208e030c44c-8wdl3t",
+      "preview_url": "https://your-site.com/demo/gradient-fashion-hero",
+      "json": {
+
+      }
+    },
+    {
+      "id": "minimal-product-grid",
+      "name": "Minimalist Product Grid",
+      "image_url": "https://utfs.io/f/78d9a927-a0c3-479a-931a-703426f1cdf6-n4r16b",
+      "preview_url": "https://your-site.com/demo/minimal-product-grid",
+      "json": {
+        
+      }
+    },
+    {
+      "id": "minimal-product-grid-2",
+      "name": "Minimalist Product Grid 2",
+      "image_url": "https://utfs.io/f/78d9a927-a0c3-479a-931a-703426f1cdf6-n4r16b",
+      "preview_url": "https://your-site.com/demo/minimal-product-grid",
+      "json": {
+  "type": "elementor",
+  "siteurl": "https://marqueeaddons.com",
+  "elements": [
+    {
+      "id": "b9d28cf",
+      "elType": "container",
+      "isInner": false,
+      "isLocked": false,
+      "settings": {
+        "flex_direction": "column",
+        "flex_align_items": "flex-start",
+        "flex_gap": {
+          "column": "16",
+          "row": "16",
+          "isLinked": true,
+          "unit": "px",
+          "size": 16
+        },
+        "background_background": "classic",
+        "background_image": {
+          "url": "https://marqueeaddons.com/wp-content/uploads/2025/10/rsz_frame_1000005216-min.webp",
+          "id": 15633,
+          "size": "",
+          "alt": "",
+          "source": "library"
+        },
+        "background_position": "center center",
+        "background_repeat": "no-repeat",
+        "background_size": "cover",
+        "padding": {
+          "unit": "px",
+          "top": "90",
+          "right": "20",
+          "bottom": "90",
+          "left": "20",
+          "isLinked": false
+        },
+        "deensimc_glow_repeater": [
+          {
+            "deensimc_glow_color": "#FFD21FB3",
+            "deensimc_glow_size": { "size": 250 },
+            "deensimc_glow_blur": { "size": 32 },
+            "deensimc_glow_x": { "size": 48 },
+            "deensimc_glow_y": { "size": 40 },
+            "_id": "b0e71a8"
+          },
+          {
+            "deensimc_glow_color": "#00CCCCB3",
+            "deensimc_glow_size": { "size": 250 },
+            "deensimc_glow_blur": { "size": 32 },
+            "deensimc_glow_x": { "size": 45 },
+            "deensimc_glow_y": { "size": 45 },
+            "_id": "fb61580"
+          },
+          {
+            "deensimc_glow_size": { "size": 250 },
+            "deensimc_glow_blur": { "size": 32 },
+            "deensimc_glow_x": { "size": 50 },
+            "deensimc_glow_y": { "size": 50 },
+            "_id": "b66cbff"
+          }
+        ],
+        "flex_direction_mobile": "column",
+        "padding_mobile": {
+          "unit": "px",
+          "top": "50",
+          "right": "20",
+          "bottom": "50",
+          "left": "20",
+          "isLinked": false
+        },
+        "boxed_width": {
+          "unit": "px",
+          "size": 1240,
+          "sizes": []
+        }
+      },
+      "elements": [
+        {
+          "id": "272d692e",
+          "elType": "widget",
+          "widgetType": "heading",
+          "isInner": false,
+          "isLocked": false,
+          "settings": {
+            "title": "Explore Tokyo Like Never Before",
+            "header_size": "span",
+            "typography_typography": "custom",
+            "typography_font_family": "Outfit",
+            "typography_font_size": { "unit": "px", "size": 14, "sizes": [] },
+            "typography_font_weight": "400",
+            "typography_line_height": { "unit": "px", "size": 20, "sizes": [] },
+            "_padding": {
+              "unit": "px",
+              "top": "4",
+              "right": "12",
+              "bottom": "06",
+              "left": "12",
+              "isLinked": false
+            },
+            "_border_border": "solid",
+            "_border_width": {
+              "unit": "px",
+              "top": "1",
+              "right": "1",
+              "bottom": "1",
+              "left": "1",
+              "isLinked": true
+            },
+            "_border_radius": {
+              "unit": "px",
+              "top": "200",
+              "right": "200",
+              "bottom": "200",
+              "left": "200",
+              "isLinked": true
+            },
+            "__globals__": {
+              "title_color": "",
+              "_border_color": ""
+            },
+            "title_color": "#FFC226",
+            "_border_color": "#FFC226"
+          }
+        },
+        {
+          "id": "25478409",
+          "elType": "widget",
+          "widgetType": "text-editor",
+          "isInner": false,
+          "isLocked": false,
+          "settings": {
+            "editor": "<p>Fill your screen with breathtaking views of Tokyo\u2019s most iconic landscapes. From tranquil gardens to bustling cityscapes, explore the vibrant sights and hidden gems of Japan\u2019s capital in a bold, immersive way.<\/p>",
+            "text_color": "#FFFFFF",
+            "align": "left",
+            "_element_width": "initial",
+            "_element_custom_width": { "unit": "%", "size": 45, "sizes": [] },
+            "_element_width_mobile": "inherit",
+            "_element_custom_width_mobile_extra": { "unit": "%", "size": 82, "sizes": [] },
+            "_element_custom_width_mobile": { "unit": "%", "size": "", "sizes": [] },
+            "typography_typography": "custom",
+            "typography_font_family": "Outfit",
+            "typography_font_size": { "unit": "px", "size": 18, "sizes": [] },
+            "typography_font_weight": "400",
+            "typography_line_height": { "unit": "em", "size": "", "sizes": [] },
+            "typography_line_height_widescreen": { "unit": "em", "size": "", "sizes": [] },
+            "typography_line_height_laptop": { "unit": "em", "size": "", "sizes": [] },
+            "typography_line_height_tablet_extra": { "unit": "em", "size": "", "sizes": [] },
+            "typography_line_height_mobile_extra": { "unit": "em", "size": "", "sizes": [] },
+            "__globals__": { "typography_typography": "" }
+          }
+        },
+        {
+          "id": "38325cb1",
+          "elType": "widget",
+          "widgetType": "deensimcpro-text-reveal",
+          "isInner": false,
+          "isLocked": false,
+          "settings": {
+            "deensimcpro_content_text": "Tokyo",
+            "deensimcpro_content_text_typography_typography": "custom",
+            "deensimcpro_content_text_typography_font_family": "Paytone One",
+            "deensimcpro_content_text_typography_font_size": { "unit": "px", "size": 360, "sizes": [] },
+            "deensimcpro_content_text_typography_font_size_laptop": { "unit": "px", "size": 320, "sizes": [] },
+            "deensimcpro_content_text_typography_font_size_tablet_extra": { "unit": "px", "size": 280, "sizes": [] },
+            "deensimcpro_content_text_typography_font_size_tablet": { "unit": "px", "size": 230, "sizes": [] },
+            "deensimcpro_content_text_typography_font_size_mobile_extra": { "unit": "px", "size": 200, "sizes": [] },
+            "deensimcpro_content_text_typography_font_size_mobile": { "unit": "px", "size": 87, "sizes": [] },
+            "deensimcpro_content_text_typography_text_transform": "uppercase",
+            "deensimcpro_content_text_typography_line_height": { "unit": "em", "size": 1, "sizes": [] },
+            "deensimcpro_content_text_typography_line_height_widescreen": { "unit": "em", "size": "", "sizes": [] },
+            "deensimcpro_content_text_typography_line_height_laptop": { "unit": "em", "size": "", "sizes": [] },
+            "deensimcpro_content_text_typography_line_height_tablet_extra": { "unit": "em", "size": "", "sizes": [] },
+            "deensimcpro_content_text_typography_line_height_mobile_extra": { "unit": "em", "size": "", "sizes": [] },
+            "deensimcpro_content_text_style": "image",
+            "deensimc_image_masking_img": {
+              "url": "https://marqueeaddons.com/wp-content/uploads/2025/12/Rectangle-170-1-min.webp",
+              "id": 19634,
+              "size": "",
+              "alt": "",
+              "source": "library"
+            },
+            "deensimcpro_text_reveal_effect": "reveal",
+            "deensimcpro_content_text_typography_font_weight": "400"
+          }
+        },
+        {
+          "id": "57823215",
+          "elType": "container",
+          "isInner": true,
+          "isLocked": false,
+          "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "flex_justify_content": "space-between",
+            "flex_align_items": "center",
+            "margin": {
+              "unit": "px",
+              "top": "0",
+              "right": "0",
+              "bottom": "0",
+              "left": "0",
+              "isLinked": false
+            },
+            "padding": {
+              "unit": "px",
+              "top": "40",
+              "right": "0",
+              "bottom": "0",
+              "left": "0",
+              "isLinked": false
+            },
+            "padding_mobile": {
+              "unit": "px",
+              "top": "0",
+              "right": "0",
+              "bottom": "0",
+              "left": "0",
+              "isLinked": false
+            },
+            "deensimc_glow_repeater": [
+              {
+                "deensimc_glow_color": "#FFD21FB3",
+                "deensimc_glow_size": { "size": 250 },
+                "deensimc_glow_blur": { "size": 32 },
+                "deensimc_glow_x": { "size": 48 },
+                "deensimc_glow_y": { "size": 40 },
+                "_id": "63d3a49"
+              },
+              {
+                "deensimc_glow_color": "#00CCCCB3",
+                "deensimc_glow_size": { "size": 250 },
+                "deensimc_glow_blur": { "size": 32 },
+                "deensimc_glow_x": { "size": 45 },
+                "deensimc_glow_y": { "size": 45 },
+                "_id": "111ed87"
+              },
+              {
+                "deensimc_glow_size": { "size": 250 },
+                "deensimc_glow_blur": { "size": 32 },
+                "deensimc_glow_x": { "size": 50 },
+                "deensimc_glow_y": { "size": 50 },
+                "_id": "b605258"
+              }
+            ]
+          },
+          "elements": [
+            {
+              "id": "1149d106",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "isInner": false,
+              "isLocked": false,
+              "settings": {
+                "editor": "<p>Immerse yourself in the breathtaking beauty of Tokyo, where traditional culture meets modern innovation. From the peaceful cherry blossoms in spring to the dynamic skyline, every corner of the city offers a new experience waiting to be explored.<\/p>",
+                "text_color": "#F1EEFF",
+                "_element_width": "initial",
+                "_element_width_mobile": "inherit",
+                "_element_custom_width": { "unit": "%", "size": 45, "sizes": [] },
+                "_element_custom_width_laptop": { "unit": "%", "size": 40, "sizes": [] },
+                "_element_custom_width_tablet_extra": { "unit": "%", "size": 50, "sizes": [] },
+                "_element_custom_width_tablet": { "unit": "%", "size": 55, "sizes": [] },
+                "_element_custom_width_mobile_extra": { "unit": "%", "size": 50, "sizes": [] },
+                "_element_custom_width_mobile": { "unit": "%", "size": "", "sizes": [] },
+                "typography_typography": "custom",
+                "typography_font_family": "Outfit",
+                "typography_font_size": { "unit": "px", "size": 18, "sizes": [] },
+                "typography_font_weight": "400",
+                "typography_line_height": { "unit": "em", "size": "", "sizes": [] },
+                "typography_line_height_widescreen": { "unit": "em", "size": "", "sizes": [] },
+                "typography_line_height_laptop": { "unit": "em", "size": "", "sizes": [] },
+                "typography_line_height_tablet_extra": { "unit": "em", "size": "", "sizes": [] },
+                "typography_line_height_mobile_extra": { "unit": "em", "size": "", "sizes": [] },
+                "__globals__": { "typography_typography": "" }
+              }
+            },
+            {
+              "id": "6c726e21",
+              "elType": "container",
+              "isInner": true,
+              "isLocked": false,
+              "settings": {
+                "content_width": "full",
+                "flex_direction": "row",
+                "flex_justify_content": "flex-end",
+                "padding": {
+                  "unit": "px",
+                  "top": "0",
+                  "right": "0",
+                  "bottom": "0",
+                  "left": "0",
+                  "isLinked": false
+                },
+                "padding_mobile": {
+                  "unit": "px",
+                  "top": "0",
+                  "right": "0",
+                  "bottom": "0",
+                  "left": "0",
+                  "isLinked": false
+                },
+                "flex_direction_tablet": "row",
+                "flex_direction_mobile_extra": "column",
+                "deensimc_glow_repeater": [
+                  {
+                    "deensimc_glow_color": "#FFD21FB3",
+                    "deensimc_glow_size": { "size": 250 },
+                    "deensimc_glow_blur": { "size": 32 },
+                    "deensimc_glow_x": { "size": 48 },
+                    "deensimc_glow_y": { "size": 40 },
+                    "_id": "40e5f21"
+                  },
+                  {
+                    "deensimc_glow_color": "#00CCCCB3",
+                    "deensimc_glow_size": { "size": 250 },
+                    "deensimc_glow_blur": { "size": 32 },
+                    "deensimc_glow_x": { "size": 45 },
+                    "deensimc_glow_y": { "size": 45 },
+                    "_id": "b6f2dfb"
+                  },
+                  {
+                    "deensimc_glow_size": { "size": 250 },
+                    "deensimc_glow_blur": { "size": 32 },
+                    "deensimc_glow_x": { "size": 50 },
+                    "deensimc_glow_y": { "size": 50 },
+                    "_id": "893b0ef"
+                  }
+                ],
+                "flex_justify_content_mobile": "center",
+                "flex_align_items_mobile": "center",
+                "width": { "unit": "%", "size": 55, "sizes": [] },
+                "width_mobile_extra": { "unit": "%", "size": 35, "sizes": [] },
+                "width_mobile": { "unit": "%", "size": "", "sizes": [] },
+                "flex_align_items_mobile_extra": "flex-end"
+              },
+              "elements": [
+                {
+                  "id": "22170c79",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "isInner": false,
+                  "isLocked": false,
+                  "settings": {
+                    "text": "Start Your Journey",
+                    "_padding": {
+                      "unit": "px",
+                      "top": "0",
+                      "right": "0",
+                      "bottom": "0",
+                      "left": "0",
+                      "isLinked": false
+                    },
+                    "__dynamic__": [],
+                    "align_mobile": "justify",
+                    "_element_width_mobile": "inherit",
+                    "__globals__": {
+                      "button_text_color": "",
+                      "background_color": "",
+                      "typography_typography": ""
+                    },
+                    "typography_typography": "custom",
+                    "typography_font_family": "Poppins",
+                    "typography_font_size": { "unit": "px", "size": 14, "sizes": [] },
+                    "typography_font_weight": "600",
+                    "typography_line_height": { "unit": "px", "size": 14, "sizes": [] },
+                    "button_text_color": "#150726",
+                    "background_color": "#FFFFFF",
+                    "border_radius": {
+                      "unit": "px",
+                      "top": "16",
+                      "right": "16",
+                      "bottom": "16",
+                      "left": "16",
+                      "isLinked": true
+                    },
+                    "text_padding": {
+                      "unit": "px",
+                      "top": "16",
+                      "right": "32",
+                      "bottom": "16",
+                      "left": "32",
+                      "isLinked": false
+                    }
+                  }
+                },
+                {
+                  "id": "3be3a8c0",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "isInner": false,
+                  "isLocked": false,
+                  "settings": {
+                    "text": "Discover More",
+                    "_padding": {
+                      "unit": "px",
+                      "top": "0",
+                      "right": "0",
+                      "bottom": "0",
+                      "left": "0",
+                      "isLinked": false
+                    },
+                    "link": { "url": "#", "is_external": "on", "nofollow": "", "custom_attributes": "" },
+                    "button_text_color": "#FFFFFF",
+                    "background_color": "#F6F5F41A",
+                    "background_color_b": "#D4CBFF",
+                    "background_gradient_angle": { "unit": "deg", "size": 0, "sizes": [] },
+                    "border_border": "solid",
+                    "border_width": {
+                      "unit": "px",
+                      "top": "1",
+                      "right": "1",
+                      "bottom": "1",
+                      "left": "1",
+                      "isLinked": true
+                    },
+                    "border_color": "#BFB1FF",
+                    "__dynamic__": [],
+                    "__globals__": {
+                      "button_text_color": "",
+                      "background_color": "",
+                      "typography_typography": ""
+                    },
+                    "align_mobile": "justify",
+                    "_padding_mobile": {
+                      "unit": "px",
+                      "top": "0",
+                      "right": "0",
+                      "bottom": "0",
+                      "left": "0",
+                      "isLinked": false
+                    },
+                    "_element_width_mobile": "inherit",
+                    "typography_typography": "custom",
+                    "typography_font_family": "Poppins",
+                    "typography_font_size": { "unit": "px", "size": 14, "sizes": [] },
+                    "typography_font_weight": "600",
+                    "typography_line_height": { "unit": "px", "size": 14, "sizes": [] },
+                    "border_radius": {
+                      "unit": "px",
+                      "top": "16",
+                      "right": "16",
+                      "bottom": "16",
+                      "left": "16",
+                      "isLinked": true
+                    },
+                    "text_padding": {
+                      "unit": "px",
+                      "top": "16",
+                      "right": "32",
+                      "bottom": "16",
+                      "left": "32",
+                      "isLinked": false
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+      }
+    }
+  
+  ]
+}
