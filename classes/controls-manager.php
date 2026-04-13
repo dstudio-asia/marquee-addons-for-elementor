@@ -42,38 +42,6 @@ class Control_Manager
         add_action('admin_init', [$this, 'register_settings']);
         add_action('admin_enqueue_scripts', [$this, 'enqueue_admin_scripts']);
         add_action('admin_init', [$this, 'initialize_default_settings']);
-        add_action('wp_ajax_deensimc_get_template_json', [$this, 'deensimc_ajax_get_template_json']);
-    }
-
-    /**
-     * AJAX handler: return a single template's JSON from templates.json
-     */
-    public function deensimc_ajax_get_template_json()
-    {
-        check_ajax_referer('deensimc_nonce', 'nonce');
-
-        $template_id = sanitize_text_field($_POST['template_id']);
-        $file = DEENSIMC_PATH . 'templates.json';
-
-        if (!file_exists($file)) {
-            wp_send_json_error('Template file not found at: ' . $file);
-        }
-
-        $content = file_get_contents($file);
-        $data = json_decode($content, true);
-
-        if (!isset($data['templates'])) {
-            wp_send_json_error('Invalid templates.json structure.');
-        }
-
-        foreach ($data['templates'] as $template) {
-            if ($template['id'] === $template_id) {
-                $json_string = json_encode($template['json'], JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
-                wp_send_json_success($json_string);
-            }
-        }
-
-        wp_send_json_error('Template not found.');
     }
 
     /**
@@ -325,7 +293,7 @@ class Control_Manager
      */
     public function deensimc_get_templates_metadata()
     {
-        $file = DEENSIMC_PATH . 'templates.json';
+        $file = $this->is_pro_active ? DEENSIMCPRO_PATH . 'templates.json' : DEENSIMC_PATH . 'templates.json';
         if (!file_exists($file)) {
             return [];
         }
@@ -344,6 +312,7 @@ class Control_Manager
                 'name'        => $template['name'],
                 'image_url'   => $template['image_url'],
                 'preview_url' => $template['preview_url'],
+                'pricing_url' => $template['pricing_url'] ?? '',
             ];
         }
         return $metadata;
@@ -359,7 +328,7 @@ class Control_Manager
         $is_pro    = $this->is_pro_active;
         ?>
         <div class="wrap deensimc-wrap">
-            <h1><?php esc_html_e( 'Template Library', 'marquee-addons-for-elementor' ); ?></h1>
+            <h1><?php esc_html_e( 'Marquee Templates', 'marquee-addons-for-elementor' ); ?></h1>
             <div class="deensimc-grid">
                 <?php foreach ( $templates as $template ) : ?>
                     <div class="deensimc-card" data-template-id="<?php echo esc_attr( $template['id'] ); ?>">
@@ -379,21 +348,16 @@ class Control_Manager
                                 </a>
 
                                 <?php if ( $is_pro ) : ?>
-                                    <!-- Pro user: functional copy button -->
                                     <button type="button" 
                                             class="deensimc-tem-btn deensimc-btn-copy" 
                                             data-nonce="<?php echo esc_attr( $nonce ); ?>">
                                         <?php esc_html_e( 'Copy', 'marquee-addons-for-elementor' ); ?>
                                     </button>
                                 <?php else : ?>
-                                    <!-- Free user: locked button with always‑visible lock + Pro badge -->
-                                    <button type="button" 
-                                            class="deensimc-tem-btn deensimc-btn-copy deensimc-btn-locked" 
-                                            disabled 
-                                            title="<?php esc_attr_e( 'Available in Pro version', 'marquee-addons-for-elementor' ); ?>">
+                                    <a href="<?php echo esc_url($template['pricing_url']); ?>" class="deensimc-tem-btn deensimc-btn-copy deensimc-btn-locked" target="_blank" >
                                         <span class="dashicons dashicons-lock"></span>
                                         <?php esc_html_e( 'Copy', 'marquee-addons-for-elementor' ); ?>
-                                    </button>
+                                    </a>
                                 <?php endif; ?>
                             </div>
                         </div>
