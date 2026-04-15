@@ -12,13 +12,6 @@
 
   function markDuplicate(item) {
     item.setAttribute("aria-hidden", "true");
-
-    // $(item)
-    //   .find("a, button, input, select, textarea, [tabindex]")
-    //   .each((_, interactiveEl) => {
-    //     // interactiveEl.setAttribute("tabindex", "-1");
-    //     // interactiveEl.setAttribute("aria-hidden", "true");
-    //   });
   }
 
   function cloneItems(items, isDuplicateBatch) {
@@ -127,12 +120,33 @@
     }
   }
 
+  function resetTrackToSourceItems($tracks, itemSelector) {
+    const $firstTrack = $tracks.eq(0);
+    const sourceItems = getSourceItems($firstTrack, itemSelector);
+
+    if (!$firstTrack.length || !sourceItems.length) {
+      return;
+    }
+
+    $firstTrack.empty().append(cloneItems(sourceItems, false));
+
+    if ($tracks.length > 1) {
+      $tracks.eq(1).empty();
+    }
+  }
+
   function fillContainerTrack(element) {
     const options = getContainerOptions(element);
-    const $tracks = $(element).find(".deensimc-marquee-track");
+    const $container = $(element);
+    const $tracks = $container.find(".deensimc-marquee-track");
     const $firstTrack = $tracks.eq(0);
 
     if (!$tracks.length || !options.itemSelector) {
+      return;
+    }
+
+    if ($container.hasClass("deensimc-marquee-stop")) {
+      resetTrackToSourceItems($tracks, options.itemSelector);
       return;
     }
 
@@ -143,7 +157,7 @@
     }
 
     if (typeof window.initTextLengthToggle === "function") {
-      window.initTextLengthToggle($(element));
+      window.initTextLengthToggle($container);
     }
   }
 
@@ -196,3 +210,4 @@
 
   window.autoRegisterTrackFillFromScope = autoRegisterTrackFillFromScope;
 })(jQuery, window._);
+
