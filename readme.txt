@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: elementor, text marquee, image marquee, video marquee, elementor addons
 Requires at least: 5.8
 Tested up to: 6.9
-Stable tag: 3.9.38
+Stable tag: 3.9.39
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -264,6 +264,9 @@ The developers release regular updates to improve features, fix bugs, and ensure
 First, ensure that you've activated the plugin correctly. If the issue persists, try clearing your browser cache or updating your Elementor plugin. If the problem continues, you can reach out to the support team for assistance.
 
 == Changelog ==
+
+= 3.9.39 - 2026-04-15 =
+- Fix: Removed cloned items when the marquee option is turned off.
 
 = 3.9.38 - 2026-04-11 =
 - Fix: Resolved blank space appearing issue when the number of marquee items is insufficient.
