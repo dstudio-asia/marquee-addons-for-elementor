@@ -129,10 +129,15 @@
 
   function fillContainerTrack(element) {
     const options = getContainerOptions(element);
+    const $container = $(element);
     const $tracks = $(element).find(".deensimc-marquee-track");
     const $firstTrack = $tracks.eq(0);
 
-    if (!$tracks.length || !options.itemSelector) {
+    if (
+      !$tracks.length ||
+      !options.itemSelector ||
+      $container.hasClass("deensimc-marquee-stop")
+    ) {
       return;
     }
 
