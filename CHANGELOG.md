@@ -1,6 +1,14 @@
 # Changelog
 
 
+## [3.9.39](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.38...v3.9.39) (2026-04-15)
+
+
+### Bug Fixes
+
+* prevent track filling when marquee is stopped ([1e8b31b](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/1e8b31b0f8e4b41170c16a81c93e81f94f676968))
+* reset track to original source items when marquee is stopped ([4b1a888](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/4b1a8886a5842c11abe3c97c58494dedab1ec0f5))
+
 ## [3.9.38](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.37...v3.9.38) (2026-04-11)
 
 
