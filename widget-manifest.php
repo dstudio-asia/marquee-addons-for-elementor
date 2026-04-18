@@ -228,6 +228,15 @@ $pro_widgets = [
         'doc'   => 'https://marqueeaddons.com/how-to-use-the-media-marquee-widget-in-elementor/',
         'pro_url' => 'https://marqueeaddons.com/pricing/',
     ],
+    'deensimcpro-youtube-shorts-marquee' => [
+        'cat'    => 'general',
+        'title'  => __('YouTube Shorts Marquee', 'marquee-addons-pro'),
+        'icon'   => 'eicon-e-youtube eicon-deensimc-pro',
+        'is_pro' => true,
+        'demo'   => 'https://marqueeaddons.com/',
+        'doc'   => 'https://marqueeaddons.com/docs/',
+        'pro_url' => 'https://marqueeaddons.com/pricing/',
+    ],
     'deensimcpro-post-marquee' => [
         'cat'    => 'general',
         'title'  => __('Post Marquee', 'marquee-addons-for-elementor'),
