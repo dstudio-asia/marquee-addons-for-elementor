@@ -2,9 +2,48 @@
   "use strict";
 
   const DEFAULT_MAX_DUPLICATION_ROUNDS = 50;
+  const IMAGE_LOAD_MARQUEE_CLASSES = ["deensimc-image-marquee"];
   const trackFillRegistry = new Map();
   let resizeTimer = null;
   let isResizeBound = false;
+
+  function scheduleTrackFillRecalculation() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(recalculateTrackFills, 100);
+  }
+
+  function shouldWaitForMedia(element) {
+    return IMAGE_LOAD_MARQUEE_CLASSES.some((className) =>
+      element.classList.contains(className),
+    );
+  }
+
+  function bindPendingMediaRecalculation(element) {
+    if (!shouldWaitForMedia(element)) {
+      return false;
+    }
+
+ 
+    const $media = $(element).find("img");
+    let hasPendingMedia = false;
+
+    $media.each((_, media) => {
+      const $mediaItem = $(media);
+      if (media.complete) {
+        return;
+      }
+
+      hasPendingMedia = true;
+
+      const events = "load.deensimcTrackFill error.deensimcTrackFill";
+
+      $mediaItem.off(".deensimcTrackFill").one(events, () => {
+        scheduleTrackFillRecalculation();
+      });
+    });
+
+    return hasPendingMedia;
+  }
 
   function getTrackSize(track, isVertical) {
     return isVertical ? track.scrollHeight : track.scrollWidth;
@@ -12,23 +51,14 @@
 
   function markDuplicate(item) {
     item.setAttribute("aria-hidden", "true");
-
-    // $(item)
-    //   .find("a, button, input, select, textarea, [tabindex]")
-    //   .each((_, interactiveEl) => {
-    //     // interactiveEl.setAttribute("tabindex", "-1");
-    //     // interactiveEl.setAttribute("aria-hidden", "true");
-    //   });
   }
 
   function cloneItems(items, isDuplicateBatch) {
     return items.map((item) => {
       const clone = item.cloneNode(true);
-
       if (isDuplicateBatch) {
         markDuplicate(clone);
       }
-
       return clone;
     });
   }
@@ -113,7 +143,14 @@
 
     $track.empty().append(cloneItems(sourceItems, false));
 
-    if (getTrackSize(track, options.isVertical) === 0) {
+    const trackSize = getTrackSize(track, options.isVertical);
+
+    if (
+      !trackSize ||
+      trackSize <= 0 ||
+      !options.targetSize ||
+      options.targetSize <= 0
+    ) {
       return;
     }
 
@@ -138,6 +175,10 @@
       !options.itemSelector ||
       $container.hasClass("deensimc-marquee-stop")
     ) {
+      return;
+    }
+
+    if (bindPendingMediaRecalculation(element)) {
       return;
     }
 
@@ -173,8 +214,7 @@
     }
 
     $(window).on("resize", () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(recalculateTrackFills, 100);
+      scheduleTrackFillRecalculation();
     });
 
     isResizeBound = true;
