@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: elementor, text marquee, image marquee, marquee, elementor addons
 Requires at least: 5.8
 Tested up to: 6.9
-Stable tag: 3.9.40
+Stable tag: 3.9.41
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -79,6 +79,11 @@ You have full control over styling so every card can be customized to match your
 ### [Media Marquee](https://marqueeaddons.com/media-marquee/) (Pro):
 
 Create a smooth, infinite media marquee with images and videos in one continuous carousel. Display logos, photos, or videos with lightbox support, customizable spacing, aspect ratios, overlays, and play icons. Control direction, speed, hover effects, and enable scroll-triggered animation for an engaging, high-performance media carousel.
+
+### YouTube Shorts Marquee (Pro):
+
+Show YouTube Shorts in a smooth, continuous marquee built for modern video-first sections. Add multiple Shorts URLs, keep the feed moving horizontally or vertically, and control marquee direction, speed, spacing, and scroll behavior to create an engaging reel that stays visible without taking over the page.
+
 
 ### [Post Marquee](https://marqueeaddons.com/post-marquee/) (Pro):
 
@@ -264,6 +269,9 @@ The developers release regular updates to improve features, fix bugs, and ensure
 First, ensure that you've activated the plugin correctly. If the issue persists, try clearing your browser cache or updating your Elementor plugin. If the problem continues, you can reach out to the support team for assistance.
 
 == Changelog ==
+
+= 3.9.41 - 2026-04-18 =
+– New: Irish (ga_IE) translation.
 
 = 3.9.40 - 2026-04-16 =
 - Fix: Fixed an issue where animation speed increased in Image Marquee.
