@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.9.41](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.9.40...v3.9.41) (2026-04-18)
+
+
+### Features
+
+* Add Irish translation ([ee5f7f4](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/ee5f7f495ecbc6f98eabfa32794387dc78d12d74))
+
 ## [3.9.39](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.38...v3.9.39) (2026-04-15)
 
 
