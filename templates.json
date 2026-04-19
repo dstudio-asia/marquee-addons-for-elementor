@@ -1,0 +1,46 @@
+{
+  "templates": [
+    {
+      "id": "ezistay",
+      "name": "EZISTAY",
+      "image_url": "https://marqueeaddons.com/wp-content/uploads/2026/01/ezistay.webp",
+      "preview_url": "https://marqueeaddons.com/marquee-demos/ezistay/",
+      "pricing_url": "https://marqueeaddons.com/pricing/"
+    },
+    {
+      "id": "trueliving",
+      "name": "TrueLiving",
+      "image_url": "https://marqueeaddons.com/wp-content/uploads/2025/12/truliving-300x240.webp",
+      "preview_url": "https://marqueeaddons.com/marquee-demos/truliving-real-estate-company/",
+      "pricing_url": "https://marqueeaddons.com/pricing/"
+    },
+    {
+      "id": "pactal",
+      "name": "Pactal",
+      "image_url": "https://marqueeaddons.com/wp-content/uploads/2026/01/Home-page-2-1.webp",
+      "preview_url": "https://marqueeaddons.com/marquee-demos/pactal/",
+      "pricing_url": "https://marqueeaddons.com/pricing/"
+    },
+    {
+      "id": "asitaai",
+      "name": "ASITAAI",
+      "image_url": "https://marqueeaddons.com/wp-content/uploads/2025/09/Frame-1000005306-min-300x240.webp",
+      "preview_url": "https://marqueeaddons.com/marquee-demos/asitaai/",
+      "pricing_url": "https://marqueeaddons.com/pricing/"
+    },
+    {
+      "id": "Rydra",
+      "name": "RYDRA",
+      "image_url": "https://marqueeaddons.com/wp-content/uploads/2025/09/Frame-1000005310-min-300x240.webp",
+      "preview_url": "https://marqueeaddons.com/marquee-demos/rydra/",
+      "pricing_url": "https://marqueeaddons.com/pricing/"
+    },
+    {
+      "id": "CoursEd",
+      "name": "CoursEd",
+      "image_url": "https://marqueeaddons.com/wp-content/uploads/2025/10/Frame-1000005314-min-300x240.webp",
+      "preview_url": "https://marqueeaddons.com/marquee-demos/course-ed/",
+      "pricing_url": "https://marqueeaddons.com/pricing/"
+    }
+  ]
+}
