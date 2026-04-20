@@ -136,7 +136,7 @@ class Control_Manager
 
         add_submenu_page(
             'marquee-addons-settings',
-            __('Element Manger', 'marquee-addons-for-elementor'),
+            __('Element Manager', 'marquee-addons-for-elementor'),
             __('Element Manager', 'marquee-addons-for-elementor'),
             'manage_options',
             'marquee-addons-settings',
@@ -313,6 +313,7 @@ class Control_Manager
                 'image_url'   => $template['image_url'],
                 'preview_url' => $template['preview_url'],
                 'pricing_url' => $template['pricing_url'] ?? '',
+                'type'        => $template['type'] ?? __('Other', 'marquee-addons-for-elementor'),
             ];
         }
         return $metadata;
@@ -324,46 +325,62 @@ class Control_Manager
     public function render_template_page()
     {
         $templates = $this->deensimc_get_templates_metadata();
-        $nonce     = wp_create_nonce( 'deensimc_nonce' );
+        $nonce     = wp_create_nonce('deensimc_nonce');
         $is_pro    = $this->is_pro_active;
-        ?>
-        <div class="wrap deensimc-wrap">
-            <h1><?php esc_html_e( 'Marquee Templates', 'marquee-addons-for-elementor' ); ?></h1>
-            <div class="deensimc-grid">
-                <?php foreach ( $templates as $template ) : ?>
-                    <div class="deensimc-card" data-template-id="<?php echo esc_attr( $template['id'] ); ?>">
-                        <div class="deensimc-card-image">
-                            <img src="<?php echo esc_url( $template['image_url'] ); ?>" 
-                                alt="<?php echo esc_attr( $template['name'] ); ?>" loading="lazy">
-                        </div>
-                        <div class="deensimc-card-content">
-                            <h3>
-                                <?php echo esc_html( $template['name'] ); ?>
-                                 <span class="deensimc-pro-template"><?php esc_html_e( 'Pro', 'marquee-addons-for-elementor' ); ?></span>
-                            </h3>
-                            <div class="deensimc-actions">
-                                <a href="<?php echo esc_url( $template['preview_url'] ); ?>" 
-                                class="deensimc-tem-btn deensimc-btn-preview" target="_blank">
-                                    <?php esc_html_e( 'Preview', 'marquee-addons-for-elementor' ); ?>
-                                </a>
 
-                                <?php if ( $is_pro ) : ?>
-                                    <button type="button" 
-                                            class="deensimc-tem-btn deensimc-btn-copy" 
-                                            data-nonce="<?php echo esc_attr( $nonce ); ?>">
-                                        <?php esc_html_e( 'Copy', 'marquee-addons-for-elementor' ); ?>
-                                    </button>
-                                <?php else : ?>
-                                    <a href="<?php echo esc_url($template['pricing_url']); ?>" class="deensimc-tem-btn deensimc-btn-copy deensimc-btn-locked" target="_blank" >
-                                        <span class="dashicons dashicons-lock"></span>
-                                        <?php esc_html_e( 'Copy', 'marquee-addons-for-elementor' ); ?>
-                                    </a>
-                                <?php endif; ?>
+        // Group templates by type
+        $grouped = [];
+        foreach ($templates as $template) {
+            $type = $template['type'];
+            if (!isset($grouped[$type])) {
+                $grouped[$type] = [];
+            }
+            $grouped[$type][] = $template;
+        }
+        
+        ?>
+
+        <div class="wrap deensimc-wrap">
+            <?php foreach ($grouped as $type => $templates_in_group) : ?>
+                <div class="deensimc-category-section">
+                    <h2 class="deensimc-category-heading"><?php echo esc_html($type); ?></h2>
+                    <div class="deensimc-grid">
+                        <?php foreach ($templates_in_group as $template) : ?>
+                            <div class="deensimc-card" data-template-id="<?php echo esc_attr($template['id']); ?>">
+                                <div class="deensimc-card-image">
+                                    <img src="<?php echo esc_url($template['image_url']); ?>" 
+                                        alt="<?php echo esc_attr($template['name']); ?>" loading="lazy">
+                                </div>
+                                <div class="deensimc-card-content">
+                                    <h3>
+                                        <?php echo esc_html($template['name']); ?>
+                                        <span class="deensimc-pro-template"><?php esc_html_e('Pro', 'marquee-addons-for-elementor'); ?></span>
+                                    </h3>
+                                    <div class="deensimc-actions">
+                                        <a href="<?php echo esc_url($template['preview_url']); ?>" 
+                                        class="deensimc-tem-btn deensimc-btn-preview" target="_blank">
+                                            <?php esc_html_e('Preview', 'marquee-addons-for-elementor'); ?>
+                                        </a>
+
+                                        <?php if ($is_pro) : ?>
+                                            <button type="button" 
+                                                    class="deensimc-tem-btn deensimc-btn-copy" 
+                                                    data-nonce="<?php echo esc_attr($nonce); ?>">
+                                                <?php esc_html_e('Copy', 'marquee-addons-for-elementor'); ?>
+                                            </button>
+                                        <?php else : ?>
+                                            <a href="<?php echo esc_url($template['pricing_url']); ?>" class="deensimc-tem-btn deensimc-btn-copy deensimc-btn-locked" target="_blank">
+                                                <span class="dashicons dashicons-lock"></span>
+                                                <?php esc_html_e('Copy', 'marquee-addons-for-elementor'); ?>
+                                            </a>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        <?php endforeach; ?>
                     </div>
-                <?php endforeach; ?>
-            </div>
+                </div>
+            <?php endforeach; ?>
         </div>
         <?php
     }

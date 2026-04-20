@@ -439,6 +439,10 @@ div.deensimc-notice.info {
     margin: 20px 20px 0 0;
 }
 
+.deensimc-category-heading {
+  font-size: 24px;
+}
+
 .deensimc-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
