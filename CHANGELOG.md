@@ -1,6 +1,14 @@
 # Changelog
 
 
+## [3.9.43](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.42...v3.9.43) (2026-04-20)
+
+
+### Features
+
+* catagorized templates ([a995fc2](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/a995fc200dd31070d7300010efd5eba57ec24e46))
+* catogorized template ([cad4fc0](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/cad4fc02b58fcb9a7917cc990f84bcc47f88727d))
+
 ## [3.9.42](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.41...v3.9.42) (2026-04-19)
 
 
