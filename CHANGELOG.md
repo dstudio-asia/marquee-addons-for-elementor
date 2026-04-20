@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.9.42](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.41...v3.9.42) (2026-04-19)
+
+
+### Features
+
+* Added Templates menu to display all marquee templates ([bb2a1a6](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/bb2a1a64ed96ec588b6414f4a8ab77ed3d2321c3))
+
 ## [3.9.41](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/3.9.40...v3.9.41) (2026-04-18)
 
 
