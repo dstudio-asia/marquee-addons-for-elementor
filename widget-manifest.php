@@ -230,7 +230,7 @@ $pro_widgets = [
     ],
     'deensimcpro-youtube-shorts-marquee' => [
         'cat'    => 'general',
-        'title'  => __('YouTube Shorts Marquee', 'marquee-addons-pro'),
+        'title'  => __('YouTube Shorts Marquee', 'marquee-addons-for-elementor'),
         'icon'   => 'eicon-e-youtube eicon-deensimc-pro',
         'is_pro' => true,
         'demo'   => 'https://marqueeaddons.com/',
