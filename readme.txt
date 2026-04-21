@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: elementor, text marquee, image marquee, marquee, elementor addons
 Requires at least: 5.8
 Tested up to: 6.9
-Stable tag: 3.9.43
+Stable tag: 3.9.44
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -270,8 +270,11 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 
 == Changelog ==
 
+= 3.9.44 - 2026-04-21
+- New: Added One hero templates in template menu.
+
 = 3.9.43 - 2026-04-20
-- Tweak: Added two hero templates in template menu
+- Tweak: Added two hero templates in template menu.
 
 = 3.9.42 - 2026-04-19
 - New: Added Templates menu to display all marquee templates.

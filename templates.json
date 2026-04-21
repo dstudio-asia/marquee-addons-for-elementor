@@ -63,6 +63,14 @@
       "preview_url": "https://marqueeaddons.com/marquee-demos/smooth-text-scrolling-with-image-masking/",
       "pricing_url": "https://marqueeaddons.com/pricing/",
       "type": "Hero Sections"
+    },
+     {
+      "id": "Demo3",
+      "name": "Demo 3",
+      "image_url": "https://marqueeaddons.com/wp-content/uploads/2026/01/smooth-text-scrolling-effect-with-stroke-effect.webp",
+      "preview_url": "https://marqueeaddons.com/marquee-demos/smooth-text-scrolling-effect-with-stroke-effect/",
+      "pricing_url": "https://marqueeaddons.com/pricing/",
+      "type": "Hero Sections"
     }
   ]
 }
