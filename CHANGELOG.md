@@ -1,6 +1,18 @@
 # Changelog
 
 
+## [3.9.44](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.43...v3.9.44) (2026-04-21)
+
+
+### Features
+
+* add Demo 3 hero section template to templates.json ([e908e61](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/e908e61e3b51ae5fbeeeaaa58842040cfcce74f5))
+
+
+### Bug Fixes
+
+* correct text domain for YouTube Shorts Marquee widget title ([4c8edf6](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/4c8edf6b88807f074a0b4d99e857e9d72a029ced))
+
 ## [3.9.43](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.42...v3.9.43) (2026-04-20)
 
 
