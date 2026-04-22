@@ -71,6 +71,14 @@
       "preview_url": "https://marqueeaddons.com/marquee-demos/smooth-text-scrolling-effect-with-stroke-effect/",
       "pricing_url": "https://marqueeaddons.com/pricing/",
       "type": "Hero Sections"
+    },
+     {
+      "id": "Demo4",
+      "name": "Demo 4",
+      "image_url": "https://marqueeaddons.com/wp-content/uploads/2025/10/Frame-1000005320-min.webp",
+      "preview_url": "https://marqueeaddons.com/marquee-demos/vertical-scrolling-text/",
+      "pricing_url": "https://marqueeaddons.com/pricing/",
+      "type": "Hero Sections"
     }
   ]
 }
