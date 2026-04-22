@@ -270,16 +270,16 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 
 == Changelog ==
 
-= 3.9.45 - 2026-04-22
+= 3.9.45 - 2026-04-22 =
 - New: Added One hero template with vertical text marquee.
 
-= 3.9.44 - 2026-04-21
+= 3.9.44 - 2026-04-21 =
 - New: Added One hero templates in template menu.
 
-= 3.9.43 - 2026-04-20
+= 3.9.43 - 2026-04-20 =
 - Tweak: Added two hero templates in template menu.
 
-= 3.9.42 - 2026-04-19
+= 3.9.42 - 2026-04-19 =
 - New: Added Templates menu to display all marquee templates.
 
 = 3.9.41 - 2026-04-18 =
