@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.9.46](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.45...v3.9.46) (2026-04-23)
+
+
+### Features
+
+* Add new Hero Section template "Demo 5" to templates.json ([0ccad7b](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/0ccad7b37c37e310076b11e9aebf17894c562ce5))
+
 ## [3.9.45](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.44...v3.9.45) (2026-04-22)
 
 
