@@ -237,6 +237,15 @@ $pro_widgets = [
         'doc'   => 'https://marqueeaddons.com/docs/',
         'pro_url' => 'https://marqueeaddons.com/pricing/',
     ],
+    'deensimcpro-instagram-marquee' => [
+        'cat'    => 'general',
+        'title'  => __('Instagram Marquee', 'marquee-addons-for-elementor'),
+        'icon'   => 'deensimcpro-instagram-marquee-icon eicon-deensimc-pro',
+        'is_pro' => true,
+        'demo'   => 'https://marqueeaddons.com/',
+        'doc'   => 'https://marqueeaddons.com/docs/',
+        'pro_url' => 'https://marqueeaddons.com/pricing/',
+    ],
     'deensimcpro-post-marquee' => [
         'cat'    => 'general',
         'title'  => __('Post Marquee', 'marquee-addons-for-elementor'),
