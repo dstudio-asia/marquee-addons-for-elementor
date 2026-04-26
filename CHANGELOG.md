@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.9.47](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.46...v3.9.47) (2026-04-26)
+
+
+### Features
+
+* add Instagram Marquee widget support ([37ec7f3](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/37ec7f30473256f956a4bc14138f3762fd5bd008))
+
 ## [3.9.46](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.45...v3.9.46) (2026-04-23)
 
 
