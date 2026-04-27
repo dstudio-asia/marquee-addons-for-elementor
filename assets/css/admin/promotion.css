@@ -24,6 +24,7 @@
 .elementor-element .deensimcpro-sticky-cards-icon:before,
 .elementor-element .deensimcpro-image-accordion-icon:before,
 .elementor-element .deensimcpro-3d-grid-marquee-icon:before,
+.elementor-element .deensimcpro-instagram-marquee-icon:before,
 .elementor-element .deensimcpro-product-marquee-icon:before {
   content: "";
   background-size: cover;
@@ -38,6 +39,9 @@
 .elementor-element .deensimcpro-media-marquee-icon:before,
 .elementor-element .deensimcpro-3d-grid-marquee-icon:before {
   background-image: url("../../images/icons/media-marquee.svg");
+}
+.elementor-element .deensimcpro-instagram-marquee-icon:before{
+  background-image: url("../../images/icons/instagram-marquee.svg");
 }
 .elementor-element .deensimcpro-card-marquee-icon:before {
   background-image: url("../../images/icons/card.svg");
