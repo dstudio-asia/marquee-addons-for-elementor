@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.9.48](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.47...v3.9.48) (2026-04-27)
+
+
+### Features
+
+* add Demo6 hero section with smooth text rotation effect ([53f450d](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/53f450dd19af37bf3b814297e7a1e2d824e8a7fc))
+
 ## [3.9.47](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.46...v3.9.47) (2026-04-26)
 
 
