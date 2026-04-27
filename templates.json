@@ -87,6 +87,14 @@
       "preview_url": "https://marqueeaddons.com/marquee-demos/smooth-text-scrolling-effect-with-different-angle/",
       "pricing_url": "https://marqueeaddons.com/pricing/",
       "type": "Hero Sections"
+    },
+     {
+      "id": "Demo6",
+      "name": "Demo 6",
+      "image_url": "https://marqueeaddons.com/wp-content/uploads/2026/01/smooth-text-rotation-effect-1.webp",
+      "preview_url": "https://marqueeaddons.com/marquee-demos/smooth-text-rotation-effect/",
+      "pricing_url": "https://marqueeaddons.com/pricing/",
+      "type": "Hero Sections"
     }
   ]
 }
