@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.9.49](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.48...v3.9.49) (2026-04-28)
+
+
+### Features
+
+* Add Demo 7 template to templates.json ([aff004c](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/aff004c7821c5d855c174f7a9c7ddda13bae9c29))
+
 ## [3.9.48](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.47...v3.9.48) (2026-04-27)
 
 
