@@ -103,6 +103,14 @@
       "preview_url": "https://marqueeaddons.com/marquee-demos/vertical-image-marquee-scrolling-effect/",
       "pricing_url": "https://marqueeaddons.com/pricing/",
       "type": "Hero Sections"
+    },
+     {
+      "id": "Demo8",
+      "name": "Demo 8",
+      "image_url": "https://marqueeaddons.com/wp-content/uploads/2025/10/Frame-1000005315-min.webp",
+      "preview_url": "https://marqueeaddons.com/marquee-demos/vertical-scrolling-image-hero/",
+      "pricing_url": "https://marqueeaddons.com/pricing/",
+      "type": "Hero Sections"
     }
   ]
 }
