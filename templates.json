@@ -111,6 +111,14 @@
       "preview_url": "https://marqueeaddons.com/marquee-demos/vertical-scrolling-image-hero/",
       "pricing_url": "https://marqueeaddons.com/pricing/",
       "type": "Hero Sections"
+    },
+     {
+      "id": "Demo9",
+      "name": "Demo 9",
+      "image_url": "https://marqueeaddons.com/wp-content/uploads/2026/01/smooth-text-rotation-effect-two.webp",
+      "preview_url": "https://marqueeaddons.com/marquee-demos/smooth-text-rotation-effect-two/",
+      "pricing_url": "https://marqueeaddons.com/pricing/",
+      "type": "Hero Sections"
     }
   ]
 }
