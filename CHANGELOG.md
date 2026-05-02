@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.9.52](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.51...v3.9.52) (2026-05-02)
+
+
+### Features
+
+* add Demo 10 hero Sections ([64f1994](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/64f1994e54a1741a295d1cfeb8544495b7cc2ebf))
+
 ## [3.9.50](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.49...v3.9.50) (2026-04-29)
 
 
