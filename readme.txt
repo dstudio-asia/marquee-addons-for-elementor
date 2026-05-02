@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: elementor, text marquee, image marquee, marquee, elementor addons
 Requires at least: 5.8
 Tested up to: 6.9
-Stable tag: 3.9.51
+Stable tag: 3.9.52
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -68,13 +68,11 @@ Add clickable hotspots to any image, with each hotspot showing helpful text on h
 
 ## PRO WIDGETS – UNLOCK ADVANCED CAPABILITIES:
 
-Marquee Addons Pro brings smooth marquee effects and motion design widgets to Elementor. Create advanced scrolling text, Media, testimonials, videos, 3D effect, cards, posts, products, and more in endless loops. Whether you are a designer, an agency, or a store owner, Marquee Addons Pro helps you Make your Elementor Websites Look 10x Better | Modern | Creative | Beautiful | Awesome
+Marquee Addons Pro brings smooth marquee effects and motion design widgets to Elementor. Create advanced scrolling text, Media, testimonials, videos, 3D effect, cards, posts, products, and more in endless loops. 
 
 ### [Card Marquee](https://marqueeaddons.com/card-marquee/) (Pro):
 
 This widget lets you create an engaging carousel of cards that move in a smooth, continuous loop. Each card can include an icon, image, background overlay, title, and call-to-action button, making it ideal for showcasing products, services, courses, or featured content. This is a universal card widget to design any type of card with CTA.
-
-You have full control over styling so every card can be customized to match your website’s design. Adjust layout, spacing, typography, colors, and button styles to create a look that feels natural for your brand. With options for direction, speed, and hover effects, the Card Marquee helps you build a dynamic section that guides visitors toward action while keeping the design consistent with your site.
 
 ### [Media Marquee](https://marqueeaddons.com/media-marquee/) (Pro):
 
@@ -153,16 +151,12 @@ Add animated backgrounds to any Elementor container. Choose from unique styles s
 
 Start faster with one-click demo import and beautifully pre-built templates. These done-for-you Elementor templates help you ship better-looking sites faster - saving 10+ hours on every client build.
 
-With our Marquee Addon for Elementor, you don’t just get widgets - you also get a collection of professionally designed ready-made templates that you can import in a single click. Perfect for  SAAS, Startups, agencies, and creators who want to: Every template is designed to make your site look modern, engaging, and 10X Awesome to set up.
-
 ## Key features:
  
 * **Horizontal and Vertical Positioning**: Easily position all marquee addons in either horizontal or vertical layouts to suit your design needs; it gives you full control over how your content is displayed.
 
 * **Different Marquee Scrolling Option**:  Choose from multiple scrolling styles, such as left to right or right to left scroll to make your website more engaging and fit in with its overall look.
- 
-* **Customization Flexibility**: Customize the appearance of each marquee to match your brand colors, fonts, and styles, to ensure that your scrolling content fits perfectly with the overall design of your site.
- 
+
 * **Upload All Types of Images**: Easily add any image format, like JPG, PNG, and GIF, to your scrolling content. This lets you display anything from product pictures to attention-grabbing visuals.
 
 * **Upload All Types of Icons and Texts**: You can easily add different icons and text to make your scrolling displays more interesting and help get your message across.
@@ -273,6 +267,9 @@ The developers release regular updates to improve features, fix bugs, and ensure
 First, ensure that you've activated the plugin correctly. If the issue persists, try clearing your browser cache or updating your Elementor plugin. If the problem continues, you can reach out to the support team for assistance.
 
 == Changelog ==
+
+= 3.9.52 - 2026-05-02 =
+- New: Added a new hero template with with stacked slider.
 
 = 3.9.51 - 2026-04-30 =
 - New: Added a new hero template with smooth text scrolling and image masking effect.
