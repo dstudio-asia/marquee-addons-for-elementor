@@ -246,6 +246,15 @@ $pro_widgets = [
         'doc'   => 'https://marqueeaddons.com/docs/',
         'pro_url' => 'https://marqueeaddons.com/pricing/',
     ],
+    'deensimcpro-tiktok-marquee' => [
+        'cat'    => 'general',
+        'title'  => __('TikTok Marquee', 'marquee-addons-for-elementor'),
+        'icon'   => 'deensimcpro-tiktok-marquee-icon eicon-deensimc-pro',
+        'is_pro' => true,
+        'demo'   => 'https://marqueeaddons.com/',
+        'doc'   => 'https://marqueeaddons.com/docs/',
+        'pro_url' => 'https://marqueeaddons.com/pricing/',
+    ],
     'deensimcpro-post-marquee' => [
         'cat'    => 'general',
         'title'  => __('Post Marquee', 'marquee-addons-for-elementor'),
