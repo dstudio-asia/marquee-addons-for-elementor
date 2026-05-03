@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.9.53](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.52...v3.9.53) (2026-05-03)
+
+
+### Features
+
+* Add TikTok Marquee widget support and icon ([d59519e](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/d59519e9b86925af38eab6034bf41191cda7b1a7))
+
 ## [3.9.52](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.51...v3.9.52) (2026-05-02)
 
 
