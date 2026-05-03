@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: elementor, text marquee, image marquee, marquee, elementor addons
 Requires at least: 5.8
 Tested up to: 6.9
-Stable tag: 3.9.52
+Stable tag: 3.9.53
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -86,6 +86,9 @@ Show Instagram posts and reels in a smooth, continuous marquee built for modern,
 
 Show YouTube Shorts in a smooth, continuous marquee built for modern video-first sections. Add multiple Shorts URLs, keep the feed moving horizontally or vertically, and control marquee direction, speed, spacing, and scroll behavior to create an engaging reel that stays visible without taking over the page.
 
+### TikTok Marquee (Pro):
+
+Display TikTok in a seamless marquee that adds motion and social proof to your site. Add multiple TikTok URLs, arrange the stream horizontally or vertically, and fine-tune direction, speed, spacing, and scroll behavior to create a lively video showcase that fits naturally into landing pages and promo sections.
 
 ### [Post Marquee](https://marqueeaddons.com/post-marquee/) (Pro):
 
@@ -267,6 +270,9 @@ The developers release regular updates to improve features, fix bugs, and ensure
 First, ensure that you've activated the plugin correctly. If the issue persists, try clearing your browser cache or updating your Elementor plugin. If the problem continues, you can reach out to the support team for assistance.
 
 == Changelog ==
+
+= 3.9.53 - 2026-05-03 =
+- New: Added the `TikTok Marquee` widget (Pro).
 
 = 3.9.52 - 2026-05-02 =
 - New: Added a new hero template with with stacked slider.
