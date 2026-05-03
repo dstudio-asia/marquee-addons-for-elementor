@@ -88,7 +88,7 @@ Show YouTube Shorts in a smooth, continuous marquee built for modern video-first
 
 ### TikTok Marquee (Pro):
 
-Show TikTok videos in a smooth, continuous marquee built for modern video-first sections. Add multiple TikTok URLs, keep the feed moving horizontally or vertically, and control marquee direction, speed, spacing, and scroll behavior to create an engaging social reel that stays visible without taking over the page.
+Display TikTok in a seamless marquee that adds motion and social proof to your site. Add multiple TikTok URLs, arrange the stream horizontally or vertically, and fine-tune direction, speed, spacing, and scroll behavior to create a lively video showcase that fits naturally into landing pages and promo sections.
 
 ### [Post Marquee](https://marqueeaddons.com/post-marquee/) (Pro):
 
