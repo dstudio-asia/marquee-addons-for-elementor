@@ -120,11 +120,19 @@
       "pricing_url": "https://marqueeaddons.com/pricing/",
       "type": "Hero Sections"
     },
-     {
+    {
       "id": "Demo10",
       "name": "Demo 10",
       "image_url": "https://marqueeaddons.com/wp-content/uploads/2025/09/Frame-1000005295-1-min.webp",
       "preview_url": "https://marqueeaddons.com/marquee-demos/stacked-slider-demo-one/",
+      "pricing_url": "https://marqueeaddons.com/pricing/",
+      "type": "Hero Sections"
+    },
+    {
+      "id": "Demo11",
+      "name": "Demo 11",
+      "image_url": "https://marqueeaddons.com/wp-content/uploads/2026/01/video-marquee-vertical-scrolling-effect-300x240.webp",
+      "preview_url": "https://marqueeaddons.com/marquee-demos/video-marquee-vertical-scrolling-effect/",
       "pricing_url": "https://marqueeaddons.com/pricing/",
       "type": "Hero Sections"
     }
