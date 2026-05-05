@@ -135,6 +135,14 @@
       "preview_url": "https://marqueeaddons.com/marquee-demos/video-marquee-vertical-scrolling-effect/",
       "pricing_url": "https://marqueeaddons.com/pricing/",
       "type": "Hero Sections"
+    },
+    {
+      "id": "Demo12",
+      "name": "Demo 12",
+      "image_url": "https://marqueeaddons.com/wp-content/uploads/2025/10/Frame-1000005317-min-300x240.webp",
+      "preview_url": "https://marqueeaddons.com/marquee-demos/showcase-accordion-hero/",
+      "pricing_url": "https://marqueeaddons.com/pricing/",
+      "type": "Hero Sections"
     }
   ]
 }

@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: elementor, text marquee, image marquee, marquee, elementor addons
 Requires at least: 5.8
 Tested up to: 6.9
-Stable tag: 3.9.54
+Stable tag: 3.9.55
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -271,8 +271,11 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 
 == Changelog ==
 
+= 3.9.55 - 2026-05-05 =
+- New: Added a new hero template with image accordion.
+
 = 3.9.54 - 2026-05-04 =
-- New: Added a new hero template with with video marquee.
+- New: Added a new hero template with video marquee.
 
 = 3.9.53 - 2026-05-03 =
 - New: Added the `TikTok Marquee` widget (Pro).
