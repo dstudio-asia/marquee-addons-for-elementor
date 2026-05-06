@@ -143,6 +143,14 @@
       "preview_url": "https://marqueeaddons.com/marquee-demos/showcase-accordion-hero/",
       "pricing_url": "https://marqueeaddons.com/pricing/",
       "type": "Hero Sections"
+    },
+    {
+      "id": "Demo13",
+      "name": "Demo 13",
+      "image_url": "https://marqueeaddons.com/wp-content/uploads/2025/12/Text-Marquee-Demo-Eleven-300x240.webp",
+      "preview_url": "https://marqueeaddons.com/marquee-demos/text-marquee-demo-eleven/",
+      "pricing_url": "https://marqueeaddons.com/pricing/",
+      "type": "Hero Sections"
     }
   ]
 }
