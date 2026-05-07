@@ -1,6 +1,14 @@
 # Changelog
 
 
+## [3.9.57](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.56...v3.9.57) (2026-05-07)
+
+
+### Features
+
+* template with vertical scrolling effect ([078a443](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/078a44371f966d4c51b5bb0f81e43c5bbc5e5220))
+* template with vertical scrolling effect ([31832cb](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/31832cb9479f5f8cacb44fbf4ebc17111e9398da))
+
 ## [3.9.56](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.55...v3.9.56) (2026-05-06)
 
 
