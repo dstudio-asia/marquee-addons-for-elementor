@@ -1,6 +1,14 @@
 # Changelog
 
 
+## [3.9.58](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.57...v3.9.58) (2026-05-09)
+
+
+### Features
+
+* hero new template ([717a813](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/717a813a22f7c8a47f6ff1214685002448e5c251))
+* hero new template ([90b3bf6](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/90b3bf67ad735132aaf56b85f185d20eba9b84db))
+
 ## [3.9.57](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.56...v3.9.57) (2026-05-07)
 
 
