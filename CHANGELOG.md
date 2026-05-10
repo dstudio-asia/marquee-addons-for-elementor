@@ -1,6 +1,16 @@
 # Changelog
 
 
+## [3.9.59](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.58...v3.9.59) (2026-05-10)
+
+
+### Features
+
+* rewite changelog text ([d94d651](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/d94d65168c161562530f7acfa6c88cf96dc35151))
+* rewite changelog text ([30b519e](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/30b519edfbab84dbd905d43475be31337ad022f0))
+* version updated to 3.9.59 ([6d61775](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/6d61775876e7d044637f26f3bcce3a6f27877802))
+* version updated to 3.9.59 ([856047f](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/856047f28c22fe1f655bcf23d80623f4cbd97776))
+
 ## [3.9.58](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.57...v3.9.58) (2026-05-09)
 
 
