@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: elementor, text marquee, image marquee, marquee, elementor addons
 Requires at least: 5.8
 Tested up to: 6.9
-Stable tag: 3.9.58
+Stable tag: 3.9.59
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -271,7 +271,10 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 
 == Changelog ==
 
-= 3.9.58 - 2026-05-07 =
+= 3.9.59 - 2026-05-10 =
+- New: Added a new hero template with 3D grid smooth image scrolling.
+
+= 3.9.58 - 2026-05-09 =
 - New: Added a new hero template with horizontal scrolling effect.
 
 = 3.9.57 - 2026-05-07 =
