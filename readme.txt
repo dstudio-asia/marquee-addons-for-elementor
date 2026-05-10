@@ -272,7 +272,7 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 == Changelog ==
 
 = 3.9.59 - 2026-05-10 =
-- New: Added a new hero template with horizontal scrolling effect.
+- New: Added a new hero template with 3D grid smooth image scrolling.
 
 = 3.9.58 - 2026-05-09 =
 - New: Added a new hero template with horizontal scrolling effect.
