@@ -175,6 +175,14 @@
       "preview_url": "https://marqueeaddons.com/marquee-demos/3d-grid-demo-1/",
       "pricing_url": "https://marqueeaddons.com/pricing/",
       "type": "Hero Sections"
+    },
+    {
+      "id": "Demo17",
+      "name": "Demo 17",
+      "image_url": "https://marqueeaddons.com/wp-content/uploads/2025/12/3d-grid-marquee-demo-2.webp",
+      "preview_url": "https://marqueeaddons.com/marquee-demos/3d-grid-demo-2/",
+      "pricing_url": "https://marqueeaddons.com/pricing/",
+      "type": "Hero Sections"
     }
   ]
 }
