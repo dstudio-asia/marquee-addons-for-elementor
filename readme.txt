@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: elementor, text marquee, image marquee, marquee, elementor addons
 Requires at least: 5.8
 Tested up to: 6.9
-Stable tag: 3.9.60
+Stable tag: 3.9.61
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -78,7 +78,7 @@ This widget lets you create an engaging carousel of cards that move in a smooth,
 
 Create a smooth, infinite media marquee with images and videos in one continuous carousel. Display logos, photos, or videos with lightbox support, customizable spacing, aspect ratios, overlays, and play icons. Control direction, speed, hover effects, and enable scroll-triggered animation for an engaging, high-performance media carousel.
 
-### Instagram Marquee (Pro):
+### [Instagram Marquee] (https://marqueeaddons.com/instagram-marquee/)(Pro):
 
 Show Instagram posts and reels in a smooth, continuous marquee built for modern, scroll-friendly social sections. Add multiple Instagram URLs, keep the feed moving horizontally or vertically, and control direction, speed, spacing, and scroll behavior to create an engaging stream that blends seamlessly with your design.
 
@@ -86,7 +86,7 @@ Show Instagram posts and reels in a smooth, continuous marquee built for modern,
 
 Show YouTube Shorts in a smooth, continuous marquee built for modern video-first sections. Add multiple Shorts URLs, keep the feed moving horizontally or vertically, and control marquee direction, speed, spacing, and scroll behavior to create an engaging reel that stays visible without taking over the page.
 
-### TikTok Marquee (Pro):
+### [TikTok Marquee](https://marqueeaddons.com/tiktok-marquee/) (Pro):
 
 Display TikTok in a seamless marquee that adds motion and social proof to your site. Add multiple TikTok URLs, arrange the stream horizontally or vertically, and fine-tune direction, speed, spacing, and scroll behavior to create a lively video showcase that fits naturally into landing pages and promo sections.
 
@@ -270,6 +270,9 @@ The developers release regular updates to improve features, fix bugs, and ensure
 First, ensure that you've activated the plugin correctly. If the issue persists, try clearing your browser cache or updating your Elementor plugin. If the problem continues, you can reach out to the support team for assistance.
 
 == Changelog ==
+
+= 3.9.61 - 2026-05-12 =
+- New: Added demo page links for Instagram Marquee and TikTok Marquee.
 
 = 3.9.60 - 2026-05-11 =
 - New: Added a new hero template with 3D grid smooth image scrolling.
