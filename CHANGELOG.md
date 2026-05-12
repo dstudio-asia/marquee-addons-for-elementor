@@ -1,6 +1,16 @@
 # Changelog
 
 
+## [3.9.61](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.59...v3.9.61) (2026-05-12)
+
+
+### Features
+
+* Update demo URLs for social marquee widgets ([22fa0dd](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/22fa0dd7ecbb84ce0b7005d5c3b4425d2b90e66d))
+* Update readme with marquee demo links ([41a3601](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/41a36019a6d00175c56876bc05bbefe4502422e6))
+* version 3.9.60 ([8b82b9b](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/8b82b9b021ef96bd5cbc4a5c3183eea0105813f7))
+* version 3.9.60 ([0f9ba3c](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/0f9ba3cc927ec772c7dda3dbf746e17069406ab7))
+
 ## [3.9.59](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.58...v3.9.59) (2026-05-10)
 
 
