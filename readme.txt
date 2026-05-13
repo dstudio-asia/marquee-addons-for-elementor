@@ -78,7 +78,7 @@ This widget lets you create an engaging carousel of cards that move in a smooth,
 
 Create a smooth, infinite media marquee with images and videos in one continuous carousel. Display logos, photos, or videos with lightbox support, customizable spacing, aspect ratios, overlays, and play icons. Control direction, speed, hover effects, and enable scroll-triggered animation for an engaging, high-performance media carousel.
 
-### [Instagram Marquee] (https://marqueeaddons.com/instagram-marquee/)(Pro):
+### [Instagram Marquee] (https://marqueeaddons.com/instagram-marquee/) (Pro):
 
 Show Instagram posts and reels in a smooth, continuous marquee built for modern, scroll-friendly social sections. Add multiple Instagram URLs, keep the feed moving horizontally or vertically, and control direction, speed, spacing, and scroll behavior to create an engaging stream that blends seamlessly with your design.
 
