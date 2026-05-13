@@ -64,7 +64,7 @@
       "pricing_url": "https://marqueeaddons.com/pricing/",
       "type": "Hero Sections"
     },
-     {
+    {
       "id": "Demo3",
       "name": "Demo 3",
       "image_url": "https://marqueeaddons.com/wp-content/uploads/2026/01/smooth-text-scrolling-effect-with-stroke-effect.webp",
@@ -72,7 +72,7 @@
       "pricing_url": "https://marqueeaddons.com/pricing/",
       "type": "Hero Sections"
     },
-     {
+    {
       "id": "Demo4",
       "name": "Demo 4",
       "image_url": "https://marqueeaddons.com/wp-content/uploads/2025/10/Frame-1000005320-min.webp",
@@ -80,7 +80,7 @@
       "pricing_url": "https://marqueeaddons.com/pricing/",
       "type": "Hero Sections"
     },
-     {
+    {
       "id": "Demo5",
       "name": "Demo 5",
       "image_url": "https://marqueeaddons.com/wp-content/uploads/2026/01/smooth-text-scrolling-effect-with-stroke-effect-1-1.webp",
@@ -88,7 +88,7 @@
       "pricing_url": "https://marqueeaddons.com/pricing/",
       "type": "Hero Sections"
     },
-     {
+    {
       "id": "Demo6",
       "name": "Demo 6",
       "image_url": "https://marqueeaddons.com/wp-content/uploads/2026/01/smooth-text-rotation-effect-1.webp",
@@ -96,7 +96,7 @@
       "pricing_url": "https://marqueeaddons.com/pricing/",
       "type": "Hero Sections"
     },
-     {
+    {
       "id": "Demo7",
       "name": "Demo 7",
       "image_url": "https://marqueeaddons.com/wp-content/uploads/2025/09/Frame-1000005263-min.webp",
@@ -104,7 +104,7 @@
       "pricing_url": "https://marqueeaddons.com/pricing/",
       "type": "Hero Sections"
     },
-     {
+    {
       "id": "Demo8",
       "name": "Demo 8",
       "image_url": "https://marqueeaddons.com/wp-content/uploads/2025/10/Frame-1000005315-min.webp",
@@ -112,7 +112,7 @@
       "pricing_url": "https://marqueeaddons.com/pricing/",
       "type": "Hero Sections"
     },
-     {
+    {
       "id": "Demo9",
       "name": "Demo 9",
       "image_url": "https://marqueeaddons.com/wp-content/uploads/2026/01/smooth-text-rotation-effect-two.webp",
@@ -181,6 +181,14 @@
       "name": "Demo 17",
       "image_url": "https://marqueeaddons.com/wp-content/uploads/2025/12/3d-grid-marquee-demo-2.webp",
       "preview_url": "https://marqueeaddons.com/marquee-demos/3d-grid-demo-2/",
+      "pricing_url": "https://marqueeaddons.com/pricing/",
+      "type": "Hero Sections"
+    },
+    {
+      "id": "Demo18",
+      "name": "Demo 18",
+      "image_url": "https://marqueeaddons.com/wp-content/uploads/2025/12/3d-grid-marquee-demo-3-300x240.webp",
+      "preview_url": "https://marqueeaddons.com/marquee-demos/3d-grid-demo-3/",
       "pricing_url": "https://marqueeaddons.com/pricing/",
       "type": "Hero Sections"
     }
