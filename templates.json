@@ -199,6 +199,14 @@
       "preview_url": "https://marqueeaddons.com/marquee-demos/3d-grid-demo-4/",
       "pricing_url": "https://marqueeaddons.com/pricing/",
       "type": "Hero Sections"
+    },
+    {
+      "id": "Demo20",
+      "name": "Demo 20",
+      "image_url": "https://marqueeaddons.com/wp-content/uploads/2025/12/Circular-Text-Rotation-Demo-One-300x240.webp",
+      "preview_url": "https://marqueeaddons.com/marquee-demos/circular-text-rotation-demo-one/",
+      "pricing_url": "https://marqueeaddons.com/pricing/",
+      "type": "Hero Sections"
     }
   ]
 }
