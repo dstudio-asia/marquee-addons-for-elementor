@@ -207,6 +207,14 @@
       "preview_url": "https://marqueeaddons.com/marquee-demos/circular-text-rotation-demo-one/",
       "pricing_url": "https://marqueeaddons.com/pricing/",
       "type": "Hero Sections"
+    },
+     {
+      "id": "Demo21",
+      "name": "Demo 21",
+      "image_url": "https://marqueeaddons.com/wp-content/uploads/2025/12/image-hotspot-demo-1-300x240.webp",
+      "preview_url": "https://marqueeaddons.com/marquee-demos/image-hotspot-demo-1/",
+      "pricing_url": "https://marqueeaddons.com/pricing/",
+      "type": "Hero Sections"
     }
   ]
 }
