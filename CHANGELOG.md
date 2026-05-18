@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.9.66](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.65...v3.9.66) (2026-05-18)
+
+
+### Features
+
+* add new image hotspot hero section template ([2d7d5e4](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/2d7d5e40938c9af7e284bf67e1e2dfac0ea94af8))
+
 ## [3.9.63](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.62...v3.9.63) (2026-05-14)
 
 
