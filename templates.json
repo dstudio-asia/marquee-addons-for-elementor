@@ -208,7 +208,7 @@
       "pricing_url": "https://marqueeaddons.com/pricing/",
       "type": "Hero Sections"
     },
-     {
+    {
       "id": "Demo21",
       "name": "Demo 21",
       "image_url": "https://marqueeaddons.com/wp-content/uploads/2025/12/image-hotspot-demo-1-300x240.webp",
@@ -216,11 +216,19 @@
       "pricing_url": "https://marqueeaddons.com/pricing/",
       "type": "Hero Sections"
     },
-     {
+    {
       "id": "Demo22",
       "name": "Demo 22",
       "image_url": "https://marqueeaddons.com/wp-content/uploads/2025/12/image-hotspot-demo-2-300x240.webp",
       "preview_url": "https://marqueeaddons.com/marquee-demos/image-hotspot-demo-2/",
+      "pricing_url": "https://marqueeaddons.com/pricing/",
+      "type": "Hero Sections"
+    },
+    {
+      "id": "Demo23",
+      "name": "Demo 23",
+      "image_url": "https://marqueeaddons.com/wp-content/uploads/2025/12/image-hotspot-demo-3-300x240.webp",
+      "preview_url": "https://marqueeaddons.com/marquee-demos/image-hotspot-demo-3/",
       "pricing_url": "https://marqueeaddons.com/pricing/",
       "type": "Hero Sections"
     }
