@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.9.69](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.68...v3.9.69) (2026-06-01)
+
+
+### Features
+
+* add Demo 25 template and Update Elementor compatibility ([f3a8a65](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/f3a8a65907c83495f6ed088cb4e40a8a5d6cff4f))
+
 ## [3.9.68](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.66...v3.9.68) (2026-05-25)
 
 
