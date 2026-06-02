@@ -247,6 +247,14 @@
       "preview_url": "https://marqueeaddons.com/marquee-demos/image-accordion-pro-demo-1/",
       "pricing_url": "https://marqueeaddons.com/pricing/",
       "type": "Hero Sections"
+    },
+    {
+      "id": "Demo26",
+      "name": "Demo 26",
+      "image_url": "https://marqueeaddons.com/wp-content/uploads/2026/01/image-accordion-pro-demo-2-300x240.webp",
+      "preview_url": "https://marqueeaddons.com/marquee-demos/image-accordion-pro-demo-2/",
+      "pricing_url": "https://marqueeaddons.com/pricing/",
+      "type": "Hero Sections"
     }
   ]
 }
