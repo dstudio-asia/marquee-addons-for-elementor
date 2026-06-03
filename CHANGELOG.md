@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.9.71](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.70...v3.9.71) (2026-06-03)
+
+
+### Features
+
+* Add Demo 27 image accordion template ([a823cef](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/a823cefefe64e6b49fa4a2344e12d8a57488bf97))
+
 ## [3.9.70](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.69...v3.9.70) (2026-06-02)
 
 
