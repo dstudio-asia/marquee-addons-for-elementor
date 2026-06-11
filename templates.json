@@ -263,6 +263,14 @@
       "preview_url": "https://marqueeaddons.com/marquee-demos/image-accordion-pro-demo-3/",
       "pricing_url": "https://marqueeaddons.com/pricing/",
       "type": "Hero Sections"
+    },
+    {
+      "id": "Demo28",
+      "name": "Demo 28",
+      "image_url": "https://marqueeaddons.com/wp-content/uploads/2026/01/Aurora-background-demo-1-300x240.webp",
+      "preview_url": "https://marqueeaddons.com/marquee-demos/aurora-background-demo-1/",
+      "pricing_url": "https://marqueeaddons.com/pricing/",
+      "type": "Hero Sections"
     }
   ]
 }
