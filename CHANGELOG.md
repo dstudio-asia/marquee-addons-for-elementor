@@ -1,6 +1,15 @@
 # Changelog
 
 
+## [3.9.74](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.71...v3.9.74) (2026-06-16)
+
+
+### Features
+
+* add Demo 29 hero section template ([bad06f0](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/bad06f05cb4a5d7113dda1edf35cc0179ab21251))
+* **templates:** add Demo 28 hero section ([d31269b](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/d31269b0a97be5d2046f37f3b732069d93db7bc2))
+* update wordpress compatibility and release 3.9.72 ([e28ede2](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/e28ede27c694a60fa97c3b9dd85c4ed7b19b1940))
+
 ## [3.9.71](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.70...v3.9.71) (2026-06-03)
 
 
