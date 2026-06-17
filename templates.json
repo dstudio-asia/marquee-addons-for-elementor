@@ -279,6 +279,14 @@
       "preview_url": "https://marqueeaddons.com/marquee-demos/beam-background-demo-1/",
       "pricing_url": "https://marqueeaddons.com/pricing/",
       "type": "Hero Sections"
+    },
+    {
+      "id": "Demo30",
+      "name": "Demo 30",
+      "image_url": "https://marqueeaddons.com/wp-content/uploads/2026/01/background-box-demo-1.webp",
+      "preview_url": "https://marqueeaddons.com/marquee-demos/background-box-demo-1/",
+      "pricing_url": "https://marqueeaddons.com/pricing/",
+      "type": "Hero Sections"
     }
   ]
 }
