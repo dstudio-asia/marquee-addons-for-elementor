@@ -271,7 +271,7 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 
 == Changelog ==
 
-= 3.9.75 - 2026-06-17 =
+= 3.9.75 - 2026-06-18 =
 - New: Added a new hero section template with interactive background boxes.
 
 = 3.9.74 - 2026-06-16 =
