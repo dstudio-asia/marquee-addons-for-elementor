@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.9.75](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.74...v3.9.75) (2026-06-18)
+
+
+### Features
+
+* add interactive background boxes hero template ([e3f1f13](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/e3f1f133fb8c358fe56e30eec1b886dcfceff056))
+
 ## [3.9.74](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.71...v3.9.74) (2026-06-16)
 
 
