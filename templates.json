@@ -287,6 +287,14 @@
       "preview_url": "https://marqueeaddons.com/marquee-demos/background-box-demo-1/",
       "pricing_url": "https://marqueeaddons.com/pricing/",
       "type": "Hero Sections"
+    },
+    {
+      "id": "Demo31",
+      "name": "Demo 31",
+      "image_url": "https://marqueeaddons.com/wp-content/uploads/2026/01/glowing-background-gradient-demo-1-300x240.webp",
+      "preview_url": "https://marqueeaddons.com/marquee-demos/background-gradient-glow-effect-demo-1/",
+      "pricing_url": "https://marqueeaddons.com/pricing/",
+      "type": "Hero Sections"
     }
   ]
 }
