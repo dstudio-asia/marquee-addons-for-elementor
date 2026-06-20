@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: elementor, text marquee, image marquee, marquee, elementor addons
 Requires at least: 5.8
 Tested up to: 7.0
-Stable tag: 3.9.75
+Stable tag: 3.9.76
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -271,7 +271,10 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 
 == Changelog ==
 
-= 3.9.75 - 2026-06-17 =
+= 3.9.76 - 2026-06-20 =
+- New: Added a new hero section template featuring a glowing gradient background effect.
+
+= 3.9.75 - 2026-06-18 =
 - New: Added a new hero section template with interactive background boxes.
 
 = 3.9.74 - 2026-06-16 =
