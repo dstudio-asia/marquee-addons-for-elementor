@@ -3,7 +3,7 @@ Contributors: debuggersstudio
 Tags: elementor, text marquee, image marquee, marquee, elementor addons
 Requires at least: 5.8
 Tested up to: 7.0
-Stable tag: 3.9.77
+Stable tag: 3.9.78
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -227,6 +227,15 @@ For feature overviews, demo, and in‑depth [documentation](https://marqueeaddon
 10. Image Hotspot
 11. Animated Headline
 
+== What’s Next? ==
+
+If you like Marquee Addons, then check out our other WordPress plugins designed to help you increase engagement, conversions, and sales.
+
+[ReelsWP](https://wordpress.org/plugins/ecomm-reels/)  -  Easily add fast, mobile-friendly vertical video grids and reels carousels to your landing pages, blog posts, news articles, or product pages. Tag products inside videos and create shoppable video experiences.
+
+[ProofWP](https://wordpress.org/plugins/proofwp/) - Easily collect and showcase customer reviews, photo reviews, video testimonials, star ratings, trust badges, and social proof across your WooCommerce store. Build customer trust, increase credibility, and boost conversions with authentic user-generated content.
+
+
 == Frequently Asked Questions ==
 
 = 1. What is the Marquee Addon? =
@@ -270,6 +279,9 @@ The developers release regular updates to improve features, fix bugs, and ensure
 First, ensure that you've activated the plugin correctly. If the issue persists, try clearing your browser cache or updating your Elementor plugin. If the problem continues, you can reach out to the support team for assistance.
 
 == Changelog ==
+
+= 3.9.78 - 2026-06-25 =
+- New: Added a new hero section template featuring text reveals with smooth gradient transitions.
 
 = 3.9.77 - 2026-06-23 =
 - New: Added a new hero section template featuring an animated aurora background.
