@@ -227,6 +227,15 @@ For feature overviews, demo, and in‑depth [documentation](https://marqueeaddon
 10. Image Hotspot
 11. Animated Headline
 
+== What’s Next? ==
+
+If you like Marquee Addons, then check out our other WordPress plugins designed to help you increase engagement, conversions, and sales.
+
+[ReelsWP](https://wordpress.org/plugins/ecomm-reels/)  -  Easily add fast, mobile-friendly vertical video grids and reels carousels to your landing pages, blog posts, news articles, or product pages. Tag products inside videos and create shoppable video experiences.
+
+[ProofWP](https://wordpress.org/plugins/proofwp/) - Easily collect and showcase customer reviews, photo reviews, video testimonials, star ratings, trust badges, and social proof across your WooCommerce store. Build customer trust, increase credibility, and boost conversions with authentic user-generated content.
+
+
 == Frequently Asked Questions ==
 
 = 1. What is the Marquee Addon? =
