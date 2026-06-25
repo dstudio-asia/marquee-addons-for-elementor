@@ -303,6 +303,14 @@
       "preview_url": "https://marqueeaddons.com/marquee-demos/aurora-background-demo-2/",
       "pricing_url": "https://marqueeaddons.com/pricing/",
       "type": "Hero Sections"
+    },
+    {
+      "id": "Demo33",
+      "name": "Demo 33",
+      "image_url": "https://marqueeaddons.com/wp-content/uploads/2026/01/text-reveal-demo-2-300x240.webp",
+      "preview_url": "https://marqueeaddons.com/marquee-demos/text-reveal-template-2/",
+      "pricing_url": "https://marqueeaddons.com/pricing/",
+      "type": "Hero Sections"
     }
   ]
 }
