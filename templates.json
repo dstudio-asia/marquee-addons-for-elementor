@@ -311,6 +311,14 @@
       "preview_url": "https://marqueeaddons.com/marquee-demos/text-reveal-template-2/",
       "pricing_url": "https://marqueeaddons.com/pricing/",
       "type": "Hero Sections"
+    },
+    {
+      "id": "DemoRS1",
+      "name": "Demo 1",
+      "image_url": "https://marqueeaddons.com/wp-content/uploads/2026/01/smooth-testimonial-scrolling-effect.webp",
+      "preview_url": "https://marqueeaddons.com/marquee-demos/smooth-testimonial-scrolling-effect/",
+      "pricing_url": "https://marqueeaddons.com/pricing/",
+      "type": "Review Sections"
     }
   ]
 }
