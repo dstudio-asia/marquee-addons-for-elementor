@@ -319,6 +319,14 @@
       "preview_url": "https://marqueeaddons.com/marquee-demos/smooth-testimonial-scrolling-effect/",
       "pricing_url": "https://marqueeaddons.com/pricing/",
       "type": "Review Sections"
+    },
+    {
+      "id": "DemoRS2",
+      "name": "Demo 2",
+      "image_url": "https://marqueeaddons.com/wp-content/uploads/2026/01/highlighted-testimonial-scrolling-effect.webp",
+      "preview_url": "https://marqueeaddons.com/marquee-demos/highlighted-testimonial-scrolling-effect/",
+      "pricing_url": "https://marqueeaddons.com/pricing/",
+      "type": "Review Sections"
     }
   ]
 }
