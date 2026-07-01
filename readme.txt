@@ -280,7 +280,7 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 
 == Changelog ==
 
-= 3.9.80 - 2026-06-29 =
+= 3.9.80 - 2026-07-01 =
 - New: Added a new review section template featuring a highlighted testimonial scrolling effect.
 
 = 3.9.79 - 2026-06-27 =
