@@ -1,6 +1,15 @@
 # Changelog
 
 
+## [3.9.80](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.76...v3.9.80) (2026-07-01)
+
+
+### Features
+
+* add Demo 2 review section template ([56771e4](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/56771e41f1886afb1b99ba25b02e36a46779d895))
+* add Demo33 hero section template ([b7159f5](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/b7159f59f0aef9723b162f001fa10bc136a0a278))
+* Add smooth testimonial scrolling demo template ([9e6d24a](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/9e6d24aa3d1af0587b8f2c3fb7b8d40eb21f4bc9))
+
 ## [3.9.76](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.75...v3.9.76) (2026-06-20)
 
 
