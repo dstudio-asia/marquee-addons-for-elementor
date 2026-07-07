@@ -7,7 +7,7 @@ if (!defined('ABSPATH')) exit;
 final class Base
 {
     private static $_instance = null;
-    const VERSION = '3.9.80';
+    const VERSION = '3.9.81';
 
     public function __construct()
     {
@@ -148,7 +148,7 @@ final class Base
         echo '    <a href="https://wordpress.org/support/plugin/marquee-addons-for-elementor/reviews/#new-post" target="_blank" class="button button-primary">Rate Us</a>';
         echo '    <a href="https://wordpress.org/support/plugin/marquee-addons-for-elementor/" target="_blank" class="button"> Feature Request</a>';
         if (!$this->is_pro_active()) {
-            echo '<a href="https://marqueeaddons.com/pricing/" target="_blank" class="button">Upgrade to Pro</a>';
+            echo '<a href="https://marqueeaddons.com/pricing/?utm_source=wordpress.org" target="_blank" class="button">Upgrade to Pro</a>';
         }
         echo '      </div>';
         echo '      <div class="deensimc-dismiss-btns">';

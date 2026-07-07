@@ -16,7 +16,7 @@
         return;
       }
       let btnText = "Upgrade to Marquee Addons Pro";
-      let btnUrl = "https://marqueeaddons.com/pricing/";
+      let btnUrl = "https://marqueeaddons.com/pricing/?utm_source=wordpress.org";
       if (DeensimcPromo.is_pro_active && !DeensimcPromo.is_license_active) {
         btnText = "Activate";
         btnUrl = DeensimcPromo.license_page;
