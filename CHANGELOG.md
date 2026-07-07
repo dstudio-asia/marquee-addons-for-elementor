@@ -1,6 +1,14 @@
 # Changelog
 
 
+## [3.9.81](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.80...v3.9.81) (2026-07-07)
+
+
+### Features
+
+* update utm source link ([fd844bf](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/fd844bff8ac0c41fc1c81b70c16b45523ea30620))
+* update utm source link ([5b75279](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/5b75279cc2f869ce970a9cbb1f593e0ec7ec3ae7))
+
 ## [3.9.80](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.76...v3.9.80) (2026-07-01)
 
 
