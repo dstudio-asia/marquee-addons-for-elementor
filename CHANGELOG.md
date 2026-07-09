@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.9.82](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.81...v3.9.82) (2026-07-09)
+
+
+### Features
+
+* **templates:** add Demo 3 review section template ([c53cb62](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/c53cb624b5268f3ede6c19c6116e61170ee07355))
+
 ## [3.9.81](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.80...v3.9.81) (2026-07-07)
 
 
