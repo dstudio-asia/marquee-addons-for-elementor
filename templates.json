@@ -335,6 +335,14 @@
       "preview_url": "https://marqueeaddons.com/marquee-demos/vertical-testimonial-with-edge-shadow/",
       "pricing_url": "https://marqueeaddons.com/pricing/?utm_source=wordpress.org",
       "type": "Review Sections"
+    },
+    {
+      "id": "DemoRS4",
+      "name": "Demo 4",
+      "image_url": "https://marqueeaddons.com/wp-content/uploads/2025/10/Frame-1000005316-min.webp",
+      "preview_url": "https://marqueeaddons.com/marquee-demos/inline-testimonial-scroller/",
+      "pricing_url": "https://marqueeaddons.com/pricing/?utm_source=wordpress.org",
+      "type": "Review Sections"
     }
   ]
 }
