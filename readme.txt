@@ -280,8 +280,8 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 
 == Changelog ==
 
-= 3.9.83 - 2026-07-16 =
-- New: Added a new review section template featuring testimonials with marquee and drag scrolling.
+= 3.9.83 - 2026-07-30 =
+- Fix: Improved Image Marquee accessibility with better alt text handling.
 
 = 3.9.82 - 2026-07-09 =
 - New: Added a vertical scrolling testimonial review template preview with edge shadow effect.
