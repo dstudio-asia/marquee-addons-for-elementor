@@ -121,7 +121,18 @@ class Deensimc_Image_Marquee extends Widget_Base
 				continue;
 			}
 			$is_dup = !empty($image['_is_dup']);
-			$alt = !empty($image['alt']) ? $image['alt'] : 'Image gallery marquee';
+
+			// Fetch WP Attachment Alt text if available, fallback to custom alt or original string
+			$alt = '';
+			if ($image_id) {
+				$alt = get_post_meta($image_id, '_wp_attachment_image_alt', true);
+			}
+			if (empty($alt) && !empty($image['alt'])) {
+				$alt = $image['alt'];
+			}
+			if (empty($alt)) {
+				$alt = 'Image gallery marquee';
+			}
 
 			if ($link_type !== 'none') {
 				if ($link_type === 'file') {
