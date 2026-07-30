@@ -1,6 +1,14 @@
 # Changelog
 
 
+## [3.9.83](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.82...v3.9.83) (2026-07-30)
+
+
+### Features
+
+* **templates:** add DemoRS4 review section template ([c231c55](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/c231c55535eec0b197c14f5634a3f5f08bb633b2))
+* use WordPress attachment alt text in image marquee ([f6ee92e](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/f6ee92e97be640d748b823575e6745f0e7dbf24c))
+
 ## [3.9.82](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.81...v3.9.82) (2026-07-09)
 
 
