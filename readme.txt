@@ -280,7 +280,7 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 
 == Changelog ==
 
-= 3.9.84 - 2026-08-08 =
+= 3.9.84 - 2026-08-09 =
 - Tweak: Improved compatibility with the latest Elementor version.
 
 = 3.9.83 - 2026-07-30 =
