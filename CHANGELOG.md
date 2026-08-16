@@ -1,6 +1,14 @@
 # Changelog
 
 
+## [3.9.85](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.84...v3.9.85) (2026-08-16)
+
+
+### Features
+
+* Removed notifications from other plugins on plugin settings pages ([8097199](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/809719933e8694e82ae2560f0181b5263de62daa))
+* Removed notifications from other plugins on plugin settings pages ([8d612d3](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/8d612d3875496af7e3d77d3c81d304c1e0395a62))
+
 ## [3.9.84](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.83...v3.9.84) (2026-08-09)
 
 
