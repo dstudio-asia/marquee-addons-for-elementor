@@ -593,6 +593,11 @@ button.deensimc-tem-btn{
     line-height: 1.2;
 }
 
+#wpbody-content:has(.deensimc-addons-settings) .notice,
+#wpbody-content:has(.deensimc-wrap) .notice {
+    display: none !important;
+}
+
 /* Ensure dashicons are loaded in admin */
 .wrap.deensimc-wrap .dashicons {
     font-family: dashicons;
