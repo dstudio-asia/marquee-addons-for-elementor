@@ -45,6 +45,7 @@ trait Deensimc_Textmarquee_Content_Text_Repeater
 				'type' =>  Controls_Manager::TEXTAREA,
 				'default' => esc_html__('Lorem Ipsum is simply dummy text of the printing and typesetting industry', 'marquee-addons-for-elementor'),
 				'placeholder' => esc_html__('Type your title here', 'marquee-addons-for-elementor'),
+				'description' => esc_html__('Allowed HTML tags: <strong>, <em>, <br>', 'marquee-addons-for-elementor'),
 			]
 		);
 

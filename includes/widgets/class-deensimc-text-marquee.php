@@ -80,6 +80,12 @@ class Deensimc_Text_Marquee extends Widget_Base
 	 */
 	protected function render_marquee_texts($texts, $is_vertical, $tag, $track_id)
 	{
+		$allowed_tags = [
+			'strong'  => [],
+			'em'  => [],
+			'br' => [],
+		];
+
 		foreach ($texts as $index => $text) {
 
 			$is_dup = ! empty($text['_is_dup']);
@@ -99,12 +105,12 @@ class Deensimc_Text_Marquee extends Widget_Base
 						<a
 							class="deensimc-scroll-text"
 							<?php $this->print_render_attribute_string($link_key); ?>>
-							<?php echo esc_html($text['deensimc_repeater_text']); ?>
+							<?php echo wp_kses($text['deensimc_repeater_text'] ?? '', $allowed_tags); ?>
 						</a>
 					</<?php echo esc_html($tag); ?>>
 				<?php else : ?>
 					<<?php echo esc_html($tag); ?> class="deensimc-scroll-text">
-						<?php echo esc_html($text['deensimc_repeater_text']); ?>
+						<?php echo wp_kses($text['deensimc_repeater_text'] ?? '', $allowed_tags); ?>
 					</<?php echo esc_html($tag); ?>>
 				<?php endif; ?>
 			</div>
