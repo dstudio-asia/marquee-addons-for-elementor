@@ -81,8 +81,8 @@ class Deensimc_Text_Marquee extends Widget_Base
 	protected function render_marquee_texts($texts, $is_vertical, $tag, $track_id)
 	{
 		$allowed_tags = [
-			'b'  => [],
-			'i'  => [],
+			'strong'  => [],
+			'em'  => [],
 			'br' => [],
 		];
 
