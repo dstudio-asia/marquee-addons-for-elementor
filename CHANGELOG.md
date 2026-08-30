@@ -1,6 +1,14 @@
 # Changelog
 
 
+## [3.9.86](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.85...v3.9.86) (2026-08-30)
+
+
+### Bug Fixes
+
+* allow basic HTML in text marquee content ([2378d45](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/2378d45593dab47863afd2466b0deedba40c011b))
+* use semantic HTML tags in text marquee ([f7edb39](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/f7edb394f6e70c24c9008c54721291fe51bcd6d4))
+
 ## [3.9.85](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.84...v3.9.85) (2026-08-16)
 
 
