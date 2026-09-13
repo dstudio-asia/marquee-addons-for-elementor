@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.9.87](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.86...v3.9.87) (2026-09-13)
+
+
+### Bug Fixes
+
+* update WordPress tested version to 7.1 ([4e5fd97](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/4e5fd97b21380bd2b3c47e8ff13807b9973a427e))
+
 ## [3.9.86](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.85...v3.9.86) (2026-08-30)
 
 
