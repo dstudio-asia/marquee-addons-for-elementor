@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.9.88](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.87...v3.9.88) (2026-09-28)
+
+
+### Bug Fixes
+
+* update Elementor compatibility to 4.3.2 ([0a693c8](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/0a693c844a403618b18b87b3180f4d24489617a9))
+
 ## [3.9.87](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.86...v3.9.87) (2026-09-13)
 
 
