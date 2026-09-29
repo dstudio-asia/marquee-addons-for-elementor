@@ -184,8 +184,11 @@
     $(document).on("keydown", function (e) {
       // Ctrl/Cmd + S to save
       if ((e.ctrlKey || e.metaKey) && e.which === 83) {
-        e.preventDefault();
-        $("form").submit();
+        const $form = $(".deensimc-addons-settings form");
+        if ($form.length) {
+          e.preventDefault();
+          $form.submit();
+        }
       }
     });
 
@@ -206,11 +209,13 @@
     // Confirm before leaving with unsaved changes
     let formChanged = false;
 
-    $("form input, form select, form textarea").on("change", function () {
+    $(
+      ".deensimc-addons-settings form input, .deensimc-addons-settings form select, .deensimc-addons-settings form textarea",
+    ).on("change", function () {
       formChanged = true;
     });
 
-    $("form").on("submit", function () {
+    $(".deensimc-addons-settings form").on("submit", function () {
       formChanged = false;
     });
 
