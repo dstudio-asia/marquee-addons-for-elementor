@@ -1,6 +1,14 @@
 # Changelog
 
 
+## [3.9.89](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.88...v3.9.89) (2026-09-29)
+
+
+### Bug Fixes
+
+* refine CSS scoping for feedback modal buttons ([2e77d5a](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/2e77d5acb2c790c45e80af4e1a776ea6648c6b48))
+* Scope admin form handlers to settings page ([3b709f0](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/3b709f05ca2b338094c0de0d571ac1f7a4c7e103))
+
 ## [3.9.88](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.87...v3.9.88) (2026-09-28)
 
 
