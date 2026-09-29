@@ -187,15 +187,17 @@
     transition: all 0.3s ease-in-out;
     text-decoration: none;
     font-weight: 500;
+    flex: initial;
+    white-space: nowrap;
 }
 
-.deensimc-skip-btn {
+.deensimc-deactivation-popup .deensimc-skip-btn {
     color: rgb(60, 67, 74);
     font-weight: normal !important;
     background: transparent;
 }
 
-.deensimc-submit-btn {
+.deensimc-deactivation-popup .deensimc-submit-btn {
     color: #fff;
     background-color: #7456ff;
 }
