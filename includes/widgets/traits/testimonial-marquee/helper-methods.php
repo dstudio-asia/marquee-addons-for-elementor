@@ -92,6 +92,12 @@ trait Testimonial_Marquee_Helper_Methods
         $is_dup           = $is_cloned || !empty($testimonial['_is_dup']);
         $word_count       = str_word_count(wp_strip_all_tags($testimonial_text));
 
+        $allowed_tags = [
+            'strong' => [],
+            'em'     => [],
+            'br'     => [],
+        ];
+
     ?>
         <li class="deensimc-tes-item deensimc-tes-wrapper elementor-repeater-item-<?php echo esc_attr( $testimonial['_id'] ); ?>"
             aria-hidden="<?php echo esc_attr($is_dup ? 'true' : 'false') ?>">
@@ -106,7 +112,7 @@ trait Testimonial_Marquee_Helper_Methods
                             <?php endif; ?>
 
                             <span class="deensimc-contents">
-                                <?php echo esc_html($testimonial_text); ?>
+                                <?php echo wp_kses($testimonial_text ?? '', $allowed_tags); ?>
                             </span>
 
                             <?php if ($visible_word_length && $word_count > $visible_word_length) : ?>
