@@ -34,6 +34,7 @@ trait Testimonial_Marquee_Contents
 				'rows' => 10,
 				'default' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'marquee-addons-for-elementor'),
 				'placeholder' => esc_html__('Type testimonial content', 'marquee-addons-for-elementor'),
+				'description' => esc_html__('Allowed HTML tags: <strong>, <em>, <br>', 'marquee-addons-for-elementor'),
 			]
 		);
 
