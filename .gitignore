@@ -1,3 +1,5 @@
+.vscode/
 .gemini
+.steps
 node_modules
-config.bat
+vendor
