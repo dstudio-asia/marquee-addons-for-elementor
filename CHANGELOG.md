@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.9.91](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.90...v3.9.91) (2026-10-20)
+
+
+### Features
+
+* **stacked-slider:** support allowed HTML tags in slider title ([d29aa9b](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/d29aa9b9d3cf61faf8bdecd2ed5acf51a99aab7f))
+
 ## [3.9.90](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.65...v3.9.90) (2026-10-12)
 
 
