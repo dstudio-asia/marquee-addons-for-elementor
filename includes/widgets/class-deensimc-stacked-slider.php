@@ -89,11 +89,17 @@ class Deensimc_Stacked_Slider extends Widget_Base
 	{
 ?>
 		<?php
+		$allowed_tags = [
+			'strong' => [],
+			'em'     => [],
+			'br'     => [],
+		];
+
 		// Slider title
 		if ($settings['deensimc_content_title'] !== '') {
 		?>
 			<div class="deensimc-slider-heading">
-				<?php printf('<%1$s class="deensimc-content-title"> %2$s </%1$s>', esc_html(self::validate_html_tag($settings['deensimc_content_title_tags'])), esc_html($settings['deensimc_content_title'])); ?>
+				<?php printf('<%1$s class="deensimc-content-title"> %2$s </%1$s>', esc_html(self::validate_html_tag($settings['deensimc_content_title_tags'])), wp_kses($settings['deensimc_content_title'] ?? '', $allowed_tags)); ?>
 			</div>
 		<?php
 		}
