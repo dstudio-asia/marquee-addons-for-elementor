@@ -281,7 +281,7 @@ First, ensure that you've activated the plugin correctly. If the issue persists,
 == Changelog ==
 
 = 3.9.92 - 2026-10-27 =
-- Tweak: Added text styling support with bold, italic, and line breaks in Stacked Slider title.
+- Tweak: Allowed text formatting with bold, italic, and line breaks in Stacked Slider description.
 
 = 3.9.91 - 2026-10-20 =
 - Tweak: Added text styling support with bold, italic, and line breaks in Stacked Slider title.
