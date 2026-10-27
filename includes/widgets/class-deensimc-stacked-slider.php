@@ -111,7 +111,7 @@ class Deensimc_Stacked_Slider extends Widget_Base
 		?>
 			<div class="deensimc-slider-des">
 				<p class="deensimc-content-description">
-					<?php echo esc_html($settings['deensimc_content_description']) ?>
+					<?php echo wp_kses($settings['deensimc_content_description'] ?? '', $allowed_tags); ?>
 				</p>
 			</div>
 		<?php
