@@ -100,6 +100,7 @@ trait Deensimc_Stackedslider_Contents_Primary
                 'rows' => 5,
                 'default' => esc_html__('Enter your description here', 'marquee-addons-for-elementor'),
                 'placeholder' => esc_html__('Type your description here', 'marquee-addons-for-elementor'),
+                'description' => esc_html__('Allowed HTML tags: <strong>, <em>, <br>', 'marquee-addons-for-elementor'),
                 'dynamic' => [
                     'active' => true
                 ]
