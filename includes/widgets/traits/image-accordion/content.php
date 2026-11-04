@@ -41,6 +41,7 @@ trait Deensimc_ImageAccordion_Contents
                 'type' =>  Controls_Manager::TEXT,
                 'default' => esc_html__('Default title', 'marquee-addons-for-elementor'),
                 'placeholder' => esc_html__('Type your title here', 'marquee-addons-for-elementor'),
+                'description' => esc_html__('Allowed HTML tags: <strong>, <em>, <br>', 'marquee-addons-for-elementor'),
             ]
         );
 
