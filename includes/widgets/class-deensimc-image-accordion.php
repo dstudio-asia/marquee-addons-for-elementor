@@ -154,6 +154,11 @@ class Deensimc_Image_Accordion extends Widget_Base
 		<div class="deensimc-image-panel">
 			<div class="deensimc-panels">
 				<?php
+				$allowed_tags = [
+					'strong' => [],
+					'em'     => [],
+					'br'     => [],
+				];
 				$deen_accordion_behaviour = $settings['deensimc_bg_image_active_behaviour'] === 'click' ? 'click' : 'hover';
 				if ($settings['deensimc_bg_image_repeater']) {
 					foreach ($settings['deensimc_bg_image_repeater'] as $images) {
@@ -162,11 +167,11 @@ class Deensimc_Image_Accordion extends Widget_Base
 							data-behaviour="<?php echo esc_attr($deen_accordion_behaviour); ?>"
 							class="deensimc-panel deensimc-panel-main ">
 							<p class="<?php echo esc_attr($devices_class); ?> deensimc-panel-default-title">
-								<?php echo esc_html($images['deensimc_bg_image_title']) ?>
+								<?php echo wp_kses($images['deensimc_bg_image_title'] ?? '', $allowed_tags); ?>
 							</p>
 							<div class="deensimc-panel-content">
 								<<?php echo esc_attr($heading_tag); ?> class="deensimc-acc-title">
-									<?php echo esc_html($images['deensimc_bg_image_title']); ?>
+									<?php echo wp_kses($images['deensimc_bg_image_title'] ?? '', $allowed_tags); ?>
 								</<?php echo esc_attr($heading_tag); ?>>
 								<div class="deensimc-acc-description">
 									<?php echo wp_kses_post($images['deensimc_bg_image_description'] ?? ''); ?>
