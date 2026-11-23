@@ -7,6 +7,7 @@ if (! defined('ABSPATH')) {
 // Elementor Classes
 use \Elementor\Controls_Manager;
 use \Elementor\Group_Control_Typography;
+use \Elementor\Group_Control_Text_Shadow;
 
 trait Deensimc_Textmarquee_Style_Text_Contents
 {
@@ -80,6 +81,14 @@ trait Deensimc_Textmarquee_Style_Text_Contents
 		$this->end_controls_tab();
 
 		$this->end_controls_tabs();
+
+		$this->add_group_control(
+			Group_Control_Text_Shadow::get_type(),
+			[
+				'name'     => 'deensimc_scroll_text_shadow',
+				'selector' => '{{WRAPPER}} .deensimc-scroll-text, {{WRAPPER}} .deensimc-scroll-text a',
+			]
+		);
 
 
 		$this->add_control(
