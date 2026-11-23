@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.9.95](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.94...v3.9.95) (2026-11-23)
+
+
+### Features
+
+* **text-marquee:** add text shadow group control ([8034539](https://github.com/dstudio-asia/marquee-addons-for-elementor/commit/8034539904e9ecc625bc69ee501db80e882bdda3))
+
 ## [3.9.94](https://github.com/dstudio-asia/marquee-addons-for-elementor/compare/v3.9.93...v3.9.94) (2026-11-16)
 
 
